@@ -1,4 +1,4 @@
 TimeSeries
 ==========
 
-praca dyplomowa test
+praca dyplomowa
