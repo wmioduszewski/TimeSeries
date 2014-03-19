@@ -1,0 +1,4 @@
+TimeSeries
+==========
+
+praca dyplomowa
