@@ -2,4 +2,3 @@ TimeSeries
 ==========
 
 praca dyplomowa
-test
