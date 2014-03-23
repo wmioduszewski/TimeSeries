@@ -1,0 +1,4 @@
+Ze wzglêdu na prawa autorskie, niektóre pozycje nie zosta³y tutaj zamieszczone (publiczne repozytorium). Dla porz¹dku poni¿ej wymieniono ich tytu³y:
+
+* Time Series Analysis and Its Applications 
+* Time Series Classification by Class-Specific Mahalanobis Distance Measures
