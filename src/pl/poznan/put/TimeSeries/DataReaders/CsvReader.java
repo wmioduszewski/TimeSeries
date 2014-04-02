@@ -43,7 +43,6 @@ public class CsvReader {
 				isFirstLine = false;
 			}
 			
-			String fff = fields[2].substring(0, fields[2].lastIndexOf('.'));
 			LocalTime exTime = LocalTime.parse(fields[2].trim());
 			float tfadj;
 			try {
