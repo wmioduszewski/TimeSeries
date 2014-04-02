@@ -23,14 +23,18 @@ import pl.poznan.put.TimeSeries.View.MainForm;
 
 public class LineChart extends ApplicationFrame{
 
+	
+	String title;
+	
 	public LineChart(String title,Patient[] patients, Dimension dimension) {
-		super(title);		
+		super(title);
+		this.title = title;
         final ChartPanel chartPanel = paintPatientChart(patients);
         chartPanel.setPreferredSize(dimension);
         setContentPane(chartPanel);
 	}
 	
-	private static ChartPanel paintPatientChart(Patient[] patients) {
+	private ChartPanel paintPatientChart(Patient[] patients) {
 		XYDataset dataset = createDataset(patients);
 		JFreeChart chart = createChart(dataset);
 		ChartPanel panel = new ChartPanel(chart);
@@ -38,7 +42,7 @@ public class LineChart extends ApplicationFrame{
 		return panel;
 	}
 	
-	private static XYDataset createDataset(Patient[] patients) {
+	private XYDataset createDataset(Patient[] patients) {
 		
 		XYSeriesCollection collection = new XYSeriesCollection();
 		
@@ -53,13 +57,13 @@ public class LineChart extends ApplicationFrame{
 		return collection;
 	}
 
-	private static JFreeChart createChart(final XYDataset dataset) {
+	private JFreeChart createChart(final XYDataset dataset) {
 
 		// create the chart...
 		final JFreeChart chart = ChartFactory.createXYLineChart(
-				"Line Chart Patient", // chart title
-				"X", // x axis label
-				"Y", // y axis label
+				title, // chart title
+				"Time", // x axis label
+				"TFADJ", // y axis label
 				dataset, // data
 				PlotOrientation.VERTICAL, true, // include legend
 				true, // tooltips
