@@ -11,37 +11,36 @@ import pl.poznan.put.TimeSeries.DataReaders.CsvReader;
 import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Renderers.LineChart;
 
-public class MainForm extends ApplicationFrame {
-
-	public MainForm(String title) {
-		super(title);
-
+public class MainForm {
+	
+	private static Patient[] ReadData(String path)
+	{
+		Patient[] patients = null;
 		try {
 			List<Patient> res = CsvReader
-					.ReadData("doc/dane/gTimeData.7.5.20130123a_sub.csv");
+					.ReadData(path);
 			//od indeksu = 10 => pacjenci chorzy 
-			Patient[] patients = new Patient[]{
+			patients = new Patient[]{
 					res.get(0),
 					res.get(1),
 					res.get(2),
 					res.get(3),
 					res.get(4),
 					};
-			
-			ChartPanel chartPanel = LineChart.PaintPatientsChart(patients);
-			chartPanel.setPreferredSize(new Dimension(1800, 1000));
-			setContentPane(chartPanel);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		return patients;
 	}
-
-	public static void main(final String[] args) {
-
-		final MainForm demo = new MainForm("Line Chart Patient");
-		demo.pack();
-		RefineryUtilities.centerFrameOnScreen(demo);
-		demo.setVisible(true);
+	
+	public static void main(String[] args) {
+		Dimension prefferedSize = new Dimension(1800,1100);
+		Patient[] patients = ReadData("doc/dane/gTimeData.7.5.20130123a_sub.csv");
+		final LineChart lineChart = new LineChart("Line Chart Demo", patients,prefferedSize);
+        lineChart.pack();
+        RefineryUtilities.centerFrameOnScreen(lineChart);
+        lineChart.setVisible(true);
 	}
 }

@@ -14,29 +14,31 @@ import org.jfree.data.time.TimeSeries;
 import org.jfree.data.xy.XYDataset;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
+import org.jfree.ui.ApplicationFrame;
+import org.jfree.ui.RefineryUtilities;
 
 import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.Patient;
+import pl.poznan.put.TimeSeries.View.MainForm;
 
-public class LineChart {
+public class LineChart extends ApplicationFrame{
 
-	public static ChartPanel PaintPatientChart(Patient patient) {
-		XYDataset dataset = createDataset(patient);
-		JFreeChart chart = createChart(dataset);
-		ChartPanel panel = new ChartPanel(chart);
-		
-		return panel;
+	public LineChart(String title,Patient[] patients, Dimension dimension) {
+		super(title);		
+        final ChartPanel chartPanel = paintPatientChart(patients);
+        chartPanel.setPreferredSize(dimension);
+        setContentPane(chartPanel);
 	}
 	
-	public static ChartPanel PaintPatientsChart(Patient[] patients) {
-		XYDataset dataset = createDatasets(patients);
+	private static ChartPanel paintPatientChart(Patient[] patients) {
+		XYDataset dataset = createDataset(patients);
 		JFreeChart chart = createChart(dataset);
 		ChartPanel panel = new ChartPanel(chart);
 		panel.setPreferredSize(new Dimension(500, 270));
 		return panel;
 	}
 	
-	private static XYDataset createDatasets(Patient[] patients) {
+	private static XYDataset createDataset(Patient[] patients) {
 		
 		XYSeriesCollection collection = new XYSeriesCollection();
 		
@@ -49,20 +51,6 @@ public class LineChart {
 		}
 
 		return collection;
-	}
-
-	private static XYDataset createDataset(Patient patient) {
-
-		final XYSeries series = new XYSeries(patient.getId());
-		for (Characteristic c : patient.getCharacteristics()) {
-			series.add(c.getExaminationTime().getMillisOfDay(), c.getTfadj());
-		}
-
-		XYSeriesCollection collection = new XYSeriesCollection();
-		collection.addSeries(series);
-
-		return collection;
-
 	}
 
 	private static JFreeChart createChart(final XYDataset dataset) {
