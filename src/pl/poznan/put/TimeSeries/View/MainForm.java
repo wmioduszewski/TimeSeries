@@ -35,15 +35,14 @@ public class MainForm {
 
 		return patients;
 	}
-
-	static boolean isSmoothingOn = true;
+	
 	static int smoothingSize = 20;
 
 	public static void main(String[] args) {
 		Dimension prefferedSize = new Dimension(1800, 1100);
 		Patient[] patients = ReadData("doc/dane/gTimeData.7.5.20130123a_sub.csv");
 
-		if (isSmoothingOn) {
+		if (smoothingSize>1) {
 			for (Patient patient : patients) {
 				patient.setCharacteristics(Smoother.SmoothCharacteristics(
 						patient.getCharacteristics(), smoothingSize));

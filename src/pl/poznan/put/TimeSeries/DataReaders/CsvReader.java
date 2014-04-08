@@ -45,10 +45,10 @@ public class CsvReader {
 			
 			int minutes = Integer.parseInt(minuteElems[1]);
 			int hours = Integer.parseInt(minuteElems[0]);
-			int days = 1;
+			int days = 2;
 			
-			if(hours<11 || (hours<12 && minutes>30))
-				days = 2;
+			if(hours>=12)
+				days = 1;
 			
 			Minute exTime = new Minute(minutes, hours,days,1,1900);
 			float tfadj;
