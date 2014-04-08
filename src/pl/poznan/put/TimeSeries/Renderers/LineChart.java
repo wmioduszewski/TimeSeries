@@ -2,6 +2,7 @@ package pl.poznan.put.TimeSeries.Renderers;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.util.List;
 
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -29,7 +30,7 @@ public class LineChart extends ApplicationFrame{
 	private static final long serialVersionUID = 2458634274354667267L;
 	String title;
 	
-	public LineChart(String title,Patient[] patients, Dimension dimension) {
+	public LineChart(String title,List<Patient> patients, Dimension dimension) {
 		super(title);
 		this.title = title;
         final ChartPanel chartPanel = paintPatientChart(patients);
@@ -37,7 +38,7 @@ public class LineChart extends ApplicationFrame{
         setContentPane(chartPanel);
 	}
 	
-	private ChartPanel paintPatientChart(Patient[] patients) {
+	private ChartPanel paintPatientChart(List<Patient> patients) {
 		XYDataset dataset = createDataset(patients);
 		JFreeChart chart = createChart(dataset);
 		ChartPanel panel = new ChartPanel(chart);
@@ -45,12 +46,12 @@ public class LineChart extends ApplicationFrame{
 		return panel;
 	}
 	
-	private XYDataset createDataset(Patient[] patients) {
+	private XYDataset createDataset(List<Patient> patients) {
 		
 		TimeSeriesCollection collection = new TimeSeriesCollection();
 		
 		for (Patient patient : patients) {
-			TimeSeries series = new TimeSeries(patient.getId());
+			TimeSeries series = new TimeSeries(patient.getChartCaption());
 			for (Characteristic c : patient.getCharacteristics()) {
 				series.addOrUpdate(c.getExaminationTime(), c.getTfadj());
 			}

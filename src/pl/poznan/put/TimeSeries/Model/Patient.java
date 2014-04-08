@@ -3,15 +3,17 @@ package pl.poznan.put.TimeSeries.Model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Patient {
+public class Patient implements Cloneable {
 
 	int id;
 	List<Characteristic> characteristics;
+	String chartCaption;
 
 	public Patient(int id) {
 		super();
 		this.id = id;
 		characteristics = new ArrayList<Characteristic>();
+		chartCaption = ""+id;
 	}
 
 	public void AddCharacteristic(Characteristic c) {
@@ -20,6 +22,14 @@ public class Patient {
 
 	public void RemoveCharacteristic(Characteristic c) {
 		characteristics.remove(c);
+	}
+
+	public String getChartCaption() {
+		return chartCaption;
+	}
+
+	public void setChartCaption(String chartCaption) {
+		this.chartCaption = chartCaption;
 	}
 
 	public List<Characteristic> getCharacteristics() {
@@ -32,6 +42,14 @@ public class Patient {
 
 	public int getId() {
 		return id;
+	}
+	
+	public Object clone(){  
+	    try{  
+	        return super.clone();  
+	    }catch(Exception e){ 
+	        return null; 
+	    }
 	}
 
 }

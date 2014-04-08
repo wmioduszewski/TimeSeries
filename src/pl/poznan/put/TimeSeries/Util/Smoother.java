@@ -26,5 +26,21 @@ public class Smoother {
 		}
 		return smoothed;
 	}
+	
+	public static List<Characteristic> SmoothEWMACharacteristics(
+			List<Characteristic> characteristics, float omega) {
+		List<Characteristic> smoothed = new ArrayList<Characteristic>();
+		
+		int count = characteristics.size();		
+		
+		for (int i = 1; i < count; i++) {
+			Characteristic current = characteristics.get(i);
+			Characteristic previous = characteristics.get(i-1);
+			float newValue = omega * current.getTfadj() + (1-omega) * previous.getTfadj(); 
+			current.setTfadj(newValue);
+			smoothed.add(current);
+		}
+		return smoothed;
+	}
 
 }
