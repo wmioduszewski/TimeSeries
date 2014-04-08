@@ -10,20 +10,23 @@ import org.jfree.chart.axis.NumberAxis;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
+import org.jfree.data.time.Minute;
+import org.jfree.data.time.RegularTimePeriod;
 import org.jfree.data.time.TimeSeries;
+import org.jfree.data.time.TimeSeriesCollection;
+import org.jfree.data.time.TimeSeriesDataItem;
 import org.jfree.data.xy.XYDataset;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 import org.jfree.ui.ApplicationFrame;
-import org.jfree.ui.RefineryUtilities;
+import org.joda.time.LocalTime;
 
 import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.Patient;
-import pl.poznan.put.TimeSeries.View.MainForm;
 
 public class LineChart extends ApplicationFrame{
 
-	
+	private static final long serialVersionUID = 2458634274354667267L;
 	String title;
 	
 	public LineChart(String title,Patient[] patients, Dimension dimension) {
@@ -44,30 +47,30 @@ public class LineChart extends ApplicationFrame{
 	
 	private XYDataset createDataset(Patient[] patients) {
 		
-		XYSeriesCollection collection = new XYSeriesCollection();
+		TimeSeriesCollection collection = new TimeSeriesCollection();
 		
 		for (Patient patient : patients) {
-			XYSeries series = new XYSeries(patient.getId());
+			TimeSeries series = new TimeSeries(patient.getId());
 			for (Characteristic c : patient.getCharacteristics()) {
-				series.add(c.getExaminationTime().getMillisOfDay(), c.getTfadj());
+				series.addOrUpdate(c.getExaminationTime(), c.getTfadj());
 			}
 			collection.addSeries(series);	
 		}
-
 		return collection;
 	}
 
 	private JFreeChart createChart(final XYDataset dataset) {
 
 		// create the chart...
-		final JFreeChart chart = ChartFactory.createXYLineChart(
+		final JFreeChart chart = ChartFactory.createTimeSeriesChart(
 				title, // chart title
 				"Time", // x axis label
 				"TFADJ", // y axis label
 				dataset, // data
-				PlotOrientation.VERTICAL, true, // include legend
+				//PlotOrientation.VERTICAL, 
+				true, // include legend
 				true, // tooltips
-				false // urls
+				false
 				);
 
 		// NOW DO SOME OPTIONAL CUSTOMISATION OF THE CHART...
@@ -82,6 +85,7 @@ public class LineChart extends ApplicationFrame{
 		// plot.setAxisOffset(new Spacer(Spacer.ABSOLUTE, 5.0, 5.0, 5.0, 5.0));
 		plot.setDomainGridlinePaint(Color.white);
 		plot.setRangeGridlinePaint(Color.white);
+		
 
 		final XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
 		renderer.setSeriesLinesVisible(0, false);

@@ -1,24 +1,29 @@
 package pl.poznan.put.TimeSeries.Model;
 
+import org.jfree.data.time.Minute;
 import org.joda.time.LocalTime;
 
 public class Characteristic {
 
-	LocalTime examinationTime;
+	Minute examinationTime;
 	float tfadj;
 
-	public Characteristic(LocalTime examinationTime, float tfadj) {
+	public Characteristic(Minute examinationTime, float tfadj) {
 		super();
 		this.examinationTime = examinationTime;
 		this.tfadj = tfadj;
 	}
 
-	public LocalTime getExaminationTime() {
+	public Minute getExaminationTime() {
 		return examinationTime;
 	}
 
 	public float getTfadj() {
 		return tfadj;
+	}
+
+	public void setTfadj(float tfadj) {
+		this.tfadj = tfadj;
 	}
 	
 	

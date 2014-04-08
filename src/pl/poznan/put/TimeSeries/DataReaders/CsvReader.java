@@ -3,10 +3,10 @@ package pl.poznan.put.TimeSeries.DataReaders;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.jfree.data.time.Minute;
 import org.joda.time.LocalTime;
 
 import pl.poznan.put.TimeSeries.Model.Characteristic;
@@ -21,7 +21,6 @@ public class CsvReader {
 
 		// skip first line
 		String currLine = br.readLine();
-		boolean newPatient = false;
 		currLine = br.readLine();
 
 		int lastId = -1;// Integer.parseInt(currLine.split(",")[0]);
@@ -42,8 +41,16 @@ public class CsvReader {
 				lastPatient = new Patient(currentId);
 				isFirstLine = false;
 			}
+			String [] minuteElems = fields[2].trim().split(":");
 			
-			LocalTime exTime = LocalTime.parse(fields[2].trim());
+			int minutes = Integer.parseInt(minuteElems[1]);
+			int hours = Integer.parseInt(minuteElems[0]);
+			int days = 1;
+			
+			if(hours<11 || (hours<12 && minutes>30))
+				days = 2;
+			
+			Minute exTime = new Minute(minutes, hours,days,1,1900);
 			float tfadj;
 			try {
 				tfadj = Float.parseFloat(fields[11]);
@@ -58,6 +65,7 @@ public class CsvReader {
 			lastId = currentId;
 			currLine = br.readLine();
 		}
+		br.close();
 
 		return patientList;
 
