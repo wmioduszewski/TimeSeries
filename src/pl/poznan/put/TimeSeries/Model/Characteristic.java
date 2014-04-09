@@ -1,20 +1,30 @@
 package pl.poznan.put.TimeSeries.Model;
 
 import org.jfree.data.time.Minute;
+import org.joda.time.DateTime;
 import org.joda.time.LocalTime;
 
 public class Characteristic {
 
-	Minute examinationTime;
+	DateTime examinationTime;
 	float tfadj;
+	Minute freeChartExTime;
 
-	public Characteristic(Minute examinationTime, float tfadj) {
+	public Minute getFreeChartExTime() {
+		return freeChartExTime;
+	}
+
+	public Characteristic(DateTime examinationTime, float tfadj) {
 		super();
 		this.examinationTime = examinationTime;
 		this.tfadj = tfadj;
+		this.freeChartExTime = new Minute(examinationTime.getMinuteOfHour(),
+				examinationTime.getHourOfDay(),
+				examinationTime.getDayOfMonth(), examinationTime.getMonthOfYear(),
+				examinationTime.getYear());
 	}
 
-	public Minute getExaminationTime() {
+	public DateTime getExaminationTime() {
 		return examinationTime;
 	}
 
@@ -25,7 +35,5 @@ public class Characteristic {
 	public void setTfadj(float tfadj) {
 		this.tfadj = tfadj;
 	}
-	
-	
 
 }

@@ -8,9 +8,11 @@ import java.util.List;
 
 import org.jfree.ui.*;
 
+import edu.hawaii.jmotif.lib.ts.TSException;
 import pl.poznan.put.TimeSeries.DataReaders.CsvReader;
 import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Renderers.LineChart;
+import pl.poznan.put.TimeSeries.Sax.SaxPerformer;
 import pl.poznan.put.TimeSeries.Util.Smoother;
 
 public class MainForm {
@@ -52,7 +54,15 @@ public class MainForm {
 //				patientsToChart.add(p);
 //			}
 //		}
-
+		try {
+			System.out.println(SaxPerformer.TranslateTimeSeriesToString(patients.get(0),10,20));
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (TSException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		if (omega > 0.0f) {
 			for (Patient patient : patients) {
 				Patient p = (Patient)patient.clone();

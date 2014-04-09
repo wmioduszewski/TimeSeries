@@ -1,19 +1,22 @@
 package pl.poznan.put.TimeSeries;
 
+import org.jfree.data.time.Minute;
+import org.joda.time.DateTime;
+import org.joda.time.LocalTime;
+
+import java.util.Date;
+
 public class Main {
 
 	public static void main(String[] args) {
 
-		// try {
-		// List<Patient> res = CsvReader
-		// .ReadData("doc/dane/gTimeData.7.5.20130123a_sub.csv");
-		// res.size();
-		// } catch (IOException e) {
-		// // TODO Auto-generated catch block
-		// e.printStackTrace();
-		// }
-
-		// LocalTime lt = LocalTime.parse("12:00:00");
+		Minute m = new Minute(11, 20, 9, 4, 2014);
+		System.out.println("ms: " + m.getMiddleMillisecond());
+		
+		LocalTime lt = new LocalTime(22,4,50);
+		//lt.getMillisOfDay()
+		DateTime dt = new DateTime(2014,4,9,9,22);
+		dt.getMillis();
 	}
 
 }

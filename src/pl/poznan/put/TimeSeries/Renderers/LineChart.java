@@ -53,7 +53,7 @@ public class LineChart extends ApplicationFrame{
 		for (Patient patient : patients) {
 			TimeSeries series = new TimeSeries(patient.getChartCaption());
 			for (Characteristic c : patient.getCharacteristics()) {
-				series.addOrUpdate(c.getExaminationTime(), c.getTfadj());
+				series.addOrUpdate(c.getFreeChartExTime(), c.getTfadj());
 			}
 			collection.addSeries(series);	
 		}

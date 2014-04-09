@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.jfree.data.time.Minute;
+import org.joda.time.DateTime;
 import org.joda.time.LocalTime;
 
 import pl.poznan.put.TimeSeries.Model.Characteristic;
@@ -50,16 +51,17 @@ public class CsvReader {
 			if(hours>=12)
 				days = 1;
 			
-			Minute exTime = new Minute(minutes, hours,days,1,1900);
+			//Minute exTime = new Minute(minutes, hours,days,1,1900);
+			DateTime dt =  new DateTime(2014,4,days,hours,minutes,0);
 			float tfadj;
 			try {
 				tfadj = Float.parseFloat(fields[11]);
 			} catch (NumberFormatException e) {
 				System.out.println("Nie udało się dla pacjenta "
-						+ lastPatient.getId() + " o godzinie " + exTime);
+						+ lastPatient.getId() + " o godzinie " + dt);
 				tfadj = 0;
 			}
-			Characteristic c = new Characteristic(exTime, tfadj);
+			Characteristic c = new Characteristic(dt, tfadj);
 
 			lastPatient.AddCharacteristic(c);
 			lastId = currentId;
