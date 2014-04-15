@@ -8,11 +8,13 @@ public class Patient implements Cloneable {
 	int id;
 	List<Characteristic> characteristics;
 	String chartCaption;
+	List<SaxString> saxStrings;
 
 	public Patient(int id) {
 		super();
 		this.id = id;
 		characteristics = new ArrayList<Characteristic>();
+		saxStrings = new ArrayList<SaxString>();
 		chartCaption = ""+id;
 	}
 
@@ -22,6 +24,22 @@ public class Patient implements Cloneable {
 
 	public void RemoveCharacteristic(Characteristic c) {
 		characteristics.remove(c);
+	}
+	
+	public void AddSaxString(SaxString s) {
+		saxStrings.add(s);
+	}
+
+	public void RemoveSaxString(SaxString s) {
+		saxStrings.remove(s);
+	}
+
+	public List<SaxString> getSaxStrings() {
+		return saxStrings;
+	}
+
+	public void setSaxStrings(List<SaxString> saxStrings) {
+		this.saxStrings = saxStrings;
 	}
 
 	public String getChartCaption() {

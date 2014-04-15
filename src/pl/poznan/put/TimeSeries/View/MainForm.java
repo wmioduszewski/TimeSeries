@@ -11,7 +11,9 @@ import org.jfree.ui.*;
 import edu.hawaii.jmotif.lib.ts.TSException;
 import pl.poznan.put.TimeSeries.DataReaders.CsvReader;
 import pl.poznan.put.TimeSeries.Model.Patient;
+import pl.poznan.put.TimeSeries.Model.SaxString;
 import pl.poznan.put.TimeSeries.Renderers.LineChart;
+import pl.poznan.put.TimeSeries.Renderers.SaxChart;
 import pl.poznan.put.TimeSeries.Sax.SaxPerformer;
 import pl.poznan.put.TimeSeries.Util.Smoother;
 
@@ -45,36 +47,47 @@ public class MainForm {
 		List<Patient> patients = ReadData("doc/dane/gTimeData.7.5.20130123a_sub.csv");
 		List<Patient> patientsToChart = new ArrayList<Patient>();
 
-//		if (smoothingSize > 1) {
-//			for (Patient patient : patients) {
-//				Patient p = (Patient)patient.clone();
-//				p.setCharacteristics(Smoother.SmoothCharacteristics(
-//						p.getCharacteristics(), smoothingSize));
-//				p.setChartCaption("Smooth " + p.getId());
-//				patientsToChart.add(p);
-//			}
-//		}
-		try {
-			System.out.println(SaxPerformer.TranslateTimeSeriesToString(patients.get(0),10,20));
-		} catch (CloneNotSupportedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (TSException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		// if (smoothingSize > 1) {
+		// for (Patient patient : patients) {
+		// Patient p = (Patient)patient.clone();
+		// p.setCharacteristics(Smoother.SmoothCharacteristics(
+		// p.getCharacteristics(), smoothingSize));
+		// p.setChartCaption("Smooth " + p.getId());
+		// patientsToChart.add(p);
+		// }
+		// }
+
+		// available values for TFADJ are from -20,6 to 48,9.
+		// Ideally I would have about one symbol for single unit number.
+		// JMotif gives me opportunity only to set 20 symbols
+
+		int alphabeatSize = 20;
+		// we have 4 quarters in every hour so 24 hours * 4 equals 96
+		int outputLength = 20;
+
+		for (Patient patient : patients) {
+			String sax = null;
+			try {
+				sax = SaxPerformer.TranslateTimeSeriesToString(patient,
+						outputLength, alphabeatSize);
+			} catch (CloneNotSupportedException | TSException e) {
+				e.printStackTrace();
+			}
+			patient.AddSaxString(new SaxString(sax, outputLength, alphabeatSize));
 		}
+
 		if (omega > 0.0f) {
 			for (Patient patient : patients) {
-				Patient p = (Patient)patient.clone();
-				p.setCharacteristics(Smoother.SmoothEWMACharacteristics(
-						p.getCharacteristics(), omega));
-				p.setChartCaption("EWMA " + p.getId());
+				Patient p = (Patient) patient.clone();
+				//p.setCharacteristics(Smoother.SmoothEWMACharacteristics(
+					//	p.getCharacteristics(), omega));
+				p.setChartCaption("Sax " + p.getId());
 				patientsToChart.add(p);
 			}
 		}
 
-		final LineChart lineChart = new LineChart("Time Series",
-				patientsToChart, prefferedSize);
+		final SaxChart lineChart = new SaxChart("Time Series",
+				patientsToChart, prefferedSize, outputLength, alphabeatSize);
 		lineChart.pack();
 		RefineryUtilities.centerFrameOnScreen(lineChart);
 		lineChart.setVisible(true);
