@@ -31,6 +31,8 @@ public class CsvReader {
 		while (currLine != null) {
 			String[] fields = currLine.split(",");
 			int currentId = Integer.parseInt(fields[0]);
+			
+			
 
 			if (currentId != lastId && !isFirstLine) {
 				patientList.add(lastPatient);
@@ -42,6 +44,9 @@ public class CsvReader {
 				lastPatient = new Patient(currentId);
 				isFirstLine = false;
 			}
+			
+			int diagnosis = Integer.parseInt(fields[1]);
+			lastPatient.setSick(diagnosis>0);
 			String [] minuteElems = fields[2].trim().split(":");
 			
 			int minutes = Integer.parseInt(minuteElems[1]);

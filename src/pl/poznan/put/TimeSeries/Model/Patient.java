@@ -9,6 +9,15 @@ public class Patient implements Cloneable {
 	List<Characteristic> characteristics;
 	String chartCaption;
 	List<SaxString> saxStrings;
+	boolean isSick;
+
+	public boolean isSick() {
+		return isSick;
+	}
+
+	public void setSick(boolean isSick) {
+		this.isSick = isSick;
+	}
 
 	public Patient(int id) {
 		super();

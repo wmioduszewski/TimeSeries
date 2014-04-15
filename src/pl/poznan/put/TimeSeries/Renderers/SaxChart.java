@@ -24,33 +24,19 @@ import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Model.SaxString;
 
-public class SaxChart extends ApplicationFrame{
+public class SaxChart {
 
 	private static final long serialVersionUID = 5590657258624758130L;
-	String title;
-	int _outLength;
-	int alphSz;
 	
-	public SaxChart(String title,List<Patient> patients, Dimension dimension,int outputLength, int alphabeatSize) {
-		super(title);		
-		this.title = title;
-		alphSz = alphabeatSize;
-		_outLength = outputLength;
-        final ChartPanel chartPanel = paintPatientChart(patients);
-        chartPanel.setPreferredSize(dimension);
-        setContentPane(chartPanel);
-	}
 	
-	private ChartPanel paintPatientChart(List<Patient> patients) {
+	
+	public static JFreeChart getPatientChart(List<Patient> patients) {
 		XYDataset dataset = createDataset(patients);
 		JFreeChart chart = createChart(dataset);
-		ChartPanel panel = new ChartPanel(chart);
-		//ChartUtilities.saveChartAsJPEG(new File("testchart"), chart, 1000, 1000);		
-		panel.setPreferredSize(new Dimension(500, 270));
-		return panel;
+		return chart;
 	}
 	
-	private XYDataset createDataset(List<Patient> patients) {
+	private static XYDataset createDataset(List<Patient> patients) {
 		float min = -20.6f;
 		float max = 48.9f;
 		TimeSeriesCollection collection = new TimeSeriesCollection();
@@ -62,7 +48,7 @@ public class SaxChart extends ApplicationFrame{
 			
 			int minutesInDay = 60*24;
 			float period = minutesInDay / (float) saxStr.getOutputLength();
-			float letterWeight = (max - min) / (float) saxStr.getAlphabeatLength(); 
+			float letterWeight = (max - min) / (float) saxStr.getAlphabeatSize(); 
 			
 			for (int i=0;i<saxStr.getContent().length();i++)
 			{
@@ -83,11 +69,11 @@ public class SaxChart extends ApplicationFrame{
 		return collection;
 	}
 	
-	private JFreeChart createChart(final XYDataset dataset) {
+	private static JFreeChart createChart(final XYDataset dataset) {
 
 		// create the chart...
 		final JFreeChart chart = ChartFactory.createTimeSeriesChart(
-				title, // chart title
+				"Time Series", // chart title
 				"Time", // x axis label
 				"TFADJ", // y axis label
 				dataset, // data
@@ -112,7 +98,7 @@ public class SaxChart extends ApplicationFrame{
 		
 
 		final XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
-		renderer.setSeriesLinesVisible(0, false);
+		renderer.setSeriesLinesVisible(0, true);
 		renderer.setSeriesShapesVisible(1, false);
 		plot.setRenderer(renderer);
 

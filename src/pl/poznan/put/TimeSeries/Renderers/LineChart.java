@@ -25,28 +25,17 @@ import org.joda.time.LocalTime;
 import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.Patient;
 
-public class LineChart extends ApplicationFrame{
+public class LineChart {
 
 	private static final long serialVersionUID = 2458634274354667267L;
-	String title;
 	
-	public LineChart(String title,List<Patient> patients, Dimension dimension) {
-		super(title);
-		this.title = title;
-        final ChartPanel chartPanel = paintPatientChart(patients);
-        chartPanel.setPreferredSize(dimension);
-        setContentPane(chartPanel);
-	}
-	
-	private ChartPanel paintPatientChart(List<Patient> patients) {
+	public static JFreeChart getPatientChart(List<Patient> patients) {
 		XYDataset dataset = createDataset(patients);
 		JFreeChart chart = createChart(dataset);
-		ChartPanel panel = new ChartPanel(chart);
-		panel.setPreferredSize(new Dimension(500, 270));
-		return panel;
+		return chart;
 	}
 	
-	private XYDataset createDataset(List<Patient> patients) {
+	private static XYDataset createDataset(List<Patient> patients) {
 		
 		TimeSeriesCollection collection = new TimeSeriesCollection();
 		
@@ -54,17 +43,17 @@ public class LineChart extends ApplicationFrame{
 			TimeSeries series = new TimeSeries(patient.getChartCaption());
 			for (Characteristic c : patient.getCharacteristics()) {
 				series.addOrUpdate(c.getFreeChartExTime(), c.getTfadj());
-			}
+			}			
 			collection.addSeries(series);	
 		}
 		return collection;
 	}
 
-	private JFreeChart createChart(final XYDataset dataset) {
+	private static JFreeChart createChart(final XYDataset dataset) {
 
 		// create the chart...
 		final JFreeChart chart = ChartFactory.createTimeSeriesChart(
-				title, // chart title
+				"Time Series", // chart title
 				"Time", // x axis label
 				"TFADJ", // y axis label
 				dataset, // data
@@ -89,7 +78,7 @@ public class LineChart extends ApplicationFrame{
 		
 
 		final XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
-		renderer.setSeriesLinesVisible(0, false);
+		renderer.setSeriesLinesVisible(0, true);
 		renderer.setSeriesShapesVisible(1, false);
 		plot.setRenderer(renderer);
 
