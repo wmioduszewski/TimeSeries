@@ -73,7 +73,7 @@ public class MainForm {
 
 		int alphabeatSize = 20;
 		// one symbol for each half hour
-		int outputLength = 48;
+		int outputLength = 24;
 
 		for (Patient patient : patients) {
 			String sax = null;
@@ -96,16 +96,16 @@ public class MainForm {
 		// }
 		// }
 
-//		String folder = "C:/Users/Wojciech/Documents/studia/mgr/praca mgr/TimeSeries/output/charts/clean/";
-//		SaveChartsToFile(folder, patients);
+		String folder = "C:/Users/Wojciech/Documents/studia/mgr/praca mgr/TimeSeries/output/charts/sax one hour/";
+		SaveChartsToFile(folder, patients);
 		
-		String path = "SaxStrings.txt";
-		try {
-			SaveSaxStringsToFile(path, patients);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		String path = "SaxStrings.txt";
+//		try {
+//			SaveSaxStringsToFile(path, patients);
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		
 		System.out.println("Koniec");
 		// ChartWindow window = new ChartWindow("Time Series", new
@@ -134,7 +134,7 @@ public class MainForm {
 			String name = "Clean " + patient.getId() +" " + d;
 			patient.setChartCaption(name);
 			//patient.setCharacteristics(Smoother.SmoothEWMACharacteristics(patient.getCharacteristics(), 0.3f));
-			JFreeChart jchart = LineChart.getPatientChart(Arrays.asList(patient));
+			JFreeChart jchart = SaxChart.getPatientChart(Arrays.asList(patient));
 			try {
 				ChartUtilities.saveChartAsJPEG(new File(folder + name +".jpg"),
 						jchart, 1600, 1000);
