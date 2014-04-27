@@ -1,11 +1,11 @@
 package pl.poznan.put.TimeSeries.Model;
 
 public class SaxString {
-	
+
 	String output;
 	int outputLength;
 	int alphabeatSize;
-	
+
 	public SaxString(String content, int outputLength, int alphabeatSize) {
 		super();
 		this.output = content;
@@ -24,7 +24,5 @@ public class SaxString {
 	public int getAlphabeatSize() {
 		return alphabeatSize;
 	}
-	
-	
 
 }

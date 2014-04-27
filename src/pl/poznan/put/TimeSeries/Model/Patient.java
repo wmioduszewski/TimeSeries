@@ -24,7 +24,7 @@ public class Patient implements Cloneable {
 		this.id = id;
 		characteristics = new ArrayList<Characteristic>();
 		saxStrings = new ArrayList<SaxString>();
-		chartCaption = ""+id;
+		chartCaption = "" + id;
 	}
 
 	public void AddCharacteristic(Characteristic c) {
@@ -34,7 +34,7 @@ public class Patient implements Cloneable {
 	public void RemoveCharacteristic(Characteristic c) {
 		characteristics.remove(c);
 	}
-	
+
 	public void AddSaxString(SaxString s) {
 		saxStrings.add(s);
 	}
@@ -70,13 +70,13 @@ public class Patient implements Cloneable {
 	public int getId() {
 		return id;
 	}
-	
-	public Object clone(){  
-	    try{  
-	        return super.clone();  
-	    }catch(Exception e){ 
-	        return null; 
-	    }
+
+	public Object clone() {
+		try {
+			return super.clone();
+		} catch (Exception e) {
+			return null;
+		}
 	}
 
 }
