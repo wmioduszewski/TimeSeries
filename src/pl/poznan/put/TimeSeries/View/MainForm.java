@@ -58,16 +58,16 @@ public class MainForm {
 
 		// ConsructArff(patients);
 
-		String folder = "C:/Users/Wojciech/Documents/studia/mgr/praca mgr/TimeSeries/output/charts/without zeros/sax/";
-		SaveChartsToFile(currentChart, folder, patients);
+//		String folder = "C:/Users/Wojciech/Documents/studia/mgr/praca mgr/TimeSeries/output/charts/without zeros/sax/";
+//		SaveChartsToFile(currentChart, folder, patients);
 
-		// String path = "SaxStrings.txt";
-		// try {
-		// SaveSaxStringsToFile(path, patients);
-		// } catch (IOException e) {
-		// // TODO Auto-generated catch block
-		// e.printStackTrace();
-		// }
+		 String path = "SaxStrings without zeros.txt";
+		 try {
+		 SaveSaxStringsToFile(path, patients);
+		 } catch (IOException e) {
+		 // TODO Auto-generated catch block
+		 e.printStackTrace();
+		 }
 
 		System.out.println("Koniec");
 	}
