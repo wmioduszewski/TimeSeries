@@ -3,6 +3,7 @@ package pl.poznan.put.TimeSeries.View;
 import java.awt.Dimension;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
@@ -19,6 +20,7 @@ import pl.poznan.put.TimeSeries.Renderers.ChartBase;
 import pl.poznan.put.TimeSeries.Renderers.ChartWindow;
 import pl.poznan.put.TimeSeries.Renderers.SmoothChart;
 import pl.poznan.put.TimeSeries.Sax.SaxPerformer;
+import pl.poznan.put.TimeSeries.Util.PatientsToArffTranslator;
 import edu.hawaii.jmotif.lib.ts.TSException;
 
 public class MainForm {
@@ -27,7 +29,7 @@ public class MainForm {
 		List<Patient> patients = null;
 		try {
 			List<Patient> readData = CsvReader.ReadData(path);
-			patients = readData.subList(0, 3);
+			patients = readData;//.subList(0, 3);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -51,9 +53,11 @@ public class MainForm {
 		// currentChart = new SmoothChart(omega);
 
 		currentChart = new SmoothChart(smoothingSize);
+		
+		ConsructArff(patients);
 
-		String folder = "C:/Users/Wojciech/Documents/studia/mgr/praca mgr/TimeSeries/output/charts/smooth/";
-		SaveChartsToFile(currentChart, folder, patients);
+		//String folder = "C:/Users/Wojciech/Documents/studia/mgr/praca mgr/TimeSeries/output/charts/smooth/";
+		//SaveChartsToFile(currentChart, folder, patients);
 
 		// String path = "SaxStrings.txt";
 		// try {
@@ -64,6 +68,17 @@ public class MainForm {
 		// }
 
 		System.out.println("Koniec");
+	}
+	
+	private static void ConsructArff(List<Patient> patients){
+		String destPath = "C:/Users/Wojciech/Documents/studia/mgr/praca mgr/TimeSeries/output/patients.arff";
+		PatientsToArffTranslator arffTranslator = new PatientsToArffTranslator();
+		try {
+			arffTranslator.savePatientsToArffData(patients, destPath);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	private void DisplayWindowChart(JFreeChart jchart) {
@@ -85,7 +100,7 @@ public class MainForm {
 			} catch (CloneNotSupportedException | TSException e) {
 				e.printStackTrace();
 			}
-			patient.AddSaxString(new SaxString(sax, outputLength, alphabeatSize));
+			patient.setSaxString(new SaxString(sax, outputLength, alphabeatSize));
 		}
 	}
 
@@ -96,7 +111,7 @@ public class MainForm {
 		for (Patient patient : patients) {
 			String d = patient.isSick() ? "D1" : "D2";
 			writer.write(patient.getId() + " " + d + ":\t"
-					+ patient.getSaxStrings().get(0).getContent()
+					+ patient.getSaxString().getContent()
 					+ System.getProperty("line.separator"));
 		}
 

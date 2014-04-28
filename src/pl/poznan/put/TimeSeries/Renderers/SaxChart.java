@@ -29,7 +29,7 @@ public class SaxChart extends ChartBase {
 		for (Patient patient : patients) {
 			TimeSeries series = new TimeSeries(patient.getChartCaption());
 
-			SaxString saxStr = patient.getSaxStrings().get(0);
+			SaxString saxStr = patient.getSaxString();
 
 			int minutesInDay = 60 * 24;
 			float period = minutesInDay / (float) saxStr.getOutputLength();
