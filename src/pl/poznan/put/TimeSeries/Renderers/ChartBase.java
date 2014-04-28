@@ -48,6 +48,7 @@ public abstract class ChartBase {
 		// plot.setAxisOffset(new Spacer(Spacer.ABSOLUTE, 5.0, 5.0, 5.0, 5.0));
 		plot.setDomainGridlinePaint(Color.white);
 		plot.setRangeGridlinePaint(Color.white);
+		
 
 		final XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
 		renderer.setSeriesLinesVisible(0, true);
@@ -57,6 +58,7 @@ public abstract class ChartBase {
 		// change the auto tick unit selection to integer units only...
 		final NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
 		rangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
+		rangeAxis.setRange(-20.6, 48.9);
 		// OPTIONAL CUSTOMISATION COMPLETED.
 
 		return chart;

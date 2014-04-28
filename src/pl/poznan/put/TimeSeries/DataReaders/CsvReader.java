@@ -56,14 +56,14 @@ public class CsvReader {
 			float tfadj;
 			try {
 				tfadj = Float.parseFloat(fields[11]);
+				Characteristic c = new Characteristic(dt, tfadj);
+				lastPatient.AddCharacteristic(c);
 			} catch (NumberFormatException e) {
 				System.out.println("Nie udało się dla pacjenta "
 						+ lastPatient.getId() + " o godzinie " + dt);
 				tfadj = 0;
 			}
-			Characteristic c = new Characteristic(dt, tfadj);
-
-			lastPatient.AddCharacteristic(c);
+			
 			lastId = currentId;
 			currLine = br.readLine();
 		}

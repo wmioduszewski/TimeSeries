@@ -18,6 +18,8 @@ import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Model.SaxString;
 import pl.poznan.put.TimeSeries.Renderers.ChartBase;
 import pl.poznan.put.TimeSeries.Renderers.ChartWindow;
+import pl.poznan.put.TimeSeries.Renderers.CleanChart;
+import pl.poznan.put.TimeSeries.Renderers.SaxChart;
 import pl.poznan.put.TimeSeries.Renderers.SmoothChart;
 import pl.poznan.put.TimeSeries.Sax.SaxPerformer;
 import pl.poznan.put.TimeSeries.Util.PatientsToArffTranslator;
@@ -29,7 +31,7 @@ public class MainForm {
 		List<Patient> patients = null;
 		try {
 			List<Patient> readData = CsvReader.ReadData(path);
-			patients = readData;//.subList(0, 3);
+			patients = readData;// .subList(2, 3);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -48,16 +50,16 @@ public class MainForm {
 		// currentChart = new CleanChart();
 
 		// available values for TFADJ are from -20,6 to 48,9.
-		// currentChart = new SaxChart(-20.6f, 48.9f);
+		currentChart = new SaxChart(-20.6f, 48.9f);
 
 		// currentChart = new SmoothChart(omega);
 
-		currentChart = new SmoothChart(smoothingSize);
-		
-		ConsructArff(patients);
+		// currentChart = new SmoothChart(smoothingSize);
 
-		//String folder = "C:/Users/Wojciech/Documents/studia/mgr/praca mgr/TimeSeries/output/charts/smooth/";
-		//SaveChartsToFile(currentChart, folder, patients);
+		// ConsructArff(patients);
+
+		String folder = "C:/Users/Wojciech/Documents/studia/mgr/praca mgr/TimeSeries/output/charts/without zeros/sax/";
+		SaveChartsToFile(currentChart, folder, patients);
 
 		// String path = "SaxStrings.txt";
 		// try {
@@ -69,8 +71,8 @@ public class MainForm {
 
 		System.out.println("Koniec");
 	}
-	
-	private static void ConsructArff(List<Patient> patients){
+
+	private static void ConsructArff(List<Patient> patients) {
 		String destPath = "C:/Users/Wojciech/Documents/studia/mgr/praca mgr/TimeSeries/output/patients.arff";
 		PatientsToArffTranslator arffTranslator = new PatientsToArffTranslator();
 		try {

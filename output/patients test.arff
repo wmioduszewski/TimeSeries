@@ -1,0 +1,8 @@
+@RELATION Glaucoma
+@ATTRIBUTE saxString string
+@ATTRIBUTE class {health,sick}
+@DATA
+lgljfjnlgmeccbbccebbbdgjikjlkkmnkkjmloqttssroqsq,health
+ggkmqlkfgilmmjdccdehlmnoprqommmmlkrifenhdfgigjnq,health
+ddfdddcededeegfefhjkijjmnlmpnmonnmsnoqoqrpnnnnom,sick
+migghhkhmjkgfeccbbgccdfelqmlmmnnnooqppqopnonplom,sick
