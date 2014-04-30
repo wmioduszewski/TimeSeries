@@ -1,4 +1,4 @@
-package pl.poznan.put.TimeSeries.DataReaders;
+package pl.poznan.put.TimeSeries.DataOperators;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -8,13 +8,24 @@ import java.util.List;
 
 import org.joda.time.DateTime;
 
+import edu.hawaii.jmotif.lib.ts.TSException;
 import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.Patient;
+import pl.poznan.put.TimeSeries.Model.SaxString;
+import pl.poznan.put.TimeSeries.Sax.SaxPerformer;
 
-public class CsvReader {
+public class DataImporter {
+
+	List<Patient> patients;
+	private String path;
+	
+	public DataImporter(String inputFilePath) {
+		this.path = inputFilePath;
+	}
+
 	// ID,D,TIME,TIMEFF,INTERVAL,TIMEFBI,SAP,DAP,HRBP,MAP,TF,TFADJ,TFGAT,DPP,BODYPOSITION,ACOMMODATION
-	public static List<Patient> ReadData(String filepath) throws IOException {
-		BufferedReader br = new BufferedReader(new FileReader(filepath));
+	private void readData() throws IOException {
+		BufferedReader br = new BufferedReader(new FileReader(path));
 
 		List<Patient> patientList = new ArrayList<Patient>();
 
@@ -59,8 +70,8 @@ public class CsvReader {
 				Characteristic c = new Characteristic(dt, tfadj);
 				lastPatient.AddCharacteristic(c);
 			} catch (NumberFormatException e) {
-				System.out.println("Nie udało się dla pacjenta "
-						+ lastPatient.getId() + " o godzinie " + dt);
+				System.out.println("Missing value for patient ID "
+						+ lastPatient.getId() + " at " + dt);
 				tfadj = 0;
 			}
 			
@@ -69,7 +80,32 @@ public class CsvReader {
 		}
 		br.close();
 
-		return patientList;
-
+		patients = patientList;
+	}
+	
+	private void computeSaxForPatients() {
+		int alphabeatSize = 20;
+		int outputLength = 48;
+		for (Patient patient : patients) {
+			String sax = null;
+			try {
+				sax = SaxPerformer.TranslateTimeSeriesToString(patient,
+						outputLength, alphabeatSize);
+			} catch (CloneNotSupportedException | TSException e) {
+				e.printStackTrace();
+			}
+			patient.setSaxString(new SaxString(sax, outputLength, alphabeatSize));
+		}
+	}
+	
+	public List<Patient> ImportData() throws IOException {
+		readData();
+		computeSaxForPatients();
+				
+		return patients;
+	}
+	
+	public List<Patient> ImportData(int fromIndex, int toIndex) throws IOException {
+		return ImportData().subList(fromIndex, toIndex);
 	}
 }
