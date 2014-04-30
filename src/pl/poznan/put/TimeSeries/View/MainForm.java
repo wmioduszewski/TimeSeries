@@ -13,6 +13,8 @@ import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
 import org.jfree.ui.RefineryUtilities;
 
+import pl.poznan.put.TimeSeries.Classifying.Experiment;
+import pl.poznan.put.TimeSeries.Classifying.FirstClassifier;
 import pl.poznan.put.TimeSeries.DataOperators.DataExporter;
 import pl.poznan.put.TimeSeries.DataOperators.DataImporter;
 import pl.poznan.put.TimeSeries.Model.Patient;
@@ -30,10 +32,12 @@ public class MainForm {
 
 	static int smoothingSize = 5;
 	static float omega = 0.1f;
-	static String inputFilePath = "doc/dane/gTimeData.7.5.20130123a_sub.csv";
+	static String inputFilePath = "data/gTimeData.7.5.20130123a_sub.csv";
 	static String chartsExportFolder = "output/charts/test/";
 	static String arffExportPath = "output/patients.arff";
 	static String saxStringsExportpath = "output/SaxStrings without zeros.txt";
+	static String trainSetPath ="data/patients train.arff";
+	static String testSetPath = "data/patients test.arff";
 
 	public static void main(String[] args) {
 
@@ -53,12 +57,23 @@ public class MainForm {
 		// currentChart = new SmoothChart(smoothingSize);
 		currentChart = new SaxChart(-20.6f, 48.9f);
 		
-		exporter.SaveChartsToFile(currentChart, chartsExportFolder);
+		//exporter.SaveChartsToFile(currentChart, chartsExportFolder);
+		
+		runExperiment();
 
 		System.out.println("Koniec");
 	}
+	
+	private static void runExperiment(){
+		try {
+			Experiment.runExperiment(new FirstClassifier(), trainSetPath, testSetPath);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
-	private void DisplayWindowChart(JFreeChart jchart) {
+	private void displayWindowChart(JFreeChart jchart) {
 		ChartWindow window = new ChartWindow("Time Series", new Dimension(1600,
 				1000), jchart);
 		window.pack();
