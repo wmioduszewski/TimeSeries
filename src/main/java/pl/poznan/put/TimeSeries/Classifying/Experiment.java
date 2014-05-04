@@ -55,9 +55,4 @@ public class Experiment {
 		}
 		System.out.println("\nAccuracy: " + (correct / sum));
 	}
-
-	public static void main(String[] args) throws Exception {
-		FirstClassifier firstClassifier = new FirstClassifier();
-		runExperiment(firstClassifier, "data/spambase-train.arff", "data/spambase-test.arff");
-	}
 }

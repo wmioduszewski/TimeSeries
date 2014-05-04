@@ -66,9 +66,9 @@ public class MainForm {
 	
 	private static void runExperiment(){
 		try {
-			Experiment.runExperiment(new FirstClassifier(), trainSetPath, testSetPath);
+			Experiment.runExperiment(new FirstClassifier(5), trainSetPath, testSetPath);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			// TODO Auto-generangramsInClasses.get(classIndex)ed catch block
 			e.printStackTrace();
 		}
 	}
