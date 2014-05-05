@@ -14,7 +14,7 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.ui.RefineryUtilities;
 
 import pl.poznan.put.TimeSeries.Classifying.Experiment;
-import pl.poznan.put.TimeSeries.Classifying.FirstClassifier;
+import pl.poznan.put.TimeSeries.Classifying.NgramClassifier;
 import pl.poznan.put.TimeSeries.DataOperators.DataExporter;
 import pl.poznan.put.TimeSeries.DataOperators.DataImporter;
 import pl.poznan.put.TimeSeries.Model.Patient;
@@ -36,8 +36,9 @@ public class MainForm {
 	static String chartsExportFolder = "output/charts/test/";
 	static String arffExportPath = "output/patients.arff";
 	static String saxStringsExportpath = "output/SaxStrings without zeros.txt";
-	static String trainSetPath ="data/patients train.arff";
-	static String testSetPath = "data/patients test.arff";
+	static String trainSetPath ="data/validation train.arff";
+	static String testSetPath = "data/validation test.arff";
+	static int ngramSize = 3;
 
 	public static void main(String[] args) {
 
@@ -66,7 +67,7 @@ public class MainForm {
 	
 	private static void runExperiment(){
 		try {
-			Experiment.runExperiment(new FirstClassifier(5), trainSetPath, testSetPath);
+			Experiment.runExperiment(new NgramClassifier(ngramSize), trainSetPath, testSetPath);
 		} catch (Exception e) {
 			// TODO Auto-generangramsInClasses.get(classIndex)ed catch block
 			e.printStackTrace();

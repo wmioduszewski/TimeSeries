@@ -32,7 +32,7 @@ public class Experiment {
 		classifier.buildClassifier(trainSet);
 		System.out.println("Classifier has been learned.");
 
-		System.out.println("                        \th\ty\tdist");
+		System.out.println("                        \th\ty");
 
 		double sum = 0;
 		double correct = 0;
@@ -45,10 +45,7 @@ public class Experiment {
 					+ "\t"
 					+ prediction
 					+ "\t"
-					+ truth
-					+ "\t"
-					+ Arrays.toString(classifier
-							.distributionForInstance(instance)));
+					+ truth);
 			sum++;
 			if (truth == prediction)
 				correct++;

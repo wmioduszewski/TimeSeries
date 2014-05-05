@@ -9,7 +9,7 @@ public class FirstTestCase {
 	@Test
 	public void test() {
 		
-//		for (String str : FirstClassifier.ngramCreator("Woj ciech", 3)) {
+//		for (String str : NgramClassifier.ngramCreator("Woj ciech", 3)) {
 //			System.out.println(str);
 //		}
 	}
