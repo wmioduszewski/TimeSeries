@@ -84,7 +84,7 @@ public class DataImporter {
 	}
 	
 	private void computeSaxForPatients() {
-		int alphabeatSize = 20;
+		int alphabeatSize = 10;
 		int outputLength = 48;
 		for (Patient patient : patients) {
 			String sax = null;

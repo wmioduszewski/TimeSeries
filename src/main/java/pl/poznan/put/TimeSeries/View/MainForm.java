@@ -34,18 +34,18 @@ public class MainForm {
 	static float omega = 0.1f;
 	static String inputFilePath = "data/gTimeData.7.5.20130123a_sub.csv";
 	static String chartsExportFolder = "output/charts/test/";
-	static String arffExportPath = "output/patients.arff";
-	static String saxStringsExportpath = "output/SaxStrings without zeros.txt";
-	static String trainSetPath ="data/validation train.arff";
-	static String testSetPath = "data/validation test.arff";
-	static int ngramSize = 3;
+	static String arffExportPath = "output/patients alph10.arff";
+	static String saxStringsExportpath = "output/SaxStrings alph 10.txt";
+	static String trainSetPath ="data/patients train.arff";
+	static String testSetPath = "data/patients test.arff";
+	static int ngramSize = 5;
 
 	public static void main(String[] args) {
 
 		DataImporter importer = new DataImporter(inputFilePath);
 		List<Patient> patients = null;
 		try {
-			patients = importer.ImportData(0,1);
+			patients = importer.ImportData();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -60,7 +60,10 @@ public class MainForm {
 		
 		//exporter.SaveChartsToFile(currentChart, chartsExportFolder);
 		
-		runExperiment();
+		
+			exporter.ConstructArff(arffExportPath);
+		
+		//runExperiment();
 
 		System.out.println("Koniec");
 	}
