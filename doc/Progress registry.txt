@@ -4,6 +4,7 @@
 06-15.05.2014
 * przejrzenie zbiorów Eamonn'a - zdaje siê ¿e wszystkie dostêpne zbiory danych mo¿na zaadaptowaæ do pracy
 * zmodyfikowanie dotychczasowego projektu tak, by mo¿na by³o analizowaæ zbiory Eamonna
+* translacja csv (jaskra) do formatu Eamonna
 * zapoznanie siê z ide¹ Time Warping
 * seminarium :)
 
@@ -13,6 +14,8 @@ Nieoczekiwanie im mniejszy n-gram, tym wiêksza skutecznoœæ (1gramy- 0.72, 3gramy
 * czy JRip i J48 na pewno s¹ do stringów ?
 weka.classifiers.rules.JRip: Cannot handle string attributes!
 weka.classifiers.trees.j48.C45PruneableClassifierTree: Cannot handle string attributes!
+
+* czy nie martwi nas to ¿e SAX analizuje ka¿d¹ instancjê osobno ? (bez globalnych min maxow)
 
 
 *** plik utworzono dnia 2014-05-10
