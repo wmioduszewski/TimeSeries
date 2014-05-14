@@ -79,8 +79,8 @@ public class MainForm {
 	
 	private static void runExperiment(){
 		try {
-			Classifier classifier = new NgramClassifier(ngramSize);
-			//Classifier classifier = new JRip();
+//			Classifier classifier = new NgramClassifier(ngramSize);
+			Classifier classifier = new J48();
 			Experiment.runExperiment(classifier, trainSetPath, testSetPath);
 		} catch (Exception e) {
 			// TODO Auto-generangramsInClasses.get(classIndex)ed catch block

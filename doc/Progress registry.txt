@@ -1,9 +1,18 @@
-13-20.05.2014
+15-20.05.2014
+*
 
-06-13.05.2014
+06-15.05.2014
 * przejrzenie zbiorów Eamonn'a - zdaje siê ¿e wszystkie dostêpne zbiory danych mo¿na zaadaptowaæ do pracy
-* 
+* zmodyfikowanie dotychczasowego projektu tak, by mo¿na by³o analizowaæ zbiory Eamonna
+* zapoznanie siê z ide¹ Time Warping
+* seminarium :)
 
+* eksperymentalne przeanalizowanie danych wybranego problemu Eamonna na moim histogramie
+Nieoczekiwanie im mniejszy n-gram, tym wiêksza skutecznoœæ (1gramy- 0.72, 3gramy- 0.56)
+
+* czy JRip i J48 na pewno s¹ do stringów ?
+weka.classifiers.rules.JRip: Cannot handle string attributes!
+weka.classifiers.trees.j48.C45PruneableClassifierTree: Cannot handle string attributes!
 
 
 *** plik utworzono dnia 2014-05-10
