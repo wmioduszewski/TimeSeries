@@ -14,17 +14,17 @@ import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Model.SaxString;
 import pl.poznan.put.TimeSeries.Sax.SaxPerformer;
 
-public class DataImporter {
+public class DataImporterCsv {
 
 	List<Patient> patients;
 	private String path;
 	
-	public DataImporter(String inputFilePath) {
+	public DataImporterCsv(String inputFilePath) {
 		this.path = inputFilePath;
 	}
 
 	// ID,D,TIME,TIMEFF,INTERVAL,TIMEFBI,SAP,DAP,HRBP,MAP,TF,TFADJ,TFGAT,DPP,BODYPOSITION,ACOMMODATION
-	private void readData() throws IOException {
+	private void readCsvData() throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader(path));
 
 		List<Patient> patientList = new ArrayList<Patient>();
@@ -65,15 +65,17 @@ public class DataImporter {
 			// Minute exTime = new Minute(minutes, hours,days,1,1900);
 			DateTime dt = new DateTime(2014, 4, days, hours, minutes, 0);
 			float tfadj;
-			try {
+			Characteristic c = new Characteristic(dt, 0);;
+			try {				
 				tfadj = Float.parseFloat(fields[11]);
-				Characteristic c = new Characteristic(dt, tfadj);
-				lastPatient.AddCharacteristic(c);
+				c.setTfadj(tfadj);
+				
 			} catch (NumberFormatException e) {
 				System.out.println("Missing value for patient ID "
-						+ lastPatient.getId() + " at " + dt);
-				tfadj = 0;
+						+ lastPatient.getId() + " at " + dt);				
 			}
+			
+			lastPatient.AddCharacteristic(c);
 			
 			lastId = currentId;
 			currLine = br.readLine();
@@ -99,7 +101,7 @@ public class DataImporter {
 	}
 	
 	public List<Patient> ImportData() throws IOException {
-		readData();
+		readCsvData();
 		computeSaxForPatients();
 				
 		return patients;

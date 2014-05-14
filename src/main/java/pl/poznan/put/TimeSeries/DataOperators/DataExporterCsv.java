@@ -13,13 +13,13 @@ import org.jfree.chart.JFreeChart;
 
 import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Renderers.ChartBase;
-import pl.poznan.put.TimeSeries.Util.PatientsToArffTranslator;
+import pl.poznan.put.TimeSeries.Util.PatientToArffTranslator;
 
-public class DataExporter {
+public class DataExporterCsv {
 
 	private List<Patient> patients;
 
-	public DataExporter(List<Patient> patients) {
+	public DataExporterCsv(List<Patient> patients) {
 		this.patients = patients;
 	}
 
@@ -55,13 +55,30 @@ public class DataExporter {
 	}
 
 	public void ConstructArff(String destinationPath) {
-		PatientsToArffTranslator arffTranslator = new PatientsToArffTranslator();
+		PatientToArffTranslator arffTranslator = new PatientToArffTranslator();
 		try {
 			arffTranslator.savePatientsToArffData(patients, destinationPath);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	public void exportCsvToEamonnFormat(String destPath) throws IOException {
+		BufferedWriter writer = new BufferedWriter(new FileWriter(destPath));
+		for (Patient patient : patients) {
+			float patClass = patient.isSick() ? 1 : 0;
+			writer.write(String.format("%15.7e", patClass));
+			
+			for(int i =0;i<patient.getCharacteristics().size();i++){
+				writer.write(String.format(" %15.7e", patient.getCharacteristics().get(i).getTfadj()));
+			}
+			
+			writer.write(System.getProperty("line.separator"));
+		}
+
+		writer.flush();
+		writer.close();
 	}
 
 }

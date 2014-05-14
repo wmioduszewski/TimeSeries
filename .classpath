@@ -3,7 +3,7 @@
 	<classpathentry kind="src" path="src/main/java"/>
 	<classpathentry kind="src" path="src/main/resources"/>
 	<classpathentry kind="src" path="src/test/java"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="lib" path="C:/Users/Wojciech/Documents/studia/mgr/praca mgr/TimeSeries/contrib/joda-time-2.3/joda-time-2.3.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/C:/Users/Wojciech/Documents/studia/mgr/praca%20mgr/TimeSeries/contrib/joda-time-2.3/joda-time-2.3-javadoc.jar!/"/>

@@ -9,17 +9,28 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import pl.poznan.put.TimeSeries.Model.Patient;
+import pl.poznan.put.TimeSeries.Model.UnifiedRecordType;
 
-public class PatientsToArffTranslator {
+public class PatientToArffTranslator {
 
 	private String relationTitle = "Glaucoma";
 	private StringBuilder arffFileContent;
 	private Map<String, String> attributes;
 	private List<Patient> patients;
 
-	public PatientsToArffTranslator() {
+	public PatientToArffTranslator() {
 		arffFileContent = new StringBuilder();
 		attributes = new HashMap<String, String>();
+	}
+	
+	public void savePatientsToArffData(List<Patient> patients,
+			String destinationPath) throws FileNotFoundException {
+		this.patients = patients;
+		buildFileContent();
+		PrintWriter writer = new PrintWriter(new File(destinationPath));
+		writer.write(arffFileContent.toString());
+		writer.flush();
+		writer.close();
 	}
 
 	private void buildFileContent() {
@@ -44,16 +55,6 @@ public class PatientsToArffTranslator {
 		attributes.put("saxString", "string");
 		attributes.put("class", "{" + PatientStates.Health + ","
 				+ PatientStates.Sick + "}");
-	}
-
-	public void savePatientsToArffData(List<Patient> patients,
-			String destinationPath) throws FileNotFoundException {
-		this.patients = patients;
-		buildFileContent();
-		PrintWriter writer = new PrintWriter(new File(destinationPath));
-		writer.write(arffFileContent.toString());
-		writer.flush();
-		writer.close();
 	}
 
 	private void insertRelationName() {
