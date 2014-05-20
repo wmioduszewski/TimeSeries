@@ -45,8 +45,8 @@ public class DataImporterEamonn {
 	public List<UnifiedRecordType> ImportEamonnData() throws Exception{
 		readData();
 		
-		int alphabeatSize = 20;
-		int outputLength = 600;
+		int alphabeatSize = 3;
+		int outputLength = 5;
 		for (UnifiedRecordType record : records) {
 			String sax = SaxPerformer.TranslateUnifiedRecordToString(record, outputLength, alphabeatSize);
 			record.setSaxString(sax);

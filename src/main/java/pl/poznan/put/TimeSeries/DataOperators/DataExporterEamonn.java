@@ -33,7 +33,7 @@ public class DataExporterEamonn {
 	public void ConstructArff(String destinationPath) {
 		 RecordToArffTranslator translator= new RecordToArffTranslator("Lighting2");
 		try {
-			translator.saveUnifiedRecordsToArffData(records, destinationPath);
+			translator.saveUnifiedRecordsToArffData(records, destinationPath,1,true);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

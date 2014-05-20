@@ -28,6 +28,7 @@ import pl.poznan.put.TimeSeries.Renderers.CleanChart;
 import pl.poznan.put.TimeSeries.Renderers.SaxChart;
 import pl.poznan.put.TimeSeries.Renderers.SmoothChart;
 import pl.poznan.put.TimeSeries.Sax.SaxPerformer;
+import pl.poznan.put.TimeSeries.Util.Configuration;
 import pl.poznan.put.TimeSeries.Util.PatientToArffTranslator;
 import weka.classifiers.Classifier;
 import weka.classifiers.rules.JRip;
@@ -42,17 +43,16 @@ public class MainForm {
 	static String chartsExportFolder = "output/charts/test/";
 	static String arffExportPath = "output/patients alph10.arff";
 	static String saxStringsExportpath = "output/SaxStrings alph 10.txt";
-	static String trainSetPath ="data/lighting2 train.arff";
-	static String testSetPath = "data/lighting2 test.arff";
+	static String trainSetPath;
+	static String testSetPath;
 	static int ngramSize = 1;
 
 	public static void main(String[] args) throws Exception {
-
+		readProperties();
 		DataImporterCsv importer = new DataImporterCsv(inputFilePath);
 		List<Patient> patients = null;
 		
 		//patients = importer.ImportData();
-		
 
 		DataExporterCsv exporter = new DataExporterCsv(patients);
 		ChartBase currentChart;
@@ -67,20 +67,29 @@ public class MainForm {
 		//exporter.ConstructArff(arffExportPath);
 		//exporter.exportCsvToEamonnFormat(p);
 		
-		DataImporterEamonn eamonnImporter = new DataImporterEamonn("C:/Users/Wojciech/Documents/studia/mgr/praca mgr/stationary contrib/dataset/Lighting2/Lighting2_TRAIN");
+		DataImporterEamonn eamonnImporter = new DataImporterEamonn
+				("C:/Users/Wojciech/Documents/studia/mgr/praca mgr/stationary contrib/dataset/Lighting2/Lighting2_TRAIN");
 		List<UnifiedRecordType> data = eamonnImporter.ImportEamonnData();
 		DataExporterEamonn eamonnExporter = new DataExporterEamonn(data);
-		//eamonnExporter.ConstructArff("data/lighting2 train.arff");
+//		eamonnExporter.ConstructArff("data/lighting2 train.arff");
 		
-		runExperiment();
+			
+		//runExperiment();
 
 		System.out.println("Koniec");
 	}
+	
+	private static void readProperties(){
+		trainSetPath = Configuration.getProperty("trainSetPath");
+		testSetPath = Configuration.getProperty("testSetPath");
+	}
+	
 	
 	private static void runExperiment(){
 		try {
 //			Classifier classifier = new NgramClassifier(ngramSize);
 			Classifier classifier = new J48();
+			//Classifier classifier = new JRip();
 			Experiment.runExperiment(classifier, trainSetPath, testSetPath);
 		} catch (Exception e) {
 			// TODO Auto-generangramsInClasses.get(classIndex)ed catch block
