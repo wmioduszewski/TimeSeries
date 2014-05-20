@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import pl.poznan.put.TimeSeries.Model.UnifiedRecordType;
+import pl.poznan.put.TimeSeries.Util.SaxPerformer;
 
 public class GeneralCase {
 

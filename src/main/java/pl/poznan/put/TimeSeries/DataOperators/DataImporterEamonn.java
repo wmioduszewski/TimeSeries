@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 import pl.poznan.put.TimeSeries.Model.UnifiedRecordType;
-import pl.poznan.put.TimeSeries.Sax.SaxPerformer;
+import pl.poznan.put.TimeSeries.Util.SaxPerformer;
 
 public class DataImporterEamonn {
 

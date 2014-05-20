@@ -31,7 +31,6 @@ public class Experiment {
 
 		classifier.buildClassifier(trainSet);
 		System.out.println("Classifier has been learned.");
-
 		System.out.println("                        \th\ty");
 
 		double sum = 0;

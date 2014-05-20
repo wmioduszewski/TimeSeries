@@ -1,4 +1,4 @@
-package pl.poznan.put.TimeSeries.Sax;
+package pl.poznan.put.TimeSeries.Util;
 
 import java.util.List;
 
