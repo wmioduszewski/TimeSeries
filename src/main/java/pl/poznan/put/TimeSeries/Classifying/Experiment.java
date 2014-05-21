@@ -10,7 +10,7 @@ import weka.core.Instances;
 
 public class Experiment {
 
-	public static void runExperiment(Classifier classifier,
+	public static double runExperiment(Classifier classifier,
 			String trainSetPath, String testSetPath) throws Exception {
 		BufferedReader readerTrain = new BufferedReader(new FileReader(
 				trainSetPath));
@@ -27,11 +27,11 @@ public class Experiment {
 		if (testSet.classIndex() == -1)
 			testSet.setClassIndex(testSet.numAttributes() - 1);
 
-		System.out.println("Data loaded.");
+		//System.out.println("Data loaded.");
 
 		classifier.buildClassifier(trainSet);
-		System.out.println("Classifier has been learned.");
-		System.out.println("                        \th\ty");
+		//System.out.println("Classifier has been learned.");
+		//System.out.println("                        \th\ty");
 
 		double sum = 0;
 		double correct = 0;
@@ -39,16 +39,19 @@ public class Experiment {
 			Instance instance = testSet.instance(i);
 			int truth = (int) instance.classValue();
 			int prediction = (int) classifier.classifyInstance(instance);
-			System.out.println("Prediction for instance "
-					+ i
-					+ "\t"
-					+ prediction
-					+ "\t"
-					+ truth);
+//			System.out.println("Prediction for instance "
+//					+ i
+//					+ "\t"
+//					+ prediction
+//					+ "\t"
+//					+ truth);
 			sum++;
 			if (truth == prediction)
 				correct++;
 		}
-		System.out.println("\nAccuracy: " + (correct / sum));
+		double accuracy = correct / sum;
+		//System.out.println("\nAccuracy: " + accuracy);
+		
+		return accuracy;
 	}
 }

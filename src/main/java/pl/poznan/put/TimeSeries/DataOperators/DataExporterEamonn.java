@@ -7,37 +7,42 @@ import java.io.IOException;
 import java.util.List;
 
 import pl.poznan.put.TimeSeries.Model.UnifiedRecordType;
-import pl.poznan.put.TimeSeries.Util.PatientToArffTranslator;
+import pl.poznan.put.TimeSeries.Util.Configuration;
 import pl.poznan.put.TimeSeries.Util.RecordToArffTranslator;
 
 public class DataExporterEamonn {
 
 	private List<UnifiedRecordType> records;
-	
+
 	public DataExporterEamonn(List<UnifiedRecordType> records) {
 		this.records = records;
 	}
 
-	public void Export(String path) throws IOException{
+	public void Export(String path) throws IOException {
 		BufferedWriter writer = new BufferedWriter(new FileWriter(path));
-				
+
 		for (UnifiedRecordType record : records) {
-			String text = String.format("%e %s", record.getDestClass(), record.getSaxString());
+			String text = String.format("%e %s", record.getDestClass(),
+					record.getSaxString());
 			writer.write(text);
 		}
-		
+
 		writer.flush();
 		writer.close();
 	}
-	
+
 	public void ConstructArff(String destinationPath) {
-		 RecordToArffTranslator translator= new RecordToArffTranslator("Lighting2");
+		RecordToArffTranslator translator = new RecordToArffTranslator(
+				"Lighting2");
 		try {
-			translator.saveUnifiedRecordsToArffData(records, destinationPath,1,true);
+			int attrLength = Integer.parseInt(Configuration
+					.getProperty("saxAttributeLength"));
+			translator.saveUnifiedRecordsToArffData(records, destinationPath,
+					attrLength, true);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
+
 }

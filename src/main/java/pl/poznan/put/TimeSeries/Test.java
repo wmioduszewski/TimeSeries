@@ -2,16 +2,37 @@ package pl.poznan.put.TimeSeries;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Test {
 
 	public static void main(String[] args) {
-		double a = -12343.4356546000;
-		BigDecimal bd = new BigDecimal(45);
-		System.out.println(String.format("number: %15.7e",a));		
-		
-		DecimalFormat formatone = new DecimalFormat("#####.e000");
-		System.out.println(formatone.format(a));
+		Permutate();
 	}
+	public static void Permutate()
+	{
+		 LinkedList<char[]> items = new LinkedList<char[]>();
+	        char[] item = new char[3];
+	        char[] input = {'A', 'B'};
+	        rep(items, input, item, 0);
 
+
+	        for (char[] rep : items) {
+	            System.out.println(rep);
+	        }
+	}
+	
+	 private static void rep(LinkedList<char[]> reps, char[] input, char[] item, int count){
+	        if (count < item.length){
+	            for (int i = 0; i < input.length; i++) {
+	                item[count] = input[i];
+	                rep(reps, input, item, count+1);
+	            }
+	        }else{
+	            reps.add(item.clone());
+	        }
+	    }
 }

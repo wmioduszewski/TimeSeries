@@ -12,13 +12,14 @@ import edu.hawaii.jmotif.lib.ts.TSException;
 import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Model.SaxString;
+import pl.poznan.put.TimeSeries.Util.Configuration;
 import pl.poznan.put.TimeSeries.Util.SaxPerformer;
 
 public class DataImporterCsv {
 
 	List<Patient> patients;
 	private String path;
-	
+
 	public DataImporterCsv(String inputFilePath) {
 		this.path = inputFilePath;
 	}
@@ -65,18 +66,19 @@ public class DataImporterCsv {
 			// Minute exTime = new Minute(minutes, hours,days,1,1900);
 			DateTime dt = new DateTime(2014, 4, days, hours, minutes, 0);
 			float tfadj;
-			Characteristic c = new Characteristic(dt, 0);;
-			try {				
+			Characteristic c = new Characteristic(dt, 0);
+			
+			try {
 				tfadj = Float.parseFloat(fields[11]);
 				c.setTfadj(tfadj);
-				
+
 			} catch (NumberFormatException e) {
 				System.out.println("Missing value for patient ID "
-						+ lastPatient.getId() + " at " + dt);				
+						+ lastPatient.getId() + " at " + dt);
 			}
-			
+
 			lastPatient.AddCharacteristic(c);
-			
+
 			lastId = currentId;
 			currLine = br.readLine();
 		}
@@ -84,10 +86,12 @@ public class DataImporterCsv {
 
 		patients = patientList;
 	}
-	
+
 	private void computeSaxForPatients() {
-		int alphabeatSize = 10;
-		int outputLength = 48;
+		int alphabeatSize = Integer.parseInt(Configuration
+				.getProperty("saxAlphabeatSize"));;
+		int outputLength = Integer.parseInt(Configuration
+				.getProperty("saxOutputLength"));;
 		for (Patient patient : patients) {
 			String sax = null;
 			try {
@@ -99,15 +103,16 @@ public class DataImporterCsv {
 			patient.setSaxString(new SaxString(sax, outputLength, alphabeatSize));
 		}
 	}
-	
+
 	public List<Patient> ImportData() throws IOException {
 		readCsvData();
 		computeSaxForPatients();
-				
+
 		return patients;
 	}
-	
-	public List<Patient> ImportData(int fromIndex, int toIndex) throws IOException {
+
+	public List<Patient> ImportData(int fromIndex, int toIndex)
+			throws IOException {
 		return ImportData().subList(fromIndex, toIndex);
 	}
 }

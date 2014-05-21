@@ -1,5 +1,8 @@
 15-20.05.2014
-*
+* korzystanie z pliku ze sta³ymi
+* generowanie pliku arff z roznymi opcjami d³ugoœci atrybutu (automatyczne dzielenie)
+* generowanie atrybutów nominalnych
+
 
 06-15.05.2014
 * przejrzenie zbiorów Eamonn'a - zdaje siê ¿e wszystkie dostêpne zbiory danych mo¿na zaadaptowaæ do pracy

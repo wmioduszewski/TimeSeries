@@ -39,55 +39,20 @@ public class Main {
 
 	static int smoothingSize = 5;
 	static float omega = 0.1f;
-	static String inputFilePath = "data/gTimeData.7.5.20130123a_sub.csv";
-	static String chartsExportFolder = "output/charts/test/";
-	static String arffExportPath = "output/patients alph10.arff";
-	static String saxStringsExportpath = "output/SaxStrings alph 10.txt";
-	static String trainSetPath;
-	static String testSetPath;
 	static int ngramSize = 1;
 
 	public static void main(String[] args) throws Exception {
-		readProperties();
-		importData();
 		
-		String p = "data/GlaucomaEamonn";
-		//exporter.ConstructArff(arffExportPath);
-		//exporter.exportCsvToEamonnFormat(p);
-		
-		DataImporterEamonn eamonnImporter = new DataImporterEamonn
-				("C:/Users/Wojciech/Documents/studia/mgr/praca mgr/stationary contrib/dataset/Lighting2/Lighting2_TRAIN");
-		List<UnifiedRecordType> data = eamonnImporter.ImportEamonnData();
-		DataExporterEamonn eamonnExporter = new DataExporterEamonn(data);
-//		eamonnExporter.ConstructArff("data/lighting2 train.arff");
-			
-		//runExperiment();
-
-		System.out.println("Koniec");
-	}
-	
-	private static void readProperties(){
-		trainSetPath = Configuration.getProperty("trainSetPath");
-		testSetPath = Configuration.getProperty("testSetPath");
+		FlowHandler flow = new FlowHandler();
+		flow.startProcessing();
+		System.out.println("End.");
 	}
 	
 	private static void importData(){
-		DataImporterCsv importer = new DataImporterCsv(inputFilePath);
+		DataImporterCsv importer = new DataImporterCsv("path");
 		List<Patient> patients = null;
 		
 		//patients = importer.ImportData();
 		DataExporterCsv exporter = new DataExporterCsv(patients);
-	}
-	
-	private static void runExperiment(){
-		try {
-//			Classifier classifier = new NgramClassifier(ngramSize);
-			Classifier classifier = new J48();
-			//Classifier classifier = new JRip();
-			Experiment.runExperiment(classifier, trainSetPath, testSetPath);
-		} catch (Exception e) {
-			// TODO Auto-generangramsInClasses.get(classIndex)ed catch block
-			e.printStackTrace();
-		}
 	}
 }
