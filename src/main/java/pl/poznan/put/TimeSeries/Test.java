@@ -7,10 +7,12 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+import pl.poznan.put.TimeSeries.Reporting.ResultReporter;
+
 public class Test {
 
-	public static void main(String[] args) {
-		Permutate();
+	public static void main(String[] args) throws Exception {
+		//ResultReporter.Test();
 	}
 	public static void Permutate()
 	{

@@ -14,5 +14,6 @@
 	<classpathentry kind="lib" path="C:/Users/Wojciech/Documents/studia/mgr/praca mgr/TimeSeries/contrib/jmotif/jmotif.lib.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Wojciech/Documents/studia/mgr/praca mgr/TimeSeries/contrib/weka/weka.jar" sourcepath="C:/Users/Wojciech/Documents/studia/mgr/praca mgr/TimeSeries/contrib/weka/weka-src.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="C:/Users/Wojciech/Documents/studia/mgr/praca mgr/TimeSeries/contrib/MS Office API/jxl.jar" sourcepath="C:/Users/Wojciech/.m2/repository/net/sourceforge/jexcelapi/jxl/2.6.12/jxl-2.6.12-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
