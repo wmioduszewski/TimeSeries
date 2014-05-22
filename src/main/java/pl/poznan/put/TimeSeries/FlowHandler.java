@@ -25,8 +25,6 @@ public class FlowHandler {
 	private String[] modes = { "_TRAIN", "_TEST" };
 	private List<Classifier> classifiers;
 
-	// private LinkedList<>
-
 	public FlowHandler() {
 		this.isFolder = Configuration.getProperty("isFolderDataUsed").equals(
 				"1") ? true : false;
@@ -68,9 +66,6 @@ public class FlowHandler {
 					+ datasetName + "_TRAIN.arff", "temp/" + datasetName
 					+ "_TEST.arff");
 				record.AddAccuracy(accuracy);
-				
-				System.out.println(datasetName + "\t\t\tclassyfying accuracy: "
-						+ accuracy);	
 			}
 			report.AddReportRecord(record);
 		}

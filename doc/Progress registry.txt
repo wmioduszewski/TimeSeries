@@ -1,7 +1,8 @@
-15-20.05.2014
+15-23.05.2014
 * korzystanie z pliku ze sta³ymi
 * generowanie pliku arff z roznymi opcjami d³ugoœci atrybutu (automatyczne dzielenie)
 * generowanie atrybutów nominalnych
+* automatyczne generowanie pliku wynikowego xls
 
 
 06-15.05.2014
