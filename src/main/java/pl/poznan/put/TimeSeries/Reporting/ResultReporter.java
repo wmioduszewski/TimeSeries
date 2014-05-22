@@ -2,6 +2,7 @@ package pl.poznan.put.TimeSeries.Reporting;
 
 import java.io.File;
 import java.io.IOException;
+import java.security.acl.LastOwnerException;
 import java.util.List;
 
 import pl.poznan.put.TimeSeries.Util.Configuration;
@@ -21,6 +22,7 @@ public class ResultReporter {
 	private WritableWorkbook workbook;
 	private WritableSheet currentSheet;
 	private EntireReport report;
+	private String newXlsFilePath;
 
 	public ResultReporter(EntireReport report) {
 		this.path = Configuration.getProperty("xlsReportPath");
@@ -37,8 +39,12 @@ public class ResultReporter {
 	private void getWorkbook() throws Exception {
 		File xlsFile = new File(path);
 		if (xlsFile.exists()) {
+			newXlsFilePath = path.substring(0, path.lastIndexOf("."));
+			newXlsFilePath += " temp";
+			newXlsFilePath += path.substring(path.lastIndexOf("."),
+					path.length());
 			Workbook existingWorkbook = Workbook.getWorkbook(xlsFile);
-			File newXlsFile = new File(path + " temp");
+			File newXlsFile = new File(newXlsFilePath);
 			workbook = Workbook.createWorkbook(newXlsFile, existingWorkbook);
 		} else {
 			workbook = Workbook.createWorkbook(xlsFile);
@@ -87,5 +93,17 @@ public class ResultReporter {
 	private void endReporting() throws Exception {
 		workbook.write();
 		workbook.close();
+
+		if (newXlsFilePath != null) {
+			File newReport = new File(newXlsFilePath);
+
+			if (newReport.exists()) {
+				File oldReport = new File(path);
+				String name = path.substring(path.lastIndexOf("/"),
+						path.length());
+				oldReport.delete();
+				newReport.renameTo(oldReport);
+			}
+		}
 	}
 }
