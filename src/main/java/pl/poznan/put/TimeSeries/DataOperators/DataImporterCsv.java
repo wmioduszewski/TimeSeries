@@ -52,7 +52,7 @@ public class DataImporterCsv {
 				isFirstLine = false;
 			}
 
-			int diagnosis = Integer.parseInt(fields[1]);
+			int diagnosis = Integer.parseInt(fields[1].trim());
 			lastPatient.setSick(diagnosis > 0);
 			String[] minuteElems = fields[2].trim().split(":");
 
@@ -66,7 +66,7 @@ public class DataImporterCsv {
 			// Minute exTime = new Minute(minutes, hours,days,1,1900);
 			DateTime dt = new DateTime(2014, 4, days, hours, minutes, 0);
 			float tfadj;
-			Characteristic c = new Characteristic(dt, 0);
+			Characteristic c = new Characteristic(dt);
 			
 			try {
 				tfadj = Float.parseFloat(fields[11]);
@@ -77,7 +77,7 @@ public class DataImporterCsv {
 						+ lastPatient.getId() + " at " + dt);
 			}
 
-			lastPatient.AddCharacteristic(c);
+			lastPatient.addCharacteristic(c);
 
 			lastId = currentId;
 			currLine = br.readLine();

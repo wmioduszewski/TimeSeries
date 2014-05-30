@@ -3,13 +3,19 @@ package pl.poznan.put.TimeSeries.Model;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.joda.time.DateTime;
+
 public class Patient implements Cloneable {
 
 	int id;
-	List<Characteristic> characteristics;
-	String chartCaption;
-	SaxString saxString;
+	float age;
 	boolean isSick;
+	DateTime awake;
+	DateTime asleep;
+	SaxString saxString;
+	
+	String chartCaption;
+	List<Characteristic> characteristics;
 
 	public boolean isSick() {
 		return isSick;
@@ -26,7 +32,7 @@ public class Patient implements Cloneable {
 		chartCaption = "" + id;
 	}
 
-	public void AddCharacteristic(Characteristic c) {
+	public void addCharacteristic(Characteristic c) {
 		characteristics.add(c);
 	}
 
@@ -61,6 +67,31 @@ public class Patient implements Cloneable {
 	public int getId() {
 		return id;
 	}
+	
+	public float getAge() {
+		return age;
+	}
+
+	public void setAge(float age) {
+		this.age = age;
+	}
+
+	public DateTime getAwake() {
+		return awake;
+	}
+
+	public void setAwake(DateTime awake) {
+		this.awake = awake;
+	}
+
+	public DateTime getAsleep() {
+		return asleep;
+	}
+
+	public void setAsleep(DateTime asleep) {
+		this.asleep = asleep;
+	}
+
 
 	public Object clone() {
 		try {

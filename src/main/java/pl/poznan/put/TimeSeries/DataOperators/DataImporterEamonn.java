@@ -28,7 +28,7 @@ public class DataImporterEamonn {
 		String currLine = br.readLine();
 
 		while (currLine != null) {
-			tokenizer = new StringTokenizer(currLine);
+			tokenizer = new StringTokenizer(currLine);			
 			double destClass = Double.parseDouble(tokenizer.nextToken());
 			int valsCount = tokenizer.countTokens();
 			double[] vals = new double[valsCount];

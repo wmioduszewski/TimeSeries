@@ -55,4 +55,14 @@ public class Main {
 		//patients = importer.ImportData();
 		DataExporterCsv exporter = new DataExporterCsv(patients);
 	}
+	
+	private static void CsvToEamonn() throws IOException {
+		String path = "C:/Users/Wojciech/Documents/studia/mgr/praca mgr/stationary data/dataset3/gTimeData.7.5.20130123a_sub.csv";
+		DataImporterCsv csvImport = new DataImporterCsv(path);
+		
+		List<Patient> patients = csvImport.ImportData();
+		
+		DataExporterCsv exp = new DataExporterCsv(patients);
+		exp.exportCsvToEamonnFormat("C:/Users/Wojciech/Documents/studia/mgr/praca mgr/stationary data/dataset3/Glaucoma_TEST");	
+	}
 }
