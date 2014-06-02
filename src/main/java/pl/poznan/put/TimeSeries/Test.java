@@ -9,12 +9,17 @@ import java.util.LinkedList;
 import java.util.List;
 
 import pl.poznan.put.TimeSeries.DataOperators.PureDataImporter;
+import pl.poznan.put.TimeSeries.Model.RegressionResult;
 import pl.poznan.put.TimeSeries.Reporting.ResultReporter;
+import pl.poznan.put.TimeSeries.Util.RegressionCalculator;
 
 public class Test {
 
 	public static void main(String[] args) throws Exception {
-		test();
+		//test();
+		
+		RegressionResult res = RegressionCalculator.ComputeRegression(null, null);
+		System.out.println(res.getSlope() + "x + " + res.getIntercept());
 	}
 	
 	
