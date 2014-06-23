@@ -1,5 +1,6 @@
 package pl.poznan.put.TimeSeries.DataOperators;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
@@ -12,58 +13,66 @@ import pl.poznan.put.TimeSeries.Constants.Limits;
 import pl.poznan.put.TimeSeries.Constants.TimeLimitPair;
 import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.Patient;
+import pl.poznan.put.TimeSeries.Model.PatientGroup;
 
 public class DataDivider {
 
-	private List<Patient> patients;
-
-	public DataDivider(List<Patient> patients) {
-		super();
-		this.patients = patients;
-	}
-
-	public void divideData() {
-		for (AgeLimit limit : Limits.AgeLimits) {
+	public static List<PatientGroup> divideData(List<Patient> patients) {
+		List<PatientGroup> patientGroups = new ArrayList<PatientGroup>();
+		for (AgeLimit ageLimit : Limits.AgeLimits) {
 			Stream<Patient> agedPatientsStream = patients.stream().filter(
-					x -> x.getAge() >= limit.getLowerBound()
-							&& x.getAge() <= limit.getUpperBound());
-			System.out.println("AgeLimit: " + limit.getLowerBound() + " - "
-					+ limit.getUpperBound());
+					x -> x.getAge() >= ageLimit.getLowerBound()
+							&& x.getAge() <= ageLimit.getUpperBound());
+			System.out.println("AgeLimit: " + ageLimit.getLowerBound() + " - "
+					+ ageLimit.getUpperBound());
 
 			List<Patient> agedPatients = agedPatientsStream.collect(Collectors
 					.toList());
+			for (TimeLimitPair timeLimit : Limits.TimeLimits) {
 
-			for (Patient patient : agedPatients) {
-				System.out.println(patient.getAge());
+				PatientGroup patientGroup = new PatientGroup(timeLimit,
+						ageLimit);
 
-				for (TimeLimitPair timeLimit : Limits.TimeLimits) {
+				for (Patient patient : agedPatients) {
+					DateTime lowerBound = ComputeTimeBound(ageLimit, timeLimit,
+							patient, true);
+					DateTime upperBound = ComputeTimeBound(ageLimit, timeLimit,
+							patient, false);
 
-					DateTime lowerBound = null;
-					DateTime upperBound = null;
-					if (timeLimit.getLowerOption() == TimeLimitPair.Asleep)
-						lowerBound = patient.getAsleep();
-					else if (timeLimit.getLowerOption() == TimeLimitPair.Awake)
-						lowerBound = patient.getAwake();
-					if (timeLimit.getUpperOption() == TimeLimitPair.Asleep)
-						upperBound = patient.getAsleep();
-					else if (timeLimit.getUpperOption() == TimeLimitPair.Awake)
-						upperBound = patient.getAwake();
-					lowerBound = lowerBound
-							.plusHours(timeLimit.getLowerMod());
-					upperBound = upperBound
-							.plusHours(timeLimit.getUpperMod());
-					System.out.println("from: " + lowerBound + " to: " + upperBound);
+					Patient newPatient = (Patient) patient.clone();
+					newPatient
+							.setCharacteristics(new ArrayList<Characteristic>());
+
 					for (Characteristic characteristic : patient
 							.getCharacteristics()) {
 						DateTime time = characteristic.getExaminationTime();
-						if (time.isAfter(lowerBound) && time.isBefore(upperBound)) {
-							System.out.println(time);
+						if (time.isAfter(lowerBound)
+								&& time.isBefore(upperBound)) {
+							newPatient.addCharacteristic(characteristic);
 						}
-
 					}
+					patientGroup.addPatient(newPatient);
 				}
+				patientGroups.add(patientGroup);
 			}
-
 		}
+		return patientGroups;
+	}
+
+	private static DateTime ComputeTimeBound(AgeLimit ageLimit,
+			TimeLimitPair timeLimit, Patient patient, Boolean isLower) {
+		DateTime bound = null;
+
+		char option = isLower ? timeLimit.getLowerOption() : timeLimit
+				.getUpperOption();
+		int mod = isLower ? timeLimit.getLowerMod() : timeLimit.getUpperMod();
+
+		if (option == TimeLimitPair.Asleep)
+			bound = patient.getAsleep();
+		else if (option == TimeLimitPair.Awake)
+			bound = patient.getAwake();
+
+		bound = bound.plusHours(mod);
+		return bound;
 	}
 }

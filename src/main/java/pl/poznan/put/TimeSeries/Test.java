@@ -31,7 +31,6 @@ public class Test {
 		PureDataImporter imp = new PureDataImporter("C:/Users/Wojciech/Documents/studia/mgr/praca mgr/stationary data/dataset3/dane20140519/dane20140519/");
 		List<Patient> pacjenci = imp.ImportData();
 		
-		DataDivider divider = new DataDivider(pacjenci);
-		divider.divideData();
+		DataDivider.divideData(pacjenci);		
 	}
 }

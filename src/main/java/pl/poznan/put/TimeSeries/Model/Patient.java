@@ -92,7 +92,6 @@ public class Patient implements Cloneable {
 		this.asleep = asleep;
 	}
 
-
 	public Object clone() {
 		try {
 			return super.clone();
