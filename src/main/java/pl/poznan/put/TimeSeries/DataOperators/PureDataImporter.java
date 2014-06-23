@@ -29,7 +29,7 @@ public class PureDataImporter {
 		this.folderPath = inputFilePath;
 	}
 
-	private Patient readCsvData(String filePath) throws IOException {
+	private Patient readCsvData(String filePath) throws Exception {
 		BufferedReader br = new BufferedReader(new FileReader(folderPath
 				+ filePath));
 		boolean diagnosis = false;
@@ -51,11 +51,17 @@ public class PureDataImporter {
 			String[] fields = currLine.split(";");
 
 			if (isFirstLine) {
+				if(Integer.parseInt(fields[14])==24){
+					Integer.parseInt(fields[14]);
+				}
 				startExaminationTime = getDateTimeByStringClock(fields[0]);
+				if (startExaminationTime.getDayOfMonth() > 1)
+					startExaminationTime = startExaminationTime.minusDays(1);
 				firstBurstMedian = Float.parseFloat(fields[1]);
 				asleepTime = getDateTimeByStringClock(fields[5]);
 				awakeTime = getDateTimeByStringClock(fields[6]);
-				adjMedian = fields[7].isEmpty() ? 0 : Float.parseFloat(fields[7]);
+				adjMedian = fields[7].isEmpty() ? 0 : Float
+						.parseFloat(fields[7]);
 				int age = Integer.parseInt(fields[14]);
 				isFirstLine = false;
 
@@ -69,6 +75,13 @@ public class PureDataImporter {
 				int burstId = Integer.parseInt(fields[2]);
 				DateTime currCharacteristicTime = startExaminationTime
 						.plusMinutes(minutePeriod * (burstId - 1));
+
+				// if(currCharacteristicTime.getHourOfDay()>11 &&
+				// currCharacteristicTime.getDayOfMonth()>1)
+				// currCharacteristicTime.minusDays(1);
+				// if(currCharacteristicTime.getHourOfDay()>2)
+				// currCharacteristicTime.minusDays(1);
+				//
 				Characteristic c = new Characteristic(currCharacteristicTime);
 				float tf = Float.parseFloat(fields[1]) - firstBurstMedian;
 				float tfadj = tf + adjMedian;
@@ -83,7 +96,7 @@ public class PureDataImporter {
 		return currentPatient;
 	}
 
-	private DateTime getDateTimeByStringClock(String clock) {
+	private DateTime getDateTimeByStringClock(String clock) throws Exception {
 
 		int minutes = 0;
 		int hours = 0;
@@ -93,10 +106,14 @@ public class PureDataImporter {
 			minutes = Integer.parseInt(minuteElems[1]);
 			hours = Integer.parseInt(minuteElems[0]);
 		}
+		else
+		{
+			throw new Exception("Data is in wrong format");
+		}
 		int days = 2;
+		hours = hours < 24 ? hours : 0;
 		if (hours >= 12)
-			days = 1;
-		hours = hours <24 ? hours : 0;
+			days = 1;		
 		DateTime dt = new DateTime(2014, 4, days, hours, minutes, 0);
 		return dt;
 	}
@@ -105,18 +122,37 @@ public class PureDataImporter {
 		String[] patientFiles = FileLister.getFolderFiles(folderPath);
 		List<Patient> patients = new ArrayList<Patient>();
 		for (String file : patientFiles) {
-			Patient currPatient = readCsvData(file);
-			patients.add(currPatient);
+			Patient currPatient;
+			try {
+				currPatient = readCsvData(file);
+				patients.add(currPatient);
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+				System.out.println("Missed file: " + file);
+			}			
 		}
 
-		// computeSaxForPatients();
+		computeSaxForPatients(patients);
 
 		return patients;
 	}
 
-	// public List<Patient> ImportData(int fromIndex, int toIndex)
-	// throws IOException {
-	// return ImportData().subList(fromIndex, toIndex);
-	// }
-
+	private void computeSaxForPatients(List<Patient> patients) {
+		int alphabeatSize = Integer.parseInt(Configuration
+				.getProperty("saxAlphabeatSize"));
+		;
+		int outputLength = Integer.parseInt(Configuration
+				.getProperty("saxOutputLength"));
+		;
+		for (Patient patient : patients) {
+			String sax = null;
+			try {
+				sax = SaxPerformer.TranslateTimeSeriesToString(patient,
+						outputLength, alphabeatSize);
+			} catch (CloneNotSupportedException | TSException e) {
+				e.printStackTrace();
+			}
+			patient.setSaxString(new SaxString(sax, outputLength, alphabeatSize));
+		}
+	}
 }
