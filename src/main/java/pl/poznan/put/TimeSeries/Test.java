@@ -12,9 +12,12 @@ import java.util.List;
 import pl.poznan.put.TimeSeries.DataOperators.DataDivider;
 import pl.poznan.put.TimeSeries.DataOperators.PureDataImporter;
 import pl.poznan.put.TimeSeries.Model.Patient;
+import pl.poznan.put.TimeSeries.Model.PatientGroup;
 import pl.poznan.put.TimeSeries.Model.RegressionResult;
 import pl.poznan.put.TimeSeries.Reporting.ResultReporter;
+import pl.poznan.put.TimeSeries.Util.DataAverager;
 import pl.poznan.put.TimeSeries.Util.RegressionCalculator;
+import weka.experiment.AveragingResultProducer;
 
 public class Test {
 
@@ -27,10 +30,14 @@ public class Test {
 	}
 	
 	
-	private static void test() throws IOException{
+	private static void test() throws Exception{
 		PureDataImporter imp = new PureDataImporter("C:/Users/Wojciech/Documents/studia/mgr/praca mgr/stationary data/dataset3/dane20140519/dane20140519/");
 		List<Patient> pacjenci = imp.ImportData();
 		
-		DataDivider.divideData(pacjenci);		
+		List<PatientGroup> groups = DataDivider.divideData(pacjenci);
+		List<Float> srednie = DataAverager.averageData(groups.get(0));
+		RegressionResult res= RegressionCalculator.ComputeRegression(srednie);
+		System.out.println(res.getSlope() + "x + " +res.getIntercept());
+		srednie.size();
 	}
 }

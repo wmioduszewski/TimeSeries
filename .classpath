@@ -20,5 +20,10 @@
 			<attribute name="javadoc_location" value="jar:platform:/resource/TimeSeries/contrib/apache.commons/math/commons-math3-3.3-bin/commons-math3-3.3/commons-math3-3.3-javadoc.jar!/"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Wojciech/Documents/studia/mgr/praca mgr/TimeSeries/contrib/apache.commons/lang/commons-lang3-3.3.2-bin/commons-lang3-3.3.2/commons-lang3-3.3.2.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/TimeSeries/contrib/apache.commons/lang/commons-lang3-3.3.2-bin/commons-lang3-3.3.2/commons-lang3-3.3.2-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
