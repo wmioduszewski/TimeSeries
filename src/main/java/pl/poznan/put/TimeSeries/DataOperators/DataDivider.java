@@ -10,25 +10,26 @@ import org.joda.time.DateTime;
 
 import pl.poznan.put.TimeSeries.Constants.AgeLimit;
 import pl.poznan.put.TimeSeries.Constants.Limits;
-import pl.poznan.put.TimeSeries.Constants.TimeLimitPair;
+import pl.poznan.put.TimeSeries.Constants.TimeLimit;
 import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Model.PatientGroup;
 
 public class DataDivider {
 
-	public static List<PatientGroup> divideData(List<Patient> patients) {
+	public static List<PatientGroup> divideData(List<Patient> patients,
+			boolean isSick) {
 		List<PatientGroup> patientGroups = new ArrayList<PatientGroup>();
 		for (AgeLimit ageLimit : Limits.AgeLimits) {
-			Stream<Patient> agedPatientsStream = patients.stream().filter(
-					x -> x.getAge() >= ageLimit.getLowerBound()
+			Stream<Patient> agedPatientsStream = patients
+					.stream()
+					.filter(x -> x.isSick() == isSick)
+					.filter(x -> x.getAge() >= ageLimit.getLowerBound()
 							&& x.getAge() <= ageLimit.getUpperBound());
-			System.out.println("AgeLimit: " + ageLimit.getLowerBound() + " - "
-					+ ageLimit.getUpperBound());
-
+			
 			List<Patient> agedPatients = agedPatientsStream.collect(Collectors
 					.toList());
-			for (TimeLimitPair timeLimit : Limits.TimeLimits) {
+			for (TimeLimit timeLimit : Limits.TimeLimits) {
 
 				PatientGroup patientGroup = new PatientGroup(timeLimit,
 						ageLimit);
@@ -60,16 +61,16 @@ public class DataDivider {
 	}
 
 	private static DateTime ComputeTimeBound(AgeLimit ageLimit,
-			TimeLimitPair timeLimit, Patient patient, Boolean isLower) {
+			TimeLimit timeLimit, Patient patient, Boolean isLower) {
 		DateTime bound = null;
 
 		char option = isLower ? timeLimit.getLowerOption() : timeLimit
 				.getUpperOption();
 		int mod = isLower ? timeLimit.getLowerMod() : timeLimit.getUpperMod();
 
-		if (option == TimeLimitPair.Asleep)
+		if (option == TimeLimit.Asleep)
 			bound = patient.getAsleep();
-		else if (option == TimeLimitPair.Awake)
+		else if (option == TimeLimit.Awake)
 			bound = patient.getAwake();
 
 		bound = bound.plusHours(mod);

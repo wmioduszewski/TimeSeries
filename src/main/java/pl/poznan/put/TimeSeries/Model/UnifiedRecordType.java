@@ -5,7 +5,7 @@ public class UnifiedRecordType {
 	private double destClass;
 	private double[] vals;
 	private String saxString;
-	
+
 	public UnifiedRecordType(double destClass, double[] vals) {
 		super();
 		this.destClass = destClass;
@@ -27,5 +27,5 @@ public class UnifiedRecordType {
 	public double[] getVals() {
 		return vals;
 	}
-	
+
 }

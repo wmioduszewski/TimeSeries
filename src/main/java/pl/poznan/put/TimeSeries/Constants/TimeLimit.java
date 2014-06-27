@@ -1,6 +1,6 @@
 package pl.poznan.put.TimeSeries.Constants;
 
-public class TimeLimitPair {
+public class TimeLimit {
 	private char lowerOption;
 	private int lowerMod;
 	private char upperOption;
@@ -8,7 +8,7 @@ public class TimeLimitPair {
 	public static final char Awake = 'w';
 	public static final char Asleep = 's';
 
-	public TimeLimitPair(char lowerOption, int lowerMod, char upperOption,
+	public TimeLimit(char lowerOption, int lowerMod, char upperOption,
 			int upperMod) {
 		this.lowerOption = lowerOption;
 		this.lowerMod = lowerMod;

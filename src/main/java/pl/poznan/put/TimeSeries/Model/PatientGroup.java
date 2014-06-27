@@ -4,22 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 import pl.poznan.put.TimeSeries.Constants.AgeLimit;
-import pl.poznan.put.TimeSeries.Constants.TimeLimitPair;
+import pl.poznan.put.TimeSeries.Constants.TimeLimit;
 
 public class PatientGroup {
-	
-	private TimeLimitPair timeLimit;
+
+	private TimeLimit timeLimit;
 	private AgeLimit ageLimit;
 	private List<Patient> patients;
-	
-	public PatientGroup(TimeLimitPair timeLimit, AgeLimit ageLimit) {
+	private boolean isSick;
+
+	public PatientGroup(TimeLimit timeLimit, AgeLimit ageLimit) {
 		super();
 		this.timeLimit = timeLimit;
 		this.ageLimit = ageLimit;
 		patients = new ArrayList<Patient>();
 	}
 
-	public TimeLimitPair getTimeLimit() {
+	public TimeLimit getTimeLimit() {
 		return timeLimit;
 	}
 
@@ -30,18 +31,21 @@ public class PatientGroup {
 	public List<Patient> getPatients() {
 		return patients;
 	}
-	
-	public void addPatient(Patient patient){
+
+	public void addPatient(Patient patient) {
 		patients.add(patient);
 	}
-	
-	public void removePatient(Patient patient){
+
+	public void removePatient(Patient patient) {
 		patients.remove(patient);
 	}
-	
-	
-	
-	
-	
+
+	public boolean isSick() {
+		return isSick;
+	}
+
+	public void setSick(boolean isSick) {
+		this.isSick = isSick;
+	}
 
 }

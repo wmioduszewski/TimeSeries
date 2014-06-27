@@ -22,7 +22,7 @@ public class PatientToArffTranslator {
 		arffFileContent = new StringBuilder();
 		attributes = new HashMap<String, String>();
 	}
-	
+
 	public void savePatientsToArffData(List<Patient> patients,
 			String destinationPath) throws FileNotFoundException {
 		this.patients = patients;
@@ -46,8 +46,8 @@ public class PatientToArffTranslator {
 		for (Patient patient : patients) {
 			String diagnosis = patient.isSick() ? PatientStates.Sick
 					: PatientStates.Health;
-			arffFileContent.append(patient.getSaxString().getContent() + "," + diagnosis
-					+ "\n");
+			arffFileContent.append(patient.getSaxString().getContent() + ","
+					+ diagnosis + "\n");
 		}
 	}
 
