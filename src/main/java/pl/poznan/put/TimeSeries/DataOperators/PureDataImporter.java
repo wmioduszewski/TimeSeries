@@ -18,7 +18,7 @@ import pl.poznan.put.TimeSeries.Util.Configuration;
 import pl.poznan.put.TimeSeries.Util.FileLister;
 import pl.poznan.put.TimeSeries.Util.SaxPerformer;
 
-public class PureDataImporter {
+public class PureDataImporter extends DataImporterBase {
 
 	private String folderPath;
 	private float firstBurstMedian;
@@ -26,10 +26,11 @@ public class PureDataImporter {
 	private final int minutePeriod = 5;
 
 	public PureDataImporter(String inputFilePath) {
+		super(inputFilePath);
 		this.folderPath = inputFilePath;
 	}
-
-	private Patient readCsvData(String filePath) throws Exception {
+	
+	private Patient readData(String filePath) throws Exception {
 		BufferedReader br = new BufferedReader(new FileReader(folderPath
 				+ filePath));
 		boolean diagnosis = false;
@@ -120,39 +121,18 @@ public class PureDataImporter {
 
 	public List<Patient> ImportData() throws IOException {
 		String[] patientFiles = FileLister.getFolderFiles(folderPath);
-		List<Patient> patients = new ArrayList<Patient>();
+		patients = new ArrayList<Patient>();
 		for (String file : patientFiles) {
 			Patient currPatient;
 			try {
-				currPatient = readCsvData(file);
+				currPatient = readData(file);
 				patients.add(currPatient);
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 				System.out.println("Missed file: " + file);
 			}			
 		}
-
-		computeSaxForPatients(patients);
-
+		computeSaxForPatients();
 		return patients;
-	}
-
-	private void computeSaxForPatients(List<Patient> patients) {
-		int alphabeatSize = Integer.parseInt(Configuration
-				.getProperty("saxAlphabeatSize"));
-		;
-		int outputLength = Integer.parseInt(Configuration
-				.getProperty("saxOutputLength"));
-		;
-		for (Patient patient : patients) {
-			String sax = null;
-			try {
-				sax = SaxPerformer.TranslateTimeSeriesToString(patient,
-						outputLength, alphabeatSize);
-			} catch (CloneNotSupportedException | TSException e) {
-				e.printStackTrace();
-			}
-			patient.setSaxString(new SaxString(sax, outputLength, alphabeatSize));
-		}
 	}
 }

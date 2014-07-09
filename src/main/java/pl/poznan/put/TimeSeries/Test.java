@@ -10,6 +10,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 import pl.poznan.put.TimeSeries.DataOperators.DataDivider;
+import pl.poznan.put.TimeSeries.DataOperators.DataImporterBase;
+import pl.poznan.put.TimeSeries.DataOperators.DataImporterCsv;
 import pl.poznan.put.TimeSeries.DataOperators.PatientGroupConverter;
 import pl.poznan.put.TimeSeries.DataOperators.PureDataImporter;
 import pl.poznan.put.TimeSeries.Model.Patient;
@@ -26,11 +28,7 @@ import weka.experiment.AveragingResultProducer;
 public class Test {
 
 	public static void main(String[] args) throws Exception {
-		test();
-
-		// List<Float> listY = Arrays.asList(7f,8f,9f,9f);
-		// RegressionResult res = RegressionCalculator.ComputeRegression(listY);
-		// System.out.println(res.getSlope() + "x + " + res.getIntercept());
+		importData();
 	}
 
 	private static void test() throws Exception {
@@ -50,5 +48,20 @@ public class Test {
 		
 		System.out.println("Koniec");
 
+	}
+	
+	private static void importData() throws IOException{
+		String csvDataPath = Configuration.getProperty("csvDataSet");
+		String pureDataPath = Configuration.getProperty("pureDataSet");
+		
+		DataImporterBase importer = new DataImporterCsv(csvDataPath);
+		List<Patient> csvPatients = importer.ImportData();
+		importer = new PureDataImporter(pureDataPath);
+		List<Patient> purePatients = importer.ImportData();
+		
+		List<Patient> patients = new ArrayList<Patient>();
+		
+		patients.addAll(csvPatients);
+		patients.addAll(purePatients);
 	}
 }

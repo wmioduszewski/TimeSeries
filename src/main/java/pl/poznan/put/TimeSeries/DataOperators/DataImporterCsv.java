@@ -15,18 +15,15 @@ import pl.poznan.put.TimeSeries.Model.SaxString;
 import pl.poznan.put.TimeSeries.Util.Configuration;
 import pl.poznan.put.TimeSeries.Util.SaxPerformer;
 
-public class DataImporterCsv {
-
-	List<Patient> patients;
-	private String path;
-
+public class DataImporterCsv extends DataImporterBase {
+	
 	public DataImporterCsv(String inputFilePath) {
-		this.path = inputFilePath;
+		super(inputFilePath);		
 	}
 
 	// ID,D,TIME,TIMEFF,INTERVAL,TIMEFBI,SAP,DAP,HRBP,MAP,TF,TFADJ,TFGAT,DPP,BODYPOSITION,ACOMMODATION
-	private void readCsvData() throws IOException {
-		BufferedReader br = new BufferedReader(new FileReader(path));
+	protected void readData() throws IOException {
+		BufferedReader br = new BufferedReader(new FileReader(_filepath));
 
 		List<Patient> patientList = new ArrayList<Patient>();
 
@@ -87,32 +84,12 @@ public class DataImporterCsv {
 		patients = patientList;
 	}
 
-	private void computeSaxForPatients() {
-		int alphabeatSize = Integer.parseInt(Configuration
-				.getProperty("saxAlphabeatSize"));;
-		int outputLength = Integer.parseInt(Configuration
-				.getProperty("saxOutputLength"));;
-		for (Patient patient : patients) {
-			String sax = null;
-			try {
-				sax = SaxPerformer.TranslateTimeSeriesToString(patient,
-						outputLength, alphabeatSize);
-			} catch (CloneNotSupportedException | TSException e) {
-				e.printStackTrace();
-			}
-			patient.setSaxString(new SaxString(sax, outputLength, alphabeatSize));
-		}
-	}
-
 	public List<Patient> ImportData() throws IOException {
-		readCsvData();
-		computeSaxForPatients();
+	readData();
+	computeSaxForPatients();
 
-		return patients;
+	return patients;
 	}
 
-	public List<Patient> ImportData(int fromIndex, int toIndex)
-			throws IOException {
-		return ImportData().subList(fromIndex, toIndex);
-	}
+	
 }

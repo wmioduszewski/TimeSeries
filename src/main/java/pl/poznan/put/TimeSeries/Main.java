@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -17,8 +18,10 @@ import pl.poznan.put.TimeSeries.Classifying.Experiment;
 import pl.poznan.put.TimeSeries.Classifying.NgramClassifier;
 import pl.poznan.put.TimeSeries.DataOperators.DataExporterCsv;
 import pl.poznan.put.TimeSeries.DataOperators.DataExporterEamonn;
+import pl.poznan.put.TimeSeries.DataOperators.DataImporterBase;
 import pl.poznan.put.TimeSeries.DataOperators.DataImporterCsv;
 import pl.poznan.put.TimeSeries.DataOperators.DataImporterEamonn;
+import pl.poznan.put.TimeSeries.DataOperators.PureDataImporter;
 import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Model.SaxString;
 import pl.poznan.put.TimeSeries.Model.UnifiedRecordType;
@@ -42,27 +45,21 @@ public class Main {
 	static int ngramSize = 1;
 
 	public static void main(String[] args) throws Exception {
-		
+
 		FlowHandler flow = new FlowHandler();
 		flow.startProcessing();
 		System.out.println("End.");
 	}
+
 	
-	private static void importData(){
-		DataImporterCsv importer = new DataImporterCsv("path");
-		List<Patient> patients = null;
-		
-		//patients = importer.ImportData();
-		DataExporterCsv exporter = new DataExporterCsv(patients);
-	}
-	
+
 	private static void CsvToEamonn() throws IOException {
-		String path = "C:/Users/Wojciech/Documents/studia/mgr/praca mgr/stationary data/dataset3/gTimeData.7.5.20130123a_sub.csv";
+		String path = Configuration.getProperty("csvDataSet");
 		DataImporterCsv csvImport = new DataImporterCsv(path);
-		
+
 		List<Patient> patients = csvImport.ImportData();
-		
+
 		DataExporterCsv exp = new DataExporterCsv(patients);
-		exp.exportCsvToEamonnFormat("C:/Users/Wojciech/Documents/studia/mgr/praca mgr/stationary data/dataset3/Glaucoma_TEST");	
+		exp.exportCsvToEamonnFormat("C:/Users/Wojciech/Documents/studia/mgr/praca mgr/stationary data/dataset3/Glaucoma_TEST");
 	}
 }
