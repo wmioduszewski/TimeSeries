@@ -35,7 +35,7 @@ public class SaxPerformer {
 			UnifiedRecordType record, int outputLength, int alphabeatSize)
 			throws Exception {
 
-		double[] vals = record.getVals();
+		double[] vals = record.getValues();
 		long[] times = new long[vals.length];
 
 		for (int i = 0; i < vals.length; i++) {

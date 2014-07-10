@@ -1,4 +1,4 @@
-package pl.poznan.put.TimeSeries.DataOperators;
+package pl.poznan.put.TimeSeries.DataExporters;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -13,7 +13,6 @@ import org.jfree.chart.JFreeChart;
 
 import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Renderers.ChartBase;
-import pl.poznan.put.TimeSeries.Util.PatientToArffTranslator;
 
 public class DataExporterCsv {
 

@@ -1,4 +1,4 @@
-package pl.poznan.put.TimeSeries.Util;
+package pl.poznan.put.TimeSeries.DataExporters;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -48,8 +48,8 @@ public class PureDataArffExporter {
 		arffFileContent.append("@DATA\n");
 
 		for (UnifiedRecordType record : records) {
-			String diagnosis = String.valueOf(record.getDestClass());
-			double[] vals = record.getVals();
+			String diagnosis = String.valueOf(record.getDestinationClass());
+			double[] vals = record.getValues();
 			for(int i=0;i<vals.length;i++){
 				arffFileContent.append(vals[i]+",");				
 			}
@@ -68,7 +68,7 @@ public class PureDataArffExporter {
 			attributes.put(String.format("age%d-%dintercept,", currLimit.getLowerBound(),currLimit.getUpperBound()), attrType);
 		}
 
-		List<Object> classList = records.stream().map(x -> x.getDestClass())
+		List<Object> classList = records.stream().map(x -> x.getDestinationClass())
 				.collect(Collectors.toList());
 		List<Object> distinct = classList.stream().map(x -> x).distinct()
 				.collect(Collectors.toList());

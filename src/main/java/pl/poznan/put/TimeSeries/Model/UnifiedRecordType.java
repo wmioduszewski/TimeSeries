@@ -1,6 +1,6 @@
 package pl.poznan.put.TimeSeries.Model;
 
-public class UnifiedRecordType {
+public class UnifiedRecordType implements IRecord {
 
 	private double destClass;
 	private double[] vals;
@@ -20,11 +20,11 @@ public class UnifiedRecordType {
 		this.saxString = saxString;
 	}
 
-	public double getDestClass() {
+	public double getDestinationClass() {
 		return destClass;
 	}
 
-	public double[] getVals() {
+	public double[] getValues() {
 		return vals;
 	}
 

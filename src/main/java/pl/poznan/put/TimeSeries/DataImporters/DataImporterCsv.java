@@ -1,4 +1,4 @@
-package pl.poznan.put.TimeSeries.DataOperators;
+package pl.poznan.put.TimeSeries.DataImporters;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

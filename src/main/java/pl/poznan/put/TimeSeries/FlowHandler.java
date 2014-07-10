@@ -5,8 +5,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 import pl.poznan.put.TimeSeries.Classifying.Experiment;
-import pl.poznan.put.TimeSeries.DataOperators.DataExporterEamonn;
-import pl.poznan.put.TimeSeries.DataOperators.DataImporterEamonn;
+import pl.poznan.put.TimeSeries.DataExporters.DataExporterEamonn;
+import pl.poznan.put.TimeSeries.DataImporters.DataImporterEamonn;
 import pl.poznan.put.TimeSeries.Model.UnifiedRecordType;
 import pl.poznan.put.TimeSeries.Reporting.EntireReport;
 import pl.poznan.put.TimeSeries.Reporting.ReportRecord;

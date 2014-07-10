@@ -1,4 +1,4 @@
-package pl.poznan.put.TimeSeries.Util;
+package pl.poznan.put.TimeSeries.DataExporters;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -11,6 +11,7 @@ import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
 import pl.poznan.put.TimeSeries.Model.UnifiedRecordType;
+import pl.poznan.put.TimeSeries.Util.Configuration;
 
 public class RecordToArffTranslator {
 	private String relationTitle;
@@ -57,7 +58,7 @@ public class RecordToArffTranslator {
 		arffFileContent.append("@DATA\n");
 
 		for (UnifiedRecordType record : records) {
-			String diagnosis = String.valueOf(record.getDestClass());
+			String diagnosis = String.valueOf(record.getDestinationClass());
 			String sax = record.getSaxString();
 			for (int i = 0; i < sax.length(); i += attrLength) {
 				for (int j = 0; j < attrLength; j++) {
@@ -87,7 +88,7 @@ public class RecordToArffTranslator {
 			attributes.put(String.format("saxString%d,", i + 1), attrType);
 		}
 
-		List<Object> classList = records.stream().map(x -> x.getDestClass())
+		List<Object> classList = records.stream().map(x -> x.getDestinationClass())
 				.collect(Collectors.toList());
 		List<Object> distinct = classList.stream().map(x -> x).distinct()
 				.collect(Collectors.toList());

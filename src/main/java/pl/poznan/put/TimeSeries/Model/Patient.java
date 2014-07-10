@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.joda.time.DateTime;
 
-public class Patient implements Cloneable {
+public class Patient implements Cloneable, IRecord {
 
 	int id;
 	float age;
@@ -98,6 +98,21 @@ public class Patient implements Cloneable {
 		} catch (Exception e) {
 			return null;
 		}
+	}
+
+	@Override
+	public double getDestinationClass() {
+		return isSick() ? 1d : 0d;
+	}
+
+	@Override
+	public double[] getValues() {
+		int size = characteristics.size();
+		double[] vals = new double[size];
+		for (int i=0;i<size;i++) {
+			vals[i] = characteristics.get(i).tfadj; 
+		}
+		return vals;
 	}
 
 }

@@ -1,4 +1,4 @@
-package pl.poznan.put.TimeSeries.DataOperators;
+package pl.poznan.put.TimeSeries.DataExporters;
 
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
@@ -8,7 +8,6 @@ import java.util.List;
 
 import pl.poznan.put.TimeSeries.Model.UnifiedRecordType;
 import pl.poznan.put.TimeSeries.Util.Configuration;
-import pl.poznan.put.TimeSeries.Util.RecordToArffTranslator;
 
 public class DataExporterEamonn {
 
@@ -22,7 +21,7 @@ public class DataExporterEamonn {
 		BufferedWriter writer = new BufferedWriter(new FileWriter(path));
 
 		for (UnifiedRecordType record : records) {
-			String text = String.format("%e %s", record.getDestClass(),
+			String text = String.format("%e %s", record.getDestinationClass(),
 					record.getSaxString());
 			writer.write(text);
 		}

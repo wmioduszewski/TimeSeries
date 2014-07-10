@@ -1,4 +1,4 @@
-package pl.poznan.put.TimeSeries.DataOperators;
+package pl.poznan.put.TimeSeries.DataProcessors;
 
 import java.util.ArrayList;
 import java.util.List;

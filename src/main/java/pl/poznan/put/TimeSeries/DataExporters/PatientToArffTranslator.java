@@ -1,4 +1,4 @@
-package pl.poznan.put.TimeSeries.Util;
+package pl.poznan.put.TimeSeries.DataExporters;
 
 import java.io.File;
 import java.io.FileNotFoundException;
