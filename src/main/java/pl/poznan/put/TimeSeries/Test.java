@@ -47,7 +47,6 @@ public class Test {
 						+ "pureArffTest.arff");
 		
 		System.out.println("Koniec");
-
 	}
 	
 	private static void importData() throws IOException{
