@@ -32,4 +32,12 @@ public class RegressionCalculator {
 		return ComputeRegression(xArray, yArray);
 	}
 	
+	public static RegressionResult ComputeRegression(Double[] data){
+		SimpleRegression regression = new SimpleRegression();
+		for(int i =0;i<data.length;i++)
+			regression.addData((double) i, data[i]); 
+		RegressionResult res = new RegressionResult(regression.getSlope(), regression.getIntercept());
+		return res;
+	}
+	
 }
