@@ -3,13 +3,15 @@ package pl.poznan.put.TimeSeries.DataProcessors;
 import java.util.List;
 
 import pl.poznan.put.TimeSeries.Model.IRecord;
+import pl.poznan.put.TimeSeries.Model.UnifiedRecordType;
 
 public class EamonnDataDivider extends DataDividerBase {
 
 	@Override
-	public List<Double[]> DivideRecord() {
-		// TODO Auto-generated method stub
-		return null;
+	protected List<Double[]> DivideRecord(Object record) {
+		UnifiedRecordType eamonnRecord = (UnifiedRecordType) record;
+		
+		return DataDivider.divideEamonnRecord(eamonnRecord);
 	}
 
 }
