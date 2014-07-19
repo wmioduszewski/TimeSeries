@@ -18,6 +18,7 @@ import pl.poznan.put.TimeSeries.DataImporters.PureDataImporter;
 import pl.poznan.put.TimeSeries.DataProcessors.DataDivider;
 import pl.poznan.put.TimeSeries.DataProcessors.PatientDataDivider;
 import pl.poznan.put.TimeSeries.DataProcessors.PatientGroupConverter;
+import pl.poznan.put.TimeSeries.Model.IRecord;
 import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Model.PatientGroup;
 import pl.poznan.put.TimeSeries.Model.RegressionResult;
@@ -32,9 +33,24 @@ import weka.experiment.AveragingResultProducer;
 public class Test {
 
 	public static void main(String[] args) throws Exception {
-		List<Patient> patients = importData();
+		//List<Patient> patients = importData();
 
-		divideData(patients);
+		
+		IRecord rec = new Patient(3);
+		if(rec instanceof Patient)
+		{
+			Patient p = (Patient) rec;
+			p.setAge(1);
+			System.out.println("Pacjent " + p.getAge());
+		}
+		else if(rec instanceof UnifiedRecordType)
+		{
+			UnifiedRecordType uni = (UnifiedRecordType) rec;
+			
+			System.out.println("Eamonn " + uni.getDestinationClass());
+		}
+		
+		//divideData(patients);
 	}
 
 	private static void divideData(List<Patient> patients) throws Exception {
