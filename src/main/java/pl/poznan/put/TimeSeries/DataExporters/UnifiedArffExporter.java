@@ -22,14 +22,15 @@ public class UnifiedArffExporter extends ArffExporterBase {
 
 	@Override
 	protected void assignAttributes() {
-		String attrType = "number";
+		String numberType = "number";
 		int regressionCount = records.stream().findFirst().get()
 				.getRegressionResults().size();
 		for (int i = 0; i < regressionCount; i++) {
-			attributes.put(String.format("slope%d,", i + 1), attrType);
-			attributes.put(String.format("intercept%d,", i + 1), attrType);
+			attributes.put(String.format("slope%d", i + 1), numberType);
+			attributes.put(String.format("intercept%d", i + 1), numberType);
 		}
-		attributes.put("destClass", attrType);
+//		attributes.put("age", numberType);
+		attributes.put("destClass", numberType);
 	}
 
 	@Override

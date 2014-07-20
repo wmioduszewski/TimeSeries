@@ -32,10 +32,19 @@ public class DataDivider {
 					valList.add((double) characteristic.getTfadj());
 				}
 			}
-			res.add((Double[]) valList.toArray());
+			res.add(CastDoubleListToArray(valList));
 		}
 		return res;
 	}
+	
+	private static Double[] CastDoubleListToArray(List<Double> input){
+		Double[] output = new Double[input.size()];
+		for(int i=0;i<input.size();i++){
+			output[i] = input.get(i);
+		}
+		return output;
+	}
+	
 
 	public static List<Double[]> divideEamonnRecord(UnifiedRecordType record) {
 		int parts = 10;

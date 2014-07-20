@@ -3,7 +3,7 @@ package pl.poznan.put.TimeSeries.DataExporters;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -25,7 +25,7 @@ public abstract class ArffExporterBase {
 	protected void performExport(String destinationPath)
 			throws FileNotFoundException {
 		arffFileContent = new StringBuilder();
-		attributes = new HashMap<String, String>();
+		attributes = new LinkedHashMap<String, String>();
 		buildFileContent();
 		PrintWriter writer = new PrintWriter(new File(destinationPath));
 		writer.write(arffFileContent.toString());

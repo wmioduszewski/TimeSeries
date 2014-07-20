@@ -10,6 +10,9 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import pl.poznan.put.TimeSeries.DataExporters.PureDataArffExporter;
 import pl.poznan.put.TimeSeries.DataExporters.UnifiedArffExporter;
 import pl.poznan.put.TimeSeries.DataImporters.DataImporterBase;
@@ -28,49 +31,15 @@ import pl.poznan.put.TimeSeries.Reporting.ResultReporter;
 import pl.poznan.put.TimeSeries.Util.Configuration;
 import pl.poznan.put.TimeSeries.Util.DataAverager;
 import pl.poznan.put.TimeSeries.Util.RegressionCalculator;
+import pl.poznan.put.TimeSeries.Workflows.PatientRegressionWorkflow;
+import pl.poznan.put.TimeSeries.Workflows.WorkflowBase;
 import weka.experiment.AveragingResultProducer;
 
-public class Test {
-
+public class Test {	
+	
 	public static void main(String[] args) throws Exception {
-		//List<Patient> patients = importData();
-
-		
-		IRecord rec = new Patient(3);
-		if(rec instanceof Patient)
-		{
-			Patient p = (Patient) rec;
-			p.setAge(1);
-			System.out.println("Pacjent " + p.getAge());
-		}
-		else if(rec instanceof UnifiedRecordType)
-		{
-			UnifiedRecordType uni = (UnifiedRecordType) rec;
-			
-			System.out.println("Eamonn " + uni.getDestinationClass());
-		}
-		
-		//divideData(patients);
-	}
-
-	private static void divideData(List<Patient> patients) throws Exception {
-
-		PatientDataDivider patientDivider = new PatientDataDivider();
-		List<UnifiedArffRow> rows = new ArrayList<UnifiedArffRow>();
-
-		for (Patient patient : patients) {
-
-			try {
-				UnifiedArffRow arffRow = patientDivider
-						.ComputeRegression(patient);
-				rows.add(arffRow);
-			} catch (Exception e) {
-				System.out.println("patient missed");
-			}
-		}
-
-		UnifiedArffExporter exporter = new UnifiedArffExporter("UnifiedData");
-		exporter.saveUnifiedRecordsToArffData(rows, "testtest");
+		WorkflowBase workflow = new PatientRegressionWorkflow();
+		workflow.runWorkflow();
 	}
 
 	private static void test() throws Exception {
@@ -89,21 +58,5 @@ public class Test {
 						+ "pureArffTest.arff");
 
 		System.out.println("Koniec");
-	}
-
-	private static List<Patient> importData() throws IOException {
-		String csvDataPath = Configuration.getProperty("csvDataSet");
-		String pureDataPath = Configuration.getProperty("pureDataSet");
-
-		DataImporterBase importer ;//= new DataImporterCsv(csvDataPath);
-//		List<Patient> csvPatients = importer.ImportData();
-		importer = new PureDataImporter(pureDataPath);
-		List<Patient> purePatients = importer.ImportData();
-
-		List<Patient> patients = new ArrayList<Patient>();
-
-//		patients.addAll(csvPatients);
-		patients.addAll(purePatients);
-		return patients;
 	}
 }

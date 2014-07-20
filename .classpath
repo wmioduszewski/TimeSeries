@@ -25,5 +25,10 @@
 			<attribute name="javadoc_location" value="jar:platform:/resource/TimeSeries/contrib/apache.commons/lang/commons-lang3-3.3.2-bin/commons-lang3-3.3.2/commons-lang3-3.3.2-javadoc.jar!/"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="contrib/log4j/apache-log4j-2.0-bin/log4j-api-2.0.jar" sourcepath="contrib/log4j/apache-log4j-2.0-bin/log4j-api-2.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/TimeSeries/contrib/log4j/apache-log4j-2.0-bin/log4j-core-2.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
