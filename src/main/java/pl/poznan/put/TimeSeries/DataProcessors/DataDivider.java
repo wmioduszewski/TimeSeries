@@ -14,11 +14,54 @@ import pl.poznan.put.TimeSeries.Constants.TimeLimit;
 import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Model.PatientGroup;
+import pl.poznan.put.TimeSeries.Model.UnifiedRecordType;
 
 public class DataDivider {
 
+	public static List<Double[]> dividePatientData(Patient patient) throws Exception {
+		List<Double[]> res = new ArrayList<Double[]>();
+
+		for (TimeLimit timeLimit : Limits.TimeLimits) {
+
+			DateTime lowerBound = ComputeTimeBound(timeLimit, patient, true);
+			DateTime upperBound = ComputeTimeBound(timeLimit, patient, false);
+			List<Double> valList = new ArrayList<Double>();
+			for (Characteristic characteristic : patient.getCharacteristics()) {
+				DateTime time = characteristic.getExaminationTime();
+				if (time.isAfter(lowerBound) && time.isBefore(upperBound)) {
+					valList.add((double) characteristic.getTfadj());
+				}
+			}
+			res.add((Double[]) valList.toArray());
+		}
+		return res;
+	}
+
+	public static List<Double[]> divideEamonnRecord(UnifiedRecordType record) {
+		int parts = 10;
+		double[] vals = record.getValues();
+		int partSize = vals.length / parts;
+		List<Double[]> res = new ArrayList<Double[]>();
+
+		for (int i = 0; i < parts; i++) {
+			List<Double> valList = new ArrayList<Double>();
+			if (i == parts - 1) {
+				for (int j = i*partSize; j < vals.length; j++) {
+					valList.add(vals[j]);
+				}
+			} else {
+				for (int j = 0; j < partSize; j++) {
+					valList.add(vals[i * partSize + j]);
+				}
+			}
+			res.add((Double[]) valList.toArray());
+		}
+
+		return res;
+	}
+
 	public static List<PatientGroup> divideData(List<Patient> patients,
-			boolean isSick) {
+			boolean isSick) throws Exception {
 		List<PatientGroup> patientGroups = new ArrayList<PatientGroup>();
 		for (AgeLimit ageLimit : Limits.AgeLimits) {
 			Stream<Patient> agedPatientsStream = patients
@@ -26,7 +69,7 @@ public class DataDivider {
 					.filter(x -> x.isSick() == isSick)
 					.filter(x -> x.getAge() >= ageLimit.getLowerBound()
 							&& x.getAge() <= ageLimit.getUpperBound());
-			
+
 			List<Patient> agedPatients = agedPatientsStream.collect(Collectors
 					.toList());
 			for (TimeLimit timeLimit : Limits.TimeLimits) {
@@ -35,10 +78,10 @@ public class DataDivider {
 						ageLimit);
 
 				for (Patient patient : agedPatients) {
-					DateTime lowerBound = ComputeTimeBound(ageLimit, timeLimit,
-							patient, true);
-					DateTime upperBound = ComputeTimeBound(ageLimit, timeLimit,
-							patient, false);
+					DateTime lowerBound = ComputeTimeBound(timeLimit, patient,
+							true);
+					DateTime upperBound = ComputeTimeBound(timeLimit, patient,
+							false);
 
 					Patient newPatient = (Patient) patient.clone();
 					newPatient
@@ -60,8 +103,8 @@ public class DataDivider {
 		return patientGroups;
 	}
 
-	private static DateTime ComputeTimeBound(AgeLimit ageLimit,
-			TimeLimit timeLimit, Patient patient, Boolean isLower) {
+	private static DateTime ComputeTimeBound(TimeLimit timeLimit,
+			Patient patient, Boolean isLower) throws Exception {
 		DateTime bound = null;
 
 		char option = isLower ? timeLimit.getLowerOption() : timeLimit
@@ -73,7 +116,12 @@ public class DataDivider {
 		else if (option == TimeLimit.Awake)
 			bound = patient.getAwake();
 
+		if(bound==null)
+		{
+			throw new Exception("bound is null");
+		}
 		bound = bound.plusHours(mod);
+		
 		return bound;
 	}
 }
