@@ -1,22 +1,14 @@
 package pl.poznan.put.TimeSeries.DataExporters;
 
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
 import pl.poznan.put.TimeSeries.Model.UnifiedRecordType;
 import pl.poznan.put.TimeSeries.Util.Configuration;
 
-public class RecordToArffTranslator {
-	private String relationTitle;
-	private StringBuilder arffFileContent;
-	private Map<String, String> attributes;
+public class RecordToArffTranslator extends ArffExporterBase {
 	private List<UnifiedRecordType> records;
 	private int attrLength;
 	private int recordLength;
@@ -24,9 +16,7 @@ public class RecordToArffTranslator {
 	private boolean isNominal;
 
 	public RecordToArffTranslator(String relationTitle) {
-		arffFileContent = new StringBuilder();
-		attributes = new LinkedHashMap<String, String>();
-		this.relationTitle = relationTitle;
+		super(relationTitle);
 	}
 
 	public void saveUnifiedRecordsToArffData(List<UnifiedRecordType> records,
@@ -39,22 +29,11 @@ public class RecordToArffTranslator {
 				.getProperty("saxOutputLength"));
 		this.saxAlphabeatSize = Integer.parseInt(Configuration
 				.getProperty("saxAlphabeatSize"));
-
-		buildFileContent();
-		PrintWriter writer = new PrintWriter(new File(destinationPath));
-		writer.write(arffFileContent.toString());
-		writer.flush();
-		writer.close();
+		performExport(destinationPath);
 	}
 
-	private void buildFileContent() {
-		insertRelationName();
-		assignAttributes();
-		insertAttributesNames();
-		insertData();
-	}
-
-	private void insertData() {
+	@Override
+	protected void insertData() {
 		arffFileContent.append("@DATA\n");
 
 		for (UnifiedRecordType record : records) {
@@ -72,8 +51,8 @@ public class RecordToArffTranslator {
 		}
 	}
 
-	private void assignAttributes() {
-
+	@Override
+	protected void assignAttributes() {
 		String attrType = "string";
 		if (isNominal) {
 			attrType = "{";
@@ -88,8 +67,8 @@ public class RecordToArffTranslator {
 			attributes.put(String.format("saxString%d,", i + 1), attrType);
 		}
 
-		List<Object> classList = records.stream().map(x -> x.getDestinationClass())
-				.collect(Collectors.toList());
+		List<Object> classList = records.stream()
+				.map(x -> x.getDestinationClass()).collect(Collectors.toList());
 		List<Object> distinct = classList.stream().map(x -> x).distinct()
 				.collect(Collectors.toList());
 
@@ -104,14 +83,12 @@ public class RecordToArffTranslator {
 	}
 
 	private List<String> getNominals() {
-
 		LinkedList<char[]> items = new LinkedList<char[]>();
 		char[] item = new char[attrLength];
 		char[] input = new char[saxAlphabeatSize];
 		for (int i = 0; i < saxAlphabeatSize; i++) {
 			input[i] = (char) ('a' + i);
 		}
-
 		permute(items, input, item, 0);
 		List<String> possibleVals = new LinkedList<String>();
 		for (char[] rep : items) {
@@ -132,14 +109,4 @@ public class RecordToArffTranslator {
 		}
 	}
 
-	private void insertRelationName() {
-		arffFileContent.append("@RELATION " + relationTitle + "\n");
-	}
-
-	private void insertAttributesNames() {
-		for (Entry<String, String> attr : attributes.entrySet()) {
-			arffFileContent.append("@ATTRIBUTE " + attr.getKey() + " "
-					+ attr.getValue() + "\n");
-		}
-	}
 }
