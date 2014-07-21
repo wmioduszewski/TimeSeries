@@ -67,15 +67,24 @@ public class DataImporterCsv extends DataImporterBase {
 			
 			try {
 				tfadj = Float.parseFloat(fields[11]);
+				if(lastPatient.getAsleep()==null){
+					int interval = Integer.parseInt(fields[4]);
+					if(interval == 2){
+						lastPatient.setAsleep(dt);
+					}
+				}
+				if(lastPatient.getAwake()==null){
+					int interval = Integer.parseInt(fields[4]);
+					if(interval == 4){
+						lastPatient.setAwake(dt);
+					}
+				}
 				c.setTfadj(tfadj);
-
+				lastPatient.addCharacteristic(c);
 			} catch (NumberFormatException e) {
-				System.out.println("Missing value for patient ID "
+				System.out.println("Missing tfadj value for patient ID "
 						+ lastPatient.getId() + " at " + dt);
 			}
-
-			lastPatient.addCharacteristic(c);
-
 			lastId = currentId;
 			currLine = br.readLine();
 		}

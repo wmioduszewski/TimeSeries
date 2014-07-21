@@ -17,6 +17,9 @@ import pl.poznan.put.TimeSeries.Model.UnifiedArffRow;
 import pl.poznan.put.TimeSeries.Util.Configuration;
 import weka.classifiers.Classifier;
 import weka.classifiers.bayes.NaiveBayes;
+import weka.classifiers.functions.LinearRegression;
+import weka.classifiers.functions.MultilayerPerceptron;
+import weka.classifiers.rules.JRip;
 
 public class PatientRegressionWorkflow extends WorkflowBase{
 
@@ -42,21 +45,21 @@ public class PatientRegressionWorkflow extends WorkflowBase{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//patients.addAll(csvPatients);
+		patients.addAll(csvPatients);
 		patients.addAll(purePatients);
 	}
 
 	@Override
 	protected void processData() {
 		PatientDataDivider patientDivider = new PatientDataDivider();
-		List<UnifiedArffRow> rows = new ArrayList<UnifiedArffRow>();
+		List<UnifiedArffRow> trainSet = new ArrayList<UnifiedArffRow>();
 
 		for (Patient patient : patients) {
 
 			try {
 				UnifiedArffRow arffRow = patientDivider
 						.ComputeRegression(patient);
-				rows.add(arffRow);
+				trainSet.add(arffRow);
 			} catch (Exception e) {
 				System.out.println("patient missed");
 				e.printStackTrace();
@@ -64,10 +67,27 @@ public class PatientRegressionWorkflow extends WorkflowBase{
 		}
 		
 		//List<UnifiedArffRow> trainSet = rows.stream().limit(rows.size()/2).collect(Collectors.toList());
-		//List<UnifiedArffRow> testSet = rows.stream().;
+		List<UnifiedArffRow> testSet = new ArrayList<UnifiedArffRow>();
+		
+		int limit = trainSet.size()/2;
+		for(int i =0;i<limit;i++){
+			UnifiedArffRow obj = trainSet.get(i);
+			testSet.add(obj);
+			trainSet.remove(obj);
+		}
+		long trainHealtCount = trainSet.stream().filter(x->x.getDestinationClass()==0).count();
+		long trainSickCount = trainSet.stream().filter(x->x.getDestinationClass()==1).count();
+		
+		long testHealtCount = testSet.stream().filter(x->x.getDestinationClass()==0).count();
+		long testSickCount = testSet.stream().filter(x->x.getDestinationClass()==1).count();
+		
+		System.out.println(String.format("Train set has %d patients health and %d patients sick.",trainHealtCount,trainSickCount));
+		System.out.println(String.format("Test set has %d patients health and %d patients sick.",testHealtCount,testSickCount));
+		
 		UnifiedArffExporter exporter = new UnifiedArffExporter("UnifiedData");
 		try {
-			exporter.saveUnifiedRecordsToArffData(rows, "output/tempArff.arff");
+			exporter.saveUnifiedRecordsToArffData(trainSet, "output/tempArffTrain.arff");
+			exporter.saveUnifiedRecordsToArffData(testSet, "output/tempArffTest.arff");
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -76,15 +96,19 @@ public class PatientRegressionWorkflow extends WorkflowBase{
 
 	@Override
 	protected void runExperiment() {
-		Classifier classifier = new NaiveBayes();
-		Experiment.runExperiment(classifier, trainSetPath, testSetPath)
-		
+		Classifier classifier = new LinearRegression();
+		try {
+			double res = Experiment.runExperiment(classifier, "output/tempArffTrain.arff", "output/tempArffTest.arff");
+			System.out.println("The result for " + this.getClass().getSimpleName() +" is: " + res);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
 	protected void reportResult() {
 		// TODO Auto-generated method stub
-		
 	}
 
 }

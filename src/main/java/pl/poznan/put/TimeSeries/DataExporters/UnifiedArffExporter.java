@@ -22,7 +22,7 @@ public class UnifiedArffExporter extends ArffExporterBase {
 
 	@Override
 	protected void assignAttributes() {
-		String numberType = "number";
+		String numberType = "NUMERIC";
 		int regressionCount = records.stream().findFirst().get()
 				.getRegressionResults().size();
 		for (int i = 0; i < regressionCount; i++) {
