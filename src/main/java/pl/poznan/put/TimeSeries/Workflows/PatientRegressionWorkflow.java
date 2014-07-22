@@ -21,32 +21,11 @@ import weka.classifiers.functions.LinearRegression;
 import weka.classifiers.functions.MultilayerPerceptron;
 import weka.classifiers.rules.JRip;
 
-public class PatientRegressionWorkflow extends WorkflowBase{
+public class PatientRegressionWorkflow extends PatientWorkflowBase{
 
-	private List<Patient> patients;
-	
 	public PatientRegressionWorkflow() {
 		super();
 		patients = new ArrayList<Patient>();
-	}
-
-	@Override
-	protected void importData() {
-		String csvDataPath = Configuration.getProperty("csvDataSet");
-		String pureDataPath = Configuration.getProperty("pureDataSet");
-		List<Patient> csvPatients = null;
-		List<Patient> purePatients = null;
-		DataImporterBase importer = new DataImporterCsv(csvDataPath);
-		try {
-			csvPatients = importer.ImportData();
-			importer = new PureDataImporter(pureDataPath);
-			purePatients = importer.ImportData();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		patients.addAll(csvPatients);
-		patients.addAll(purePatients);
 	}
 
 	@Override
@@ -66,10 +45,9 @@ public class PatientRegressionWorkflow extends WorkflowBase{
 			}
 		}
 		
-		//List<UnifiedArffRow> trainSet = rows.stream().limit(rows.size()/2).collect(Collectors.toList());
 		List<UnifiedArffRow> testSet = new ArrayList<UnifiedArffRow>();
 		
-		int limit = trainSet.size()/2;
+		int limit = trainSet.size()/5;
 		for(int i =0;i<limit;i++){
 			UnifiedArffRow obj = trainSet.get(i);
 			testSet.add(obj);

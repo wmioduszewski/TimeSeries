@@ -77,12 +77,6 @@ public class PureDataImporter extends DataImporterBase {
 				DateTime currCharacteristicTime = startExaminationTime
 						.plusMinutes(minutePeriod * (burstId - 1));
 
-				// if(currCharacteristicTime.getHourOfDay()>11 &&
-				// currCharacteristicTime.getDayOfMonth()>1)
-				// currCharacteristicTime.minusDays(1);
-				// if(currCharacteristicTime.getHourOfDay()>2)
-				// currCharacteristicTime.minusDays(1);
-				//
 				Characteristic c = new Characteristic(currCharacteristicTime);
 				float tf = Float.parseFloat(fields[1]) - firstBurstMedian;
 				float tfadj = tf + adjMedian;
