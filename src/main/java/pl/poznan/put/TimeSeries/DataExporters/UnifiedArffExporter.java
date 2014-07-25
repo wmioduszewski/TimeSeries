@@ -2,6 +2,7 @@ package pl.poznan.put.TimeSeries.DataExporters;
 
 import java.io.FileNotFoundException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import pl.poznan.put.TimeSeries.Model.RegressionResult;
 import pl.poznan.put.TimeSeries.Model.UnifiedArffRow;
@@ -30,7 +31,20 @@ public class UnifiedArffExporter extends ArffExporterBase {
 			attributes.put(String.format("intercept%d", i + 1), numberType);
 		}
 //		attributes.put("age", numberType);
-		attributes.put("destClass", numberType);
+		
+		List<Object> classList = records.stream()
+				.map(x -> x.getDestinationClass()).collect(Collectors.toList());
+		List<Object> distinct = classList.stream().map(x -> x).distinct()
+				.collect(Collectors.toList());
+		
+		String classes = "";
+		for (Object problemClass : distinct) {
+			if (classes.length() > 0)
+				classes += ",";
+			classes += problemClass;
+		}
+
+		attributes.put("destClass", "{" + classes + "}");
 	}
 
 	@Override

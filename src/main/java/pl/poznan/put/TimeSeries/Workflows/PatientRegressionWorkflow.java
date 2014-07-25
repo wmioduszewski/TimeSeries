@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.apache.commons.lang3.tuple.MutablePair;
+import org.apache.commons.lang3.tuple.Pair;
+
 import pl.poznan.put.TimeSeries.Classifying.Experiment;
 import pl.poznan.put.TimeSeries.DataExporters.UnifiedArffExporter;
 import pl.poznan.put.TimeSeries.DataImporters.DataImporterBase;
@@ -18,8 +21,10 @@ import pl.poznan.put.TimeSeries.Util.Configuration;
 import weka.classifiers.Classifier;
 import weka.classifiers.bayes.NaiveBayes;
 import weka.classifiers.functions.LinearRegression;
+import weka.classifiers.functions.Logistic;
 import weka.classifiers.functions.MultilayerPerceptron;
 import weka.classifiers.rules.JRip;
+import weka.classifiers.trees.J48;
 
 public class PatientRegressionWorkflow extends PatientWorkflowBase{
 
@@ -31,36 +36,24 @@ public class PatientRegressionWorkflow extends PatientWorkflowBase{
 	@Override
 	protected void processData() {
 		PatientDataDivider patientDivider = new PatientDataDivider();
-		List<UnifiedArffRow> trainSet = new ArrayList<UnifiedArffRow>();
+		List<UnifiedArffRow> rows = new ArrayList<UnifiedArffRow>();
 
 		for (Patient patient : patients) {
 
 			try {
 				UnifiedArffRow arffRow = patientDivider
 						.ComputeRegression(patient);
-				trainSet.add(arffRow);
+				rows.add(arffRow);
 			} catch (Exception e) {
 				System.out.println("patient missed");
 				e.printStackTrace();
 			}
 		}
+		Pair<List<UnifiedArffRow>, List<UnifiedArffRow>> pair = divideRowsToTrainAndTest(rows);
+		List<UnifiedArffRow> trainSet = pair.getLeft();
+		List<UnifiedArffRow> testSet = pair.getRight();
 		
-		List<UnifiedArffRow> testSet = new ArrayList<UnifiedArffRow>();
-		
-		int limit = trainSet.size()/5;
-		for(int i =0;i<limit;i++){
-			UnifiedArffRow obj = trainSet.get(i);
-			testSet.add(obj);
-			trainSet.remove(obj);
-		}
-		long trainHealtCount = trainSet.stream().filter(x->x.getDestinationClass()==0).count();
-		long trainSickCount = trainSet.stream().filter(x->x.getDestinationClass()==1).count();
-		
-		long testHealtCount = testSet.stream().filter(x->x.getDestinationClass()==0).count();
-		long testSickCount = testSet.stream().filter(x->x.getDestinationClass()==1).count();
-		
-		System.out.println(String.format("Train set has %d patients health and %d patients sick.",trainHealtCount,trainSickCount));
-		System.out.println(String.format("Test set has %d patients health and %d patients sick.",testHealtCount,testSickCount));
+		ReportInputStatistics(trainSet, testSet);
 		
 		UnifiedArffExporter exporter = new UnifiedArffExporter("UnifiedData");
 		try {
@@ -74,7 +67,7 @@ public class PatientRegressionWorkflow extends PatientWorkflowBase{
 
 	@Override
 	protected void runExperiment() {
-		Classifier classifier = new LinearRegression();
+		Classifier classifier = new Logistic();
 		try {
 			double res = Experiment.runExperiment(classifier, "output/tempArffTrain.arff", "output/tempArffTest.arff");
 			System.out.println("The result for " + this.getClass().getSimpleName() +" is: " + res);

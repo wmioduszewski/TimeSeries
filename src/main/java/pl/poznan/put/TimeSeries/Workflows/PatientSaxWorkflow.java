@@ -8,7 +8,7 @@ public class PatientSaxWorkflow extends PatientWorkflowBase {
 
 	@Override
 	protected void processData() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
