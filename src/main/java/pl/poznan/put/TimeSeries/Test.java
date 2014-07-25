@@ -39,7 +39,8 @@ import weka.experiment.AveragingResultProducer;
 public class Test {	
 	
 	public static void main(String[] args) throws Exception {
-		WorkflowBase workflow = new PatientSaxWorkflow();
+		//WorkflowBase workflow = new PatientSaxWorkflow();
+		WorkflowBase workflow = new PatientRegressionWorkflow();
 		workflow.runWorkflow();
 	}
 

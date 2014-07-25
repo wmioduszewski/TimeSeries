@@ -1,307 +1,91 @@
 @RELATION PatientToSax
-@ATTRIBUTE saxString1, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString2, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString3, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString4, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString5, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString6, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString7, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString8, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString9, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString10, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString11, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString12, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString13, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString14, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString15, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString16, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString17, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString18, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString19, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString20, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString21, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString22, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString23, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString24, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString25, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString26, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString27, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString28, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString29, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString30, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString31, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString32, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString33, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString34, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString35, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString36, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString37, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString38, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString39, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString40, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString41, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString42, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString43, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString44, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString45, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString46, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString47, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString48, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString49, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString50, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString51, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString52, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString53, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString54, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString55, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString56, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString57, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString58, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString59, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString60, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString61, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString62, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString63, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString64, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString65, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString66, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString67, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString68, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString69, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString70, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString71, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString72, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString73, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString74, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString75, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString76, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString77, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString78, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString79, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString80, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString81, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString82, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString83, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString84, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString85, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString86, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString87, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString88, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString89, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString90, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString91, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString92, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString93, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString94, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString95, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString96, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString97, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString98, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString99, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString100, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString101, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString102, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString103, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString104, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString105, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString106, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString107, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString108, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString109, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString110, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString111, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString112, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString113, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString114, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString115, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString116, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString117, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString118, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString119, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString120, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString121, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString122, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString123, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString124, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString125, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString126, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString127, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString128, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString129, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString130, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString131, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString132, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString133, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString134, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString135, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString136, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString137, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString138, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString139, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString140, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString141, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString142, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString143, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString144, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString145, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString146, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString147, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString148, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString149, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString150, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString151, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString152, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString153, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString154, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString155, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString156, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString157, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString158, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString159, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString160, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString161, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString162, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString163, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString164, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString165, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString166, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString167, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString168, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString169, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString170, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString171, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString172, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString173, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString174, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString175, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString176, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString177, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString178, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString179, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString180, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString181, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString182, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString183, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString184, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString185, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString186, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString187, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString188, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString189, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString190, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString191, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString192, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString193, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString194, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString195, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString196, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString197, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString198, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString199, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString200, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString201, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString202, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString203, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString204, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString205, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString206, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString207, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString208, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString209, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString210, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString211, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString212, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString213, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString214, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString215, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString216, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString217, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString218, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString219, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString220, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString221, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString222, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString223, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString224, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString225, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString226, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString227, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString228, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString229, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString230, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString231, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString232, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString233, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString234, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString235, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString236, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString237, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString238, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString239, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
-@ATTRIBUTE saxString240, {aa,ab,ac,ba,bb,bc,ca,cb,cc}
+@ATTRIBUTE saxString1, {aaa,aab,aac,aad,aba,abb,abc,abd,aca,acb,acc,acd,ada,adb,adc,add,baa,bab,bac,bad,bba,bbb,bbc,bbd,bca,bcb,bcc,bcd,bda,bdb,bdc,bdd,caa,cab,cac,cad,cba,cbb,cbc,cbd,cca,ccb,ccc,ccd,cda,cdb,cdc,cdd,daa,dab,dac,dad,dba,dbb,dbc,dbd,dca,dcb,dcc,dcd,dda,ddb,ddc,ddd}
+@ATTRIBUTE saxString2, {aaa,aab,aac,aad,aba,abb,abc,abd,aca,acb,acc,acd,ada,adb,adc,add,baa,bab,bac,bad,bba,bbb,bbc,bbd,bca,bcb,bcc,bcd,bda,bdb,bdc,bdd,caa,cab,cac,cad,cba,cbb,cbc,cbd,cca,ccb,ccc,ccd,cda,cdb,cdc,cdd,daa,dab,dac,dad,dba,dbb,dbc,dbd,dca,dcb,dcc,dcd,dda,ddb,ddc,ddd}
+@ATTRIBUTE saxString3, {aaa,aab,aac,aad,aba,abb,abc,abd,aca,acb,acc,acd,ada,adb,adc,add,baa,bab,bac,bad,bba,bbb,bbc,bbd,bca,bcb,bcc,bcd,bda,bdb,bdc,bdd,caa,cab,cac,cad,cba,cbb,cbc,cbd,cca,ccb,ccc,ccd,cda,cdb,cdc,cdd,daa,dab,dac,dad,dba,dbb,dbc,dbd,dca,dcb,dcc,dcd,dda,ddb,ddc,ddd}
+@ATTRIBUTE saxString4, {aaa,aab,aac,aad,aba,abb,abc,abd,aca,acb,acc,acd,ada,adb,adc,add,baa,bab,bac,bad,bba,bbb,bbc,bbd,bca,bcb,bcc,bcd,bda,bdb,bdc,bdd,caa,cab,cac,cad,cba,cbb,cbc,cbd,cca,ccb,ccc,ccd,cda,cdb,cdc,cdd,daa,dab,dac,dad,dba,dbb,dbc,dbd,dca,dcb,dcc,dcd,dda,ddb,ddc,ddd}
+@ATTRIBUTE saxString5, {aaa,aab,aac,aad,aba,abb,abc,abd,aca,acb,acc,acd,ada,adb,adc,add,baa,bab,bac,bad,bba,bbb,bbc,bbd,bca,bcb,bcc,bcd,bda,bdb,bdc,bdd,caa,cab,cac,cad,cba,cbb,cbc,cbd,cca,ccb,ccc,ccd,cda,cdb,cdc,cdd,daa,dab,dac,dad,dba,dbb,dbc,dbd,dca,dcb,dcc,dcd,dda,ddb,ddc,ddd}
+@ATTRIBUTE saxString6, {aaa,aab,aac,aad,aba,abb,abc,abd,aca,acb,acc,acd,ada,adb,adc,add,baa,bab,bac,bad,bba,bbb,bbc,bbd,bca,bcb,bcc,bcd,bda,bdb,bdc,bdd,caa,cab,cac,cad,cba,cbb,cbc,cbd,cca,ccb,ccc,ccd,cda,cdb,cdc,cdd,daa,dab,dac,dad,dba,dbb,dbc,dbd,dca,dcb,dcc,dcd,dda,ddb,ddc,ddd}
+@ATTRIBUTE saxString7, {aaa,aab,aac,aad,aba,abb,abc,abd,aca,acb,acc,acd,ada,adb,adc,add,baa,bab,bac,bad,bba,bbb,bbc,bbd,bca,bcb,bcc,bcd,bda,bdb,bdc,bdd,caa,cab,cac,cad,cba,cbb,cbc,cbd,cca,ccb,ccc,ccd,cda,cdb,cdc,cdd,daa,dab,dac,dad,dba,dbb,dbc,dbd,dca,dcb,dcc,dcd,dda,ddb,ddc,ddd}
+@ATTRIBUTE saxString8, {aaa,aab,aac,aad,aba,abb,abc,abd,aca,acb,acc,acd,ada,adb,adc,add,baa,bab,bac,bad,bba,bbb,bbc,bbd,bca,bcb,bcc,bcd,bda,bdb,bdc,bdd,caa,cab,cac,cad,cba,cbb,cbc,cbd,cca,ccb,ccc,ccd,cda,cdb,cdc,cdd,daa,dab,dac,dad,dba,dbb,dbc,dbd,dca,dcb,dcc,dcd,dda,ddb,ddc,ddd}
+@ATTRIBUTE saxString9, {aaa,aab,aac,aad,aba,abb,abc,abd,aca,acb,acc,acd,ada,adb,adc,add,baa,bab,bac,bad,bba,bbb,bbc,bbd,bca,bcb,bcc,bcd,bda,bdb,bdc,bdd,caa,cab,cac,cad,cba,cbb,cbc,cbd,cca,ccb,ccc,ccd,cda,cdb,cdc,cdd,daa,dab,dac,dad,dba,dbb,dbc,dbd,dca,dcb,dcc,dcd,dda,ddb,ddc,ddd}
+@ATTRIBUTE saxString10, {aaa,aab,aac,aad,aba,abb,abc,abd,aca,acb,acc,acd,ada,adb,adc,add,baa,bab,bac,bad,bba,bbb,bbc,bbd,bca,bcb,bcc,bcd,bda,bdb,bdc,bdd,caa,cab,cac,cad,cba,cbb,cbc,cbd,cca,ccb,ccc,ccd,cda,cdb,cdc,cdd,daa,dab,dac,dad,dba,dbb,dbc,dbd,dca,dcb,dcc,dcd,dda,ddb,ddc,ddd}
+@ATTRIBUTE saxString11, {aaa,aab,aac,aad,aba,abb,abc,abd,aca,acb,acc,acd,ada,adb,adc,add,baa,bab,bac,bad,bba,bbb,bbc,bbd,bca,bcb,bcc,bcd,bda,bdb,bdc,bdd,caa,cab,cac,cad,cba,cbb,cbc,cbd,cca,ccb,ccc,ccd,cda,cdb,cdc,cdd,daa,dab,dac,dad,dba,dbb,dbc,dbd,dca,dcb,dcc,dcd,dda,ddb,ddc,ddd}
+@ATTRIBUTE saxString12, {aaa,aab,aac,aad,aba,abb,abc,abd,aca,acb,acc,acd,ada,adb,adc,add,baa,bab,bac,bad,bba,bbb,bbc,bbd,bca,bcb,bcc,bcd,bda,bdb,bdc,bdd,caa,cab,cac,cad,cba,cbb,cbc,cbd,cca,ccb,ccc,ccd,cda,cdb,cdc,cdd,daa,dab,dac,dad,dba,dbb,dbc,dbd,dca,dcb,dcc,dcd,dda,ddb,ddc,ddd}
+@ATTRIBUTE saxString13, {aaa,aab,aac,aad,aba,abb,abc,abd,aca,acb,acc,acd,ada,adb,adc,add,baa,bab,bac,bad,bba,bbb,bbc,bbd,bca,bcb,bcc,bcd,bda,bdb,bdc,bdd,caa,cab,cac,cad,cba,cbb,cbc,cbd,cca,ccb,ccc,ccd,cda,cdb,cdc,cdd,daa,dab,dac,dad,dba,dbb,dbc,dbd,dca,dcb,dcc,dcd,dda,ddb,ddc,ddd}
+@ATTRIBUTE saxString14, {aaa,aab,aac,aad,aba,abb,abc,abd,aca,acb,acc,acd,ada,adb,adc,add,baa,bab,bac,bad,bba,bbb,bbc,bbd,bca,bcb,bcc,bcd,bda,bdb,bdc,bdd,caa,cab,cac,cad,cba,cbb,cbc,cbd,cca,ccb,ccc,ccd,cda,cdb,cdc,cdd,daa,dab,dac,dad,dba,dbb,dbc,dbd,dca,dcb,dcc,dcd,dda,ddb,ddc,ddd}
+@ATTRIBUTE saxString15, {aaa,aab,aac,aad,aba,abb,abc,abd,aca,acb,acc,acd,ada,adb,adc,add,baa,bab,bac,bad,bba,bbb,bbc,bbd,bca,bcb,bcc,bcd,bda,bdb,bdc,bdd,caa,cab,cac,cad,cba,cbb,cbc,cbd,cca,ccb,ccc,ccd,cda,cdb,cdc,cdd,daa,dab,dac,dad,dba,dbb,dbc,dbd,dca,dcb,dcc,dcd,dda,ddb,ddc,ddd}
+@ATTRIBUTE saxString16, {aaa,aab,aac,aad,aba,abb,abc,abd,aca,acb,acc,acd,ada,adb,adc,add,baa,bab,bac,bad,bba,bbb,bbc,bbd,bca,bcb,bcc,bcd,bda,bdb,bdc,bdd,caa,cab,cac,cad,cba,cbb,cbc,cbd,cca,ccb,ccc,ccd,cda,cdb,cdc,cdd,daa,dab,dac,dad,dba,dbb,dbc,dbd,dca,dcb,dcc,dcd,dda,ddb,ddc,ddd}
+@ATTRIBUTE saxString17, {aaa,aab,aac,aad,aba,abb,abc,abd,aca,acb,acc,acd,ada,adb,adc,add,baa,bab,bac,bad,bba,bbb,bbc,bbd,bca,bcb,bcc,bcd,bda,bdb,bdc,bdd,caa,cab,cac,cad,cba,cbb,cbc,cbd,cca,ccb,ccc,ccd,cda,cdb,cdc,cdd,daa,dab,dac,dad,dba,dbb,dbc,dbd,dca,dcb,dcc,dcd,dda,ddb,ddc,ddd}
+@ATTRIBUTE saxString18, {aaa,aab,aac,aad,aba,abb,abc,abd,aca,acb,acc,acd,ada,adb,adc,add,baa,bab,bac,bad,bba,bbb,bbc,bbd,bca,bcb,bcc,bcd,bda,bdb,bdc,bdd,caa,cab,cac,cad,cba,cbb,cbc,cbd,cca,ccb,ccc,ccd,cda,cdb,cdc,cdd,daa,dab,dac,dad,dba,dbb,dbc,dbd,dca,dcb,dcc,dcd,dda,ddb,ddc,ddd}
+@ATTRIBUTE saxString19, {aaa,aab,aac,aad,aba,abb,abc,abd,aca,acb,acc,acd,ada,adb,adc,add,baa,bab,bac,bad,bba,bbb,bbc,bbd,bca,bcb,bcc,bcd,bda,bdb,bdc,bdd,caa,cab,cac,cad,cba,cbb,cbc,cbd,cca,ccb,ccc,ccd,cda,cdb,cdc,cdd,daa,dab,dac,dad,dba,dbb,dbc,dbd,dca,dcb,dcc,dcd,dda,ddb,ddc,ddd}
+@ATTRIBUTE saxString20, {aaa,aab,aac,aad,aba,abb,abc,abd,aca,acb,acc,acd,ada,adb,adc,add,baa,bab,bac,bad,bba,bbb,bbc,bbd,bca,bcb,bcc,bcd,bda,bdb,bdc,bdd,caa,cab,cac,cad,cba,cbb,cbc,cbd,cca,ccb,ccc,ccd,cda,cdb,cdc,cdd,daa,dab,dac,dad,dba,dbb,dbc,dbd,dca,dcb,dcc,dcd,dda,ddb,ddc,ddd}
+@ATTRIBUTE saxString21, {aaa,aab,aac,aad,aba,abb,abc,abd,aca,acb,acc,acd,ada,adb,adc,add,baa,bab,bac,bad,bba,bbb,bbc,bbd,bca,bcb,bcc,bcd,bda,bdb,bdc,bdd,caa,cab,cac,cad,cba,cbb,cbc,cbd,cca,ccb,ccc,ccd,cda,cdb,cdc,cdd,daa,dab,dac,dad,dba,dbb,dbc,dbd,dca,dcb,dcc,dcd,dda,ddb,ddc,ddd}
+@ATTRIBUTE saxString22, {aaa,aab,aac,aad,aba,abb,abc,abd,aca,acb,acc,acd,ada,adb,adc,add,baa,bab,bac,bad,bba,bbb,bbc,bbd,bca,bcb,bcc,bcd,bda,bdb,bdc,bdd,caa,cab,cac,cad,cba,cbb,cbc,cbd,cca,ccb,ccc,ccd,cda,cdb,cdc,cdd,daa,dab,dac,dad,dba,dbb,dbc,dbd,dca,dcb,dcc,dcd,dda,ddb,ddc,ddd}
+@ATTRIBUTE saxString23, {aaa,aab,aac,aad,aba,abb,abc,abd,aca,acb,acc,acd,ada,adb,adc,add,baa,bab,bac,bad,bba,bbb,bbc,bbd,bca,bcb,bcc,bcd,bda,bdb,bdc,bdd,caa,cab,cac,cad,cba,cbb,cbc,cbd,cca,ccb,ccc,ccd,cda,cdb,cdc,cdd,daa,dab,dac,dad,dba,dbb,dbc,dbd,dca,dcb,dcc,dcd,dda,ddb,ddc,ddd}
+@ATTRIBUTE saxString24, {aaa,aab,aac,aad,aba,abb,abc,abd,aca,acb,acc,acd,ada,adb,adc,add,baa,bab,bac,bad,bba,bbb,bbc,bbd,bca,bcb,bcc,bcd,bda,bdb,bdc,bdd,caa,cab,cac,cad,cba,cbb,cbc,cbd,cca,ccb,ccc,ccd,cda,cdb,cdc,cdd,daa,dab,dac,dad,dba,dbb,dbc,dbd,dca,dcb,dcc,dcd,dda,ddb,ddc,ddd}
+@ATTRIBUTE saxString25, {aaa,aab,aac,aad,aba,abb,abc,abd,aca,acb,acc,acd,ada,adb,adc,add,baa,bab,bac,bad,bba,bbb,bbc,bbd,bca,bcb,bcc,bcd,bda,bdb,bdc,bdd,caa,cab,cac,cad,cba,cbb,cbc,cbd,cca,ccb,ccc,ccd,cda,cdb,cdc,cdd,daa,dab,dac,dad,dba,dbb,dbc,dbd,dca,dcb,dcc,dcd,dda,ddb,ddc,ddd}
+@ATTRIBUTE saxString26, {aaa,aab,aac,aad,aba,abb,abc,abd,aca,acb,acc,acd,ada,adb,adc,add,baa,bab,bac,bad,bba,bbb,bbc,bbd,bca,bcb,bcc,bcd,bda,bdb,bdc,bdd,caa,cab,cac,cad,cba,cbb,cbc,cbd,cca,ccb,ccc,ccd,cda,cdb,cdc,cdd,daa,dab,dac,dad,dba,dbb,dbc,dbd,dca,dcb,dcc,dcd,dda,ddb,ddc,ddd}
+@ATTRIBUTE saxString27, {aaa,aab,aac,aad,aba,abb,abc,abd,aca,acb,acc,acd,ada,adb,adc,add,baa,bab,bac,bad,bba,bbb,bbc,bbd,bca,bcb,bcc,bcd,bda,bdb,bdc,bdd,caa,cab,cac,cad,cba,cbb,cbc,cbd,cca,ccb,ccc,ccd,cda,cdb,cdc,cdd,daa,dab,dac,dad,dba,dbb,dbc,dbd,dca,dcb,dcc,dcd,dda,ddb,ddc,ddd}
+@ATTRIBUTE saxString28, {aaa,aab,aac,aad,aba,abb,abc,abd,aca,acb,acc,acd,ada,adb,adc,add,baa,bab,bac,bad,bba,bbb,bbc,bbd,bca,bcb,bcc,bcd,bda,bdb,bdc,bdd,caa,cab,cac,cad,cba,cbb,cbc,cbd,cca,ccb,ccc,ccd,cda,cdb,cdc,cdd,daa,dab,dac,dad,dba,dbb,dbc,dbd,dca,dcb,dcc,dcd,dda,ddb,ddc,ddd}
+@ATTRIBUTE saxString29, {aaa,aab,aac,aad,aba,abb,abc,abd,aca,acb,acc,acd,ada,adb,adc,add,baa,bab,bac,bad,bba,bbb,bbc,bbd,bca,bcb,bcc,bcd,bda,bdb,bdc,bdd,caa,cab,cac,cad,cba,cbb,cbc,cbd,cca,ccb,ccc,ccd,cda,cdb,cdc,cdd,daa,dab,dac,dad,dba,dbb,dbc,dbd,dca,dcb,dcc,dcd,dda,ddb,ddc,ddd}
+@ATTRIBUTE saxString30, {aaa,aab,aac,aad,aba,abb,abc,abd,aca,acb,acc,acd,ada,adb,adc,add,baa,bab,bac,bad,bba,bbb,bbc,bbd,bca,bcb,bcc,bcd,bda,bdb,bdc,bdd,caa,cab,cac,cad,cba,cbb,cbc,cbd,cca,ccb,ccc,ccd,cda,cdb,cdc,cdd,daa,dab,dac,dad,dba,dbb,dbc,dbd,dca,dcb,dcc,dcd,dda,ddb,ddc,ddd}
+@ATTRIBUTE saxString31, {aaa,aab,aac,aad,aba,abb,abc,abd,aca,acb,acc,acd,ada,adb,adc,add,baa,bab,bac,bad,bba,bbb,bbc,bbd,bca,bcb,bcc,bcd,bda,bdb,bdc,bdd,caa,cab,cac,cad,cba,cbb,cbc,cbd,cca,ccb,ccc,ccd,cda,cdb,cdc,cdd,daa,dab,dac,dad,dba,dbb,dbc,dbd,dca,dcb,dcc,dcd,dda,ddb,ddc,ddd}
+@ATTRIBUTE saxString32, {aaa,aab,aac,aad,aba,abb,abc,abd,aca,acb,acc,acd,ada,adb,adc,add,baa,bab,bac,bad,bba,bbb,bbc,bbd,bca,bcb,bcc,bcd,bda,bdb,bdc,bdd,caa,cab,cac,cad,cba,cbb,cbc,cbd,cca,ccb,ccc,ccd,cda,cdb,cdc,cdd,daa,dab,dac,dad,dba,dbb,dbc,dbd,dca,dcb,dcc,dcd,dda,ddb,ddc,ddd}
 @ATTRIBUTE class {0.0,1.0}
 @DATA
-cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,bb,bb,bb,bb,bb,bb,bb,bb,bc,cc,cc,cc,cc,cc,ca,aa,aa,aa,aa,aa,ab,bb,bb,bb,bb,bb,bb,bb,bb,ba,aa,aa,aa,aa,aa,ab,bb,bb,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bc,cc,cc,cb,bb,bb,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bb,bb,cc,cc,cc,cb,bb,bb,bb,bb,bb,bb,bb,bb,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,bb,bb,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,bb,bb,bb,bb,bb,bb,cc,cc,cc,bb,bb,bb,0.0
-aa,aa,aa,bb,bb,bb,bc,cc,cc,bb,bb,bb,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,bb,bb,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,bb,bb,bb,bb,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,ba,aa,aa,ab,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bc,cc,cc,cc,bb,bb,bb,0.0
-cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bb,bb,bb,bb,bb,bb,bb,bb,aa,aa,aa,bb,bb,bb,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,bb,bb,bb,bb,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,bb,aa,aa,aa,aa,aa,aa,bb,bb,bb,bb,bb,bb,cc,cc,cc,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bb,bb,cc,cc,cc,bb,bb,bb,cc,cc,cc,cc,cc,cc,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,0.0
-bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,aa,aa,aa,ab,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bb,bc,cc,cc,cc,bb,bb,bb,bb,bb,bb,cc,cc,cc,bb,bb,bb,bb,bb,bb,bb,bb,bb,0.0
-bb,bb,bb,aa,aa,aa,bb,bb,bb,aa,aa,aa,ab,bb,bb,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,bb,bb,bb,bb,bb,bb,bb,bb,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,bb,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,aa,aa,aa,bb,bb,bb,bb,bb,bb,aa,aa,aa,aa,aa,aa,ab,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,ba,aa,aa,ac,cc,cc,cb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,bb,bb,bb,bb,bb,ba,aa,aa,aa,aa,aa,ab,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,0.0
-aa,aa,aa,bb,bb,bb,bb,bb,bb,cc,cc,cc,bb,bb,bb,bb,bb,bb,cc,cc,cc,bb,bb,bb,cc,cc,cc,aa,aa,aa,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,aa,aa,aa,cc,cc,cc,cc,cc,cc,aa,aa,aa,cc,cc,cc,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,bb,bb,bb,bb,bb,bb,bb,aa,aa,aa,bb,bb,bb,bb,bb,bb,bb,bb,bb,aa,aa,aa,bb,bb,bb,aa,aa,aa,bb,bb,bb,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,bb,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,bb,aa,aa,aa,bb,bb,bb,cc,cc,cc,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,cc,cc,cc,aa,aa,aa,0.0
-bb,bb,bb,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,bb,bb,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,0.0
-bb,bb,bb,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,bb,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,bb,cc,cc,cc,cc,cc,cc,bb,bb,bb,cc,cc,cc,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,0.0
-bb,bb,bb,bc,cc,cc,ba,aa,aa,aa,aa,aa,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,ba,aa,aa,aa,aa,aa,aa,aa,aa,ab,bb,bb,bc,cc,cc,cb,bb,bb,bb,bb,bb,bb,bb,bb,bb,aa,aa,aa,aa,aa,ab,cc,cc,cb,bb,bb,bb,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cb,bb,bb,bb,cc,cc,cc,cc,cc,cc,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,bb,bb,bb,bb,bb,bc,cc,cc,cc,cc,cc,cc,bb,bb,bb,cc,cc,cc,cc,cc,cc,0.0
-aa,aa,aa,bb,bb,bb,aa,aa,aa,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bb,bb,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,bb,cc,cc,cc,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,bb,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,bb,aa,aa,aa,aa,aa,aa,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,0.0
-ba,aa,ab,bb,bb,cb,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,cc,cc,cc,cc,cc,cc,ca,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,aa,bb,bb,bb,bc,cc,cc,cc,cc,cb,bb,bb,bb,ab,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,bb,cc,cc,cc,cc,cc,cc,cb,bc,bb,bb,bb,cc,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cb,bb,bb,bb,0.0
-cc,cc,cc,cc,cc,cc,cc,cc,cb,bb,cb,bb,bb,bb,bb,bb,bb,ba,aa,aa,aa,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,aa,ab,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bb,cc,bb,bb,cb,bb,bb,bb,bb,bc,cb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cb,cc,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,0.0
-aa,ba,aa,aa,aa,aa,bb,aa,aa,aa,aa,aa,aa,aa,aa,bb,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,bb,ba,aa,aa,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,cb,bc,cc,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,bc,cc,cc,cc,cc,cb,bc,cc,bb,cc,cb,bb,cc,cb,bb,bc,cc,cc,cb,0.0
-cc,cc,cc,cc,cc,cc,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,aa,aa,ab,aa,aa,aa,bb,bb,bc,cc,bb,bb,bb,bb,bb,bb,bb,aa,ab,bb,bb,ba,aa,bb,bb,ba,ab,bb,bb,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,bb,aa,ab,bb,bb,bb,bb,aa,ab,ba,aa,aa,bb,bc,cc,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bb,cc,cc,cc,cc,cc,cc,cb,bb,cc,bb,bb,bb,bb,cc,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,ba,ab,bb,bc,bb,bb,bb,bb,bb,bb,bb,bb,bc,cb,bb,bb,bc,cb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,bc,cc,cc,cb,bc,cb,bc,cc,cc,cc,cb,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bc,cb,bb,bb,bb,bb,cb,bb,bb,bb,bb,bb,aa,ab,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,aa,aa,aa,aa,aa,0.0
-aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,bb,bb,bb,bb,ab,bb,bb,bb,bb,bb,bb,bb,bb,bb,bc,cb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bc,cc,cc,cc,cc,cc,cc,cb,bc,cb,bb,cb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bc,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cb,bb,bb,bb,bb,bb,bb,bb,bb,0.0
-aa,ab,bb,bb,bb,cc,cc,cc,cb,bc,cc,cb,bb,bb,bb,cc,bb,bb,bb,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,ba,aa,ab,bb,ba,aa,aa,aa,bb,ba,ac,cc,bb,bc,cc,ca,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,bb,bb,bb,bb,bb,ba,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,bb,bb,bb,bc,cc,cc,cc,cc,cc,bb,cc,cb,bb,bb,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bb,bb,bb,cc,cb,ab,bb,cc,cc,cc,bb,bb,bb,aa,ab,bb,bb,bb,bb,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,0.0
-bb,bb,bb,bb,bb,cc,cc,cb,bb,bb,bb,bb,bc,cc,cc,cc,bb,cc,cc,cc,cc,cb,aa,aa,bc,cc,cb,bb,bb,bb,bb,cc,cb,bb,bb,ba,aa,bc,cc,cb,bc,cc,bb,bb,cc,cc,cc,cb,ab,cc,cb,bb,cc,bb,bc,cc,cc,cc,cc,cc,cb,bb,bc,cc,cc,cc,cc,cc,cc,ca,bb,cc,cc,bc,cb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,ca,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,aa,aa,aa,aa,aa,aa,ab,ba,aa,aa,aa,aa,aa,aa,aa,ab,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,ab,bb,ba,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,ba,bb,cc,cb,bb,bc,bb,bb,aa,aa,ab,bb,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,ab,aa,aa,ba,ab,cc,ca,bb,bb,cb,ba,aa,aa,bb,bb,bc,cc,cc,cc,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,cb,aa,bb,cc,cc,bb,ba,aa,aa,0.0
-cc,cc,cc,cc,cc,cc,cc,bc,cc,bb,aa,aa,aa,ab,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,aa,aa,aa,aa,aa,aa,aa,aa,aa,ba,aa,aa,ab,bb,ab,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,ba,ab,bb,bb,ba,aa,bb,bb,bb,ba,aa,ab,aa,aa,aa,aa,aa,aa,aa,bb,bb,bb,aa,ab,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bb,bb,bb,bb,bb,bc,cc,cc,cc,cc,cc,cb,bb,bb,bb,bb,bb,bb,bb,bb,ba,aa,aa,aa,bb,bb,ba,bb,bb,cb,bb,bb,bb,bb,bb,bc,cb,bb,bb,ab,bb,bb,bb,bb,0.0
-aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ba,ab,cb,ba,aa,aa,ab,ca,aa,bb,cc,cc,cb,bb,cc,aa,aa,aa,aa,ab,bb,ab,bb,bc,bb,bb,aa,ba,aa,ab,ba,aa,ba,aa,aa,aa,cc,cc,cb,ba,cc,cc,bb,bc,cb,aa,aa,ab,ba,ab,ba,aa,aa,bb,ba,aa,aa,aa,aa,bb,bb,cb,bb,bb,ba,bb,bb,bb,cb,aa,bc,bb,cc,bc,cc,ba,cc,cc,cb,bc,ba,bb,bb,cb,bb,bc,bb,aa,ab,ba,ac,aa,cb,bb,bb,bb,ba,cc,bc,cc,cc,cb,bb,cc,cb,bb,aa,bb,cb,bb,cc,cb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cb,bb,bb,bb,bb,bb,cc,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,aa,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,aa,aa,bb,cb,bb,bc,ba,aa,bb,bb,bb,bb,cc,cc,cb,aa,aa,bb,bb,cc,cc,cb,bb,cc,cc,cc,cc,cc,ba,bb,cb,ba,aa,aa,bb,aa,aa,aa,aa,aa,bb,aa,aa,aa,bb,bc,cb,ba,aa,ab,cb,aa,aa,aa,0.0
-aa,aa,aa,aa,aa,bb,ab,bb,bb,ba,ab,bb,aa,aa,aa,aa,ab,ba,ab,bb,bb,bc,ca,aa,aa,aa,aa,aa,ab,bb,bb,aa,aa,ba,aa,aa,bb,bb,bb,cc,aa,aa,aa,aa,aa,aa,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ba,ac,cb,bc,cc,cb,ab,bb,cc,cc,cb,bb,bb,bb,bb,cc,cc,cb,aa,bb,bb,bb,ba,ab,bb,bb,bb,bb,bb,cc,bb,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,cc,cc,ba,aa,ab,bc,bb,bb,ab,bb,aa,aa,aa,ab,bb,aa,bb,bb,cb,cc,cc,cc,cc,cc,cc,cc,bb,cc,cc,cc,cc,cb,bb,ba,aa,aa,bb,bb,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,ca,aa,ab,cc,cb,ba,ab,bb,bb,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,aa,aa,aa,aa,cc,bc,cc,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,aa,aa,aa,aa,aa,aa,bb,bc,bb,ba,bb,bb,bb,bb,bc,bb,cb,bb,bb,cc,cb,bb,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,ba,aa,aa,aa,ab,bc,ba,bb,bb,bb,ba,aa,ab,bb,aa,bb,bb,aa,0.0
-aa,aa,aa,bc,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,ba,aa,aa,aa,aa,aa,bb,bb,bb,bb,ba,aa,bb,bb,aa,aa,aa,aa,aa,aa,ab,bb,bb,bb,cb,bb,bc,bb,bb,bb,bb,bb,bc,cb,bb,bb,bc,cc,cc,cc,cc,cb,bc,cc,bb,ba,aa,aa,aa,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,ab,bb,aa,aa,bb,bb,bb,bb,bb,bb,0.0
-aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ba,aa,bb,ba,bb,aa,ab,ba,aa,aa,aa,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,bb,bb,bb,bb,bb,bb,bb,ba,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bc,cb,bb,bb,bc,cc,cb,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,bb,bb,bb,bb,ba,aa,ab,aa,aa,aa,ab,aa,aa,bb,aa,aa,ab,ba,bb,bb,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,ba,bb,bb,0.0
-cc,cc,cb,cc,cc,cc,cc,cc,cc,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,ba,ab,bb,aa,aa,aa,aa,ab,bb,bb,ba,aa,ab,bb,ba,aa,aa,bb,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,cb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,bb,bb,bb,bb,cc,cc,cb,bc,cc,bb,bb,ab,bb,bb,bb,ab,bb,bb,bb,bb,bb,aa,aa,aa,ab,bb,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,0.0
-aa,aa,aa,ab,bb,aa,bb,ab,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,ba,aa,bb,cc,aa,cb,bb,ba,aa,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,ba,ab,aa,bb,ab,ba,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bb,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,bb,ba,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,ba,aa,aa,bb,bb,bb,bb,bb,ba,ab,bb,ba,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,ab,bb,ba,aa,aa,0.0
-aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,ab,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,ba,aa,aa,aa,bb,ba,ab,ba,aa,aa,aa,bb,aa,aa,aa,aa,aa,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,cc,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cc,bc,cc,bb,bb,bb,bb,cc,bb,bb,cc,cc,cb,bb,bb,bb,cb,bb,bb,0.0
-cc,cc,cc,cc,cc,cc,bb,bb,bb,bb,cc,bb,bb,bb,bb,bb,ba,ab,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,cc,bb,bb,bc,bb,bb,bb,bb,bb,ba,bc,cc,cb,bc,cb,bb,aa,aa,aa,ab,bb,bb,bb,bb,aa,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,cc,cc,cc,cc,cb,bb,bb,bb,bb,bb,bb,bb,ba,ab,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bc,bb,bb,bb,bb,bb,bb,bb,bb,ba,ab,aa,ab,bb,bb,bb,ba,bb,aa,ab,bb,ba,aa,aa,ab,bb,bb,aa,bb,ab,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bc,cb,cc,cc,cc,cc,cc,cc,cc,0.0
-ab,cc,bc,cc,bb,bb,bb,bb,aa,ab,bb,aa,aa,aa,ab,aa,aa,ab,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,bb,aa,ab,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,cc,cc,cb,bb,bb,bb,bb,bb,bc,cb,bb,aa,aa,ab,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,aa,ab,bb,bb,bb,ab,bc,ca,aa,bb,0.0
-aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,aa,aa,aa,aa,bb,aa,aa,aa,aa,bb,aa,aa,aa,aa,bb,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,bb,aa,aa,aa,aa,aa,aa,aa,ab,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,aa,aa,aa,aa,aa,aa,aa,ab,bb,bb,bb,bb,bb,bb,bc,bb,bb,bb,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bc,cb,cc,cc,cc,cc,bc,cc,cb,cc,cc,cc,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,bb,cc,cc,cc,cc,0.0
-aa,bb,bb,bb,bb,bb,cb,bb,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,bb,aa,ab,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bb,bc,cc,cc,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,ba,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,ba,ab,bb,bc,cb,bb,bb,bb,0.0
-aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,bb,bb,bb,ba,ab,bb,ba,bb,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,ba,bb,ab,ba,aa,aa,aa,bb,bb,bb,bb,bc,bb,cb,bb,bb,bb,bb,bb,cc,cc,cc,bb,cc,cc,cb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bc,cb,cc,bb,cc,cc,cb,bb,bc,cc,cc,cc,cc,cc,cc,cc,cb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,cc,cc,cc,cb,cc,cc,cb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bc,cc,cb,cc,cc,cc,cc,cb,bb,0.0
-aa,aa,aa,ab,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ba,aa,aa,aa,aa,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bc,cc,cc,bb,cb,bc,cb,bb,bb,cc,cc,cc,cc,cc,bb,cb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,aa,aa,ab,ba,aa,aa,aa,aa,aa,ab,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,0.0
-aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,ab,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,ba,bb,aa,aa,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,bb,bb,bb,bb,bb,bb,bb,bb,bc,bb,cc,cc,cc,cc,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bc,cc,cc,cb,bb,bb,bc,cb,bb,bb,cc,cc,cb,bc,bb,bc,0.0
-aa,aa,aa,aa,bb,cc,cb,ab,ba,bc,cc,cb,aa,aa,cc,aa,bb,aa,aa,ab,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bc,cb,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,bb,cc,bb,aa,bb,bb,aa,aa,aa,aa,ab,aa,aa,aa,aa,aa,aa,aa,aa,bb,ba,bb,bb,bc,cc,cc,cc,bb,bc,cc,cc,cc,cc,cb,bb,bb,bb,bb,bb,bb,bb,bb,cc,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,bb,bb,bb,bb,ba,aa,aa,aa,aa,aa,aa,cb,bb,bc,cb,ba,aa,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,0.0
-aa,ba,aa,aa,aa,aa,aa,aa,aa,ab,bb,bb,ab,bb,ba,aa,aa,aa,aa,ab,ba,ab,bb,bb,bb,ab,ba,ab,bb,aa,aa,aa,aa,aa,aa,aa,bb,ba,ab,ba,bb,aa,bb,bb,bb,ba,aa,aa,aa,aa,ab,aa,aa,bb,bb,ba,aa,aa,aa,aa,bb,bb,bb,bb,bb,bb,ba,ab,bb,bb,bb,bb,bb,ba,ab,ba,bb,bb,bb,bb,bb,bb,bb,ab,ba,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bc,cc,cc,cc,cc,bb,bb,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,bb,bb,bb,bc,cc,cc,cc,ba,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,cb,bc,cc,cc,bb,bb,bb,bb,bc,cb,bc,cb,bb,bb,cb,bb,bb,bb,bb,bb,ba,ab,bb,bb,bb,bb,bb,bb,bb,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,0.0
-bb,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ba,aa,aa,aa,aa,aa,aa,aa,bb,ba,bb,aa,ab,bb,bb,aa,aa,ab,aa,aa,bb,bb,ba,aa,aa,ab,ba,ab,aa,aa,aa,aa,aa,ab,bb,aa,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bc,cc,cc,cc,cc,cb,bb,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bc,cc,bc,cc,cc,cc,cc,cc,cc,cc,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bc,bb,bb,bb,bb,bc,cc,bb,bb,bc,cb,bb,bb,bb,bb,aa,aa,0.0
-aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,aa,aa,aa,aa,aa,aa,bb,bb,aa,ab,bb,bb,bb,bb,bb,ba,bb,bb,bb,bb,bb,bb,aa,aa,aa,aa,ab,aa,aa,aa,ab,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bc,cc,cc,cc,cc,cc,cc,cc,bc,cb,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,bb,bb,bb,bb,bb,0.0
-aa,ba,aa,aa,ab,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bc,cc,bc,cc,cb,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,cc,cc,cc,cb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,ba,aa,aa,aa,ab,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,0.0
-aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,aa,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cb,bb,cc,cc,cc,bc,bb,bb,cc,bc,cc,cc,cc,cc,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,0.0
-cc,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cb,bb,bb,bb,bb,bb,ab,bb,bb,ba,bb,bb,bc,cc,cc,cc,cc,cc,cb,bb,bc,bb,bb,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ba,ab,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bb,bc,cc,cc,cc,bb,bb,bb,bb,bb,bb,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,0.0
-cc,cc,cc,cb,bb,bb,bb,ba,aa,bb,ba,aa,ab,ba,aa,aa,aa,aa,aa,ab,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,cb,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,ba,aa,aa,bb,bb,aa,aa,ab,ba,aa,aa,aa,aa,aa,bb,aa,ba,ab,bb,bb,aa,ab,bb,bb,bb,bb,cc,bb,ba,aa,bb,bc,cc,ba,aa,aa,aa,ab,bb,bc,cc,bb,cb,bb,bb,cb,aa,bb,bb,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,cc,cc,cc,cc,cc,cc,bb,bc,cc,cb,bb,bb,bb,bb,bb,bb,bc,cb,bc,cc,cb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bc,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bc,cc,bc,cb,bc,cc,bc,cc,cb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bb,bb,bb,bb,cc,cb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bb,bb,bb,bb,bb,bc,cc,cc,cc,0.0
-aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,aa,ab,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bc,cb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cb,bb,bb,bb,0.0
-bb,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,bc,bb,bb,bb,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,ba,ab,aa,aa,bb,ba,aa,aa,ab,bb,bb,bb,bb,bb,bb,bb,bb,bc,bb,bb,bb,bc,cc,cc,cc,cb,bb,bc,bb,bb,cb,bc,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bb,bb,bb,bb,bb,cc,bb,bc,cb,bb,cc,bc,cc,cc,cb,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cb,bc,bb,bb,bb,bb,bb,bb,bb,0.0
-aa,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ba,aa,aa,aa,aa,aa,aa,ab,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,0.0
-aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,aa,aa,aa,ab,ba,aa,aa,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,bb,bb,ab,aa,aa,aa,bb,ba,aa,aa,aa,aa,ba,aa,aa,aa,ab,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,bb,bb,bb,0.0
-aa,ba,ac,cc,cc,bb,ab,bb,bb,ba,ab,cb,bb,bb,ba,bb,cc,cc,cc,ba,aa,aa,aa,ab,aa,bb,bb,ba,ab,bc,bb,cc,bb,bc,cc,cc,cc,cc,cc,cc,cc,bb,bc,cc,cb,aa,aa,ba,aa,aa,aa,aa,aa,ab,bc,ba,ac,cc,cc,ca,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,cb,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,cb,bb,ba,aa,ab,cb,bb,bb,bb,bb,ba,aa,cc,aa,aa,aa,aa,aa,cb,ac,cb,ba,aa,aa,ba,aa,ab,bb,aa,bb,aa,ab,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bc,cc,cb,cc,cc,cc,cc,cc,cc,cc,cc,cb,bb,bb,cb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,bb,bb,bb,bb,ba,aa,bb,ba,ab,bb,bb,bb,bb,bb,cc,bb,cc,cc,cc,cc,cc,cc,cb,bb,bc,cb,aa,bb,ba,aa,bb,aa,ba,aa,aa,aa,aa,aa,aa,aa,aa,0.0
-aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,bb,aa,bb,ba,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,bc,cc,cc,cc,cc,cc,bb,bb,0.0
-cc,bb,aa,aa,aa,aa,ab,ba,ab,bb,bb,bb,bb,bb,ba,bb,bb,ba,aa,aa,aa,aa,aa,aa,bc,cb,bb,bb,bc,bb,bb,bb,ab,bb,bb,bb,bb,ba,aa,bb,aa,aa,ab,bc,bb,bb,bb,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,aa,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cc,bc,cb,cc,cc,cc,cc,cb,cc,cc,cc,cb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bc,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bb,bb,bb,bb,bb,bb,bc,cc,cc,cc,cc,cc,bb,cc,cc,cc,cc,cc,0.0
-cc,cc,ca,ab,cc,bb,bb,bb,bc,bb,bc,cc,bb,bb,bb,bb,aa,aa,aa,aa,bb,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ba,aa,aa,aa,aa,aa,aa,ab,ba,bb,aa,aa,ba,aa,aa,bb,ac,ca,aa,ab,aa,aa,ab,bc,bb,bb,bb,bc,cc,bb,cc,cc,cc,cc,cc,cc,aa,bb,bc,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,aa,aa,aa,aa,ab,bb,aa,bb,bc,cb,bc,cc,bb,bc,cb,bc,ba,bb,bb,bb,bc,cc,cc,bc,cc,cc,cc,cb,bc,cc,cb,bb,bb,cb,bb,cc,cc,cc,cc,cb,ac,bb,bb,bb,bb,cc,cc,cc,cc,cb,bc,ba,bb,aa,aa,aa,aa,aa,ab,cc,bc,ca,aa,aa,bb,bb,bb,ba,aa,aa,ba,ab,ba,bb,aa,ab,ba,aa,bb,ab,ba,aa,bb,bb,bb,bc,cc,bb,bb,bb,bb,bb,bb,bb,cc,cc,cb,bb,bb,cb,ab,bb,cc,cc,cc,cc,cc,cc,cb,bb,bb,cc,cb,cc,bb,ab,cb,bc,cc,cc,cc,bc,cc,cb,cc,cc,cc,bb,cc,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,0.0
-cc,ab,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,bb,bb,bb,cc,cc,cc,cc,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,cc,cc,cc,cc,cc,cc,cc,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,cc,bb,cc,cc,cc,cc,bb,bb,cb,bc,cc,cc,cc,bb,bc,cc,cc,cc,cc,cc,cc,cc,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,bb,cc,cc,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bc,cc,cc,cc,cc,cc,cc,cc,0.0
-aa,aa,aa,ab,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,ba,bb,bb,ba,ab,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,aa,aa,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bc,cb,bb,bb,bb,bb,bb,aa,aa,aa,aa,aa,aa,aa,bb,aa,aa,aa,bb,aa,aa,ab,ca,aa,aa,aa,ab,bb,ba,aa,aa,aa,bb,bb,aa,aa,aa,ab,bb,bb,bb,bb,aa,aa,aa,bb,aa,bb,bb,bb,aa,bb,aa,aa,aa,bb,ab,bb,bb,bb,bb,bb,bb,bb,bb,aa,bb,cc,ca,bb,bb,bb,cb,bc,bb,bb,bb,bb,bc,cc,cc,cc,bb,bc,cb,cc,cc,bb,bb,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,bb,cb,bb,bb,bb,bc,cc,cc,cc,cc,cc,cb,bb,cc,cc,cc,bc,cc,cc,cc,cc,cc,cc,cc,bb,cc,cc,cc,cc,cb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,0.0
-aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,ba,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,ba,bb,bb,bb,bb,bb,bb,bb,bc,cc,cc,bb,bb,bb,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,0.0
-bb,bb,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,ba,aa,bb,ba,ab,bb,bc,bb,bb,bb,bb,ba,ab,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,ba,aa,bb,aa,bb,bb,ba,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bc,cc,cc,cb,cc,cc,cc,bb,bb,bc,0.0
-bb,aa,aa,ab,bb,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,aa,aa,aa,aa,bb,aa,ab,ba,bb,bb,aa,bb,ba,aa,bb,aa,aa,aa,aa,aa,bb,ba,aa,ab,aa,bb,ba,ab,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,bb,bb,bb,bb,bb,bb,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,0.0
-aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,bb,bb,bb,bb,bb,aa,aa,aa,aa,aa,aa,aa,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,0.0
-aa,aa,aa,ab,bb,aa,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,aa,aa,ba,ab,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,aa,ab,bb,bb,ba,bb,bb,ab,bb,aa,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bb,bb,bb,bb,bb,bb,bb,bb,bc,cc,bb,bb,bb,bb,bb,bb,cb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,0.0
-bb,aa,ab,bb,bb,bb,bb,bb,bb,aa,aa,aa,aa,bb,bb,bb,aa,aa,aa,aa,aa,aa,ab,bb,aa,ab,bb,ba,aa,ba,aa,ab,bb,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,aa,aa,aa,aa,ab,aa,aa,bb,aa,aa,aa,aa,ba,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,bb,bb,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,ba,ab,cb,aa,ac,ba,bb,aa,aa,aa,aa,aa,bb,bb,bb,bb,bb,bb,bb,bb,bb,bc,cc,cc,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,cc,cc,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,bb,cc,0.0
-cc,cc,cc,bb,bb,bb,bc,cc,cc,bb,bb,bb,cc,cc,cc,cc,cc,cc,cb,bb,bb,cc,cc,cc,bb,bb,bb,bb,bb,bb,bb,bb,bb,bc,cc,cc,ca,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,bb,bb,bb,bb,bb,ba,aa,aa,ab,bb,bb,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cc,cb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,1.0
-aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,cb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,1.0
-bb,bb,bb,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,1.0
-aa,aa,aa,bb,bb,bb,aa,aa,aa,aa,aa,aa,ab,bb,bb,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,1.0
-aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bb,bb,bb,bb,bb,cc,cc,cc,bb,bb,bb,cc,cc,cc,cc,cc,cc,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,1.0
-aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bc,cc,cc,cc,cc,cc,bb,bb,bb,bb,bb,bb,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bb,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,bb,bb,bb,1.0
-aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,bb,bb,bb,bb,bb,bb,bb,bb,ba,aa,aa,aa,aa,aa,ab,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,1.0
-aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,bb,bb,bb,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,aa,ab,cc,cc,cb,bb,bb,bb,bb,bb,bb,bc,cc,cc,ba,aa,aa,ab,bb,bb,ba,aa,aa,aa,aa,aa,aa,bb,bb,ba,aa,aa,aa,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,bb,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cc,cb,bb,bb,bb,1.0
+cdd,dcb,bcd,dbb,bbb,bbb,bba,aba,aaa,aba,aaa,aaa,aaa,aaa,bbb,ccc,ccd,ddd,dcc,ddd,cdd,dcc,ccc,cba,aaa,aaa,cdd,ddd,ddd,ddd,cbc,ccc,0.0
+bbc,cba,aaa,aaa,aaa,abb,aaa,aaa,aaa,aaa,aaa,aaa,aba,aab,bbb,bbb,bbb,bcd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,dcd,ccc,ccb,bbb,bbb,ddb,0.0
+cdd,ddc,cbc,bbb,bbb,bab,bbb,baa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,abb,bbb,bcc,ccc,ddd,ddd,ddd,ddd,ddd,ddd,ccc,cdd,ccb,ccc,ccc,ccc,bcb,0.0
+bbb,bbb,abb,bbb,bba,aba,baa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,abb,bbb,bbb,bbb,bcc,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ccc,cdc,ccc,ccc,ccc,0.0
+bbb,bab,aaa,aaa,aaa,aaa,aaa,aaa,aac,bbb,aab,bbb,aab,bbb,bbb,bbb,aaa,bbb,bbb,cbd,ddd,cdd,ddd,ddd,ddd,ddd,ddd,ddd,ddc,cbb,bbb,bcb,0.0
+bcc,ccb,cdd,ccb,ccc,cdb,bcc,ddc,ddd,ddd,bcd,dbd,cdd,ddd,ddd,ddd,aaa,aaa,abb,bab,bbb,bbb,bbb,bbb,aaa,abc,aaa,bca,bcb,aaa,aaa,cda,0.0
+bbb,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aba,bbb,aaa,bbb,bbb,bbb,bcc,ccb,cdd,ddd,ddd,ddd,ddd,ddd,ddd,dcd,ddd,ddd,ddd,dcd,ddc,0.0
+bba,aba,aaa,aaa,aaa,aaa,aaa,aaa,abb,aaa,aaa,aaa,bbc,ddc,ccc,cdc,ddc,ccc,cbc,ddd,ddd,ddd,ddd,ddc,ccc,ccc,ccc,ccc,ccb,bbc,bcc,cdd,0.0
+bcb,bbb,ccb,bbb,bbc,ccc,cbb,bcb,baa,aaa,aaa,aaa,aaa,aaa,baa,aaa,aaa,aaa,bcb,ccc,ccc,ddd,ccc,ccd,ddd,ddd,ddd,ddd,ddc,ccc,ddd,cdc,0.0
+aba,abb,bcc,cdc,cbb,bba,bbb,bbb,bcc,ccc,ccb,bba,aaa,aaa,aaa,abd,ddd,ddd,ddd,ddd,ddd,ddd,dcb,aaa,bdc,baa,aab,bab,bbb,bbb,bcc,cdc,0.0
+bbb,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,bdd,daa,aaa,aaa,abb,bdd,cbb,bbb,cdd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,cdc,ccc,cbb,bbd,ddb,0.0
+ddd,ccb,bbb,aaa,aaa,bba,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,bbb,bbb,bcc,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ccc,ccc,cbb,bbc,cbb,bbb,0.0
+aab,aaa,baa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aba,aaa,aaa,aaa,bbb,bbc,ccc,ccd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ccc,ccc,dcd,0.0
+ddd,bbc,baa,bcc,cbb,bbb,baa,aaa,aaa,aaa,aaa,abb,cbb,acd,ddd,ddd,dcd,dcc,ccc,ccd,dbc,cbb,ccd,ddd,ccc,dcd,ddd,ddc,ccb,bbb,aaa,baa,0.0
+aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aab,aaa,bbb,bbc,ccc,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ccc,ccc,ccc,ccc,ccc,ccc,bcb,0.0
+bcd,ccc,cba,aaa,aaa,aaa,aaa,aaa,abb,aab,cca,aaa,aaa,aaa,aab,bbb,bbb,bbb,ccc,ddd,ddd,ddd,ddd,ddd,ddc,cdd,ccc,ddd,bcc,dcb,bbd,ddd,0.0
+bcc,ccd,cdc,bcc,dbb,ccd,dcc,cdd,cdd,dcd,ddd,ddd,ddd,caa,aaa,aaa,aab,bbb,aab,bcc,bbb,bbb,bbb,bbc,cbb,baa,aab,acb,bbd,dba,aab,cca,0.0
+ddd,cbb,aaa,aaa,aaa,aaa,aaa,baa,abb,baa,aaa,aaa,bbb,baa,aab,bdd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddc,dcc,ddd,ccc,ddc,cbb,bbb,bbc,bcb,0.0
+aaa,abb,bbd,caa,bbb,bba,dcd,cab,aba,bcc,bbc,ccc,bcb,bbb,bdd,cbc,cdd,dcc,ccc,ddd,ddd,ddd,ddd,cbb,bbb,ccb,ccb,bdc,ddc,bba,bac,bca,0.0
+bab,bba,bbc,aab,abb,caa,aaa,aab,dbd,ccd,bbb,ccc,ddd,ddb,cba,abc,ddd,cdb,acd,ddd,bcb,cdd,dda,bcc,ddd,caa,cbb,ccc,bab,aba,bcb,aba,0.0
+aba,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aba,aaa,aaa,baa,bbb,baa,bcc,ccc,ccc,bbb,bcc,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddb,bbb,0.0
+aaa,aaa,aaa,aaa,aaa,baa,aaa,aaa,abb,bbb,aaa,aab,bbb,bbb,bbb,ccc,ccd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,dcb,bbb,bbb,bbb,bbb,bbb,bbb,0.0
+ccc,ccb,bbb,bbb,bbb,bbb,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aab,cbb,ccd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,dcc,ccc,bbb,cbb,bba,aaa,0.0
+bbb,aaa,aaa,aaa,aab,bcb,aaa,aaa,aaa,aaa,aaa,aaa,bbb,bbc,ccd,dcc,cdd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,cbb,bbb,bbb,bbb,bcb,bba,0.0
+aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,bbb,bbb,bbb,bba,bbb,ccc,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,dcc,ccc,ccb,ccc,ccc,ccc,0.0
+ddc,ccb,baa,aaa,aaa,baa,aaa,aaa,aaa,aac,ccb,ccb,bbb,bcd,ddd,ddd,ddd,ddd,ddd,dcd,ddc,ccc,bbb,ccc,bbc,bcb,bbb,bbb,bbb,bbc,bcc,cdd,0.0
+ccc,bbb,aaa,aaa,aaa,aaa,aaa,aaa,aba,aaa,baa,aaa,aab,bbb,bcc,ccc,ddd,ddd,ddd,ddd,ddd,ddd,ccc,ccb,ccd,ddd,ddd,ddc,bcb,bcc,cbb,bcb,0.0
+baa,aba,baa,aba,aaa,aaa,aaa,aaa,aaa,aab,aaa,aab,aaa,aaa,bbb,bbb,ccc,cdd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,dcc,ccd,ccd,ccc,ccc,dcd,0.0
+bcc,baa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,abb,ccc,cdd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,dcc,cbb,bba,bbb,bcb,0.0
+aaa,aaa,aaa,aab,bbb,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aab,bbb,ccc,ccd,ccd,ddd,ddd,ddd,ddd,ddd,ddd,ddc,ccc,cdc,ccd,ddd,dcc,ccc,ccc,ccc,0.0
+bba,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,bbb,bbb,cbc,bcc,ccd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ccc,ccc,ccc,bbb,bab,bbc,ccc,0.0
+aaa,aaa,aaa,aaa,aaa,abb,bcb,bbb,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,abb,bbc,ccc,ddd,ddd,ddd,ddc,ddd,ddd,ddd,ddd,ddd,ddd,cdc,dcc,ccc,0.0
+abd,bcb,bbb,aaa,aaa,aab,aaa,aab,aab,bcb,bbb,aab,bcc,ddc,bbb,cdd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddc,ddd,ddc,cba,bcb,baa,aaa,aab,bab,0.0
+baa,bbb,abb,bbb,aab,bbb,aaa,baa,bbb,bbb,bbb,bbb,bcc,dcc,ddd,cbc,ddd,ddd,ddd,ddd,ddc,ddd,ddd,ddd,ddc,ccc,ccc,ccc,ccb,bbb,aaa,aaa,0.0
+baa,aaa,aaa,aaa,aaa,aaa,abb,aaa,bbb,bbb,abb,abb,bbc,ccc,ccc,ccd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddc,ddd,dcc,dcc,cbc,bbc,bcc,ccc,cbb,0.0
+aaa,aaa,aaa,aaa,aaa,aaa,baa,aaa,bbb,bbb,bbb,bbb,bbb,bbb,bab,bbc,ccc,ccc,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,dcc,ccc,ccb,0.0
+bba,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,bbb,bcc,ccc,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ccc,ccc,bbb,bab,bbb,ccc,ccc,0.0
+aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aab,bbb,ccc,ccc,ccc,cdd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,dcc,ccc,ccc,ccc,0.0
+dcc,bcc,bbb,bdd,ccb,aaa,aaa,aaa,aaa,aba,aaa,aaa,aaa,aaa,aaa,aaa,abb,bcc,ccc,cdd,ddd,ddd,ddd,ddd,ddd,ddc,ccc,ccd,ddd,ddd,cbb,bcb,0.0
+dcc,bbb,aba,aaa,baa,aaa,aaa,aaa,aab,bba,aab,bbb,cca,cab,ccc,bcc,ddd,ddc,ccc,ccc,ccc,ccc,ccc,ccc,ccc,ccd,ddd,ddd,bcc,ddd,ddc,ccd,0.0
+aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aab,bab,bbb,bcc,cdd,ddc,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,dcc,ccc,ccc,bcc,ccc,0.0
+bba,abc,bbb,aaa,baa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,bbb,bbc,ccc,ccc,ccc,cdd,ddd,ddd,ddd,ddd,ddd,cdd,ddd,ddd,ccc,ccc,ccc,ddc,ccc,0.0
+baa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aab,bbb,bbb,ccc,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddc,cbb,bcb,ccc,cbb,bbb,0.0
+aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,bbb,bba,aaa,abb,bbb,bbb,bbb,bbc,ccb,ccc,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddc,ccc,dcd,ddd,ddd,dcc,0.0
+bdb,bcc,ccb,bbb,ccc,ccd,baa,bdd,aaa,aab,aaa,bbb,bbb,abd,aab,baa,baa,aab,bbc,ccc,ccc,ccc,ddd,dcd,ddd,ddd,dcb,bbb,bcd,ccc,bbb,aab,0.0
+aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aab,aaa,aaa,aab,bbb,bcc,cbb,bcc,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddc,ddd,dcd,ddd,ddd,ccc,ccc,0.0
+cbb,bcb,baa,bcc,bbb,bbc,bba,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aab,bbb,bcc,ccc,ccc,ccd,ddd,ccc,ccc,ccd,ddd,ddd,ddd,ddd,ddd,dcc,cdd,ccc,0.0
+dcc,cdc,bab,aaa,aaa,aaa,aba,abb,abc,ccc,cca,aaa,aab,bbc,ccc,ccd,dcc,cdc,ccd,cba,acb,aba,bbb,bbb,ccc,ccc,cdd,ccc,bdd,ccc,ddd,ddd,0.0
+caa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,bbd,ccc,ddd,ddd,ccc,cdd,ddc,ddd,ddc,ccc,ccc,ddd,ddd,ddd,dcc,ccd,ddd,cdd,dcc,ddd,0.0
+ccc,ccd,dcc,ccc,ccc,aab,aaa,aab,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,abb,bab,cdd,dcd,ddd,ddd,ddd,ddd,ddd,ddd,dcd,ccc,ccc,ccc,ccc,ccd,1.0
+aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,bab,bbb,bbc,ccd,ddd,ddd,ddc,ddd,ddd,ddd,ddc,ccc,ccd,ccc,ccc,ccd,ccd,ddd,1.0
+cba,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,bbb,bbb,bbc,cbb,ccc,cbc,ccc,ccc,ccd,ddd,ddd,ddd,ddd,ddd,ddb,bcb,bbb,bbc,ccb,cdd,ddd,1.0
+bbb,bab,aba,aaa,aaa,aab,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aba,abb,cbb,ccc,ddd,ddd,ddd,ddd,ddd,ddc,ddd,dcc,cdd,ddd,ddc,ddd,ddc,1.0
+aaa,aba,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,abb,ddd,cbc,ccc,ccc,ccc,ccc,ddc,ccd,ddd,ddc,ddd,ddd,ddd,ccd,ddd,ddd,ddd,ddc,ddd,cdd,1.0
+aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,aaa,bbb,ccc,ccc,ccc,ddd,ddc,dcc,ccc,cdd,ddd,ddd,ddd,cdd,dcd,ddd,cdd,ddd,ddc,ccc,ddd,dcc,1.0
+baa,aaa,aaa,aaa,aaa,aaa,aaa,aab,aab,aaa,aaa,aaa,aaa,bcb,bbb,bbb,bbb,bcc,cbb,ccc,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd,1.0

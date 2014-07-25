@@ -2,6 +2,8 @@ package pl.poznan.put.TimeSeries.Workflows;
 
 import weka.classifiers.Classifier;
 import weka.classifiers.functions.Logistic;
+import weka.classifiers.rules.JRip;
+import weka.classifiers.trees.J48;
 
 public abstract class WorkflowBase {
 	
