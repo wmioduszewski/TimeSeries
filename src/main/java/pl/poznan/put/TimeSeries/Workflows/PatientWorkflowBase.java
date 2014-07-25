@@ -22,6 +22,7 @@ public abstract class PatientWorkflowBase extends WorkflowBase{
 	
 	public PatientWorkflowBase() {
 		super();
+		patients = new ArrayList<Patient>();
 	}
 	
 	protected Pair<List<UnifiedArffRow>, List<UnifiedArffRow>> divideRowsToTrainAndTest(List<UnifiedArffRow> input){

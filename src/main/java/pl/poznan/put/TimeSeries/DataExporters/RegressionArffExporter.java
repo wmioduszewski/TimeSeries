@@ -7,11 +7,11 @@ import java.util.stream.Collectors;
 import pl.poznan.put.TimeSeries.Model.RegressionResult;
 import pl.poznan.put.TimeSeries.Model.UnifiedArffRow;
 
-public class UnifiedArffExporter extends ArffExporterBase {
+public class RegressionArffExporter extends ArffExporterBase {
 
 	private List<UnifiedArffRow> records;
 
-	public UnifiedArffExporter(String relationTitle) {
+	public RegressionArffExporter(String relationTitle) {
 		super(relationTitle);
 	}
 

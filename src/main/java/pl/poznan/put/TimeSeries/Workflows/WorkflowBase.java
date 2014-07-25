@@ -1,6 +1,14 @@
 package pl.poznan.put.TimeSeries.Workflows;
 
+import weka.classifiers.Classifier;
+import weka.classifiers.functions.Logistic;
+
 public abstract class WorkflowBase {
+	
+	protected Classifier classifier = new Logistic();
+	
+	protected String tempTrainPath;
+	protected String tempTestPath;
 	
 	protected abstract void importData();
 	
@@ -10,9 +18,11 @@ public abstract class WorkflowBase {
 	
 	protected abstract void reportResult();
 	
+	protected abstract void setTempPaths();
+	
 	public WorkflowBase() {
 		super();
-		// TODO Auto-generated constructor stub
+		setTempPaths();
 	}
 
 	public void runWorkflow()

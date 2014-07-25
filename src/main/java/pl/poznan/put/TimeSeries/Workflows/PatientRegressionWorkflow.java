@@ -10,7 +10,7 @@ import org.apache.commons.lang3.tuple.MutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 
 import pl.poznan.put.TimeSeries.Classifying.Experiment;
-import pl.poznan.put.TimeSeries.DataExporters.UnifiedArffExporter;
+import pl.poznan.put.TimeSeries.DataExporters.RegressionArffExporter;
 import pl.poznan.put.TimeSeries.DataImporters.DataImporterBase;
 import pl.poznan.put.TimeSeries.DataImporters.DataImporterCsv;
 import pl.poznan.put.TimeSeries.DataImporters.PureDataImporter;
@@ -30,7 +30,6 @@ public class PatientRegressionWorkflow extends PatientWorkflowBase{
 
 	public PatientRegressionWorkflow() {
 		super();
-		patients = new ArrayList<Patient>();
 	}
 
 	@Override
@@ -55,10 +54,10 @@ public class PatientRegressionWorkflow extends PatientWorkflowBase{
 		
 		ReportInputStatistics(trainSet, testSet);
 		
-		UnifiedArffExporter exporter = new UnifiedArffExporter("UnifiedData");
+		RegressionArffExporter exporter = new RegressionArffExporter("UnifiedData");
 		try {
-			exporter.saveUnifiedRecordsToArffData(trainSet, "output/tempArffTrain.arff");
-			exporter.saveUnifiedRecordsToArffData(testSet, "output/tempArffTest.arff");
+			exporter.saveUnifiedRecordsToArffData(trainSet, tempTrainPath);
+			exporter.saveUnifiedRecordsToArffData(testSet, tempTestPath);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -66,10 +65,9 @@ public class PatientRegressionWorkflow extends PatientWorkflowBase{
 	}
 
 	@Override
-	protected void runExperiment() {
-		Classifier classifier = new Logistic();
+	protected void runExperiment() {		
 		try {
-			double res = Experiment.runExperiment(classifier, "output/tempArffTrain.arff", "output/tempArffTest.arff");
+			double res = Experiment.runExperiment(classifier, tempTrainPath, tempTestPath);
 			System.out.println("The result for " + this.getClass().getSimpleName() +" is: " + res);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -80,6 +78,13 @@ public class PatientRegressionWorkflow extends PatientWorkflowBase{
 	@Override
 	protected void reportResult() {
 		// TODO Auto-generated method stub
+	}
+
+	@Override
+	protected void setTempPaths() {
+		tempTrainPath = "output/tempRegressionArffTrain.arff";
+		tempTestPath = "output/tempRegressionArffTest.arff";
+		
 	}
 
 }
