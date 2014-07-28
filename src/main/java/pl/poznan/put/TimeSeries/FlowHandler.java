@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import pl.poznan.put.TimeSeries.Classifying.Experiment;
-import pl.poznan.put.TimeSeries.DataExporters.DataExporterEamonn;
+import pl.poznan.put.TimeSeries.DataExporters.DeprecatedDataExporterEamonn;
 import pl.poznan.put.TimeSeries.DataImporters.DataImporterEamonn;
 import pl.poznan.put.TimeSeries.Model.UnifiedRecordType;
 import pl.poznan.put.TimeSeries.Reporting.EntireReport;
@@ -52,7 +52,7 @@ public class FlowHandler {
 								+ mode);
 				List<UnifiedRecordType> data = eamonnImporter
 						.ImportEamonnData();
-				DataExporterEamonn eamonnExporter = new DataExporterEamonn(data);
+				DeprecatedDataExporterEamonn eamonnExporter = new DeprecatedDataExporterEamonn(data);
 				eamonnExporter.ConstructArff("temp/" + datasetName + mode
 						+ ".arff");
 			}

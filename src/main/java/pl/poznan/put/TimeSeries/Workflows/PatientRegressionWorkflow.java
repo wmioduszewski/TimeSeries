@@ -1,30 +1,17 @@
 package pl.poznan.put.TimeSeries.Workflows;
 
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
-import org.apache.commons.lang3.tuple.MutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 
 import pl.poznan.put.TimeSeries.Classifying.Experiment;
 import pl.poznan.put.TimeSeries.DataExporters.RegressionArffExporter;
-import pl.poznan.put.TimeSeries.DataImporters.DataImporterBase;
-import pl.poznan.put.TimeSeries.DataImporters.DataImporterCsv;
-import pl.poznan.put.TimeSeries.DataImporters.PureDataImporter;
 import pl.poznan.put.TimeSeries.DataProcessors.PatientDataDivider;
 import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Model.UnifiedArffRow;
-import pl.poznan.put.TimeSeries.Util.Configuration;
-import weka.classifiers.Classifier;
-import weka.classifiers.bayes.NaiveBayes;
-import weka.classifiers.functions.LinearRegression;
-import weka.classifiers.functions.Logistic;
-import weka.classifiers.functions.MultilayerPerceptron;
-import weka.classifiers.rules.JRip;
-import weka.classifiers.trees.J48;
+import pl.poznan.put.TimeSeries.Util.PatientUtils;
 
 public class PatientRegressionWorkflow extends PatientWorkflowBase{
 
@@ -48,7 +35,7 @@ public class PatientRegressionWorkflow extends PatientWorkflowBase{
 				e.printStackTrace();
 			}
 		}
-		Pair<List<UnifiedArffRow>, List<UnifiedArffRow>> pair = divideRowsToTrainAndTest(rows);
+		Pair<List<UnifiedArffRow>, List<UnifiedArffRow>> pair = PatientUtils.divideRowsToTrainAndTest(rows);
 		List<UnifiedArffRow> trainSet = pair.getLeft();
 		List<UnifiedArffRow> testSet = pair.getRight();
 		

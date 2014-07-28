@@ -13,7 +13,7 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import pl.poznan.put.TimeSeries.DataExporters.PureDataArffExporter;
+import pl.poznan.put.TimeSeries.DataExporters.DeprecatedDivisionArffExporter;
 import pl.poznan.put.TimeSeries.DataExporters.RegressionArffExporter;
 import pl.poznan.put.TimeSeries.DataImporters.DataImporterBase;
 import pl.poznan.put.TimeSeries.DataImporters.DataImporterCsv;
@@ -39,9 +39,7 @@ import weka.experiment.AveragingResultProducer;
 public class Test {	
 	
 	public static void main(String[] args) throws Exception {
-		//WorkflowBase workflow = new PatientSaxWorkflow();
-		WorkflowBase workflow = new PatientRegressionWorkflow();
-		workflow.runWorkflow();
+		
 	}
 
 	private static void test() throws Exception {
@@ -54,7 +52,7 @@ public class Test {
 
 		List<UnifiedRecordType> records = PatientGroupConverter
 				.RegressionConversion(groups);
-		PureDataArffExporter exporter = new PureDataArffExporter("PureData");
+		DeprecatedDivisionArffExporter exporter = new DeprecatedDivisionArffExporter("PureData");
 		exporter.saveUnifiedRecordsToArffData(records,
 				Configuration.getProperty("pureArffOutput")
 						+ "pureArffTest.arff");

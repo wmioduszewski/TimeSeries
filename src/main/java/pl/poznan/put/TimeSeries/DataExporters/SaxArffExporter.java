@@ -8,14 +8,14 @@ import java.util.stream.Collectors;
 import pl.poznan.put.TimeSeries.Model.UnifiedRecordType;
 import pl.poznan.put.TimeSeries.Util.Configuration;
 
-public class RecordToArffTranslator extends ArffExporterBase {
+public class SaxArffExporter extends ArffExporterBase {
 	private List<UnifiedRecordType> records;
 	private int attrLength;
 	private int recordLength;
 	private int saxAlphabeatSize;
 	private boolean isNominal;
 
-	public RecordToArffTranslator(String relationTitle) {
+	public SaxArffExporter(String relationTitle) {
 		super(relationTitle);
 	}
 

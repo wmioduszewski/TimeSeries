@@ -30,20 +30,18 @@ public class RegressionArffExporter extends ArffExporterBase {
 			attributes.put(String.format("slope%d", i + 1), numberType);
 			attributes.put(String.format("intercept%d", i + 1), numberType);
 		}
-//		attributes.put("age", numberType);
-		
+
 		List<Object> classList = records.stream()
 				.map(x -> x.getDestinationClass()).collect(Collectors.toList());
 		List<Object> distinct = classList.stream().map(x -> x).distinct()
 				.collect(Collectors.toList());
-		
+
 		String classes = "";
 		for (Object problemClass : distinct) {
 			if (classes.length() > 0)
 				classes += ",";
 			classes += problemClass;
 		}
-
 		attributes.put("destClass", "{" + classes + "}");
 	}
 

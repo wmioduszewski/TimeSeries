@@ -9,11 +9,11 @@ import java.util.List;
 import pl.poznan.put.TimeSeries.Model.UnifiedRecordType;
 import pl.poznan.put.TimeSeries.Util.Configuration;
 
-public class DataExporterEamonn {
+public class DeprecatedDataExporterEamonn {
 
 	private List<UnifiedRecordType> records;
 
-	public DataExporterEamonn(List<UnifiedRecordType> records) {
+	public DeprecatedDataExporterEamonn(List<UnifiedRecordType> records) {
 		this.records = records;
 	}
 
@@ -31,7 +31,7 @@ public class DataExporterEamonn {
 	}
 
 	public void ConstructArff(String destinationPath) {
-		RecordToArffTranslator translator = new RecordToArffTranslator(
+		SaxArffExporter translator = new SaxArffExporter(
 				"Lighting2");
 		try {
 			int attrLength = Integer.parseInt(Configuration

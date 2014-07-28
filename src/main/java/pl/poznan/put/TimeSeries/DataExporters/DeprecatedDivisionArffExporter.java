@@ -8,10 +8,10 @@ import pl.poznan.put.TimeSeries.Constants.AgeLimit;
 import pl.poznan.put.TimeSeries.Constants.Limits;
 import pl.poznan.put.TimeSeries.Model.UnifiedRecordType;
 
-public class PureDataArffExporter extends ArffExporterBase {
+public class DeprecatedDivisionArffExporter extends ArffExporterBase {
 	private List<UnifiedRecordType> records;
 
-	public PureDataArffExporter(String relationTitle) {
+	public DeprecatedDivisionArffExporter(String relationTitle) {
 		super(relationTitle);
 	}
 
@@ -46,7 +46,6 @@ public class PureDataArffExporter extends ArffExporterBase {
 				classes += ",";
 			classes += problemClass;
 		}
-
 		attributes.put("class", "{" + classes + "}");
 	}
 

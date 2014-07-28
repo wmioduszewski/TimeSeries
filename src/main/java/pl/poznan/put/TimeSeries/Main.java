@@ -17,7 +17,7 @@ import org.jfree.ui.RefineryUtilities;
 import pl.poznan.put.TimeSeries.Classifying.Experiment;
 import pl.poznan.put.TimeSeries.Classifying.NgramClassifier;
 import pl.poznan.put.TimeSeries.DataExporters.DataExporterCsv;
-import pl.poznan.put.TimeSeries.DataExporters.DataExporterEamonn;
+import pl.poznan.put.TimeSeries.DataExporters.DeprecatedDataExporterEamonn;
 import pl.poznan.put.TimeSeries.DataExporters.PatientToArffTranslator;
 import pl.poznan.put.TimeSeries.DataImporters.DataImporterBase;
 import pl.poznan.put.TimeSeries.DataImporters.DataImporterCsv;
@@ -33,6 +33,8 @@ import pl.poznan.put.TimeSeries.Renderers.SaxChart;
 import pl.poznan.put.TimeSeries.Renderers.SmoothChart;
 import pl.poznan.put.TimeSeries.Util.Configuration;
 import pl.poznan.put.TimeSeries.Util.SaxPerformer;
+import pl.poznan.put.TimeSeries.Workflows.PatientRegressionWorkflow;
+import pl.poznan.put.TimeSeries.Workflows.WorkflowBase;
 import weka.classifiers.Classifier;
 import weka.classifiers.rules.JRip;
 import weka.classifiers.trees.J48;
@@ -46,12 +48,19 @@ public class Main {
 
 	public static void main(String[] args) throws Exception {
 
-		FlowHandler flow = new FlowHandler();
-		flow.startProcessing();
+		
+		
+		//WorkflowBase workflow = new PatientSaxWorkflow();
+		WorkflowBase workflow = new PatientRegressionWorkflow();
+		workflow.runWorkflow();
+		
 		System.out.println("End.");
 	}
-
 	
+	private static void runOldFlow() throws Exception{
+		FlowHandler flow = new FlowHandler();
+		flow.startProcessing();
+	}
 
 	private static void CsvToEamonn() throws IOException {
 		String path = Configuration.getProperty("csvDataSet");
