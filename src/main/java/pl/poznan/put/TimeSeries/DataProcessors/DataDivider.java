@@ -44,7 +44,6 @@ public class DataDivider {
 		}
 		return output;
 	}
-	
 
 	public static List<Double[]> divideEamonnRecord(UnifiedRecordType record) {
 		int parts = 10;
@@ -65,7 +64,6 @@ public class DataDivider {
 			}
 			res.add((Double[]) valList.toArray());
 		}
-
 		return res;
 	}
 
