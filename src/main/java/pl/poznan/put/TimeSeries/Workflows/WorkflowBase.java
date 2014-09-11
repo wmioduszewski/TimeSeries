@@ -7,7 +7,7 @@ public abstract class WorkflowBase {
 
 	protected Classifier classifier = new Logistic();
 	
-	protected int regularPartsForDivision = 4;
+	protected int regularPartsForDivision = 5;
 
 	protected String tempTrainPath;
 	protected String tempTestPath;
