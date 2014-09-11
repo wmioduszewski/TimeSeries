@@ -1,6 +1,7 @@
 package pl.poznan.put.TimeSeries.DataProcessors;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
@@ -18,7 +19,8 @@ import pl.poznan.put.TimeSeries.Model.UnifiedRecordType;
 
 public class DataDivider {
 
-	public static List<Double[]> dividePatientData(Patient patient) throws Exception {
+	public static List<Double[]> dividePatientData(Patient patient)
+			throws Exception {
 		List<Double[]> res = new ArrayList<Double[]>();
 
 		for (TimeLimit timeLimit : Limits.TimeLimits) {
@@ -36,13 +38,36 @@ public class DataDivider {
 		}
 		return res;
 	}
-	
-	private static Double[] CastDoubleListToArray(List<Double> input){
+
+	private static Double[] CastDoubleListToArray(List<Double> input) {
 		Double[] output = new Double[input.size()];
-		for(int i=0;i<input.size();i++){
+		for (int i = 0; i < input.size(); i++) {
 			output[i] = input.get(i);
 		}
 		return output;
+	}
+
+	public static <T> List<List<T>> DivideCollectionRegularly(List<T> list,
+			Integer parts) {
+
+		int partLen = list.size() / parts;
+		List<List<T>> listlist = new ArrayList<List<T>>();
+
+		for (int i = 0; i < parts; i++) {
+			List<T> currList = new ArrayList<T>();
+			for (int j = 0; j < partLen; j++) {
+				currList.add(list.get(i * partLen + j));
+			}
+			listlist.add(currList);
+		}
+		if(parts*partLen<list.size())
+		{
+			List<T> currList = listlist.get(listlist.size()-1);
+			for(int i=parts*partLen;i<list.size();i++){
+				currList.add(list.get(i));
+			}
+		}
+		return listlist;
 	}
 
 	public static List<Double[]> divideEamonnRecord(UnifiedRecordType record) {
@@ -54,7 +79,7 @@ public class DataDivider {
 		for (int i = 0; i < parts; i++) {
 			List<Double> valList = new ArrayList<Double>();
 			if (i == parts - 1) {
-				for (int j = i*partSize; j < vals.length; j++) {
+				for (int j = i * partSize; j < vals.length; j++) {
 					valList.add(vals[j]);
 				}
 			} else {
@@ -123,12 +148,11 @@ public class DataDivider {
 		else if (option == TimeLimit.Awake)
 			bound = patient.getAwake();
 
-		if(bound==null)
-		{
+		if (bound == null) {
 			throw new Exception("bound is null");
 		}
 		bound = bound.plusHours(mod);
-		
+
 		return bound;
 	}
 }

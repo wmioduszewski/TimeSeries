@@ -8,10 +8,15 @@ import org.apache.commons.lang3.tuple.Pair;
 
 import pl.poznan.put.TimeSeries.Classifying.Experiment;
 import pl.poznan.put.TimeSeries.DataExporters.RegressionArffExporter;
+import pl.poznan.put.TimeSeries.DataProcessors.DataDivider;
 import pl.poznan.put.TimeSeries.DataProcessors.PatientDataDivider;
+import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.Patient;
+import pl.poznan.put.TimeSeries.Model.RegressionResult;
 import pl.poznan.put.TimeSeries.Model.UnifiedArffRow;
+import pl.poznan.put.TimeSeries.Util.Convert;
 import pl.poznan.put.TimeSeries.Util.PatientUtils;
+import pl.poznan.put.TimeSeries.Util.RegressionCalculator;
 
 public class PatientRegressionWorkflow extends PatientWorkflowBase{
 
@@ -21,14 +26,22 @@ public class PatientRegressionWorkflow extends PatientWorkflowBase{
 
 	@Override
 	protected void processData() {
+				
 		PatientDataDivider patientDivider = new PatientDataDivider();
 		List<UnifiedArffRow> rows = new ArrayList<UnifiedArffRow>();
 
 		for (Patient patient : patients) {
-
 			try {
-				UnifiedArffRow arffRow = patientDivider
-						.ComputeRegression(patient);
+				
+				List<List<Characteristic>> listlist = DataDivider.DivideCollectionRegularly(patient.getCharacteristics(), regularPartsForDivision);				
+				List<RegressionResult> regResults = new ArrayList<RegressionResult>();
+				for (List<Characteristic> list : listlist) {
+					List<Float> floats = Convert.fromCharacteristicsToFloatList(list);
+					RegressionResult result = RegressionCalculator.ComputeRegression(floats);
+					regResults.add(result);
+				}
+				
+				UnifiedArffRow arffRow = new UnifiedArffRow(regResults, patient.getDestinationClass());
 				rows.add(arffRow);
 			} catch (Exception e) {
 				System.out.println("patient missed");
