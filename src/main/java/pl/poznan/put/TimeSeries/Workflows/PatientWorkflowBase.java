@@ -46,20 +46,20 @@ public abstract class PatientWorkflowBase extends WorkflowBase {
 
 	@Override
 	protected void importData() {
-		String csvDataPath = Configuration.getProperty("csvDataSet");
+		//String csvDataPath = Configuration.getProperty("csvDataSet");
 		String pureDataPath = Configuration.getProperty("pureDataSet");
-		List<Patient> csvPatients = null;
+		//List<Patient> csvPatients = null;
 		List<Patient> purePatients = null;
-		DataImporterBase importer = new DataImporterCsv(csvDataPath);
+		DataImporterBase importer ;//= new DataImporterCsv(csvDataPath);
 		try {
-			csvPatients = importer.ImportData();
+			//csvPatients = importer.ImportData();
 			importer = new PureDataImporter(pureDataPath);
 			purePatients = importer.ImportData();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		patients.addAll(csvPatients);
+		//patients.addAll(csvPatients);
 		patients.addAll(purePatients);
 	}
 }

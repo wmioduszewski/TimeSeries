@@ -114,19 +114,24 @@ public class PureDataImporter extends DataImporterBase {
 	}
 
 	public List<Patient> ImportData() throws IOException {
-		String[] patientFiles = FileLister.getFolderFiles(folderPath);
 		patients = new ArrayList<Patient>();
-		for (String file : patientFiles) {
-			Patient currPatient;
-			try {
-				currPatient = readData(file);
-				patients.add(currPatient);
-			} catch (Exception e) {
-				System.out.println(e.getMessage());
-				System.out.println("Missed file: " + file);
-			}			
+		String[] folders = FileLister.getDirectories(folderPath);
+		for (String folder : folders) {
+			folderPath = folder + '\\';
+			String[] patientFiles = FileLister.getDirectoryFiles(folder);
+			for (String file : patientFiles) {
+				Patient currPatient;
+				try {
+					currPatient = readData(file);
+					patients.add(currPatient);
+				} catch (Exception e) {
+					System.out.println(e.getMessage());
+					System.out.println("Missed file: " + file);
+				}			
+			}	
 		}
-		computeSaxForPatients();
+		//computeSaxForPatients();
+		
 		return patients;
 	}
 }

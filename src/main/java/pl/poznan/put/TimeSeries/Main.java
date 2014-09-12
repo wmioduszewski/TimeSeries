@@ -51,9 +51,11 @@ public class Main {
 
 		
 		
-		//WorkflowBase workflow = new PatientSaxWorkflow();
-		WorkflowBase workflow = new EamonnRegressionWorkflow(); //PatientRegressionWorkflow();
+		WorkflowBase workflow = new PatientRegressionWorkflow(); 
 		workflow.runWorkflow();
+		
+//		WorkflowBase workflow = new EamonnRegressionWorkflow(); 
+//		workflow.runWorkflow();
 		
 		System.out.println("End.");
 	}
@@ -65,11 +67,12 @@ public class Main {
 
 	private static void CsvToEamonn() throws IOException {
 		String path = Configuration.getProperty("csvDataSet");
+		
 		DataImporterCsv csvImport = new DataImporterCsv(path);
 
 		List<Patient> patients = csvImport.ImportData();
 
 		DataExporterCsv exp = new DataExporterCsv(patients);
-		exp.exportCsvToEamonnFormat("C:/Users/Wojciech/Documents/studia/mgr/praca mgr/stationary data/dataset3/Glaucoma_TEST");
+		exp.exportCsvToEamonnFormat(path);
 	}
 }

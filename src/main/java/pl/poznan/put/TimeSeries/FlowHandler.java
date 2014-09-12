@@ -76,7 +76,7 @@ public class FlowHandler {
 
 	private void determineProcessingPaths() {
 		if (isFolder)
-			datasetNames = FileLister.getFolderFiles(folderPath);
+			datasetNames = FileLister.getDirectoryFiles(folderPath);
 		else {
 			datasetNames = new String[1];
 			datasetNames[0] = Configuration.getProperty("singleDataPath");
