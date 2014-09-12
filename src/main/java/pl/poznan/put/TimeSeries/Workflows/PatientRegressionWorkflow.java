@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.apache.commons.lang3.tuple.Pair;
 
+import pl.poznan.put.TimeSeries.Classifying.CrossValidationExperiment;
 import pl.poznan.put.TimeSeries.Classifying.Experiment;
 import pl.poznan.put.TimeSeries.DataExporters.RegressionArffExporter;
 import pl.poznan.put.TimeSeries.DataProcessors.DataDivider;
@@ -31,8 +32,7 @@ public class PatientRegressionWorkflow extends PatientWorkflowBase{
 		List<UnifiedArffRow> rows = new ArrayList<UnifiedArffRow>();
 
 		for (Patient patient : patients) {
-			try {
-				
+			try {				
 				List<List<Characteristic>> listlist = DataDivider.DivideCollectionRegularly(patient.getCharacteristics(), regularPartsForDivision);				
 				List<RegressionResult> regResults = new ArrayList<RegressionResult>();
 				for (List<Characteristic> list : listlist) {
@@ -48,16 +48,17 @@ public class PatientRegressionWorkflow extends PatientWorkflowBase{
 				e.printStackTrace();
 			}
 		}
-		Pair<List<UnifiedArffRow>, List<UnifiedArffRow>> pair = PatientUtils.divideRowsToTrainAndTest(rows);
-		List<UnifiedArffRow> trainSet = pair.getLeft();
-		List<UnifiedArffRow> testSet = pair.getRight();
+//		Pair<List<UnifiedArffRow>, List<UnifiedArffRow>> pair = PatientUtils.divideRowsToTrainAndTest(rows);
+//		List<UnifiedArffRow> trainSet = pair.getLeft();
+//		List<UnifiedArffRow> testSet = pair.getRight();
 		
-		ReportInputStatistics(trainSet, testSet);
+		//ReportInputStatistics(trainSet, testSet);
 		
 		RegressionArffExporter exporter = new RegressionArffExporter("UnifiedData");
 		try {
-			exporter.saveUnifiedRecordsToArffData(trainSet, tempTrainPath);
-			exporter.saveUnifiedRecordsToArffData(testSet, tempTestPath);
+			//exporter.saveUnifiedRecordsToArffData(trainSet, tempTrainPath);
+			//exporter.saveUnifiedRecordsToArffData(testSet, tempTestPath);
+			exporter.saveUnifiedRecordsToArffData(rows, tempTestPath);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -67,8 +68,12 @@ public class PatientRegressionWorkflow extends PatientWorkflowBase{
 	@Override
 	protected void runExperiment() {		
 		try {
-			double res = Experiment.runExperiment(classifier, tempTrainPath, tempTestPath);
-			System.out.println("The result for " + this.getClass().getSimpleName() +" is: " + res);
+			//double res = Experiment.runExperiment(classifier, tempTrainPath, tempTestPath);
+			int folds = 10;
+			double partOfDataSet = 1;
+			long seed = 1000;
+			CrossValidationExperiment.runCVExperiment(classifier, tempTestPath, folds, partOfDataSet, seed);
+			//System.out.println("The result for " + this.getClass().getSimpleName() +" is: " + res);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -83,7 +88,7 @@ public class PatientRegressionWorkflow extends PatientWorkflowBase{
 	@Override
 	protected void setTempPaths() {
 		tempTrainPath = "output/tempRegressionArffTrain.arff";
-		tempTestPath = "output/tempRegressionArffTest.arff";
+		tempTestPath = "output/tempRegressionArffTestCV.arff";
 		
 	}
 
