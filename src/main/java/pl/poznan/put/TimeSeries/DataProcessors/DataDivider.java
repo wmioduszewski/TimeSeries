@@ -19,26 +19,39 @@ import pl.poznan.put.TimeSeries.Model.UnifiedRecordType;
 
 public class DataDivider {
 
-	public static List<Double[]> dividePatientData(Patient patient)
+	public static List<List<Characteristic>> dividePatientDataPeriodically(Patient patient)
 			throws Exception {
-		List<Double[]> res = new ArrayList<Double[]>();
-
+		List<List<Characteristic>> listlist = new ArrayList<List<Characteristic>>();
+		
 		for (TimeLimit timeLimit : Limits.TimeLimits) {
+			
+			List<Characteristic> currList = new ArrayList<Characteristic>(); 
 
 			DateTime lowerBound = ComputeTimeBound(timeLimit, patient, true);
 			DateTime upperBound = ComputeTimeBound(timeLimit, patient, false);
-			List<Double> valList = new ArrayList<Double>();
+			//List<Double> valList = new ArrayList<Double>();
 			for (Characteristic characteristic : patient.getCharacteristics()) {
 				DateTime time = characteristic.getExaminationTime();
 				if (time.isAfter(lowerBound) && time.isBefore(upperBound)) {
-					valList.add((double) characteristic.getTfadj());
+					//valList.add((double) characteristic.getTfadj());
+					currList.add(characteristic);
 				}
 			}
-			res.add(CastDoubleListToArray(valList));
+			listlist.add(currList);
+			//listlist.add(CastDoubleListToArray(valList));
 		}
-		return res;
+		return listlist;
 	}
-
+	
+	public static List<List<Characteristic>> dividePatientPeriodicallyThenRegularly(Patient patient, Integer parts) throws Exception{
+		List<List<Characteristic>> listlist = dividePatientDataPeriodically(patient);
+		List<List<Characteristic>> newlistlist = new ArrayList<List<Characteristic>>(); 
+		for (List<Characteristic> list : listlist) {
+			newlistlist.addAll(DivideCollectionRegularly(list, parts));			
+		}
+		return newlistlist;
+	}
+	
 	private static Double[] CastDoubleListToArray(List<Double> input) {
 		Double[] output = new Double[input.size()];
 		for (int i = 0; i < input.size(); i++) {

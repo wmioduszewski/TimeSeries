@@ -1,5 +1,6 @@
 package pl.poznan.put.TimeSeries.Workflows;
 
+import pl.poznan.put.TimeSeries.Util.Configuration;
 import weka.classifiers.Classifier;
 import weka.classifiers.functions.Logistic;
 import weka.classifiers.rules.JRip;
@@ -9,7 +10,7 @@ public abstract class WorkflowBase {
 
 	protected Classifier classifier = new JRip();
 	
-	protected int regularPartsForDivision = 8;
+	protected int regularPartsForDivision = Integer.parseInt(Configuration.getProperty("regularPartsForDivision"));
 
 	protected String tempTrainPath;
 	protected String tempTestPath;

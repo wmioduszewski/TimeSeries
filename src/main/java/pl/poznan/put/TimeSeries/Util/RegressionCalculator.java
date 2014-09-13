@@ -1,5 +1,6 @@
 package pl.poznan.put.TimeSeries.Util;
 
+import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.RegressionResult;
 
 import java.util.ArrayList;
@@ -30,6 +31,14 @@ public class RegressionCalculator {
 		for(int i =0;i<yArray.size();i++)
 			xArray.add((float) i);
 		return ComputeRegression(xArray, yArray);
+	}
+	
+	public static RegressionResult ComputeRegression(List<Characteristic> characteristics, boolean wytrych){
+		List<Float> xArray = new ArrayList<Float>();
+		for(int i=0;i<characteristics.size();i++){
+			xArray.add(characteristics.get(i).getTfadj());
+		}
+		return ComputeRegression(xArray);
 	}
 	
 	public static RegressionResult ComputeRegression(Double[] data){

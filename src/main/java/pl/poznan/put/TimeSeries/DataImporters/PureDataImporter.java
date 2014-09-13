@@ -52,18 +52,27 @@ public class PureDataImporter extends DataImporterBase {
 			String[] fields = currLine.split(";");
 
 			if (isFirstLine) {
-				if(Integer.parseInt(fields[14])==24){
-					Integer.parseInt(fields[14]);
-				}
+//				if(Integer.parseInt(fields[14])==24){
+//					Integer.parseInt(fields[14]);
+//				}
 				startExaminationTime = getDateTimeByStringClock(fields[0]);
 				if (startExaminationTime.getDayOfMonth() > 1)
 					startExaminationTime = startExaminationTime.minusDays(1);
 				firstBurstMedian = Float.parseFloat(fields[1]);
 				asleepTime = getDateTimeByStringClock(fields[5]);
 				awakeTime = getDateTimeByStringClock(fields[6]);
-				adjMedian = fields[7].isEmpty() ? 0 : Float
-						.parseFloat(fields[7]);
-				int age = Integer.parseInt(fields[14]);
+				try {
+					adjMedian = fields[7].isEmpty() ? 0 : Float
+							.parseFloat(fields[7]);
+				} catch (Exception e1) {
+					adjMedian = 0;
+				}
+				int age;
+				try {
+					age = Integer.parseInt(fields[14]);
+				} catch (Exception e) {
+					age=-1;
+				}
 				isFirstLine = false;
 
 				currentPatient.setSick(diagnosis);

@@ -5,9 +5,9 @@ import java.util.List;
 import pl.poznan.put.TimeSeries.Model.IRecord;
 import pl.poznan.put.TimeSeries.Model.UnifiedRecordType;
 
-public class EamonnDataDivider extends DataDividerBase {
+public class EamonnDataDivider {//extends DataDividerBase {
 
-	@Override
+	//@Override
 	protected List<Double[]> DivideRecord(Object record) {
 		UnifiedRecordType eamonnRecord = (UnifiedRecordType) record;
 		
