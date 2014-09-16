@@ -48,8 +48,6 @@ public class Main {
 	static int ngramSize = 1;
 
 	public static void main(String[] args) throws Exception {
-
-		
 		
 		WorkflowBase workflow = new PatientRegressionWorkflow(); 
 		workflow.runWorkflow();

@@ -152,7 +152,7 @@ public class PureDataImporter extends DataImporterBase {
 				}
 			}
 		}
-		// computeSaxForPatients();
+		computeSaxForPatients();
 
 		System.out.println();
 
