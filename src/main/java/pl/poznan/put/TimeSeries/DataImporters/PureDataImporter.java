@@ -29,13 +29,23 @@ public class PureDataImporter extends DataImporterBase {
 		super(inputFilePath);
 		this.folderPath = inputFilePath;
 	}
-	
+
 	private Patient readData(String filePath) throws Exception {
 		BufferedReader br = new BufferedReader(new FileReader(folderPath
 				+ filePath));
-		boolean diagnosis = false;
+		boolean isSick = false;
 		// skip first line
 		String currLine = br.readLine();
+
+		DateTime asleepTime = null;
+		DateTime awakeTime = null;
+
+		if (!currLine.contains("SLEEP")) {
+			String[] fields = currLine.split(";");
+			asleepTime = getDateTimeByStringClock(fields[5]);
+			awakeTime = getDateTimeByStringClock(fields[6]);
+		}
+
 		currLine = br.readLine();
 
 		String fileName = filePath.substring(filePath.lastIndexOf("/") + 1);
@@ -45,22 +55,24 @@ public class PureDataImporter extends DataImporterBase {
 
 		boolean isFirstLine = true;
 		DateTime startExaminationTime = null;
-		DateTime asleepTime;
-		DateTime awakeTime;
 
 		while (currLine != null) {
 			String[] fields = currLine.split(";");
 
 			if (isFirstLine) {
-//				if(Integer.parseInt(fields[14])==24){
-//					Integer.parseInt(fields[14]);
-//				}
+				// if(Integer.parseInt(fields[14])==24){
+				// Integer.parseInt(fields[14]);
+				// }
 				startExaminationTime = getDateTimeByStringClock(fields[0]);
 				if (startExaminationTime.getDayOfMonth() > 1)
 					startExaminationTime = startExaminationTime.minusDays(1);
 				firstBurstMedian = Float.parseFloat(fields[1]);
-				asleepTime = getDateTimeByStringClock(fields[5]);
-				awakeTime = getDateTimeByStringClock(fields[6]);
+				if (asleepTime == null) {
+					asleepTime = getDateTimeByStringClock(fields[5]);
+				}
+				if (awakeTime == null) {
+					awakeTime = getDateTimeByStringClock(fields[6]);
+				}
 				try {
 					adjMedian = fields[7].isEmpty() ? 0 : Float
 							.parseFloat(fields[7]);
@@ -71,11 +83,14 @@ public class PureDataImporter extends DataImporterBase {
 				try {
 					age = Integer.parseInt(fields[14]);
 				} catch (Exception e) {
-					age=-1;
+					age = -1;
 				}
 				isFirstLine = false;
 
-				currentPatient.setSick(diagnosis);
+				if (folderPath.contains("jaskra"))
+					isSick = true;
+
+				currentPatient.setSick(isSick);
 				currentPatient.setAge(age);
 				currentPatient.setAsleep(asleepTime);
 				currentPatient.setAwake(awakeTime);
@@ -109,15 +124,13 @@ public class PureDataImporter extends DataImporterBase {
 
 			minutes = Integer.parseInt(minuteElems[1]);
 			hours = Integer.parseInt(minuteElems[0]);
-		}
-		else
-		{
+		} else {
 			throw new Exception("Data is in wrong format");
 		}
 		int days = 2;
 		hours = hours < 24 ? hours : 0;
 		if (hours >= 12)
-			days = 1;		
+			days = 1;
 		DateTime dt = new DateTime(2014, 4, days, hours, minutes, 0);
 		return dt;
 	}
@@ -136,11 +149,22 @@ public class PureDataImporter extends DataImporterBase {
 				} catch (Exception e) {
 					System.out.println(e.getMessage());
 					System.out.println("Missed file: " + file);
-				}			
-			}	
+				}
+			}
 		}
-		//computeSaxForPatients();
-		
+		// computeSaxForPatients();
+
+		System.out.println();
+
+		long healtCount = patients.stream()
+				.filter(x -> x.getDestinationClass() == 0).count();
+		long sickCount = patients.stream()
+				.filter(x -> x.getDestinationClass() == 1).count();
+
+		System.out.println(String.format(
+				"Read %d patients.\n%d health and %d sick", patients.size(),
+				healtCount, sickCount));
+
 		return patients;
 	}
 }

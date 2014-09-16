@@ -34,9 +34,9 @@ public class PatientRegressionWorkflow extends PatientWorkflowBase{
 		for (Patient patient : patients) {
 			try {				
 				
-				List<List<Characteristic>> listlist = DataDivider.DivideCollectionRegularly(patient.getCharacteristics(), regularPartsForDivision);
+				//List<List<Characteristic>> listlist = DataDivider.DivideCollectionRegularly(patient.getCharacteristics(), regularPartsForDivision);
 //				List<List<Characteristic>> listlist = DataDivider.dividePatientDataPeriodically(patient);
-//				List<List<Characteristic>> listlist = DataDivider.dividePatientPeriodicallyThenRegularly(patient, regularPartsForDivision);
+				List<List<Characteristic>> listlist = DataDivider.dividePatientPeriodicallyThenRegularly(patient, regularPartsForDivision);
 				
 				List<RegressionResult> regResults = new ArrayList<RegressionResult>();
 				for (List<Characteristic> list : listlist) {
@@ -92,7 +92,7 @@ public class PatientRegressionWorkflow extends PatientWorkflowBase{
 	@Override
 	protected void setTempPaths() {
 		tempTrainPath = "output/tempRegressionArffTrain.arff";
-		tempTestPath = "output/regressionArffRegularDivision.arff";
+		tempTestPath = "output/regressionArffPeriodicThenRegularDivision.arff";
 		
 	}
 
