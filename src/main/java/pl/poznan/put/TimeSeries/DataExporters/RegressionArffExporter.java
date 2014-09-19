@@ -42,7 +42,7 @@ public class RegressionArffExporter extends ArffExporterBase {
 		for (Object problemClass : distinct) {
 			if (classes.length() > 0)
 				classes += ",";
-			classes += problemClass;
+			classes += ((Double)problemClass).intValue();
 		}
 		attributes.put("destClass", "{" + classes + "}");
 	}
@@ -52,7 +52,7 @@ public class RegressionArffExporter extends ArffExporterBase {
 		arffFileContent.append("@DATA\n");
 
 		for (UnifiedArffRow record : records) {
-			String destClass = String.valueOf(record.getDestinationClass());
+			String destClass = String.valueOf((int)record.getDestinationClass());
 			for (RegressionResult result : record.getRegressionResults()) {
 				arffFileContent.append(result.getSlope() + ","
 						+ result.getIntercept() + ",");
