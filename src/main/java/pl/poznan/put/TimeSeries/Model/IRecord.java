@@ -1,6 +1,8 @@
 package pl.poznan.put.TimeSeries.Model;
 
+import java.util.List;
+
 public interface IRecord {
 	double getDestinationClass();
-	double[] getValues(); 
+	List<Float> getValues(); 
 }

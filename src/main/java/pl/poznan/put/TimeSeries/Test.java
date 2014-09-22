@@ -26,7 +26,7 @@ import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Model.PatientGroup;
 import pl.poznan.put.TimeSeries.Model.RegressionResult;
 import pl.poznan.put.TimeSeries.Model.UnifiedArffRow;
-import pl.poznan.put.TimeSeries.Model.UnifiedRecordType;
+import pl.poznan.put.TimeSeries.Model.UnifiedRecord;
 import pl.poznan.put.TimeSeries.Reporting.ResultReporter;
 import pl.poznan.put.TimeSeries.Util.Configuration;
 import pl.poznan.put.TimeSeries.Util.DataAverager;
@@ -50,12 +50,12 @@ public class Test {
 		boolean isSick = false;
 		List<PatientGroup> groups = DataDivider.divideData(pacjenci, isSick);
 
-		List<UnifiedRecordType> records = PatientGroupConverter
-				.RegressionConversion(groups);
-		DeprecatedDivisionArffExporter exporter = new DeprecatedDivisionArffExporter("PureData");
-		exporter.saveUnifiedRecordsToArffData(records,
-				Configuration.getProperty("pureArffOutput")
-						+ "pureArffTest.arff");
+//		List<UnifiedRecord> records = PatientGroupConverter
+//				.RegressionConversion(groups);
+//		DeprecatedDivisionArffExporter exporter = new DeprecatedDivisionArffExporter("PureData");
+//		exporter.saveUnifiedRecordsToArffData(records,
+//				Configuration.getProperty("pureArffOutput")
+//						+ "pureArffTest.arff");
 
 		System.out.println("Koniec");
 	}

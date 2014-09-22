@@ -4,7 +4,7 @@ import java.util.List;
 
 import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.Patient;
-import pl.poznan.put.TimeSeries.Model.UnifiedRecordType;
+import pl.poznan.put.TimeSeries.Model.UnifiedRecord;
 import edu.hawaii.jmotif.lib.ts.TPoint;
 import edu.hawaii.jmotif.lib.ts.TSException;
 import edu.hawaii.jmotif.lib.ts.Timeseries;
@@ -32,13 +32,17 @@ public class SaxPerformer {
 	}
 
 	public static String TranslateUnifiedRecordToString(
-			UnifiedRecordType record, int outputLength, int alphabeatSize)
+			UnifiedRecord record, int outputLength, int alphabeatSize)
 			throws Exception {
-
-		double[] vals = record.getValues();
-		long[] times = new long[vals.length];
+		
+		List<Float> floats = record.getValues();
+		int size = floats.size();
+		
+		double[] vals = new double[size];
+		long[] times = new long[size];
 
 		for (int i = 0; i < vals.length; i++) {
+			vals[i] = floats.get(i);
 			times[i] = i;
 		}
 		Timeseries series = new Timeseries(vals, times);

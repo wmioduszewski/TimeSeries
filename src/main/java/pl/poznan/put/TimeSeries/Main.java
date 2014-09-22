@@ -25,7 +25,7 @@ import pl.poznan.put.TimeSeries.DataImporters.DataImporterEamonn;
 import pl.poznan.put.TimeSeries.DataImporters.PureDataImporter;
 import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Model.SaxString;
-import pl.poznan.put.TimeSeries.Model.UnifiedRecordType;
+import pl.poznan.put.TimeSeries.Model.UnifiedRecord;
 import pl.poznan.put.TimeSeries.Renderers.ChartBase;
 import pl.poznan.put.TimeSeries.Renderers.ChartWindow;
 import pl.poznan.put.TimeSeries.Renderers.CleanChart;
@@ -49,11 +49,11 @@ public class Main {
 
 	public static void main(String[] args) throws Exception {
 		
-		WorkflowBase workflow = new PatientRegressionWorkflow(); 
-		workflow.runWorkflow();
-		
-//		WorkflowBase workflow = new EamonnRegressionWorkflow(); 
+//		WorkflowBase workflow = new PatientRegressionWorkflow(); 
 //		workflow.runWorkflow();
+		
+		WorkflowBase workflow = new EamonnRegressionWorkflow(); 
+		workflow.runWorkflow();
 		
 		System.out.println("End.");
 	}

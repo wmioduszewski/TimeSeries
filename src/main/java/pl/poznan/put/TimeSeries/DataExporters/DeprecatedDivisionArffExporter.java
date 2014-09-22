@@ -6,16 +6,16 @@ import java.util.stream.Collectors;
 
 import pl.poznan.put.TimeSeries.Constants.AgeLimit;
 import pl.poznan.put.TimeSeries.Constants.Limits;
-import pl.poznan.put.TimeSeries.Model.UnifiedRecordType;
+import pl.poznan.put.TimeSeries.Model.UnifiedRecord;
 
 public class DeprecatedDivisionArffExporter extends ArffExporterBase {
-	private List<UnifiedRecordType> records;
+	private List<UnifiedRecord> records;
 
 	public DeprecatedDivisionArffExporter(String relationTitle) {
 		super(relationTitle);
 	}
 
-	public void saveUnifiedRecordsToArffData(List<UnifiedRecordType> records,
+	public void saveUnifiedRecordsToArffData(List<UnifiedRecord> records,
 			String destinationPath) throws FileNotFoundException {
 		this.records = records;
 		performExport(destinationPath);
@@ -52,11 +52,11 @@ public class DeprecatedDivisionArffExporter extends ArffExporterBase {
 	@Override
 	protected void insertData() {
 		arffFileContent.append("@DATA\n");
-		for (UnifiedRecordType record : records) {
+		for (UnifiedRecord record : records) {
 			String diagnosis = String.valueOf(record.getDestinationClass());
-			double[] vals = record.getValues();
-			for (int i = 0; i < vals.length; i++) {
-				arffFileContent.append(vals[i] + ",");
+			List<Float> vals = record.getValues();
+			for (int i = 0; i < vals.size(); i++) {
+				arffFileContent.append(vals.get(i) + ",");
 			}
 			arffFileContent.append(diagnosis + "\n");
 		}

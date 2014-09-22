@@ -1,12 +1,14 @@
 package pl.poznan.put.TimeSeries.Model;
 
-public class UnifiedRecordType implements IRecord {
+import java.util.List;
+
+public class UnifiedRecord implements IRecord {
 
 	private double destClass;
-	private double[] vals;
+	private List<Float> vals;
 	private String saxString;
 
-	public UnifiedRecordType(double destClass, double[] vals) {
+	public UnifiedRecord(double destClass, List<Float> vals) {
 		super();
 		this.destClass = destClass;
 		this.vals = vals;
@@ -24,7 +26,7 @@ public class UnifiedRecordType implements IRecord {
 		return destClass;
 	}
 
-	public double[] getValues() {
+	public List<Float> getValues() {
 		return vals;
 	}
 

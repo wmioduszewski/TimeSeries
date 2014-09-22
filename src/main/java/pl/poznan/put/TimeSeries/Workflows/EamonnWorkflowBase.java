@@ -3,12 +3,12 @@ package pl.poznan.put.TimeSeries.Workflows;
 import java.util.List;
 
 import pl.poznan.put.TimeSeries.DataImporters.DataImporterEamonn;
-import pl.poznan.put.TimeSeries.Model.UnifiedRecordType;
+import pl.poznan.put.TimeSeries.Model.UnifiedRecord;
 import pl.poznan.put.TimeSeries.Util.Configuration;
 
 public abstract class EamonnWorkflowBase extends WorkflowBase{
 
-	protected List<UnifiedRecordType> records;
+	protected List<UnifiedRecord> records;
 	
 	@Override
 	protected void importData() {

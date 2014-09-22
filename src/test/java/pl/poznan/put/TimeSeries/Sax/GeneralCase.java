@@ -2,18 +2,21 @@ package pl.poznan.put.TimeSeries.Sax;
 
 import static org.junit.Assert.*;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.junit.Test;
 
-import pl.poznan.put.TimeSeries.Model.UnifiedRecordType;
+import pl.poznan.put.TimeSeries.Model.UnifiedRecord;
 import pl.poznan.put.TimeSeries.Util.SaxPerformer;
 
 public class GeneralCase {
 
 	@Test
 	public void test() throws Exception {
-		double vals[] = new double[]{2,3,4};
-		UnifiedRecordType unif = new UnifiedRecordType(1, vals);
-		String output = SaxPerformer.TranslateUnifiedRecordToString(unif, vals.length, 10);
+		List<Float> vals = Arrays.asList(2f,3f,4f);
+		UnifiedRecord unif = new UnifiedRecord(1, vals);
+		String output = SaxPerformer.TranslateUnifiedRecordToString(unif, vals.size(), 10);
 		
 		System.out.println(output);
 	}

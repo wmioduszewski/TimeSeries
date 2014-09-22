@@ -6,21 +6,21 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
-import pl.poznan.put.TimeSeries.Model.UnifiedRecordType;
+import pl.poznan.put.TimeSeries.Model.UnifiedRecord;
 import pl.poznan.put.TimeSeries.Util.Configuration;
 
 public class DeprecatedDataExporterEamonn {
 
-	private List<UnifiedRecordType> records;
+	private List<UnifiedRecord> records;
 
-	public DeprecatedDataExporterEamonn(List<UnifiedRecordType> records) {
+	public DeprecatedDataExporterEamonn(List<UnifiedRecord> records) {
 		this.records = records;
 	}
 
 	public void Export(String path) throws IOException {
 		BufferedWriter writer = new BufferedWriter(new FileWriter(path));
 
-		for (UnifiedRecordType record : records) {
+		for (UnifiedRecord record : records) {
 			String text = String.format("%e %s", record.getDestinationClass(),
 					record.getSaxString());
 			writer.write(text);

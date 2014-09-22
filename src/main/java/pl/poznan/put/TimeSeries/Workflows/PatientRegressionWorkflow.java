@@ -70,21 +70,6 @@ public class PatientRegressionWorkflow extends PatientWorkflowBase{
 	}
 
 	@Override
-	protected void runExperiment() {		
-		try {
-			//double res = Experiment.runExperiment(classifier, tempTrainPath, tempTestPath);
-			int folds = 10;
-			double partOfDataSet = 1;
-			long seed = 1000;
-			CrossValidationExperiment.runCVExperiment(classifier, tempTestPath, folds, partOfDataSet, seed);
-			//System.out.println("The result for " + this.getClass().getSimpleName() +" is: " + res);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
-	@Override
 	protected void reportResult() {
 		// TODO Auto-generated method stub
 	}

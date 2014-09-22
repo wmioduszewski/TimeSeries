@@ -5,11 +5,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import pl.poznan.put.TimeSeries.Model.UnifiedRecordType;
+import pl.poznan.put.TimeSeries.Model.UnifiedRecord;
 import pl.poznan.put.TimeSeries.Util.Configuration;
 
 public class SaxArffExporter extends ArffExporterBase {
-	private List<UnifiedRecordType> records;
+	private List<UnifiedRecord> records;
 	private int attrLength;
 	private int recordLength;
 	private int saxAlphabeatSize;
@@ -19,7 +19,7 @@ public class SaxArffExporter extends ArffExporterBase {
 		super(relationTitle);
 	}
 
-	public void saveUnifiedRecordsToArffData(List<UnifiedRecordType> records,
+	public void saveUnifiedRecordsToArffData(List<UnifiedRecord> records,
 			String destinationPath, int attrLength, boolean isNominal)
 			throws FileNotFoundException {
 		this.records = records;
@@ -36,7 +36,7 @@ public class SaxArffExporter extends ArffExporterBase {
 	protected void insertData() {
 		arffFileContent.append("@DATA\n");
 
-		for (UnifiedRecordType record : records) {
+		for (UnifiedRecord record : records) {
 			String diagnosis = String.valueOf(record.getDestinationClass());
 			String sax = record.getSaxString();
 			for (int i = 0; i < sax.length(); i += attrLength) {

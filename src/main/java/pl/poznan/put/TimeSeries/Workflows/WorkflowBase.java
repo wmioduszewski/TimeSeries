@@ -1,5 +1,6 @@
 package pl.poznan.put.TimeSeries.Workflows;
 
+import pl.poznan.put.TimeSeries.Classifying.CrossValidationExperiment;
 import pl.poznan.put.TimeSeries.Util.Configuration;
 import weka.classifiers.Classifier;
 import weka.classifiers.functions.Logistic;
@@ -19,7 +20,19 @@ public abstract class WorkflowBase {
 
 	protected abstract void processData();
 
-	protected abstract void runExperiment();
+	protected void runExperiment(){
+		try {
+			//double res = Experiment.runExperiment(classifier, tempTrainPath, tempTestPath);
+			int folds = 10;
+			double partOfDataSet = 1;
+			long seed = 1000;
+			CrossValidationExperiment.runCVExperiment(classifier, tempTestPath, folds, partOfDataSet, seed);
+			//System.out.println("The result for " + this.getClass().getSimpleName() +" is: " + res);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 	protected abstract void reportResult();
 

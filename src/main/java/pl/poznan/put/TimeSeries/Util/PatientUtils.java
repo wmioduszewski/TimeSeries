@@ -9,17 +9,17 @@ import org.apache.commons.lang3.tuple.Pair;
 
 import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Model.UnifiedArffRow;
-import pl.poznan.put.TimeSeries.Model.UnifiedRecordType;
+import pl.poznan.put.TimeSeries.Model.UnifiedRecord;
 
 public class PatientUtils {
 
 	private static float trainTestRatio = Float.parseFloat(Configuration
 			.getProperty("trainToTestRatio"));
 
-	public static List<UnifiedRecordType> castPatients(List<Patient> patients) {
-		List<UnifiedRecordType> res = new ArrayList<UnifiedRecordType>();
+	public static List<UnifiedRecord> castPatients(List<Patient> patients) {
+		List<UnifiedRecord> res = new ArrayList<UnifiedRecord>();
 		for (Patient patient : patients) {
-			UnifiedRecordType obj = new UnifiedRecordType(
+			UnifiedRecord obj = new UnifiedRecord(
 					patient.getDestinationClass(), patient.getValues());
 			obj.setSaxString(patient.getSaxString().getContent());
 			res.add(obj);

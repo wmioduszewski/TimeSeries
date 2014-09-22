@@ -15,7 +15,7 @@ import pl.poznan.put.TimeSeries.Constants.TimeLimit;
 import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Model.PatientGroup;
-import pl.poznan.put.TimeSeries.Model.UnifiedRecordType;
+import pl.poznan.put.TimeSeries.Model.UnifiedRecord;
 
 public class DataDivider {
 
@@ -83,27 +83,27 @@ public class DataDivider {
 		return listlist;
 	}
 
-	public static List<Double[]> divideEamonnRecord(UnifiedRecordType record) {
-		int parts = 10;
-		double[] vals = record.getValues();
-		int partSize = vals.length / parts;
-		List<Double[]> res = new ArrayList<Double[]>();
-
-		for (int i = 0; i < parts; i++) {
-			List<Double> valList = new ArrayList<Double>();
-			if (i == parts - 1) {
-				for (int j = i * partSize; j < vals.length; j++) {
-					valList.add(vals[j]);
-				}
-			} else {
-				for (int j = 0; j < partSize; j++) {
-					valList.add(vals[i * partSize + j]);
-				}
-			}
-			res.add((Double[]) valList.toArray());
-		}
-		return res;
-	}
+//	public static List<Double[]> divideEamonnRecord(UnifiedRecord record) {
+//		int parts = 10;
+//		double[] vals = record.getValues();
+//		int partSize = vals.length / parts;
+//		List<Double[]> res = new ArrayList<Double[]>();
+//
+//		for (int i = 0; i < parts; i++) {
+//			List<Double> valList = new ArrayList<Double>();
+//			if (i == parts - 1) {
+//				for (int j = i * partSize; j < vals.length; j++) {
+//					valList.add(vals[j]);
+//				}
+//			} else {
+//				for (int j = 0; j < partSize; j++) {
+//					valList.add(vals[i * partSize + j]);
+//				}
+//			}
+//			res.add((Double[]) valList.toArray());
+//		}
+//		return res;
+//	}
 
 	public static List<PatientGroup> divideData(List<Patient> patients,
 			boolean isSick) throws Exception {
