@@ -34,6 +34,7 @@ import pl.poznan.put.TimeSeries.Renderers.SmoothChart;
 import pl.poznan.put.TimeSeries.Util.Configuration;
 import pl.poznan.put.TimeSeries.Util.SaxPerformer;
 import pl.poznan.put.TimeSeries.Workflows.EamonnRegressionWorkflow;
+import pl.poznan.put.TimeSeries.Workflows.EamonnSaxWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.PatientRegressionWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.PatientSaxWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.WorkflowBase;
@@ -53,6 +54,7 @@ public class Main {
 //		WorkflowBase workflow = new PatientRegressionWorkflow(); 
 //		WorkflowBase workflow = new EamonnRegressionWorkflow(); 
 		WorkflowBase workflow = new PatientSaxWorkflow();
+//		WorkflowBase workflow = new EamonnSaxWorkflow();
 		
 		workflow.runWorkflow();
 		

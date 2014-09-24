@@ -15,6 +15,7 @@ public abstract class WorkflowBase {
 
 	protected String tempTrainPath;
 	protected String tempTestPath;
+	protected String tempCVpath;
 
 	protected abstract void importData();
 
@@ -26,7 +27,7 @@ public abstract class WorkflowBase {
 			int folds = 10;
 			double partOfDataSet = 1;
 			long seed = 1000;
-			CrossValidationExperiment.runCVExperiment(classifier, tempTestPath, folds, partOfDataSet, seed);
+			CrossValidationExperiment.runCVExperiment(classifier, tempCVpath, folds, partOfDataSet, seed);
 			//System.out.println("The result for " + this.getClass().getSimpleName() +" is: " + res);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

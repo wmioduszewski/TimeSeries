@@ -45,16 +45,6 @@ public class PatientSaxWorkflow extends PatientWorkflowBase {
 
 		List<SaxArffCandidateRow> nestedList = new ArrayList<SaxArffCandidateRow>();
 
-//		patients.clear();
-//		Patient p = new Patient(1);
-//		p.setSaxString(new SaxString("abbaaaabbbbbbababa", 0, 0));
-//		p.setSick(true);
-//		patients.add(p);
-//		p = new Patient(2);
-//		p.setSaxString(new SaxString("bbbbbbaaaaaabababa", 0, 0));
-//		p.setSick(false);
-//		patients.add(p);
-
 		for (Patient patient : patients) {
 			LinkedList<HashMap<String, AtomicInteger>> listHashMap = new LinkedList<HashMap<String, AtomicInteger>>();
 			try {
@@ -78,21 +68,7 @@ public class PatientSaxWorkflow extends PatientWorkflowBase {
 		}
 
 		Instances insts = NewSaxArffBuilder.buildInstancesFromStats(nestedList);
-		NewSaxArffBuilder.saveArff(insts,"testtest.arff");
-
-	}
-
-	@Override
-	protected void runExperiment() {
-		try {
-			double res = Experiment.runExperiment(classifier, tempTrainPath,
-					tempTestPath);
-			System.out.println("The result for "
-					+ this.getClass().getSimpleName() + " is: " + res);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		NewSaxArffBuilder.saveArff(insts,tempCVpath);
 	}
 
 	@Override
@@ -102,8 +78,9 @@ public class PatientSaxWorkflow extends PatientWorkflowBase {
 
 	@Override
 	protected void setTempPaths() {
-		tempTrainPath = "output/saxPatientsTrainTemp.arff";
-		tempTestPath = "output/saxPatientsTestTemp.arff";
+		//tempTrainPath = "output/saxPatientsTrainTemp.arff";
+		//tempTestPath = "output/saxPatientsTestTemp.arff";
+		tempCVpath = "output/saxPatients4p2g.arff";
 	}
 
 }
