@@ -82,6 +82,25 @@ public class DataDivider {
 		}
 		return listlist;
 	}
+	
+	public static List<String> DivideStringRegularly(String input, Integer parts){
+		List<String> res = new ArrayList<String>();
+		
+		int inputLen = input.length();
+		int granula = (int) Math.ceil(inputLen / (float)parts);		
+		int i=0;
+		
+		while(i<inputLen-granula){
+			res.add(input.substring(i, i+granula));
+			i+=granula;
+		}
+		
+		if(i<inputLen){
+			res.add(input.substring(i, inputLen));
+		}
+		
+		return res;
+	}
 
 //	public static List<Double[]> divideEamonnRecord(UnifiedRecord record) {
 //		int parts = 10;

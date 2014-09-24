@@ -35,6 +35,7 @@ import pl.poznan.put.TimeSeries.Util.Configuration;
 import pl.poznan.put.TimeSeries.Util.SaxPerformer;
 import pl.poznan.put.TimeSeries.Workflows.EamonnRegressionWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.PatientRegressionWorkflow;
+import pl.poznan.put.TimeSeries.Workflows.PatientSaxWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.WorkflowBase;
 import weka.classifiers.Classifier;
 import weka.classifiers.rules.JRip;
@@ -50,9 +51,9 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 		
 //		WorkflowBase workflow = new PatientRegressionWorkflow(); 
-//		workflow.runWorkflow();
+//		WorkflowBase workflow = new EamonnRegressionWorkflow(); 
+		WorkflowBase workflow = new PatientSaxWorkflow();
 		
-		WorkflowBase workflow = new EamonnRegressionWorkflow(); 
 		workflow.runWorkflow();
 		
 		System.out.println("End.");

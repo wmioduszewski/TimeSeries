@@ -56,6 +56,8 @@ public class DataImporterEamonn {
 					outputLength, alphabeatSize);
 			record.setSaxString(sax);
 		}
+		
+		System.out.println(String.format("Read %d records from file: %s",records.size(), path));
 		return records;
 	}
 

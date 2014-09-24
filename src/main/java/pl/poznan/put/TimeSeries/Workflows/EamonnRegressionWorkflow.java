@@ -55,7 +55,7 @@ public class EamonnRegressionWorkflow extends EamonnWorkflowBase{
 
 	@Override
 	protected void setTempPaths() {
-		tempTestPath = "output/EamonnEcgRegression16.arff";
+		tempTestPath = "output/EamonnTwoLeadEcgRegression1.arff";
 		
 	}
 
