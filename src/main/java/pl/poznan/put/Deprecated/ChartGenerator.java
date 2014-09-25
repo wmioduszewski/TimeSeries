@@ -11,6 +11,7 @@ import pl.poznan.put.TimeSeries.Renderers.CleanChart;
 
 public class ChartGenerator {
 
+	@SuppressWarnings("unused")
 	private void displayWindowChart(JFreeChart jchart) {
 		ChartWindow window = new ChartWindow("Time Series", new Dimension(1600,
 				1000), jchart);
@@ -19,6 +20,7 @@ public class ChartGenerator {
 		window.setVisible(true);
 	}
 
+	@SuppressWarnings("unused")
 	private static void graphics() {
 		ChartBase currentChart;
 		currentChart = new CleanChart();

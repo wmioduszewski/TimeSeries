@@ -14,16 +14,19 @@ import pl.poznan.put.TimeSeries.Constants.TimeLimit;
 import pl.poznan.put.TimeSeries.DataImporters.DataImporterCsv;
 import pl.poznan.put.TimeSeries.DataProcessors.DataDivider;
 import pl.poznan.put.TimeSeries.Model.Characteristic;
+import pl.poznan.put.TimeSeries.Model.EamonnRecord;
 import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Util.Configuration;
 
 public class Misc {
 	
+	@SuppressWarnings("unused")
 	private static void runOldFlow() throws Exception {
 		FlowHandler flow = new FlowHandler();
 		flow.startProcessing();
 	}
 
+	@SuppressWarnings("unused")
 	private static void CsvToEamonn() throws IOException {
 		String path = Configuration.getProperty("csvDataSet");
 

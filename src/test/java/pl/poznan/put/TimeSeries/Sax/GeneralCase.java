@@ -1,7 +1,5 @@
 package pl.poznan.put.TimeSeries.Sax;
 
-import static org.junit.Assert.*;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -14,10 +12,11 @@ public class GeneralCase {
 
 	@Test
 	public void test() throws Exception {
-		List<Float> vals = Arrays.asList(2f,3f,4f);
+		List<Float> vals = Arrays.asList(2f, 3f, 4f);
 		EamonnRecord unif = new EamonnRecord(1, vals);
-		String output = SaxPerformer.TranslateUnifiedRecordToString(unif, vals.size(), 10);
-		
+		String output = SaxPerformer.TranslateUnifiedRecordToString(unif,
+				vals.size(), 10);
+
 		System.out.println(output);
 	}
 

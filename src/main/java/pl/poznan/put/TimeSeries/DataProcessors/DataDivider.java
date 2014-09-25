@@ -2,13 +2,9 @@ package pl.poznan.put.TimeSeries.DataProcessors;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import org.joda.time.DateTime;
 
-import pl.poznan.put.Deprecated.PatientGroup;
-import pl.poznan.put.TimeSeries.Constants.AgeLimit;
 import pl.poznan.put.TimeSeries.Constants.Limits;
 import pl.poznan.put.TimeSeries.Constants.TimeLimit;
 import pl.poznan.put.TimeSeries.Model.Characteristic;

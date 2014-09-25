@@ -6,7 +6,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import pl.poznan.put.Deprecated.SaxArffExporter;
 import pl.poznan.put.TimeSeries.DataExporters.NewSaxArffBuilder;
 import pl.poznan.put.TimeSeries.DataProcessors.DataDivider;
 import pl.poznan.put.TimeSeries.DataProcessors.NgramProcessor;

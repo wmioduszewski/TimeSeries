@@ -1,20 +1,15 @@
 package pl.poznan.put.TimeSeries.Reporting;
 
 import java.io.File;
-import java.io.IOException;
-import java.security.acl.LastOwnerException;
 import java.util.List;
 
-import pl.poznan.put.TimeSeries.Util.Configuration;
-import jxl.LabelCell;
 import jxl.Workbook;
-import jxl.read.biff.BiffException;
 import jxl.write.Label;
+import jxl.write.NumberFormats;
 import jxl.write.WritableCellFormat;
 import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
-import jxl.write.WriteException;
-import jxl.write.biff.RowsExceededException;
+import pl.poznan.put.TimeSeries.Util.Configuration;
 
 public class ResultReporter {
 
@@ -76,8 +71,9 @@ public class ResultReporter {
 					.getDatasetName()));
 		}
 
+		new jxl.write.NumberFormats();
 		WritableCellFormat wcf1 = new WritableCellFormat(
-				new jxl.write.NumberFormats().FLOAT);
+				NumberFormats.FLOAT);
 
 		for (int i = 0; i < classifiers.size(); i++) {
 			for (int j = 0; j < records.size(); j++) {
@@ -99,8 +95,8 @@ public class ResultReporter {
 
 			if (newReport.exists()) {
 				File oldReport = new File(path);
-				String name = path.substring(path.lastIndexOf("/"),
-						path.length());
+				// String name = path.substring(path.lastIndexOf("/"),
+				// path.length());
 				oldReport.delete();
 				newReport.renameTo(oldReport);
 			}
