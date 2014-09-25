@@ -6,7 +6,6 @@ import java.util.stream.Collectors;
 
 import pl.poznan.put.TimeSeries.Model.RegressionResult;
 import pl.poznan.put.TimeSeries.Model.UnifiedArffRow;
-import weka.gui.beans.ClassAssignerCustomizer;
 
 public class RegressionArffExporter extends ArffExporterBase {
 
@@ -37,12 +36,13 @@ public class RegressionArffExporter extends ArffExporterBase {
 		List<Object> distinct = classList.stream().map(x -> x).distinct()
 				.collect(Collectors.toList());
 
-		if(distinct.size()==1) distinct.add(1);
+		if (distinct.size() == 1)
+			distinct.add(1);
 		String classes = "";
 		for (Object problemClass : distinct) {
 			if (classes.length() > 0)
 				classes += ",";
-			classes += ((Double)problemClass).intValue();
+			classes += ((Double) problemClass).intValue();
 		}
 		attributes.put("destClass", "{" + classes + "}");
 	}
@@ -52,7 +52,8 @@ public class RegressionArffExporter extends ArffExporterBase {
 		arffFileContent.append("@DATA\n");
 
 		for (UnifiedArffRow record : records) {
-			String destClass = String.valueOf((int)record.getDestinationClass());
+			String destClass = String.valueOf((int) record
+					.getDestinationClass());
 			for (RegressionResult result : record.getRegressionResults()) {
 				arffFileContent.append(result.getSlope() + ","
 						+ result.getIntercept() + ",");

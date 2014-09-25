@@ -1,5 +1,7 @@
 package pl.poznan.put.TimeSeries.Model;
 
+
+//TODO: is this type really needed ?
 public class SaxString {
 
 	String output;

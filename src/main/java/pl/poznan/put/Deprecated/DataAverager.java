@@ -1,11 +1,10 @@
-package pl.poznan.put.TimeSeries.Util;
+package pl.poznan.put.Deprecated;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.Patient;
-import pl.poznan.put.TimeSeries.Model.PatientGroup;
 
 public class DataAverager {
 

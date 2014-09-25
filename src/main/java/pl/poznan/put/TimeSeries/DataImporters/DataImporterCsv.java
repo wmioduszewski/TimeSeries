@@ -8,12 +8,8 @@ import java.util.List;
 
 import org.joda.time.DateTime;
 
-import edu.hawaii.jmotif.lib.ts.TSException;
 import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.Patient;
-import pl.poznan.put.TimeSeries.Model.SaxString;
-import pl.poznan.put.TimeSeries.Util.Configuration;
-import pl.poznan.put.TimeSeries.Util.SaxPerformer;
 
 public class DataImporterCsv extends DataImporterBase {
 	

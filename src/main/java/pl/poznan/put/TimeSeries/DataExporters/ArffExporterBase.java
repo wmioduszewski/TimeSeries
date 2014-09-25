@@ -31,7 +31,9 @@ public abstract class ArffExporterBase {
 		writer.write(arffFileContent.toString());
 		writer.flush();
 		writer.close();
-		System.out.println(String.format("Exported arff file for Relation %s to %s", relationTitle, destinationPath));
+		System.out.println(String.format(
+				"Exported arff file for Relation %s to %s", relationTitle,
+				destinationPath));
 	}
 
 	protected void buildFileContent() {

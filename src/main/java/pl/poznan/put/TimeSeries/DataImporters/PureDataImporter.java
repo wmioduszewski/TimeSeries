@@ -5,18 +5,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringTokenizer;
 
 import org.joda.time.DateTime;
 
-import edu.hawaii.jmotif.lib.ts.TSException;
 import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.Patient;
-import pl.poznan.put.TimeSeries.Model.SaxString;
-import pl.poznan.put.TimeSeries.Model.UnifiedRecord;
-import pl.poznan.put.TimeSeries.Util.Configuration;
 import pl.poznan.put.TimeSeries.Util.FileLister;
-import pl.poznan.put.TimeSeries.Util.SaxPerformer;
 
 public class PureDataImporter extends DataImporterBase {
 

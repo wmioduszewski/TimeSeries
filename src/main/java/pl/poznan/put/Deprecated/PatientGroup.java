@@ -1,10 +1,11 @@
-package pl.poznan.put.TimeSeries.Model;
+package pl.poznan.put.Deprecated;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import pl.poznan.put.TimeSeries.Constants.AgeLimit;
 import pl.poznan.put.TimeSeries.Constants.TimeLimit;
+import pl.poznan.put.TimeSeries.Model.Patient;
 
 public class PatientGroup {
 

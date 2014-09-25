@@ -9,23 +9,13 @@ import org.apache.commons.lang3.tuple.Pair;
 
 import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Model.UnifiedArffRow;
-import pl.poznan.put.TimeSeries.Model.UnifiedRecord;
 
 public class PatientUtils {
 
 	private static float trainTestRatio = Float.parseFloat(Configuration
 			.getProperty("trainToTestRatio"));
 
-	public static List<UnifiedRecord> castPatients(List<Patient> patients) {
-		List<UnifiedRecord> res = new ArrayList<UnifiedRecord>();
-		for (Patient patient : patients) {
-			UnifiedRecord obj = new UnifiedRecord(
-					patient.getDestinationClass(), patient.getValues());
-			obj.setSaxString(patient.getSaxString().getContent());
-			res.add(obj);
-		}
-		return res;
-	}
+	// TODO: MINIMIZE THIS METHODS TO SINGLE ONE
 
 	public static Pair<List<UnifiedArffRow>, List<UnifiedArffRow>> divideRowsToTrainAndTest(
 			List<UnifiedArffRow> input) {

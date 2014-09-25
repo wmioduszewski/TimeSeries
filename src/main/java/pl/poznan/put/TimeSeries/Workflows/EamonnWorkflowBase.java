@@ -3,16 +3,17 @@ package pl.poznan.put.TimeSeries.Workflows;
 import java.util.List;
 
 import pl.poznan.put.TimeSeries.DataImporters.DataImporterEamonn;
-import pl.poznan.put.TimeSeries.Model.UnifiedRecord;
+import pl.poznan.put.TimeSeries.Model.EamonnRecord;
 import pl.poznan.put.TimeSeries.Util.Configuration;
 
-public abstract class EamonnWorkflowBase extends WorkflowBase{
+public abstract class EamonnWorkflowBase extends WorkflowBase {
 
-	protected List<UnifiedRecord> records;
-	
+	protected List<EamonnRecord> records;
+
 	@Override
 	protected void importData() {
-		DataImporterEamonn importer = new DataImporterEamonn(Configuration.getProperty("singleDataPath"));
+		DataImporterEamonn importer = new DataImporterEamonn(
+				Configuration.getProperty("singleDataPath"));
 		try {
 			records = importer.ImportEamonnData();
 		} catch (Exception e) {
@@ -20,5 +21,5 @@ public abstract class EamonnWorkflowBase extends WorkflowBase{
 			e.printStackTrace();
 		}
 	}
-	
+
 }

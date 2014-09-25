@@ -7,18 +7,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-import pl.poznan.put.TimeSeries.Model.UnifiedRecord;
+import pl.poznan.put.TimeSeries.Model.EamonnRecord;
 import pl.poznan.put.TimeSeries.Util.Configuration;
 import pl.poznan.put.TimeSeries.Util.SaxPerformer;
 
 public class DataImporterEamonn {
 
 	private String path;
-	private List<UnifiedRecord> records;
+	private List<EamonnRecord> records;
 
 	public DataImporterEamonn(String path) {
 		this.path = path;
-		records = new ArrayList<UnifiedRecord>();
+		records = new ArrayList<EamonnRecord>();
 	}
 
 	private void readData() throws IOException {
@@ -35,7 +35,7 @@ public class DataImporterEamonn {
 			for (int i = 0; i < valsCount; i++) {
 				vals.add(Float.parseFloat(tokenizer.nextToken()));
 			}
-			UnifiedRecord currRecord = new UnifiedRecord(destClass,
+			EamonnRecord currRecord = new EamonnRecord(destClass,
 					vals);
 			records.add(currRecord);
 			currLine = br.readLine();
@@ -43,7 +43,7 @@ public class DataImporterEamonn {
 		br.close();
 	}
 
-	public List<UnifiedRecord> ImportEamonnData() throws Exception {
+	public List<EamonnRecord> ImportEamonnData() throws Exception {
 		readData();
 
 		int alphabeatSize = Integer.parseInt(Configuration
@@ -51,7 +51,7 @@ public class DataImporterEamonn {
 		int outputLength = Integer.parseInt(Configuration
 				.getProperty("saxOutputLength"));
 		
-		for (UnifiedRecord record : records) {
+		for (EamonnRecord record : records) {
 			String sax = SaxPerformer.TranslateUnifiedRecordToString(record,
 					outputLength, alphabeatSize);
 			record.setSaxString(sax);

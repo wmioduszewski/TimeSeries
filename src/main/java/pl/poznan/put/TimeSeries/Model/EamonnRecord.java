@@ -2,13 +2,13 @@ package pl.poznan.put.TimeSeries.Model;
 
 import java.util.List;
 
-public class UnifiedRecord implements IRecord {
+public class EamonnRecord implements IRecord {
 
 	private double destClass;
 	private List<Float> vals;
 	private String saxString;
 
-	public UnifiedRecord(double destClass, List<Float> vals) {
+	public EamonnRecord(double destClass, List<Float> vals) {
 		super();
 		this.destClass = destClass;
 		this.vals = vals;

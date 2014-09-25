@@ -1,4 +1,4 @@
-package pl.poznan.put.TimeSeries;
+package pl.poznan.put.Deprecated;
 
 import java.awt.Dimension;
 

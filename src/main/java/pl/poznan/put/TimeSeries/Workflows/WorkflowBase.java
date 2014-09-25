@@ -3,15 +3,14 @@ package pl.poznan.put.TimeSeries.Workflows;
 import pl.poznan.put.TimeSeries.Classifying.CrossValidationExperiment;
 import pl.poznan.put.TimeSeries.Util.Configuration;
 import weka.classifiers.Classifier;
-import weka.classifiers.functions.Logistic;
 import weka.classifiers.rules.JRip;
-import weka.classifiers.trees.J48;
 
 public abstract class WorkflowBase {
 
 	protected Classifier classifier = new JRip();
-	
-	protected int regularPartsForDivision = Integer.parseInt(Configuration.getProperty("regularPartsForDivision"));
+
+	protected int regularPartsForDivision = Integer.parseInt(Configuration
+			.getProperty("regularPartsForDivision"));
 
 	protected String tempTrainPath;
 	protected String tempTestPath;
@@ -21,16 +20,19 @@ public abstract class WorkflowBase {
 
 	protected abstract void processData();
 
-	protected void runExperiment(){
+	protected void runExperiment() {
 		try {
-			//double res = Experiment.runExperiment(classifier, tempTrainPath, tempTestPath);
+			// double res = Experiment.runExperiment(classifier, tempTrainPath,
+			// tempTestPath);
 			int folds = 10;
 			double partOfDataSet = 1;
 			long seed = 1000;
-			CrossValidationExperiment.runCVExperiment(classifier, tempCVpath, folds, partOfDataSet, seed);
-			//System.out.println("The result for " + this.getClass().getSimpleName() +" is: " + res);
+			CrossValidationExperiment.runCVExperiment(classifier, tempCVpath,
+					folds, partOfDataSet, seed);
+			// System.out.println("The result for " +
+			// this.getClass().getSimpleName() +" is: " + res);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			System.out.println("Experiment failed.");
 			e.printStackTrace();
 		}
 	}

@@ -3,9 +3,8 @@ package pl.poznan.put.TimeSeries.Util;
 import java.util.List;
 
 import pl.poznan.put.TimeSeries.Model.Characteristic;
+import pl.poznan.put.TimeSeries.Model.EamonnRecord;
 import pl.poznan.put.TimeSeries.Model.Patient;
-import pl.poznan.put.TimeSeries.Model.UnifiedRecord;
-import edu.hawaii.jmotif.lib.ts.TPoint;
 import edu.hawaii.jmotif.lib.ts.TSException;
 import edu.hawaii.jmotif.lib.ts.Timeseries;
 import edu.hawaii.jmotif.logic.sax.SAXFactory;
@@ -31,13 +30,12 @@ public class SaxPerformer {
 		return sax;
 	}
 
-	public static String TranslateUnifiedRecordToString(
-			UnifiedRecord record, int outputLength, int alphabeatSize)
-			throws Exception {
-		
+	public static String TranslateUnifiedRecordToString(EamonnRecord record,
+			int outputLength, int alphabeatSize) throws Exception {
+
 		List<Float> floats = record.getValues();
 		int size = floats.size();
-		
+
 		double[] vals = new double[size];
 		long[] times = new long[size];
 

@@ -3,9 +3,6 @@ package pl.poznan.put.TimeSeries.Classifying;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
-import org.jfree.util.ArrayUtilities;
 
 import weka.classifiers.Classifier;
 import weka.core.Attribute;
@@ -60,11 +57,11 @@ public class NgramClassifier extends Classifier {
 				}
 			}
 		}
-		
-		for(int i=0;i<numClasses;i++){
+
+		for (int i = 0; i < numClasses; i++) {
 			HashMap<String, Double> map = ngramsInClasses.get(i);
 			for (String key : map.keySet()) {
-				map.put(key, map.get(key)/(double)classInstancesCounter[i]);
+				map.put(key, map.get(key) / (double) classInstancesCounter[i]);
 			}
 		}
 	}
@@ -111,7 +108,7 @@ public class NgramClassifier extends Classifier {
 
 		double minDist = Double.MAX_VALUE;
 		int bestClassIndex = -1;
-		
+
 		for (int i = 0; i < numClasses; i++) {
 			if (distances[i] < minDist) {
 				minDist = distances[i];

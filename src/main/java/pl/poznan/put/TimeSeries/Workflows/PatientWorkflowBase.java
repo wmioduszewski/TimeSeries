@@ -3,13 +3,8 @@ package pl.poznan.put.TimeSeries.Workflows;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-
-import org.apache.commons.lang3.tuple.MutablePair;
-import org.apache.commons.lang3.tuple.Pair;
 
 import pl.poznan.put.TimeSeries.DataImporters.DataImporterBase;
-import pl.poznan.put.TimeSeries.DataImporters.DataImporterCsv;
 import pl.poznan.put.TimeSeries.DataImporters.PureDataImporter;
 import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Model.UnifiedArffRow;
@@ -46,20 +41,20 @@ public abstract class PatientWorkflowBase extends WorkflowBase {
 
 	@Override
 	protected void importData() {
-		//String csvDataPath = Configuration.getProperty("csvDataSet");
+		// String csvDataPath = Configuration.getProperty("csvDataSet");
 		String pureDataPath = Configuration.getProperty("pureDataSet");
-		//List<Patient> csvPatients = null;
+		// List<Patient> csvPatients = null;
 		List<Patient> purePatients = null;
-		DataImporterBase importer ;//= new DataImporterCsv(csvDataPath);
+		DataImporterBase importer;// = new DataImporterCsv(csvDataPath);
 		try {
-			//csvPatients = importer.ImportData();
+			// csvPatients = importer.ImportData();
 			importer = new PureDataImporter(pureDataPath);
 			purePatients = importer.ImportData();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			System.out.println("Patients import failed.");
 			e.printStackTrace();
 		}
-		//patients.addAll(csvPatients);
+		// patients.addAll(csvPatients);
 		patients.addAll(purePatients);
 	}
 }

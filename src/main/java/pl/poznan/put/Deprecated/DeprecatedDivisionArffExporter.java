@@ -1,4 +1,4 @@
-package pl.poznan.put.TimeSeries.DataExporters;
+package pl.poznan.put.Deprecated;
 
 import java.io.FileNotFoundException;
 import java.util.List;
@@ -6,16 +6,17 @@ import java.util.stream.Collectors;
 
 import pl.poznan.put.TimeSeries.Constants.AgeLimit;
 import pl.poznan.put.TimeSeries.Constants.Limits;
-import pl.poznan.put.TimeSeries.Model.UnifiedRecord;
+import pl.poznan.put.TimeSeries.DataExporters.ArffExporterBase;
+import pl.poznan.put.TimeSeries.Model.EamonnRecord;
 
 public class DeprecatedDivisionArffExporter extends ArffExporterBase {
-	private List<UnifiedRecord> records;
+	private List<EamonnRecord> records;
 
 	public DeprecatedDivisionArffExporter(String relationTitle) {
 		super(relationTitle);
 	}
 
-	public void saveUnifiedRecordsToArffData(List<UnifiedRecord> records,
+	public void saveUnifiedRecordsToArffData(List<EamonnRecord> records,
 			String destinationPath) throws FileNotFoundException {
 		this.records = records;
 		performExport(destinationPath);
@@ -52,7 +53,7 @@ public class DeprecatedDivisionArffExporter extends ArffExporterBase {
 	@Override
 	protected void insertData() {
 		arffFileContent.append("@DATA\n");
-		for (UnifiedRecord record : records) {
+		for (EamonnRecord record : records) {
 			String diagnosis = String.valueOf(record.getDestinationClass());
 			List<Float> vals = record.getValues();
 			for (int i = 0; i < vals.size(); i++) {

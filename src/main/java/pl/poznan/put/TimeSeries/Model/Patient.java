@@ -13,7 +13,7 @@ public class Patient implements Cloneable, IRecord {
 	DateTime awake;
 	DateTime asleep;
 	SaxString saxString;
-	
+
 	String chartCaption;
 	List<Characteristic> characteristics;
 
@@ -28,7 +28,7 @@ public class Patient implements Cloneable, IRecord {
 	public Patient(int id) {
 		super();
 		this.id = id;
-		characteristics = new ArrayList<Characteristic>();		
+		characteristics = new ArrayList<Characteristic>();
 		chartCaption = "" + id;
 	}
 
@@ -43,7 +43,7 @@ public class Patient implements Cloneable, IRecord {
 	public SaxString getSaxString() {
 		return saxString;
 	}
-	
+
 	public void setSaxString(SaxString saxString) {
 		this.saxString = saxString;
 	}
@@ -67,7 +67,7 @@ public class Patient implements Cloneable, IRecord {
 	public int getId() {
 		return id;
 	}
-	
+
 	public float getAge() {
 		return age;
 	}
@@ -109,8 +109,8 @@ public class Patient implements Cloneable, IRecord {
 	public List<Float> getValues() {
 		int size = characteristics.size();
 		List<Float> vals = new ArrayList<Float>();
-		for (int i=0;i<size;i++) {
-			vals.add(characteristics.get(i).tfadj); 
+		for (int i = 0; i < size; i++) {
+			vals.add(characteristics.get(i).tfadj);
 		}
 		return vals;
 	}

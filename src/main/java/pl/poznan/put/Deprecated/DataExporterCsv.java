@@ -1,4 +1,4 @@
-package pl.poznan.put.TimeSeries.DataExporters;
+package pl.poznan.put.Deprecated;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -47,7 +47,7 @@ public class DataExporterCsv {
 						new File(folder + name + ".jpg"), jchart, 1600, 1000);
 				System.out.println(name + " successfully painted.");
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
+				System.out.println("Saving charts to file failed.");
 				e.printStackTrace();
 			}
 		}
@@ -58,7 +58,7 @@ public class DataExporterCsv {
 		try {
 			arffTranslator.savePatientsToArffData(patients, destinationPath);
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
+			System.out.println("Error during arff construction.");
 			e.printStackTrace();
 		}
 	}
@@ -68,11 +68,12 @@ public class DataExporterCsv {
 		for (Patient patient : patients) {
 			float patClass = patient.isSick() ? 1 : 0;
 			writer.write(String.format("%15.7e", patClass));
-			
-			for(int i =0;i<patient.getCharacteristics().size();i++){
-				writer.write(String.format(" %15.7e", patient.getCharacteristics().get(i).getTfadj()));
+
+			for (int i = 0; i < patient.getCharacteristics().size(); i++) {
+				writer.write(String.format(" %15.7e", patient
+						.getCharacteristics().get(i).getTfadj()));
 			}
-			
+
 			writer.write(System.getProperty("line.separator"));
 		}
 
