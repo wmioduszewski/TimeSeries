@@ -14,9 +14,9 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 
 		// WorkflowBase workflow = new PatientRegressionWorkflow();
-		 WorkflowBase workflow = new EamonnRegressionWorkflow();
+//		 WorkflowBase workflow = new EamonnRegressionWorkflow();
 //		WorkflowBase workflow = new PatientSaxWorkflow();
-//		 WorkflowBase workflow = new EamonnSaxWorkflow();
+		 WorkflowBase workflow = new EamonnSaxWorkflow();
 
 		workflow.runWorkflow();
 

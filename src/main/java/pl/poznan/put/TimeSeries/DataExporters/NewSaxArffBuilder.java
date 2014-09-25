@@ -7,6 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
 
 import pl.poznan.put.TimeSeries.Model.SaxArffCandidateRow;
 import pl.poznan.put.TimeSeries.Util.Configuration;
@@ -28,7 +29,8 @@ public class NewSaxArffBuilder {
 		for (int i = 0; i < regularPartsForDivision; i++) {
 			List<String> currentPeriodDistincts = new LinkedList<String>();
 			for (SaxArffCandidateRow linkedList : input) {
-				Set<String> keys = linkedList.getPeriodicNgrams().get(i).keySet();
+				Set<String> keys = linkedList.getPeriodicNgrams().get(i)
+						.keySet();
 				for (String key : keys) {
 					if (!currentPeriodDistincts.contains(key)) {
 						currentPeriodDistincts.add(key);
@@ -46,27 +48,34 @@ public class NewSaxArffBuilder {
 				attrInfo.addElement(new Attribute(prefix + elem));
 			}
 		}
-		
-		//TODO: LOAD CLASSES AUTOMATICALLY !;
-		
-		FastVector values = new FastVector();
-		values.addElement("1");
-		values.addElement("0");		
-		
-		Attribute destClass = new Attribute("destClass", values);
-		destClass. addStringValue("1");
-		destClass.addStringValue("0");
+
+		// ***************
+		List<Double> destClasses = input.stream().map(x -> x.getDestClass())
+				.distinct().collect(Collectors.toList());
+
+		if (destClasses.size() == 1)
+			System.out.println("There is only one class in dataset!");
+		// ***************
+
+		// TODO: LOAD CLASSES AUTOMATICALLY !;
+		FastVector destValues = new FastVector();
+		for (Double elem : destClasses) {
+			destValues.addElement(elem.toString());
+		}
+
+		Attribute destClass = new Attribute("destClass", destValues);
 		attrInfo.addElement(destClass);
-		
+
 		Instances instances = new Instances("Sax", attrInfo, input.size());
-		instances.setClassIndex(instances.numAttributes()-1);
+		instances.setClassIndex(instances.numAttributes() - 1);
 
 		for (SaxArffCandidateRow linkedList : input) {
 			Instance patient = new Instance(attrInfo.size());
 			int attrIndex = 0;
 			for (int i = 0; i < regularPartsForDivision; i++) {
 				List<String> currentDistincts = distincts.get(i);
-				HashMap<String, AtomicInteger> currentMap = linkedList.getPeriodicNgrams().get(i);
+				HashMap<String, AtomicInteger> currentMap = linkedList
+						.getPeriodicNgrams().get(i);
 				for (int j = 0; j < currentDistincts.size(); j++) {
 					int count = 0;
 					String key = currentDistincts.get(j);

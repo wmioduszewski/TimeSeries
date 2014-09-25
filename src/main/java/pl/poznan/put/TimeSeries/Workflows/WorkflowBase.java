@@ -63,8 +63,9 @@ public abstract class WorkflowBase {
 					eamonnDataSource.lastIndexOf("/") + 1,
 					eamonnDataSource.lastIndexOf("_"));
 		}
-		tempCVpath = String.format("output/arffOutput/%s%s%dp%dgram.arff", className,
-				eamonnDataSource, regularPartsForDivision, windowLen);
+		tempCVpath = String
+				.format("output/arffOutput/%s%s%dp%dgram.arff", className,
+						eamonnDataSource, regularPartsForDivision, windowLen);
 	}
 
 	public WorkflowBase() {
@@ -73,12 +74,14 @@ public abstract class WorkflowBase {
 	}
 
 	public void runWorkflow() {
+
 		System.out.println("Workflow has started.");
 		importData();
 		processData();
 		runCrossValidationExperiment();
 		reportResult();
 		System.out.println("Workflow has ended.");
+
 	}
 
 }
