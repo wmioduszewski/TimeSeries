@@ -43,7 +43,7 @@ public class EamonnRegressionWorkflow extends EamonnWorkflowBase {
 		RegressionArffExporter exporter = new RegressionArffExporter(
 				"UnifiedData");
 		try {
-			exporter.saveUnifiedRecordsToArffData(rows, tempTestPath);
+			exporter.saveUnifiedRecordsToArffData(rows, tempCVpath);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -51,12 +51,6 @@ public class EamonnRegressionWorkflow extends EamonnWorkflowBase {
 
 	@Override
 	protected void reportResult() {
-
-	}
-
-	@Override
-	protected void setTempPaths() {
-		tempTestPath = "output/EamonnTwoLeadEcgRegression1.arff";
 
 	}
 

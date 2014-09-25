@@ -58,11 +58,4 @@ public class PatientSaxWorkflow extends PatientWorkflowBase {
 	protected void reportResult() {
 	}
 
-	@Override
-	protected void setTempPaths() {
-		// tempTrainPath = "output/saxPatientsTrainTemp.arff";
-		// tempTestPath = "output/saxPatientsTestTemp.arff";
-		tempCVpath = "output/saxPatients4p2g.arff";
-	}
-
 }

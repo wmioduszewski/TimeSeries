@@ -19,6 +19,9 @@ public abstract class PatientWorkflowBase extends WorkflowBase {
 		patients = new ArrayList<Patient>();
 	}
 
+	
+	//TODO: move to workflow base and make classes count independent and type independent
+	
 	protected void ReportInputStatistics(List<UnifiedArffRow> train,
 			List<UnifiedArffRow> test) {
 		long trainHealtCount = train.stream()
@@ -41,20 +44,16 @@ public abstract class PatientWorkflowBase extends WorkflowBase {
 
 	@Override
 	protected void importData() {
-		// String csvDataPath = Configuration.getProperty("csvDataSet");
 		String pureDataPath = Configuration.getProperty("pureDataSet");
-		// List<Patient> csvPatients = null;
 		List<Patient> purePatients = null;
-		DataImporterBase importer;// = new DataImporterCsv(csvDataPath);
+		DataImporterBase importer;
 		try {
-			// csvPatients = importer.ImportData();
 			importer = new PureDataImporter(pureDataPath);
 			purePatients = importer.ImportData();
 		} catch (IOException e) {
 			System.out.println("Patients import failed.");
 			e.printStackTrace();
 		}
-		// patients.addAll(csvPatients);
 		patients.addAll(purePatients);
 	}
 }

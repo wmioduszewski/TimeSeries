@@ -55,10 +55,4 @@ public class EamonnSaxWorkflow extends EamonnWorkflowBase {
 
 	}
 
-	@Override
-	protected void setTempPaths() {
-		tempCVpath = "output/saxEamonn4p3g.arff";
-
-	}
-
 }

@@ -29,8 +29,8 @@ public class CrossValidationExperiment {
 		double loss01 = 0;
 		double squaredError = 0;
 		for (int n = 0; n < folds; n++) {
-			System.out.println("Cross-Validation: fold " + (n + 1) + "/"
-					+ folds);
+//			System.out.println("Cross-Validation: fold " + (n + 1) + "/"
+//					+ folds);
 
 			Instances train = dataSet.trainCV(folds, n);
 			Instances test = dataSet.testCV(folds, n);

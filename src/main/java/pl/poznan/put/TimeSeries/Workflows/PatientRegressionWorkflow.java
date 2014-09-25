@@ -65,7 +65,7 @@ public class PatientRegressionWorkflow extends PatientWorkflowBase {
 		try {
 			// exporter.saveUnifiedRecordsToArffData(trainSet, tempTrainPath);
 			// exporter.saveUnifiedRecordsToArffData(testSet, tempTestPath);
-			exporter.saveUnifiedRecordsToArffData(rows, tempTestPath);
+			exporter.saveUnifiedRecordsToArffData(rows, tempCVpath);
 		} catch (FileNotFoundException e) {
 			System.out.println("Exporting arff for patients failed.");
 			e.printStackTrace();
@@ -74,13 +74,6 @@ public class PatientRegressionWorkflow extends PatientWorkflowBase {
 
 	@Override
 	protected void reportResult() {
-	}
-
-	@Override
-	protected void setTempPaths() {
-		tempTrainPath = "output/tempRegressionArffTrain.arff";
-		tempTestPath = "output/regressionArffPeriodicThenRegularDivision.arff";
-
 	}
 
 }
