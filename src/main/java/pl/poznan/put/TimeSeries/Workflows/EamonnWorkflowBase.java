@@ -2,11 +2,17 @@ package pl.poznan.put.TimeSeries.Workflows;
 
 import java.util.List;
 
+import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.DataImporters.DataImporterEamonn;
+import pl.poznan.put.TimeSeries.DataProcessors.DataDivider;
 import pl.poznan.put.TimeSeries.Model.EamonnRecord;
 import pl.poznan.put.TimeSeries.Util.Configuration;
 
 public abstract class EamonnWorkflowBase extends WorkflowBase {
+
+	public EamonnWorkflowBase(DivisionOptions divisionOption) {
+		super(divisionOption);
+	}
 
 	protected List<EamonnRecord> records;
 
@@ -20,5 +26,24 @@ public abstract class EamonnWorkflowBase extends WorkflowBase {
 			System.out.println("Eamonn data import failed.");
 			e.printStackTrace();
 		}
+	}
+
+	protected List<List<Float>> divideData(EamonnRecord record) {
+		List<List<Float>> res = null;
+
+		switch (divisionOption) {
+		case Regular:
+			res = DataDivider.DivideCollectionRegularly(record.getValues(),
+					divisionPartsAmount);
+			break;
+		case Periodic:
+			
+			break;
+		case PeriodicThenRegular:
+			
+			break;		
+		}
+
+		return res;
 	}
 }

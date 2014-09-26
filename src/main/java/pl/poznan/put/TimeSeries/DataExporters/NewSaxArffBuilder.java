@@ -20,7 +20,7 @@ import weka.core.converters.ArffSaver;
 public class NewSaxArffBuilder {
 
 	private static int regularPartsForDivision = Integer.parseInt(Configuration
-			.getProperty("regularPartsForDivision"));
+			.getProperty("divisionPartsAmount"));
 
 	public static Instances buildInstancesFromStats(
 			List<SaxArffCandidateRow> input) {
@@ -53,6 +53,7 @@ public class NewSaxArffBuilder {
 				.distinct().collect(Collectors.toList());
 
 		if (destClasses.size() == 1)
+			//todo: exception here
 			System.out.println("There is only one class in dataset!");
 
 		FastVector destValues = new FastVector();

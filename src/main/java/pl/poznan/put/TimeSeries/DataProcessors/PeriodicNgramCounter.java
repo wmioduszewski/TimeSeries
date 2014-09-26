@@ -3,9 +3,9 @@ package pl.poznan.put.TimeSeries.DataProcessors;
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class NgramProcessor {
+public class PeriodicNgramCounter {
 
-	public static HashMap<String, AtomicInteger> slashString(String input,
+	public static HashMap<String, AtomicInteger> slashStringAndCountNgrams(String input,
 			int windowLen) {
 		HashMap<String, AtomicInteger> res = new HashMap<String, AtomicInteger>();
 		StringBuilder sb = new StringBuilder();

@@ -1,10 +1,12 @@
 package pl.poznan.put.TimeSeries.Workflows;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import pl.poznan.put.TimeSeries.Classifying.CrossValidationExperiment;
 import pl.poznan.put.TimeSeries.Classifying.Experiment;
+import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.Model.IRecord;
 import pl.poznan.put.TimeSeries.Util.Configuration;
 import weka.classifiers.Classifier;
@@ -12,29 +14,63 @@ import weka.classifiers.rules.JRip;
 
 public abstract class WorkflowBase {
 
-	protected Classifier classifier = new JRip();
+	public static <T extends IRecord> void reportInputStatistics(List<T> records) {
+		List<Double> distinctClasses = records.stream()
+				.map(x -> x.getDestinationClass()).distinct()
+				.collect(Collectors.toList());
+		System.out.println(String.format("Data contains %d classes:",
+				distinctClasses.size()));
+		for (Double distClass : distinctClasses) {
+			long count = records.stream()
+					.filter(x -> x.getDestinationClass() == distClass).count();
+			System.out.println(String.format("Class '%d' contains %d records",
+					distClass.intValue(), count));
+		}
+	}
 
-	protected int regularPartsForDivision = Integer.parseInt(Configuration
-			.getProperty("regularPartsForDivision"));
+	protected Classifier classifier = new JRip();
+	protected int divisionPartsAmount = Integer.parseInt(Configuration
+			.getProperty("divisionPartsAmount"));
+
 	protected int windowLen = Integer.parseInt(Configuration
 			.getProperty("ngramSize"));
-
-	protected String tempTrainPath;
-	protected String tempTestPath;
-	protected String tempCVpath;
-	
+	protected String arffTrainPath;
+	protected String arffTestPath;
+	protected String arffCVpath;
 	protected List<IRecord> recs;
+	protected DivisionOptions divisionOption;
+
+	public WorkflowBase(DivisionOptions divisionOption) {
+		super();
+		this.divisionOption = divisionOption;
+		setTempPaths();
+	}
+
+	protected abstract void exportArff() throws IOException;
 
 	protected abstract void importData();
 
-	protected abstract void processData();
-	
-	protected abstract void exportArff();
+	protected abstract void processData() throws Exception;
+
+	protected abstract void reportStatistics();
+
+	protected void runCrossValidationExperiment() {
+		try {
+			int folds = 10;
+			double partOfDataSet = 1;
+			long seed = 1000;
+			CrossValidationExperiment.runCVExperiment(classifier, arffCVpath,
+					folds, partOfDataSet, seed);
+		} catch (Exception e) {
+			System.out.println("Experiment failed.");
+			e.printStackTrace();
+		}
+	}
 
 	protected void runExperiment() {
 		try {
-			double res = Experiment.runExperiment(classifier, tempTrainPath,
-					tempTestPath);
+			double res = Experiment.runExperiment(classifier, arffTrainPath,
+					arffTestPath);
 			System.out.println("The result for "
 					+ this.getClass().getSimpleName() + " is: " + res);
 		} catch (Exception e) {
@@ -43,20 +79,21 @@ public abstract class WorkflowBase {
 		}
 	}
 
-	protected void runCrossValidationExperiment() {
+	public void runWorkflow() {
+
+		System.out.println("Workflow has started.");
 		try {
-			int folds = 10;
-			double partOfDataSet = 1;
-			long seed = 1000;
-			CrossValidationExperiment.runCVExperiment(classifier, tempCVpath,
-					folds, partOfDataSet, seed);
+			importData();
+			processData();
+			exportArff();
+			reportStatistics();
+			runCrossValidationExperiment();
 		} catch (Exception e) {
-			System.out.println("Experiment failed.");
+			System.out.println("Error during workflow performing:");
 			e.printStackTrace();
 		}
+		System.out.println("Workflow has ended.");
 	}
-
-	protected abstract void reportStatistics();
 
 	protected void setTempPaths() {
 		String className = this.getClass().getName();
@@ -71,35 +108,10 @@ public abstract class WorkflowBase {
 					eamonnDataSource.lastIndexOf("/") + 1,
 					eamonnDataSource.lastIndexOf("_"));
 		}
-		tempCVpath = String
-				.format("output/arffOutput/%s%s%dp%dgram.arff", className,
-						eamonnDataSource, regularPartsForDivision, windowLen);
-	}
 
-	public WorkflowBase() {
-		super();
-		setTempPaths();
-	}
-
-	public void runWorkflow() {
-
-		System.out.println("Workflow has started.");
-		importData();
-		processData();
-		exportArff();
-		reportStatistics();
-		runCrossValidationExperiment();		
-		System.out.println("Workflow has ended.");
-
-	}
-	
-	public static <T extends IRecord> void reportInputStatistics(List<T> records){
-		List<Double> distinctClasses = records.stream().map(x->x.getDestinationClass()).distinct().collect(Collectors.toList());
-		System.out.println(String.format("Data contains %d classes:", distinctClasses.size()));
-		for (Double distClass : distinctClasses) {
-			long count = records.stream().filter(x->x.getDestinationClass()==distClass).count();
-			System.out.println(String.format("Class '%d' contains %d records", distClass.intValue(), count));
-		}
+		arffCVpath = String.format("output/arffOutput/%s%s%dp%dgram%s.arff",
+				className, eamonnDataSource, divisionPartsAmount, windowLen,
+				divisionOption.toString());
 	}
 
 }

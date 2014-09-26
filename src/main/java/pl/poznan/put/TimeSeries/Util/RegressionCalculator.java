@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 
-import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.RegressionResult;
 
 public class RegressionCalculator {
@@ -34,23 +33,4 @@ public class RegressionCalculator {
 			xArray.add((float) i);
 		return ComputeRegression(xArray, yArray);
 	}
-
-	public static RegressionResult ComputeRegression(
-			List<Characteristic> characteristics, boolean wytrych) {
-		List<Float> xArray = new ArrayList<Float>();
-		for (int i = 0; i < characteristics.size(); i++) {
-			xArray.add(characteristics.get(i).getTfadj());
-		}
-		return ComputeRegression(xArray);
-	}
-
-	public static RegressionResult ComputeRegression(Double[] data) {
-		SimpleRegression regression = new SimpleRegression();
-		for (int i = 0; i < data.length; i++)
-			regression.addData((double) i, data[i]);
-		RegressionResult res = new RegressionResult(regression.getSlope(),
-				regression.getIntercept());
-		return res;
-	}
-
 }

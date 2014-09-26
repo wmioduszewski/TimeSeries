@@ -6,14 +6,19 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.DataExporters.NewSaxArffBuilder;
 import pl.poznan.put.TimeSeries.DataProcessors.DataDivider;
-import pl.poznan.put.TimeSeries.DataProcessors.NgramProcessor;
+import pl.poznan.put.TimeSeries.DataProcessors.PeriodicNgramCounter;
 import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Model.SaxArffCandidateRow;
 import weka.core.Instances;
 
 public class PatientSaxWorkflow extends PatientWorkflowBase {
+
+	public PatientSaxWorkflow(DivisionOptions divisionOption) {
+		super(divisionOption);
+	}
 
 	List<SaxArffCandidateRow> nestedList;
 
@@ -23,22 +28,16 @@ public class PatientSaxWorkflow extends PatientWorkflowBase {
 
 		for (Patient patient : patients) {
 			LinkedList<HashMap<String, AtomicInteger>> listHashMap = new LinkedList<HashMap<String, AtomicInteger>>();
-			try {
 
-				List<String> dividedSax = DataDivider.DivideStringRegularly(
-						patient.getSaxString().getContent(),
-						regularPartsForDivision);
+			List<String> dividedSax = DataDivider.DivideStringRegularly(patient
+					.getSaxString().getContent(), divisionPartsAmount);
 
-				for (String string : dividedSax) {
-					HashMap<String, AtomicInteger> ngramCountMap = NgramProcessor
-							.slashString(string, windowLen);
-					listHashMap.add(ngramCountMap);
-				}
-
-			} catch (Exception e) {
-				System.out.println("Processing Patient data failed.");
-				e.printStackTrace();
+			for (String string : dividedSax) {
+				HashMap<String, AtomicInteger> ngramCountMap = PeriodicNgramCounter
+						.slashStringAndCountNgrams(string, windowLen);
+				listHashMap.add(ngramCountMap);
 			}
+
 			SaxArffCandidateRow row = new SaxArffCandidateRow(listHashMap,
 					patient.getDestinationClass());
 			nestedList.add(row);
@@ -48,7 +47,7 @@ public class PatientSaxWorkflow extends PatientWorkflowBase {
 	@Override
 	protected void exportArff() {
 		Instances insts = NewSaxArffBuilder.buildInstancesFromStats(nestedList);
-		NewSaxArffBuilder.saveArff(insts, tempCVpath);
+		NewSaxArffBuilder.saveArff(insts, arffCVpath);
 	}
 
 	@Override

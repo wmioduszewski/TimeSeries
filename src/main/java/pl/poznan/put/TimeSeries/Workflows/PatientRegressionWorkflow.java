@@ -1,11 +1,11 @@
 package pl.poznan.put.TimeSeries.Workflows;
 
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.DataExporters.RegressionArffExporter;
-import pl.poznan.put.TimeSeries.DataProcessors.DataDivider;
 import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Model.RegressionResult;
@@ -15,60 +15,39 @@ import pl.poznan.put.TimeSeries.Util.RegressionCalculator;
 
 public class PatientRegressionWorkflow extends PatientWorkflowBase {
 
+	public PatientRegressionWorkflow(DivisionOptions divisionOption) {
+		super(divisionOption);
+	}
+
 	List<UnifiedArffRow> rows;
 
 	@Override
-	protected void processData() {
+	protected void processData() throws Exception {
 
 		rows = new ArrayList<UnifiedArffRow>();
 
 		for (Patient patient : patients) {
-			try {
-				// TODO: Cleanup here
-				// List<List<Characteristic>> listlist =
-				// DataDivider.DivideCollectionRegularly(patient.getCharacteristics(),
-				// regularPartsForDivision);
-				List<List<Characteristic>> listlist = DataDivider
-						.dividePatientDataPeriodically(patient);
-				// List<List<Characteristic>> listlist =
-				// DataDivider.dividePatientPeriodicallyThenRegularly(patient,
-				// regularPartsForDivision);
-
-				List<RegressionResult> regResults = new ArrayList<RegressionResult>();
-				for (List<Characteristic> list : listlist) {
-					List<Float> floats = Convert
-							.fromCharacteristicsToFloatList(list);
-					RegressionResult result = RegressionCalculator
-							.ComputeRegression(floats);
-					regResults.add(result);
-				}
-
-				UnifiedArffRow arffRow = new UnifiedArffRow(regResults,
-						patient.getDestinationClass());
-				rows.add(arffRow);
-			} catch (Exception e) {
-				System.out.println("patient missed");
-				e.printStackTrace();
+			List<List<Characteristic>> nestedCharacteristicList = divideData(patient);
+			List<RegressionResult> regResults = new ArrayList<RegressionResult>();
+			for (List<Characteristic> list : nestedCharacteristicList) {
+				List<Float> floats = Convert
+						.fromCharacteristicsToFloatList(list);
+				RegressionResult result = RegressionCalculator
+						.ComputeRegression(floats);
+				regResults.add(result);
 			}
+
+			UnifiedArffRow arffRow = new UnifiedArffRow(regResults,
+					patient.getDestinationClass());
+			rows.add(arffRow);
 		}
-		// Pair<List<UnifiedArffRow>, List<UnifiedArffRow>> pair =
-		// PatientUtils.divideRowsToTrainAndTest(rows);
-		// List<UnifiedArffRow> trainSet = pair.getLeft();
-		// List<UnifiedArffRow> testSet = pair.getRight();
 	}
 
 	@Override
-	protected void exportArff() {
+	protected void exportArff() throws IOException {
 		RegressionArffExporter exporter = new RegressionArffExporter(
 				"UnifiedData");
-		try {
-			// exporter.saveUnifiedRecordsToArffData(trainSet, tempTrainPath);
-			// exporter.saveUnifiedRecordsToArffData(testSet, tempTestPath);
-			exporter.saveUnifiedRecordsToArffData(rows, tempCVpath);
-		} catch (FileNotFoundException e) {
-			System.out.println("Exporting arff for patients failed.");
-			e.printStackTrace();
-		}
+		exporter.saveUnifiedRecordsToArffData(rows, arffCVpath);
 	}
 
 	@Override

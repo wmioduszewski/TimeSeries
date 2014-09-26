@@ -10,7 +10,7 @@ public class NgramTest {
 
 	@Test
 	public void test() {
-		HashMap<String, AtomicInteger> res = NgramProcessor.slashString(
+		HashMap<String, AtomicInteger> res = PeriodicNgramCounter.slashStringAndCountNgrams(
 				"abracadabra", 3);
 
 		for (Entry<String, AtomicInteger> elem : res.entrySet()) {

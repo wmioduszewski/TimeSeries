@@ -2,10 +2,6 @@ package pl.poznan.put.TimeSeries;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.stream.Collectors;
 
 import weka.core.Attribute;
 import weka.core.FastVector;
@@ -40,11 +36,11 @@ public class Test {
 		Instances instances = new Instances("Sax", attrInfo, 3);
 		instances.setClassIndex(instances.numAttributes() - 1);
 
-		int attrValue=0;
+		int attrValue = 0;
 		for (int j = 0; j < patientCount; j++) {
 			int attrIndex = 0;
 			Instance patient = new Instance(attrInfo.size());
-			for (int i = 0; i < attrCount ; i++) {
+			for (int i = 0; i < attrCount; i++) {
 				patient.setValue(attrIndex++, attrValue++);
 			}
 			patient.setValue(attrIndex, 1);
