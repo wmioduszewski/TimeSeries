@@ -11,17 +11,16 @@ import pl.poznan.put.TimeSeries.DataProcessors.DataDivider;
 import pl.poznan.put.TimeSeries.DataProcessors.NgramProcessor;
 import pl.poznan.put.TimeSeries.Model.EamonnRecord;
 import pl.poznan.put.TimeSeries.Model.SaxArffCandidateRow;
-import pl.poznan.put.TimeSeries.Util.Configuration;
 import weka.core.Instances;
 
 public class EamonnSaxWorkflow extends EamonnWorkflowBase {
 
+	List<SaxArffCandidateRow> nestedList;
+
 	@Override
 	protected void processData() {
-		int windowLen = Integer
-				.parseInt(Configuration.getProperty("ngramSize"));
-
-		List<SaxArffCandidateRow> nestedList = new ArrayList<SaxArffCandidateRow>();
+		// TODO: improve naming
+		nestedList = new ArrayList<SaxArffCandidateRow>();
 
 		for (EamonnRecord record : records) {
 			LinkedList<HashMap<String, AtomicInteger>> listHashMap = new LinkedList<HashMap<String, AtomicInteger>>();
@@ -45,14 +44,17 @@ public class EamonnSaxWorkflow extends EamonnWorkflowBase {
 					record.getDestinationClass());
 			nestedList.add(row);
 		}
-
-		Instances insts = NewSaxArffBuilder.buildInstancesFromStats(nestedList);
-		NewSaxArffBuilder.saveArff(insts, tempCVpath);
 	}
 
 	@Override
-	protected void reportResult() {
+	protected void exportArff() {
+		Instances instances = NewSaxArffBuilder.buildInstancesFromStats(nestedList);
+		NewSaxArffBuilder.saveArff(instances, tempCVpath);
+	}
 
+	@Override
+	protected void reportStatistics() {
+		WorkflowBase.reportInputStatistics(records);
 	}
 
 }

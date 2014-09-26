@@ -15,8 +15,8 @@ public class Main {
 
 		// WorkflowBase workflow = new PatientRegressionWorkflow();
 //		 WorkflowBase workflow = new EamonnRegressionWorkflow();
-//		WorkflowBase workflow = new PatientSaxWorkflow();
-		 WorkflowBase workflow = new EamonnSaxWorkflow();
+		WorkflowBase workflow = new PatientSaxWorkflow();
+//		 WorkflowBase workflow = new EamonnSaxWorkflow();
 
 		workflow.runWorkflow();
 

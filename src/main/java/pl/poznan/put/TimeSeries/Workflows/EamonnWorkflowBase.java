@@ -21,5 +21,4 @@ public abstract class EamonnWorkflowBase extends WorkflowBase {
 			e.printStackTrace();
 		}
 	}
-
 }

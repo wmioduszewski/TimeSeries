@@ -15,18 +15,16 @@ import pl.poznan.put.TimeSeries.Util.RegressionCalculator;
 
 public class PatientRegressionWorkflow extends PatientWorkflowBase {
 
-	public PatientRegressionWorkflow() {
-		super();
-	}
+	List<UnifiedArffRow> rows;
 
 	@Override
 	protected void processData() {
 
-		List<UnifiedArffRow> rows = new ArrayList<UnifiedArffRow>();
+		rows = new ArrayList<UnifiedArffRow>();
 
 		for (Patient patient : patients) {
 			try {
-
+				// TODO: Cleanup here
 				// List<List<Characteristic>> listlist =
 				// DataDivider.DivideCollectionRegularly(patient.getCharacteristics(),
 				// regularPartsForDivision);
@@ -57,9 +55,10 @@ public class PatientRegressionWorkflow extends PatientWorkflowBase {
 		// PatientUtils.divideRowsToTrainAndTest(rows);
 		// List<UnifiedArffRow> trainSet = pair.getLeft();
 		// List<UnifiedArffRow> testSet = pair.getRight();
+	}
 
-		// ReportInputStatistics(trainSet, testSet);
-
+	@Override
+	protected void exportArff() {
 		RegressionArffExporter exporter = new RegressionArffExporter(
 				"UnifiedData");
 		try {
@@ -73,7 +72,8 @@ public class PatientRegressionWorkflow extends PatientWorkflowBase {
 	}
 
 	@Override
-	protected void reportResult() {
+	protected void reportStatistics() {
+		WorkflowBase.reportInputStatistics(patients);
 	}
 
 }

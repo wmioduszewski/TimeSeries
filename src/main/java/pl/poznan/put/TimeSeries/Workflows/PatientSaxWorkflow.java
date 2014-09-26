@@ -11,21 +11,15 @@ import pl.poznan.put.TimeSeries.DataProcessors.DataDivider;
 import pl.poznan.put.TimeSeries.DataProcessors.NgramProcessor;
 import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Model.SaxArffCandidateRow;
-import pl.poznan.put.TimeSeries.Util.Configuration;
 import weka.core.Instances;
 
 public class PatientSaxWorkflow extends PatientWorkflowBase {
 
-	public PatientSaxWorkflow() {
-		super();
-	}
+	List<SaxArffCandidateRow> nestedList;
 
 	@Override
 	protected void processData() {
-		int windowLen = Integer
-				.parseInt(Configuration.getProperty("ngramSize"));
-
-		List<SaxArffCandidateRow> nestedList = new ArrayList<SaxArffCandidateRow>();
+		nestedList = new ArrayList<SaxArffCandidateRow>();
 
 		for (Patient patient : patients) {
 			LinkedList<HashMap<String, AtomicInteger>> listHashMap = new LinkedList<HashMap<String, AtomicInteger>>();
@@ -49,13 +43,17 @@ public class PatientSaxWorkflow extends PatientWorkflowBase {
 					patient.getDestinationClass());
 			nestedList.add(row);
 		}
+	}
 
+	@Override
+	protected void exportArff() {
 		Instances insts = NewSaxArffBuilder.buildInstancesFromStats(nestedList);
 		NewSaxArffBuilder.saveArff(insts, tempCVpath);
 	}
 
 	@Override
-	protected void reportResult() {
+	protected void reportStatistics() {
+		WorkflowBase.reportInputStatistics(patients);
 	}
 
 }

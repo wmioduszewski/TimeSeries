@@ -1,7 +1,11 @@
 package pl.poznan.put.TimeSeries.Workflows;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import pl.poznan.put.TimeSeries.Classifying.CrossValidationExperiment;
 import pl.poznan.put.TimeSeries.Classifying.Experiment;
+import pl.poznan.put.TimeSeries.Model.IRecord;
 import pl.poznan.put.TimeSeries.Util.Configuration;
 import weka.classifiers.Classifier;
 import weka.classifiers.rules.JRip;
@@ -18,10 +22,14 @@ public abstract class WorkflowBase {
 	protected String tempTrainPath;
 	protected String tempTestPath;
 	protected String tempCVpath;
+	
+	protected List<IRecord> recs;
 
 	protected abstract void importData();
 
 	protected abstract void processData();
+	
+	protected abstract void exportArff();
 
 	protected void runExperiment() {
 		try {
@@ -48,7 +56,7 @@ public abstract class WorkflowBase {
 		}
 	}
 
-	protected abstract void reportResult();
+	protected abstract void reportStatistics();
 
 	protected void setTempPaths() {
 		String className = this.getClass().getName();
@@ -78,10 +86,20 @@ public abstract class WorkflowBase {
 		System.out.println("Workflow has started.");
 		importData();
 		processData();
-		runCrossValidationExperiment();
-		reportResult();
+		exportArff();
+		reportStatistics();
+		runCrossValidationExperiment();		
 		System.out.println("Workflow has ended.");
 
+	}
+	
+	public static <T extends IRecord> void reportInputStatistics(List<T> records){
+		List<Double> distinctClasses = records.stream().map(x->x.getDestinationClass()).distinct().collect(Collectors.toList());
+		System.out.println(String.format("Data contains %d classes:", distinctClasses.size()));
+		for (Double distClass : distinctClasses) {
+			long count = records.stream().filter(x->x.getDestinationClass()==distClass).count();
+			System.out.println(String.format("Class '%d' contains %d records", distClass.intValue(), count));
+		}
 	}
 
 }

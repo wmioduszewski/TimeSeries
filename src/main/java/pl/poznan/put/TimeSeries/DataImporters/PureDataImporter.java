@@ -54,9 +54,6 @@ public class PureDataImporter extends DataImporterBase {
 			String[] fields = currLine.split(";");
 
 			if (isFirstLine) {
-				// if(Integer.parseInt(fields[14])==24){
-				// Integer.parseInt(fields[14]);
-				// }
 				startExaminationTime = getDateTimeByStringClock(fields[0]);
 				if (startExaminationTime.getDayOfMonth() > 1)
 					startExaminationTime = startExaminationTime.minusDays(1);
@@ -146,19 +143,8 @@ public class PureDataImporter extends DataImporterBase {
 				}
 			}
 		}
-		computeSaxForPatients();
-
 		System.out.println();
-
-		long healtCount = patients.stream()
-				.filter(x -> x.getDestinationClass() == 0).count();
-		long sickCount = patients.stream()
-				.filter(x -> x.getDestinationClass() == 1).count();
-
-		System.out.println(String.format(
-				"Read %d patients.\n%d health and %d sick", patients.size(),
-				healtCount, sickCount));
-
+		computeSaxForPatients();
 		return patients;
 	}
 }

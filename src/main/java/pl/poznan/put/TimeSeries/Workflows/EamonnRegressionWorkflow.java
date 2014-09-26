@@ -13,10 +13,11 @@ import pl.poznan.put.TimeSeries.Util.RegressionCalculator;
 
 public class EamonnRegressionWorkflow extends EamonnWorkflowBase {
 
+	List<UnifiedArffRow> rows;
+
 	@Override
 	protected void processData() {
-
-		List<UnifiedArffRow> rows = new ArrayList<UnifiedArffRow>();
+		rows = new ArrayList<UnifiedArffRow>();
 
 		for (EamonnRecord record : records) {
 			try {
@@ -39,7 +40,10 @@ public class EamonnRegressionWorkflow extends EamonnWorkflowBase {
 				e.printStackTrace();
 			}
 		}
+	}
 
+	@Override
+	protected void exportArff() {
 		RegressionArffExporter exporter = new RegressionArffExporter(
 				"UnifiedData");
 		try {
@@ -50,8 +54,8 @@ public class EamonnRegressionWorkflow extends EamonnWorkflowBase {
 	}
 
 	@Override
-	protected void reportResult() {
-
+	protected void reportStatistics() {
+		WorkflowBase.reportInputStatistics(records);
 	}
 
 }
