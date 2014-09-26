@@ -49,15 +49,12 @@ public class NewSaxArffBuilder {
 			}
 		}
 
-		// ***************
 		List<Double> destClasses = input.stream().map(x -> x.getDestClass())
 				.distinct().collect(Collectors.toList());
 
 		if (destClasses.size() == 1)
 			System.out.println("There is only one class in dataset!");
-		// ***************
 
-		// TODO: LOAD CLASSES AUTOMATICALLY !;
 		FastVector destValues = new FastVector();
 		for (Double elem : destClasses) {
 			destValues.addElement(elem.toString());
@@ -85,7 +82,8 @@ public class NewSaxArffBuilder {
 					patient.setValue(attrIndex++, count);
 				}
 			}
-			patient.setValue(attrIndex, linkedList.getDestClass());
+			patient.setValue(attrIndex,//TODO: test it with real data
+					destClasses.indexOf(linkedList.getDestClass()));
 			instances.add(patient);
 		}
 

@@ -23,8 +23,8 @@ public class CrossValidationExperiment {
 		if (dataSet.classIndex() == -1)
 			dataSet.setClassIndex(dataSet.numAttributes() - 1);
 
-		System.out.println("Data loaded. Data set size: "
-				+ dataSet.numInstances());
+//		System.out.println("Data loaded. Data set size: "
+//				+ dataSet.numInstances());
 
 		double loss01 = 0;
 		double squaredError = 0;
