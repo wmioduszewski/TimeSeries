@@ -6,6 +6,7 @@ import java.util.List;
 
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.DataExporters.RegressionArffExporter;
+import pl.poznan.put.TimeSeries.DataProcessors.DataDivider;
 import pl.poznan.put.TimeSeries.Model.EamonnRecord;
 import pl.poznan.put.TimeSeries.Model.RegressionResult;
 import pl.poznan.put.TimeSeries.Model.UnifiedArffRow;
@@ -24,7 +25,8 @@ public class EamonnRegressionWorkflow extends EamonnWorkflowBase {
 		rows = new ArrayList<UnifiedArffRow>();
 		for (EamonnRecord record : records) {
 			try {
-				List<List<Float>> nestedCharacteristicList = divideData(record);
+				List<List<Float>> nestedCharacteristicList = DataDivider.DivideCollectionRegularly(record.getValues(),
+						divisionPartsAmount);
 				List<RegressionResult> regResults = new ArrayList<RegressionResult>();
 				for (List<Float> list : nestedCharacteristicList) {
 					RegressionResult result = RegressionCalculator

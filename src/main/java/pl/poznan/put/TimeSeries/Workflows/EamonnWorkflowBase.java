@@ -27,23 +27,4 @@ public abstract class EamonnWorkflowBase extends WorkflowBase {
 			e.printStackTrace();
 		}
 	}
-
-	protected List<List<Float>> divideData(EamonnRecord record) {
-		List<List<Float>> res = null;
-
-		switch (divisionOption) {
-		case Regular:
-			res = DataDivider.DivideCollectionRegularly(record.getValues(),
-					divisionPartsAmount);
-			break;
-		case Periodic:
-			
-			break;
-		case PeriodicThenRegular:
-			
-			break;		
-		}
-
-		return res;
-	}
 }

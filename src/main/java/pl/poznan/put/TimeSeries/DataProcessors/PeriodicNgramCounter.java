@@ -25,5 +25,14 @@ public class PeriodicNgramCounter {
 		}
 		return res;
 	}
+	
+	public static HashMap<String, AtomicInteger> slashStringAndCountDominatingNgrams(String input,
+			int windowLen) {
 
+		HashMap<String, AtomicInteger> res = new HashMap<String, AtomicInteger>();
+		
+		
+		
+		return res;
+	}
 }
