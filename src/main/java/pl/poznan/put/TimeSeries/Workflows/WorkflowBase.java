@@ -1,6 +1,5 @@
 package pl.poznan.put.TimeSeries.Workflows;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -39,14 +38,16 @@ public abstract class WorkflowBase {
 	protected String arffCVpath;
 	protected List<IRecord> recs;
 	protected DivisionOptions divisionOption;
+	protected boolean isDominant;
 
-	public WorkflowBase(DivisionOptions divisionOption) {
+	public WorkflowBase(DivisionOptions divisionOption, boolean isDominant) {
 		super();
 		this.divisionOption = divisionOption;
+		this.isDominant = isDominant;
 		setTempPaths();
 	}
 
-	protected abstract void exportArff() throws IOException;
+	protected abstract void exportArff() throws Exception;
 
 	protected abstract void importData();
 
@@ -108,10 +109,10 @@ public abstract class WorkflowBase {
 					eamonnDataSource.lastIndexOf("/") + 1,
 					eamonnDataSource.lastIndexOf("_"));
 		}
-
-		arffCVpath = String.format("output/arffOutput/%s%s%dp%dgram%s.arff",
+		String dominant = isDominant ? "dominant" : "non-dominant";
+		arffCVpath = String.format("output/arffOutput/%s%s%dp%dgram%s %s.arff",
 				className, eamonnDataSource, divisionPartsAmount, windowLen,
-				divisionOption.toString());
+				divisionOption.toString(),dominant);
 	}
 
 }

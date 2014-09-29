@@ -16,8 +16,8 @@ import weka.core.Instances;
 
 public class EamonnSaxWorkflow extends EamonnWorkflowBase {
 
-	public EamonnSaxWorkflow(DivisionOptions divisionOption) {
-		super(divisionOption);
+	public EamonnSaxWorkflow(DivisionOptions divisionOption, boolean isDominant) {
+		super(divisionOption, isDominant);
 	}
 
 	List<SaxArffCandidateRow> arffCandidateRows;
@@ -45,9 +45,14 @@ public class EamonnSaxWorkflow extends EamonnWorkflowBase {
 	}
 
 	@Override
-	protected void exportArff() {
-		Instances instances = NewSaxArffBuilder
-				.buildInstancesFromStats(arffCandidateRows);
+	protected void exportArff() throws Exception {
+		Instances instances;
+		if(isDominant){
+			instances = NewSaxArffBuilder.buildDominantInstancesFromStats(arffCandidateRows);
+		}
+		else{
+			instances = NewSaxArffBuilder.buildInstancesFromStats(arffCandidateRows);			
+		}
 		NewSaxArffBuilder.saveArff(instances, arffCVpath);
 	}
 

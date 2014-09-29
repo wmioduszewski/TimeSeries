@@ -10,8 +10,8 @@ import pl.poznan.put.TimeSeries.Util.Configuration;
 
 public abstract class EamonnWorkflowBase extends WorkflowBase {
 
-	public EamonnWorkflowBase(DivisionOptions divisionOption) {
-		super(divisionOption);
+	public EamonnWorkflowBase(DivisionOptions divisionOption, boolean isDominant) {
+		super(divisionOption, isDominant);
 	}
 
 	protected List<EamonnRecord> records;

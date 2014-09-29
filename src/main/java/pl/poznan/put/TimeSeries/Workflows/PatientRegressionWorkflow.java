@@ -15,8 +15,8 @@ import pl.poznan.put.TimeSeries.Util.RegressionCalculator;
 
 public class PatientRegressionWorkflow extends PatientWorkflowBase {
 
-	public PatientRegressionWorkflow(DivisionOptions divisionOption) {
-		super(divisionOption);
+	public PatientRegressionWorkflow(DivisionOptions divisionOption, boolean isDominant) {
+		super(divisionOption,isDominant);
 	}
 
 	List<UnifiedArffRow> rows;

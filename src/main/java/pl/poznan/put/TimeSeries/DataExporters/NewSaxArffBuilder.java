@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 
 import pl.poznan.put.TimeSeries.Model.SaxArffCandidateRow;
 import pl.poznan.put.TimeSeries.Util.Configuration;
+import pl.poznan.put.TimeSeries.Util.StringDominance;
 import weka.core.Attribute;
 import weka.core.FastVector;
 import weka.core.Instance;
@@ -23,25 +24,15 @@ public class NewSaxArffBuilder {
 			.getProperty("divisionPartsAmount"));
 
 	public static Instances buildInstancesFromStats(
-			List<SaxArffCandidateRow> input) {
+			List<SaxArffCandidateRow> input) throws Exception {
 
-		List<List<String>> distincts = new LinkedList<List<String>>();
-		for (int i = 0; i < regularPartsForDivision; i++) {
-			List<String> currentPeriodDistincts = new LinkedList<String>();
-			for (SaxArffCandidateRow linkedList : input) {
-				Set<String> keys = linkedList.getPeriodicNgrams().get(i)
-						.keySet();
-				for (String key : keys) {
-					if (!currentPeriodDistincts.contains(key)) {
-						currentPeriodDistincts.add(key);
-					}
-				}
-			}
-			distincts.add(currentPeriodDistincts);
-		}
+		List<List<String>> distincts = getPeriodicDistincts(input);
+
+		List<Double> destClasses = input.stream().map(x -> x.getDestClass())
+				.distinct().collect(Collectors.toList());
 
 		FastVector attrInfo = new FastVector();
-
+		// tutaj na o1<=elem i >=elem
 		for (int i = 0; i < regularPartsForDivision; i++) {
 			String prefix = "o" + (i + 1);
 			for (String elem : distincts.get(i)) {
@@ -49,20 +40,8 @@ public class NewSaxArffBuilder {
 			}
 		}
 
-		List<Double> destClasses = input.stream().map(x -> x.getDestClass())
-				.distinct().collect(Collectors.toList());
-
-		if (destClasses.size() == 1)
-			//todo: exception here
-			System.out.println("There is only one class in dataset!");
-
-		FastVector destValues = new FastVector();
-		for (Double elem : destClasses) {
-			destValues.addElement(elem.toString());
-		}
-
-		Attribute destClass = new Attribute("destClass", destValues);
-		attrInfo.addElement(destClass);
+		Attribute destClassAttribute = constructDestinationClassesAttribute(destClasses);
+		attrInfo.addElement(destClassAttribute);
 
 		Instances instances = new Instances("Sax", attrInfo, input.size());
 		instances.setClassIndex(instances.numAttributes() - 1);
@@ -83,12 +62,106 @@ public class NewSaxArffBuilder {
 					patient.setValue(attrIndex++, count);
 				}
 			}
-			patient.setValue(attrIndex,//TODO: test it with real data
+			patient.setValue(attrIndex,// TODO: test it with real data
 					destClasses.indexOf(linkedList.getDestClass()));
 			instances.add(patient);
 		}
 
 		return instances;
+	}
+
+	public static Instances buildDominantInstancesFromStats(
+			List<SaxArffCandidateRow> input) throws Exception {
+
+		List<List<String>> distincts = getPeriodicDistincts(input);
+
+		List<Double> destClasses = input.stream().map(x -> x.getDestClass())
+				.distinct().collect(Collectors.toList());
+
+		FastVector attrInfo = new FastVector();
+		for (int i = 0; i < regularPartsForDivision; i++) {
+			String prefix = "o" + (i + 1);
+			for (String elem : distincts.get(i)) {
+				attrInfo.addElement(new Attribute(prefix + "<=" + elem));
+				attrInfo.addElement(new Attribute(prefix + ">=" + elem));
+			}
+		}
+
+		Attribute destClassAttribute = constructDestinationClassesAttribute(destClasses);
+		attrInfo.addElement(destClassAttribute);
+
+		Instances instances = new Instances("Sax", attrInfo, input.size());
+		instances.setClassIndex(instances.numAttributes() - 1);
+
+		for (SaxArffCandidateRow linkedList : input) {
+			Instance patient = new Instance(attrInfo.size());
+			int attrIndex = 0;
+			for (int i = 0; i < regularPartsForDivision; i++) {
+				List<String> currentDistincts = distincts.get(i);
+				HashMap<String, AtomicInteger> currentMap = linkedList
+						.getPeriodicNgrams().get(i);
+				for (int j = 0; j < currentDistincts.size(); j++) {
+					int lowersRes = 0;
+					int greatersRes = 0;
+					String key = currentDistincts.get(j);
+					
+					List<String> lowers = StringDominance.getListOfLessOrEqualStrings(key, currentDistincts);
+					List<String> greaters = StringDominance.getListOfGreaterOrEqualStrings(key, currentDistincts);
+					
+					for (String lower : lowers) {
+						if (currentMap.containsKey(lower)) {
+							lowersRes += currentMap.get(lower).intValue();
+						}						
+					}
+					
+					for (String greater : greaters) {
+						if (currentMap.containsKey(greater)) {
+							greatersRes += currentMap.get(greater).intValue();
+						}						
+					}
+					
+					patient.setValue(attrIndex++, lowersRes);
+					patient.setValue(attrIndex++, greatersRes);
+				}
+			}
+			patient.setValue(attrIndex,// TODO: test it with real data
+					destClasses.indexOf(linkedList.getDestClass()));
+			instances.add(patient);
+		}
+
+		return instances;
+	}
+
+	private static List<List<String>> getPeriodicDistincts(
+			List<SaxArffCandidateRow> input) {
+		List<List<String>> distincts = new LinkedList<List<String>>();
+		for (int i = 0; i < regularPartsForDivision; i++) {
+			List<String> currentPeriodDistincts = new LinkedList<String>();
+			for (SaxArffCandidateRow linkedList : input) {
+				Set<String> keys = linkedList.getPeriodicNgrams().get(i)
+						.keySet();
+				for (String key : keys) {
+					if (!currentPeriodDistincts.contains(key)) {
+						currentPeriodDistincts.add(key);
+					}
+				}
+			}
+			distincts.add(currentPeriodDistincts);
+		}
+		return distincts;
+	}
+
+	private static Attribute constructDestinationClassesAttribute(
+			List<Double> destClasses) throws Exception {
+		if (destClasses.size() == 1)
+			throw new Exception("There is only one class in dataset!");
+
+		FastVector destValues = new FastVector();
+		for (Double elem : destClasses) {
+			destValues.addElement(elem.toString());
+		}
+		Attribute destClassAttribute = new Attribute("destClass", destValues);
+		return destClassAttribute;
 	}
 
 	public static void saveArff(Instances dataSet, String path) {

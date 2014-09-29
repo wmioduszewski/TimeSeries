@@ -16,8 +16,8 @@ import weka.core.Instances;
 
 public class PatientSaxWorkflow extends PatientWorkflowBase {
 
-	public PatientSaxWorkflow(DivisionOptions divisionOption) {
-		super(divisionOption);
+	public PatientSaxWorkflow(DivisionOptions divisionOption, boolean isDominant) {
+		super(divisionOption,isDominant);
 	}
 
 	List<SaxArffCandidateRow> nestedList;
@@ -45,9 +45,15 @@ public class PatientSaxWorkflow extends PatientWorkflowBase {
 	}
 
 	@Override
-	protected void exportArff() {
-		Instances insts = NewSaxArffBuilder.buildInstancesFromStats(nestedList);
-		NewSaxArffBuilder.saveArff(insts, arffCVpath);
+	protected void exportArff() throws Exception {
+		Instances instances;
+		if(isDominant){
+			instances = NewSaxArffBuilder.buildDominantInstancesFromStats(nestedList);
+		}
+		else{
+			instances = NewSaxArffBuilder.buildInstancesFromStats(nestedList);			
+		}
+		NewSaxArffBuilder.saveArff(instances, arffCVpath);
 	}
 
 	@Override

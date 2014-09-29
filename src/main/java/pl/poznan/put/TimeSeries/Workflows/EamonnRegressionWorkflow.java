@@ -14,8 +14,8 @@ import pl.poznan.put.TimeSeries.Util.RegressionCalculator;
 
 public class EamonnRegressionWorkflow extends EamonnWorkflowBase {
 
-	public EamonnRegressionWorkflow(DivisionOptions divisionOption) {
-		super(divisionOption);
+	public EamonnRegressionWorkflow(DivisionOptions divisionOption, boolean isDominant) {
+		super(divisionOption,isDominant);
 	}
 
 	List<UnifiedArffRow> rows;

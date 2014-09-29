@@ -2,7 +2,9 @@ package pl.poznan.put.TimeSeries;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Scanner;
 
+import pl.poznan.put.TimeSeries.Util.StringDominance;
 import weka.core.Attribute;
 import weka.core.FastVector;
 import weka.core.Instance;
@@ -10,10 +12,24 @@ import weka.core.Instances;
 import weka.core.converters.ArffSaver;
 
 public class Test {
+	
+	public static void testDominance(){
+		String input = "";
+		Scanner sc = new Scanner(System.in);
+		while(!"end".equals(input)){
+			input = sc.nextLine();
+			String [] arr = input.split(" ");
+			if(StringDominance.isStringGreaterOrEqualTo(arr[0], arr[1]))
+				System.out.println(String.format("%s is greater or equal to %s", arr[1], arr[0]));
+			if(StringDominance.isStringLessOrEqualTo(arr[0], arr[1]))
+				System.out.println(String.format("%s is less or equal to %s", arr[1], arr[0]));
+		}
+	}
 
 	public static void main(String[] args) throws Exception {
-		Instances ins = produceInstances();
-		saveArff(ins, "mdstest");
+//		Instances ins = produceInstances();
+//		saveArff(ins, "mdstest");
+		testDominance();
 	}
 
 	private static Instances produceInstances() {
