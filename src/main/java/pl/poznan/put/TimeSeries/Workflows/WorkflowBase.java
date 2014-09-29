@@ -10,6 +10,7 @@ import pl.poznan.put.TimeSeries.Model.IRecord;
 import pl.poznan.put.TimeSeries.Util.Configuration;
 import weka.classifiers.Classifier;
 import weka.classifiers.rules.JRip;
+import weka.classifiers.trees.J48;
 
 public abstract class WorkflowBase {
 
@@ -27,7 +28,7 @@ public abstract class WorkflowBase {
 		}
 	}
 
-	protected Classifier classifier = new JRip();
+	protected Classifier classifier = new J48();
 	protected int divisionPartsAmount = Integer.parseInt(Configuration
 			.getProperty("divisionPartsAmount"));
 

@@ -27,12 +27,11 @@ public class NewSaxArffBuilder {
 			List<SaxArffCandidateRow> input) throws Exception {
 
 		List<List<String>> distincts = getPeriodicDistincts(input);
-
+		
 		List<Double> destClasses = input.stream().map(x -> x.getDestClass())
 				.distinct().collect(Collectors.toList());
 
 		FastVector attrInfo = new FastVector();
-		// tutaj na o1<=elem i >=elem
 		for (int i = 0; i < regularPartsForDivision; i++) {
 			String prefix = "o" + (i + 1);
 			for (String elem : distincts.get(i)) {
@@ -74,6 +73,10 @@ public class NewSaxArffBuilder {
 			List<SaxArffCandidateRow> input) throws Exception {
 
 		List<List<String>> distincts = getPeriodicDistincts(input);
+		for (List<String> elem : distincts) {
+				StringDominance.eraseMaxString(elem);
+				StringDominance.eraseMinString(elem);
+		}
 
 		List<Double> destClasses = input.stream().map(x -> x.getDestClass())
 				.distinct().collect(Collectors.toList());
@@ -93,7 +96,7 @@ public class NewSaxArffBuilder {
 		Instances instances = new Instances("Sax", attrInfo, input.size());
 		instances.setClassIndex(instances.numAttributes() - 1);
 
-		for (SaxArffCandidateRow linkedList : input) {
+		for (SaxArffCandidateRow linkedList : input) {			
 			Instance patient = new Instance(attrInfo.size());
 			int attrIndex = 0;
 			for (int i = 0; i < regularPartsForDivision; i++) {
