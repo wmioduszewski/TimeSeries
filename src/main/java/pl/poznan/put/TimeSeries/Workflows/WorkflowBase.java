@@ -41,6 +41,7 @@ public abstract class WorkflowBase {
 	protected List<IRecord> recs;
 	protected DivisionOptions divisionOption;
 	protected boolean isDominant;
+	protected boolean isAttrBag;
 	
 	protected List <? extends IRecord> recordy;
 
@@ -49,6 +50,7 @@ public abstract class WorkflowBase {
 		this.divisionOption = divisionOption;
 		this.isDominant = isDominant;
 		setTempPaths();
+		isAttrBag = true;
 	}
 
 	protected abstract void exportArff() throws Exception;

@@ -17,7 +17,7 @@ public class Main {
 //		 WorkflowBase workflow = new PatientRegressionWorkflow(divisionOption,true);
 //		 WorkflowBase workflow = new EamonnRegressionWorkflow(divisionOption,false);
 //		WorkflowBase workflow = new PatientSaxWorkflow(divisionOption,true);
-		 WorkflowBase workflow = new EamonnSaxWorkflow(divisionOption,true);
+		 WorkflowBase workflow = new EamonnSaxWorkflow(divisionOption,false);
 
 		workflow.runWorkflow();
 

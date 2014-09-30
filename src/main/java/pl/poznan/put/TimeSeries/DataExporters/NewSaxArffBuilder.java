@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
@@ -65,6 +66,8 @@ public class NewSaxArffBuilder {
 					destClasses.indexOf(linkedList.getDestClass()));
 			instances.add(patient);
 		}
+		
+		//cutAttributes(instances);
 
 		return instances;
 	}
@@ -177,6 +180,16 @@ public class NewSaxArffBuilder {
 			System.out.println(String.format("Unable to save arff to path: %s",
 					path));
 			e.printStackTrace();
+		}
+	}
+	
+	private static void cutAttributes(Instances instances){
+		float attributesToCutRatio = Float.parseFloat(Configuration.getProperty("attributesToCutRatio"));
+		int attributesToCut = (int) ((instances.numAttributes()-1) * attributesToCutRatio);
+		Random rand = new Random();
+		for(int i=0;i<attributesToCut;i++){
+			int index = rand.nextInt(instances.numAttributes()-1);
+			instances.deleteAttributeAt(index);
 		}
 	}
 

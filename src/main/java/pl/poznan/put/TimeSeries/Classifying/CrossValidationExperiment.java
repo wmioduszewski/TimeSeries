@@ -58,8 +58,8 @@ public class CrossValidationExperiment {
 
 		System.out.println("CV evaluation for "
 				+ classifier.getClass().getSimpleName());
-		System.out.println(" - 0/1 loss:           " + loss01);
-		System.out.println(" - MAE: " + "to be implemented");
+		System.out.println(" - 0/1 loss:      " + loss01);
+		System.out.println(" - MAE:           " + "to be implemented");
 		System.out.println("--------------------------------------");
 	}
 }
