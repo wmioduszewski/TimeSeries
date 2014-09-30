@@ -23,15 +23,9 @@ public class CrossValidationExperiment {
 		if (dataSet.classIndex() == -1)
 			dataSet.setClassIndex(dataSet.numAttributes() - 1);
 
-//		System.out.println("Data loaded. Data set size: "
-//				+ dataSet.numInstances());
-
 		double loss01 = 0;
 		double squaredError = 0;
 		for (int n = 0; n < folds; n++) {
-//			System.out.println("Cross-Validation: fold " + (n + 1) + "/"
-//					+ folds);
-
 			Instances train = dataSet.trainCV(folds, n);
 			Instances test = dataSet.testCV(folds, n);
 
@@ -65,7 +59,7 @@ public class CrossValidationExperiment {
 		System.out.println("CV evaluation for "
 				+ classifier.getClass().getSimpleName());
 		System.out.println(" - 0/1 loss:           " + loss01);
-		System.out.println(" - squared-error loss: " + squaredError);
+		System.out.println(" - MAE: " + "to be implemented");
 		System.out.println("--------------------------------------");
 	}
 }

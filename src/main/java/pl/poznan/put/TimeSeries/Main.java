@@ -15,9 +15,9 @@ public class Main {
 		DivisionOptions divisionOption = DivisionOptions.PeriodicThenRegular; 
 		
 //		 WorkflowBase workflow = new PatientRegressionWorkflow(divisionOption,true);
-//		 WorkflowBase workflow = new EamonnRegressionWorkflow(divisionOption);
-		WorkflowBase workflow = new PatientSaxWorkflow(divisionOption,true);
-//		 WorkflowBase workflow = new EamonnSaxWorkflow(divisionOption);
+//		 WorkflowBase workflow = new EamonnRegressionWorkflow(divisionOption,false);
+//		WorkflowBase workflow = new PatientSaxWorkflow(divisionOption,true);
+		 WorkflowBase workflow = new EamonnSaxWorkflow(divisionOption,true);
 
 		workflow.runWorkflow();
 

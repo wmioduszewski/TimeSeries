@@ -13,16 +13,16 @@ import pl.poznan.put.TimeSeries.Util.SaxPerformer;
 
 public class DataImporterEamonn {
 
-	private String path;
+	private String folderPath;
 	private List<EamonnRecord> records;
 
 	public DataImporterEamonn(String path) {
-		this.path = path;
+		this.folderPath = path;
 		records = new ArrayList<EamonnRecord>();
 	}
 
-	private void readData() throws IOException {
-		BufferedReader br = new BufferedReader(new FileReader(path));
+	private void readData(String file) throws IOException {
+		BufferedReader br = new BufferedReader(new FileReader(folderPath + file));
 		StringTokenizer tokenizer;
 
 		String currLine = br.readLine();
@@ -44,7 +44,9 @@ public class DataImporterEamonn {
 	}
 
 	public List<EamonnRecord> ImportEamonnData() throws Exception {
-		readData();
+		String datasetName = folderPath.substring(folderPath.lastIndexOf('/'), folderPath.length());
+		readData(String.format("%s_TRAIN",datasetName));
+		readData(String.format("%s_TEST",datasetName));
 
 		int alphabeatSize = Integer.parseInt(Configuration
 				.getProperty("saxAlphabeatSize"));
@@ -57,7 +59,7 @@ public class DataImporterEamonn {
 			record.setSaxString(sax);
 		}
 		
-		System.out.println(String.format("Read %d records from file: %s",records.size(), path));
+		System.out.println(String.format("Read %d records from file: %s",records.size(), folderPath));
 		return records;
 	}
 
