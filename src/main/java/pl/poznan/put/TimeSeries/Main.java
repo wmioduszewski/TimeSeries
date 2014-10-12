@@ -12,12 +12,12 @@ public class Main {
 
 		public static void main(String[] args) throws Exception {
 
-		DivisionOptions divisionOption = DivisionOptions.PeriodicThenRegular; 
+		DivisionOptions divisionOption = DivisionOptions.Regular; 
 		
-//		 WorkflowBase workflow = new PatientRegressionWorkflow(divisionOption,true);
+//		 WorkflowBase workflow = new PatientRegressionWorkflow(divisionOption,false);
 //		 WorkflowBase workflow = new EamonnRegressionWorkflow(divisionOption,false);
-//		WorkflowBase workflow = new PatientSaxWorkflow(divisionOption,true);
-		 WorkflowBase workflow = new EamonnSaxWorkflow(divisionOption,false);
+		WorkflowBase workflow = new PatientSaxWorkflow(divisionOption,false);
+//		 WorkflowBase workflow = new EamonnSaxWorkflow(divisionOption,false);
 
 		workflow.runWorkflow();
 

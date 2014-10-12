@@ -45,7 +45,7 @@ public abstract class PatientWorkflowBase extends WorkflowBase {
 		case Regular:
 			res= DataDivider.DivideCollectionRegularly(patient.getCharacteristics(), divisionPartsAmount);
 			break;
-		case PeriodicThenRegular:
+		case PerThenReg:
 			res = DataDivider.dividePatientPeriodicallyThenRegularly(patient, divisionPartsAmount);
 			break;
 		}

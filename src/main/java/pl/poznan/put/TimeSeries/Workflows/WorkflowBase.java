@@ -43,8 +43,6 @@ public abstract class WorkflowBase {
 	protected boolean isDominant;
 	protected boolean isAttrBag;
 	
-	protected List <? extends IRecord> recordy;
-
 	public WorkflowBase(DivisionOptions divisionOption, boolean isDominant) {
 		super();
 		this.divisionOption = divisionOption;

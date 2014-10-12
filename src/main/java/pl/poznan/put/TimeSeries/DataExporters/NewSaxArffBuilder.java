@@ -19,7 +19,7 @@ import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.converters.ArffSaver;
 
-public class NewSaxArffBuilder {
+public class NewSaxArffBuilder extends NewArffExporterBase {
 
 	private static int regularPartsForDivision = Integer.parseInt(Configuration
 			.getProperty("divisionPartsAmount"));
@@ -88,8 +88,8 @@ public class NewSaxArffBuilder {
 		for (int i = 0; i < regularPartsForDivision; i++) {
 			String prefix = "o" + (i + 1);
 			for (String elem : distincts.get(i)) {
-				attrInfo.addElement(new Attribute(prefix + "<=" + elem));
-				attrInfo.addElement(new Attribute(prefix + ">=" + elem));
+				attrInfo.addElement(new Attribute(prefix + "atM" + elem));
+				attrInfo.addElement(new Attribute(prefix + "atL" + elem));
 			}
 		}
 
