@@ -21,7 +21,6 @@ public class Main {
 
 		workflow.runWorkflow();
 		
-
 		System.out.println("End.");
 	}
 
