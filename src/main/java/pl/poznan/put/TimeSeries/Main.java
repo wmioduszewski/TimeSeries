@@ -20,7 +20,7 @@ public class Main {
 //		 WorkflowBase workflow = new EamonnSaxWorkflow(divisionOption,false);
 
 		workflow.runWorkflow();
-
+		
 		System.out.println("End.");
 	}
 
