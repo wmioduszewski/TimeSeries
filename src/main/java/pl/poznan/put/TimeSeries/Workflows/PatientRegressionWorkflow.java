@@ -9,7 +9,7 @@ import pl.poznan.put.TimeSeries.DataExporters.RegressionArffExporter;
 import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Model.RegressionResult;
-import pl.poznan.put.TimeSeries.Model.UnifiedArffRow;
+import pl.poznan.put.TimeSeries.Model.RegressionArffRow;
 import pl.poznan.put.TimeSeries.Util.Convert;
 import pl.poznan.put.TimeSeries.Util.RegressionCalculator;
 
@@ -19,12 +19,12 @@ public class PatientRegressionWorkflow extends PatientWorkflowBase {
 		super(divisionOption,isDominant);
 	}
 
-	List<UnifiedArffRow> rows;
+	List<RegressionArffRow> rows;
 
 	@Override
 	protected void processData() throws Exception {
 
-		rows = new ArrayList<UnifiedArffRow>();
+		rows = new ArrayList<RegressionArffRow>();
 
 		for (Patient patient : patients) {
 			List<List<Characteristic>> nestedCharacteristicList = divideData(patient);
@@ -37,7 +37,7 @@ public class PatientRegressionWorkflow extends PatientWorkflowBase {
 				regResults.add(result);
 			}
 
-			UnifiedArffRow arffRow = new UnifiedArffRow(regResults,
+			RegressionArffRow arffRow = new RegressionArffRow(regResults,
 					patient.getDestinationClass());
 			rows.add(arffRow);
 		}

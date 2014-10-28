@@ -8,7 +8,7 @@ import org.apache.commons.lang3.tuple.MutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 
 import pl.poznan.put.TimeSeries.Model.Patient;
-import pl.poznan.put.TimeSeries.Model.UnifiedArffRow;
+import pl.poznan.put.TimeSeries.Model.RegressionArffRow;
 
 public class PatientUtils {
 
@@ -17,21 +17,21 @@ public class PatientUtils {
 
 	// TODO: MINIMIZE THIS METHODS TO SINGLE ONE
 
-	public static Pair<List<UnifiedArffRow>, List<UnifiedArffRow>> divideRowsToTrainAndTest(
-			List<UnifiedArffRow> input) {
-		List<UnifiedArffRow> train = new ArrayList<UnifiedArffRow>();
-		List<UnifiedArffRow> test = new ArrayList<UnifiedArffRow>();
+	public static Pair<List<RegressionArffRow>, List<RegressionArffRow>> divideRowsToTrainAndTest(
+			List<RegressionArffRow> input) {
+		List<RegressionArffRow> train = new ArrayList<RegressionArffRow>();
+		List<RegressionArffRow> test = new ArrayList<RegressionArffRow>();
 
-		List<UnifiedArffRow> healthList = input.stream()
+		List<RegressionArffRow> healthList = input.stream()
 				.filter(x -> x.getDestinationClass() == 0)
 				.collect(Collectors.toList());
-		List<UnifiedArffRow> sickList = input.stream()
+		List<RegressionArffRow> sickList = input.stream()
 				.filter(x -> x.getDestinationClass() == 1)
 				.collect(Collectors.toList());
 
 		int limit = (int) (healthList.size() * trainTestRatio);
 		for (int i = 0; i < healthList.size(); i++) {
-			UnifiedArffRow obj = healthList.get(i);
+			RegressionArffRow obj = healthList.get(i);
 			if (i < limit) {
 				train.add(obj);
 			} else {
@@ -41,14 +41,14 @@ public class PatientUtils {
 
 		limit = (int) (sickList.size() * trainTestRatio);
 		for (int i = 0; i < sickList.size(); i++) {
-			UnifiedArffRow obj = sickList.get(i);
+			RegressionArffRow obj = sickList.get(i);
 			if (i < limit) {
 				train.add(obj);
 			} else {
 				test.add(obj);
 			}
 		}
-		return new MutablePair<List<UnifiedArffRow>, List<UnifiedArffRow>>(
+		return new MutablePair<List<RegressionArffRow>, List<RegressionArffRow>>(
 				train, test);
 	}
 

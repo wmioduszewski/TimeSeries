@@ -2,12 +2,12 @@ package pl.poznan.put.TimeSeries.Model;
 
 import java.util.List;
 
-public class UnifiedArffRow {
+public class RegressionArffRow {
 
 	private List<RegressionResult> regressionResults;
 	private double destinationClass;
 
-	public UnifiedArffRow(List<RegressionResult> regressionResults,
+	public RegressionArffRow(List<RegressionResult> regressionResults,
 			double destinationClass) {
 		super();
 		this.regressionResults = regressionResults;

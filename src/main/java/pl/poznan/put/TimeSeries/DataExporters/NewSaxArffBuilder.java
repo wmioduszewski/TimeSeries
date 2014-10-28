@@ -24,30 +24,20 @@ public class NewSaxArffBuilder extends NewArffExporterBase {
 	private static int regularPartsForDivision = Integer.parseInt(Configuration
 			.getProperty("divisionPartsAmount"));
 
-	public static Instances buildInstancesFromStats(
-			List<SaxArffCandidateRow> input) throws Exception {
+	private List<List<String>> distincts;
 
-		List<List<String>> distincts = getPeriodicDistincts(input);
-		
+	public Instances buildInstancesFromStats(List<SaxArffCandidateRow> input)
+			throws Exception {
+
+		distincts = getPeriodicDistincts(input);
+
 		List<Double> destClasses = input.stream().map(x -> x.getDestClass())
 				.distinct().collect(Collectors.toList());
 
-		FastVector attrInfo = new FastVector();
-		for (int i = 0; i < regularPartsForDivision; i++) {
-			String prefix = "o" + (i + 1);
-			for (String elem : distincts.get(i)) {
-				attrInfo.addElement(new Attribute(prefix + elem));
-			}
-		}
 
-		Attribute destClassAttribute = constructDestinationClassesAttribute(destClasses);
-		attrInfo.addElement(destClassAttribute);
-
-		Instances instances = new Instances("Sax", attrInfo, input.size());
-		instances.setClassIndex(instances.numAttributes() - 1);
 
 		for (SaxArffCandidateRow linkedList : input) {
-			Instance patient = new Instance(attrInfo.size());
+			Instance patient = new Instance(distincts.size());
 			int attrIndex = 0;
 			for (int i = 0; i < regularPartsForDivision; i++) {
 				List<String> currentDistincts = distincts.get(i);
@@ -66,8 +56,8 @@ public class NewSaxArffBuilder extends NewArffExporterBase {
 					destClasses.indexOf(linkedList.getDestClass()));
 			instances.add(patient);
 		}
-		
-		//cutAttributes(instances);
+
+		// cutAttributes(instances);
 
 		return instances;
 	}
@@ -77,8 +67,8 @@ public class NewSaxArffBuilder extends NewArffExporterBase {
 
 		List<List<String>> distincts = getPeriodicDistincts(input);
 		for (List<String> elem : distincts) {
-				StringDominance.eraseMaxString(elem);
-				StringDominance.eraseMinString(elem);
+			StringDominance.eraseMaxString(elem);
+			StringDominance.eraseMinString(elem);
 		}
 
 		List<Double> destClasses = input.stream().map(x -> x.getDestClass())
@@ -93,13 +83,13 @@ public class NewSaxArffBuilder extends NewArffExporterBase {
 			}
 		}
 
-		Attribute destClassAttribute = constructDestinationClassesAttribute(destClasses);
+		Attribute destClassAttribute = constructDestinationClassesNominalAttribute(destClasses);
 		attrInfo.addElement(destClassAttribute);
 
 		Instances instances = new Instances("Sax", attrInfo, input.size());
 		instances.setClassIndex(instances.numAttributes() - 1);
 
-		for (SaxArffCandidateRow linkedList : input) {			
+		for (SaxArffCandidateRow linkedList : input) {
 			Instance patient = new Instance(attrInfo.size());
 			int attrIndex = 0;
 			for (int i = 0; i < regularPartsForDivision; i++) {
@@ -110,22 +100,25 @@ public class NewSaxArffBuilder extends NewArffExporterBase {
 					int lowersRes = 0;
 					int greatersRes = 0;
 					String key = currentDistincts.get(j);
-					
-					List<String> lowers = StringDominance.getListOfLessOrEqualStrings(key, currentDistincts);
-					List<String> greaters = StringDominance.getListOfGreaterOrEqualStrings(key, currentDistincts);
-					
+
+					List<String> lowers = StringDominance
+							.getListOfLessOrEqualStrings(key, currentDistincts);
+					List<String> greaters = StringDominance
+							.getListOfGreaterOrEqualStrings(key,
+									currentDistincts);
+
 					for (String lower : lowers) {
 						if (currentMap.containsKey(lower)) {
 							lowersRes += currentMap.get(lower).intValue();
-						}						
+						}
 					}
-					
+
 					for (String greater : greaters) {
 						if (currentMap.containsKey(greater)) {
 							greatersRes += currentMap.get(greater).intValue();
-						}						
+						}
 					}
-					
+
 					patient.setValue(attrIndex++, lowersRes);
 					patient.setValue(attrIndex++, greatersRes);
 				}
@@ -157,40 +150,21 @@ public class NewSaxArffBuilder extends NewArffExporterBase {
 		return distincts;
 	}
 
-	private static Attribute constructDestinationClassesAttribute(
-			List<Double> destClasses) throws Exception {
-		if (destClasses.size() == 1)
-			throw new Exception("There is only one class in dataset!");
-
-		FastVector destValues = new FastVector();
-		for (Double elem : destClasses) {
-			destValues.addElement(elem.toString());
+	@Override
+	protected void setAttributes() {
+		FastVector attrInfo = new FastVector();
+		for (int i = 0; i < regularPartsForDivision; i++) {
+			String prefix = "o" + (i + 1);
+			for (String elem : distincts.get(i)) {
+				attrInfo.addElement(new Attribute(prefix + elem));
+			}
 		}
-		Attribute destClassAttribute = new Attribute("destClass", destValues);
-		return destClassAttribute;
-	}
+		
+		Attribute destClassAttribute = constructDestinationClassesNominalAttribute(destClasses);
+		attrInfo.addElement(destClassAttribute);
 
-	public static void saveArff(Instances dataSet, String path) {
-		ArffSaver saver = new ArffSaver();
-		saver.setInstances(dataSet);
-		try {
-			saver.setFile(new File(path));
-			saver.writeBatch();
-		} catch (IOException e) {
-			System.out.println(String.format("Unable to save arff to path: %s",
-					path));
-			e.printStackTrace();
-		}
-	}
-	
-	private static void cutAttributes(Instances instances){
-		float attributesToCutRatio = Float.parseFloat(Configuration.getProperty("attributesToCutRatio"));
-		int attributesToCut = (int) ((instances.numAttributes()-1) * attributesToCutRatio);
-		Random rand = new Random();
-		for(int i=0;i<attributesToCut;i++){
-			int index = rand.nextInt(instances.numAttributes()-1);
-			instances.deleteAttributeAt(index);
-		}
-	}
+		Instances instances = new Instances("Sax", attrInfo, input.size());
+		instances.setClassIndex(instances.numAttributes() - 1);
 
+	}
 }
