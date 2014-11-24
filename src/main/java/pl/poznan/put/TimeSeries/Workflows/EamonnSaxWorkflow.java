@@ -46,14 +46,9 @@ public class EamonnSaxWorkflow extends EamonnWorkflowBase {
 
 	@Override
 	protected void exportArff() throws Exception {
-		Instances instances;
-		if(isDominant){
-			instances = NewSaxArffBuilder.buildDominantInstancesFromStats(arffCandidateRows);
-		}
-		else{
-			instances = NewSaxArffBuilder.buildInstancesFromStats(arffCandidateRows);			
-		}
-		NewSaxArffBuilder.saveArff(instances, arffCVpath);
+		NewSaxArffBuilder arffBuilder = new NewSaxArffBuilder(isDominant);
+		arffBuilder.buildInstancesFromStats(arffCandidateRows);
+		arffBuilder.saveArff(arffCVpath);
 	}
 
 	@Override

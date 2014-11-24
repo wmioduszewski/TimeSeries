@@ -13,10 +13,17 @@ import weka.core.converters.ArffSaver;
 
 public abstract class NewArffExporterBase {
 	
-	private Instances instances;
+	protected Instances instances;
 	protected FastVector attrInfo; 
+	protected boolean isDominant;
 	
 	
+	
+	public NewArffExporterBase(boolean isDominant) {
+		super();
+		this.isDominant = isDominant;
+	}
+
 	protected abstract void setAttributes();
 	
 	public void buildInstances(){

@@ -21,20 +21,27 @@ import weka.core.converters.ArffSaver;
 
 public class NewSaxArffBuilder extends NewArffExporterBase {
 
+	public NewSaxArffBuilder(boolean isDominant) {
+		super(isDominant);
+		// TODO Auto-generated constructor stub
+	}
+
 	private static int regularPartsForDivision = Integer.parseInt(Configuration
 			.getProperty("divisionPartsAmount"));
 
 	private List<List<String>> distincts;
+	List<Double> destClasses;
+	private int inputSize; 
 
-	public Instances buildInstancesFromStats(List<SaxArffCandidateRow> input)
+	public void buildInstancesFromStats(List<SaxArffCandidateRow> input)
 			throws Exception {
-
+		
+		inputSize = input.size();
+		
 		distincts = getPeriodicDistincts(input);
 
-		List<Double> destClasses = input.stream().map(x -> x.getDestClass())
+		destClasses = input.stream().map(x -> x.getDestClass())
 				.distinct().collect(Collectors.toList());
-
-
 
 		for (SaxArffCandidateRow linkedList : input) {
 			Instance patient = new Instance(distincts.size());
@@ -58,8 +65,6 @@ public class NewSaxArffBuilder extends NewArffExporterBase {
 		}
 
 		// cutAttributes(instances);
-
-		return instances;
 	}
 
 	public static Instances buildDominantInstancesFromStats(
@@ -160,10 +165,16 @@ public class NewSaxArffBuilder extends NewArffExporterBase {
 			}
 		}
 		
-		Attribute destClassAttribute = constructDestinationClassesNominalAttribute(destClasses);
+		Attribute destClassAttribute = null;
+		try {
+			destClassAttribute = constructDestinationClassesNominalAttribute(destClasses);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		attrInfo.addElement(destClassAttribute);
 
-		Instances instances = new Instances("Sax", attrInfo, input.size());
+		Instances instances = new Instances("Sax", attrInfo, inputSize);
 		instances.setClassIndex(instances.numAttributes() - 1);
 
 	}
