@@ -9,7 +9,7 @@ import pl.poznan.put.TimeSeries.DataExporters.RegressionArffExporter;
 import pl.poznan.put.TimeSeries.DataProcessors.DataDivider;
 import pl.poznan.put.TimeSeries.Model.EamonnRecord;
 import pl.poznan.put.TimeSeries.Model.RegressionResult;
-import pl.poznan.put.TimeSeries.Model.UnifiedArffRow;
+import pl.poznan.put.TimeSeries.Model.RegressionArffRow;
 import pl.poznan.put.TimeSeries.Util.RegressionCalculator;
 
 public class EamonnRegressionWorkflow extends EamonnWorkflowBase {
@@ -18,11 +18,11 @@ public class EamonnRegressionWorkflow extends EamonnWorkflowBase {
 		super(divisionOption,isDominant);
 	}
 
-	List<UnifiedArffRow> rows;
+	List<RegressionArffRow> rows;
 
 	@Override
 	protected void processData() {
-		rows = new ArrayList<UnifiedArffRow>();
+		rows = new ArrayList<RegressionArffRow>();
 		for (EamonnRecord record : records) {
 			try {
 				List<List<Float>> nestedCharacteristicList = DataDivider.DivideCollectionRegularly(record.getValues(),
@@ -33,7 +33,7 @@ public class EamonnRegressionWorkflow extends EamonnWorkflowBase {
 							.ComputeRegression(list);
 					regResults.add(result);
 				}
-				UnifiedArffRow arffRow = new UnifiedArffRow(regResults,
+				RegressionArffRow arffRow = new RegressionArffRow(regResults,
 						record.getDestinationClass());
 				rows.add(arffRow);
 			} catch (Exception e) {

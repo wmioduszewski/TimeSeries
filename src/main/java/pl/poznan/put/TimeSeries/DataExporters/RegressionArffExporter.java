@@ -5,17 +5,17 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import pl.poznan.put.TimeSeries.Model.RegressionResult;
-import pl.poznan.put.TimeSeries.Model.UnifiedArffRow;
+import pl.poznan.put.TimeSeries.Model.RegressionArffRow;
 
 public class RegressionArffExporter extends ArffExporterBase {
 
-	private List<UnifiedArffRow> records;
+	private List<RegressionArffRow> records;
 
 	public RegressionArffExporter(String relationTitle) {
 		super(relationTitle);
 	}
 
-	public void saveUnifiedRecordsToArffData(List<UnifiedArffRow> records,
+	public void saveUnifiedRecordsToArffData(List<RegressionArffRow> records,
 			String destinationPath) throws FileNotFoundException {
 		this.records = records;
 		performExport(destinationPath);
@@ -51,7 +51,7 @@ public class RegressionArffExporter extends ArffExporterBase {
 	protected void insertData() {
 		arffFileContent.append("@DATA\n");
 
-		for (UnifiedArffRow record : records) {
+		for (RegressionArffRow record : records) {
 			String destClass = String.valueOf((int) record
 					.getDestinationClass());
 			for (RegressionResult result : record.getRegressionResults()) {

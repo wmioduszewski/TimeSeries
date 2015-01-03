@@ -46,14 +46,9 @@ public class PatientSaxWorkflow extends PatientWorkflowBase {
 
 	@Override
 	protected void exportArff() throws Exception {
-		Instances instances;
-		if(isDominant){
-			instances = NewSaxArffBuilder.buildDominantInstancesFromStats(nestedList);
-		}
-		else{
-			instances = NewSaxArffBuilder.buildInstancesFromStats(nestedList);			
-		}
-		NewSaxArffBuilder.saveArff(instances, arffCVpath);
+		NewSaxArffBuilder arffBuilder = new NewSaxArffBuilder(isDominant);
+		arffBuilder.buildInstancesFromStats(nestedList);
+		arffBuilder.saveArff(arffCVpath);
 	}
 
 	@Override
