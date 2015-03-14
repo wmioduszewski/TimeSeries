@@ -54,6 +54,12 @@
   		<systemPath>${basedir}/contrib/jmotif/jmotif.lib.jar</systemPath>
   		<version>8.x.311</version>
   	</dependency>
+  	<dependency>
+  		<groupId>junit</groupId>
+  		<artifactId>junit</artifactId>
+  		<version>4.11</version>
+  		<scope>test</scope>
+  	</dependency>
   </dependencies>
   <ciManagement>
   	<url> </url>
