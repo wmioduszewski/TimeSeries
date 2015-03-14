@@ -5,3 +5,4 @@ output/arffOutput/
 # Package Files #
 *.war
 *.ear
+/target/
