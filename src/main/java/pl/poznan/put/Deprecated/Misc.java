@@ -11,7 +11,7 @@ import org.joda.time.DateTime;
 import pl.poznan.put.TimeSeries.Constants.AgeLimit;
 import pl.poznan.put.TimeSeries.Constants.Limits;
 import pl.poznan.put.TimeSeries.Constants.TimeLimit;
-import pl.poznan.put.TimeSeries.DataImporters.DataImporterCsv;
+import pl.poznan.put.TimeSeries.DataImporters.PatientDataImporterCsv;
 import pl.poznan.put.TimeSeries.DataProcessors.DataDivider;
 import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.EamonnRecord;
@@ -30,7 +30,7 @@ public class Misc {
 	private static void CsvToEamonn() throws IOException {
 		String path = Configuration.getProperty("csvDataSet");
 
-		DataImporterCsv csvImport = new DataImporterCsv(path);
+		PatientDataImporterCsv csvImport = new PatientDataImporterCsv(path);
 
 		List<Patient> patients = csvImport.ImportData();
 

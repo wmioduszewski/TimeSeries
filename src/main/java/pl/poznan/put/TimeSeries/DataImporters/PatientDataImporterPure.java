@@ -12,14 +12,14 @@ import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Util.FileLister;
 
-public class PureDataImporter extends DataImporterBase {
+public class PatientDataImporterPure extends PatientDataImporterBase {
 
 	private String folderPath;
 	private float firstBurstMedian;
 	private float adjMedian;
 	private final int minutePeriod = 5;
 
-	public PureDataImporter(String inputFilePath) {
+	public PatientDataImporterPure(String inputFilePath) {
 		super(inputFilePath);
 		this.folderPath = inputFilePath;
 	}

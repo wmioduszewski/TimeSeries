@@ -8,7 +8,7 @@ import java.util.List;
 import org.joda.time.DateTime;
 import org.junit.Test;
 
-import pl.poznan.put.TimeSeries.DataImporters.PureDataImporter;
+import pl.poznan.put.TimeSeries.DataImporters.PatientDataImporterPure;
 import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.EamonnRecord;
 import pl.poznan.put.TimeSeries.Model.Patient;
@@ -36,7 +36,7 @@ public class GeneralCase {
 		int outputLength = Integer.parseInt(Configuration
 				.getProperty("saxOutputLength"));
 		
-		PureDataImporter importer = new PureDataImporter(Configuration.getProperty("pureDataSet"));
+		PatientDataImporterPure importer = new PatientDataImporterPure(Configuration.getProperty("pureDataSet"));
 		List<Patient> patients = importer.ImportData();
 		
 		Patient p = patients.get(0);

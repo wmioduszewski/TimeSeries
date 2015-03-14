@@ -8,12 +8,12 @@ import pl.poznan.put.TimeSeries.Util.Configuration;
 import pl.poznan.put.TimeSeries.Util.SaxPerformer;
 import edu.hawaii.jmotif.lib.ts.TSException;
 
-public abstract class DataImporterBase {
+public abstract class PatientDataImporterBase {
 
 	protected String _filepath;
 	List<Patient> patients;
 
-	public DataImporterBase(String filePath) {
+	public PatientDataImporterBase(String filePath) {
 		this._filepath = filePath;
 	}
 

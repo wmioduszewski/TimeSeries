@@ -11,9 +11,9 @@ import org.joda.time.DateTime;
 import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.Patient;
 
-public class DataImporterCsv extends DataImporterBase {
+public class PatientDataImporterCsv extends PatientDataImporterBase {
 	
-	public DataImporterCsv(String inputFilePath) {
+	public PatientDataImporterCsv(String inputFilePath) {
 		super(inputFilePath);		
 	}
 

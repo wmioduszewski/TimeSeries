@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
-import pl.poznan.put.TimeSeries.DataImporters.DataImporterBase;
-import pl.poznan.put.TimeSeries.DataImporters.PureDataImporter;
+import pl.poznan.put.TimeSeries.DataImporters.PatientDataImporterBase;
+import pl.poznan.put.TimeSeries.DataImporters.PatientDataImporterPure;
 import pl.poznan.put.TimeSeries.DataProcessors.DataDivider;
 import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.Patient;
@@ -25,9 +25,9 @@ public abstract class PatientWorkflowBase extends WorkflowBase {
 	protected void importData() {
 		String pureDataPath = Configuration.getProperty("pureDataSet");
 		List<Patient> purePatients = null;
-		DataImporterBase importer;
+		PatientDataImporterBase importer;
 		try {
-			importer = new PureDataImporter(pureDataPath);
+			importer = new PatientDataImporterPure(pureDataPath);
 			purePatients = importer.ImportData();
 		} catch (IOException e) {
 			System.out.println("Patients import failed.");
