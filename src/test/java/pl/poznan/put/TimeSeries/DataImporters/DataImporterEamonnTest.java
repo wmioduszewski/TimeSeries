@@ -41,5 +41,10 @@ public class DataImporterEamonnTest {
 			assertNotNull(eamonnRecord.getSaxString());			
 		}
 	}
+	
+	@Test
+	public void testNieprzechodzący(){
+		fail("You shall not pass!");
+	}
 
 }
