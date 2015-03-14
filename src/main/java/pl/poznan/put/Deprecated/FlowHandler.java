@@ -50,7 +50,7 @@ public class FlowHandler {
 						folderPath + "/" + datasetName + "/" + datasetName
 								+ mode);
 				List<EamonnRecord> data = eamonnImporter
-						.ImportEamonnData();
+						.importEamonnData();
 				DeprecatedDataExporterEamonn eamonnExporter = new DeprecatedDataExporterEamonn(data);
 				eamonnExporter.ConstructArff("temp/" + datasetName + mode
 						+ ".arff");

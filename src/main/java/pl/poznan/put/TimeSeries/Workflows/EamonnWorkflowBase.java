@@ -20,7 +20,7 @@ public abstract class EamonnWorkflowBase extends WorkflowBase {
 		DataImporterEamonn importer = new DataImporterEamonn(
 				Configuration.getProperty("singleDataPath"));
 		try {
-			records = importer.ImportEamonnData();
+			records = importer.importEamonnData();
 		} catch (Exception e) {
 			System.out.println("Eamonn data import failed.");
 			e.printStackTrace();

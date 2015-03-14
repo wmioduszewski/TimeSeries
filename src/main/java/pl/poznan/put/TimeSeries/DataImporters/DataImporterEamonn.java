@@ -43,7 +43,7 @@ public class DataImporterEamonn {
 		br.close();
 	}
 
-	public List<EamonnRecord> ImportEamonnData() throws Exception {
+	public List<EamonnRecord> importEamonnData() throws Exception {
 		String datasetName = folderPath.substring(
 				folderPath.lastIndexOf('/') + 1, folderPath.length());
 		readData(String.format("/%s_TRAIN", datasetName));
