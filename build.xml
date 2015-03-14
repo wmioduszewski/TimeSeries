@@ -1,0 +1,30 @@
+<project name="TimeSeries">
+
+	<property name="weka.dir" value="contrib/weka/"/>
+	<property name="JFreeChart.dir" value="contrib/JFreeChart/"/>
+	<property name="joda-time.dir" value="contrib/joda-time-2.3/"/>
+	<property name="jmotif.dir" value="contrib/jmotif/"/>
+	<property name="apache.commons.lang.dir" value="contrib/apache.commons/lang/commons-lang3-3.3.2-bin/commons-lang3-3.3.2/"/>
+	<property name="apache.commons.math.dir" value="contrib/apache.commons/math/commons-math3-3.3-bin/commons-math3-3.3/"/>
+	<property name="MSOfficeAPI.dir" value="contrib/MS Office API/"/>
+
+	<path id="classpath">
+        <fileset dir="${weka.dir}" includes="weka.jar"/>
+		<fileset dir="${JFreeChart.dir}" includes="**/*.jar"/>
+		<fileset dir="${joda-time.dir}" includes="**/*.jar"/>
+		<fileset dir="${jmotif.dir}" includes="**/*.jar"/>
+		<fileset dir="${apache.commons.lang.dir}" includes="**/*.jar"/>
+		<fileset dir="${apache.commons.math.dir}" includes="**/*.jar"/>
+		<fileset dir="${MSOfficeAPI.dir}" includes="jxl.jar"/>
+		
+    </path>
+
+	<target name="clean">
+        <delete dir="build"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="build/classes"/>
+        <javac srcdir="src" destdir="build/classes" classpathref="classpath"/>
+    </target>
+</project>
