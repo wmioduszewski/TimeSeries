@@ -30,6 +30,7 @@ public abstract class NewArffExporterBase {
 		setAttributes();
 	}
 	
+	//probably should not be here, in this class
 	private void cutAttributes(){
 		float attributesToCutRatio = Float.parseFloat(Configuration.getProperty("attributesToCutRatio"));
 		int attributesToCut = (int) ((instances.numAttributes()-1) * attributesToCutRatio);

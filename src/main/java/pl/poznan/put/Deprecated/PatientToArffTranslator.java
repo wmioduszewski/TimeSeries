@@ -29,7 +29,7 @@ public class PatientToArffTranslator extends ArffExporterBase {
 		for (Patient patient : patients) {
 			String diagnosis = patient.isSick() ? PatientStates.Sick
 					: PatientStates.Health;
-			arffFileContent.append(patient.getSaxString().getContent() + ","
+			arffFileContent.append(patient.getSaxString() + ","
 					+ diagnosis + "\n");
 		}
 	}

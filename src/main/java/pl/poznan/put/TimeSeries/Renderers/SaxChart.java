@@ -9,16 +9,19 @@ import org.jfree.data.xy.XYDataset;
 import org.joda.time.DateTime;
 
 import pl.poznan.put.TimeSeries.Model.Patient;
-import pl.poznan.put.TimeSeries.Model.SaxString;
 
 public class SaxChart extends ChartBase {
 
 	private float globalMin;
 	private float globalMax;
+	private int saxOutLength;
+	private int saxAlfaSize;
 
-	public SaxChart(float globalMin, float globalMax) {
+	public SaxChart(float globalMin, float globalMax, int saxOutLength, int saxAlfaSize) {
 		this.globalMin = globalMin;
 		this.globalMax = globalMax;
+		this.saxAlfaSize = saxAlfaSize;
+		this.saxOutLength = saxOutLength;
 	}
 
 	protected XYDataset createDataset(List<Patient> patients) {
@@ -29,21 +32,21 @@ public class SaxChart extends ChartBase {
 		for (Patient patient : patients) {
 			TimeSeries series = new TimeSeries(patient.getChartCaption());
 
-			SaxString saxStr = patient.getSaxString();
+			String saxStr = patient.getSaxString();
 
 			int minutesInDay = 60 * 24;
-			float period = minutesInDay / (float) saxStr.getOutputLength();
+			float period = minutesInDay / (float) saxOutLength;
 			float letterWeight = (globalMax - globalMin)
-					/ (float) saxStr.getAlphabeatSize();
+					/ (float) saxAlfaSize;
 
-			for (int i = 0; i < saxStr.getContent().length(); i++) {
+			for (int i = 0; i < saxStr.length(); i++) {
 				DateTime dt = new DateTime(2014, 4, 1, 12, 00);
 				DateTime prop = dt.minusMinutes(i * (-1) * (int) period);
 
 				Minute m = new Minute(prop.getMinuteOfHour(),
 						prop.getHourOfDay(), prop.getDayOfMonth(),
 						prop.getMonthOfYear(), prop.getYear());
-				int diff = saxStr.getContent().charAt(i) - 'a';
+				int diff = saxStr.charAt(i) - 'a';
 				series.addOrUpdate(m, diff * letterWeight + globalMin);
 			}
 			collection.addSeries(series);

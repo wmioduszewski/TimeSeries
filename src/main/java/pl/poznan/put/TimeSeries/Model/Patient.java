@@ -12,7 +12,7 @@ public class Patient implements Cloneable, IRecord {
 	boolean isSick;
 	DateTime awake;
 	DateTime asleep;
-	SaxString saxString;
+	String saxString;
 
 	String chartCaption;
 	List<Characteristic> characteristics;
@@ -40,11 +40,11 @@ public class Patient implements Cloneable, IRecord {
 		characteristics.remove(c);
 	}
 
-	public SaxString getSaxString() {
+	public String getSaxString() {
 		return saxString;
 	}
 
-	public void setSaxString(SaxString saxString) {
+	public void setSaxString(String saxString) {
 		this.saxString = saxString;
 	}
 

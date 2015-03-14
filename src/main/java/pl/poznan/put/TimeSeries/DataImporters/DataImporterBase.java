@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.List;
 
 import pl.poznan.put.TimeSeries.Model.Patient;
-import pl.poznan.put.TimeSeries.Model.SaxString;
 import pl.poznan.put.TimeSeries.Util.Configuration;
 import pl.poznan.put.TimeSeries.Util.SaxPerformer;
 import edu.hawaii.jmotif.lib.ts.TSException;
@@ -35,7 +34,6 @@ public abstract class DataImporterBase {
 			} catch (CloneNotSupportedException | TSException e) {
 				e.printStackTrace();
 			}
-			patient.setSaxString(new SaxString(sax, outputLength, alphabeatSize));
 		}
 	}
 

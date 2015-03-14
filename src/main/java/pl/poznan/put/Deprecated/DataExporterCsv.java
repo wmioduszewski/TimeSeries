@@ -28,7 +28,7 @@ public class DataExporterCsv {
 		for (Patient patient : patients) {
 			String d = patient.isSick() ? "D1" : "D2";
 			writer.write(patient.getId() + " " + d + ":\t"
-					+ patient.getSaxString().getContent()
+					+ patient.getSaxString()
 					+ System.getProperty("line.separator"));
 		}
 		writer.flush();

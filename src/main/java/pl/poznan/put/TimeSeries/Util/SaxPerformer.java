@@ -25,6 +25,7 @@ public class SaxPerformer {
 		}
 
 		Timeseries series = new Timeseries(vals, times);
+		
 		String sax = SAXFactory.ts2string(series, outputLength, alphabeatSize);
 
 		return sax;

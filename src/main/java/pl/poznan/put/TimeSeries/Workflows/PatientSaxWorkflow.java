@@ -12,7 +12,6 @@ import pl.poznan.put.TimeSeries.DataProcessors.DataDivider;
 import pl.poznan.put.TimeSeries.DataProcessors.PeriodicNgramCounter;
 import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Model.SaxArffCandidateRow;
-import weka.core.Instances;
 
 public class PatientSaxWorkflow extends PatientWorkflowBase {
 
@@ -30,7 +29,7 @@ public class PatientSaxWorkflow extends PatientWorkflowBase {
 			LinkedList<HashMap<String, AtomicInteger>> listHashMap = new LinkedList<HashMap<String, AtomicInteger>>();
 
 			List<String> dividedSax = DataDivider.DivideStringRegularly(patient
-					.getSaxString().getContent(), divisionPartsAmount);
+					.getSaxString(), divisionPartsAmount);
 
 			for (String string : dividedSax) {
 				HashMap<String, AtomicInteger> ngramCountMap = PeriodicNgramCounter

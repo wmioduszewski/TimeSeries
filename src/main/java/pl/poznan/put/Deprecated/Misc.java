@@ -86,7 +86,7 @@ public class Misc {
 	for (Patient patient : patients) {
 		EamonnRecord obj = new EamonnRecord(
 				patient.getDestinationClass(), patient.getValues());
-		obj.setSaxString(patient.getSaxString().getContent());
+		obj.setSaxString(patient.getSaxString());
 		res.add(obj);
 	}
 	return res;

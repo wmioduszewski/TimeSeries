@@ -1,11 +1,7 @@
 package pl.poznan.put.TimeSeries;
 
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
-import pl.poznan.put.TimeSeries.Workflows.EamonnRegressionWorkflow;
-import pl.poznan.put.TimeSeries.Workflows.EamonnSaxWorkflow;
-import pl.poznan.put.TimeSeries.Workflows.PatientRegressionWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.PatientSaxWorkflow;
-import pl.poznan.put.TimeSeries.Workflows.PatientSaxWorkflowTest;
 import pl.poznan.put.TimeSeries.Workflows.WorkflowBase;
 
 public class Main {

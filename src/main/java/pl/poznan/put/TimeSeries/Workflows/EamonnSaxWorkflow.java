@@ -12,7 +12,6 @@ import pl.poznan.put.TimeSeries.DataProcessors.DataDivider;
 import pl.poznan.put.TimeSeries.DataProcessors.PeriodicNgramCounter;
 import pl.poznan.put.TimeSeries.Model.EamonnRecord;
 import pl.poznan.put.TimeSeries.Model.SaxArffCandidateRow;
-import weka.core.Instances;
 
 public class EamonnSaxWorkflow extends EamonnWorkflowBase {
 

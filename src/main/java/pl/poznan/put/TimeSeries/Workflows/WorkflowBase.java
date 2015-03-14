@@ -5,13 +5,11 @@ import java.util.stream.Collectors;
 
 import pl.poznan.put.TimeSeries.Classifying.CrossValidationExperiment;
 import pl.poznan.put.TimeSeries.Classifying.Experiment;
-import pl.poznan.put.TimeSeries.Classifying.NgramClassifier;
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.Model.IRecord;
 import pl.poznan.put.TimeSeries.Util.Configuration;
 import weka.classifiers.Classifier;
 import weka.classifiers.rules.JRip;
-import weka.classifiers.trees.J48;
 
 public abstract class WorkflowBase {
 

@@ -1,6 +1,5 @@
 package pl.poznan.put.TimeSeries.Sax;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -9,7 +8,6 @@ import java.util.List;
 import org.joda.time.DateTime;
 import org.junit.Test;
 
-import edu.hawaii.jmotif.lib.ts.TSException;
 import pl.poznan.put.TimeSeries.DataImporters.PureDataImporter;
 import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.EamonnRecord;
@@ -42,7 +40,7 @@ public class GeneralCase {
 		List<Patient> patients = importer.ImportData();
 		
 		Patient p = patients.get(0);
-		String oldSax = p.getSaxString().getContent();
+		String oldSax = p.getSaxString();
 		System.out.println(p.getId());
 		List<Characteristic> oldChars = p.getCharacteristics();
 		DateTime minDate = oldChars.stream().min(Comparator.comparing(x-> x.getExaminationTime())).get().getExaminationTime();
