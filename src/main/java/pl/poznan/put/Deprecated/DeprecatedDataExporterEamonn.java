@@ -7,7 +7,8 @@ import java.io.IOException;
 import java.util.List;
 
 import pl.poznan.put.TimeSeries.Model.EamonnRecord;
-import pl.poznan.put.TimeSeries.Util.Configuration;
+import pl.poznan.put.TimeSeries.Util.SpecificConfig;
+import pl.poznan.put.TimeSeries.Util.CommonConfig;
 
 public class DeprecatedDataExporterEamonn {
 
@@ -33,8 +34,7 @@ public class DeprecatedDataExporterEamonn {
 	public void ConstructArff(String destinationPath) {
 		SaxArffExporter translator = new SaxArffExporter("Lighting2");
 		try {
-			int attrLength = Integer.parseInt(Configuration
-					.getProperty("saxAttributeLength"));
+			int attrLength = CommonConfig.getInstance().getSaxAttributeLength();
 			translator.saveUnifiedRecordsToArffData(records, destinationPath,
 					attrLength, true);
 		} catch (FileNotFoundException e) {

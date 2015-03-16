@@ -8,7 +8,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 import pl.poznan.put.TimeSeries.Model.SaxArffCandidateRow;
-import pl.poznan.put.TimeSeries.Util.Configuration;
+import pl.poznan.put.TimeSeries.Util.SpecificConfig;
+import pl.poznan.put.TimeSeries.Util.CommonConfig;
 import pl.poznan.put.TimeSeries.Util.StringDominance;
 import weka.core.Attribute;
 import weka.core.FastVector;
@@ -22,8 +23,7 @@ public class NewSaxArffBuilder extends NewArffExporterBase {
 		// TODO Auto-generated constructor stub
 	}
 
-	private static int regularPartsForDivision = Integer.parseInt(Configuration
-			.getProperty("divisionPartsAmount"));
+	private static int regularPartsForDivision = CommonConfig.getInstance().getDivisionPartsAmount();
 
 	private List<List<String>> distincts;
 	List<Double> destClasses;

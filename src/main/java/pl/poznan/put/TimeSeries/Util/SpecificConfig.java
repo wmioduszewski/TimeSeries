@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-public class Configuration {
+public class SpecificConfig {
 
 	static final String path = "src/main/resources/config.properties";
 

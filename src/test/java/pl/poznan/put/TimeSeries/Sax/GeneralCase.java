@@ -12,7 +12,8 @@ import pl.poznan.put.TimeSeries.DataImporters.PatientDataImporterPure;
 import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.EamonnRecord;
 import pl.poznan.put.TimeSeries.Model.Patient;
-import pl.poznan.put.TimeSeries.Util.Configuration;
+import pl.poznan.put.TimeSeries.Util.SpecificConfig;
+import pl.poznan.put.TimeSeries.Util.CommonConfig;
 import pl.poznan.put.TimeSeries.Util.SaxPerformer;
 
 public class GeneralCase {
@@ -30,13 +31,10 @@ public class GeneralCase {
 	@Test
 	public void NormalizationDifference() throws Exception{
 		
-		int alphabeatSize = Integer.parseInt(Configuration
-				.getProperty("saxAlphabeatSize"));
-		;
-		int outputLength = Integer.parseInt(Configuration
-				.getProperty("saxOutputLength"));
+		int alphabeatSize = CommonConfig.getInstance().getSaxAlphabeatSize();		
+		int outputLength = CommonConfig.getInstance().getSaxOutputLength();
 		
-		PatientDataImporterPure importer = new PatientDataImporterPure(Configuration.getProperty("pureDataSet"));
+		PatientDataImporterPure importer = new PatientDataImporterPure(SpecificConfig.getProperty("pureDataSet"));
 		List<Patient> patients = importer.ImportData();
 		
 		Patient p = patients.get(0);

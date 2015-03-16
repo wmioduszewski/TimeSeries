@@ -9,7 +9,8 @@ import jxl.write.NumberFormats;
 import jxl.write.WritableCellFormat;
 import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
-import pl.poznan.put.TimeSeries.Util.Configuration;
+import pl.poznan.put.TimeSeries.Util.SpecificConfig;
+import pl.poznan.put.TimeSeries.Util.CommonConfig;
 
 public class ResultReporter {
 
@@ -20,7 +21,7 @@ public class ResultReporter {
 	private String newXlsFilePath;
 
 	public ResultReporter(EntireReport report) {
-		this.path = Configuration.getProperty("xlsReportPath");
+		this.path = CommonConfig.getInstance().getXlsReportPath();
 		this.report = report;
 	}
 

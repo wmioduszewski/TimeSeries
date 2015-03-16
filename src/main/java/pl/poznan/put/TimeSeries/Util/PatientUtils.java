@@ -12,8 +12,7 @@ import pl.poznan.put.TimeSeries.Model.RegressionArffRow;
 
 public class PatientUtils {
 
-	private static float trainTestRatio = Float.parseFloat(Configuration
-			.getProperty("trainToTestRatio"));
+	private static float trainTestRatio = CommonConfig.getInstance().getTrainToTestRatio();
 
 	// TODO: MINIMIZE THIS METHODS TO SINGLE ONE
 

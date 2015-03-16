@@ -5,7 +5,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Random;
 
-import pl.poznan.put.TimeSeries.Util.Configuration;
+import pl.poznan.put.TimeSeries.Util.SpecificConfig;
+import pl.poznan.put.TimeSeries.Util.CommonConfig;
 import weka.core.Attribute;
 import weka.core.FastVector;
 import weka.core.Instances;
@@ -32,7 +33,7 @@ public abstract class NewArffExporterBase {
 	
 	//probably should not be here, in this class
 	private void cutAttributes(){
-		float attributesToCutRatio = Float.parseFloat(Configuration.getProperty("attributesToCutRatio"));
+		float attributesToCutRatio = CommonConfig.getInstance().getAttributesToCutRatio();
 		int attributesToCut = (int) ((instances.numAttributes()-1) * attributesToCutRatio);
 		Random rand = new Random();
 		for(int i=0;i<attributesToCut;i++){

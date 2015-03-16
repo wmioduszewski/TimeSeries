@@ -8,7 +8,8 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 import pl.poznan.put.TimeSeries.Model.EamonnRecord;
-import pl.poznan.put.TimeSeries.Util.Configuration;
+import pl.poznan.put.TimeSeries.Util.SpecificConfig;
+import pl.poznan.put.TimeSeries.Util.CommonConfig;
 import pl.poznan.put.TimeSeries.Util.SaxPerformer;
 
 public class DataImporterEamonn {
@@ -49,10 +50,8 @@ public class DataImporterEamonn {
 		readData(String.format("/%s_TRAIN", datasetName));
 		readData(String.format("/%s_TEST", datasetName));
 
-		int alphabeatSize = Integer.parseInt(Configuration
-				.getProperty("saxAlphabeatSize"));
-		int outputLength = Integer.parseInt(Configuration
-				.getProperty("saxOutputLength"));
+		int alphabeatSize = CommonConfig.getInstance().getSaxAlphabeatSize();
+		int outputLength = CommonConfig.getInstance().getSaxOutputLength();
 
 		for (EamonnRecord record : records) {
 			String sax = SaxPerformer.TranslateUnifiedRecordToString(record,

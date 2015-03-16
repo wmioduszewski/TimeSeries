@@ -10,7 +10,8 @@ import pl.poznan.put.TimeSeries.Model.EamonnRecord;
 import pl.poznan.put.TimeSeries.Reporting.EntireReport;
 import pl.poznan.put.TimeSeries.Reporting.ReportRecord;
 import pl.poznan.put.TimeSeries.Reporting.ResultReporter;
-import pl.poznan.put.TimeSeries.Util.Configuration;
+import pl.poznan.put.TimeSeries.Util.SpecificConfig;
+import pl.poznan.put.TimeSeries.Util.CommonConfig;
 import pl.poznan.put.TimeSeries.Util.FileLister;
 import weka.classifiers.Classifier;
 import weka.classifiers.rules.JRip;
@@ -25,9 +26,8 @@ public class FlowHandler {
 	private List<Classifier> classifiers;
 
 	public FlowHandler() {
-		this.isFolder = Configuration.getProperty("isFolderDataUsed").equals(
-				"1") ? true : false;
-		this.folderPath = Configuration.getProperty("folderDataPath");
+		this.isFolder = CommonConfig.getInstance().isFolderDataUsed();
+		this.folderPath = SpecificConfig.getProperty("folderDataPath");
 		
 		classifiers = new LinkedList<Classifier>();
 		classifiers.add(new J48());
@@ -78,7 +78,7 @@ public class FlowHandler {
 			datasetNames = FileLister.getDirectoryFiles(folderPath);
 		else {
 			datasetNames = new String[1];
-			datasetNames[0] = Configuration.getProperty("singleDataPath");
+			datasetNames[0] = SpecificConfig.getProperty("singleDataPath");
 		}
 	}
 	

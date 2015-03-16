@@ -4,7 +4,8 @@ import java.io.IOException;
 import java.util.List;
 
 import pl.poznan.put.TimeSeries.Model.Patient;
-import pl.poznan.put.TimeSeries.Util.Configuration;
+import pl.poznan.put.TimeSeries.Util.SpecificConfig;
+import pl.poznan.put.TimeSeries.Util.CommonConfig;
 import pl.poznan.put.TimeSeries.Util.SaxPerformer;
 import edu.hawaii.jmotif.lib.ts.TSException;
 
@@ -20,11 +21,9 @@ public abstract class PatientDataImporterBase {
 	public abstract List<Patient> ImportData() throws IOException;
 
 	protected void computeSaxForPatients() {
-		int alphabeatSize = Integer.parseInt(Configuration
-				.getProperty("saxAlphabeatSize"));
-		;
-		int outputLength = Integer.parseInt(Configuration
-				.getProperty("saxOutputLength"));
+		int alphabeatSize = CommonConfig.getInstance().getSaxAlphabeatSize();
+		
+		int outputLength = CommonConfig.getInstance().getSaxOutputLength();
 		;
 		for (Patient patient : patients) {
 			String sax = null;

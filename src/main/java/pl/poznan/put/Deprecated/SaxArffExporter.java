@@ -7,7 +7,8 @@ import java.util.stream.Collectors;
 
 import pl.poznan.put.TimeSeries.DataExporters.ArffExporterBase;
 import pl.poznan.put.TimeSeries.Model.EamonnRecord;
-import pl.poznan.put.TimeSeries.Util.Configuration;
+import pl.poznan.put.TimeSeries.Util.SpecificConfig;
+import pl.poznan.put.TimeSeries.Util.CommonConfig;
 
 public class SaxArffExporter extends ArffExporterBase {
 	private List<EamonnRecord> records;
@@ -26,10 +27,8 @@ public class SaxArffExporter extends ArffExporterBase {
 		this.records = records;
 		this.attrLength = attrLength;
 		this.isNominal = isNominal;
-		this.recordLength = Integer.parseInt(Configuration
-				.getProperty("saxOutputLength"));
-		this.saxAlphabeatSize = Integer.parseInt(Configuration
-				.getProperty("saxAlphabeatSize"));
+		this.recordLength = CommonConfig.getInstance().getSaxOutputLength();
+		this.saxAlphabeatSize = CommonConfig.getInstance().getSaxAlphabeatSize();
 		performExport(destinationPath);
 	}
 

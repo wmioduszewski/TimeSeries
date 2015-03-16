@@ -16,7 +16,7 @@ import pl.poznan.put.TimeSeries.DataProcessors.DataDivider;
 import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.EamonnRecord;
 import pl.poznan.put.TimeSeries.Model.Patient;
-import pl.poznan.put.TimeSeries.Util.Configuration;
+import pl.poznan.put.TimeSeries.Util.SpecificConfig;
 
 public class Misc {
 	
@@ -28,7 +28,7 @@ public class Misc {
 
 	@SuppressWarnings("unused")
 	private static void CsvToEamonn() throws IOException {
-		String path = Configuration.getProperty("csvDataSet");
+		String path = SpecificConfig.getProperty("csvDataSet");
 
 		PatientDataImporterCsv csvImport = new PatientDataImporterCsv(path);
 

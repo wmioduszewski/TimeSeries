@@ -31,12 +31,8 @@ public class DataImporterEamonnTest {
 	}
 
 	@Test
-	public void anythingWasRead() {
-		assertTrue(records.size()>0);
-	}
-	
-	@Test
 	public void saxWasApplied(){
+		assertTrue(records.size()>0);
 		for (EamonnRecord eamonnRecord : records) {
 			assertNotNull(eamonnRecord.getSaxString());			
 		}

@@ -7,7 +7,8 @@ import pl.poznan.put.TimeSeries.Classifying.CrossValidationExperiment;
 import pl.poznan.put.TimeSeries.Classifying.Experiment;
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.Model.IRecord;
-import pl.poznan.put.TimeSeries.Util.Configuration;
+import pl.poznan.put.TimeSeries.Util.SpecificConfig;
+import pl.poznan.put.TimeSeries.Util.CommonConfig;
 import weka.classifiers.Classifier;
 import weka.classifiers.rules.JRip;
 
@@ -28,11 +29,9 @@ public abstract class WorkflowBase {
 	}
 
 	protected Classifier classifier = new JRip();
-	protected int divisionPartsAmount = Integer.parseInt(Configuration
-			.getProperty("divisionPartsAmount"));
+	protected int divisionPartsAmount = CommonConfig.getInstance().getDivisionPartsAmount();
 
-	protected int windowLen = Integer.parseInt(Configuration
-			.getProperty("ngramSize"));
+	protected int windowLen = CommonConfig.getInstance().getNgramSize();
 	protected String arffTrainPath;
 	protected String arffTestPath;
 	protected String arffCVpath;
@@ -105,7 +104,7 @@ public abstract class WorkflowBase {
 		className = className.replace("Workflow", "");
 		String eamonnDataSource = "";
 		if (className.contains("Eamonn")) {
-			eamonnDataSource = Configuration.getProperty("singleDataPath")
+			eamonnDataSource = SpecificConfig.getProperty("singleDataPath")
 					+ " ";
 			eamonnDataSource = eamonnDataSource.substring(
 					eamonnDataSource.lastIndexOf("/") + 1,
