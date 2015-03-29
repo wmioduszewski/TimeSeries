@@ -8,10 +8,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.DataExporters.NewSaxArffBuilder;
-import pl.poznan.put.TimeSeries.DataProcessors.DataDivider;
 import pl.poznan.put.TimeSeries.DataProcessors.PeriodicNgramCounter;
 import pl.poznan.put.TimeSeries.Model.EamonnRecord;
 import pl.poznan.put.TimeSeries.Model.SaxArffCandidateRow;
+import pl.poznan.put.TimeSeries.Util.DataDivider;
 
 public class EamonnSaxWorkflow extends EamonnWorkflowBase {
 
@@ -28,7 +28,7 @@ public class EamonnSaxWorkflow extends EamonnWorkflowBase {
 		for (EamonnRecord record : records) {
 			LinkedList<HashMap<String, AtomicInteger>> periodicallyCountedNgrams = new LinkedList<HashMap<String, AtomicInteger>>();
 
-			List<String> dividedSax = DataDivider.DivideStringRegularly(
+			List<String> dividedSax = DataDivider.divideStringRegularly(
 					record.getSaxString(), divisionPartsAmount);
 
 			for (String elem : dividedSax) {

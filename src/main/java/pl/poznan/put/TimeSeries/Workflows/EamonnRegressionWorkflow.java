@@ -6,16 +6,17 @@ import java.util.List;
 
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.DataExporters.RegressionArffExporter;
-import pl.poznan.put.TimeSeries.DataProcessors.DataDivider;
 import pl.poznan.put.TimeSeries.Model.EamonnRecord;
 import pl.poznan.put.TimeSeries.Model.RegressionResult;
 import pl.poznan.put.TimeSeries.Model.RegressionArffRow;
+import pl.poznan.put.TimeSeries.Util.DataDivider;
 import pl.poznan.put.TimeSeries.Util.RegressionCalculator;
 
 public class EamonnRegressionWorkflow extends EamonnWorkflowBase {
 
-	public EamonnRegressionWorkflow(DivisionOptions divisionOption, boolean isDominant) {
-		super(divisionOption,isDominant);
+	public EamonnRegressionWorkflow(DivisionOptions divisionOption,
+			boolean isDominant) {
+		super(divisionOption, isDominant);
 	}
 
 	List<RegressionArffRow> rows;
@@ -25,8 +26,9 @@ public class EamonnRegressionWorkflow extends EamonnWorkflowBase {
 		rows = new ArrayList<RegressionArffRow>();
 		for (EamonnRecord record : records) {
 			try {
-				List<List<Float>> nestedCharacteristicList = DataDivider.DivideCollectionRegularly(record.getValues(),
-						divisionPartsAmount);
+				List<List<Float>> nestedCharacteristicList = DataDivider
+						.divideCollectionRegularly(record.getValues(),
+								divisionPartsAmount);
 				List<RegressionResult> regResults = new ArrayList<RegressionResult>();
 				for (List<Float> list : nestedCharacteristicList) {
 					RegressionResult result = RegressionCalculator

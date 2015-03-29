@@ -1,6 +1,7 @@
-package pl.poznan.put.TimeSeries.DataProcessors;
+package pl.poznan.put.TimeSeries.Util;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.joda.time.DateTime;
@@ -38,34 +39,32 @@ public class DataDivider {
 		List<List<Characteristic>> listlist = dividePatientDataPeriodically(patient);
 		List<List<Characteristic>> newlistlist = new ArrayList<List<Characteristic>>();
 		for (List<Characteristic> list : listlist) {
-			newlistlist.addAll(DivideCollectionRegularly(list, parts));
+			newlistlist.addAll(divideCollectionRegularly(list, parts));
 		}
 		return newlistlist;
 	}
 
-	public static <T> List<List<T>> DivideCollectionRegularly(List<T> list,
+	public static <T> List<List<T>> divideCollectionRegularly(List<T> list,
 			Integer parts) {
+		parts = parts > list.size() ? list.size() : parts;
 
-		int partLen = list.size() / parts;
-		List<List<T>> listlist = new ArrayList<List<T>>();
-
+		int partLen = (int) Math.floor(list.size() / (double) parts);
+		int additionals = list.size() % parts;
+		List<List<T>> res = new ArrayList<List<T>>();
+		Iterator<T> iterator = list.iterator();
 		for (int i = 0; i < parts; i++) {
 			List<T> currList = new ArrayList<T>();
 			for (int j = 0; j < partLen; j++) {
-				currList.add(list.get(i * partLen + j));
+				currList.add(iterator.next());
 			}
-			listlist.add(currList);
+			if (additionals-- > 0)
+				currList.add(iterator.next());
+			res.add(currList);
 		}
-		if (parts * partLen < list.size()) {
-			List<T> currList = listlist.get(listlist.size() - 1);
-			for (int i = parts * partLen; i < list.size(); i++) {
-				currList.add(list.get(i));
-			}
-		}
-		return listlist;
+		return res;
 	}
 
-	public static List<String> DivideStringRegularly(String input, Integer parts) {
+	public static List<String> divideStringRegularly(String input, Integer parts) {
 		List<String> res = new ArrayList<String>();
 
 		int inputLen = input.length();

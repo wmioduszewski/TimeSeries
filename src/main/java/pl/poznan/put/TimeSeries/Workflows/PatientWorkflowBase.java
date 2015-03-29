@@ -7,9 +7,9 @@ import java.util.List;
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.DataImporters.PatientDataImporterBase;
 import pl.poznan.put.TimeSeries.DataImporters.PatientDataImporterPure;
-import pl.poznan.put.TimeSeries.DataProcessors.DataDivider;
 import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.Patient;
+import pl.poznan.put.TimeSeries.Util.DataDivider;
 import pl.poznan.put.TimeSeries.Util.SpecificConfig;
 
 public abstract class PatientWorkflowBase extends WorkflowBase {
@@ -43,7 +43,7 @@ public abstract class PatientWorkflowBase extends WorkflowBase {
 			res = DataDivider.dividePatientDataPeriodically(patient);
 			break;
 		case Regular:
-			res= DataDivider.DivideCollectionRegularly(patient.getCharacteristics(), divisionPartsAmount);
+			res= DataDivider.divideCollectionRegularly(patient.getCharacteristics(), divisionPartsAmount);
 			break;
 		case PerThenReg:
 			res = DataDivider.dividePatientPeriodicallyThenRegularly(patient, divisionPartsAmount);

@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 import pl.poznan.put.TimeSeries.Model.EamonnRecord;
-import pl.poznan.put.TimeSeries.Util.SpecificConfig;
 import pl.poznan.put.TimeSeries.Util.CommonConfig;
 import pl.poznan.put.TimeSeries.Util.SaxPerformer;
 

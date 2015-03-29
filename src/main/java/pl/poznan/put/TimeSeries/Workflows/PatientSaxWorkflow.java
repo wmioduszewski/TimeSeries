@@ -8,10 +8,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.DataExporters.NewSaxArffBuilder;
-import pl.poznan.put.TimeSeries.DataProcessors.DataDivider;
 import pl.poznan.put.TimeSeries.DataProcessors.PeriodicNgramCounter;
 import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Model.SaxArffCandidateRow;
+import pl.poznan.put.TimeSeries.Util.DataDivider;
 
 public class PatientSaxWorkflow extends PatientWorkflowBase {
 
@@ -28,7 +28,7 @@ public class PatientSaxWorkflow extends PatientWorkflowBase {
 		for (Patient patient : patients) {
 			LinkedList<HashMap<String, AtomicInteger>> listHashMap = new LinkedList<HashMap<String, AtomicInteger>>();
 
-			List<String> dividedSax = DataDivider.DivideStringRegularly(patient
+			List<String> dividedSax = DataDivider.divideStringRegularly(patient
 					.getSaxString(), divisionPartsAmount);
 
 			for (String string : dividedSax) {
