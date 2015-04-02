@@ -26,13 +26,13 @@ public class PatientSaxWorkflow extends PatientWorkflowBase {
 		nestedList = new ArrayList<SaxArffCandidateRow>();
 
 		for (Patient patient : patients) {
-			LinkedList<HashMap<String, AtomicInteger>> listHashMap = new LinkedList<HashMap<String, AtomicInteger>>();
+			LinkedList<HashMap<String, Integer>> listHashMap = new LinkedList<HashMap<String, Integer>>();
 
 			List<String> dividedSax = DataDivider.divideStringRegularly(patient
 					.getSaxString(), divisionPartsAmount);
 
 			for (String string : dividedSax) {
-				HashMap<String, AtomicInteger> ngramCountMap = PeriodicNgramCounter
+				HashMap<String, Integer> ngramCountMap = PeriodicNgramCounter
 						.slashStringAndCountNgrams(string, windowLen);
 				listHashMap.add(ngramCountMap);
 			}

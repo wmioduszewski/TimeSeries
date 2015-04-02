@@ -1,16 +1,16 @@
 package pl.poznan.put.TimeSeries.DataProcessors;
 
+
 import java.util.HashMap;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class PeriodicNgramCounter {
 
-	public static HashMap<String, AtomicInteger> slashStringAndCountNgrams(String input,
+	public static HashMap<String, Integer> slashStringAndCountNgrams(String input,
 			int windowLen) {
-		HashMap<String, AtomicInteger> res = new HashMap<String, AtomicInteger>();
+		HashMap<String, Integer> res = new HashMap<String, Integer>();
 		StringBuilder sb = new StringBuilder();
 		sb.append(input.substring(0, windowLen));
-		res.put(sb.toString(), new AtomicInteger(1));
+		res.put(sb.toString(), 1);
 
 		for (int i = windowLen; i < input.length(); i++) {
 			sb.deleteCharAt(0);
@@ -18,9 +18,9 @@ public class PeriodicNgramCounter {
 			String currNgram = sb.toString();
 
 			if (res.containsKey(currNgram)) {
-				res.get(currNgram).incrementAndGet();
+				res.put(currNgram,res.get(currNgram)+1);
 			} else {
-				res.put(currNgram, new AtomicInteger(1));
+				res.put(currNgram, 1);
 			}
 		}
 		return res;

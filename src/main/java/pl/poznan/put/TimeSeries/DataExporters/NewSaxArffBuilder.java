@@ -44,7 +44,7 @@ public class NewSaxArffBuilder extends NewArffExporterBase {
 			int attrIndex = 0;
 			for (int i = 0; i < regularPartsForDivision; i++) {
 				List<String> currentDistincts = distincts.get(i);
-				HashMap<String, AtomicInteger> currentMap = linkedList
+				HashMap<String, Integer> currentMap = linkedList
 						.getPeriodicNgrams().get(i);
 				for (int j = 0; j < currentDistincts.size(); j++) {
 					int count = 0;
@@ -95,7 +95,7 @@ public class NewSaxArffBuilder extends NewArffExporterBase {
 			int attrIndex = 0;
 			for (int i = 0; i < regularPartsForDivision; i++) {
 				List<String> currentDistincts = distincts.get(i);
-				HashMap<String, AtomicInteger> currentMap = linkedList
+				HashMap<String, Integer> currentMap = linkedList
 						.getPeriodicNgrams().get(i);
 				for (int j = 0; j < currentDistincts.size(); j++) {
 					int lowersRes = 0;

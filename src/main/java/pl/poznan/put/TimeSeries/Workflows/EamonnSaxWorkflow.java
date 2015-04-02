@@ -26,13 +26,13 @@ public class EamonnSaxWorkflow extends EamonnWorkflowBase {
 		arffCandidateRows = new ArrayList<SaxArffCandidateRow>();
 
 		for (EamonnRecord record : records) {
-			LinkedList<HashMap<String, AtomicInteger>> periodicallyCountedNgrams = new LinkedList<HashMap<String, AtomicInteger>>();
+			LinkedList<HashMap<String, Integer>> periodicallyCountedNgrams = new LinkedList<HashMap<String, Integer>>();
 
 			List<String> dividedSax = DataDivider.divideStringRegularly(
 					record.getSaxString(), divisionPartsAmount);
 
 			for (String elem : dividedSax) {
-				HashMap<String, AtomicInteger> ngramCountMap = PeriodicNgramCounter
+				HashMap<String, Integer> ngramCountMap = PeriodicNgramCounter
 						.slashStringAndCountNgrams(elem, windowLen);
 				periodicallyCountedNgrams.add(ngramCountMap);
 			}

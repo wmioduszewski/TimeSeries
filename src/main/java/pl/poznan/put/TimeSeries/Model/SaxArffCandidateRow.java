@@ -6,18 +6,18 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class SaxArffCandidateRow {
 
-	private LinkedList<HashMap<String, AtomicInteger>> periodicNgrams;
+	private LinkedList<HashMap<String, Integer>> periodicNgrams;
 	private double destClass;
 
 	public SaxArffCandidateRow(
-			LinkedList<HashMap<String, AtomicInteger>> periodicNgrams,
+			LinkedList<HashMap<String, Integer>> periodicNgrams,
 			double destClass) {
 		super();
 		this.periodicNgrams = periodicNgrams;
 		this.destClass = destClass;
 	}
 
-	public LinkedList<HashMap<String, AtomicInteger>> getPeriodicNgrams() {
+	public LinkedList<HashMap<String, Integer>> getPeriodicNgrams() {
 		return periodicNgrams;
 	}
 
