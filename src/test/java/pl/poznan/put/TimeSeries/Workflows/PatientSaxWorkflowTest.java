@@ -15,6 +15,4 @@ public class PatientSaxWorkflowTest extends PatientSaxWorkflow {
 	protected void importData() {
 		patients = Utils.getTestPatients();
 	}
-	
-
 }
