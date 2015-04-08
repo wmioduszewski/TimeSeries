@@ -2,34 +2,32 @@ package pl.poznan.put.TimeSeries.Workflows;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.DataExporters.NewSaxArffBuilder;
 import pl.poznan.put.TimeSeries.DataProcessors.PeriodicNgramCounter;
+import pl.poznan.put.TimeSeries.Model.CalculatedRecord;
 import pl.poznan.put.TimeSeries.Model.Patient;
-import pl.poznan.put.TimeSeries.Model.SaxArffCandidateRow;
 import pl.poznan.put.TimeSeries.Util.DataDivider;
 
 public class PatientSaxWorkflow extends PatientWorkflowBase {
 
 	public PatientSaxWorkflow(DivisionOptions divisionOption, boolean isDominant) {
-		super(divisionOption,isDominant);
+		super(divisionOption, isDominant);
 	}
 
-	List<SaxArffCandidateRow> nestedList;
+	List<CalculatedRecord> nestedList;
 
 	@Override
 	protected void processData() {
-		nestedList = new ArrayList<SaxArffCandidateRow>();
+		nestedList = new ArrayList<CalculatedRecord>();
 
 		for (Patient patient : patients) {
-			LinkedList<HashMap<String, Integer>> listHashMap = new LinkedList<HashMap<String, Integer>>();
+			ArrayList<HashMap<String, Integer>> listHashMap = new ArrayList<HashMap<String, Integer>>();
 
-			List<String> dividedSax = DataDivider.divideStringRegularly(patient
-					.getSaxString(), divisionPartsAmount);
+			List<String> dividedSax = DataDivider.divideStringRegularly(
+					patient.getSaxString(), divisionPartsAmount);
 
 			for (String string : dividedSax) {
 				HashMap<String, Integer> ngramCountMap = PeriodicNgramCounter
@@ -37,9 +35,9 @@ public class PatientSaxWorkflow extends PatientWorkflowBase {
 				listHashMap.add(ngramCountMap);
 			}
 
-			SaxArffCandidateRow row = new SaxArffCandidateRow(listHashMap,
+			CalculatedRecord calcRecord = new CalculatedRecord(listHashMap,
 					patient.getDestinationClass());
-			nestedList.add(row);
+			nestedList.add(calcRecord);
 		}
 	}
 

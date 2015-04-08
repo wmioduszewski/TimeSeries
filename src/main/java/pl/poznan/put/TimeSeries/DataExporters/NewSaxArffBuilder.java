@@ -4,11 +4,9 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
-import pl.poznan.put.TimeSeries.Model.SaxArffCandidateRow;
-import pl.poznan.put.TimeSeries.Util.SpecificConfig;
+import pl.poznan.put.TimeSeries.Model.CalculatedRecord;
 import pl.poznan.put.TimeSeries.Util.CommonConfig;
 import pl.poznan.put.TimeSeries.Util.StringDominance;
 import weka.core.Attribute;
@@ -29,7 +27,7 @@ public class NewSaxArffBuilder extends NewArffExporterBase {
 	List<Double> destClasses;
 	private int inputSize; 
 
-	public void buildInstancesFromStats(List<SaxArffCandidateRow> input)
+	public void buildInstancesFromStats(List<CalculatedRecord> input)
 			throws Exception {
 		
 		inputSize = input.size();
@@ -39,7 +37,7 @@ public class NewSaxArffBuilder extends NewArffExporterBase {
 		destClasses = input.stream().map(x -> x.getDestClass())
 				.distinct().collect(Collectors.toList());
 
-		for (SaxArffCandidateRow linkedList : input) {
+		for (CalculatedRecord linkedList : input) {
 			Instance patient = new Instance(distincts.size());
 			int attrIndex = 0;
 			for (int i = 0; i < regularPartsForDivision; i++) {
@@ -64,7 +62,7 @@ public class NewSaxArffBuilder extends NewArffExporterBase {
 	}
 
 	public static Instances buildDominantInstancesFromStats(
-			List<SaxArffCandidateRow> input) throws Exception {
+			List<CalculatedRecord> input) throws Exception {
 
 		List<List<String>> distincts = getPeriodicDistincts(input);
 		for (List<String> elem : distincts) {
@@ -90,7 +88,7 @@ public class NewSaxArffBuilder extends NewArffExporterBase {
 		Instances instances = new Instances("Sax", attrInfo, input.size());
 		instances.setClassIndex(instances.numAttributes() - 1);
 
-		for (SaxArffCandidateRow linkedList : input) {
+		for (CalculatedRecord linkedList : input) {
 			Instance patient = new Instance(attrInfo.size());
 			int attrIndex = 0;
 			for (int i = 0; i < regularPartsForDivision; i++) {
@@ -133,11 +131,11 @@ public class NewSaxArffBuilder extends NewArffExporterBase {
 	}
 
 	private static List<List<String>> getPeriodicDistincts(
-			List<SaxArffCandidateRow> input) {
+			List<CalculatedRecord> input) {
 		List<List<String>> distincts = new LinkedList<List<String>>();
 		for (int i = 0; i < regularPartsForDivision; i++) {
 			List<String> currentPeriodDistincts = new LinkedList<String>();
-			for (SaxArffCandidateRow linkedList : input) {
+			for (CalculatedRecord linkedList : input) {
 				Set<String> keys = linkedList.getPeriodicNgrams().get(i)
 						.keySet();
 				for (String key : keys) {

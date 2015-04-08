@@ -2,15 +2,13 @@ package pl.poznan.put.TimeSeries.Workflows;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.DataExporters.NewSaxArffBuilder;
 import pl.poznan.put.TimeSeries.DataProcessors.PeriodicNgramCounter;
+import pl.poznan.put.TimeSeries.Model.CalculatedRecord;
 import pl.poznan.put.TimeSeries.Model.EamonnRecord;
-import pl.poznan.put.TimeSeries.Model.SaxArffCandidateRow;
 import pl.poznan.put.TimeSeries.Util.DataDivider;
 
 public class EamonnSaxWorkflow extends EamonnWorkflowBase {
@@ -19,14 +17,14 @@ public class EamonnSaxWorkflow extends EamonnWorkflowBase {
 		super(divisionOption, isDominant);
 	}
 
-	List<SaxArffCandidateRow> arffCandidateRows;
+	List<CalculatedRecord> calculatedRecords;
 
 	@Override
 	protected void processData() {
-		arffCandidateRows = new ArrayList<SaxArffCandidateRow>();
+		calculatedRecords = new ArrayList<CalculatedRecord>();
 
 		for (EamonnRecord record : records) {
-			LinkedList<HashMap<String, Integer>> periodicallyCountedNgrams = new LinkedList<HashMap<String, Integer>>();
+			ArrayList<HashMap<String, Integer>> periodicallyCountedNgrams = new ArrayList<HashMap<String, Integer>>();
 
 			List<String> dividedSax = DataDivider.divideStringRegularly(
 					record.getSaxString(), divisionPartsAmount);
@@ -37,16 +35,16 @@ public class EamonnSaxWorkflow extends EamonnWorkflowBase {
 				periodicallyCountedNgrams.add(ngramCountMap);
 			}
 
-			SaxArffCandidateRow row = new SaxArffCandidateRow(
+			CalculatedRecord calcRecord = new CalculatedRecord(
 					periodicallyCountedNgrams, record.getDestinationClass());
-			arffCandidateRows.add(row);
+			calculatedRecords.add(calcRecord);
 		}
 	}
 
 	@Override
 	protected void exportArff() throws Exception {
 		NewSaxArffBuilder arffBuilder = new NewSaxArffBuilder(isDominant);
-		arffBuilder.buildInstancesFromStats(arffCandidateRows);
+		arffBuilder.buildInstancesFromStats(calculatedRecords);
 		arffBuilder.saveArff(arffCVpath);
 	}
 
