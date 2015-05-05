@@ -4,10 +4,11 @@ import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import pl.poznan.put.Deprecated.ParsingArffExporterBase;
 import pl.poznan.put.TimeSeries.Model.RegressionResult;
 import pl.poznan.put.TimeSeries.Model.RegressionArffRow;
 
-public class RegressionArffExporter extends ArffExporterBase {
+public class RegressionArffExporter extends ParsingArffExporterBase {
 
 	private List<RegressionArffRow> records;
 

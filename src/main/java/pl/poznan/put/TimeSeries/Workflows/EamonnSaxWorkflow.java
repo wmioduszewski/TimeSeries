@@ -5,7 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
-import pl.poznan.put.TimeSeries.DataExporters.NewSaxArffBuilder;
+import pl.poznan.put.TimeSeries.DataExporters.DominantArffBuilder;
+import pl.poznan.put.TimeSeries.DataExporters.ArffExporterBase;
+import pl.poznan.put.TimeSeries.DataExporters.CountedSaxArffBuilder;
 import pl.poznan.put.TimeSeries.DataProcessors.PeriodicNgramCounter;
 import pl.poznan.put.TimeSeries.Model.CalculatedRecord;
 import pl.poznan.put.TimeSeries.Model.EamonnRecord;
@@ -17,7 +19,8 @@ public class EamonnSaxWorkflow extends EamonnWorkflowBase {
 		super(divisionOption, isDominant);
 	}
 
-	List<CalculatedRecord> calculatedRecords;
+	private ArffExporterBase exporter;
+	private List<CalculatedRecord> calculatedRecords;
 
 	@Override
 	protected void processData() {
@@ -43,9 +46,12 @@ public class EamonnSaxWorkflow extends EamonnWorkflowBase {
 
 	@Override
 	protected void exportArff() throws Exception {
-		NewSaxArffBuilder arffBuilder = new NewSaxArffBuilder(isDominant);
-		arffBuilder.buildInstancesFromStats(calculatedRecords);
-		arffBuilder.saveArff(arffCVpath);
+		if(isDominant)
+			exporter = new DominantArffBuilder(calculatedRecords);
+		else
+			exporter = new CountedSaxArffBuilder(calculatedRecords);
+		exporter.buildInstances();
+		exporter.saveArff(arffCVpath);
 	}
 
 	@Override

@@ -5,7 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
-import pl.poznan.put.TimeSeries.DataExporters.NewSaxArffBuilder;
+import pl.poznan.put.TimeSeries.DataExporters.DominantArffBuilder;
+import pl.poznan.put.TimeSeries.DataExporters.ArffExporterBase;
+import pl.poznan.put.TimeSeries.DataExporters.CountedSaxArffBuilder;
 import pl.poznan.put.TimeSeries.DataProcessors.PeriodicNgramCounter;
 import pl.poznan.put.TimeSeries.Model.CalculatedRecord;
 import pl.poznan.put.TimeSeries.Model.Patient;
@@ -17,11 +19,11 @@ public class PatientSaxWorkflow extends PatientWorkflowBase {
 		super(divisionOption, isDominant);
 	}
 
-	List<CalculatedRecord> nestedList;
+	List<CalculatedRecord> calculatedRecords;
 
 	@Override
 	protected void processData() {
-		nestedList = new ArrayList<CalculatedRecord>();
+		calculatedRecords = new ArrayList<CalculatedRecord>();
 
 		for (Patient patient : patients) {
 			ArrayList<HashMap<String, Integer>> listHashMap = new ArrayList<HashMap<String, Integer>>();
@@ -37,15 +39,19 @@ public class PatientSaxWorkflow extends PatientWorkflowBase {
 
 			CalculatedRecord calcRecord = new CalculatedRecord(listHashMap,
 					patient.getDestinationClass());
-			nestedList.add(calcRecord);
+			calculatedRecords.add(calcRecord);
 		}
 	}
 
 	@Override
 	protected void exportArff() throws Exception {
-		NewSaxArffBuilder arffBuilder = new NewSaxArffBuilder(isDominant);
-		arffBuilder.buildInstancesFromStats(nestedList);
-		arffBuilder.saveArff(arffCVpath);
+		ArffExporterBase exporter;
+		if(isDominant)
+			exporter = new DominantArffBuilder(calculatedRecords);
+		else
+			exporter = new CountedSaxArffBuilder(calculatedRecords);
+		exporter.buildInstances();
+		exporter.saveArff(arffCVpath);
 	}
 
 	@Override

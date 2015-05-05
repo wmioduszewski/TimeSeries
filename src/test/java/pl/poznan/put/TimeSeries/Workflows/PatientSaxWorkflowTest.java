@@ -8,7 +8,6 @@ public class PatientSaxWorkflowTest extends PatientSaxWorkflow {
 	public PatientSaxWorkflowTest(DivisionOptions divisionOption,
 			boolean isDominant) {
 		super(divisionOption, isDominant);
-		// TODO Auto-generated constructor stub
 	}
 	
 	@Override

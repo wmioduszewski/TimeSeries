@@ -4,10 +4,9 @@ import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.Map;
 
-import pl.poznan.put.TimeSeries.DataExporters.ArffExporterBase;
 import pl.poznan.put.TimeSeries.Model.Patient;
 
-public class PatientToArffTranslator extends ArffExporterBase {
+public class PatientToArffTranslator extends ParsingArffExporterBase {
 
 	private Map<String, String> attributes;
 	private List<Patient> patients;

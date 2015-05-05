@@ -25,23 +25,18 @@ public class EamonnRegressionWorkflow extends EamonnWorkflowBase {
 	protected void processData() {
 		rows = new ArrayList<RegressionArffRow>();
 		for (EamonnRecord record : records) {
-			try {
-				List<List<Float>> nestedCharacteristicList = DataDivider
-						.divideCollectionRegularly(record.getValues(),
-								divisionPartsAmount);
-				List<RegressionResult> regResults = new ArrayList<RegressionResult>();
-				for (List<Float> list : nestedCharacteristicList) {
-					RegressionResult result = RegressionCalculator
-							.ComputeRegression(list);
-					regResults.add(result);
-				}
-				RegressionArffRow arffRow = new RegressionArffRow(regResults,
-						record.getDestinationClass());
-				rows.add(arffRow);
-			} catch (Exception e) {
-				System.out.println("cuś dziwnego");
-				e.printStackTrace();
+			List<List<Float>> nestedCharacteristicList = DataDivider
+					.divideCollectionRegularly(record.getValues(),
+							divisionPartsAmount);
+			List<RegressionResult> regResults = new ArrayList<RegressionResult>();
+			for (List<Float> list : nestedCharacteristicList) {
+				RegressionResult result = RegressionCalculator
+						.ComputeRegression(list);
+				regResults.add(result);
 			}
+			RegressionArffRow arffRow = new RegressionArffRow(regResults,
+					record.getDestinationClass());
+			rows.add(arffRow);
 		}
 	}
 

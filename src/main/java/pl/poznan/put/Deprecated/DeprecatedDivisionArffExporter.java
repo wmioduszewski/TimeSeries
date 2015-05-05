@@ -6,10 +6,9 @@ import java.util.stream.Collectors;
 
 import pl.poznan.put.TimeSeries.Constants.AgeLimit;
 import pl.poznan.put.TimeSeries.Constants.Limits;
-import pl.poznan.put.TimeSeries.DataExporters.ArffExporterBase;
 import pl.poznan.put.TimeSeries.Model.EamonnRecord;
 
-public class DeprecatedDivisionArffExporter extends ArffExporterBase {
+public class DeprecatedDivisionArffExporter extends ParsingArffExporterBase {
 	private List<EamonnRecord> records;
 
 	public DeprecatedDivisionArffExporter(String relationTitle) {

@@ -104,7 +104,7 @@ public abstract class WorkflowBase {
 		className = className.replace("Workflow", "");
 		String eamonnDataSource = "";
 		if (className.contains("Eamonn")) {
-			eamonnDataSource = SpecificConfig.getProperty("singleDataPath")
+			eamonnDataSource = CommonConfig.getInstance().getSingleDataPath()
 					+ " ";
 			eamonnDataSource = eamonnDataSource.substring(
 					eamonnDataSource.lastIndexOf("/") + 1,

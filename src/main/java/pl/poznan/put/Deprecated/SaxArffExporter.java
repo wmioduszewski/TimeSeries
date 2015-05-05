@@ -5,12 +5,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import pl.poznan.put.TimeSeries.DataExporters.ArffExporterBase;
 import pl.poznan.put.TimeSeries.Model.EamonnRecord;
 import pl.poznan.put.TimeSeries.Util.SpecificConfig;
 import pl.poznan.put.TimeSeries.Util.CommonConfig;
 
-public class SaxArffExporter extends ArffExporterBase {
+public class SaxArffExporter extends ParsingArffExporterBase {
 	private List<EamonnRecord> records;
 	private int attrLength;
 	private int recordLength;

@@ -66,7 +66,6 @@ public class DataImporterEamonnTest {
 			f = new File(String.format("%s/%s_TEST", testSetName, testSetName));
 			f.createNewFile();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

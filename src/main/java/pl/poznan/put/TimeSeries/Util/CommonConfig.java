@@ -13,6 +13,18 @@ public class CommonConfig {
 	private float attributesToCutRatio = 0.5f;
 	private static Object mutex = new Object();
 	private boolean isFolderDataUsed = true;
+	
+	//data paths
+	private String singleDataPath = "dataset2/ItalyPowerDemand";
+	private String pureDataSet = "dataset glaucoma/csv2/dane20140812";
+
+	public String getPureDataSet() {
+		return SpecificConfig.getProperty("dataFolderPath") + pureDataSet;
+	}
+
+	public String getSingleDataPath() {
+		return SpecificConfig.getProperty("dataFolderPath") + singleDataPath;
+	}
 
 	public boolean isFolderDataUsed() {
 		return isFolderDataUsed;
@@ -99,4 +111,6 @@ public class CommonConfig {
 	public void setAttributesToCutRatio(float attributesToCutRatio) {
 		this.attributesToCutRatio = attributesToCutRatio;
 	}
+	
+	
 }

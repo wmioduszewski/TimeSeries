@@ -9,6 +9,7 @@ import pl.poznan.put.TimeSeries.DataImporters.PatientDataImporterBase;
 import pl.poznan.put.TimeSeries.DataImporters.PatientDataImporterPure;
 import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.Patient;
+import pl.poznan.put.TimeSeries.Util.CommonConfig;
 import pl.poznan.put.TimeSeries.Util.DataDivider;
 import pl.poznan.put.TimeSeries.Util.SpecificConfig;
 
@@ -23,7 +24,7 @@ public abstract class PatientWorkflowBase extends WorkflowBase {
 
 	@Override
 	protected void importData() {
-		String pureDataPath = SpecificConfig.getProperty("pureDataSet");
+		String pureDataPath = CommonConfig.getInstance().getPureDataSet();
 		List<Patient> purePatients = null;
 		PatientDataImporterBase importer;
 		try {
