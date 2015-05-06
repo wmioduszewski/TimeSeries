@@ -38,10 +38,6 @@ public class DominantArffBuilder extends ArffExporterBase {
 
 	@Override
 	public Instances buildInstances() {
-		for (List<String> elem : distincts) {
-			// StringDominance.eraseMaxString(elem);
-			// StringDominance.eraseMinString(elem);
-		}
 
 		instances = new Instances("Sax dominant", attrInfo, input.size());
 		instances.setClassIndex(instances.numAttributes() - 1);
@@ -84,6 +80,22 @@ public class DominantArffBuilder extends ArffExporterBase {
 					destClasses.indexOf(calculatedRecord.getDestClass()));
 			instances.add(record);
 		}
+		removeMaxMinAttributes();
 		return instances;
+	}
+
+	private void removeMaxMinAttributes() {
+		for (int i = 0; i < regularPartsForDivision; i++) {
+			String prefix = "o" + (i + 1);
+			List<String> currentDistincts = distincts.get(i);
+			String minStr = prefix + "atL"
+					+ StringDominance.getMinString(currentDistincts);
+			String maxStr = prefix + "atM"
+					+ StringDominance.getMaxString(currentDistincts);
+			Attribute minAttr = instances.attribute(minStr);
+			instances.deleteAttributeAt(minAttr.index());
+			Attribute maxAttr = instances.attribute(maxStr);
+			instances.deleteAttributeAt(maxAttr.index());
+		}
 	}
 }

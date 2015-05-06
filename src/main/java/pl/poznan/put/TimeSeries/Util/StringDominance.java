@@ -49,22 +49,22 @@ public class StringDominance {
 		return res;
 	}
 
-	public static void eraseMinString(List<String> input) {
+	public static String getMinString(List<String> input) {
 		String min = input.get(0);
 		for (String elem : input) {
 			if (isStringLessOrEqualTo(min, elem))
 				min = elem;
 		}
-		input.remove(min);
+		return min;
 	}
 
-	public static void eraseMaxString(List<String> input) {
+	public static String getMaxString(List<String> input) {
 		String max = input.get(0);
 		for (String elem : input) {
 			if (isStringGreaterOrEqualTo(max, elem))
 				max = elem;
 		}
-		input.remove(max);
+		return max;
 	}
 
 }

@@ -87,7 +87,7 @@ public class SaxExporterTest {
 	}
 
 	@Test
-	public void DominantTest() {
+	public void dominantTest() {
 		createTestInstance();
 		String arffPath = "testArff";
 		String patternPath = "testData/proper dominant output.txt";
