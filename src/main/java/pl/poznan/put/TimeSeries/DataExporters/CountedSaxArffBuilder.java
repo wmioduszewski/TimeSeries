@@ -17,7 +17,7 @@ public class CountedSaxArffBuilder extends ArffExporterBase {
 
 	@Override
 	protected void setAttributes() {
-		FastVector attrInfo = new FastVector();
+		attrInfo = new FastVector();
 		for (int i = 0; i < regularPartsForDivision; i++) {
 			String prefix = "o" + (i + 1);
 			for (String elem : distincts.get(i)) {
@@ -32,14 +32,12 @@ public class CountedSaxArffBuilder extends ArffExporterBase {
 			e.printStackTrace();
 		}
 		attrInfo.addElement(destClassAttribute);
-
-		Instances instances = new Instances("Sax", attrInfo, input.size());
-		instances.setClassIndex(instances.numAttributes() - 1);
 	}
 
 	@Override
 	public Instances buildInstances() {
-		// instances = new Instances("Sax", attrInfo, input.size());
+
+		instances = new Instances("Sax counted", attrInfo, input.size());
 		instances.setClassIndex(instances.numAttributes() - 1);
 
 		int distinctsElementsSum = (int) distincts.stream()
@@ -61,7 +59,7 @@ public class CountedSaxArffBuilder extends ArffExporterBase {
 					instance.setValue(attrIndex++, count);
 				}
 			}
-			instance.setValue(attrIndex,// TODO: test it with real data
+			instance.setValue(attrIndex,
 					destClasses.indexOf(calculatedRecord.getDestClass()));
 			instances.add(instance);
 		}

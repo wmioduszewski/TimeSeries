@@ -68,20 +68,22 @@ public class SaxExporterTest {
 	}
 
 	@Test
-	public void nonDominantTest() {
+	public void countedTest() {
 		createTestInstance();
 		String arffPath = "testArff";
-		boolean doAttributesCut = false;
-
+		String patternPath = "testData/proper counted output.txt";
+		
 		ArffExporterBase builder = new CountedSaxArffBuilder(calculatedRecords);
 
 		builder.buildInstances();
 		builder.saveArff(arffPath);
 
-		// TODO: check if file ok
+		boolean result = checkIfFilesContentIsTheSame(arffPath, patternPath);
 
 		File f = new File(arffPath);
 		f.delete();
+		
+		assertTrue(result);
 	}
 
 	@Test

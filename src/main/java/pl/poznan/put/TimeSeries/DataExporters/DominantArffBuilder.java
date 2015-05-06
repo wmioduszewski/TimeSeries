@@ -43,7 +43,7 @@ public class DominantArffBuilder extends ArffExporterBase {
 			// StringDominance.eraseMinString(elem);
 		}
 
-		instances = new Instances("Sax", attrInfo, input.size());
+		instances = new Instances("Sax dominant", attrInfo, input.size());
 		instances.setClassIndex(instances.numAttributes() - 1);
 
 		for (CalculatedRecord calculatedRecord : input) {

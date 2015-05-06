@@ -1,4 +1,4 @@
-@relation Sax
+@relation 'Sax dominant'
 
 @attribute o1atMaa numeric
 @attribute o1atLaa numeric
