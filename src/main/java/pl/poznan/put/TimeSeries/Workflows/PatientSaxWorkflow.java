@@ -6,7 +6,7 @@ import java.util.List;
 
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.DataExporters.DominantArffBuilder;
-import pl.poznan.put.TimeSeries.DataExporters.ArffExporterBase;
+import pl.poznan.put.TimeSeries.DataExporters.SaxArffExporterBase;
 import pl.poznan.put.TimeSeries.DataExporters.CountedSaxArffBuilder;
 import pl.poznan.put.TimeSeries.DataProcessors.PeriodicNgramCounter;
 import pl.poznan.put.TimeSeries.Model.CalculatedRecord;
@@ -45,7 +45,7 @@ public class PatientSaxWorkflow extends PatientWorkflowBase {
 
 	@Override
 	protected void exportArff() throws Exception {
-		ArffExporterBase exporter;
+		SaxArffExporterBase exporter;
 		if(isDominant)
 			exporter = new DominantArffBuilder(calculatedRecords);
 		else

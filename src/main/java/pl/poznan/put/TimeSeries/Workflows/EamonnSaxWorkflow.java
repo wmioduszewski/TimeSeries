@@ -6,7 +6,7 @@ import java.util.List;
 
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.DataExporters.DominantArffBuilder;
-import pl.poznan.put.TimeSeries.DataExporters.ArffExporterBase;
+import pl.poznan.put.TimeSeries.DataExporters.SaxArffExporterBase;
 import pl.poznan.put.TimeSeries.DataExporters.CountedSaxArffBuilder;
 import pl.poznan.put.TimeSeries.DataProcessors.PeriodicNgramCounter;
 import pl.poznan.put.TimeSeries.Model.CalculatedRecord;
@@ -19,7 +19,7 @@ public class EamonnSaxWorkflow extends EamonnWorkflowBase {
 		super(divisionOption, isDominant);
 	}
 
-	private ArffExporterBase exporter;
+	private SaxArffExporterBase exporter;
 	private List<CalculatedRecord> calculatedRecords;
 
 	@Override

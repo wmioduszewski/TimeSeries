@@ -10,7 +10,7 @@ import weka.core.FastVector;
 import weka.core.Instance;
 import weka.core.Instances;
 
-public class DominantArffBuilder extends ArffExporterBase {
+public class DominantArffBuilder extends SaxArffExporterBase {
 
 	public DominantArffBuilder(List<CalculatedRecord> input) {
 		super(input);
@@ -26,7 +26,7 @@ public class DominantArffBuilder extends ArffExporterBase {
 				attrInfo.addElement(new Attribute(prefix + "atL" + elem));
 			}
 		}
-
+		
 		Attribute destClassAttribute = null;
 		try {
 			destClassAttribute = constructDestinationClassesNominalAttribute(destClasses);

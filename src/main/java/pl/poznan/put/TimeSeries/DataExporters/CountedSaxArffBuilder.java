@@ -9,7 +9,7 @@ import weka.core.FastVector;
 import weka.core.Instance;
 import weka.core.Instances;
 
-public class CountedSaxArffBuilder extends ArffExporterBase {
+public class CountedSaxArffBuilder extends SaxArffExporterBase {
 
 	public CountedSaxArffBuilder(List<CalculatedRecord> input) {
 		super(input);

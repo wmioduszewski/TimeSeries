@@ -1,10 +1,9 @@
-package pl.poznan.put.TimeSeries.DataExporters;
+package pl.poznan.put.Deprecated;
 
 import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import pl.poznan.put.Deprecated.ParsingArffExporterBase;
 import pl.poznan.put.TimeSeries.Model.RegressionResult;
 import pl.poznan.put.TimeSeries.Model.RegressionArffRow;
 

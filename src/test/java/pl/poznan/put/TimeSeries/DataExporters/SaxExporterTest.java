@@ -17,19 +17,19 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import pl.poznan.put.TimeSeries.Utils;
 import pl.poznan.put.TimeSeries.DataProcessors.PeriodicNgramCounter;
 import pl.poznan.put.TimeSeries.Model.CalculatedRecord;
 import pl.poznan.put.TimeSeries.Util.DataDivider;
 
 public class SaxExporterTest {
 
-	private List<CalculatedRecord> calculatedRecords;
 	private int divisionPartsAmount = 3;
 	private int windowLen = 2;
 	private double destinationClass = 1.0;
 
-	private void createTestInstance() {
-		calculatedRecords = new ArrayList<CalculatedRecord>();
+	private List<CalculatedRecord> createTestInstance() {
+		List<CalculatedRecord> calculatedRecords = new ArrayList<CalculatedRecord>();
 
 		List<String> saxStrings = Arrays.asList("abaabbbbaabb", "abbabaaaabba",
 				"aaababbbaaaa");
@@ -49,80 +49,29 @@ public class SaxExporterTest {
 					periodicallyCountedNgrams, destinationClass++);
 			calculatedRecords.add(calcRecord);
 		}
-	}
-
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
-
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	@After
-	public void tearDown() throws Exception {
+		return calculatedRecords;
 	}
 
 	@Test
 	public void countedTest() {
-		createTestInstance();
-		String arffPath = "testArff";
+		String exportPath = "testArff";
 		String patternPath = "testData/proper counted output.txt";
-		
-		ArffExporterBase builder = new CountedSaxArffBuilder(calculatedRecords);
-
-		builder.buildInstances();
-		builder.saveArff(arffPath);
-
-		boolean result = checkIfFilesContentIsTheSame(arffPath, patternPath);
-
-		File f = new File(arffPath);
-		f.delete();
-		
+		SaxArffExporterBase exporter = new CountedSaxArffBuilder(
+				createTestInstance());
+		boolean result = CommonCase.isExporterCorrect(exporter, patternPath,
+				exportPath);
 		assertTrue(result);
 	}
 
 	@Test
 	public void dominantTest() {
-		createTestInstance();
-		String arffPath = "testArff";
+		String exportPath = "testArff";
 		String patternPath = "testData/proper dominant output.txt";
-
-		ArffExporterBase builder = new DominantArffBuilder(calculatedRecords);
-
-		try {
-			builder.buildInstances();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		builder.saveArff(arffPath);
-
-		boolean result = checkIfFilesContentIsTheSame(arffPath, patternPath);
-
-		File f = new File(arffPath);
-		f.delete();
-
+		SaxArffExporterBase exporter = new DominantArffBuilder(
+				createTestInstance());
+		boolean result = CommonCase.isExporterCorrect(exporter, patternPath,
+				exportPath);
 		assertTrue(result);
-	}
-
-	private boolean checkIfFilesContentIsTheSame(String pathA, String pathB) {
-		String contentA = "a";
-		String contentB = "b";
-		try {
-			contentA = new String(Files.readAllBytes(Paths.get(pathA)));
-			contentB = new String(Files.readAllBytes(Paths.get(pathB)));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		contentA = contentA.replaceAll("\r\n", "\n");
-		contentB = contentB.replaceAll("\r\n", "\n");
-
-		return contentA.equals(contentB);
 	}
 
 }

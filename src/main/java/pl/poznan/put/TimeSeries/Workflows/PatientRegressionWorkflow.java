@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
-import pl.poznan.put.TimeSeries.DataExporters.RegressionArffExporter;
+import pl.poznan.put.TimeSeries.DataExporters.RegressionArffBuilder;
 import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.Patient;
-import pl.poznan.put.TimeSeries.Model.RegressionResult;
 import pl.poznan.put.TimeSeries.Model.RegressionArffRow;
+import pl.poznan.put.TimeSeries.Model.RegressionResult;
 import pl.poznan.put.TimeSeries.Util.Convert;
 import pl.poznan.put.TimeSeries.Util.RegressionCalculator;
 
@@ -45,9 +45,8 @@ public class PatientRegressionWorkflow extends PatientWorkflowBase {
 
 	@Override
 	protected void exportArff() throws IOException {
-		RegressionArffExporter exporter = new RegressionArffExporter(
-				"UnifiedData");
-		exporter.saveUnifiedRecordsToArffData(rows, arffCVpath);
+		RegressionArffBuilder exporter = new RegressionArffBuilder(rows); 
+		exporter.saveArff(arffCVpath);
 	}
 
 	@Override
