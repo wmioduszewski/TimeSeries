@@ -7,6 +7,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
+@Deprecated
 public abstract class ParsingArffExporterBase {
 
 	protected StringBuilder arffFileContent;

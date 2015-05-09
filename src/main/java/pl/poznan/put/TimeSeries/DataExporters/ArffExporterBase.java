@@ -17,7 +17,6 @@ public abstract class ArffExporterBase {
 	protected Instances instances;
 	protected FastVector attrInfo;
 	protected List<Double> destClasses;
-
 	protected abstract void setAttributes();
 
 	public abstract Instances buildInstances();

@@ -9,6 +9,7 @@ import pl.poznan.put.TimeSeries.Renderers.ChartBase;
 import pl.poznan.put.TimeSeries.Renderers.ChartWindow;
 import pl.poznan.put.TimeSeries.Renderers.CleanChart;
 
+@Deprecated
 public class ChartGenerator {
 
 	@SuppressWarnings("unused")

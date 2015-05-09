@@ -6,6 +6,7 @@ import java.util.List;
 import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.Patient;
 
+@Deprecated
 public class DataAverager {
 
 	public static List<Float> averageData(PatientGroup patientGroup)

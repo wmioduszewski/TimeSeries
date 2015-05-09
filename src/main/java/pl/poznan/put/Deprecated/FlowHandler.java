@@ -17,6 +17,7 @@ import weka.classifiers.Classifier;
 import weka.classifiers.rules.JRip;
 import weka.classifiers.trees.J48;
 
+@Deprecated
 public class FlowHandler {
 
 	private String folderPath;

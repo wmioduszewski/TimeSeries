@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import pl.poznan.put.TimeSeries.Model.EamonnRecord;
-import pl.poznan.put.TimeSeries.Util.SpecificConfig;
 import pl.poznan.put.TimeSeries.Util.CommonConfig;
 
+@Deprecated
 public class SaxArffExporter extends ParsingArffExporterBase {
 	private List<EamonnRecord> records;
 	private int attrLength;

@@ -7,6 +7,7 @@ import pl.poznan.put.TimeSeries.Constants.AgeLimit;
 import pl.poznan.put.TimeSeries.Constants.TimeLimit;
 import pl.poznan.put.TimeSeries.Model.Patient;
 
+@Deprecated
 public class PatientGroup {
 
 	private TimeLimit timeLimit;

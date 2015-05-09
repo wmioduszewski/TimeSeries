@@ -8,6 +8,7 @@ import pl.poznan.put.TimeSeries.Constants.AgeLimit;
 import pl.poznan.put.TimeSeries.Constants.Limits;
 import pl.poznan.put.TimeSeries.Model.EamonnRecord;
 
+@Deprecated
 public class DeprecatedDivisionArffExporter extends ParsingArffExporterBase {
 	private List<EamonnRecord> records;
 

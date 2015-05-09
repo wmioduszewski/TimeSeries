@@ -18,6 +18,7 @@ import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Util.DataDivider;
 import pl.poznan.put.TimeSeries.Util.SpecificConfig;
 
+@Deprecated
 public class Misc {
 	
 	@SuppressWarnings("unused")

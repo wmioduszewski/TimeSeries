@@ -7,9 +7,9 @@ import java.io.IOException;
 import java.util.List;
 
 import pl.poznan.put.TimeSeries.Model.EamonnRecord;
-import pl.poznan.put.TimeSeries.Util.SpecificConfig;
 import pl.poznan.put.TimeSeries.Util.CommonConfig;
 
+@Deprecated
 public class DeprecatedDataExporterEamonn {
 
 	private List<EamonnRecord> records;

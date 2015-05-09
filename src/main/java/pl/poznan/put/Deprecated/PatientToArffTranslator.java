@@ -6,6 +6,7 @@ import java.util.Map;
 
 import pl.poznan.put.TimeSeries.Model.Patient;
 
+@Deprecated
 public class PatientToArffTranslator extends ParsingArffExporterBase {
 
 	private Map<String, String> attributes;

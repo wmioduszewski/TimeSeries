@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import pl.poznan.put.TimeSeries.Model.RegressionResult;
 import pl.poznan.put.TimeSeries.Model.RegressionArffRow;
 
+@Deprecated
 public class RegressionArffExporter extends ParsingArffExporterBase {
 
 	private List<RegressionArffRow> records;

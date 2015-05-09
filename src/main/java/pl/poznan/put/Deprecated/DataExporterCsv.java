@@ -14,6 +14,7 @@ import org.jfree.chart.JFreeChart;
 import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Renderers.ChartBase;
 
+@Deprecated
 public class DataExporterCsv {
 
 	private List<Patient> patients;
