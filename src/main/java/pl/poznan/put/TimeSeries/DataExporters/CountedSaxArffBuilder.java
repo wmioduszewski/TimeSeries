@@ -8,6 +8,7 @@ import weka.core.Attribute;
 import weka.core.FastVector;
 import weka.core.Instance;
 import weka.core.Instances;
+import weka.core.SparseInstance;
 
 public class CountedSaxArffBuilder extends SaxArffExporterBase {
 
@@ -44,7 +45,7 @@ public class CountedSaxArffBuilder extends SaxArffExporterBase {
 				.flatMap(x -> x.stream()).count();
 
 		for (CalculatedRecord calculatedRecord : input) {
-			Instance instance = new Instance(distinctsElementsSum + 1);
+			Instance instance = new SparseInstance(distinctsElementsSum + 1);
 			int attrIndex = 0;
 			for (int i = 0; i < regularPartsForDivision; i++) {
 				List<String> currentDistincts = distincts.get(i);

@@ -9,6 +9,7 @@ import weka.core.Attribute;
 import weka.core.FastVector;
 import weka.core.Instance;
 import weka.core.Instances;
+import weka.core.SparseInstance;
 
 public class DominantArffBuilder extends SaxArffExporterBase {
 
@@ -43,7 +44,7 @@ public class DominantArffBuilder extends SaxArffExporterBase {
 		instances.setClassIndex(instances.numAttributes() - 1);
 
 		for (CalculatedRecord calculatedRecord : input) {
-			Instance record = new Instance(attrInfo.size());
+			Instance record = new SparseInstance(attrInfo.size());
 			int attrIndex = 0;
 			for (int i = 0; i < regularPartsForDivision; i++) {
 				List<String> currentDistincts = distincts.get(i);

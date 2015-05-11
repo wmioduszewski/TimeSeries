@@ -6,7 +6,6 @@ import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.DataImporters.DataImporterEamonn;
 import pl.poznan.put.TimeSeries.Model.EamonnRecord;
 import pl.poznan.put.TimeSeries.Util.CommonConfig;
-import pl.poznan.put.TimeSeries.Util.SpecificConfig;
 
 public abstract class EamonnWorkflowBase extends WorkflowBase {
 
@@ -18,8 +17,8 @@ public abstract class EamonnWorkflowBase extends WorkflowBase {
 
 	@Override
 	protected void importData() {
-		DataImporterEamonn importer = new DataImporterEamonn(
-				CommonConfig.getInstance().getSingleDataPath());
+		DataImporterEamonn importer = new DataImporterEamonn(CommonConfig
+				.getInstance().getSingleDataPath());
 		try {
 			records = importer.importEamonnData();
 		} catch (Exception e) {

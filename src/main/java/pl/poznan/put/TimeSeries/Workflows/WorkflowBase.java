@@ -7,7 +7,6 @@ import pl.poznan.put.TimeSeries.Classifying.CrossValidationExperiment;
 import pl.poznan.put.TimeSeries.Classifying.Experiment;
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.Model.IRecord;
-import pl.poznan.put.TimeSeries.Util.SpecificConfig;
 import pl.poznan.put.TimeSeries.Util.CommonConfig;
 import weka.classifiers.Classifier;
 import weka.classifiers.rules.JRip;
@@ -29,7 +28,8 @@ public abstract class WorkflowBase {
 	}
 
 	protected Classifier classifier = new JRip();
-	protected int divisionPartsAmount = CommonConfig.getInstance().getDivisionPartsAmount();
+	protected int divisionPartsAmount = CommonConfig.getInstance()
+			.getDivisionPartsAmount();
 
 	protected int windowLen = CommonConfig.getInstance().getNgramSize();
 	protected String arffTrainPath;
@@ -39,7 +39,7 @@ public abstract class WorkflowBase {
 	protected DivisionOptions divisionOption;
 	protected boolean isDominant;
 	protected boolean isAttrBag;
-	
+
 	public WorkflowBase(DivisionOptions divisionOption, boolean isDominant) {
 		super();
 		this.divisionOption = divisionOption;
@@ -113,7 +113,7 @@ public abstract class WorkflowBase {
 		String dominant = isDominant ? "dominant" : "non-dominant";
 		arffCVpath = String.format("output/arffOutput/%s%s%dp%dgram%s %s.arff",
 				className, eamonnDataSource, divisionPartsAmount, windowLen,
-				divisionOption.toString(),dominant);
+				divisionOption.toString(), dominant);
 	}
 
 }

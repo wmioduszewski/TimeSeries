@@ -9,6 +9,7 @@ import weka.core.Attribute;
 import weka.core.FastVector;
 import weka.core.Instance;
 import weka.core.Instances;
+import weka.core.SparseInstance;
 
 public class RegressionArffBuilder extends ArffExporterBase {
 
@@ -48,7 +49,7 @@ public class RegressionArffBuilder extends ArffExporterBase {
 		instances.setClassIndex(instances.numAttributes() - 1);
 
 		for (RegressionArffRow row : input) {
-			Instance record = new Instance(attrInfo.size());
+			Instance record = new SparseInstance(attrInfo.size());
 			int attrIdx = 0;
 			for (RegressionResult regResult : row.getRegressionResults()) {
 				record.setValue(attrIdx++, regResult.getSlope());
