@@ -4,7 +4,8 @@ import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
 
-import pl.poznan.put.TimeSeries.Classifying.Experiment;
+import pl.poznan.put.TimeSeries.Classifying.ExperimentResult;
+import pl.poznan.put.TimeSeries.Classifying.RegularExperiment;
 import pl.poznan.put.TimeSeries.DataImporters.DataImporterEamonn;
 import pl.poznan.put.TimeSeries.Model.EamonnRecord;
 import pl.poznan.put.TimeSeries.Reporting.EntireReport;
@@ -62,10 +63,12 @@ public class FlowHandler {
 			for(int i=0;i<classifiers.size();i++){
 				Classifier classifier = classifiers.get(i);
 				
-				double accuracy = Experiment.runExperiment(classifier, "temp/"
+				RegularExperiment r = new RegularExperiment(classifier);
+				
+				ExperimentResult result = r.runExperiment("temp/"
 					+ datasetName + "_TRAIN.arff", "temp/" + datasetName
 					+ "_TEST.arff");
-				record.AddAccuracy(accuracy);
+				record.AddAccuracy(result.getAccuracy());
 			}
 			report.AddReportRecord(record);
 		}

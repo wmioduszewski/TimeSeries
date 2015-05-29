@@ -12,6 +12,7 @@ import pl.poznan.put.TimeSeries.Model.RegressionArffRow;
 import pl.poznan.put.TimeSeries.Model.RegressionResult;
 import pl.poznan.put.TimeSeries.Util.Convert;
 import pl.poznan.put.TimeSeries.Util.RegressionCalculator;
+import weka.core.Instances;
 
 public class PatientRegressionWorkflow extends PatientWorkflowBase {
 
@@ -19,8 +20,9 @@ public class PatientRegressionWorkflow extends PatientWorkflowBase {
 		super(divisionOption,isDominant);
 	}
 
-	List<RegressionArffRow> rows;
-
+	private List<RegressionArffRow> rows;
+	private RegressionArffBuilder exporter; 
+	
 	@Override
 	protected void processData() throws Exception {
 
@@ -45,13 +47,18 @@ public class PatientRegressionWorkflow extends PatientWorkflowBase {
 
 	@Override
 	protected void exportArff() throws IOException {
-		RegressionArffBuilder exporter = new RegressionArffBuilder(rows); 
 		exporter.saveArff(arffCVpath);
 	}
 
 	@Override
 	protected void reportStatistics() {
 		WorkflowBase.reportInputStatistics(patients);
+	}
+
+	@Override
+	protected Instances buildInstances() {
+		exporter= new RegressionArffBuilder(rows);
+		return exporter.buildInstances();
 	}
 
 }

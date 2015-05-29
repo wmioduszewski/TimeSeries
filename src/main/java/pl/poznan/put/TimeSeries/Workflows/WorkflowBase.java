@@ -3,13 +3,12 @@ package pl.poznan.put.TimeSeries.Workflows;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import pl.poznan.put.TimeSeries.Classifying.CrossValidationExperiment;
-import pl.poznan.put.TimeSeries.Classifying.Experiment;
+import pl.poznan.put.TimeSeries.Classifying.ExperimentBase;
+import pl.poznan.put.TimeSeries.Classifying.ExperimentResult;
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.Model.IRecord;
 import pl.poznan.put.TimeSeries.Util.CommonConfig;
-import weka.classifiers.Classifier;
-import weka.classifiers.rules.JRip;
+import weka.core.Instances;
 
 public abstract class WorkflowBase {
 
@@ -27,18 +26,19 @@ public abstract class WorkflowBase {
 		}
 	}
 
-	protected Classifier classifier = new JRip();
+	protected String arffCVpath;
+
+	protected DivisionOptions divisionOption;
 	protected int divisionPartsAmount = CommonConfig.getInstance()
 			.getDivisionPartsAmount();
-
-	protected int windowLen = CommonConfig.getInstance().getNgramSize();
-	protected String arffTrainPath;
-	protected String arffTestPath;
-	protected String arffCVpath;
-	protected List<IRecord> recs;
-	protected DivisionOptions divisionOption;
-	protected boolean isDominant;
 	protected boolean isAttrBag;
+	protected boolean isDominant;
+	protected List<IRecord> records;
+	protected int windowLen = CommonConfig.getInstance().getNgramSize();
+
+	private static double trainToTestRatio = CommonConfig.getInstance()
+			.getTrainToTestRatio();
+	private static long seed = 1000;
 
 	public WorkflowBase(DivisionOptions divisionOption, boolean isDominant) {
 		super();
@@ -48,54 +48,52 @@ public abstract class WorkflowBase {
 		isAttrBag = true;
 	}
 
+	public void runExperiment(ExperimentBase experiment) throws Exception {
+		importData();
+		processData();
+		Instances instances = buildInstances();
+		ExperimentResult result = experiment.runExperiment(instances,
+				trainToTestRatio, seed);
+		printResult(result);
+	}
+
+	public void runFileBasedExperiment(ExperimentBase experiment) {
+
+		System.out.println("Workflow has started.");
+		try {
+			importData();
+			processData();
+			buildInstances();
+			exportArff();
+			reportStatistics();
+			ExperimentResult result =experiment.runFileExperiment(arffCVpath, trainToTestRatio, seed);
+			printResult(result);
+		} catch (Exception e) {
+			System.out.println("Error during workflow performing:");
+			e.printStackTrace();
+		}
+		
+		System.out.println("Workflow has ended.");
+	}
+
+	private void printResult(ExperimentResult experimentResult) {
+		System.out.println();
+		if (experimentResult != null)
+			System.out.println(experimentResult);
+		else
+			System.out.println("Experiment result is null!");
+		System.out.println();
+	}
+
 	protected abstract void exportArff() throws Exception;
 
 	protected abstract void importData();
 
 	protected abstract void processData() throws Exception;
 
+	protected abstract Instances buildInstances();
+
 	protected abstract void reportStatistics();
-
-	protected void runCrossValidationExperiment() {
-		try {
-			int folds = 10;
-			double partOfDataSet = 1;
-			long seed = 1000;
-			CrossValidationExperiment.runCVExperiment(classifier, arffCVpath,
-					folds, partOfDataSet, seed);
-		} catch (Exception e) {
-			System.out.println("Experiment failed.");
-			e.printStackTrace();
-		}
-	}
-
-	protected void runExperiment() {
-		try {
-			double res = Experiment.runExperiment(classifier, arffTrainPath,
-					arffTestPath);
-			System.out.println("The result for "
-					+ this.getClass().getSimpleName() + " is: " + res);
-		} catch (Exception e) {
-			System.out.println("Experiment failed.");
-			e.printStackTrace();
-		}
-	}
-
-	public void runWorkflow() {
-
-		System.out.println("Workflow has started.");
-		try {
-			importData();
-			processData();
-			exportArff();
-			reportStatistics();
-			runCrossValidationExperiment();
-		} catch (Exception e) {
-			System.out.println("Error during workflow performing:");
-			e.printStackTrace();
-		}
-		System.out.println("Workflow has ended.");
-	}
 
 	protected void setTempPaths() {
 		String className = this.getClass().getName();
@@ -115,5 +113,4 @@ public abstract class WorkflowBase {
 				className, eamonnDataSource, divisionPartsAmount, windowLen,
 				divisionOption.toString(), dominant);
 	}
-
 }

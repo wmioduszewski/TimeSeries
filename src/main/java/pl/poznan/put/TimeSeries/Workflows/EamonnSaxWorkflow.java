@@ -12,6 +12,7 @@ import pl.poznan.put.TimeSeries.DataProcessors.PeriodicNgramCounter;
 import pl.poznan.put.TimeSeries.Model.CalculatedRecord;
 import pl.poznan.put.TimeSeries.Model.EamonnRecord;
 import pl.poznan.put.TimeSeries.Util.DataDivider;
+import weka.core.Instances;
 
 public class EamonnSaxWorkflow extends EamonnWorkflowBase {
 
@@ -46,16 +47,20 @@ public class EamonnSaxWorkflow extends EamonnWorkflowBase {
 
 	@Override
 	protected void exportArff() throws Exception {
-		if(isDominant)
-			exporter = new DominantArffBuilder(calculatedRecords);
-		else
-			exporter = new CountedSaxArffBuilder(calculatedRecords);
-		exporter.buildInstances();
 		exporter.saveArff(arffCVpath);
 	}
 
 	@Override
 	protected void reportStatistics() {
 		WorkflowBase.reportInputStatistics(records);
+	}
+
+	@Override
+	protected Instances buildInstances() {
+		if(isDominant)
+			exporter = new DominantArffBuilder(calculatedRecords);
+		else
+			exporter = new CountedSaxArffBuilder(calculatedRecords);
+		return exporter.buildInstances();
 	}
 }

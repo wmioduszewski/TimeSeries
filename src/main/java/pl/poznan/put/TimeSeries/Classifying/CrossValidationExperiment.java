@@ -1,24 +1,28 @@
 package pl.poznan.put.TimeSeries.Classifying;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.util.Random;
 
 import weka.classifiers.Classifier;
 import weka.core.Instance;
 import weka.core.Instances;
 
-public class CrossValidationExperiment {
+public class CrossValidationExperiment extends ExperimentBase {
 
-	public static void runCVExperiment(Classifier classifier,
-			String dataSetPath, int folds, double partOfDataSet, long seed)
-			throws Exception {
-		BufferedReader reader = new BufferedReader(new FileReader(dataSetPath));
-		Instances dataSetTmp = new Instances(reader);
-		dataSetTmp.randomize(new Random(seed));
-		Instances dataSet = new Instances(dataSetTmp, 0,
-				(int) ((double) dataSetTmp.numInstances() * partOfDataSet));
-		reader.close();
+	private int folds = 10;
+
+	public CrossValidationExperiment(Classifier classifier) {
+		super(classifier);
+	}
+
+	public int getFolds() {
+		return folds;
+	}
+
+	public ExperimentResult runExperiment(Instances baseDataSet,
+			double partOfDataSet, long seed) throws Exception {
+		baseDataSet.randomize(new Random(seed));
+		Instances dataSet = new Instances(baseDataSet, 0,
+				(int) ((double) baseDataSet.numInstances() * partOfDataSet));
 
 		if (dataSet.classIndex() == -1)
 			dataSet.setClassIndex(dataSet.numAttributes() - 1);
@@ -55,11 +59,19 @@ public class CrossValidationExperiment {
 
 		loss01 /= (double) folds;
 		squaredError /= (double) folds;
+		// TODO: add accuracy
+		ExperimentResult result = new ExperimentResult(0, loss01, squaredError);
+		return result;
+	}
 
-		System.out.println("CV evaluation for "
-				+ classifier.getClass().getSimpleName());
-		System.out.println(" - 0/1 loss:      " + loss01);
-		System.out.println(" - MAE:           " + "to be implemented");
-		System.out.println("--------------------------------------");
+	public void setFolds(int folds) {
+		this.folds = folds;
+	}
+
+	@Override
+	public ExperimentResult runFileExperiment(String pathToArff,
+			double trainToTestRatio, long seed) throws Exception {
+		Instances dataSet = Utils.readInstances(pathToArff);
+		return runExperiment(dataSet, trainToTestRatio, seed);
 	}
 }

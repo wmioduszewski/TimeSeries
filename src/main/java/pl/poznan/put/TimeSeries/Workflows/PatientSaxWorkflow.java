@@ -12,13 +12,14 @@ import pl.poznan.put.TimeSeries.DataProcessors.PeriodicNgramCounter;
 import pl.poznan.put.TimeSeries.Model.CalculatedRecord;
 import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Util.DataDivider;
+import weka.core.Instances;
 
 public class PatientSaxWorkflow extends PatientWorkflowBase {
 
 	public PatientSaxWorkflow(DivisionOptions divisionOption, boolean isDominant) {
 		super(divisionOption, isDominant);
 	}
-
+	private SaxArffExporterBase exporter;
 	List<CalculatedRecord> calculatedRecords;
 
 	@Override
@@ -45,18 +46,21 @@ public class PatientSaxWorkflow extends PatientWorkflowBase {
 
 	@Override
 	protected void exportArff() throws Exception {
-		SaxArffExporterBase exporter;
-		if(isDominant)
-			exporter = new DominantArffBuilder(calculatedRecords);
-		else
-			exporter = new CountedSaxArffBuilder(calculatedRecords);
-		exporter.buildInstances();
 		exporter.saveArff(arffCVpath);
 	}
 
 	@Override
 	protected void reportStatistics() {
 		WorkflowBase.reportInputStatistics(patients);
+	}
+
+	@Override
+	protected Instances buildInstances() {
+		if(isDominant)
+			exporter = new DominantArffBuilder(calculatedRecords);
+		else
+			exporter = new CountedSaxArffBuilder(calculatedRecords);
+		return exporter.buildInstances();
 	}
 
 }

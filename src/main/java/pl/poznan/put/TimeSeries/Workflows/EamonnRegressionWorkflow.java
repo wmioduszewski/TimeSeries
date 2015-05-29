@@ -11,15 +11,22 @@ import pl.poznan.put.TimeSeries.Model.RegressionArffRow;
 import pl.poznan.put.TimeSeries.Model.RegressionResult;
 import pl.poznan.put.TimeSeries.Util.DataDivider;
 import pl.poznan.put.TimeSeries.Util.RegressionCalculator;
+import weka.core.Instances;
 
 public class EamonnRegressionWorkflow extends EamonnWorkflowBase {
+
+	private List<RegressionArffRow> rows;
+	private RegressionArffBuilder exporter;
 
 	public EamonnRegressionWorkflow(DivisionOptions divisionOption,
 			boolean isDominant) {
 		super(divisionOption, isDominant);
 	}
 
-	List<RegressionArffRow> rows;
+	@Override
+	protected void exportArff() throws IOException {		
+		exporter.saveArff(arffCVpath);
+	}
 
 	@Override
 	protected void processData() {
@@ -41,14 +48,14 @@ public class EamonnRegressionWorkflow extends EamonnWorkflowBase {
 	}
 
 	@Override
-	protected void exportArff() throws IOException {
-		RegressionArffBuilder exporter = new RegressionArffBuilder(rows);
-		exporter.saveArff(arffCVpath);
+	protected void reportStatistics() {
+		WorkflowBase.reportInputStatistics(records);
 	}
 
 	@Override
-	protected void reportStatistics() {
-		WorkflowBase.reportInputStatistics(records);
+	protected Instances buildInstances() {
+		exporter = new RegressionArffBuilder(rows);
+		return exporter.buildInstances();
 	}
 
 }
