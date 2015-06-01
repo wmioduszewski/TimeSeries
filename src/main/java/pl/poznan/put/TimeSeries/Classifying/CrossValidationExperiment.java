@@ -27,7 +27,8 @@ public class CrossValidationExperiment extends ExperimentBase {
 		if (dataSet.classIndex() == -1)
 			dataSet.setClassIndex(dataSet.numAttributes() - 1);
 
-		double loss01 = 0;
+		int accuracy = 0;
+
 		double squaredError = 0;
 		for (int n = 0; n < folds; n++) {
 			Instances train = dataSet.trainCV(folds, n);
@@ -36,8 +37,8 @@ public class CrossValidationExperiment extends ExperimentBase {
 			Classifier classifierCopy = Classifier.makeCopy(classifier);
 			classifierCopy.buildClassifier(train);
 
-			double _loss01 = 0;
 			double _squaredError = 0;
+			double _accuracy=0;
 			for (int i = 0; i < test.numInstances(); i++) {
 				Instance instance = test.instance(i);
 
@@ -46,21 +47,21 @@ public class CrossValidationExperiment extends ExperimentBase {
 						.distributionForInstance(instance);
 				int prediction = distribution[1] >= distribution[0] ? 1 : 0;
 
-				_loss01 += truth == prediction ? 0 : 1;
+				if (truth == prediction)
+					_accuracy++;
 				_squaredError += Math.pow(1.0 - distribution[truth], 2);
 			}
 
-			_loss01 /= (double) test.numInstances();
+			_accuracy /= (double) test.numInstances();
 			_squaredError /= (double) test.numInstances();
 
-			loss01 += _loss01;
+			accuracy += _accuracy;
 			squaredError += _squaredError;
 		}
 
-		loss01 /= (double) folds;
+		accuracy /= (double) folds;
 		squaredError /= (double) folds;
-		// TODO: add accuracy
-		ExperimentResult result = new ExperimentResult(0, loss01, squaredError);
+		ExperimentResult result = new ExperimentResult(accuracy, squaredError);
 		return result;
 	}
 

@@ -30,22 +30,18 @@ public class RegularExperiment extends ExperimentBase {
 
 		classifier.buildClassifier(trainSet);
 
-		double sum = 0;
 		double correct = 0;
 		for (int i = 0; i < testSet.numInstances(); i++) {
 			Instance instance = testSet.instance(i);
 			int truth = (int) instance.classValue();
 			int prediction = (int) classifier.classifyInstance(instance);
-			sum++;
+			
 			if (truth == prediction)
 				correct++;
 		}
-		double accuracy = correct / sum;
+		double accuracy = correct / testSet.numInstances();
 
-		ExperimentResult result = new ExperimentResult(accuracy, 0, 0);
-
-		// TODO: add 01loss and squared error
-
+		ExperimentResult result = new ExperimentResult(accuracy, -1);
 		return result;
 	}
 
