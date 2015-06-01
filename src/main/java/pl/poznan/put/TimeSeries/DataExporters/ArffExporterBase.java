@@ -46,4 +46,9 @@ public abstract class ArffExporterBase {
 			e.printStackTrace();
 		}
 	}
+	
+	public int getIndexOfDestinationClass(Double classValue){
+		int classIndex = destClasses.indexOf(classValue);
+		return classIndex;
+	}
 }

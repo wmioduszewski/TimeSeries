@@ -3,7 +3,6 @@ package pl.poznan.put.TimeSeries.Classifying;
 import org.apache.commons.lang3.tuple.Pair;
 
 import weka.classifiers.Classifier;
-import weka.classifiers.rules.JRip;
 import weka.core.Instance;
 import weka.core.Instances;
 
@@ -11,7 +10,6 @@ public class RegularExperiment extends ExperimentBase {
 
 	public RegularExperiment(Classifier classifier) {
 		super(classifier);
-		// TODO Auto-generated constructor stub
 	}
 
 	public ExperimentResult runExperiment(Instances instances,
@@ -27,6 +25,8 @@ public class RegularExperiment extends ExperimentBase {
 			throws Exception {
 		if (trainSet.classIndex() == -1)
 			trainSet.setClassIndex(trainSet.numAttributes() - 1);
+		if (testSet.classIndex() == -1)
+			testSet.setClassIndex(testSet.numAttributes() - 1);
 
 		classifier.buildClassifier(trainSet);
 
@@ -59,13 +59,9 @@ public class RegularExperiment extends ExperimentBase {
 
 	@Override
 	public ExperimentResult runFileExperiment(String pathToArff,
-			double trainToTestRatio, long seed) {
-		
-//		runExperiment("temp/"
-//				+ datasetName + "_TRAIN.arff", "temp/" + datasetName
-//				+ "_TEST.arff")
-		
-		// TODO Auto-generated method stub
-		return null;
+			double trainToTestRatio, long seed) throws Exception {
+
+		Instances dataSet = Utils.readInstances(pathToArff);
+		return runExperiment(dataSet, trainToTestRatio, seed);
 	}
 }
