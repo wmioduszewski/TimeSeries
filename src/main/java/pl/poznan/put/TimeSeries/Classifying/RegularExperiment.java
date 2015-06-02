@@ -12,6 +12,7 @@ public class RegularExperiment extends ExperimentBase {
 		super(classifier);
 	}
 
+	@Override
 	public ExperimentResult runExperiment(Instances instances,
 			double trainToTestRatio, long seed) throws Exception {
 
@@ -21,7 +22,15 @@ public class RegularExperiment extends ExperimentBase {
 				dividedInstances.getRight());
 	}
 
-	public ExperimentResult runExperiment(Instances trainSet, Instances testSet)
+	@Override
+	public ExperimentResult runFileExperiment(String pathToArff,
+			double trainToTestRatio, long seed) throws Exception {
+
+		Instances dataSet = Utils.readInstances(pathToArff);
+		return runExperiment(dataSet, trainToTestRatio, seed);
+	}
+
+	private ExperimentResult runExperiment(Instances trainSet, Instances testSet)
 			throws Exception {
 		if (trainSet.classIndex() == -1)
 			trainSet.setClassIndex(trainSet.numAttributes() - 1);
@@ -35,7 +44,7 @@ public class RegularExperiment extends ExperimentBase {
 			Instance instance = testSet.instance(i);
 			int truth = (int) instance.classValue();
 			int prediction = (int) classifier.classifyInstance(instance);
-			
+
 			if (truth == prediction)
 				correct++;
 		}
@@ -43,13 +52,5 @@ public class RegularExperiment extends ExperimentBase {
 
 		ExperimentResult result = new ExperimentResult(accuracy, -1);
 		return result;
-	}
-
-	@Override
-	public ExperimentResult runFileExperiment(String pathToArff,
-			double trainToTestRatio, long seed) throws Exception {
-
-		Instances dataSet = Utils.readInstances(pathToArff);
-		return runExperiment(dataSet, trainToTestRatio, seed);
 	}
 }
