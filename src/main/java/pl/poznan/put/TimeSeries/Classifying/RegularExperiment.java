@@ -45,14 +45,6 @@ public class RegularExperiment extends ExperimentBase {
 		return result;
 	}
 
-	public ExperimentResult runExperiment(String trainSetPath,
-			String testSetPath) throws Exception {
-
-		Instances trainSet = Utils.readInstances(trainSetPath);
-		Instances testSet = Utils.readInstances(testSetPath);
-		return runExperiment(trainSet, testSet);
-	}
-
 	@Override
 	public ExperimentResult runFileExperiment(String pathToArff,
 			double trainToTestRatio, long seed) throws Exception {

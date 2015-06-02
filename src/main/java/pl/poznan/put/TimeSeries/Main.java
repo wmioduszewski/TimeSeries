@@ -20,6 +20,8 @@ public class Main {
 		WorkflowBase workflow;
 		ExperimentBase experiment;
 
+		//TODO: add enum list of available classifiers
+		//todo: extract k to common config
 		Classifier classifier = new IBk(3);
 		experiment = new CrossValidationExperiment(classifier);
 

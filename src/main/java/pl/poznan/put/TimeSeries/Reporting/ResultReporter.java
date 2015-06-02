@@ -9,7 +9,6 @@ import jxl.write.NumberFormats;
 import jxl.write.WritableCellFormat;
 import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
-import pl.poznan.put.TimeSeries.Util.SpecificConfig;
 import pl.poznan.put.TimeSeries.Util.CommonConfig;
 
 public class ResultReporter {
@@ -73,8 +72,7 @@ public class ResultReporter {
 		}
 
 		new jxl.write.NumberFormats();
-		WritableCellFormat wcf1 = new WritableCellFormat(
-				NumberFormats.FLOAT);
+		WritableCellFormat wcf1 = new WritableCellFormat(NumberFormats.FLOAT);
 
 		for (int i = 0; i < classifiers.size(); i++) {
 			for (int j = 0; j < records.size(); j++) {

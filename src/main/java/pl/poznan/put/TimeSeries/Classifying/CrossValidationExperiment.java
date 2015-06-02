@@ -18,6 +18,7 @@ public class CrossValidationExperiment extends ExperimentBase {
 		return folds;
 	}
 
+	@Override
 	public ExperimentResult runExperiment(Instances baseDataSet,
 			double partOfDataSet, long seed) throws Exception {
 		baseDataSet.randomize(new Random(seed));
@@ -29,7 +30,7 @@ public class CrossValidationExperiment extends ExperimentBase {
 
 		double accuracy = 0;
 		double squaredError = 0;
-		
+
 		for (int n = 0; n < folds; n++) {
 			Instances train = dataSet.trainCV(folds, n);
 			Instances test = dataSet.testCV(folds, n);
@@ -38,7 +39,7 @@ public class CrossValidationExperiment extends ExperimentBase {
 			classifierCopy.buildClassifier(train);
 
 			double _squaredError = 0;
-			double _accuracy=0;
+			double _accuracy = 0;
 			for (int i = 0; i < test.numInstances(); i++) {
 				Instance instance = test.instance(i);
 
@@ -65,14 +66,14 @@ public class CrossValidationExperiment extends ExperimentBase {
 		return result;
 	}
 
-	public void setFolds(int folds) {
-		this.folds = folds;
-	}
-
 	@Override
 	public ExperimentResult runFileExperiment(String pathToArff,
 			double trainToTestRatio, long seed) throws Exception {
 		Instances dataSet = Utils.readInstances(pathToArff);
 		return runExperiment(dataSet, trainToTestRatio, seed);
+	}
+
+	public void setFolds(int folds) {
+		this.folds = folds;
 	}
 }

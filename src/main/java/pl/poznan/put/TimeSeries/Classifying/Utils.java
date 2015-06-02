@@ -22,10 +22,11 @@ public class Utils {
 			Instances instances, double trainToTestRatio, long seed) {
 
 		instances.randomize(new Random(seed));
-		int limit = (int) ((1 - trainToTestRatio) * (double)instances.numInstances());
+		int limit = (int) ((1 - trainToTestRatio) * (double) instances
+				.numInstances());
 		Instances trainSet = new Instances(instances, 0, limit);
 		Instances testSet = new Instances(instances, limit,
-				instances.numInstances()-limit);
+				instances.numInstances() - limit);
 
 		Pair<Instances, Instances> res = new ImmutablePair<Instances, Instances>(
 				trainSet, testSet);

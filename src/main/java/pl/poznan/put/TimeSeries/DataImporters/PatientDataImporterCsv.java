@@ -12,9 +12,9 @@ import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.Patient;
 
 public class PatientDataImporterCsv extends PatientDataImporterBase {
-	
+
 	public PatientDataImporterCsv(String inputFilePath) {
-		super(inputFilePath);		
+		super(inputFilePath);
 	}
 
 	// ID,D,TIME,TIMEFF,INTERVAL,TIMEFBI,SAP,DAP,HRBP,MAP,TF,TFADJ,TFGAT,DPP,BODYPOSITION,ACOMMODATION
@@ -60,18 +60,18 @@ public class PatientDataImporterCsv extends PatientDataImporterBase {
 			DateTime dt = new DateTime(2014, 4, days, hours, minutes, 0);
 			float tfadj;
 			Characteristic c = new Characteristic(dt);
-			
+
 			try {
 				tfadj = Float.parseFloat(fields[11]);
-				if(lastPatient.getAsleep()==null){
+				if (lastPatient.getAsleep() == null) {
 					int interval = Integer.parseInt(fields[4]);
-					if(interval == 2){
+					if (interval == 2) {
 						lastPatient.setAsleep(dt);
 					}
 				}
-				if(lastPatient.getAwake()==null){
+				if (lastPatient.getAwake() == null) {
 					int interval = Integer.parseInt(fields[4]);
-					if(interval == 4){
+					if (interval == 4) {
 						lastPatient.setAwake(dt);
 					}
 				}
@@ -89,12 +89,10 @@ public class PatientDataImporterCsv extends PatientDataImporterBase {
 		patients = patientList;
 	}
 
-	public List<Patient> ImportData() throws IOException {
-	readData();
-	computeSaxForPatients();
-
-	return patients;
+	public List<Patient> importData() throws IOException {
+		readData();
+		computeSaxForPatients();
+		return patients;
 	}
 
-	
 }

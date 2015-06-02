@@ -126,7 +126,7 @@ public class PatientDataImporterPure extends PatientDataImporterBase {
 		return dt;
 	}
 
-	public List<Patient> ImportData() throws IOException {
+	public List<Patient> importData() throws IOException {
 		patients = new ArrayList<Patient>();
 		String[] folders = FileLister.getDirectories(folderPath);
 		for (String folder : folders) {

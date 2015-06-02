@@ -22,18 +22,12 @@ import pl.poznan.put.TimeSeries.Util.SpecificConfig;
 public class Misc {
 	
 	@SuppressWarnings("unused")
-	private static void runOldFlow() throws Exception {
-		FlowHandler flow = new FlowHandler();
-		flow.startProcessing();
-	}
-
-	@SuppressWarnings("unused")
 	private static void CsvToEamonn() throws IOException {
 		String path = SpecificConfig.getProperty("csvDataSet");
 
 		PatientDataImporterCsv csvImport = new PatientDataImporterCsv(path);
 
-		List<Patient> patients = csvImport.ImportData();
+		List<Patient> patients = csvImport.importData();
 
 		DataExporterCsv exp = new DataExporterCsv(patients);
 		exp.exportCsvToEamonnFormat(path);

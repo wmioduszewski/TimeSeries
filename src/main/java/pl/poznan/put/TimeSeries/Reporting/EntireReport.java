@@ -3,7 +3,6 @@ package pl.poznan.put.TimeSeries.Reporting;
 import java.util.LinkedList;
 import java.util.List;
 
-import pl.poznan.put.TimeSeries.Util.SpecificConfig;
 import pl.poznan.put.TimeSeries.Util.CommonConfig;
 
 public class EntireReport {
