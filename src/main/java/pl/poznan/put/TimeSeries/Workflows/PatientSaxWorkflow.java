@@ -46,7 +46,7 @@ public class PatientSaxWorkflow extends PatientWorkflowBase {
 
 	@Override
 	protected void exportArff() throws Exception {
-		exporter.saveArff(arffCVpath);
+		exporter.saveArff(arffPath);
 	}
 
 	@Override

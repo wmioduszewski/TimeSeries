@@ -12,6 +12,11 @@ import weka.core.Instances;
 
 public abstract class WorkflowBase {
 
+	private static long seed = 1000;
+
+	private static double trainToTestRatio = CommonConfig.getInstance()
+			.getTrainToTestRatio();
+
 	public static <T extends IRecord> void reportInputStatistics(List<T> records) {
 		List<Double> distinctClasses = records.stream()
 				.map(x -> x.getDestinationClass()).distinct()
@@ -26,19 +31,15 @@ public abstract class WorkflowBase {
 		}
 	}
 
-	protected String arffCVpath;
-
+	protected String arffPath;
 	protected DivisionOptions divisionOption;
 	protected int divisionPartsAmount = CommonConfig.getInstance()
 			.getDivisionPartsAmount();
 	protected boolean isAttrBag;
 	protected boolean isDominant;
+
 	protected List<IRecord> records;
 	protected int windowLen = CommonConfig.getInstance().getNgramSize();
-
-	private static double trainToTestRatio = CommonConfig.getInstance()
-			.getTrainToTestRatio();
-	private static long seed = 1000;
 
 	public WorkflowBase(DivisionOptions divisionOption, boolean isDominant) {
 		super();
@@ -66,13 +67,14 @@ public abstract class WorkflowBase {
 			buildInstances();
 			exportArff();
 			reportStatistics();
-			ExperimentResult result =experiment.runFileExperiment(arffCVpath, trainToTestRatio, seed);
+			ExperimentResult result = experiment.runFileExperiment(arffPath,
+					trainToTestRatio, seed);
 			printResult(result);
 		} catch (Exception e) {
 			System.out.println("Error during workflow performing:");
 			e.printStackTrace();
 		}
-		
+
 		System.out.println("Workflow has ended.");
 	}
 
@@ -85,13 +87,13 @@ public abstract class WorkflowBase {
 		System.out.println();
 	}
 
+	protected abstract Instances buildInstances();
+
 	protected abstract void exportArff() throws Exception;
 
 	protected abstract void importData();
 
 	protected abstract void processData() throws Exception;
-
-	protected abstract Instances buildInstances();
 
 	protected abstract void reportStatistics();
 
@@ -109,7 +111,7 @@ public abstract class WorkflowBase {
 					eamonnDataSource.length());
 		}
 		String dominant = isDominant ? "dominant" : "non-dominant";
-		arffCVpath = String.format("output/arffOutput/%s%s%dp%dgram%s %s.arff",
+		arffPath = String.format("output/arffOutput/%s%s%dp%dgram%s %s.arff",
 				className, eamonnDataSource, divisionPartsAmount, windowLen,
 				divisionOption.toString(), dominant);
 	}

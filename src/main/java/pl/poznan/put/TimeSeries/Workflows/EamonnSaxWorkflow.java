@@ -47,7 +47,7 @@ public class EamonnSaxWorkflow extends EamonnWorkflowBase {
 
 	@Override
 	protected void exportArff() throws Exception {
-		exporter.saveArff(arffCVpath);
+		exporter.saveArff(arffPath);
 	}
 
 	@Override

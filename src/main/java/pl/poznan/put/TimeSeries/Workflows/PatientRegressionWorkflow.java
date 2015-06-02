@@ -47,7 +47,7 @@ public class PatientRegressionWorkflow extends PatientWorkflowBase {
 
 	@Override
 	protected void exportArff() throws IOException {
-		exporter.saveArff(arffCVpath);
+		exporter.saveArff(arffPath);
 	}
 
 	@Override

@@ -27,9 +27,9 @@ public class CrossValidationExperiment extends ExperimentBase {
 		if (dataSet.classIndex() == -1)
 			dataSet.setClassIndex(dataSet.numAttributes() - 1);
 
-		int accuracy = 0;
-
+		double accuracy = 0;
 		double squaredError = 0;
+		
 		for (int n = 0; n < folds; n++) {
 			Instances train = dataSet.trainCV(folds, n);
 			Instances test = dataSet.testCV(folds, n);

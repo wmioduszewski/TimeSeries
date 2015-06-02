@@ -25,7 +25,7 @@ public class EamonnRegressionWorkflow extends EamonnWorkflowBase {
 
 	@Override
 	protected void exportArff() throws IOException {		
-		exporter.saveArff(arffCVpath);
+		exporter.saveArff(arffPath);
 	}
 
 	@Override
