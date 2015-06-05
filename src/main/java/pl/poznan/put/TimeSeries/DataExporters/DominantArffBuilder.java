@@ -44,7 +44,7 @@ public class DominantArffBuilder extends SaxArffExporterBase {
 		instances.setClassIndex(instances.numAttributes() - 1);
 
 		for (CalculatedRecord calculatedRecord : input) {
-			Instance record = new SparseInstance(attrInfo.size());
+			Instance record = new Instance(attrInfo.size());
 			int attrIndex = 0;
 			for (int i = 0; i < regularPartsForDivision; i++) {
 				List<String> currentDistincts = distincts.get(i);

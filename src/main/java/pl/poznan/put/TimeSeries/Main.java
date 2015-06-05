@@ -31,7 +31,7 @@ public class Main {
 		// EamonnRegressionWorkflow(divisionOption,false);
 		// workflow = new PatientSaxWorkflow(divisionOption,false);
 		
-		workflow = new EamonnSaxWorkflow(divisionOption, false);
+		workflow = new EamonnRegressionWorkflow(divisionOption, false);
 
 		workflow.runExperiment(experiment);
 //		workflow.runFileBasedExperiment(experiment);

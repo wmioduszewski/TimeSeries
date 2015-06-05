@@ -45,7 +45,7 @@ public class CountedSaxArffBuilder extends SaxArffExporterBase {
 				.flatMap(x -> x.stream()).count();
 
 		for (CalculatedRecord calculatedRecord : input) {
-			Instance instance = new SparseInstance(distinctsElementsSum + 1);
+			Instance instance = new Instance(distinctsElementsSum + 1);
 			int attrIndex = 0;
 			for (int i = 0; i < regularPartsForDivision; i++) {
 				List<String> currentDistincts = distincts.get(i);
