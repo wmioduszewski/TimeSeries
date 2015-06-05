@@ -8,7 +8,7 @@
 @attribute intercept3 numeric
 @attribute slope4 numeric
 @attribute intercept4 numeric
-@attribute destClass {0.0,1.0,2.0}
+@attribute destClass {1.0,2.0}
 
 @data
 1,2,1.2,0.2,0.01,2.22,1.333,3.2,1.0

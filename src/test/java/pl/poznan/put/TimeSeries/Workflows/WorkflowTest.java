@@ -31,7 +31,7 @@ public class WorkflowTest {
 		WorkflowBase workflow = new EamonnSaxWorkflow(DivisionOptions.Regular, true);
 		ExperimentResult result = null;
 		try {
-			workflow.runExperiment(experiment);
+			//workflow.runExperiment(experiment);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
