@@ -2,13 +2,14 @@ package pl.poznan.put.TimeSeries.Classifying;
 
 import java.util.Random;
 
+import pl.poznan.put.TimeSeries.Util.CommonConfig;
 import weka.classifiers.Classifier;
-import weka.core.Instance;
+import weka.classifiers.Evaluation;
 import weka.core.Instances;
 
 public class CrossValidationExperiment extends ExperimentBase {
 
-	private int folds = 10;
+	private int folds = CommonConfig.getInstance().getCrossValidationFolds();
 
 	public CrossValidationExperiment(Classifier classifier) {
 		super(classifier);
@@ -20,60 +21,36 @@ public class CrossValidationExperiment extends ExperimentBase {
 
 	@Override
 	public ExperimentResult runExperiment(Instances baseDataSet,
-			double partOfDataSet, long seed) throws Exception {
-		baseDataSet.randomize(new Random(seed));
-		Instances dataSet = new Instances(baseDataSet, 0,
-				(int) ((double) baseDataSet.numInstances() * partOfDataSet));
-
-		if (dataSet.classIndex() == -1)
-			dataSet.setClassIndex(dataSet.numAttributes() - 1);
-
-		double accuracy = 0;
-		double squaredError = 0;
-
-		for (int n = 0; n < folds; n++) {
-			Instances train = dataSet.trainCV(folds, n);
-			Instances test = dataSet.testCV(folds, n);
-
-			Classifier classifierCopy = Classifier.makeCopy(classifier);
-			classifierCopy.buildClassifier(train);
-
-			double _squaredError = 0;
-			double _accuracy = 0;
-			for (int i = 0; i < test.numInstances(); i++) {
-				Instance instance = test.instance(i);
-
-				int truth = (int) instance.classValue();
-				double[] distribution = classifierCopy
-						.distributionForInstance(instance);
-				int prediction = distribution[1] >= distribution[0] ? 1 : 0;
-
-				if (truth == prediction)
-					_accuracy++;
-				_squaredError += Math.pow(1.0 - distribution[truth], 2);
-			}
-
-			_accuracy /= (double) test.numInstances();
-			_squaredError /= (double) test.numInstances();
-
-			accuracy += _accuracy;
-			squaredError += _squaredError;
-		}
-
-		accuracy /= (double) folds;
-		squaredError /= (double) folds;
-		ExperimentResult result = new ExperimentResult(accuracy, squaredError);
-		return result;
+			double partOfDataSet) throws Exception {
+		// from
+		// https://weka.wikispaces.com/Generating+classifier+evaluation+output+manually
+		Evaluation eval = new Evaluation(baseDataSet);
+		eval.crossValidateModel(classifier, baseDataSet, folds, new Random());
+		return fillResult(eval, baseDataSet.classIndex());
 	}
 
 	@Override
 	public ExperimentResult runFileExperiment(String pathToArff,
-			double trainToTestRatio, long seed) throws Exception {
+			double trainToTestRatio) throws Exception {
 		Instances dataSet = Utils.readInstances(pathToArff);
-		return runExperiment(dataSet, trainToTestRatio, seed);
+		return runExperiment(dataSet, trainToTestRatio);
 	}
-
+	
 	public void setFolds(int folds) {
 		this.folds = folds;
+	}
+
+	private ExperimentResult fillResult(Evaluation eval, int classIndex) {
+		double accuracy = eval.weightedPrecision();
+		double sensitivity = eval.weightedTruePositiveRate();
+		double specificity = eval.weightedTrueNegativeRate();
+		double gMean = Math.sqrt(specificity * sensitivity);
+		double pr = eval.weightedPrecision();
+		double rec = eval.weightedRecall();
+		double f1 = 2 * ((pr * rec) / (pr + rec));
+		double OAC = -1;
+		ExperimentResult result = new ExperimentResult(accuracy, sensitivity,
+				specificity, gMean, f1, OAC);
+		return result;
 	}
 }

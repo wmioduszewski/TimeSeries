@@ -12,10 +12,9 @@ import weka.core.Instances;
 
 public abstract class WorkflowBase {
 
-	private static long seed = 1000;
-
 	private static double trainToTestRatio = CommonConfig.getInstance()
 			.getTrainToTestRatio();
+	private static int repetitions = CommonConfig.getInstance().getCrossValidationRepetitions();
 
 	public static <T extends IRecord> void reportInputStatistics(List<T> records) {
 		List<Double> distinctClasses = records.stream()
@@ -53,8 +52,8 @@ public abstract class WorkflowBase {
 		importData();
 		processData();
 		Instances instances = buildInstances();
-		ExperimentResult result = experiment.runExperiment(instances,
-				trainToTestRatio, seed);
+		ExperimentResult result = experiment.runExperimentRepeatedly(instances,
+				trainToTestRatio,repetitions);
 		printResult(result);
 	}
 
@@ -68,7 +67,7 @@ public abstract class WorkflowBase {
 			exportArff();
 			reportStatistics();
 			ExperimentResult result = experiment.runFileExperiment(arffPath,
-					trainToTestRatio, seed);
+					trainToTestRatio);
 			printResult(result);
 		} catch (Exception e) {
 			System.out.println("Error during workflow performing:");

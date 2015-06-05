@@ -19,9 +19,9 @@ public class Utils {
 	}
 
 	public static Pair<Instances, Instances> divideInstaces(
-			Instances instances, double trainToTestRatio, long seed) {
+			Instances instances, double trainToTestRatio) {
 
-		instances.randomize(new Random(seed));
+		instances.randomize(new Random());
 		int limit = (int) ((1 - trainToTestRatio) * (double) instances
 				.numInstances());
 		Instances trainSet = new Instances(instances, 0, limit);

@@ -14,20 +14,20 @@ public class RegularExperiment extends ExperimentBase {
 
 	@Override
 	public ExperimentResult runExperiment(Instances instances,
-			double trainToTestRatio, long seed) throws Exception {
+			double trainToTestRatio) throws Exception {
 
 		Pair<Instances, Instances> dividedInstances = Utils.divideInstaces(
-				instances, trainToTestRatio, seed);
+				instances, trainToTestRatio);
 		return runExperiment(dividedInstances.getLeft(),
 				dividedInstances.getRight());
 	}
 
 	@Override
 	public ExperimentResult runFileExperiment(String pathToArff,
-			double trainToTestRatio, long seed) throws Exception {
+			double trainToTestRatio) throws Exception {
 
 		Instances dataSet = Utils.readInstances(pathToArff);
-		return runExperiment(dataSet, trainToTestRatio, seed);
+		return runExperiment(dataSet, trainToTestRatio);
 	}
 
 	private ExperimentResult runExperiment(Instances trainSet, Instances testSet)
@@ -50,7 +50,7 @@ public class RegularExperiment extends ExperimentBase {
 		}
 		double accuracy = correct / testSet.numInstances();
 
-		ExperimentResult result = new ExperimentResult(accuracy, -1);
+		ExperimentResult result = new ExperimentResult(accuracy, -1,-1,-1,-1,-1);
 		return result;
 	}
 }

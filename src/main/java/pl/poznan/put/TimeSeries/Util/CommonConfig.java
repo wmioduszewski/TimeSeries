@@ -15,22 +15,17 @@ public class CommonConfig {
 	}
 
 	private float attributesToCutRatio = 0.5f;
+	private int crossValidationFolds = 5;
+	private int crossValidationRepetitions = 3;
 	private int divisionPartsAmount = 3;
 	private boolean isFolderDataUsed = true;
 	private int ngramSize = 4;
 	private String pureDataSet = "dataset glaucoma/csv2/dane20140812";
 	private int saxAlphabeatSize = 4;
 	private int saxAttributeLength = 3;
-
-	public void setSingleDataPath(String singleDataPath) {
-		this.singleDataPath = singleDataPath;
-	}
-
 	private int saxOutputLength = 96;
 	private String singleDataPath = "dataset2/ItalyPowerDemand";
-
 	private float trainToTestRatio = 0.5f;
-
 	private String xlsReportPath = "output/reports/Result report glaucoma.xls";
 
 	private CommonConfig() {
@@ -38,6 +33,14 @@ public class CommonConfig {
 
 	public float getAttributesToCutRatio() {
 		return attributesToCutRatio;
+	}
+
+	public int getCrossValidationFolds() {
+		return crossValidationFolds;
+	}
+
+	public int getCrossValidationRepetitions() {
+		return crossValidationRepetitions;
 	}
 
 	public int getDivisionPartsAmount() {
@@ -84,6 +87,14 @@ public class CommonConfig {
 		this.attributesToCutRatio = attributesToCutRatio;
 	}
 
+	public void setCrossValidationFolds(int crossValidationFolds) {
+		this.crossValidationFolds = crossValidationFolds;
+	}
+
+	public void setCrossValidationRepetitions(int crossValidationRepetitions) {
+		this.crossValidationRepetitions = crossValidationRepetitions;
+	}
+
 	public void setDivisionPartsAmount(int divisionPartsAmount) {
 		this.divisionPartsAmount = divisionPartsAmount;
 	}
@@ -106,6 +117,10 @@ public class CommonConfig {
 
 	public void setSaxOutputLength(int saxOutputLength) {
 		this.saxOutputLength = saxOutputLength;
+	}
+
+	public void setSingleDataPath(String singleDataPath) {
+		this.singleDataPath = singleDataPath;
 	}
 
 	public void setTrainToTestRatio(float trainToTestRatio) {

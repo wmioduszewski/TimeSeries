@@ -12,9 +12,18 @@ public abstract class ExperimentBase {
 	}
 
 	public abstract ExperimentResult runExperiment(Instances instances,
-			double trainToTestRatio, long seed) throws Exception;
+			double trainToTestRatio) throws Exception;
+
+	public ExperimentResult runExperimentRepeatedly(Instances baseDataSet,
+			double partOfDataSet, int times) throws Exception {
+		ExperimentResult result = new ExperimentResult(0, 0, 0, 0, 0, 0);
+		for (int i = 0; i < times; i++) {
+			result.add(runExperiment(baseDataSet, partOfDataSet));
+		}
+		result.divideBy(times);
+		return result;
+	}
 
 	public abstract ExperimentResult runFileExperiment(String pathToArff,
-			double trainToTestRatio, long seed) throws Exception;
-
+			double trainToTestRatio) throws Exception;
 }
