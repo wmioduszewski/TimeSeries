@@ -55,11 +55,8 @@ public class RegressionArffBuilder extends ArffExporterBase {
 				record.setValue(attrIdx++, regResult.getIntercept());
 			}
 			
-			//TODO: below set value is set by index of nominal not by value! 
-			
-			//record.setValue(attrIdx, row.getDestinationClass());
-			int rrr = getIndexOfDestinationClass(row.getDestinationClass());
-			record.setValue(attrIdx, 0);
+			int destClassIndex = getIndexOfDestinationClass(row.getDestinationClass());
+			record.setValue(attrIdx, destClassIndex);
 			instances.add(record);
 		}
 		return instances;

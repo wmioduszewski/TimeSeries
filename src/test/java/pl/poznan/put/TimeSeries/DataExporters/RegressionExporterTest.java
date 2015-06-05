@@ -27,7 +27,7 @@ public class RegressionExporterTest {
 				new RegressionResult(-0.01, 2.322), new RegressionResult(
 						1.3353, 3.32));
 
-		rows.add(new RegressionArffRow(results1, 0));
+		rows.add(new RegressionArffRow(results1, 1));
 		rows.add(new RegressionArffRow(results2, 1));
 		rows.add(new RegressionArffRow(results3, 2));
 
