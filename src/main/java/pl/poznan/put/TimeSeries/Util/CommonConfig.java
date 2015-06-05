@@ -22,6 +22,10 @@ public class CommonConfig {
 	private int saxAlphabeatSize = 4;
 	private int saxAttributeLength = 3;
 
+	public void setSingleDataPath(String singleDataPath) {
+		this.singleDataPath = singleDataPath;
+	}
+
 	private int saxOutputLength = 96;
 	private String singleDataPath = "dataset2/ItalyPowerDemand";
 
