@@ -17,6 +17,7 @@ public abstract class ArffExporterBase {
 	protected Instances instances;
 	protected FastVector attrInfo;
 	protected List<Double> destClasses;
+
 	protected abstract void setAttributes();
 
 	public abstract Instances buildInstances();
@@ -46,8 +47,8 @@ public abstract class ArffExporterBase {
 			e.printStackTrace();
 		}
 	}
-	
-	public int getIndexOfDestinationClass(Double classValue){
+
+	public int getIndexOfDestinationClass(Double classValue) {
 		int classIndex = destClasses.indexOf(classValue);
 		return classIndex;
 	}
