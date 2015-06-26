@@ -5,19 +5,19 @@ public class ExperimentResult {
 	private double accuracy;
 	private double f1;
 	private double gMean;
-	private double OAC;// pcc
+	private double pcc;// pcc
 	private double sensitivity;
 	private double specificity;
 
 	public ExperimentResult(double accuracy, double sensitivity,
-			double specificity, double gMean, double f1, double oAC) {
+			double specificity, double gMean, double f1, double pcc) {
 		super();
 		this.accuracy = accuracy;
 		this.sensitivity = sensitivity;
 		this.specificity = specificity;
 		this.gMean = gMean;
 		this.f1 = f1;
-		this.OAC = oAC;
+		this.pcc = pcc;
 	}
 
 	public double getAccuracy() {
@@ -32,8 +32,8 @@ public class ExperimentResult {
 		return gMean;
 	}
 
-	public double getOAC() {
-		return OAC;
+	public double getPcc() {
+		return pcc;
 	}
 
 	public double getSensitivity() {
@@ -52,7 +52,7 @@ public class ExperimentResult {
 		sb.append(String.format("Specificity: \t%f\n", specificity));
 		sb.append(String.format("F1 score: \t%f\n", f1));
 		sb.append(String.format("G-Mean: \t%f\n", gMean));
-		sb.append(String.format("OAC: \t%f\n", OAC));
+		sb.append(String.format("PCC: \t\t%f\n", pcc));
 		return sb.toString();
 	}
 	
@@ -62,7 +62,7 @@ public class ExperimentResult {
 		this.specificity += result.specificity;
 		this.f1 += result.f1;
 		this.gMean += result.gMean;
-		this.OAC += result.OAC;
+		this.pcc += result.pcc;
 	}
 	
 	public void divideBy(double divisor){
@@ -71,7 +71,7 @@ public class ExperimentResult {
 		this.specificity /= divisor;
 		this.f1 /= divisor;
 		this.gMean /= divisor;
-		this.OAC /= divisor;
+		this.pcc /= divisor;
 
 	}
 

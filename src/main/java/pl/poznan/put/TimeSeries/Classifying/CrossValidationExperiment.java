@@ -48,9 +48,9 @@ public class CrossValidationExperiment extends ExperimentBase {
 		double pr = eval.weightedPrecision();
 		double rec = eval.weightedRecall();
 		double f1 = 2 * ((pr * rec) / (pr + rec));
-		double OAC = -1;
+		double pcc = eval.correct() / eval.numInstances();
 		ExperimentResult result = new ExperimentResult(accuracy, sensitivity,
-				specificity, gMean, f1, OAC);
+				specificity, gMean, f1, pcc);
 		return result;
 	}
 }

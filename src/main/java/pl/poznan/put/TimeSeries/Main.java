@@ -4,6 +4,7 @@ import pl.poznan.put.TimeSeries.Classifying.CrossValidationExperiment;
 import pl.poznan.put.TimeSeries.Classifying.ExperimentBase;
 import pl.poznan.put.TimeSeries.Classifying.BasicNgramClassifier;
 import pl.poznan.put.TimeSeries.Classifying.RegularExperiment;
+import pl.poznan.put.TimeSeries.Classifying.StringNNsearch;
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.Workflows.EamonnBasicNgramWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.EamonnRegressionWorkflow;
@@ -23,8 +24,12 @@ public class Main {
 		ExperimentBase experiment;
 
 		//TODO: add enum list of available classifiers
-		//todo: extract k to common config
-		Classifier classifier = new BasicNgramClassifier();
+
+//		Classifier classifier = new BasicNgramClassifier();
+		IBk ibk = new IBk();
+		ibk.setNearestNeighbourSearchAlgorithm(new StringNNsearch());
+		Classifier classifier = ibk;
+		
 		experiment = new CrossValidationExperiment(classifier);
 
 		// workflow = new
@@ -35,6 +40,7 @@ public class Main {
 		
 //		workflow = new EamonnRegressionWorkflow(divisionOption, false);
 		workflow = new EamonnBasicNgramWorkflow(divisionOption, false);
+		
 
 		workflow.runExperiment(experiment);
 //		workflow.runFileBasedExperiment(experiment);

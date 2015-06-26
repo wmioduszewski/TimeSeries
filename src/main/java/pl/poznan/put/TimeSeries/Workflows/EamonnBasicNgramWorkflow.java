@@ -27,7 +27,6 @@ public class EamonnBasicNgramWorkflow extends EamonnWorkflowBase{
 	@Override
 	protected void processData() throws Exception {
 		// nothing to do here - passing clean input further
-		
 	}
 
 	@Override
