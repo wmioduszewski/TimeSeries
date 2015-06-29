@@ -27,7 +27,7 @@ public class Main {
 
 //		Classifier classifier = new BasicNgramClassifier();
 		IBk ibk = new IBk();
-		ibk.setNearestNeighbourSearchAlgorithm(new StringNNsearch());
+		//ibk.setNearestNeighbourSearchAlgorithm(new StringNNsearch());
 		Classifier classifier = ibk;
 		
 		experiment = new CrossValidationExperiment(classifier);

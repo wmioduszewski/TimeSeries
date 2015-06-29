@@ -24,11 +24,13 @@ public class BasicSaxArffBuilder extends ArffExporterBase {
 	protected void setAttributes() {
 		attrInfo = new FastVector();
 
-		// needed only to pass null value - to mark the attribute as string attr
+		int attrCount = input.stream()
+				.max((x, y) -> (x.getValues().size() - y.getValues().size()))
+				.get().getValues().size();
 
-		FastVector attrVals = null;
-
-		attrInfo.addElement(new Attribute("saxString", attrVals));
+		for (int i = 0; i < attrCount; i++) {
+			attrInfo.addElement(new Attribute("a" + (i + 1)));
+		}
 
 		Attribute destClassAttribute = null;
 		try {
@@ -41,19 +43,20 @@ public class BasicSaxArffBuilder extends ArffExporterBase {
 
 	@Override
 	public Instances buildInstances() {
-		instances = new Instances("Basic ngrams", attrInfo, input.size());
+		instances = new Instances("Pure signal", attrInfo, input.size());
 		instances.setClassIndex(instances.numAttributes() - 1);
 
-		int saxAttrId = 0;
-		int destClassAttrId = 1;
-		for (EamonnRecord row : input) {
+		for (EamonnRecord eamonnRecord : input) {
+
 			Instance instance = new Instance(attrInfo.size());
 			instance.setDataset(instances);
-			instance.setValue(saxAttrId, row.getSaxString());
-			int destClassIndex = getIndexOfDestinationClass(row
+			List<Float> vals = eamonnRecord.getValues();
+			for (int i = 0; i < instances.numAttributes() - 1; i++) {
+				instance.setValue(i, vals.get(i));
+			}
+			int destClassIndex = getIndexOfDestinationClass(eamonnRecord
 					.getDestinationClass());
-
-			instance.setValue(destClassAttrId, destClassIndex);
+			instance.setValue(instances.numAttributes() - 1, destClassIndex);
 			instances.add(instance);
 		}
 		return instances;
