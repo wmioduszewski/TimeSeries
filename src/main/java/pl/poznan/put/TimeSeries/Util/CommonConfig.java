@@ -24,6 +24,15 @@ public class CommonConfig {
 	private int saxAlphabeatSize = 4;
 	private int saxAttributeLength = 3;
 	private int saxOutputLength = 96;
+	private int dtwSearchRadius = 10;
+	public int getDtwSearchRadius() {
+		return dtwSearchRadius;
+	}
+
+	public void setDtwSearchRadius(int dtwSearchRadius) {
+		this.dtwSearchRadius = dtwSearchRadius;
+	}
+
 	private String singleDataPath = "dataset2/ItalyPowerDemand";
 	private float trainToTestRatio = 0.5f;
 	private String xlsReportPath = "output/reports/Result report glaucoma.xls";
