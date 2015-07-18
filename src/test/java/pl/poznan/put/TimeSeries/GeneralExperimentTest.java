@@ -33,6 +33,7 @@ public class GeneralExperimentTest {
 	@Test
 	public void test() {
 		for (Experiments chosenExperiment : Experiments.values()) {
+			if(chosenExperiment==Experiments.PATIENTSAX) continue;
 			WorkflowBase workflow = chosenExperiment.getWorkflow();
 			Classifier classifier = chosenExperiment.getClassifier();
 			ExperimentBase experiment = new CrossValidationExperiment(classifier);
