@@ -22,7 +22,9 @@ public class GeneralExperimentTest {
 		
 		
 		String dataPath = CommonConfig.getInstance().getSingleDataPath();
-		CommonConfig.getInstance().setSingleDataPath("testData/SAMPLEDATASET");
+		String folderPath = CommonConfig.getInstance().getDataFolderPath();
+		CommonConfig.getInstance().setDataFolderPath("testdata/");
+		CommonConfig.getInstance().setSingleDataPath("SAMPLEDATASET");
 		
 		for (Experiments chosenExperiment : Experiments.values()) {
 			WorkflowBase workflow = chosenExperiment.getWorkflow();
@@ -37,5 +39,6 @@ public class GeneralExperimentTest {
 		}
 		
 		CommonConfig.getInstance().setSingleDataPath(dataPath);
+		CommonConfig.getInstance().setDataFolderPath(folderPath);
 	}
 }

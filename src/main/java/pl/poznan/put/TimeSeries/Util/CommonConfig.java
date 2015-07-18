@@ -56,16 +56,16 @@ public class CommonConfig {
 	private int crossValidationRepetitions = getIntProperty("crossValidationRepetitions");;
 	private String dataFolderPath = getProperty("dataFolderPath");
 	private int divisionPartsAmount = getIntProperty("divisionPartsAmount");
+
 	private int dtwSearchRadius = getIntProperty("dtwSearchRadius");
+
 	private String glaucomaDataSet = getProperty("glaucomaDataSet");
 	private boolean isFolderDataUsed = getIntProperty("isFolderDataUsed") == 1;
 	private int ngramSize = getIntProperty("ngramSize");
 	private int saxAlphabeatSize = getIntProperty("saxAlphabeatSize");
 	private int saxAttributeLength = getIntProperty("saxAttributeLength");
 	private int saxOutputLength = getIntProperty("saxOutputLength");
-
 	private String singleDataPath = getProperty("singleDataPath");
-
 	private float trainToTestRatio = getFloatProperty("trainToTestRatio");
 
 	private String xlsReportPath = getProperty("xlsReportPath");
@@ -83,6 +83,10 @@ public class CommonConfig {
 
 	public int getCrossValidationRepetitions() {
 		return crossValidationRepetitions;
+	}
+
+	public String getDataFolderPath() {
+		return dataFolderPath;
 	}
 
 	public int getDivisionPartsAmount() {
@@ -139,6 +143,10 @@ public class CommonConfig {
 
 	public void setCrossValidationRepetitions(int crossValidationRepetitions) {
 		this.crossValidationRepetitions = crossValidationRepetitions;
+	}
+
+	public void setDataFolderPath(String dataFolderPath) {
+		this.dataFolderPath = dataFolderPath;
 	}
 
 	public void setDivisionPartsAmount(int divisionPartsAmount) {
