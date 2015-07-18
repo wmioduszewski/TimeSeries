@@ -17,6 +17,7 @@ import weka.core.neighboursearch.NearestNeighbourSearch;
 
 public class DtwSearch extends NearestNeighbourSearch {
 
+	private static final long serialVersionUID = 11192210979652977L;
 	private double[] distances;
 
 	@Override

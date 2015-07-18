@@ -29,5 +29,13 @@ public class EamonnRecord implements IRecord {
 	public List<Float> getValues() {
 		return vals;
 	}
+	
+	public void addValueAtTheEnd(Float value){
+		vals.add(value);
+	}
+	
+	public void addValueAtTheBeginning(Float value){
+		vals.add(0,value);
+	}
 
 }

@@ -30,7 +30,7 @@ public class SaxPerformer {
 
 		return sax;
 	}
-
+	
 	public static String TranslateUnifiedRecordToString(EamonnRecord record,
 			int outputLength, int alphabeatSize) throws Exception {
 
@@ -48,6 +48,28 @@ public class SaxPerformer {
 		String sax = SAXFactory.ts2string(series, outputLength, alphabeatSize);
 
 		return sax;
+	}
+	
+	public static void applyNormalizedSax(List<EamonnRecord> records,
+			int outputLength, int alphabeatSize) throws Exception {
+		float globalMax = Float.MIN_VALUE;
+		float globalMin = Float.MAX_VALUE;
+		for (EamonnRecord eamonnRecord : records) {
+			for (Float value : eamonnRecord.getValues()) {
+				if(value>globalMax) globalMax = value;
+				if(value<globalMin) globalMin = value;
+			}
+		}
+		
+		for (EamonnRecord eamonnRecord : records) {
+			eamonnRecord.addValueAtTheBeginning(globalMin);
+			eamonnRecord.addValueAtTheEnd(globalMax);
+		}
+		
+		for (EamonnRecord eamonnRecord : records) {
+			String sax = TranslateUnifiedRecordToString(eamonnRecord, outputLength, alphabeatSize);
+			eamonnRecord.setSaxString(sax);
+		}
 	}
 
 }

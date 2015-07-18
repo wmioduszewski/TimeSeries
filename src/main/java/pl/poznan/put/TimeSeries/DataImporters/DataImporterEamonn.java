@@ -51,12 +51,8 @@ public class DataImporterEamonn {
 
 		int alphabeatSize = CommonConfig.getInstance().getSaxAlphabeatSize();
 		int outputLength = CommonConfig.getInstance().getSaxOutputLength();
-
-		for (EamonnRecord record : records) {
-			String sax = SaxPerformer.TranslateUnifiedRecordToString(record,
-					outputLength, alphabeatSize);
-			record.setSaxString(sax);
-		}
+		
+		SaxPerformer.applyNormalizedSax(records, outputLength, alphabeatSize);
 
 		System.out.println(String.format("Dataset %s - %d records.",
 				datasetName, records.size()));

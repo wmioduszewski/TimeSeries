@@ -23,7 +23,7 @@ public abstract class PatientDataImporterBase {
 		int alphabeatSize = CommonConfig.getInstance().getSaxAlphabeatSize();
 
 		int outputLength = CommonConfig.getInstance().getSaxOutputLength();
-		;
+		
 		for (Patient patient : patients) {
 			String sax = null;
 			try {

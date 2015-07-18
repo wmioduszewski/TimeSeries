@@ -15,7 +15,6 @@ import pl.poznan.put.TimeSeries.DataImporters.PatientDataImporterCsv;
 import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.EamonnRecord;
 import pl.poznan.put.TimeSeries.Model.Patient;
-import pl.poznan.put.TimeSeries.Util.CommonConfig;
 import pl.poznan.put.TimeSeries.Util.DataDivider;
 
 @Deprecated
