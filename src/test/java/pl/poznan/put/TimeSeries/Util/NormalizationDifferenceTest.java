@@ -27,12 +27,12 @@ public class NormalizationDifferenceTest {
 		normalizedArray.add(globalMax);
 
 		EamonnRecord recordClean = new EamonnRecord(1, baseArray);
-		recordClean.setSaxString(SaxPerformer.TranslateUnifiedRecordToString(
+		recordClean.setSaxString(SaxPerformer.translateRecordToString(
 				recordClean, outputLength, alphabeatSize));
 
 		EamonnRecord recordNormalized = new EamonnRecord(1, normalizedArray);
 		recordNormalized.setSaxString(SaxPerformer
-				.TranslateUnifiedRecordToString(recordNormalized,
+				.translateRecordToString(recordNormalized,
 						outputLength + 2, alphabeatSize));
 
 		String cleanSax = recordClean.getSaxString();

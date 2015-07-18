@@ -7,13 +7,14 @@ import pl.poznan.put.TimeSeries.Workflows.EamonnBasicNgramWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.EamonnOriginalSignalWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.EamonnRegressionWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.EamonnSaxWorkflow;
+import pl.poznan.put.TimeSeries.Workflows.PatientSaxWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.WorkflowBase;
 import weka.classifiers.Classifier;
 import weka.classifiers.lazy.IBk;
 import weka.classifiers.trees.J48;
 
 public enum Experiments {
-	REGRESSION, DOMINANANT, NONDOMINANT, NGRAM, KNN, DTW;
+	REGRESSION, DOMINANANT, NONDOMINANT, NGRAM, KNN, DTW, PATIENTSAX;
 
 	public WorkflowBase getWorkflow() {
 		WorkflowBase workflow = null;
@@ -36,6 +37,9 @@ public enum Experiments {
 			break;
 		case DTW:
 			workflow = new EamonnOriginalSignalWorkflow(divisionOption, false);
+			break;
+		case PATIENTSAX:
+			workflow = new PatientSaxWorkflow(divisionOption, false);
 			break;
 		}
 		return workflow;
@@ -63,6 +67,9 @@ public enum Experiments {
 			IBk ibk = new IBk();
 			ibk.setNearestNeighbourSearchAlgorithm(new DtwSearch());
 			classifier = ibk;
+			break;
+		case PATIENTSAX:
+			classifier = new J48();
 			break;
 		}
 		return classifier;

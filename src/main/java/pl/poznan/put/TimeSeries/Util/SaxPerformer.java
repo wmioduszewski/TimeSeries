@@ -2,36 +2,38 @@ package pl.poznan.put.TimeSeries.Util;
 
 import java.util.List;
 
-import pl.poznan.put.TimeSeries.Model.Characteristic;
-import pl.poznan.put.TimeSeries.Model.EamonnRecord;
-import pl.poznan.put.TimeSeries.Model.Patient;
-import edu.hawaii.jmotif.lib.ts.TSException;
+import pl.poznan.put.TimeSeries.Model.IRecord;
 import edu.hawaii.jmotif.lib.ts.Timeseries;
 import edu.hawaii.jmotif.logic.sax.SAXFactory;
 
 public class SaxPerformer {
 
-	public static String TranslateTimeSeriesToString(Patient patient,
-			int outputLength, int alphabeatSize)
-			throws CloneNotSupportedException, TSException {
-
-		List<Characteristic> chars = patient.getCharacteristics();
-		double[] vals = new double[chars.size()];
-		long[] times = new long[chars.size()];
-
-		for (int i = 0; i < chars.size(); i++) {
-			vals[i] = chars.get(i).getTfadj();
-			times[i] = chars.get(i).getExaminationTime().getMillis();
+	public static void applyNormalizedSax(List<? extends IRecord> records,
+			int outputLength, int alphabeatSize) throws Exception {
+		float globalMax = Float.MIN_VALUE;
+		float globalMin = Float.MAX_VALUE;
+		for (IRecord record : records) {
+			for (Float value : record.getValues()) {
+				if (value > globalMax)
+					globalMax = value;
+				if (value < globalMin)
+					globalMin = value;
+			}
 		}
 
-		Timeseries series = new Timeseries(vals, times);
-		
-		String sax = SAXFactory.ts2string(series, outputLength, alphabeatSize);
+		for (IRecord record : records) {
+			record.addValueAtTheBeginning(globalMin);
+			record.addValueAtTheEnd(globalMax);
+		}
 
-		return sax;
+		for (IRecord record : records) {
+			String sax = translateRecordToString(record, outputLength,
+					alphabeatSize);
+			record.setSaxString(sax);
+		}
 	}
-	
-	public static String TranslateUnifiedRecordToString(EamonnRecord record,
+
+	public static String translateRecordToString(IRecord record,
 			int outputLength, int alphabeatSize) throws Exception {
 
 		List<Float> floats = record.getValues();
@@ -48,28 +50,6 @@ public class SaxPerformer {
 		String sax = SAXFactory.ts2string(series, outputLength, alphabeatSize);
 
 		return sax;
-	}
-	
-	public static void applyNormalizedSax(List<EamonnRecord> records,
-			int outputLength, int alphabeatSize) throws Exception {
-		float globalMax = Float.MIN_VALUE;
-		float globalMin = Float.MAX_VALUE;
-		for (EamonnRecord eamonnRecord : records) {
-			for (Float value : eamonnRecord.getValues()) {
-				if(value>globalMax) globalMax = value;
-				if(value<globalMin) globalMin = value;
-			}
-		}
-		
-		for (EamonnRecord eamonnRecord : records) {
-			eamonnRecord.addValueAtTheBeginning(globalMin);
-			eamonnRecord.addValueAtTheEnd(globalMax);
-		}
-		
-		for (EamonnRecord eamonnRecord : records) {
-			String sax = TranslateUnifiedRecordToString(eamonnRecord, outputLength, alphabeatSize);
-			eamonnRecord.setSaxString(sax);
-		}
 	}
 
 }

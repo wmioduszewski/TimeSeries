@@ -6,7 +6,6 @@ import java.util.List;
 import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Util.CommonConfig;
 import pl.poznan.put.TimeSeries.Util.SaxPerformer;
-import edu.hawaii.jmotif.lib.ts.TSException;
 
 public abstract class PatientDataImporterBase {
 
@@ -23,15 +22,12 @@ public abstract class PatientDataImporterBase {
 		int alphabeatSize = CommonConfig.getInstance().getSaxAlphabeatSize();
 
 		int outputLength = CommonConfig.getInstance().getSaxOutputLength();
-		
-		for (Patient patient : patients) {
-			String sax = null;
-			try {
-				sax = SaxPerformer.TranslateTimeSeriesToString(patient,
-						outputLength, alphabeatSize);
-			} catch (CloneNotSupportedException | TSException e) {
-				e.printStackTrace();
-			}
+		try {
+			SaxPerformer.applyNormalizedSax(patients, outputLength,
+					alphabeatSize);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
