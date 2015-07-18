@@ -1,9 +1,20 @@
 package pl.poznan.put.TimeSeries.Util;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
 public class CommonConfig {
 
 	private static CommonConfig _instance = null;
 	private static Object mutex = new Object();
+
+	static final String path = "src/main/resources/config.properties";
+
+	public static float getFloatProperty(String propertyName) {
+		return Float.parseFloat(getProperty(propertyName));
+	}
 
 	public static CommonConfig getInstance() {
 		if (_instance == null)
@@ -14,28 +25,50 @@ public class CommonConfig {
 		return _instance;
 	}
 
-	private float attributesToCutRatio = 0.5f;
-	private int crossValidationFolds = 5;
-	private int crossValidationRepetitions = 3;
-	private int divisionPartsAmount = 3;
-	private boolean isFolderDataUsed = true;
-	private int ngramSize = 4;
-	private String pureDataSet = "dataset glaucoma/csv2/dane20140812";
-	private int saxAlphabeatSize = 4;
-	private int saxAttributeLength = 3;
-	private int saxOutputLength = 96;
-	private int dtwSearchRadius = 10;
-	public int getDtwSearchRadius() {
-		return dtwSearchRadius;
+	public static int getIntProperty(String propertyName) {
+		return Integer.parseInt(getProperty(propertyName));
 	}
 
-	public void setDtwSearchRadius(int dtwSearchRadius) {
-		this.dtwSearchRadius = dtwSearchRadius;
+	public static String getProperty(String propertyName) {
+		Properties prop = new Properties();
+		InputStream input = null;
+		String res = null;
+		try {
+			input = new FileInputStream(path);
+			prop.load(input);
+			res = prop.getProperty(propertyName);
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		} finally {
+			if (input != null) {
+				try {
+					input.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return res;
 	}
 
-	private String singleDataPath = "dataset2/ItalyPowerDemand";
-	private float trainToTestRatio = 0.5f;
-	private String xlsReportPath = "output/reports/Result report glaucoma.xls";
+	private String dataFolderPath = getProperty("dataFolderPath");
+	private float attributesToCutRatio = getFloatProperty("attributesToCutRatio");
+	private int crossValidationFolds = getIntProperty("crossValidationFolds");;
+	private int crossValidationRepetitions = getIntProperty("crossValidationRepetitions");
+	private int divisionPartsAmount = getIntProperty("divisionPartsAmount");
+	private int dtwSearchRadius = getIntProperty("dtwSearchRadius");
+	private String glaucomaDataSet = getProperty("glaucomaDataSet");
+	private boolean isFolderDataUsed = getIntProperty("isFolderDataUsed") == 1;
+	private int ngramSize = getIntProperty("ngramSize");
+	private int saxAlphabeatSize = getIntProperty("saxAlphabeatSize");
+	private int saxAttributeLength = getIntProperty("saxAttributeLength");
+	private int saxOutputLength = getIntProperty("saxOutputLength");
+
+	private String singleDataPath = getProperty("singleDataPath");
+
+	private float trainToTestRatio = getFloatProperty("trainToTestRatio");
+
+	private String xlsReportPath = getProperty("xlsReportPath");
 
 	private CommonConfig() {
 	}
@@ -56,12 +89,16 @@ public class CommonConfig {
 		return divisionPartsAmount;
 	}
 
+	public int getDtwSearchRadius() {
+		return dtwSearchRadius;
+	}
+
 	public int getNgramSize() {
 		return ngramSize;
 	}
 
-	public String getPureDataSet() {
-		return SpecificConfig.getProperty("dataFolderPath") + pureDataSet;
+	public String getGlaucomaDataSet() {
+		return dataFolderPath + glaucomaDataSet;
 	}
 
 	public int getSaxAlphabeatSize() {
@@ -77,7 +114,7 @@ public class CommonConfig {
 	}
 
 	public String getSingleDataPath() {
-		return SpecificConfig.getProperty("dataFolderPath") + singleDataPath;
+		return dataFolderPath + singleDataPath;
 	}
 
 	public float getTrainToTestRatio() {
@@ -106,6 +143,10 @@ public class CommonConfig {
 
 	public void setDivisionPartsAmount(int divisionPartsAmount) {
 		this.divisionPartsAmount = divisionPartsAmount;
+	}
+
+	public void setDtwSearchRadius(int dtwSearchRadius) {
+		this.dtwSearchRadius = dtwSearchRadius;
 	}
 
 	public void setFolderDataUsed(boolean isFolderDataUsed) {

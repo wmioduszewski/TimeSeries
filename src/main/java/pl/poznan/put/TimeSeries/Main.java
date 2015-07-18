@@ -11,12 +11,12 @@ public class Main {
 
 		long startTime = System.currentTimeMillis();
 
-		launchExperiment(Experiments.NGRAM);
+		launchExperiment(Experiments.REGRESSION);
 
 		long endTime = System.currentTimeMillis();
 		long diff = endTime - startTime;
-		System.out.println("Workflow execution took " + diff / 1000 + "s: "
-				+ diff % 1000 + "ms.");
+		System.out.println("Workflow execution took " + diff / 1000 + "s."
+				+ diff % 1000 + "ms");
 	}
 
 	private static void launchExperiment(Experiments chosenExperiment)

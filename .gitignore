@@ -6,3 +6,4 @@ output/arffOutput/
 *.war
 *.ear
 /target/
+data/

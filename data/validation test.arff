@@ -1,8 +1,0 @@
-@RELATION Glaucoma
-@ATTRIBUTE saxString string
-@ATTRIBUTE class {health,sick}
-@DATA
-qweqweqwe,health
-asdzxcasdqwe,health
-rtyrtyfgh,sick
-vbnvbnfgh,sick

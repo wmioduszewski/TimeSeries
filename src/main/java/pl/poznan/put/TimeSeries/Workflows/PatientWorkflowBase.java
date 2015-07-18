@@ -24,7 +24,7 @@ public abstract class PatientWorkflowBase extends WorkflowBase {
 
 	@Override
 	protected void importData() {
-		String pureDataPath = CommonConfig.getInstance().getPureDataSet();
+		String pureDataPath = CommonConfig.getInstance().getGlaucomaDataSet();
 		List<Patient> purePatients = null;
 		PatientDataImporterBase importer;
 		try {
