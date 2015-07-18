@@ -23,7 +23,7 @@ public class Misc {
 	
 	@SuppressWarnings("unused")
 	private static void CsvToEamonn() throws IOException {
-		String path = CommonConfig.getProperty("csvDataSet");
+		String path = "";
 
 		PatientDataImporterCsv csvImport = new PatientDataImporterCsv(path);
 

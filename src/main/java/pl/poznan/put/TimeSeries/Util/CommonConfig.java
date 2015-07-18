@@ -12,10 +12,6 @@ public class CommonConfig {
 
 	static final String path = "src/main/resources/config.properties";
 
-	public static float getFloatProperty(String propertyName) {
-		return Float.parseFloat(getProperty(propertyName));
-	}
-
 	public static CommonConfig getInstance() {
 		if (_instance == null)
 			synchronized (mutex) {
@@ -25,11 +21,15 @@ public class CommonConfig {
 		return _instance;
 	}
 
-	public static int getIntProperty(String propertyName) {
+	private static float getFloatProperty(String propertyName) {
+		return Float.parseFloat(getProperty(propertyName));
+	}
+
+	private static int getIntProperty(String propertyName) {
 		return Integer.parseInt(getProperty(propertyName));
 	}
 
-	public static String getProperty(String propertyName) {
+	private static String getProperty(String propertyName) {
 		Properties prop = new Properties();
 		InputStream input = null;
 		String res = null;
@@ -51,10 +51,10 @@ public class CommonConfig {
 		return res;
 	}
 
-	private String dataFolderPath = getProperty("dataFolderPath");
 	private float attributesToCutRatio = getFloatProperty("attributesToCutRatio");
-	private int crossValidationFolds = getIntProperty("crossValidationFolds");;
-	private int crossValidationRepetitions = getIntProperty("crossValidationRepetitions");
+	private int crossValidationFolds = getIntProperty("crossValidationFolds");
+	private int crossValidationRepetitions = getIntProperty("crossValidationRepetitions");;
+	private String dataFolderPath = getProperty("dataFolderPath");
 	private int divisionPartsAmount = getIntProperty("divisionPartsAmount");
 	private int dtwSearchRadius = getIntProperty("dtwSearchRadius");
 	private String glaucomaDataSet = getProperty("glaucomaDataSet");
@@ -93,12 +93,12 @@ public class CommonConfig {
 		return dtwSearchRadius;
 	}
 
-	public int getNgramSize() {
-		return ngramSize;
-	}
-
 	public String getGlaucomaDataSet() {
 		return dataFolderPath + glaucomaDataSet;
+	}
+
+	public int getNgramSize() {
+		return ngramSize;
 	}
 
 	public int getSaxAlphabeatSize() {

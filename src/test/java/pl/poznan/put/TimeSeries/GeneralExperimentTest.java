@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import pl.poznan.put.TimeSeries.Classifying.CrossValidationExperiment;
 import pl.poznan.put.TimeSeries.Classifying.ExperimentBase;
+import pl.poznan.put.TimeSeries.Util.CommonConfig;
 import pl.poznan.put.TimeSeries.Workflows.WorkflowBase;
 import weka.classifiers.Classifier;
 
@@ -18,6 +19,11 @@ public class GeneralExperimentTest {
 
 	@Test
 	public void test() {
+		
+		
+		String dataPath = CommonConfig.getInstance().getSingleDataPath();
+		CommonConfig.getInstance().setSingleDataPath("testData/SAMPLEDATASET");
+		
 		for (Experiments chosenExperiment : Experiments.values()) {
 			WorkflowBase workflow = chosenExperiment.getWorkflow();
 			Classifier classifier = chosenExperiment.getClassifier();
@@ -29,8 +35,7 @@ public class GeneralExperimentTest {
 				fail(e.getMessage());
 			}
 		}
+		
+		CommonConfig.getInstance().setSingleDataPath(dataPath);
 	}
-	
-	
-
 }
