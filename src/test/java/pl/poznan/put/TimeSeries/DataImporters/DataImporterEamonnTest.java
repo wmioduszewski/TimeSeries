@@ -20,6 +20,8 @@ public class DataImporterEamonnTest {
 
 	List<EamonnRecord> records = null;
 	private static String testSetName = "testData";
+	private static int oldAlphaVal;
+	private static int oldOutputVal;
 
 	private List<EamonnRecord> importRecords() {
 		DataImporterEamonn importer = new DataImporterEamonn(testSetName);
@@ -33,6 +35,8 @@ public class DataImporterEamonnTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		oldAlphaVal = CommonConfig.getInstance().getSaxAlphabeatSize();
+		oldOutputVal = CommonConfig.getInstance().getSaxOutputLength();
 		File f = new File(String.format("%s", testSetName));
 		f.mkdir();
 	}
@@ -41,6 +45,8 @@ public class DataImporterEamonnTest {
 	public static void tearDownAfterClass() throws Exception {
 		File f = new File(String.format("%s", testSetName));
 		f.delete();
+		CommonConfig.getInstance().setSaxAlphabeatSize(oldAlphaVal);
+		CommonConfig.getInstance().setSaxOutputLength(oldOutputVal);
 	}
 
 	private void setConfiguration(int alphabet, int output) {

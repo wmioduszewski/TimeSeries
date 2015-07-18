@@ -39,8 +39,6 @@ public class NormalizationDifferenceTest {
 		String normalizedSax = recordNormalized.getSaxString();
 
 		normalizedSax = normalizedSax.substring(1, normalizedSax.length() - 1);
-		// System.out.println(cleanSax);
-		// System.out.println(normalizedSax);
 
 		// normalization gives a result
 		assertNotEquals(normalizedSax, cleanSax);
