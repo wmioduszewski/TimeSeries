@@ -103,12 +103,12 @@ public class DataImporterEamonnTest {
 	@Test
 	public void sax2() {
 		String res = saxTestBase(3, 7, "0 0.5 0.5 2.2 2.3 3 0 1.5");
-		assertEquals(res, "aacccab");
+		assertEquals(res, "aabccac");
 	}
 
 	@Test
 	public void sax3() {
 		String res = saxTestBase(3, 5, "0 1 1 2 0 0 1 2");
-		assertEquals(res, "bcaac");
+		assertEquals(res, "ababc");
 	}
 }
