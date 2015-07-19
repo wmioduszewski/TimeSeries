@@ -31,7 +31,7 @@ public class GeneralExperimentTest {
 	}
 
 	@Test
-	public void test() {
+	public void directExperiments() {
 		for (Experiments chosenExperiment : Experiments.values()) {
 			if(chosenExperiment==Experiments.PATIENTSAX) continue;
 			WorkflowBase workflow = chosenExperiment.getWorkflow();
@@ -39,6 +39,22 @@ public class GeneralExperimentTest {
 			ExperimentBase experiment = new CrossValidationExperiment(classifier);
 			try {
 				workflow.runExperiment(experiment);
+			} catch (Exception e) {
+				fail(e.getMessage());
+			}
+		}
+	}
+	
+	@Test
+	public void fileBasedExperiments() {
+		for (Experiments chosenExperiment : Experiments.values()) {
+			if(chosenExperiment==Experiments.PATIENTSAX) continue;
+			WorkflowBase workflow = chosenExperiment.getWorkflow();
+			Classifier classifier = chosenExperiment.getClassifier();
+			ExperimentBase experiment = new CrossValidationExperiment(classifier);
+			try {
+				String path = workflow.saveArff();
+				workflow.executeArff(experiment, path);
 			} catch (Exception e) {
 				fail(e.getMessage());
 			}
