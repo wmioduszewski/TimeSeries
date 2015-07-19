@@ -35,7 +35,13 @@ public class CrossValidationExperiment extends ExperimentBase {
 		Instances dataSet = Utils.readInstances(pathToArff);
 		return runExperiment(dataSet, trainToTestRatio);
 	}
-	
+
+	public ExperimentResult runFileExperimentRepeatedly(String pathToArff,
+			double partOfDataSet, int times) throws Exception {
+		Instances dataSet = Utils.readInstances(pathToArff);
+		return runExperimentRepeatedly(dataSet, partOfDataSet, times);
+	}
+
 	public void setFolds(int folds) {
 		this.folds = folds;
 	}

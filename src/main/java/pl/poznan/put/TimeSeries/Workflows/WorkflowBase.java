@@ -14,7 +14,8 @@ public abstract class WorkflowBase {
 
 	private static double trainToTestRatio = CommonConfig.getInstance()
 			.getTrainToTestRatio();
-	private static int repetitions = CommonConfig.getInstance().getCrossValidationRepetitions();
+	private static int repetitions = CommonConfig.getInstance()
+			.getCrossValidationRepetitions();
 
 	public static <T extends IRecord> void reportInputStatistics(List<T> records) {
 		List<Double> distinctClasses = records.stream()
@@ -53,27 +54,37 @@ public abstract class WorkflowBase {
 		processData();
 		Instances instances = buildInstances();
 		ExperimentResult result = experiment.runExperimentRepeatedly(instances,
-				trainToTestRatio,repetitions);
+				trainToTestRatio, repetitions);
 		printResult(result);
 	}
 
-	public void runFileBasedExperiment(ExperimentBase experiment) {
-
-		System.out.println("Workflow has started.");
+	public String saveArff() {
+		System.out.println("Arff creation has started.");
 		try {
 			importData();
 			processData();
 			buildInstances();
 			exportArff();
 			reportStatistics();
-			ExperimentResult result = experiment.runFileExperiment(arffPath,
-					trainToTestRatio);
+			System.out.println("Arff has been saved.");
+		} catch (Exception e) {
+			System.out.println("Error during arff creation/save.");
+			e.printStackTrace();
+		}
+		return arffPath;
+	}
+
+	public void executeArff(ExperimentBase experiment, String arffPath) {
+
+		System.out.println("Workflow has started.");
+		try {
+			ExperimentResult result = experiment.runFileExperimentRepeatedly(arffPath,
+					trainToTestRatio,repetitions);
 			printResult(result);
 		} catch (Exception e) {
 			System.out.println("Error during workflow performing:");
 			e.printStackTrace();
 		}
-
 		System.out.println("Workflow has ended.");
 	}
 

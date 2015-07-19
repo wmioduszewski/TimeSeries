@@ -26,7 +26,7 @@ public class DominantArffBuilder extends SaxArffExporterBase {
 				attrInfo.addElement(new Attribute(prefix + "atL" + elem));
 			}
 		}
-		
+
 		Attribute destClassAttribute = null;
 		try {
 			destClassAttribute = constructDestinationClassesNominalAttribute(destClasses);
@@ -43,7 +43,7 @@ public class DominantArffBuilder extends SaxArffExporterBase {
 		instances.setClassIndex(instances.numAttributes() - 1);
 
 		for (CalculatedRecord calculatedRecord : input) {
-			Instance record = new Instance(attrInfo.size());
+			Instance instance = new Instance(attrInfo.size());
 			int attrIndex = 0;
 			for (int i = 0; i < regularPartsForDivision; i++) {
 				List<String> currentDistincts = distincts.get(i);
@@ -72,13 +72,13 @@ public class DominantArffBuilder extends SaxArffExporterBase {
 						}
 					}
 
-					record.setValue(attrIndex++, lowersRes);
-					record.setValue(attrIndex++, greatersRes);
+					instance.setValue(attrIndex++, lowersRes);
+					instance.setValue(attrIndex++, greatersRes);
 				}
 			}
-			record.setValue(attrIndex,
+			instance.setValue(attrIndex,
 					destClasses.indexOf(calculatedRecord.getDestClass()));
-			instances.add(record);
+			instances.add(instance);
 		}
 		removeMaxMinAttributes();
 		return instances;

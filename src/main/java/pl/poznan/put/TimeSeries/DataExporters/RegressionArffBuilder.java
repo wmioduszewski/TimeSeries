@@ -48,16 +48,17 @@ public class RegressionArffBuilder extends ArffExporterBase {
 		instances.setClassIndex(instances.numAttributes() - 1);
 
 		for (RegressionArffRow row : input) {
-			Instance record = new Instance(attrInfo.size());
+			Instance instance = new Instance(attrInfo.size());
 			int attrIdx = 0;
 			for (RegressionResult regResult : row.getRegressionResults()) {
-				record.setValue(attrIdx++, regResult.getSlope());
-				record.setValue(attrIdx++, regResult.getIntercept());
+				instance.setValue(attrIdx++, regResult.getSlope());
+				instance.setValue(attrIdx++, regResult.getIntercept());
 			}
-			
-			int destClassIndex = getIndexOfDestinationClass(row.getDestinationClass());
-			record.setValue(attrIdx, destClassIndex);
-			instances.add(record);
+
+			int destClassIndex = getIndexOfDestinationClass(row
+					.getDestinationClass());
+			instance.setValue(attrIdx, destClassIndex);
+			instances.add(instance);
 		}
 		return instances;
 	}

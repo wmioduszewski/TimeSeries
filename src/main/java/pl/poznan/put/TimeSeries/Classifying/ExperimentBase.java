@@ -26,4 +26,8 @@ public abstract class ExperimentBase {
 
 	public abstract ExperimentResult runFileExperiment(String pathToArff,
 			double trainToTestRatio) throws Exception;
+
+	public abstract ExperimentResult runFileExperimentRepeatedly(
+			String pathToArff, double partOfDataSet, int times)
+			throws Exception;
 }

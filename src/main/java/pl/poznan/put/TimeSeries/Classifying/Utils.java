@@ -14,6 +14,7 @@ public class Utils {
 	public static Instances readInstances(String path) throws Exception {
 		BufferedReader reader = new BufferedReader(new FileReader(path));
 		Instances instances = new Instances(reader);
+		instances.setClassIndex(instances.numAttributes()-1);
 		reader.close();
 		return instances;
 	}
