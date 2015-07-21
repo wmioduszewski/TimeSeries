@@ -12,8 +12,6 @@ import weka.core.Instances;
 
 public abstract class WorkflowBase {
 
-	private static double trainToTestRatio = CommonConfig.getInstance()
-			.getTrainToTestRatio();
 	private static int repetitions = CommonConfig.getInstance()
 			.getCrossValidationRepetitions();
 
@@ -54,7 +52,7 @@ public abstract class WorkflowBase {
 		processData();
 		Instances instances = buildInstances();
 		ExperimentResult result = experiment.runExperimentRepeatedly(instances,
-				trainToTestRatio, repetitions);
+				repetitions);
 		printResult(result);
 	}
 
@@ -78,8 +76,8 @@ public abstract class WorkflowBase {
 
 		System.out.println("Workflow has started.");
 		try {
-			ExperimentResult result = experiment.runFileExperimentRepeatedly(arffPath,
-					trainToTestRatio,repetitions);
+			ExperimentResult result = experiment.runFileExperimentRepeatedly(
+					arffPath, repetitions);
 			printResult(result);
 		} catch (Exception e) {
 			System.out.println("Error during workflow performing:");

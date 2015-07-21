@@ -66,7 +66,6 @@ public class CommonConfig {
 	private int saxAttributeLength = getIntProperty("saxAttributeLength");
 	private int saxOutputLength = getIntProperty("saxOutputLength");
 	private String singleDataPath = getProperty("singleDataPath");
-	private float trainToTestRatio = getFloatProperty("trainToTestRatio");
 
 	private String xlsReportPath = getProperty("xlsReportPath");
 
@@ -119,10 +118,6 @@ public class CommonConfig {
 
 	public String getSingleDataPath() {
 		return dataFolderPath + singleDataPath;
-	}
-
-	public float getTrainToTestRatio() {
-		return trainToTestRatio;
 	}
 
 	public String getXlsReportPath() {
@@ -179,10 +174,6 @@ public class CommonConfig {
 
 	public void setSingleDataPath(String singleDataPath) {
 		this.singleDataPath = singleDataPath;
-	}
-
-	public void setTrainToTestRatio(float trainToTestRatio) {
-		this.trainToTestRatio = trainToTestRatio;
 	}
 
 	public void setXlsReportPath(String xlsReportPath) {

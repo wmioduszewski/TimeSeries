@@ -11,23 +11,20 @@ public abstract class ExperimentBase {
 		this.classifier = classifier;
 	}
 
-	public abstract ExperimentResult runExperiment(Instances instances,
-			double trainToTestRatio) throws Exception;
+	public abstract ExperimentResult runExperiment(Instances instances) throws Exception;
 
-	public ExperimentResult runExperimentRepeatedly(Instances baseDataSet,
-			double partOfDataSet, int times) throws Exception {
+	public ExperimentResult runExperimentRepeatedly(Instances baseDataSet, int times) throws Exception {
 		ExperimentResult result = new ExperimentResult(0, 0, 0, 0, 0, 0);
 		for (int i = 0; i < times; i++) {
-			result.add(runExperiment(baseDataSet, partOfDataSet));
+			result.add(runExperiment(baseDataSet));
 		}
 		result.divideBy(times);
 		return result;
 	}
 
-	public abstract ExperimentResult runFileExperiment(String pathToArff,
-			double trainToTestRatio) throws Exception;
+	public abstract ExperimentResult runFileExperiment(String pathToArff) throws Exception;
 
 	public abstract ExperimentResult runFileExperimentRepeatedly(
-			String pathToArff, double partOfDataSet, int times)
+			String pathToArff, int times)
 			throws Exception;
 }

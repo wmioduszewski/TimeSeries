@@ -20,8 +20,8 @@ public class CrossValidationExperiment extends ExperimentBase {
 	}
 
 	@Override
-	public ExperimentResult runExperiment(Instances baseDataSet,
-			double partOfDataSet) throws Exception {
+	public ExperimentResult runExperiment(Instances baseDataSet)
+			throws Exception {
 		// from
 		// https://weka.wikispaces.com/Generating+classifier+evaluation+output+manually
 		Evaluation eval = new Evaluation(baseDataSet);
@@ -30,16 +30,16 @@ public class CrossValidationExperiment extends ExperimentBase {
 	}
 
 	@Override
-	public ExperimentResult runFileExperiment(String pathToArff,
-			double trainToTestRatio) throws Exception {
+	public ExperimentResult runFileExperiment(String pathToArff)
+			throws Exception {
 		Instances dataSet = Utils.readInstances(pathToArff);
-		return runExperiment(dataSet, trainToTestRatio);
+		return runExperiment(dataSet);
 	}
 
 	public ExperimentResult runFileExperimentRepeatedly(String pathToArff,
-			double partOfDataSet, int times) throws Exception {
+			int times) throws Exception {
 		Instances dataSet = Utils.readInstances(pathToArff);
-		return runExperimentRepeatedly(dataSet, partOfDataSet, times);
+		return runExperimentRepeatedly(dataSet, times);
 	}
 
 	public void setFolds(int folds) {
