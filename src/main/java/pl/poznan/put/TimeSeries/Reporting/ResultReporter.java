@@ -49,9 +49,8 @@ public class ResultReporter {
 	private void createSheet() {
 		int alph = report.getAlphabeatUsed();
 		int outp = report.getOutputLengthUsed();
-		int attrLen = report.getAttributeLengthUsed();
-		String sheetName = String.format("alph=%d outp=%d attrLen=%d", alph,
-				outp, attrLen);
+		String sheetName = String.format("alph=%d outp=%d", alph,
+				outp);
 		currentSheet = workbook.createSheet(sheetName,
 				workbook.getNumberOfSheets());
 	}

@@ -57,18 +57,19 @@ public class CommonConfig {
 	private int crossValidationRepetitions = getIntProperty("crossValidationRepetitions");;
 	private String dataFolderPath = getProperty("dataFolderPath");
 	private int divisionPartsAmount = getIntProperty("divisionPartsAmount");
-
 	private int dtwSearchRadius = getIntProperty("dtwSearchRadius");
 
 	private String glaucomaDataSet = getProperty("glaucomaDataSet");
+
 	private boolean isFolderDataUsed = getIntProperty("isFolderDataUsed") == 1;
+
+	private int k = getIntProperty("k");
+
 	private int ngramSize = getIntProperty("ngramSize");
 	private int saxAlphabeatSize = getIntProperty("saxAlphabeatSize");
 	private int saxOutputLength = getIntProperty("saxOutputLength");
 	private String singleDataPath = getProperty("singleDataPath");
-
 	private String xlsReportPath = getProperty("xlsReportPath");
-
 	private CommonConfig() {
 	}
 
@@ -98,6 +99,10 @@ public class CommonConfig {
 
 	public String getGlaucomaDataSet() {
 		return dataFolderPath + glaucomaDataSet;
+	}
+
+	public int getK() {
+		return k;
 	}
 
 	public int getNgramSize() {
@@ -150,6 +155,10 @@ public class CommonConfig {
 
 	public void setFolderDataUsed(boolean isFolderDataUsed) {
 		this.isFolderDataUsed = isFolderDataUsed;
+	}
+
+	public void setK(int k) {
+		this.k = k;
 	}
 
 	public void setNgramSize(int ngramSize) {

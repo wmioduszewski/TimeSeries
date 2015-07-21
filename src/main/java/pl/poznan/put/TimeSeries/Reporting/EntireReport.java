@@ -11,7 +11,6 @@ public class EntireReport {
 	private List<String> classifiersNames;
 	private int alphabeatUsed;
 	private int outputLengthUsed;
-	private int attributeLengthUsed;
 
 	public EntireReport() {
 		records = new LinkedList<ReportRecord>();
@@ -20,7 +19,6 @@ public class EntireReport {
 		CommonConfig config = CommonConfig.getInstance();
 		alphabeatUsed = config.getSaxAlphabeatSize();
 		outputLengthUsed = config.getSaxOutputLength();
-		attributeLengthUsed = config.getSaxAttributeLength();
 	}
 
 	public List<ReportRecord> getRecords() {
@@ -37,10 +35,6 @@ public class EntireReport {
 
 	public int getOutputLengthUsed() {
 		return outputLengthUsed;
-	}
-
-	public int getAttributeLengthUsed() {
-		return attributeLengthUsed;
 	}
 
 	public void AddClassifier(String classifier) {

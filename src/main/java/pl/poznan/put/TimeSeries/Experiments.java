@@ -3,6 +3,7 @@ package pl.poznan.put.TimeSeries;
 import pl.poznan.put.TimeSeries.Classifying.BasicNgramClassifier;
 import pl.poznan.put.TimeSeries.Classifying.DtwSearch;
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
+import pl.poznan.put.TimeSeries.Util.CommonConfig;
 import pl.poznan.put.TimeSeries.Workflows.EamonnBasicNgramWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.EamonnOriginalSignalWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.EamonnRegressionWorkflow;
@@ -47,6 +48,7 @@ public enum Experiments {
 
 	public Classifier getClassifier() {
 		Classifier classifier = null;
+		int k = CommonConfig.getInstance().getK();
 		switch (this) {
 		case REGRESSION:
 			classifier = new J48();
@@ -61,10 +63,10 @@ public enum Experiments {
 			classifier = new BasicNgramClassifier();
 			break;
 		case KNN:
-			classifier = new IBk();
+			classifier = new IBk(k);
 			break;
 		case DTW:
-			IBk ibk = new IBk();
+			IBk ibk = new IBk(k);
 			ibk.setNearestNeighbourSearchAlgorithm(new DtwSearch());
 			classifier = ibk;
 			break;
