@@ -38,6 +38,7 @@ public class CommonConfig {
 			prop.load(input);
 			res = prop.getProperty(propertyName);
 		} catch (IOException ex) {
+			System.out.println("Cannot get property: " + propertyName);
 			ex.printStackTrace();
 		} finally {
 			if (input != null) {
@@ -63,7 +64,6 @@ public class CommonConfig {
 	private boolean isFolderDataUsed = getIntProperty("isFolderDataUsed") == 1;
 	private int ngramSize = getIntProperty("ngramSize");
 	private int saxAlphabeatSize = getIntProperty("saxAlphabeatSize");
-	private int saxAttributeLength = getIntProperty("saxAttributeLength");
 	private int saxOutputLength = getIntProperty("saxOutputLength");
 	private String singleDataPath = getProperty("singleDataPath");
 
@@ -106,10 +106,6 @@ public class CommonConfig {
 
 	public int getSaxAlphabeatSize() {
 		return saxAlphabeatSize;
-	}
-
-	public int getSaxAttributeLength() {
-		return saxAttributeLength;
 	}
 
 	public int getSaxOutputLength() {
@@ -162,10 +158,6 @@ public class CommonConfig {
 
 	public void setSaxAlphabeatSize(int saxAlphabeatSize) {
 		this.saxAlphabeatSize = saxAlphabeatSize;
-	}
-
-	public void setSaxAttributeLength(int saxAttributeLength) {
-		this.saxAttributeLength = saxAttributeLength;
 	}
 
 	public void setSaxOutputLength(int saxOutputLength) {
