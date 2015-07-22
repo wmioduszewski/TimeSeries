@@ -5,6 +5,7 @@ import pl.poznan.put.TimeSeries.Classifying.DtwSearch;
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.Util.CommonConfig;
 import pl.poznan.put.TimeSeries.Workflows.EamonnBasicNgramWorkflow;
+import pl.poznan.put.TimeSeries.Workflows.EamonnOriginalSignalNormalizedBySaxWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.EamonnOriginalSignalWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.EamonnRegressionWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.EamonnSaxWorkflow;
@@ -34,7 +35,8 @@ public enum Experiments {
 			workflow = new EamonnBasicNgramWorkflow(divisionOption, false);
 			break;
 		case KNN:
-			workflow = new EamonnOriginalSignalWorkflow(divisionOption, false);
+//			workflow = new EamonnOriginalSignalWorkflow(divisionOption, false);
+			workflow = new EamonnOriginalSignalNormalizedBySaxWorkflow(divisionOption, false);
 			break;
 		case DTW:
 			workflow = new EamonnOriginalSignalWorkflow(divisionOption, false);
