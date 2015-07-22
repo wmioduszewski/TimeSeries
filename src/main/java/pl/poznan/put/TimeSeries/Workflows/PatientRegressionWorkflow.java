@@ -51,11 +51,6 @@ public class PatientRegressionWorkflow extends PatientWorkflowBase {
 	}
 
 	@Override
-	protected void reportStatistics() {
-		WorkflowBase.reportInputStatistics(patients);
-	}
-
-	@Override
 	protected Instances buildInstances() {
 		exporter= new RegressionArffBuilder(rows);
 		return exporter.buildInstances();

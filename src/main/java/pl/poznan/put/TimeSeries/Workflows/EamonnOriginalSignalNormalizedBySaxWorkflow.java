@@ -31,11 +31,4 @@ public class EamonnOriginalSignalNormalizedBySaxWorkflow extends EamonnWorkflowB
 		// nothing to do here - passing clean input further
 		
 	}
-
-	@Override
-	protected void reportStatistics() {
-		WorkflowBase.reportInputStatistics(records);
-		
-	}
-
 }

@@ -28,10 +28,4 @@ public class EamonnBasicNgramWorkflow extends EamonnWorkflowBase{
 	protected void processData() throws Exception {
 		// nothing to do here - passing clean input further
 	}
-
-	@Override
-	protected void reportStatistics() {
-		WorkflowBase.reportInputStatistics(records);
-	}
-
 }

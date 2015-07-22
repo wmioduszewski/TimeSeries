@@ -48,11 +48,6 @@ public class EamonnRegressionWorkflow extends EamonnWorkflowBase {
 	}
 
 	@Override
-	protected void reportStatistics() {
-		WorkflowBase.reportInputStatistics(records);
-	}
-
-	@Override
 	protected Instances buildInstances() {
 		exporter = new RegressionArffBuilder(rows);
 		return exporter.buildInstances();

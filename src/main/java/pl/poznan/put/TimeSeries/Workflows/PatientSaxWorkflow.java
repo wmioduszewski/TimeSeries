@@ -50,11 +50,6 @@ public class PatientSaxWorkflow extends PatientWorkflowBase {
 	}
 
 	@Override
-	protected void reportStatistics() {
-		WorkflowBase.reportInputStatistics(patients);
-	}
-
-	@Override
 	protected Instances buildInstances() {
 		if(isDominant)
 			exporter = new DominantArffBuilder(calculatedRecords);

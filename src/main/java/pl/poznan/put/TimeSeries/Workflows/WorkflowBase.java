@@ -47,6 +47,20 @@ public abstract class WorkflowBase {
 		isAttrBag = true;
 	}
 
+	public void executeArff(ExperimentBase experiment, String arffPath) {
+
+		System.out.println("Workflow has started.");
+		try {
+			ExperimentResult result = experiment.runFileExperimentRepeatedly(
+					arffPath, repetitions);
+			printResult(result);
+		} catch (Exception e) {
+			System.out.println("Error during workflow performing:");
+			e.printStackTrace();
+		}
+		System.out.println("Workflow has ended.");
+	}
+
 	public void runExperiment(ExperimentBase experiment) throws Exception {
 		importData();
 		processData();
@@ -72,20 +86,6 @@ public abstract class WorkflowBase {
 		return arffPath;
 	}
 
-	public void executeArff(ExperimentBase experiment, String arffPath) {
-
-		System.out.println("Workflow has started.");
-		try {
-			ExperimentResult result = experiment.runFileExperimentRepeatedly(
-					arffPath, repetitions);
-			printResult(result);
-		} catch (Exception e) {
-			System.out.println("Error during workflow performing:");
-			e.printStackTrace();
-		}
-		System.out.println("Workflow has ended.");
-	}
-
 	private void printResult(ExperimentResult experimentResult) {
 		System.out.println();
 		if (experimentResult != null)
@@ -103,7 +103,9 @@ public abstract class WorkflowBase {
 
 	protected abstract void processData() throws Exception;
 
-	protected abstract void reportStatistics();
+	protected void reportStatistics() {
+		WorkflowBase.reportInputStatistics(records);
+	}
 
 	protected void setTempPaths() {
 		String className = this.getClass().getName();

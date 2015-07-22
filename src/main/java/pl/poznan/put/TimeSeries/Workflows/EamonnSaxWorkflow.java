@@ -51,11 +51,6 @@ public class EamonnSaxWorkflow extends EamonnWorkflowBase {
 	}
 
 	@Override
-	protected void reportStatistics() {
-		WorkflowBase.reportInputStatistics(records);
-	}
-
-	@Override
 	protected Instances buildInstances() {
 		if(isDominant)
 			exporter = new DominantArffBuilder(calculatedRecords);
