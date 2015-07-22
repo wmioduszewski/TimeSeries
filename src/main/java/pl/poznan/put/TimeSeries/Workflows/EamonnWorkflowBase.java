@@ -11,8 +11,8 @@ public abstract class EamonnWorkflowBase extends WorkflowBase {
 
 	protected List<EamonnRecord> records;
 
-	public EamonnWorkflowBase(DivisionOptions divisionOption, boolean isDominant) {
-		super(divisionOption, isDominant);
+	public EamonnWorkflowBase(DivisionOptions divisionOption) {
+		super(divisionOption);
 	}
 
 	@Override

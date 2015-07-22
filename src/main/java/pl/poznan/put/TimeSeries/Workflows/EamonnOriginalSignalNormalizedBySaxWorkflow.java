@@ -7,8 +7,8 @@ import weka.core.Instances;
 public class EamonnOriginalSignalNormalizedBySaxWorkflow extends EamonnWorkflowBase{
 
 	public EamonnOriginalSignalNormalizedBySaxWorkflow(
-			DivisionOptions divisionOption, boolean isDominant) {
-		super(divisionOption, isDominant);
+			DivisionOptions divisionOption) {
+		super(divisionOption);
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -22,8 +22,7 @@ public class EamonnOriginalSignalNormalizedBySaxWorkflow extends EamonnWorkflowB
 
 	@Override
 	protected void exportArff() throws Exception {
-		exporter.saveArff(arffPath);
-		
+		exporter.saveArff(arffPath);  
 	}
 
 	@Override

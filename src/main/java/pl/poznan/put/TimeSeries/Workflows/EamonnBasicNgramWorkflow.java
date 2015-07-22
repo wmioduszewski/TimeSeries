@@ -8,9 +8,8 @@ public class EamonnBasicNgramWorkflow extends EamonnWorkflowBase{
 
 	private BasicSaxArffBuilder exporter;
 	
-	public EamonnBasicNgramWorkflow(DivisionOptions divisionOption,
-			boolean isDominant) {
-		super(divisionOption, isDominant);
+	public EamonnBasicNgramWorkflow(DivisionOptions divisionOption) {
+		super(divisionOption);
 	}
 
 	@Override

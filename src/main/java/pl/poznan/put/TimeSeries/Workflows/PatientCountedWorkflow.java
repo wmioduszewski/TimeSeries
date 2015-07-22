@@ -5,20 +5,20 @@ import java.util.HashMap;
 import java.util.List;
 
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
-import pl.poznan.put.TimeSeries.DataExporters.DominantArffBuilder;
-import pl.poznan.put.TimeSeries.DataExporters.SaxArffExporterBase;
 import pl.poznan.put.TimeSeries.DataExporters.CountedSaxArffBuilder;
+import pl.poznan.put.TimeSeries.DataExporters.SaxArffExporterBase;
 import pl.poznan.put.TimeSeries.DataProcessors.PeriodicNgramCounter;
 import pl.poznan.put.TimeSeries.Model.CalculatedRecord;
 import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Util.DataDivider;
 import weka.core.Instances;
 
-public class PatientSaxWorkflow extends PatientWorkflowBase {
+public class PatientCountedWorkflow extends PatientWorkflowBase {
 
-	public PatientSaxWorkflow(DivisionOptions divisionOption, boolean isDominant) {
-		super(divisionOption, isDominant);
+	public PatientCountedWorkflow(DivisionOptions divisionOption) {
+		super(divisionOption);
 	}
+
 	private SaxArffExporterBase exporter;
 	List<CalculatedRecord> calculatedRecords;
 
@@ -51,10 +51,7 @@ public class PatientSaxWorkflow extends PatientWorkflowBase {
 
 	@Override
 	protected Instances buildInstances() {
-		if(isDominant)
-			exporter = new DominantArffBuilder(calculatedRecords);
-		else
-			exporter = new CountedSaxArffBuilder(calculatedRecords);
+		exporter = new CountedSaxArffBuilder(calculatedRecords);
 		return exporter.buildInstances();
 	}
 

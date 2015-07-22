@@ -16,9 +16,8 @@ public abstract class PatientWorkflowBase extends WorkflowBase {
 
 	protected List<Patient> patients;
 
-	public PatientWorkflowBase(DivisionOptions divisionOption,
-			boolean isDominant) {
-		super(divisionOption, isDominant);
+	public PatientWorkflowBase(DivisionOptions divisionOption) {
+		super(divisionOption);
 		patients = new ArrayList<Patient>();
 	}
 

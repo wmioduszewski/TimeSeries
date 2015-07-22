@@ -5,44 +5,45 @@ import pl.poznan.put.TimeSeries.Classifying.DtwSearch;
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.Util.CommonConfig;
 import pl.poznan.put.TimeSeries.Workflows.EamonnBasicNgramWorkflow;
+import pl.poznan.put.TimeSeries.Workflows.EamonnDominantWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.EamonnOriginalSignalNormalizedBySaxWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.EamonnOriginalSignalWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.EamonnRegressionWorkflow;
-import pl.poznan.put.TimeSeries.Workflows.EamonnSaxWorkflow;
-import pl.poznan.put.TimeSeries.Workflows.PatientSaxWorkflow;
+import pl.poznan.put.TimeSeries.Workflows.EamonnCountedWorkflow;
+import pl.poznan.put.TimeSeries.Workflows.PatientCountedWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.WorkflowBase;
 import weka.classifiers.Classifier;
 import weka.classifiers.lazy.IBk;
 import weka.classifiers.trees.J48;
 
 public enum Experiments {
-	REGRESSION, DOMINANANT, NONDOMINANT, NGRAM, KNN, DTW, PATIENTSAX;
+	REGRESSION, DOMINANANT, COUNTED, NGRAM, KNN, DTW, PATIENTCOUNTED;
 
 	public WorkflowBase getWorkflow() {
 		WorkflowBase workflow = null;
 		DivisionOptions divisionOption = DivisionOptions.Regular;
 		switch (this) {
 		case REGRESSION:
-			workflow = new EamonnRegressionWorkflow(divisionOption, false);
+			workflow = new EamonnRegressionWorkflow(divisionOption);
 			break;
 		case DOMINANANT:
-			workflow = new EamonnSaxWorkflow(divisionOption, true);
+			workflow = new EamonnDominantWorkflow(divisionOption);
 			break;
-		case NONDOMINANT:
-			workflow = new EamonnSaxWorkflow(divisionOption, false);
+		case COUNTED:
+			workflow = new EamonnCountedWorkflow(divisionOption);
 			break;
 		case NGRAM:
-			workflow = new EamonnBasicNgramWorkflow(divisionOption, false);
+			workflow = new EamonnBasicNgramWorkflow(divisionOption);
 			break;
 		case KNN:
-//			workflow = new EamonnOriginalSignalWorkflow(divisionOption, false);
-			workflow = new EamonnOriginalSignalNormalizedBySaxWorkflow(divisionOption, false);
+//			workflow = new EamonnOriginalSignalWorkflow(divisionOption);
+			workflow = new EamonnOriginalSignalNormalizedBySaxWorkflow(divisionOption);
 			break;
 		case DTW:
-			workflow = new EamonnOriginalSignalWorkflow(divisionOption, false);
+			workflow = new EamonnOriginalSignalWorkflow(divisionOption);
 			break;
-		case PATIENTSAX:
-			workflow = new PatientSaxWorkflow(divisionOption, false);
+		case PATIENTCOUNTED:
+			workflow = new PatientCountedWorkflow(divisionOption);
 			break;
 		}
 		return workflow;
@@ -58,7 +59,7 @@ public enum Experiments {
 		case DOMINANANT:
 			classifier = new J48();
 			break;
-		case NONDOMINANT:
+		case COUNTED:
 			classifier = new J48();
 			break;
 		case NGRAM:
@@ -72,7 +73,7 @@ public enum Experiments {
 			ibk.setNearestNeighbourSearchAlgorithm(new DtwSearch());
 			classifier = ibk;
 			break;
-		case PATIENTSAX:
+		case PATIENTCOUNTED:
 			classifier = new J48();
 			break;
 		}

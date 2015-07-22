@@ -34,15 +34,13 @@ public abstract class WorkflowBase {
 	protected int divisionPartsAmount = CommonConfig.getInstance()
 			.getDivisionPartsAmount();
 	protected boolean isAttrBag;
-	protected boolean isDominant;
 
 	protected List<IRecord> records;
 	protected int windowLen = CommonConfig.getInstance().getNgramSize();
 
-	public WorkflowBase(DivisionOptions divisionOption, boolean isDominant) {
+	public WorkflowBase(DivisionOptions divisionOption) {
 		super();
 		this.divisionOption = divisionOption;
-		this.isDominant = isDominant;
 		setTempPaths();
 		isAttrBag = true;
 	}
@@ -120,9 +118,8 @@ public abstract class WorkflowBase {
 					eamonnDataSource.lastIndexOf("/") + 1,
 					eamonnDataSource.length());
 		}
-		String dominant = isDominant ? "dominant" : "non-dominant";
-		arffPath = String.format("output/arffOutput/%s%s%dp%dgram%s %s.arff",
+		arffPath = String.format("output/arffOutput/%s%s%dp%dgram%s.arff",
 				className, eamonnDataSource, divisionPartsAmount, windowLen,
-				divisionOption.toString(), dominant);
+				divisionOption.toString());
 	}
 }

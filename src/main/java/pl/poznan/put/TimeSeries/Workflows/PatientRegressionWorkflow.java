@@ -16,8 +16,8 @@ import weka.core.Instances;
 
 public class PatientRegressionWorkflow extends PatientWorkflowBase {
 
-	public PatientRegressionWorkflow(DivisionOptions divisionOption, boolean isDominant) {
-		super(divisionOption,isDominant);
+	public PatientRegressionWorkflow(DivisionOptions divisionOption) {
+		super(divisionOption);
 	}
 
 	private List<RegressionArffRow> rows;

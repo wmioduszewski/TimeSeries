@@ -8,9 +8,8 @@ public class EamonnOriginalSignalWorkflow extends EamonnWorkflowBase{
 
 	private OriginalSignalArffBuilder exporter;
 	
-	public EamonnOriginalSignalWorkflow(DivisionOptions divisionOption,
-			boolean isDominant) {
-		super(divisionOption, isDominant);
+	public EamonnOriginalSignalWorkflow(DivisionOptions divisionOption) {
+		super(divisionOption);
 	}
 
 	@Override

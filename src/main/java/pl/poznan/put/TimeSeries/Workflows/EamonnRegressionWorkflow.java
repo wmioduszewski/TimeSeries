@@ -18,9 +18,8 @@ public class EamonnRegressionWorkflow extends EamonnWorkflowBase {
 	private List<RegressionArffRow> rows;
 	private RegressionArffBuilder exporter;
 
-	public EamonnRegressionWorkflow(DivisionOptions divisionOption,
-			boolean isDominant) {
-		super(divisionOption, isDominant);
+	public EamonnRegressionWorkflow(DivisionOptions divisionOption) {
+		super(divisionOption);
 	}
 
 	@Override
