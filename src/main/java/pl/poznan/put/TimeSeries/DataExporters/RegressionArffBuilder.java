@@ -3,7 +3,7 @@ package pl.poznan.put.TimeSeries.DataExporters;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import pl.poznan.put.TimeSeries.Model.RegressionArffRow;
+import pl.poznan.put.TimeSeries.Model.RegressionRow;
 import pl.poznan.put.TimeSeries.Model.RegressionResult;
 import weka.core.Attribute;
 import weka.core.FastVector;
@@ -12,9 +12,9 @@ import weka.core.Instances;
 
 public class RegressionArffBuilder extends ArffExporterBase {
 
-	private List<RegressionArffRow> input;
+	private List<RegressionRow> input;
 
-	public RegressionArffBuilder(List<RegressionArffRow> input) {
+	public RegressionArffBuilder(List<RegressionRow> input) {
 		this.input = input;
 		destClasses = input.stream().map(x -> x.getDestinationClass())
 				.distinct().collect(Collectors.toList());
@@ -47,7 +47,7 @@ public class RegressionArffBuilder extends ArffExporterBase {
 		instances = new Instances("Regression", attrInfo, input.size());
 		instances.setClassIndex(instances.numAttributes() - 1);
 
-		for (RegressionArffRow row : input) {
+		for (RegressionRow row : input) {
 			Instance instance = new Instance(attrInfo.size());
 			int attrIdx = 0;
 			for (RegressionResult regResult : row.getRegressionResults()) {

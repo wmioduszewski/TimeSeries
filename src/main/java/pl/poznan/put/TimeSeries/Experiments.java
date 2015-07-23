@@ -16,31 +16,30 @@ import weka.classifiers.lazy.IBk;
 import weka.classifiers.trees.J48;
 
 public enum Experiments {
-	REGRESSION, DOMINANANT, COUNTED, NGRAM, KNN, DTW;
+	REGRESSION, DOMINANT, COUNTED, NGRAM, KNN, DTW;
 
 	public WorkflowBase getWorkflow() {
 		WorkflowBase workflow = null;
 		DivisionOptions divisionOption = DivisionOptions.Regular;
-		boolean glaucoma = false;
+		boolean isGlaucoma = false;
 		switch (this) {
 		case REGRESSION:
-			workflow = new RegressionWorkflow(divisionOption, glaucoma);
+			workflow = new RegressionWorkflow(divisionOption, isGlaucoma);
 			break;
-		case DOMINANANT:
-			workflow = new DominantWorkflow(divisionOption, glaucoma);
+		case DOMINANT:
+			workflow = new DominantWorkflow(divisionOption, isGlaucoma);
 			break;
 		case COUNTED:
-			workflow = new CountedWorkflow(divisionOption, glaucoma);
+			workflow = new CountedWorkflow(divisionOption, isGlaucoma);
 			break;
 		case NGRAM:
-			workflow = new NgramWorkflow(divisionOption, glaucoma);
+			workflow = new NgramWorkflow(divisionOption, isGlaucoma);
 			break;
 		case KNN:
-//			workflow = new EamonnOriginalSignalWorkflow(divisionOption, glaucoma);
-			workflow = new KnnWorkflow(divisionOption, glaucoma);
+			workflow = new KnnWorkflow(divisionOption, isGlaucoma);
 			break;
 		case DTW:
-			workflow = new DtwWorkflow(divisionOption, glaucoma);
+			workflow = new DtwWorkflow(divisionOption, isGlaucoma);
 			break;
 		}
 		return workflow;
@@ -53,7 +52,7 @@ public enum Experiments {
 		case REGRESSION:
 			classifier = new J48();
 			break;
-		case DOMINANANT:
+		case DOMINANT:
 			classifier = new J48();
 			break;
 		case COUNTED:

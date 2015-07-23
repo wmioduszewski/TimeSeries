@@ -36,57 +36,47 @@ public abstract class WorkflowBase {
 	protected int divisionPartsAmount = CommonConfig.getInstance()
 			.getDivisionPartsAmount();
 	protected ArffExporterBase exporter;
-	protected boolean glaucoma;
+	protected boolean isGlaucoma;
 
-	protected boolean isAttrBag;
 	protected List<? extends IRecord> records;
 	protected int windowLen = CommonConfig.getInstance().getNgramSize();
 
-	public WorkflowBase(DivisionOptions divisionOption, boolean glaucoma) {
+	public WorkflowBase(DivisionOptions divisionOption, boolean isGlaucoma) {
 		super();
 		this.divisionOption = divisionOption;
-		this.glaucoma = glaucoma;
+		this.isGlaucoma = isGlaucoma;
 		setTempPaths();
-		isAttrBag = true;
 	}
 
-	public void executeArff(ExperimentBase experiment, String arffPath) {
-
-		System.out.println("Workflow has started.");
-		try {
-			ExperimentResult result = experiment.runFileExperimentRepeatedly(
-					arffPath, repetitions);
-			printResult(result);
-		} catch (Exception e) {
-			System.out.println("Error during workflow performing:");
-			e.printStackTrace();
-		}
-		System.out.println("Workflow has ended.");
+	public void executeArff(ExperimentBase experiment, String arffPath)
+			throws Exception {
+		System.out.println("Arff execution has started.");
+		ExperimentResult result = experiment.runFileExperimentRepeatedly(
+				arffPath, repetitions);
+		printResult(result);
+		System.out.println("Arff execution has ended.");
 	}
 
 	public void runExperiment(ExperimentBase experiment) throws Exception {
+		System.out.println("Experiment has started.");
 		importData();
 		processData();
 		Instances instances = buildInstances();
 		ExperimentResult result = experiment.runExperimentRepeatedly(instances,
 				repetitions);
+		reportStatistics();
 		printResult(result);
+		System.out.println("Experiment has ended.");
 	}
 
 	public String saveArff() throws Exception {
 		System.out.println("Arff creation has started.");
-		try {
-			importData();
-			processData();
-			buildInstances();
-			exportArff();
-			reportStatistics();
-			System.out.println("Arff has been saved.");
-		} catch (Exception e) {
-			System.out.println("Error during arff creation/save.");
-			e.printStackTrace();
-			throw e;
-		}
+		importData();
+		processData();
+		buildInstances();
+		exportArff();
+		reportStatistics();
+		System.out.println("Arff has been saved to: " + arffPath);
 		return arffPath;
 	}
 
@@ -106,7 +96,7 @@ public abstract class WorkflowBase {
 	}
 
 	protected void importData() throws Exception {
-		records = Importer.importData(glaucoma);
+		records = Importer.importData(isGlaucoma);
 	}
 
 	protected abstract void processData() throws Exception;

@@ -6,7 +6,7 @@ import java.util.List;
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.DataExporters.RegressionArffBuilder;
 import pl.poznan.put.TimeSeries.Model.IRecord;
-import pl.poznan.put.TimeSeries.Model.RegressionArffRow;
+import pl.poznan.put.TimeSeries.Model.RegressionRow;
 import pl.poznan.put.TimeSeries.Model.RegressionResult;
 import pl.poznan.put.TimeSeries.Util.DataDivider;
 import pl.poznan.put.TimeSeries.Util.RegressionCalculator;
@@ -14,7 +14,7 @@ import weka.core.Instances;
 
 public class RegressionWorkflow extends WorkflowBase {
 
-	private List<RegressionArffRow> rows;
+	private List<RegressionRow> rows;
 
 	public RegressionWorkflow(DivisionOptions divisionOption, boolean glaucoma) {
 		super(divisionOption, glaucoma);
@@ -28,7 +28,7 @@ public class RegressionWorkflow extends WorkflowBase {
 
 	@Override
 	protected void processData() throws Exception {
-		rows = new ArrayList<RegressionArffRow>();
+		rows = new ArrayList<RegressionRow>();
 		for (IRecord record : records) {
 			List<List<Float>> nestedCharacteristicList = DataDivider
 					.divideRecord(record, divisionOption, divisionPartsAmount);
@@ -40,9 +40,9 @@ public class RegressionWorkflow extends WorkflowBase {
 				regResults.add(result);
 			}
 
-			RegressionArffRow arffRow = new RegressionArffRow(regResults,
+			RegressionRow row = new RegressionRow(regResults,
 					record.getDestinationClass());
-			rows.add(arffRow);
+			rows.add(row);
 		}
 	}
 

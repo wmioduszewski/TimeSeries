@@ -26,7 +26,6 @@ public abstract class PatientDataImporterBase {
 			SaxPerformer.applyNormalizedSax(patients, outputLength,
 					alphabeatSize);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

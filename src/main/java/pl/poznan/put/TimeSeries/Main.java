@@ -11,11 +11,11 @@ public class Main {
 
 		long startTime = System.currentTimeMillis();
 
-		launchExperiment(Experiments.DOMINANANT);
+		launchExperiment(Experiments.DOMINANT);
 
 		long endTime = System.currentTimeMillis();
 		long diff = endTime - startTime;
-		System.out.println("Workflow execution took " + diff / 1000 + "s."
+		System.out.println("Execution took " + diff / 1000 + "s."
 				+ diff % 1000 + "ms");
 	}
 
@@ -26,5 +26,7 @@ public class Main {
 		ExperimentBase experiment = new CrossValidationExperiment(classifier);
 
 		workflow.runExperiment(experiment);
+//		String path = workflow.saveArff();
+//		workflow.executeArff(experiment, "output/arffOutput/Dominant3p3gramRegular.arff");
 	}
 }

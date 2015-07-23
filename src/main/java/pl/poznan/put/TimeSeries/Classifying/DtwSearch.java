@@ -87,8 +87,6 @@ public class DtwSearch extends NearestNeighbourSearch {
 
 	@Override
 	public void update(Instance ins) throws Exception {
-		// TODO Auto-generated method stub
-
 	}
 
 }

@@ -27,7 +27,7 @@ public class CountedWorkflow extends WorkflowBase {
 	}
 
 	@Override
-	protected void processData() {
+	protected void processData() throws Exception {
 		calculatedRecords = new ArrayList<CalculatedRecord>();
 
 		for (IRecord record : records) {

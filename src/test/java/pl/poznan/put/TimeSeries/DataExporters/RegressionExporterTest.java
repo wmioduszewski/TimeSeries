@@ -8,13 +8,13 @@ import java.util.List;
 
 import org.junit.Test;
 
-import pl.poznan.put.TimeSeries.Model.RegressionArffRow;
+import pl.poznan.put.TimeSeries.Model.RegressionRow;
 import pl.poznan.put.TimeSeries.Model.RegressionResult;
 
 public class RegressionExporterTest {
 
-	private List<RegressionArffRow> createData() {
-		List<RegressionArffRow> rows = new ArrayList<RegressionArffRow>();
+	private List<RegressionRow> createData() {
+		List<RegressionRow> rows = new ArrayList<RegressionRow>();
 
 		List<RegressionResult> results1 = Arrays.asList(new RegressionResult(1,
 				2), new RegressionResult(1.2, 0.2), new RegressionResult(0.01,
@@ -27,9 +27,9 @@ public class RegressionExporterTest {
 				new RegressionResult(-0.01, 2.322), new RegressionResult(
 						1.3353, 3.32));
 
-		rows.add(new RegressionArffRow(results1, 1));
-		rows.add(new RegressionArffRow(results2, 1));
-		rows.add(new RegressionArffRow(results3, 2));
+		rows.add(new RegressionRow(results1, 1));
+		rows.add(new RegressionRow(results2, 1));
+		rows.add(new RegressionRow(results3, 2));
 
 		return rows;
 	}
