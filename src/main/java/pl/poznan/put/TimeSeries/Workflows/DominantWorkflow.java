@@ -13,15 +13,15 @@ import pl.poznan.put.TimeSeries.Model.IRecord;
 import pl.poznan.put.TimeSeries.Util.DataDivider;
 import weka.core.Instances;
 
-public class EamonnDominantWorkflow extends WorkflowBase {
+public class DominantWorkflow extends WorkflowBase {
 
-	public EamonnDominantWorkflow(DivisionOptions divisionOption,
-			boolean glaucoma) {
-		super(divisionOption, glaucoma);
-	}
+	private List<CalculatedRecord> calculatedRecords;
 
 	private SaxArffExporterBase exporter;
-	private List<CalculatedRecord> calculatedRecords;
+
+	public DominantWorkflow(DivisionOptions divisionOption, boolean glaucoma) {
+		super(divisionOption, glaucoma);
+	}
 
 	@Override
 	protected Instances buildInstances() {
@@ -32,7 +32,6 @@ public class EamonnDominantWorkflow extends WorkflowBase {
 	@Override
 	protected void exportArff() throws Exception {
 		exporter.saveArff(arffPath);
-
 	}
 
 	@Override

@@ -6,7 +6,7 @@ import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.Util.CommonConfig;
 import pl.poznan.put.TimeSeries.Workflows.CountedWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.EamonnBasicNgramWorkflow;
-import pl.poznan.put.TimeSeries.Workflows.EamonnDominantWorkflow;
+import pl.poznan.put.TimeSeries.Workflows.DominantWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.EamonnOriginalSignalNormalizedBySaxWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.EamonnOriginalSignalWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.RegressionWorkflow;
@@ -27,7 +27,7 @@ public enum Experiments {
 			workflow = new RegressionWorkflow(divisionOption, glaucoma);
 			break;
 		case DOMINANANT:
-			workflow = new EamonnDominantWorkflow(divisionOption, glaucoma);
+			workflow = new DominantWorkflow(divisionOption, glaucoma);
 			break;
 		case COUNTED:
 			workflow = new CountedWorkflow(divisionOption, glaucoma);

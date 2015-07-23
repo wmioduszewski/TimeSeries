@@ -11,7 +11,7 @@ public class Main {
 
 		long startTime = System.currentTimeMillis();
 
-		launchExperiment(Experiments.COUNTED);
+		launchExperiment(Experiments.DOMINANANT);
 
 		long endTime = System.currentTimeMillis();
 		long diff = endTime - startTime;
