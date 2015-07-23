@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import pl.poznan.put.TimeSeries.Classifying.ExperimentBase;
 import pl.poznan.put.TimeSeries.Classifying.ExperimentResult;
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
+import pl.poznan.put.TimeSeries.DataExporters.ArffExporterBase;
 import pl.poznan.put.TimeSeries.DataImporters.Importer;
 import pl.poznan.put.TimeSeries.Model.IRecord;
 import pl.poznan.put.TimeSeries.Util.CommonConfig;
@@ -34,6 +35,7 @@ public abstract class WorkflowBase {
 	protected DivisionOptions divisionOption;
 	protected int divisionPartsAmount = CommonConfig.getInstance()
 			.getDivisionPartsAmount();
+	protected ArffExporterBase exporter;
 	protected boolean glaucoma;
 
 	protected boolean isAttrBag;
@@ -97,9 +99,13 @@ public abstract class WorkflowBase {
 		System.out.println();
 	}
 
-	protected abstract Instances buildInstances();
+	protected Instances buildInstances() {
+		return exporter.buildInstances();
+	}
 
-	protected abstract void exportArff() throws Exception;
+	protected void exportArff() throws Exception {
+		exporter.saveArff(arffPath);
+	}
 
 	protected void importData() throws Exception {
 		records = Importer.importData(glaucoma);

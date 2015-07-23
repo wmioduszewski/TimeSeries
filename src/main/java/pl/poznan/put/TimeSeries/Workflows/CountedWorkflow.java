@@ -6,33 +6,18 @@ import java.util.List;
 
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.DataExporters.CountedSaxArffBuilder;
-import pl.poznan.put.TimeSeries.DataExporters.SaxArffExporterBase;
 import pl.poznan.put.TimeSeries.DataProcessors.PeriodicNgramCounter;
 import pl.poznan.put.TimeSeries.Model.CalculatedRecord;
 import pl.poznan.put.TimeSeries.Model.IRecord;
 import pl.poznan.put.TimeSeries.Util.DataDivider;
-import weka.core.Instances;
 
 public class CountedWorkflow extends WorkflowBase {
 
 	private List<CalculatedRecord> calculatedRecords;
 
-	private SaxArffExporterBase exporter;
-
-	public CountedWorkflow(DivisionOptions divisionOption,
-			boolean glaucoma) {
+	public CountedWorkflow(DivisionOptions divisionOption, boolean glaucoma) {
 		super(divisionOption, glaucoma);
-	}
-
-	@Override
-	protected Instances buildInstances() {
 		exporter = new CountedSaxArffBuilder(calculatedRecords);
-		return exporter.buildInstances();
-	}
-
-	@Override
-	protected void exportArff() throws Exception {
-		exporter.saveArff(arffPath);
 	}
 
 	@Override

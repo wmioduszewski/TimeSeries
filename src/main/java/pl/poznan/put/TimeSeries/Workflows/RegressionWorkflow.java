@@ -1,6 +1,5 @@
 package pl.poznan.put.TimeSeries.Workflows;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,27 +10,14 @@ import pl.poznan.put.TimeSeries.Model.RegressionArffRow;
 import pl.poznan.put.TimeSeries.Model.RegressionResult;
 import pl.poznan.put.TimeSeries.Util.DataDivider;
 import pl.poznan.put.TimeSeries.Util.RegressionCalculator;
-import weka.core.Instances;
 
 public class RegressionWorkflow extends WorkflowBase {
-
-	private RegressionArffBuilder exporter;
 
 	private List<RegressionArffRow> rows;
 
 	public RegressionWorkflow(DivisionOptions divisionOption, boolean glaucoma) {
 		super(divisionOption, glaucoma);
-	}
-
-	@Override
-	protected Instances buildInstances() {
 		exporter = new RegressionArffBuilder(rows);
-		return exporter.buildInstances();
-	}
-
-	@Override
-	protected void exportArff() throws IOException {
-		exporter.saveArff(arffPath);
 	}
 
 	@Override
