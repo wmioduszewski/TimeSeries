@@ -13,16 +13,16 @@ import pl.poznan.put.TimeSeries.Model.IRecord;
 import pl.poznan.put.TimeSeries.Util.DataDivider;
 import weka.core.Instances;
 
-public class PatientCountedWorkflow extends WorkflowBase {
+public class CountedWorkflow extends WorkflowBase {
 
-	public PatientCountedWorkflow(DivisionOptions divisionOption,
-			boolean glaucoma) {
-		super(divisionOption, glaucoma);
-	}
+	private List<CalculatedRecord> calculatedRecords;
 
 	private SaxArffExporterBase exporter;
 
-	List<CalculatedRecord> calculatedRecords;
+	public CountedWorkflow(DivisionOptions divisionOption,
+			boolean glaucoma) {
+		super(divisionOption, glaucoma);
+	}
 
 	@Override
 	protected Instances buildInstances() {
@@ -40,21 +40,20 @@ public class PatientCountedWorkflow extends WorkflowBase {
 		calculatedRecords = new ArrayList<CalculatedRecord>();
 
 		for (IRecord record : records) {
-			ArrayList<HashMap<String, Integer>> listHashMap = new ArrayList<HashMap<String, Integer>>();
+			ArrayList<HashMap<String, Integer>> periodicallyCountedNgrams = new ArrayList<HashMap<String, Integer>>();
 
 			List<String> dividedSax = DataDivider.divideStringRegularly(
 					record.getSaxString(), divisionPartsAmount);
 
-			for (String string : dividedSax) {
+			for (String elem : dividedSax) {
 				HashMap<String, Integer> ngramCountMap = PeriodicNgramCounter
-						.slashStringAndCountNgrams(string, windowLen);
-				listHashMap.add(ngramCountMap);
+						.slashStringAndCountNgrams(elem, windowLen);
+				periodicallyCountedNgrams.add(ngramCountMap);
 			}
 
-			CalculatedRecord calcRecord = new CalculatedRecord(listHashMap,
-					record.getDestinationClass());
+			CalculatedRecord calcRecord = new CalculatedRecord(
+					periodicallyCountedNgrams, record.getDestinationClass());
 			calculatedRecords.add(calcRecord);
 		}
 	}
-
 }

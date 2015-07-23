@@ -4,20 +4,19 @@ import pl.poznan.put.TimeSeries.Classifying.BasicNgramClassifier;
 import pl.poznan.put.TimeSeries.Classifying.DtwSearch;
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.Util.CommonConfig;
+import pl.poznan.put.TimeSeries.Workflows.CountedWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.EamonnBasicNgramWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.EamonnDominantWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.EamonnOriginalSignalNormalizedBySaxWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.EamonnOriginalSignalWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.RegressionWorkflow;
-import pl.poznan.put.TimeSeries.Workflows.EamonnCountedWorkflow;
-import pl.poznan.put.TimeSeries.Workflows.PatientCountedWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.WorkflowBase;
 import weka.classifiers.Classifier;
 import weka.classifiers.lazy.IBk;
 import weka.classifiers.trees.J48;
 
 public enum Experiments {
-	REGRESSION, DOMINANANT, COUNTED, NGRAM, KNN, DTW, PATIENTCOUNTED;
+	REGRESSION, DOMINANANT, COUNTED, NGRAM, KNN, DTW;
 
 	public WorkflowBase getWorkflow() {
 		WorkflowBase workflow = null;
@@ -31,7 +30,7 @@ public enum Experiments {
 			workflow = new EamonnDominantWorkflow(divisionOption, glaucoma);
 			break;
 		case COUNTED:
-			workflow = new EamonnCountedWorkflow(divisionOption, glaucoma);
+			workflow = new CountedWorkflow(divisionOption, glaucoma);
 			break;
 		case NGRAM:
 			workflow = new EamonnBasicNgramWorkflow(divisionOption, glaucoma);
@@ -42,9 +41,6 @@ public enum Experiments {
 			break;
 		case DTW:
 			workflow = new EamonnOriginalSignalWorkflow(divisionOption, glaucoma);
-			break;
-		case PATIENTCOUNTED:
-			workflow = new PatientCountedWorkflow(divisionOption, glaucoma);
 			break;
 		}
 		return workflow;
@@ -73,10 +69,7 @@ public enum Experiments {
 			IBk ibk = new IBk(k);
 			ibk.setNearestNeighbourSearchAlgorithm(new DtwSearch());
 			classifier = ibk;
-			break;
-		case PATIENTCOUNTED:
-			classifier = new J48();
-			break;
+			break;		
 		}
 		return classifier;
 	}

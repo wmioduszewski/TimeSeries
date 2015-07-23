@@ -33,7 +33,6 @@ public class GeneralExperimentTest {
 	@Test
 	public void directExperiments() {
 		for (Experiments chosenExperiment : Experiments.values()) {
-			if(chosenExperiment==Experiments.PATIENTCOUNTED) continue;
 			WorkflowBase workflow = chosenExperiment.getWorkflow();
 			Classifier classifier = chosenExperiment.getClassifier();
 			ExperimentBase experiment = new CrossValidationExperiment(classifier);
@@ -48,7 +47,6 @@ public class GeneralExperimentTest {
 	@Test
 	public void fileBasedExperiments() {
 		for (Experiments chosenExperiment : Experiments.values()) {
-			if(chosenExperiment==Experiments.PATIENTCOUNTED) continue;
 			WorkflowBase workflow = chosenExperiment.getWorkflow();
 			Classifier classifier = chosenExperiment.getClassifier();
 			ExperimentBase experiment = new CrossValidationExperiment(classifier);
