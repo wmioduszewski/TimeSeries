@@ -9,19 +9,19 @@ import pl.poznan.put.TimeSeries.DataExporters.DominantArffBuilder;
 import pl.poznan.put.TimeSeries.DataExporters.SaxArffExporterBase;
 import pl.poznan.put.TimeSeries.DataProcessors.PeriodicNgramCounter;
 import pl.poznan.put.TimeSeries.Model.CalculatedRecord;
-import pl.poznan.put.TimeSeries.Model.Patient;
+import pl.poznan.put.TimeSeries.Model.IRecord;
 import pl.poznan.put.TimeSeries.Util.DataDivider;
 import weka.core.Instances;
 
 public class PatientDominantWorkflow extends PatientWorkflowBase {
 
+	private SaxArffExporterBase exporter;
+
+	List<CalculatedRecord> calculatedRecords;
+
 	public PatientDominantWorkflow(DivisionOptions divisionOption) {
 		super(divisionOption);
-		// TODO Auto-generated constructor stub
 	}
-
-	private SaxArffExporterBase exporter;
-	List<CalculatedRecord> calculatedRecords;
 
 	@Override
 	protected Instances buildInstances() {
@@ -32,18 +32,17 @@ public class PatientDominantWorkflow extends PatientWorkflowBase {
 	@Override
 	protected void exportArff() throws Exception {
 		exporter.saveArff(arffPath);
-		
 	}
 
 	@Override
-	protected void processData() throws Exception {
+	protected void processData() {
 		calculatedRecords = new ArrayList<CalculatedRecord>();
 
-		for (Patient patient : patients) {
+		for (IRecord records : records) {
 			ArrayList<HashMap<String, Integer>> listHashMap = new ArrayList<HashMap<String, Integer>>();
 
 			List<String> dividedSax = DataDivider.divideStringRegularly(
-					patient.getSaxString(), divisionPartsAmount);
+					records.getSaxString(), divisionPartsAmount);
 
 			for (String string : dividedSax) {
 				HashMap<String, Integer> ngramCountMap = PeriodicNgramCounter
@@ -52,10 +51,9 @@ public class PatientDominantWorkflow extends PatientWorkflowBase {
 			}
 
 			CalculatedRecord calcRecord = new CalculatedRecord(listHashMap,
-					patient.getDestinationClass());
+					records.getDestinationClass());
 			calculatedRecords.add(calcRecord);
 		}
-		
 	}
 
 }

@@ -3,7 +3,7 @@ package pl.poznan.put.TimeSeries.DataExporters;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import pl.poznan.put.TimeSeries.Model.EamonnRecord;
+import pl.poznan.put.TimeSeries.Model.IRecord;
 import weka.core.Attribute;
 import weka.core.FastVector;
 import weka.core.Instance;
@@ -11,9 +11,9 @@ import weka.core.Instances;
 
 public class BasicSaxArffBuilder extends ArffExporterBase {
 
-	private List<EamonnRecord> input;
+	private List<? extends IRecord> input;
 
-	public BasicSaxArffBuilder(List<EamonnRecord> records) {
+	public BasicSaxArffBuilder(List<? extends IRecord> records) {
 		this.input = records;
 		destClasses = input.stream().map(x -> x.getDestinationClass())
 				.distinct().collect(Collectors.toList());
@@ -46,7 +46,7 @@ public class BasicSaxArffBuilder extends ArffExporterBase {
 
 		int saxAttrId = 0;
 		int destClassAttrId = 1;
-		for (EamonnRecord row : input) {
+		for (IRecord row : input) {
 			Instance instance = new Instance(attrInfo.size());
 			instance.setDataset(instances);
 			instance.setValue(saxAttrId, row.getSaxString());

@@ -3,7 +3,7 @@ package pl.poznan.put.TimeSeries.DataExporters;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import pl.poznan.put.TimeSeries.Model.EamonnRecord;
+import pl.poznan.put.TimeSeries.Model.IRecord;
 import weka.core.Attribute;
 import weka.core.FastVector;
 import weka.core.Instance;
@@ -11,9 +11,9 @@ import weka.core.Instances;
 
 public class OriginalSignalArffBuilder extends ArffExporterBase {
 
-	private List<EamonnRecord> input;
+	private List<? extends IRecord> input;
 
-	public OriginalSignalArffBuilder(List<EamonnRecord> records) {
+	public OriginalSignalArffBuilder(List<? extends IRecord> records) {
 		this.input = records;
 		destClasses = input.stream().map(x -> x.getDestinationClass())
 				.distinct().collect(Collectors.toList());
@@ -46,15 +46,15 @@ public class OriginalSignalArffBuilder extends ArffExporterBase {
 		instances = new Instances("Pure signal", attrInfo, input.size());
 		instances.setClassIndex(instances.numAttributes() - 1);
 
-		for (EamonnRecord eamonnRecord : input) {
+		for (IRecord record : input) {
 
 			Instance instance = new Instance(attrInfo.size());
 			instance.setDataset(instances);
-			List<Float> vals = eamonnRecord.getValues();
+			List<Float> vals = record.getValues();
 			for (int i = 0; i < instances.numAttributes() - 1; i++) {
 				instance.setValue(i, vals.get(i));
 			}
-			int destClassIndex = getIndexOfDestinationClass(eamonnRecord
+			int destClassIndex = getIndexOfDestinationClass(record
 					.getDestinationClass());
 			instance.setValue(instances.numAttributes() - 1, destClassIndex);
 			instances.add(instance);

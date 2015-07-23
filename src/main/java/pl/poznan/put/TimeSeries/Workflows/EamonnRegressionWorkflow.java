@@ -6,7 +6,7 @@ import java.util.List;
 
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.DataExporters.RegressionArffBuilder;
-import pl.poznan.put.TimeSeries.Model.EamonnRecord;
+import pl.poznan.put.TimeSeries.Model.IRecord;
 import pl.poznan.put.TimeSeries.Model.RegressionArffRow;
 import pl.poznan.put.TimeSeries.Model.RegressionResult;
 import pl.poznan.put.TimeSeries.Util.DataDivider;
@@ -23,14 +23,14 @@ public class EamonnRegressionWorkflow extends EamonnWorkflowBase {
 	}
 
 	@Override
-	protected void exportArff() throws IOException {		
+	protected void exportArff() throws IOException {
 		exporter.saveArff(arffPath);
 	}
 
 	@Override
 	protected void processData() {
 		rows = new ArrayList<RegressionArffRow>();
-		for (EamonnRecord record : records) {
+		for (IRecord record : records) {
 			List<List<Float>> nestedCharacteristicList = DataDivider
 					.divideCollectionRegularly(record.getValues(),
 							divisionPartsAmount);

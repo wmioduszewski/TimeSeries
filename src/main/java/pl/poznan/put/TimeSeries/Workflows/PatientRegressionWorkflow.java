@@ -7,6 +7,7 @@ import java.util.List;
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.DataExporters.RegressionArffBuilder;
 import pl.poznan.put.TimeSeries.Model.Characteristic;
+import pl.poznan.put.TimeSeries.Model.IRecord;
 import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Model.RegressionArffRow;
 import pl.poznan.put.TimeSeries.Model.RegressionResult;
@@ -28,8 +29,8 @@ public class PatientRegressionWorkflow extends PatientWorkflowBase {
 
 		rows = new ArrayList<RegressionArffRow>();
 
-		for (Patient patient : patients) {
-			List<List<Characteristic>> nestedCharacteristicList = divideData(patient);
+		for (IRecord record : records) {
+			List<List<Characteristic>> nestedCharacteristicList = divideData((Patient) record);
 			List<RegressionResult> regResults = new ArrayList<RegressionResult>();
 			for (List<Characteristic> list : nestedCharacteristicList) {
 				List<Float> floats = Convert
@@ -40,7 +41,7 @@ public class PatientRegressionWorkflow extends PatientWorkflowBase {
 			}
 
 			RegressionArffRow arffRow = new RegressionArffRow(regResults,
-					patient.getDestinationClass());
+					record.getDestinationClass());
 			rows.add(arffRow);
 		}
 	}

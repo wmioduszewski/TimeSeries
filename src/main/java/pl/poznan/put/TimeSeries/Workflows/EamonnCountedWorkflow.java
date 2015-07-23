@@ -9,24 +9,36 @@ import pl.poznan.put.TimeSeries.DataExporters.CountedSaxArffBuilder;
 import pl.poznan.put.TimeSeries.DataExporters.SaxArffExporterBase;
 import pl.poznan.put.TimeSeries.DataProcessors.PeriodicNgramCounter;
 import pl.poznan.put.TimeSeries.Model.CalculatedRecord;
-import pl.poznan.put.TimeSeries.Model.EamonnRecord;
+import pl.poznan.put.TimeSeries.Model.IRecord;
 import pl.poznan.put.TimeSeries.Util.DataDivider;
 import weka.core.Instances;
 
 public class EamonnCountedWorkflow extends EamonnWorkflowBase {
 
+	private List<CalculatedRecord> calculatedRecords;
+
+	private SaxArffExporterBase exporter;
+
 	public EamonnCountedWorkflow(DivisionOptions divisionOption) {
 		super(divisionOption);
 	}
 
-	private SaxArffExporterBase exporter;
-	private List<CalculatedRecord> calculatedRecords;
+	@Override
+	protected Instances buildInstances() {
+		exporter = new CountedSaxArffBuilder(calculatedRecords);
+		return exporter.buildInstances();
+	}
+
+	@Override
+	protected void exportArff() throws Exception {
+		exporter.saveArff(arffPath);
+	}
 
 	@Override
 	protected void processData() {
 		calculatedRecords = new ArrayList<CalculatedRecord>();
 
-		for (EamonnRecord record : records) {
+		for (IRecord record : records) {
 			ArrayList<HashMap<String, Integer>> periodicallyCountedNgrams = new ArrayList<HashMap<String, Integer>>();
 
 			List<String> dividedSax = DataDivider.divideStringRegularly(
@@ -42,16 +54,5 @@ public class EamonnCountedWorkflow extends EamonnWorkflowBase {
 					periodicallyCountedNgrams, record.getDestinationClass());
 			calculatedRecords.add(calcRecord);
 		}
-	}
-
-	@Override
-	protected void exportArff() throws Exception {
-		exporter.saveArff(arffPath);
-	}
-
-	@Override
-	protected Instances buildInstances() {
-		exporter = new CountedSaxArffBuilder(calculatedRecords);
-		return exporter.buildInstances();
 	}
 }

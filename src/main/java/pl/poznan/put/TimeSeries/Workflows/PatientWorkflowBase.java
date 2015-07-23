@@ -14,11 +14,9 @@ import pl.poznan.put.TimeSeries.Util.DataDivider;
 
 public abstract class PatientWorkflowBase extends WorkflowBase {
 
-	protected List<Patient> patients;
-
 	public PatientWorkflowBase(DivisionOptions divisionOption) {
 		super(divisionOption);
-		patients = new ArrayList<Patient>();
+		records = new ArrayList<Patient>();
 	}
 
 	@Override
@@ -33,7 +31,7 @@ public abstract class PatientWorkflowBase extends WorkflowBase {
 			System.out.println("Patients import failed.");
 			e.printStackTrace();
 		}
-		patients.addAll(purePatients);
+		records = purePatients;
 	}
 
 	protected List<List<Characteristic>> divideData(Patient patient)

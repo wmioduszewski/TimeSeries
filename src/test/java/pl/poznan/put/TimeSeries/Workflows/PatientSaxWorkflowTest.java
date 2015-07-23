@@ -12,6 +12,6 @@ public class PatientSaxWorkflowTest extends PatientCountedWorkflow {
 	
 	@Override
 	protected void importData() {
-		patients = Utils.getTestPatients();
+		records = Utils.getTestPatients();
 	}
 }

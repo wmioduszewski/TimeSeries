@@ -9,7 +9,7 @@ import pl.poznan.put.TimeSeries.DataExporters.DominantArffBuilder;
 import pl.poznan.put.TimeSeries.DataExporters.SaxArffExporterBase;
 import pl.poznan.put.TimeSeries.DataProcessors.PeriodicNgramCounter;
 import pl.poznan.put.TimeSeries.Model.CalculatedRecord;
-import pl.poznan.put.TimeSeries.Model.EamonnRecord;
+import pl.poznan.put.TimeSeries.Model.IRecord;
 import pl.poznan.put.TimeSeries.Util.DataDivider;
 import weka.core.Instances;
 
@@ -38,7 +38,7 @@ public class EamonnDominantWorkflow extends EamonnWorkflowBase{
 	protected void processData() throws Exception {
 		calculatedRecords = new ArrayList<CalculatedRecord>();
 
-		for (EamonnRecord record : records) {
+		for (IRecord record : records) {
 			ArrayList<HashMap<String, Integer>> periodicallyCountedNgrams = new ArrayList<HashMap<String, Integer>>();
 
 			List<String> dividedSax = DataDivider.divideStringRegularly(

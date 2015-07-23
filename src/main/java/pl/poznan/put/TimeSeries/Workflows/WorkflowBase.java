@@ -35,7 +35,7 @@ public abstract class WorkflowBase {
 			.getDivisionPartsAmount();
 	protected boolean isAttrBag;
 
-	protected List<IRecord> records;
+	protected List<? extends IRecord> records;
 	protected int windowLen = CommonConfig.getInstance().getNgramSize();
 
 	public WorkflowBase(DivisionOptions divisionOption) {
@@ -68,7 +68,7 @@ public abstract class WorkflowBase {
 		printResult(result);
 	}
 
-	public String saveArff() {
+	public String saveArff() throws Exception {
 		System.out.println("Arff creation has started.");
 		try {
 			importData();
@@ -80,6 +80,7 @@ public abstract class WorkflowBase {
 		} catch (Exception e) {
 			System.out.println("Error during arff creation/save.");
 			e.printStackTrace();
+			throw e;
 		}
 		return arffPath;
 	}
