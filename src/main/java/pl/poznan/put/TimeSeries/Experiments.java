@@ -8,7 +8,7 @@ import pl.poznan.put.TimeSeries.Workflows.EamonnBasicNgramWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.EamonnDominantWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.EamonnOriginalSignalNormalizedBySaxWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.EamonnOriginalSignalWorkflow;
-import pl.poznan.put.TimeSeries.Workflows.EamonnRegressionWorkflow;
+import pl.poznan.put.TimeSeries.Workflows.RegressionWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.EamonnCountedWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.PatientCountedWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.WorkflowBase;
@@ -22,28 +22,29 @@ public enum Experiments {
 	public WorkflowBase getWorkflow() {
 		WorkflowBase workflow = null;
 		DivisionOptions divisionOption = DivisionOptions.Regular;
+		boolean glaucoma = false;
 		switch (this) {
 		case REGRESSION:
-			workflow = new EamonnRegressionWorkflow(divisionOption);
+			workflow = new RegressionWorkflow(divisionOption, glaucoma);
 			break;
 		case DOMINANANT:
-			workflow = new EamonnDominantWorkflow(divisionOption);
+			workflow = new EamonnDominantWorkflow(divisionOption, glaucoma);
 			break;
 		case COUNTED:
-			workflow = new EamonnCountedWorkflow(divisionOption);
+			workflow = new EamonnCountedWorkflow(divisionOption, glaucoma);
 			break;
 		case NGRAM:
-			workflow = new EamonnBasicNgramWorkflow(divisionOption);
+			workflow = new EamonnBasicNgramWorkflow(divisionOption, glaucoma);
 			break;
 		case KNN:
-//			workflow = new EamonnOriginalSignalWorkflow(divisionOption);
-			workflow = new EamonnOriginalSignalNormalizedBySaxWorkflow(divisionOption);
+//			workflow = new EamonnOriginalSignalWorkflow(divisionOption, glaucoma);
+			workflow = new EamonnOriginalSignalNormalizedBySaxWorkflow(divisionOption, glaucoma);
 			break;
 		case DTW:
-			workflow = new EamonnOriginalSignalWorkflow(divisionOption);
+			workflow = new EamonnOriginalSignalWorkflow(divisionOption, glaucoma);
 			break;
 		case PATIENTCOUNTED:
-			workflow = new PatientCountedWorkflow(divisionOption);
+			workflow = new PatientCountedWorkflow(divisionOption, glaucoma);
 			break;
 		}
 		return workflow;

@@ -13,15 +13,16 @@ import pl.poznan.put.TimeSeries.Model.IRecord;
 import pl.poznan.put.TimeSeries.Util.DataDivider;
 import weka.core.Instances;
 
-public class PatientCountedWorkflow extends PatientWorkflowBase {
+public class PatientCountedWorkflow extends WorkflowBase {
+
+	public PatientCountedWorkflow(DivisionOptions divisionOption,
+			boolean glaucoma) {
+		super(divisionOption, glaucoma);
+	}
 
 	private SaxArffExporterBase exporter;
 
 	List<CalculatedRecord> calculatedRecords;
-
-	public PatientCountedWorkflow(DivisionOptions divisionOption) {
-		super(divisionOption);
-	}
 
 	@Override
 	protected Instances buildInstances() {

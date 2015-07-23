@@ -4,13 +4,14 @@ import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.DataExporters.BasicSaxArffBuilder;
 import weka.core.Instances;
 
-public class EamonnBasicNgramWorkflow extends EamonnWorkflowBase{
+public class EamonnBasicNgramWorkflow extends WorkflowBase {
+
+	public EamonnBasicNgramWorkflow(DivisionOptions divisionOption,
+			boolean glaucoma) {
+		super(divisionOption, glaucoma);
+	}
 
 	private BasicSaxArffBuilder exporter;
-	
-	public EamonnBasicNgramWorkflow(DivisionOptions divisionOption) {
-		super(divisionOption);
-	}
 
 	@Override
 	protected Instances buildInstances() {

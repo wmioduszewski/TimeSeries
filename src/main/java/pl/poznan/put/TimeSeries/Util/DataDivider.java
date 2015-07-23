@@ -6,43 +6,14 @@ import java.util.List;
 
 import org.joda.time.DateTime;
 
+import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.Constants.Limits;
 import pl.poznan.put.TimeSeries.Constants.TimeLimit;
 import pl.poznan.put.TimeSeries.Model.Characteristic;
+import pl.poznan.put.TimeSeries.Model.IRecord;
 import pl.poznan.put.TimeSeries.Model.Patient;
 
 public class DataDivider {
-
-	public static List<List<Characteristic>> dividePatientDataPeriodically(
-			Patient patient) throws Exception {
-		List<List<Characteristic>> listlist = new ArrayList<List<Characteristic>>();
-
-		for (TimeLimit timeLimit : Limits.TimeLimits) {
-
-			List<Characteristic> currList = new ArrayList<Characteristic>();
-
-			DateTime lowerBound = ComputeTimeBound(timeLimit, patient, true);
-			DateTime upperBound = ComputeTimeBound(timeLimit, patient, false);
-			for (Characteristic characteristic : patient.getCharacteristics()) {
-				DateTime time = characteristic.getExaminationTime();
-				if (time.isAfter(lowerBound) && time.isBefore(upperBound)) {
-					currList.add(characteristic);
-				}
-			}
-			listlist.add(currList);
-		}
-		return listlist;
-	}
-
-	public static List<List<Characteristic>> dividePatientPeriodicallyThenRegularly(
-			Patient patient, Integer parts) throws Exception {
-		List<List<Characteristic>> listlist = dividePatientDataPeriodically(patient);
-		List<List<Characteristic>> newlistlist = new ArrayList<List<Characteristic>>();
-		for (List<Characteristic> list : listlist) {
-			newlistlist.addAll(divideCollectionRegularly(list, parts));
-		}
-		return newlistlist;
-	}
 
 	public static <T> List<List<T>> divideCollectionRegularly(List<T> list,
 			Integer parts) {
@@ -64,6 +35,20 @@ public class DataDivider {
 		return res;
 	}
 
+	public static List<List<Float>> divideRecord(IRecord record,
+			DivisionOptions divisionOption, int divisionPartsAmount)
+			throws Exception {
+
+		Patient patient = null;
+		if (record instanceof Patient) {
+			patient = (Patient) record;
+			return dividePatient(patient, divisionOption, divisionPartsAmount);
+		} else {
+			return DataDivider.divideCollectionRegularly(record.getValues(),
+					divisionPartsAmount);
+		}
+	}
+
 	public static List<String> divideStringRegularly(String input, Integer parts) {
 		List<String> res = new ArrayList<String>();
 
@@ -83,7 +68,7 @@ public class DataDivider {
 		return res;
 	}
 
-	public static DateTime ComputeTimeBound(TimeLimit timeLimit,
+	private static DateTime ComputeTimeBound(TimeLimit timeLimit,
 			Patient patient, Boolean isLower) throws Exception {
 		DateTime bound = null;
 
@@ -102,5 +87,56 @@ public class DataDivider {
 		bound = bound.plusHours(mod);
 
 		return bound;
+	}
+
+	private static List<List<Float>> dividePatient(Patient patient,
+			DivisionOptions divisionOption, int divisionPartsAmount)
+			throws Exception {
+		List<List<Float>> res = null;
+		switch (divisionOption) {
+		case Periodic:
+			res = DataDivider.dividePatientDataPeriodically(patient);
+			break;
+		case Regular:
+			res = DataDivider.divideCollectionRegularly(patient.getValues(),
+					divisionPartsAmount);
+			break;
+		case PerThenReg:
+			res = DataDivider.dividePatientPeriodicallyThenRegularly(patient,
+					divisionPartsAmount);
+			break;
+		}
+		return res;
+	}
+
+	private static List<List<Float>> dividePatientDataPeriodically(
+			Patient patient) throws Exception {
+		List<List<Float>> listlist = new ArrayList<List<Float>>();
+
+		for (TimeLimit timeLimit : Limits.TimeLimits) {
+
+			List<Float> currList = new ArrayList<Float>();
+
+			DateTime lowerBound = ComputeTimeBound(timeLimit, patient, true);
+			DateTime upperBound = ComputeTimeBound(timeLimit, patient, false);
+			for (Characteristic characteristic : patient.getCharacteristics()) {
+				DateTime time = characteristic.getExaminationTime();
+				if (time.isAfter(lowerBound) && time.isBefore(upperBound)) {
+					currList.add(characteristic.getTfadj());
+				}
+			}
+			listlist.add(currList);
+		}
+		return listlist;
+	}
+
+	private static List<List<Float>> dividePatientPeriodicallyThenRegularly(
+			Patient patient, Integer parts) throws Exception {
+		List<List<Float>> listlist = dividePatientDataPeriodically(patient);
+		List<List<Float>> newlistlist = new ArrayList<List<Float>>();
+		for (List<Float> list : listlist) {
+			newlistlist.addAll(divideCollectionRegularly(list, parts));
+		}
+		return newlistlist;
 	}
 }

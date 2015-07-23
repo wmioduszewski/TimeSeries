@@ -13,13 +13,21 @@ import pl.poznan.put.TimeSeries.Util.DataDivider;
 import pl.poznan.put.TimeSeries.Util.RegressionCalculator;
 import weka.core.Instances;
 
-public class EamonnRegressionWorkflow extends EamonnWorkflowBase {
+public class RegressionWorkflow extends WorkflowBase {
 
-	private List<RegressionArffRow> rows;
 	private RegressionArffBuilder exporter;
 
-	public EamonnRegressionWorkflow(DivisionOptions divisionOption) {
-		super(divisionOption);
+	private List<RegressionArffRow> rows;
+
+	public RegressionWorkflow(DivisionOptions divisionOption,
+			boolean glaucoma) {
+		super(divisionOption, glaucoma);
+	}
+
+	@Override
+	protected Instances buildInstances() {
+		exporter = new RegressionArffBuilder(rows);
+		return exporter.buildInstances();
 	}
 
 	@Override
@@ -28,28 +36,23 @@ public class EamonnRegressionWorkflow extends EamonnWorkflowBase {
 	}
 
 	@Override
-	protected void processData() {
+	protected void processData() throws Exception {
 		rows = new ArrayList<RegressionArffRow>();
 		for (IRecord record : records) {
 			List<List<Float>> nestedCharacteristicList = DataDivider
-					.divideCollectionRegularly(record.getValues(),
-							divisionPartsAmount);
+					.divideRecord(record, divisionOption, divisionPartsAmount);
 			List<RegressionResult> regResults = new ArrayList<RegressionResult>();
+			
 			for (List<Float> list : nestedCharacteristicList) {
 				RegressionResult result = RegressionCalculator
 						.ComputeRegression(list);
 				regResults.add(result);
 			}
+
 			RegressionArffRow arffRow = new RegressionArffRow(regResults,
 					record.getDestinationClass());
 			rows.add(arffRow);
 		}
-	}
-
-	@Override
-	protected Instances buildInstances() {
-		exporter = new RegressionArffBuilder(rows);
-		return exporter.buildInstances();
 	}
 
 }

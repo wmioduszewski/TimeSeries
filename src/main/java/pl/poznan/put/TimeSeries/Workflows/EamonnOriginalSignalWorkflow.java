@@ -4,13 +4,14 @@ import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.DataExporters.OriginalSignalArffBuilder;
 import weka.core.Instances;
 
-public class EamonnOriginalSignalWorkflow extends EamonnWorkflowBase{
+public class EamonnOriginalSignalWorkflow extends WorkflowBase {
+
+	public EamonnOriginalSignalWorkflow(DivisionOptions divisionOption,
+			boolean glaucoma) {
+		super(divisionOption, glaucoma);
+	}
 
 	private OriginalSignalArffBuilder exporter;
-	
-	public EamonnOriginalSignalWorkflow(DivisionOptions divisionOption) {
-		super(divisionOption);
-	}
 
 	@Override
 	protected Instances buildInstances() {

@@ -4,14 +4,13 @@ import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.DataExporters.OriginalSignalNormalizedArffBuilder;
 import weka.core.Instances;
 
-public class EamonnOriginalSignalNormalizedBySaxWorkflow extends EamonnWorkflowBase{
+public class EamonnOriginalSignalNormalizedBySaxWorkflow extends WorkflowBase {
 
 	public EamonnOriginalSignalNormalizedBySaxWorkflow(
-			DivisionOptions divisionOption) {
-		super(divisionOption);
-		// TODO Auto-generated constructor stub
+			DivisionOptions divisionOption, boolean glaucoma) {
+		super(divisionOption, glaucoma);
 	}
-	
+
 	private OriginalSignalNormalizedArffBuilder exporter;
 
 	@Override
@@ -22,12 +21,12 @@ public class EamonnOriginalSignalNormalizedBySaxWorkflow extends EamonnWorkflowB
 
 	@Override
 	protected void exportArff() throws Exception {
-		exporter.saveArff(arffPath);  
+		exporter.saveArff(arffPath);
 	}
 
 	@Override
 	protected void processData() throws Exception {
 		// nothing to do here - passing clean input further
-		
+
 	}
 }

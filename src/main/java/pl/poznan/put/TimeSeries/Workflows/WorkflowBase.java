@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import pl.poznan.put.TimeSeries.Classifying.ExperimentBase;
 import pl.poznan.put.TimeSeries.Classifying.ExperimentResult;
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
+import pl.poznan.put.TimeSeries.DataImporters.Importer;
 import pl.poznan.put.TimeSeries.Model.IRecord;
 import pl.poznan.put.TimeSeries.Util.CommonConfig;
 import weka.core.Instances;
@@ -33,14 +34,16 @@ public abstract class WorkflowBase {
 	protected DivisionOptions divisionOption;
 	protected int divisionPartsAmount = CommonConfig.getInstance()
 			.getDivisionPartsAmount();
-	protected boolean isAttrBag;
+	protected boolean glaucoma;
 
+	protected boolean isAttrBag;
 	protected List<? extends IRecord> records;
 	protected int windowLen = CommonConfig.getInstance().getNgramSize();
 
-	public WorkflowBase(DivisionOptions divisionOption) {
+	public WorkflowBase(DivisionOptions divisionOption, boolean glaucoma) {
 		super();
 		this.divisionOption = divisionOption;
+		this.glaucoma = glaucoma;
 		setTempPaths();
 		isAttrBag = true;
 	}
@@ -98,7 +101,9 @@ public abstract class WorkflowBase {
 
 	protected abstract void exportArff() throws Exception;
 
-	protected abstract void importData();
+	protected void importData() throws Exception {
+		records = Importer.importData(glaucoma);
+	}
 
 	protected abstract void processData() throws Exception;
 

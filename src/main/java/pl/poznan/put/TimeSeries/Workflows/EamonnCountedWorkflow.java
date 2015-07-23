@@ -13,15 +13,16 @@ import pl.poznan.put.TimeSeries.Model.IRecord;
 import pl.poznan.put.TimeSeries.Util.DataDivider;
 import weka.core.Instances;
 
-public class EamonnCountedWorkflow extends EamonnWorkflowBase {
+public class EamonnCountedWorkflow extends WorkflowBase {
+
+	public EamonnCountedWorkflow(DivisionOptions divisionOption,
+			boolean glaucoma) {
+		super(divisionOption, glaucoma);
+	}
 
 	private List<CalculatedRecord> calculatedRecords;
 
 	private SaxArffExporterBase exporter;
-
-	public EamonnCountedWorkflow(DivisionOptions divisionOption) {
-		super(divisionOption);
-	}
 
 	@Override
 	protected Instances buildInstances() {
