@@ -10,6 +10,7 @@ import pl.poznan.put.TimeSeries.Model.RegressionArffRow;
 import pl.poznan.put.TimeSeries.Model.RegressionResult;
 import pl.poznan.put.TimeSeries.Util.DataDivider;
 import pl.poznan.put.TimeSeries.Util.RegressionCalculator;
+import weka.core.Instances;
 
 public class RegressionWorkflow extends WorkflowBase {
 
@@ -17,7 +18,12 @@ public class RegressionWorkflow extends WorkflowBase {
 
 	public RegressionWorkflow(DivisionOptions divisionOption, boolean glaucoma) {
 		super(divisionOption, glaucoma);
+	}
+
+	@Override
+	protected Instances buildInstances() {
 		exporter = new RegressionArffBuilder(rows);
+		return exporter.buildInstances();
 	}
 
 	@Override

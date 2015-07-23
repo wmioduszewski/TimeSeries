@@ -99,9 +99,7 @@ public abstract class WorkflowBase {
 		System.out.println();
 	}
 
-	protected Instances buildInstances() {
-		return exporter.buildInstances();
-	}
+	protected abstract Instances buildInstances();
 
 	protected void exportArff() throws Exception {
 		exporter.saveArff(arffPath);
