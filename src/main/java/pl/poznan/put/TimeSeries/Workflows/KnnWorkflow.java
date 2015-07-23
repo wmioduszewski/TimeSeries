@@ -1,21 +1,21 @@
 package pl.poznan.put.TimeSeries.Workflows;
 
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
-import pl.poznan.put.TimeSeries.DataExporters.BasicSaxArffBuilder;
+import pl.poznan.put.TimeSeries.DataExporters.OriginalSignalNormalizedArffBuilder;
 import weka.core.Instances;
 
-public class EamonnBasicNgramWorkflow extends WorkflowBase {
+public class KnnWorkflow extends WorkflowBase {
 
-	public EamonnBasicNgramWorkflow(DivisionOptions divisionOption,
-			boolean glaucoma) {
+	public KnnWorkflow(
+			DivisionOptions divisionOption, boolean glaucoma) {
 		super(divisionOption, glaucoma);
 	}
 
-	private BasicSaxArffBuilder exporter;
+	private OriginalSignalNormalizedArffBuilder exporter;
 
 	@Override
 	protected Instances buildInstances() {
-		exporter = new BasicSaxArffBuilder(records);
+		exporter = new OriginalSignalNormalizedArffBuilder(records);
 		return exporter.buildInstances();
 	}
 
@@ -27,5 +27,6 @@ public class EamonnBasicNgramWorkflow extends WorkflowBase {
 	@Override
 	protected void processData() throws Exception {
 		// nothing to do here - passing clean input further
+
 	}
 }

@@ -5,10 +5,10 @@ import pl.poznan.put.TimeSeries.Classifying.DtwSearch;
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.Util.CommonConfig;
 import pl.poznan.put.TimeSeries.Workflows.CountedWorkflow;
-import pl.poznan.put.TimeSeries.Workflows.EamonnBasicNgramWorkflow;
+import pl.poznan.put.TimeSeries.Workflows.NgramWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.DominantWorkflow;
-import pl.poznan.put.TimeSeries.Workflows.EamonnOriginalSignalNormalizedBySaxWorkflow;
-import pl.poznan.put.TimeSeries.Workflows.EamonnOriginalSignalWorkflow;
+import pl.poznan.put.TimeSeries.Workflows.KnnWorkflow;
+import pl.poznan.put.TimeSeries.Workflows.DtwWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.RegressionWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.WorkflowBase;
 import weka.classifiers.Classifier;
@@ -33,14 +33,14 @@ public enum Experiments {
 			workflow = new CountedWorkflow(divisionOption, glaucoma);
 			break;
 		case NGRAM:
-			workflow = new EamonnBasicNgramWorkflow(divisionOption, glaucoma);
+			workflow = new NgramWorkflow(divisionOption, glaucoma);
 			break;
 		case KNN:
 //			workflow = new EamonnOriginalSignalWorkflow(divisionOption, glaucoma);
-			workflow = new EamonnOriginalSignalNormalizedBySaxWorkflow(divisionOption, glaucoma);
+			workflow = new KnnWorkflow(divisionOption, glaucoma);
 			break;
 		case DTW:
-			workflow = new EamonnOriginalSignalWorkflow(divisionOption, glaucoma);
+			workflow = new DtwWorkflow(divisionOption, glaucoma);
 			break;
 		}
 		return workflow;

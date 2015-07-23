@@ -19,8 +19,7 @@ public class RegressionWorkflow extends WorkflowBase {
 
 	private List<RegressionArffRow> rows;
 
-	public RegressionWorkflow(DivisionOptions divisionOption,
-			boolean glaucoma) {
+	public RegressionWorkflow(DivisionOptions divisionOption, boolean glaucoma) {
 		super(divisionOption, glaucoma);
 	}
 
@@ -42,7 +41,7 @@ public class RegressionWorkflow extends WorkflowBase {
 			List<List<Float>> nestedCharacteristicList = DataDivider
 					.divideRecord(record, divisionOption, divisionPartsAmount);
 			List<RegressionResult> regResults = new ArrayList<RegressionResult>();
-			
+
 			for (List<Float> list : nestedCharacteristicList) {
 				RegressionResult result = RegressionCalculator
 						.ComputeRegression(list);

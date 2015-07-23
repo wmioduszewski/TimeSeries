@@ -4,9 +4,9 @@ import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.DataExporters.OriginalSignalArffBuilder;
 import weka.core.Instances;
 
-public class EamonnOriginalSignalWorkflow extends WorkflowBase {
+public class DtwWorkflow extends WorkflowBase {
 
-	public EamonnOriginalSignalWorkflow(DivisionOptions divisionOption,
+	public DtwWorkflow(DivisionOptions divisionOption,
 			boolean glaucoma) {
 		super(divisionOption, glaucoma);
 	}
