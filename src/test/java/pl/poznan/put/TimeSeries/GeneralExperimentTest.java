@@ -1,6 +1,6 @@
 package pl.poznan.put.TimeSeries;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import pl.poznan.put.TimeSeries.Classifying.CrossValidationExperiment;
 import pl.poznan.put.TimeSeries.Classifying.ExperimentBase;
+import pl.poznan.put.TimeSeries.Classifying.Experiments;
 import pl.poznan.put.TimeSeries.Util.CommonConfig;
 import pl.poznan.put.TimeSeries.Workflows.WorkflowBase;
 import weka.classifiers.Classifier;

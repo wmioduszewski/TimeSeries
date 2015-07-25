@@ -1,7 +1,5 @@
-package pl.poznan.put.TimeSeries;
+package pl.poznan.put.TimeSeries.Classifying;
 
-import pl.poznan.put.TimeSeries.Classifying.BasicNgramClassifier;
-import pl.poznan.put.TimeSeries.Classifying.DtwSearch;
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.Util.CommonConfig;
 import pl.poznan.put.TimeSeries.Workflows.CountedWorkflow;
