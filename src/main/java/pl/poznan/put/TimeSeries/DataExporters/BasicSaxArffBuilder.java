@@ -15,6 +15,7 @@ public class BasicSaxArffBuilder extends ArffExporterBase {
 	public BasicSaxArffBuilder(List<? extends IRecord> records) {
 		this.input = records;
 		setDestinationClasses(input);
+		setAttributes();
 	}
 
 	@Override

@@ -15,6 +15,7 @@ public abstract class SaxArffExporterBase extends ArffExporterBase {
 		this.input = input;
 		getPeriodicDistincts();
 		setDestinationClasses(input);
+		setAttributes();
 	}
 	
 	protected void getPeriodicDistincts() {
