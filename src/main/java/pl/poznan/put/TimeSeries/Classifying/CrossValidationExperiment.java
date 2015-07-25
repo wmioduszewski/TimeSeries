@@ -26,7 +26,7 @@ public class CrossValidationExperiment extends ExperimentBase {
 		// https://weka.wikispaces.com/Generating+classifier+evaluation+output+manually
 		Evaluation eval = new Evaluation(baseDataSet);
 		eval.crossValidateModel(classifier, baseDataSet, folds, new Random());
-		return fillResult(eval, baseDataSet.classIndex());
+		return fillResult(eval);
 	}
 
 	@Override
@@ -46,10 +46,10 @@ public class CrossValidationExperiment extends ExperimentBase {
 		this.folds = folds;
 	}
 
-	private ExperimentResult fillResult(Evaluation eval, int classIndex) {
-		double accuracy = eval.weightedPrecision();
+	private ExperimentResult fillResult(Evaluation eval) {
 		double sensitivity = eval.weightedTruePositiveRate();
 		double specificity = eval.weightedTrueNegativeRate();
+		double accuracy = sensitivity + specificity / eval.numInstances();
 		double gMean = Math.sqrt(specificity * sensitivity);
 		double pr = eval.weightedPrecision();
 		double rec = eval.weightedRecall();
