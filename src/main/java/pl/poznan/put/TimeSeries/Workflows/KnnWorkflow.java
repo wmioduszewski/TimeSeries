@@ -1,7 +1,6 @@
 package pl.poznan.put.TimeSeries.Workflows;
 
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
-import pl.poznan.put.TimeSeries.DataExporters.BasicSaxArffBuilder;
 import pl.poznan.put.TimeSeries.DataExporters.OriginalSignalNormalizedArffBuilder;
 import weka.core.Instances;
 
