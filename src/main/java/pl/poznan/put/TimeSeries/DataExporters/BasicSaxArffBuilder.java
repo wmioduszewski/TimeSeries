@@ -1,7 +1,6 @@
 package pl.poznan.put.TimeSeries.DataExporters;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import pl.poznan.put.TimeSeries.Model.IRecord;
 import weka.core.Attribute;
@@ -15,28 +14,7 @@ public class BasicSaxArffBuilder extends ArffExporterBase {
 
 	public BasicSaxArffBuilder(List<? extends IRecord> records) {
 		this.input = records;
-		destClasses = input.stream().map(x -> x.getDestinationClass())
-				.distinct().collect(Collectors.toList());
-		setAttributes();
-	}
-
-	@Override
-	protected void setAttributes() {
-		attrInfo = new FastVector();
-
-		// needed only to pass null value - to mark the attribute as string attr
-
-		FastVector attrVals = null;
-
-		attrInfo.addElement(new Attribute("saxString", attrVals));
-
-		Attribute destClassAttribute = null;
-		try {
-			destClassAttribute = constructDestinationClassesNominalAttribute(destClasses);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		attrInfo.addElement(destClassAttribute);
+		setDestinationClasses(input);
 	}
 
 	@Override
@@ -59,4 +37,21 @@ public class BasicSaxArffBuilder extends ArffExporterBase {
 		return instances;
 	}
 
+	@Override
+	protected void setAttributes() {
+		attrInfo = new FastVector();
+
+		// needed only to pass null value - to mark the attribute as string attr
+
+		FastVector attrVals = null;
+		attrInfo.addElement(new Attribute("saxString", attrVals));
+
+		Attribute destClassAttribute = null;
+		try {
+			destClassAttribute = constructDestinationClassesNominalAttribute(destClasses);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		attrInfo.addElement(destClassAttribute);
+	}
 }

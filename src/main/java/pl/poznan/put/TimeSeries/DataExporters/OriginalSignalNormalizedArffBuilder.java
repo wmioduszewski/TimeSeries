@@ -1,7 +1,6 @@
 package pl.poznan.put.TimeSeries.DataExporters;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import pl.poznan.put.TimeSeries.Model.IRecord;
 import pl.poznan.put.TimeSeries.Util.CommonConfig;
@@ -16,8 +15,7 @@ public class OriginalSignalNormalizedArffBuilder extends ArffExporterBase {
 
 	public OriginalSignalNormalizedArffBuilder(List<? extends IRecord> records) {
 		this.input = records;
-		destClasses = input.stream().map(x -> x.getDestinationClass())
-				.distinct().collect(Collectors.toList());
+		setDestinationClasses(input);
 		setAttributes();
 	}
 
@@ -42,8 +40,8 @@ public class OriginalSignalNormalizedArffBuilder extends ArffExporterBase {
 
 	@Override
 	public Instances buildInstances() {
-		instances = new Instances("Pure signal normalized by SAX", attrInfo,
-				input.size());
+		instances = new Instances("Original signal normalized by SAX",
+				attrInfo, input.size());
 		instances.setClassIndex(instances.numAttributes() - 1);
 
 		for (IRecord record : input) {

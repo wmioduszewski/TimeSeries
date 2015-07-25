@@ -1,7 +1,6 @@
 package pl.poznan.put.TimeSeries.DataExporters;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import pl.poznan.put.TimeSeries.Model.IRecord;
 import weka.core.Attribute;
@@ -15,8 +14,7 @@ public class OriginalSignalArffBuilder extends ArffExporterBase {
 
 	public OriginalSignalArffBuilder(List<? extends IRecord> records) {
 		this.input = records;
-		destClasses = input.stream().map(x -> x.getDestinationClass())
-				.distinct().collect(Collectors.toList());
+		setDestinationClasses(input);
 		setAttributes();
 	}
 
@@ -43,7 +41,7 @@ public class OriginalSignalArffBuilder extends ArffExporterBase {
 
 	@Override
 	public Instances buildInstances() {
-		instances = new Instances("Pure signal", attrInfo, input.size());
+		instances = new Instances("Original signal", attrInfo, input.size());
 		instances.setClassIndex(instances.numAttributes() - 1);
 
 		for (IRecord record : input) {

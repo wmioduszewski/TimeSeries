@@ -2,7 +2,7 @@ package pl.poznan.put.TimeSeries.Model;
 
 import java.util.List;
 
-public class RegressionRow {
+public class RegressionRow implements IAssignedClass {
 	private double destinationClass;
 	private List<RegressionResult> regressionResults;
 

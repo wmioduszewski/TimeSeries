@@ -1,10 +1,9 @@
 package pl.poznan.put.TimeSeries.DataExporters;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
-import pl.poznan.put.TimeSeries.Model.RegressionRow;
 import pl.poznan.put.TimeSeries.Model.RegressionResult;
+import pl.poznan.put.TimeSeries.Model.RegressionRow;
 import weka.core.Attribute;
 import weka.core.FastVector;
 import weka.core.Instance;
@@ -16,8 +15,7 @@ public class RegressionArffBuilder extends ArffExporterBase {
 
 	public RegressionArffBuilder(List<RegressionRow> input) {
 		this.input = input;
-		destClasses = input.stream().map(x -> x.getDestinationClass())
-				.distinct().collect(Collectors.toList());
+		setDestinationClasses(input);
 		setAttributes();
 	}
 

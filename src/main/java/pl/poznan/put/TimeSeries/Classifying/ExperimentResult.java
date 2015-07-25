@@ -5,7 +5,7 @@ public class ExperimentResult {
 	private double accuracy;
 	private double f1;
 	private double gMean;
-	private double pcc;// pcc
+	private double pcc;
 	private double sensitivity;
 	private double specificity;
 

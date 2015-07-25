@@ -60,11 +60,10 @@ public class CountedSaxArffBuilder extends SaxArffExporterBase {
 				}
 			}
 			instance.setValue(attrIndex,
-					destClasses.indexOf(calculatedRecord.getDestClass()));
+					destClasses.indexOf(calculatedRecord.getDestinationClass()));
 			instances.add(instance);
 		}
 
-		// cutAttributes(instances);
 		return instances;
 	}
 }

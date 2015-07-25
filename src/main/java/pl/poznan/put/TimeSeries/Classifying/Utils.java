@@ -19,7 +19,7 @@ public class Utils {
 		return instances;
 	}
 
-	public static Pair<Instances, Instances> divideInstaces(
+	public static Pair<Instances, Instances> divideInstances(
 			Instances instances, double trainToTestRatio) {
 
 		instances.randomize(new Random());

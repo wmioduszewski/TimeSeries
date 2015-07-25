@@ -77,7 +77,7 @@ public class DominantArffBuilder extends SaxArffExporterBase {
 				}
 			}
 			instance.setValue(attrIndex,
-					destClasses.indexOf(calculatedRecord.getDestClass()));
+					destClasses.indexOf(calculatedRecord.getDestinationClass()));
 			instances.add(instance);
 		}
 		removeMaxMinAttributes();

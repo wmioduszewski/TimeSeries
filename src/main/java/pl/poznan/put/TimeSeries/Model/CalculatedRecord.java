@@ -3,7 +3,7 @@ package pl.poznan.put.TimeSeries.Model;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class CalculatedRecord {
+public class CalculatedRecord implements IAssignedClass{
 
 	private ArrayList<HashMap<String, Integer>> periodicNgrams;
 	private double destClass;
@@ -19,7 +19,7 @@ public class CalculatedRecord {
 		return periodicNgrams;
 	}
 
-	public double getDestClass() {
+	public double getDestinationClass() {
 		return destClass;
 	}
 
