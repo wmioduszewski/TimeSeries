@@ -50,15 +50,12 @@ public abstract class WorkflowBase {
 
 	public void executeArff(ExperimentBase experiment, String arffPath)
 			throws Exception {
-		System.out.println("Arff execution has started.");
 		ExperimentResult result = experiment.runFileExperimentRepeatedly(
 				arffPath, repetitions);
 		printResult(result);
-		System.out.println("Arff execution has ended.");
 	}
 
 	public void runExperiment(ExperimentBase experiment) throws Exception {
-		System.out.println("Experiment has started.");
 		importData();
 		processData();
 		Instances instances = buildInstances();
@@ -66,17 +63,14 @@ public abstract class WorkflowBase {
 				repetitions);
 		reportStatistics();
 		printResult(result);
-		System.out.println("Experiment has ended.");
 	}
 
 	public String saveArff() throws Exception {
-		System.out.println("Arff creation has started.");
 		importData();
 		processData();
 		buildInstances();
 		exportArff();
 		reportStatistics();
-		System.out.println("Arff has been saved to: " + arffPath);
 		return arffPath;
 	}
 
