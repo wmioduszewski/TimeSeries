@@ -1,5 +1,6 @@
 package pl.poznan.put.TimeSeries.DataExporters;
 
+import java.util.Comparator;
 import java.util.List;
 
 import pl.poznan.put.TimeSeries.Model.IRecord;
@@ -22,9 +23,10 @@ public class OriginalSignalArffBuilder extends ArffExporterBase {
 	protected void setAttributes() {
 		attrInfo = new FastVector();
 
-		int attrCount = input.stream()
-				.max((x, y) -> (x.getValues().size() - y.getValues().size()))
-				.get().getValues().size();
+		Comparator<IRecord> comp = (x, y) -> Integer.compare(x.getValues()
+				.size(), y.getValues().size());
+
+		int attrCount = input.stream().min(comp).get().getValues().size();
 
 		for (int i = 0; i < attrCount; i++) {
 			attrInfo.addElement(new Attribute("a" + (i + 1)));

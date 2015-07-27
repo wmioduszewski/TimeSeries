@@ -72,7 +72,7 @@ public class Patient implements Cloneable, IRecord {
 	@Override
 	public List<Float> getValues() {
 		int size = characteristics.size();
-		List<Float> vals = new ArrayList<Float>();
+		List<Float> vals = new ArrayList<Float>(size);
 		for (int i = 0; i < size; i++) {
 			vals.add(characteristics.get(i).tfadj);
 		}
