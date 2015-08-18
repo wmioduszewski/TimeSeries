@@ -15,17 +15,19 @@ public class Launcher {
 
 	public static String exportArff(Experiments chosenExperiment,
 			Datasets dataset) throws Exception {
-		System.out.println("Arff export for " +dataset.name() +" has started.");
-		dataset.setAsCurrent();		
+		System.out.println("Arff export for " + dataset.name()
+				+ " has started.");
+		dataset.setAsCurrent();
 		WorkflowBase workflow = chosenExperiment.getWorkflow();
 		String path = workflow.saveArff();
-		System.out.println("Arff for " +dataset.name() +" has been exported to " + path);
+		System.out.println("Arff for " + dataset.name()
+				+ " has been exported to " + path);
 		return path;
 	}
 
 	public static void processArff(Experiments chosenExperiment, String arffPath)
 			throws Exception {
-		System.out.println("Processing: " +arffPath + "...");
+		System.out.println("Processing: " + arffPath + "...");
 		WorkflowBase workflow = chosenExperiment.getWorkflow();
 		Classifier classifier = chosenExperiment.getClassifier();
 		ExperimentBase experiment = new CrossValidationExperiment(classifier);
@@ -35,8 +37,8 @@ public class Launcher {
 
 	public static void runExperiment(Experiments chosenExperiment,
 			Datasets dataset) throws Exception {
-		System.out.println("Experiment " + chosenExperiment.name()
-				+ " for " + dataset.name() + " has been started.");
+		System.out.println("Experiment " + chosenExperiment.name() + " for "
+				+ dataset.name() + " has been started.");
 		dataset.setAsCurrent();
 		Classifier classifier = chosenExperiment.getClassifier();
 		WorkflowBase workflow = chosenExperiment.getWorkflow();

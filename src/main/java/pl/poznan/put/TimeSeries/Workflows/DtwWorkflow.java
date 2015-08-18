@@ -1,7 +1,10 @@
 package pl.poznan.put.TimeSeries.Workflows;
 
+import org.apache.commons.lang3.tuple.Pair;
+
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.DataExporters.OriginalSignalArffBuilder;
+import pl.poznan.put.TimeSeries.Util.CommonConfig;
 import weka.core.Instances;
 
 public class DtwWorkflow extends WorkflowBase {
@@ -19,5 +22,11 @@ public class DtwWorkflow extends WorkflowBase {
 	@Override
 	protected void processData() throws Exception {
 		// nothing to do here - passing clean input further
+	}
+
+	@Override
+	protected void setConcerningParams() {
+		concerningParameters.add(Pair.of("knn",CommonConfig.getInstance().getK()));
+		concerningParameters.add(Pair.of("DtwWin",CommonConfig.getInstance().getDtwSearchRadius()));
 	}
 }

@@ -3,11 +3,13 @@ package pl.poznan.put.TimeSeries.Workflows;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang3.tuple.Pair;
+
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.DataExporters.RegressionArffBuilder;
 import pl.poznan.put.TimeSeries.Model.IRecord;
-import pl.poznan.put.TimeSeries.Model.RegressionRow;
 import pl.poznan.put.TimeSeries.Model.RegressionResult;
+import pl.poznan.put.TimeSeries.Model.RegressionRow;
 import pl.poznan.put.TimeSeries.Util.DataDivider;
 import pl.poznan.put.TimeSeries.Util.RegressionCalculator;
 import weka.core.Instances;
@@ -44,6 +46,11 @@ public class RegressionWorkflow extends WorkflowBase {
 					record.getDestinationClass());
 			rows.add(row);
 		}
+	}
+
+	@Override
+	protected void setConcerningParams() {
+		concerningParameters.add(Pair.of("parts", divisionPartsAmount));
 	}
 
 }

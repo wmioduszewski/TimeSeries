@@ -5,6 +5,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+import pl.poznan.put.TimeSeries.Classifying.Datasets;
+import pl.poznan.put.TimeSeries.Classifying.Experiments;
+
 public class CommonConfig {
 
 	private static CommonConfig _instance = null;
@@ -55,6 +58,8 @@ public class CommonConfig {
 	private float attributesToCutRatio = getFloatProperty("attributesToCutRatio");
 	private int crossValidationFolds = getIntProperty("crossValidationFolds");
 	private int crossValidationRepetitions = getIntProperty("crossValidationRepetitions");;
+	private Datasets currentDataset;
+	private Experiments currentExperiment;
 	private String dataFolderPath = getProperty("dataFolderPath");
 	private int divisionPartsAmount = getIntProperty("divisionPartsAmount");
 	private int dtwSearchRadius = getIntProperty("dtwSearchRadius");
@@ -81,6 +86,14 @@ public class CommonConfig {
 
 	public int getCrossValidationRepetitions() {
 		return crossValidationRepetitions;
+	}
+
+	public Datasets getCurrentDataset() {
+		return currentDataset;
+	}
+
+	public Experiments getCurrentExperiment() {
+		return currentExperiment;
 	}
 
 	public String getDataFolderPath() {
@@ -141,6 +154,14 @@ public class CommonConfig {
 
 	public void setCrossValidationRepetitions(int crossValidationRepetitions) {
 		this.crossValidationRepetitions = crossValidationRepetitions;
+	}
+
+	public void setCurrentDataset(Datasets currentDataset) {
+		this.currentDataset = currentDataset;
+	}
+
+	public void setCurrentExperiment(Experiments currentExperiment) {
+		this.currentExperiment = currentExperiment;
 	}
 
 	public void setDataFolderPath(String dataFolderPath) {

@@ -1,7 +1,10 @@
 package pl.poznan.put.TimeSeries.Workflows;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import org.apache.commons.lang3.tuple.Pair;
 
 import pl.poznan.put.TimeSeries.Classifying.ExperimentBase;
 import pl.poznan.put.TimeSeries.Classifying.ExperimentResult;
@@ -40,12 +43,12 @@ public abstract class WorkflowBase {
 
 	protected List<? extends IRecord> records;
 	protected int windowLen = CommonConfig.getInstance().getNgramSize();
+	protected List<Pair<String, ? extends Object>> concerningParameters = new ArrayList<Pair<String, ? extends Object>>();
 
 	public WorkflowBase(DivisionOptions divisionOption, boolean isGlaucoma) {
 		super();
 		this.divisionOption = divisionOption;
 		this.isGlaucoma = isGlaucoma;
-		setTempPaths();
 	}
 
 	public void executeArff(ExperimentBase experiment, String arffPath)
@@ -66,6 +69,7 @@ public abstract class WorkflowBase {
 	}
 
 	public String saveArff() throws Exception {
+		setArffPath();
 		importData();
 		processData();
 		buildInstances();
@@ -95,25 +99,26 @@ public abstract class WorkflowBase {
 
 	protected abstract void processData() throws Exception;
 
+	protected abstract void setConcerningParams();
+
 	protected void reportStatistics() {
 		WorkflowBase.reportInputStatistics(records);
 	}
 
-	protected void setTempPaths() {
-		String className = this.getClass().getName();
-		className = className.substring(className.lastIndexOf(".") + 1,
-				className.length());
-		className = className.replace("Workflow", "");
-		String eamonnDataSource = "";
-		if (className.contains("Eamonn")) {
-			eamonnDataSource = CommonConfig.getInstance().getSingleDataPath()
-					+ " ";
-			eamonnDataSource = eamonnDataSource.substring(
-					eamonnDataSource.lastIndexOf("/") + 1,
-					eamonnDataSource.length());
+	private void setArffPath() {
+		setConcerningParams();
+		String dataSource = CommonConfig.getInstance().getCurrentDataset()
+				.name();
+		String experiment = CommonConfig.getInstance().getCurrentExperiment()
+				.name();
+
+		arffPath = String.format("output/arffOutput/%s for %s with",
+				experiment, dataSource);
+
+		for (Pair<String, ? extends Object> pair : concerningParameters) {
+			arffPath += " " + pair.getLeft() + "-" + pair.getRight();
 		}
-		arffPath = String.format("output/arffOutput/%s%s%dp%dgram%s.arff",
-				className, eamonnDataSource, divisionPartsAmount, windowLen,
-				divisionOption.toString());
+
+		arffPath += ".arff";
 	}
 }
