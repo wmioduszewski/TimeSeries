@@ -3,13 +3,13 @@ package pl.poznan.put.TimeSeries.Classifying;
 import pl.poznan.put.TimeSeries.Util.CommonConfig;
 
 public enum Datasets {
-	ECG200, ECGFIVEDAYS, TWOLEADECG, YOGA, MOTESTRAIN, ITALYPOWERDEMAND, CHLORINECONCENTRATION, TWOPATTERNS, WAFER, INLINESKATE, PATIENTS;
-	
-	public void setAsCurrent(){
+	ECG200, ECGFIVEDAYS, SAMPLEUNITTEST, TWOLEADECG, YOGA, MOTESTRAIN, ITALYPOWERDEMAND, CHLORINECONCENTRATION, TWOPATTERNS, WAFER, INLINESKATE, PATIENTS;
+
+	public void setAsCurrent() {
 		String path = null;
-		CommonConfig cfg= CommonConfig.getInstance();
+		CommonConfig cfg = CommonConfig.getInstance();
 		boolean isGlaucoma = false;
-		
+
 		switch (this) {
 		case ECG200:
 			path = "dataset1/ECG200";
@@ -41,18 +41,19 @@ public enum Datasets {
 		case YOGA:
 			path = "dataset1/yoga";
 			break;
+		case SAMPLEUNITTEST:
+			path = "SAMPLEDATASET";
+			break;
 		case PATIENTS:
 			isGlaucoma = true;
 			break;
 		}
-		
+
 		cfg.setGlaucoma(isGlaucoma);
-		if(path!=null){
+		if (path != null) {
 			cfg.setSingleDataPath(path);
 		}
-		
-		
+
 	}
-		
 
 }

@@ -4,6 +4,7 @@ import pl.poznan.put.TimeSeries.Classifying.CrossValidationExperiment;
 import pl.poznan.put.TimeSeries.Classifying.Datasets;
 import pl.poznan.put.TimeSeries.Classifying.ExperimentBase;
 import pl.poznan.put.TimeSeries.Classifying.Experiments;
+import pl.poznan.put.TimeSeries.Util.CommonConfig;
 import pl.poznan.put.TimeSeries.Workflows.WorkflowBase;
 import weka.classifiers.Classifier;
 
@@ -15,6 +16,9 @@ public class Launcher {
 
 	public static String exportArff(Experiments chosenExperiment,
 			Datasets dataset) throws Exception {
+		CommonConfig.getInstance().setCurrentDataset(dataset);
+		CommonConfig.getInstance().setCurrentExperiment(chosenExperiment);
+		
 		System.out.println("Arff export for " + dataset.name()
 				+ " has started.");
 		dataset.setAsCurrent();

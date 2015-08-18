@@ -7,6 +7,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import pl.poznan.put.TimeSeries.Classifying.CrossValidationExperiment;
+import pl.poznan.put.TimeSeries.Classifying.Datasets;
 import pl.poznan.put.TimeSeries.Classifying.ExperimentBase;
 import pl.poznan.put.TimeSeries.Classifying.Experiments;
 import pl.poznan.put.TimeSeries.Util.CommonConfig;
@@ -46,17 +47,10 @@ public class GeneralExperimentTest {
 	}
 	
 	@Test
-	public void fileBasedExperiments() {
+	public void fileBasedExperiments() throws Exception {
 		for (Experiments chosenExperiment : Experiments.values()) {
-			WorkflowBase workflow = chosenExperiment.getWorkflow();
-			Classifier classifier = chosenExperiment.getClassifier();
-			ExperimentBase experiment = new CrossValidationExperiment(classifier);
-			try {
-				String path = workflow.saveArff();
-				workflow.executeArff(experiment, path);
-			} catch (Exception e) {
-				fail(e.getMessage());
-			}
+			String path=Launcher.exportArff(chosenExperiment, Datasets.SAMPLEUNITTEST);
+			Launcher.processArff(chosenExperiment, path);
 		}
 	}
 }
