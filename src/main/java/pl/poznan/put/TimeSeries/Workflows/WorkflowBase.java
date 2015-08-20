@@ -112,8 +112,8 @@ public abstract class WorkflowBase {
 		String experiment = CommonConfig.getInstance().getCurrentExperiment()
 				.name();
 
-		arffPath = String.format("output/arffOutput/%s for %s with",
-				experiment, dataSource);
+		arffPath = String.format("output/arffOutput/%s/%s for %s with",
+				experiment,experiment, dataSource);
 
 		for (Pair<String, ? extends Object> pair : concerningParameters) {
 			arffPath += " " + pair.getLeft() + "-" + pair.getRight();

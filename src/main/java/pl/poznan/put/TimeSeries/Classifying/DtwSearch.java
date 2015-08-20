@@ -75,6 +75,7 @@ public class DtwSearch extends NearestNeighbourSearch {
 		TimeSeries ts1 = builder1.build();
 		TimeSeries ts2 = builder2.build();
 		int radius = CommonConfig.getInstance().getDtwSearchRadius();
+		radius = current.numAttributes() * radius /100;
 		double distance = FastDTW.compare(ts1, ts2, radius,
 				Distances.EUCLIDEAN_DISTANCE).getDistance();
 		return distance;
