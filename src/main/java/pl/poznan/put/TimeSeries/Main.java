@@ -15,7 +15,7 @@ public class Main {
 
 		for (Datasets dataset : Datasets.values()) {
 			if(dataset==Datasets.SAMPLEUNITTEST) continue;
-			Launcher.exportArff(chosenExperiment, dataset);
+			Launcher.runExperiment(chosenExperiment, dataset);
 		}
 
 		long endTime = System.currentTimeMillis();

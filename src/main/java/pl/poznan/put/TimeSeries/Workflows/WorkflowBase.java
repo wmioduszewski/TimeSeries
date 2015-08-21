@@ -79,6 +79,16 @@ public abstract class WorkflowBase {
 	}
 
 	private void printResult(ExperimentResult experimentResult) {
+		String dataSource = CommonConfig.getInstance().getCurrentDataset()
+				.name();
+		String experiment = CommonConfig.getInstance().getCurrentExperiment()
+				.name();
+		setConcerningParams();
+		System.out.println(experiment + " for " + dataSource +" with params:");
+		for (Pair<String, ? extends Object> pair : concerningParameters) {
+			System.out.println(pair.getLeft() + ": " + pair.getRight());
+		}
+		
 		System.out.println();
 		if (experimentResult != null)
 			System.out.println(experimentResult);

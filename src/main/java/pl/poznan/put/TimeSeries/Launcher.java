@@ -41,6 +41,8 @@ public class Launcher {
 
 	public static void runExperiment(Experiments chosenExperiment,
 			Datasets dataset) throws Exception {
+		CommonConfig.getInstance().setCurrentDataset(dataset);
+		CommonConfig.getInstance().setCurrentExperiment(chosenExperiment);
 		System.out.println("Experiment " + chosenExperiment.name() + " for "
 				+ dataset.name() + " has been started.");
 		dataset.setAsCurrent();
