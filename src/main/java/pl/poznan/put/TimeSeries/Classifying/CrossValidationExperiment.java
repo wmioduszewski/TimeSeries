@@ -49,7 +49,7 @@ public class CrossValidationExperiment extends ExperimentBase {
 	private ExperimentResult fillResult(Evaluation eval) {
 		double sensitivity = eval.weightedTruePositiveRate();
 		double specificity = eval.weightedTrueNegativeRate();
-		double accuracy = sensitivity + specificity / eval.numInstances();
+		double accuracy = (sensitivity + specificity) / eval.numInstances();
 		double gMean = Math.sqrt(specificity * sensitivity);
 		double pr = eval.weightedPrecision();
 		double rec = eval.weightedRecall();

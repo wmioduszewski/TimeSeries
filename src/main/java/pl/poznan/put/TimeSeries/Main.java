@@ -11,18 +11,17 @@ public class Main {
 	}
 	
 	private static void launchExperimentForAllDatasets(Experiments chosenExperiment) throws Exception{
-		long startTime = System.currentTimeMillis();
-
 		for (Datasets dataset : Datasets.values()) {
+			long startTime = System.currentTimeMillis();
 			if(dataset==Datasets.SAMPLEUNITTEST) continue;
 			Launcher.runExperiment(chosenExperiment, dataset);
-		}
+		
 
 		long endTime = System.currentTimeMillis();
 		long diff = endTime - startTime;
 		System.out.println("Execution took " + diff / 1000 + "s." + diff % 1000
 				+ "ms");
-
+		}
 	}
 
 	private static void launchExperiment(Experiments chosenExperiment,
