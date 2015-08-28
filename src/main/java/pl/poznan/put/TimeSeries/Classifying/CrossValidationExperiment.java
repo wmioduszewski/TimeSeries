@@ -46,11 +46,26 @@ public class CrossValidationExperiment extends ExperimentBase {
 		this.folds = folds;
 	}
 
-	private ExperimentResult fillResult(Evaluation eval) {
-		double sensitivity = eval.weightedTruePositiveRate();
-		double specificity = eval.weightedTrueNegativeRate();
-		double accuracy = (sensitivity + specificity) /2;
-		double gMean = Math.sqrt(specificity * sensitivity);
+	private ExperimentResult fillResult(Evaluation eval) throws Exception {
+		double tp = 0, tn = 0, fp = 0, fn = 0;
+		int numClasses = eval.getClassPriors().length;
+		for (int i = 0; i < numClasses; i++) {
+			tp += eval.numTruePositives(i);
+			tn += eval.numTrueNegatives(i);
+			fp += eval.numFalsePositives(i);
+			fn += eval.numFalseNegatives(i);
+		}
+
+		double sensitivity = -1, specificity = -1,gMean =-1;
+
+		if (numClasses == 2) {
+			sensitivity = eval.weightedTruePositiveRate();
+			specificity = eval.weightedTrueNegativeRate();
+			gMean = Math.sqrt(specificity * sensitivity);
+		}
+		
+		double accuracy = (tp + tn) / (tp + tn + fp + fn);
+		
 		double pr = eval.weightedPrecision();
 		double rec = eval.weightedRecall();
 		double f1 = 2 * ((pr * rec) / (pr + rec));

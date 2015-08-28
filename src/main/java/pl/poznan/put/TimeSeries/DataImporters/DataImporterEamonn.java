@@ -56,7 +56,6 @@ public class DataImporterEamonn {
 
 		System.out.println(String.format("Dataset %s - %d records.",
 				datasetName, records.size()));
-		System.out.println(String.format("SAX with: alphabeatSize:%d outputLength: %d",alphabeatSize, outputLength));
 		return records;
 	}
 

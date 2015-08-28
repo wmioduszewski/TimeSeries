@@ -48,24 +48,24 @@ public class ExperimentResult {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append(String.format("Accuracy: \t%f\n", accuracy));
+		sb.append(String.format("F1 score: \t%f\n", f1));
 		sb.append(String.format("Sensitivity: \t%f\n", sensitivity));
 		sb.append(String.format("Specificity: \t%f\n", specificity));
-		sb.append(String.format("F1 score: \t%f\n", f1));
 		sb.append(String.format("G-Mean: \t%f\n", gMean));
 		sb.append(String.format("PCC: \t\t%f\n", pcc));
 		return sb.toString();
 	}
-	
-	public void add(ExperimentResult result){
-		this.accuracy +=result.accuracy;
-		this.sensitivity +=result.sensitivity;
+
+	public void add(ExperimentResult result) {
+		this.accuracy += result.accuracy;
+		this.sensitivity += result.sensitivity;
 		this.specificity += result.specificity;
 		this.f1 += result.f1;
 		this.gMean += result.gMean;
 		this.pcc += result.pcc;
 	}
-	
-	public void divideBy(double divisor){
+
+	public void divideBy(double divisor) {
 		this.accuracy /= divisor;
 		this.sensitivity /= divisor;
 		this.specificity /= divisor;

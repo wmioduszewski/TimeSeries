@@ -8,11 +8,12 @@ import pl.poznan.put.TimeSeries.Classifying.Experiments;
 public class Main {
 
 	public static void main(String[] args) throws Exception {
-//		launchExperiment(Experiments.DTW, Datasets.ECG200);
-		launchExperimentForAllDatasets(Experiments.DTW);
+		launchExperiment(Experiments.KNN, Datasets.INLINESKATE);
+//		launchExperimentForAllDatasets(Experiments.DTW);
 	}
 	
 	private static void launchExperimentForAllDatasets(Experiments chosenExperiment) throws Exception{
+		
 		for (Datasets dataset : Datasets.values()) {
 			long startTime = System.currentTimeMillis();
 			if(dataset==Datasets.SAMPLEUNITTEST) continue;
