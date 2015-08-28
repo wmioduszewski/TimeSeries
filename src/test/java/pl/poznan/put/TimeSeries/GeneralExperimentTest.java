@@ -18,14 +18,15 @@ public class GeneralExperimentTest {
 
 	private static String path;
 	private static String folderPath;
+
 	@BeforeClass
-	public static void beforeClass() throws Exception{
+	public static void beforeClass() throws Exception {
 		path = CommonConfig.getInstance().getSingleDataPath();
 		folderPath = CommonConfig.getInstance().getDataFolderPath();
 		CommonConfig.getInstance().setSingleDataPath("SAMPLEDATASET");
 		CommonConfig.getInstance().setDataFolderPath("testData/");
 	}
-	
+
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
 		CommonConfig.getInstance().setSingleDataPath(path);
@@ -35,21 +36,20 @@ public class GeneralExperimentTest {
 	@Test
 	public void directExperiments() {
 		for (Experiments chosenExperiment : Experiments.values()) {
-			WorkflowBase workflow = chosenExperiment.getWorkflow();
-			Classifier classifier = chosenExperiment.getClassifier();
-			ExperimentBase experiment = new CrossValidationExperiment(classifier);
 			try {
-				workflow.runExperiment(experiment);
+				Launcher.runExperiment(chosenExperiment,
+						Datasets.SAMPLEUNITTEST);
 			} catch (Exception e) {
 				fail(e.getMessage());
 			}
 		}
 	}
-	
+
 	@Test
 	public void fileBasedExperiments() throws Exception {
 		for (Experiments chosenExperiment : Experiments.values()) {
-			String path=Launcher.exportArff(chosenExperiment, Datasets.SAMPLEUNITTEST);
+			String path = Launcher.exportArff(chosenExperiment,
+					Datasets.SAMPLEUNITTEST);
 			Launcher.processArff(chosenExperiment, path);
 		}
 	}
