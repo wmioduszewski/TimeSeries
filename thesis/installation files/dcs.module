@@ -1,0 +1,101 @@
+#\DeclareLyXModule{DCS Group Logical Markup}
+#DescriptionBegin
+#Logical character styles: emph, strong, code, path, cmd, kbd, name.
+#DescriptionEnd
+
+# Author: Cezary Sobaniec <cezary.sobaniec@cs.put.poznan.pl>
+
+# $Id: dcs.module 3133 2012-11-29 13:18:10Z sobaniec $
+
+Format 35
+
+Provides amsmath  1
+
+InsetLayout Flex:Emph
+  LyxType        charstyle
+  LabelString    emph
+  LatexType      command
+  LatexName      dcsemph
+  Font
+    Shape        Italic
+  EndFont
+  Spellcheck     0
+End
+
+InsetLayout Flex:Strong
+  LyxType        charstyle
+  LabelString    strong
+  LatexType      command
+  LatexName      dcsstrong
+  Font
+    Series       Bold
+  EndFont
+End
+
+InsetLayout Flex:Code
+  LyxType        charstyle
+  LabelString    code
+  LatexType      command
+  LatexName      dcscode
+  Font
+    Family       Typewriter
+    Color        Red
+    Size         Small
+  EndFont
+  Spellcheck     0
+End
+
+InsetLayout Flex:Path
+  LyxType        charstyle
+  LabelString    path
+  LatexType      command
+  LatexName      dcspath
+  Font
+    Family       Typewriter
+    Color        Blue
+    Size         Small
+  EndFont
+  Spellcheck     0
+End
+
+InsetLayout Flex:Cmd
+  LyxType        charstyle
+  LabelString    cmd
+  LatexType      command
+  LatexName      dcscmd
+  Font
+    Family       Typewriter
+    Color        Green
+    Size         Small
+  EndFont
+  Spellcheck     0
+End
+
+InsetLayout Flex:Kbd
+  LyxType        charstyle
+  LabelString    kbd
+  LatexType      command
+  LatexName      dcskbd
+  Font
+    Family       Sans
+    Color        Magenta
+  EndFont
+  Spellcheck     0
+End
+
+InsetLayout Flex:Name
+  LyxType        charstyle
+  LabelString    name
+  LatexType      command
+  LatexName      dcsname
+  Font
+    Family       Sans
+    Color        Magenta
+  EndFont
+  Spellcheck     0
+End
+
+
+AddToPreamble
+\RequirePackage{dcslib}[2012/01/30]
+EndPreamble

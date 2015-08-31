@@ -6,18 +6,14 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import pl.poznan.put.TimeSeries.Classifying.CrossValidationExperiment;
 import pl.poznan.put.TimeSeries.Classifying.Datasets;
-import pl.poznan.put.TimeSeries.Classifying.ExperimentBase;
 import pl.poznan.put.TimeSeries.Classifying.Experiments;
 import pl.poznan.put.TimeSeries.Util.CommonConfig;
-import pl.poznan.put.TimeSeries.Workflows.WorkflowBase;
-import weka.classifiers.Classifier;
 
 public class GeneralExperimentTest {
 
-	private static String path;
 	private static String folderPath;
+	private static String path;
 
 	@BeforeClass
 	public static void beforeClass() throws Exception {

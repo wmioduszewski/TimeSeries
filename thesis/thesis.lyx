@@ -1,0 +1,1575 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass dcsbook
+\begin_preamble
+%
+%  $Id: thesis-template.lyx,v 1.7 2011/12/22 12:10:18 sobaniec Exp $
+%
+\end_preamble
+\options thesis
+\use_default_options false
+\begin_modules
+dcs
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding utf8
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement tbph
+\paperfontsize 11
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "urlcolor=linkcolor,linkcolor=linkcolor,citecolor=linkcolor"
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 0
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Indeks
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2.5cm
+\rightmargin 2cm
+\bottommargin 2.5cm
+\secnumdepth 3
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Author
+<Insert Your name here>
+\end_layout
+
+\begin_layout Title
+<Insert title of the thesis here>
+\end_layout
+
+\begin_layout Date
+Poznań, 2015
+\end_layout
+
+\begin_layout Supervisor
+dr inż.
+ Jerzy Błaszczyński
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Subtitle
+Bachelor's Thesis
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+frontmatter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mainmatter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Introduction
+\end_layout
+
+\begin_layout Standard
+The Introduction may be put 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+before
+\end_layout
+
+\end_inset
+
+ the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+mainmatter
+\end_layout
+
+\end_inset
+
+ command which will disable numbering of this chapter while still adding
+ to the table of contents.
+\end_layout
+
+\begin_layout Paragraph
+The goal and the scope of the thesis
+\end_layout
+
+\begin_layout Chapter
+Background
+\end_layout
+
+\begin_layout Standard
+The thesis can be structured using the following sectioning styles:
+\end_layout
+
+\begin_layout Section
+Section
+\end_layout
+
+\begin_layout Subsection
+Subsection
+\end_layout
+
+\begin_layout Subsubsection
+Subsubsection
+\end_layout
+
+\begin_layout Paragraph
+Paragraph
+\end_layout
+
+\begin_layout Subparagraph
+Subparagraph
+\end_layout
+
+\begin_layout Section
+Inline formatting
+\end_layout
+
+\begin_layout Standard
+We suggest using 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Insets
+\end_layout
+
+\end_inset
+
+, like:
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Flex Strong
+status open
+
+\begin_layout Plain Layout
+strong
+\end_layout
+
+\end_inset
+
+ for strong emphasizing some text.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+emph
+\end_layout
+
+\end_inset
+
+ for emphasizing some text.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Code
+\end_layout
+
+\end_inset
+
+ for formatting of names of modules, procedures, class names, variables,
+ etc.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Flex Path
+status open
+
+\begin_layout Plain Layout
+path
+\end_layout
+
+\end_inset
+
+ for formatting of file names and directories, like 
+\begin_inset Flex Path
+status collapsed
+
+\begin_layout Plain Layout
+/usr/share/doc/packages/texlive-latex
+\end_layout
+
+\end_inset
+
+.
+ The names are properly broken at the ends of lines.
+ However, path names containing special LaTeX characters must be typeset
+ using ERT and the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+dcspath
+\end_layout
+
+\end_inset
+
+ command, e.g.
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+dcspath{sample_file}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Flex Kbd
+status open
+
+\begin_layout Plain Layout
+kbd
+\end_layout
+
+\end_inset
+
+ for formatting of shortcuts, e.g.: 
+\begin_inset Flex Kbd
+status collapsed
+
+\begin_layout Plain Layout
+Ctrl-c
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Flex Cmd
+status open
+
+\begin_layout Plain Layout
+cmd
+\end_layout
+
+\end_inset
+
+ for formatting system commands.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Flex Name
+status open
+
+\begin_layout Plain Layout
+name
+\end_layout
+
+\end_inset
+
+ for formatting other special names.
+\end_layout
+
+\begin_layout Section
+Special characters
+\end_layout
+
+\begin_layout Enumerate
+Non-breaking space can be inserted using 
+\begin_inset Flex Kbd
+status collapsed
+
+\begin_layout Plain Layout
+Ctrl-space
+\end_layout
+
+\end_inset
+
+.
+ It produces 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+~
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ in LaTeX code.
+\end_layout
+
+\begin_layout Enumerate
+A normal, inter-word space can be inserted using 
+\begin_inset Flex Kbd
+status collapsed
+
+\begin_layout Plain Layout
+Ctrl-Alt-space
+\end_layout
+
+\end_inset
+
+.
+ It produces 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ in LaTeX code.
+ This type of space is useful for formatting spacing after dots, e.g.
+\begin_inset space \space{}
+\end_inset
+
+here.
+ By default LaTeX produces here a longer space used for separating whole
+ sentences.
+\end_layout
+
+\begin_layout Enumerate
+A thin space can be produced by 
+\begin_inset Flex Kbd
+status collapsed
+
+\begin_layout Plain Layout
+Ctrl-Shift-space
+\end_layout
+
+\end_inset
+
+, e.g.
+\begin_inset space \thinspace{}
+\end_inset
+
+here.
+ It produces 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+,
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ in LaTeX code.
+\end_layout
+
+\begin_layout Enumerate
+Sentence-ending space can be inserted using 
+\begin_inset Flex Kbd
+status collapsed
+
+\begin_layout Plain Layout
+Ctrl-.
+\end_layout
+
+\end_inset
+
+, which produces 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+@.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ in LaTeX code.
+ This type of space is useful in sentences ending with a capital letter.
+ In such cases LaTeX recognizes the last word as a acronym and places a
+ regular inter-word space instead of inter-sentence space.
+ Consider the following example:
+\end_layout
+
+\begin_deeper
+\begin_layout Quote
+
+\emph on
+This can be achieved by using HTTP\SpecialChar \@.
+ This protocol...
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Hyphenation indicator can be inserted using 
+\begin_inset Flex Kbd
+status collapsed
+
+\begin_layout Plain Layout
+Ctrl-
+\begin_inset space ~
+\end_inset
+
+--
+\end_layout
+
+\end_inset
+
+, which is used for marking possible places of hyphenation, e.g.
+\begin_inset space \space{}
+\end_inset
+
+de\SpecialChar \-
+mo\SpecialChar \-
+cra\SpecialChar \-
+cy.
+\end_layout
+
+\begin_layout Section
+Figures
+\end_layout
+
+\begin_layout Standard
+The figures should be put in floats, like Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ex-fig1"
+
+\end_inset
+
+.
+ You can also reference figures using 
+\begin_inset Flex Name
+status collapsed
+
+\begin_layout Plain Layout
+prettyref
+\end_layout
+
+\end_inset
+
+ package like this: 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:ex-fig1"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename logopp/logopp-jasne-czarne.pdf
+	lyxscale 40
+	width 40text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Example figure 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ex-fig1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is possible to combine several pictures inside one float.
+ Just insert a float inside a float.
+ See Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ex-fig2"
+
+\end_inset
+
+ for example.
+ Please note the horizontal spacing between subfigures.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename logopp/logopp-jasne-czarne.pdf
+	lyxscale 40
+	width 30text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The first subfigure
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename logopp/logopp-jasne.pdf
+	lyxscale 40
+	width 30text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The second subfigure
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Example figure 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ex-fig2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Tables
+\end_layout
+
+\begin_layout Standard
+Tables should have captions above like Table
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:ex-tab"
+
+\end_inset
+
+.
+ Use small sans-serif fonts inside tables.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Example table 
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:ex-tab"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\family sans
+\size small
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="3">
+<features rotate="0" booktabs="true" tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series bold
+\size small
+Column 1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series bold
+\size small
+Column 2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series bold
+\size small
+Column 3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size small
+One
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size small
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size small
+4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size small
+Two
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size small
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size small
+5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size small
+Three
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size small
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size small
+6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Source code examples
+\end_layout
+
+\begin_layout Standard
+There are a few different methods of including sample codes:
+\end_layout
+
+\begin_layout Enumerate
+Using standard 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+LyX-Code
+\end_layout
+
+\end_inset
+
+ style:
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+#include <stdio.h>
+\end_layout
+
+\begin_layout LyX-Code
+ 
+\end_layout
+
+\begin_layout LyX-Code
+int main() {
+\end_layout
+
+\begin_layout LyX-Code
+  printf("Hello world!
+\backslash
+n");
+\end_layout
+
+\begin_layout LyX-Code
+  return 0;
+\end_layout
+
+\begin_layout LyX-Code
+}
+\end_layout
+
+\begin_layout Standard
+Note 1: Empty lines must contain at least one single space to remain visible.
+\end_layout
+
+\begin_layout Standard
+Note 2: There is no way to activate automatic syntax highlighting inside
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+LyX-Code
+\end_layout
+
+\end_inset
+
+.
+ However, you can use normal inline formatting inside.
+\end_layout
+
+\begin_layout Standard
+Note 3: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Lyx-Code
+\end_layout
+
+\end_inset
+
+ can contain special characters, so it can be used to produce some ASCII
+ art, e.g.:
+\end_layout
+
+\begin_layout LyX-Code
+┌──────────┐    ╔══════════╗
+\end_layout
+
+\begin_layout LyX-Code
+│  Test 1  ├────╢  Test 2  ║
+\end_layout
+
+\begin_layout LyX-Code
+└──────────┘    ╚══════════╝
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+By inserting 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Program Listing
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C,tabsize=2,xleftmargin=2em"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#include <stdio.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int main() {
+\end_layout
+
+\begin_layout Plain Layout
+
+  printf("Hello world!
+\backslash
+n");
+\end_layout
+
+\begin_layout Plain Layout
+
+  return 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note: By default the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+lstlisting
+\end_layout
+
+\end_inset
+
+ environment does not add any left margin.
+ You can change it by adding 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+xleftmargin
+\end_layout
+
+\end_inset
+
+ in the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Settings
+\end_layout
+
+\end_inset
+
+ \SpecialChar \menuseparator
+ 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Advanced
+\end_layout
+
+\end_inset
+
+ dialog box, e.g.:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "tabsize=2,xleftmargin=6em"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+procedure sayHello()
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+By inserting LaTeX Code (ERT block) and using 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+codeblock
+\end_layout
+
+\end_inset
+
+ environment:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{codeblock}[language=c]
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <stdio.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+int main() {
+\end_layout
+
+\begin_layout Plain Layout
+
+  printf("Hello world!
+\backslash
+n");
+\end_layout
+
+\begin_layout Plain Layout
+
+  return 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{codeblock}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+The 
+\begin_inset Flex Name
+status collapsed
+
+\begin_layout Plain Layout
+listings
+\end_layout
+
+\end_inset
+
+ package can produce floats by itself.
+ See Listing.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lst:hello"
+
+\end_inset
+
+ for example.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "caption={The Hello World program in C},float,label={lst:hello},language=C,style=linesbg,tabsize=2"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#include <stdio.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int main() {
+\end_layout
+
+\begin_layout Plain Layout
+
+  printf("Hello world!
+\backslash
+n");
+\end_layout
+
+\begin_layout Plain Layout
+
+  return 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+And finally, You can include code from external file:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+codeincp[language={[latex]tex},lastline=9]{thesis-template-latex.tex}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Math
+\end_layout
+
+\begin_layout Standard
+Can be put inline like this: 
+\begin_inset Formula $S=\sum_{i=1}^{i=K}x_{i}^{2}$
+\end_inset
+
+ or in dedicated lines:
+\begin_inset Formula 
+\[
+S=\sum_{i=1}^{i=K}x_{i}^{2}
+\]
+
+\end_inset
+
+The equations can be also numbered like equation
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:est"
+
+\end_inset
+
+.
+ 
+\begin_inset Formula 
+\begin{equation}
+s=\sqrt{\frac{1}{n-1}\sum_{i=1}^{n}\left(x_{i}-\overline{x}\right)^{2}}\label{eq:est}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Algorithms
+\end_layout
+
+\begin_layout Standard
+Use 
+\begin_inset Flex Name
+status collapsed
+
+\begin_layout Plain Layout
+dcsalg
+\end_layout
+
+\end_inset
+
+ package or directly 
+\begin_inset Flex Name
+status collapsed
+
+\begin_layout Plain Layout
+algorithmicx
+\end_layout
+
+\end_inset
+
+ package.
+\end_layout
+
+\begin_layout Section
+Bibliography
+\end_layout
+
+\begin_layout Standard
+The bibliography can be included in the thesis like in this case.
+ You can then cite the publications like this
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "sop"
+
+\end_inset
+
+.
+ The other (more professional) solution is to use BibTeX\SpecialChar \@.
+ See 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+LyX User's Guide
+\end_layout
+
+\end_inset
+
+ for details.
+\end_layout
+
+\begin_layout Chapter
+Concept and Design of the System
+\end_layout
+
+\begin_layout Chapter
+Implementation
+\end_layout
+
+\begin_layout Chapter
+Performance Evaluation
+\end_layout
+
+\begin_layout Chapter
+Conclusions
+\end_layout
+
+\begin_layout Chapter
+\start_of_appendix
+Users Guide
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+backmatter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring Odnośniki
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "sop"
+
+\end_inset
+
+A.
+\begin_inset space ~
+\end_inset
+
+Tanenbaum.
+ 
+\emph on
+Operating Systems Design and Implementation
+\emph default
+.
+ Prentice Hall, 2006.
+\end_layout
+
+\end_body
+\end_document

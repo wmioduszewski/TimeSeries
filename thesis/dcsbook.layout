@@ -1,0 +1,249 @@
+#% Do not delete the line below; configure depends on this
+#  \DeclareLaTeXClass{dcsbook}
+#
+#  Author: Cezary Sobaniec <cezary.sobaniec@cs.put.poznan.pl>
+#  $Id: dcsbook.layout 3133 2012-11-29 13:18:10Z sobaniec $
+#
+
+
+Format 35
+Input stdclass.inc
+Input numreport.inc
+DefaultModule dcs
+
+Sides            2
+Provides amsmath 1
+Provides url     1
+
+
+# Update of default settings from stdsections.inc
+Style Chapter
+  Font
+    Family       Sans
+  EndFont
+End
+
+Style Chapter*
+  Font
+    Family       Sans
+  EndFont
+End
+
+Style Section
+  Font
+    Family       Sans
+  EndFont
+End
+
+Style Section*
+  Font
+    Family       Sans
+  EndFont
+End
+
+Style Subsection
+  Font
+    Family       Sans
+  EndFont
+End
+
+Style Subsection*
+  Font
+    Family       Sans
+  EndFont
+End
+
+Style Subsubsection
+  Font
+    Family       Sans
+  EndFont
+End
+
+Style Subsubsection*
+  Font
+    Family       Sans
+  EndFont
+End
+
+Style Paragraph
+  TopSep         0.6
+  BottomSep      0.2
+  Font
+    Family       Sans
+    Misc         Noun
+  EndFont
+End
+
+Style Subparagraph
+  LeftMargin     ""
+  NextNoIndent   1
+  TopSep         0.5
+  BottomSep      0.2
+  Font
+    Family       Sans
+    Series       Medium
+  EndFont
+End
+
+
+# Supervisor style definition
+Style Supervisor
+  LatexType      Command
+  LatexName      supervisor
+  Category       FrontMatter
+  KeepEmpty      true
+  InTitle        1
+  NextNoIndent   1
+  ParSkip        0
+  TopSep         0
+  BottomSep      0
+  ParSep         0
+  Align          Left
+  LeftMargin     "MMMMMMMMMM:"
+  Margin         Static
+  LabelType      Static
+  LabelString    "Supervisor:"
+  LabelSep       xxx
+  LabelFont
+    Series       Bold
+    Color        Blue
+  EndFont
+End
+
+Style Subtitle
+  CopyStyle      Supervisor
+  LatexName      subtitle
+  LabelString    "Subtitle: "
+End
+
+Style University
+  CopyStyle      Supervisor
+  LatexName      university
+  LabelString    "University: "
+End
+
+Style Institute
+  CopyStyle      Supervisor
+  LatexName      institute
+  LabelString    "Institute: "
+End
+
+
+# Abstract style definition
+Style Abstract
+  Margin         Static
+  LatexType      Environment
+  LatexName      abstract
+  Category       FrontMatter
+  NextNoIndent   1
+  LeftMargin     MMM
+  RightMargin    MMM
+  ParIndent      ""
+  LabelSep       xx
+  ItemSep        0
+  TopSep         0.7
+  BottomSep      0.7
+  ParSep         0
+  Align          Block
+  LabelType      Centered_Top_Environment
+  LabelString    "Abstract"
+  LabelFont
+    Series       Bold
+    Size         Large
+  EndFont
+End
+
+
+# Update of default settings from lyxmacros.inc
+Style LyX-Code
+  Category       MainText
+  Margin         Static
+  LatexType      Environment
+  LatexName      lyxcode
+  NextNoIndent   1
+  LeftMargin     MMM
+  RightMargin    ""
+  TopSep         0.5
+  BottomSep      0.5
+  Align          Left
+  AlignPossible  Block, Left, Right, Center
+  LabelType      No_Label
+  FreeSpacing    1
+  Spellcheck     0
+  Font
+    Family       Typewriter
+    Size         Small
+  EndFont
+  Preamble
+    \newlist{lyxcodelist}{itemize}{1}
+    \setlist[lyxcodelist]{listparindent=0pt,itemsep=0pt,parsep=0pt,partopsep=0pt}
+    \providecommand{\lyxcodesetup}{}
+    \newenvironment{lyxcode}
+      {\par\begin{lyxcodelist}\normalfont\ttfamily\small\lyxcodesetup\item[]}
+      {\end{lyxcodelist}}
+  EndPreamble
+End
+
+
+# labeling
+Style Labeling
+  Category       List
+  OptionalArgs   1
+  Margin         Manual
+  LatexType      List_Environment
+  LatexName      labelingx
+  NextNoindent   1
+  LabelSep       xxx
+  ParSkip        0.4
+  TopSep         0.7
+  BottomSep      0.7
+  ParSep         0.5
+  Align          Block
+  AlignPossible  Block, Left
+  LabelType      Manual
+  LabelString    "default"
+  Preamble
+    \newlength{\labelingxwidth}
+    \newenvironment{labelingx}[2][]%
+      {\ifthenelse{\equal{#2}{default}}%
+         {\setlength{\labelingxwidth}{\leftmargin}}
+         {\settowidth{\labelingxwidth}{#2}}
+       \begin{labeling}[leftmargin=\labelingxwidth,#1]}
+      {\end{labeling}}
+  EndPreamble
+End
+
+
+# enumerate
+Style Enumerate-Resume
+  CopyStyle      Enumerate
+  LatexParam     [resume]
+  OptionalArgs   0
+  LabelFont
+    Color        blue
+  EndFont
+End
+
+
+# optional arguments for standard lists
+IfStyle Itemize
+  OptionalArgs   1
+End
+
+IfStyle Enumerate
+  OptionalArgs   1
+End
+
+IfStyle Description
+  OptionalArgs   1
+End
+
+
+# deprecated styles
+Style DispItems
+  Obsoletedby           Labeling
+End
+
+Style Enumeratex
+  Obsoletedby           Enumerate
+End
