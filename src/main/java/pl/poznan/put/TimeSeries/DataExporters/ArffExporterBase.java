@@ -7,7 +7,7 @@ import java.util.Random;
 import java.util.stream.Collectors;
 
 import pl.poznan.put.TimeSeries.Model.IAssignedClass;
-import pl.poznan.put.TimeSeries.Util.CommonConfig;
+import pl.poznan.put.TimeSeries.Util.Config;
 import weka.core.Attribute;
 import weka.core.FastVector;
 import weka.core.Instances;
@@ -15,7 +15,7 @@ import weka.core.converters.ArffSaver;
 
 public abstract class ArffExporterBase {
 
-	protected static int regularPartsForDivision = CommonConfig.getInstance()
+	protected static int regularPartsForDivision = Config.getInstance()
 			.getDivisionPartsAmount();
 
 	protected static Attribute constructDestinationClassesNominalAttribute(
@@ -56,7 +56,7 @@ public abstract class ArffExporterBase {
 	}
 
 	protected void cutAttributes() {
-		float attributesToCutRatio = CommonConfig.getInstance()
+		float attributesToCutRatio = Config.getInstance()
 				.getAttributesToCutRatio();
 		int attributesToCut = (int) ((instances.numAttributes() - 1) * attributesToCutRatio);
 		Random rand = new Random();

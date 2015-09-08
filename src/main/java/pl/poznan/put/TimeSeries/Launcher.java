@@ -4,7 +4,7 @@ import pl.poznan.put.TimeSeries.Classifying.CrossValidationExperiment;
 import pl.poznan.put.TimeSeries.Classifying.Datasets;
 import pl.poznan.put.TimeSeries.Classifying.ExperimentBase;
 import pl.poznan.put.TimeSeries.Classifying.Experiments;
-import pl.poznan.put.TimeSeries.Util.CommonConfig;
+import pl.poznan.put.TimeSeries.Util.Config;
 import pl.poznan.put.TimeSeries.Workflows.WorkflowBase;
 import weka.classifiers.Classifier;
 
@@ -14,11 +14,11 @@ public class Launcher {
 		ARFFEXPORT, ARFFPROCESS, FULL;
 	}
 
-	public static String exportArff(Experiments chosenExperiment,
-			Datasets dataset) throws Exception {
-		CommonConfig.getInstance().setCurrentDataset(dataset);
-		CommonConfig.getInstance().setCurrentExperiment(chosenExperiment);
-		
+	public static String exportArff(Experiments chosenExperiment, Datasets dataset)
+			throws Exception {
+		Config.getInstance().setCurrentDataset(dataset);
+		Config.getInstance().setCurrentExperiment(chosenExperiment);
+
 		System.out.println("Arff export for " + dataset.name()
 				+ " has started.");
 		dataset.setAsCurrent();
@@ -29,27 +29,32 @@ public class Launcher {
 		return path;
 	}
 
-	public static void processArff(Experiments chosenExperiment, String arffPath)
+	public static String processArff(Experiments chosenExperiment, String arffPath)
 			throws Exception {
+		Config.getInstance().setCurrentExperiment(chosenExperiment);
 		System.out.println("Processing: " + arffPath + "...");
 		WorkflowBase workflow = chosenExperiment.getWorkflow();
 		Classifier classifier = chosenExperiment.getClassifier();
 		ExperimentBase experiment = new CrossValidationExperiment(classifier);
-		workflow.executeArff(experiment, arffPath);
+		String res = workflow.executeArff(experiment, arffPath);
+		System.out.print(res);
 		System.out.println("Arff has been processed.");
+		return res;
 	}
 
-	public static void runExperiment(Experiments chosenExperiment,
+	public static String runExperiment(Experiments chosenExperiment,
 			Datasets dataset) throws Exception {
-		CommonConfig.getInstance().setCurrentDataset(dataset);
-		CommonConfig.getInstance().setCurrentExperiment(chosenExperiment);
+		Config.getInstance().setCurrentDataset(dataset);
+		Config.getInstance().setCurrentExperiment(chosenExperiment);
 		System.out.println("Experiment " + chosenExperiment.name() + " for "
 				+ dataset.name() + " has been started.");
 		dataset.setAsCurrent();
 		Classifier classifier = chosenExperiment.getClassifier();
 		WorkflowBase workflow = chosenExperiment.getWorkflow();
 		ExperimentBase experiment = new CrossValidationExperiment(classifier);
-		workflow.runExperiment(experiment);
+		String res = workflow.runExperiment(experiment);
+		System.out.print(res);
 		System.out.println("Experiment performed successfully");
+		return res;
 	}
 }

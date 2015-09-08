@@ -10,7 +10,7 @@ import com.fastdtw.util.Distances;
 
 import pl.poznan.put.TimeSeries.Model.AscendingList;
 import pl.poznan.put.TimeSeries.Model.KnnPair;
-import pl.poznan.put.TimeSeries.Util.CommonConfig;
+import pl.poznan.put.TimeSeries.Util.Config;
 import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.neighboursearch.NearestNeighbourSearch;
@@ -74,7 +74,7 @@ public class DtwSearch extends NearestNeighbourSearch {
 
 		TimeSeries ts1 = builder1.build();
 		TimeSeries ts2 = builder2.build();
-		int radius = CommonConfig.getInstance().getDtwSearchRadius();
+		int radius = Config.getInstance().getDtwSearchRadius();
 		radius = current.numAttributes() * radius /100;
 		double distance = FastDTW.compare(ts1, ts2, radius,
 				Distances.EUCLIDEAN_DISTANCE).getDistance();

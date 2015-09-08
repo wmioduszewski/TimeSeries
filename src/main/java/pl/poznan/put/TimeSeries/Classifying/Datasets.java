@@ -1,13 +1,13 @@
 package pl.poznan.put.TimeSeries.Classifying;
 
-import pl.poznan.put.TimeSeries.Util.CommonConfig;
+import pl.poznan.put.TimeSeries.Util.Config;
 
 public enum Datasets {
 	ECG200, ECGFIVEDAYS, SAMPLEUNITTEST, TWOLEADECG, YOGA, MOTESTRAIN, ITALYPOWERDEMAND, CHLORINECONCENTRATION, TWOPATTERNS, WAFER, INLINESKATE, PATIENTS;
 
 	public void setAsCurrent() {
 		String path = null;
-		CommonConfig cfg = CommonConfig.getInstance();
+		Config cfg = Config.getInstance();
 		boolean isGlaucoma = false;
 
 		switch (this) {

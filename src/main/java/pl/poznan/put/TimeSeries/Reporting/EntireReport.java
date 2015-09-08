@@ -3,7 +3,7 @@ package pl.poznan.put.TimeSeries.Reporting;
 import java.util.LinkedList;
 import java.util.List;
 
-import pl.poznan.put.TimeSeries.Util.CommonConfig;
+import pl.poznan.put.TimeSeries.Util.Config;
 
 public class EntireReport {
 
@@ -16,7 +16,7 @@ public class EntireReport {
 		records = new LinkedList<ReportRecord>();
 		classifiersNames = new LinkedList<String>();
 
-		CommonConfig config = CommonConfig.getInstance();
+		Config config = Config.getInstance();
 		alphabeatUsed = config.getSaxAlphabeatSize();
 		outputLengthUsed = config.getSaxOutputLength();
 	}

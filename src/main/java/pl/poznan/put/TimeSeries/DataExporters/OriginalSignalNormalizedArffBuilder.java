@@ -3,7 +3,7 @@ package pl.poznan.put.TimeSeries.DataExporters;
 import java.util.List;
 
 import pl.poznan.put.TimeSeries.Model.IRecord;
-import pl.poznan.put.TimeSeries.Util.CommonConfig;
+import pl.poznan.put.TimeSeries.Util.Config;
 import weka.core.Attribute;
 import weka.core.FastVector;
 import weka.core.Instance;
@@ -23,7 +23,7 @@ public class OriginalSignalNormalizedArffBuilder extends ArffExporterBase {
 	protected void setAttributes() {
 		attrInfo = new FastVector();
 
-		int attrCount = CommonConfig.getInstance().getSaxOutputLength();
+		int attrCount = Config.getInstance().getSaxOutputLength();
 
 		for (int i = 0; i < attrCount; i++) {
 			attrInfo.addElement(new Attribute("char" + (i + 1)));

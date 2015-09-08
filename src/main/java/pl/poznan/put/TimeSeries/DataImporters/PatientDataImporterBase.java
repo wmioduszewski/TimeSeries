@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 import pl.poznan.put.TimeSeries.Model.Patient;
-import pl.poznan.put.TimeSeries.Util.CommonConfig;
+import pl.poznan.put.TimeSeries.Util.Config;
 import pl.poznan.put.TimeSeries.Util.SaxPerformer;
 
 public abstract class PatientDataImporterBase {
@@ -19,9 +19,9 @@ public abstract class PatientDataImporterBase {
 	public abstract List<Patient> importData() throws IOException;
 
 	protected void computeSaxForPatients() {
-		int alphabeatSize = CommonConfig.getInstance().getSaxAlphabeatSize();
+		int alphabeatSize = Config.getInstance().getSaxAlphabeatSize();
 
-		int outputLength = CommonConfig.getInstance().getSaxOutputLength();
+		int outputLength = Config.getInstance().getSaxOutputLength();
 		try {
 			SaxPerformer.applyNormalizedSax(patients, outputLength,
 					alphabeatSize);

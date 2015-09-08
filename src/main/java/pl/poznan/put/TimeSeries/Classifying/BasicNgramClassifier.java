@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import pl.poznan.put.TimeSeries.Util.CommonConfig;
+import pl.poznan.put.TimeSeries.Util.Config;
 import weka.classifiers.Classifier;
 import weka.core.Attribute;
 import weka.core.Instance;
@@ -15,7 +15,7 @@ public class BasicNgramClassifier extends Classifier {
 	private static final long serialVersionUID = 8495869910146343292L;
 
 	// works much better when ngram Size is about half of output length
-	private static int ngramSize = CommonConfig.getInstance().getNgramSize();;
+	private static int ngramSize = Config.getInstance().getNgramSize();;
 
 	private List<HashMap<String, Double>> ngramsInClasses;
 	private Attribute saxAttribute = null;

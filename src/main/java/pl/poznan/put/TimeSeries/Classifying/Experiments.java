@@ -1,7 +1,7 @@
 package pl.poznan.put.TimeSeries.Classifying;
 
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
-import pl.poznan.put.TimeSeries.Util.CommonConfig;
+import pl.poznan.put.TimeSeries.Util.Config;
 import pl.poznan.put.TimeSeries.Workflows.CountedWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.NgramWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.DominantWorkflow;
@@ -19,7 +19,7 @@ public enum Experiments {
 	public WorkflowBase getWorkflow() {
 		WorkflowBase workflow = null;
 		DivisionOptions divisionOption = DivisionOptions.Regular;
-		boolean isGlaucoma = CommonConfig.getInstance().isGlaucoma();
+		boolean isGlaucoma = Config.getInstance().isGlaucoma();
 		switch (this) {
 		case REGRESSION:
 			workflow = new RegressionWorkflow(divisionOption, isGlaucoma);
@@ -45,7 +45,7 @@ public enum Experiments {
 
 	public Classifier getClassifier() {
 		Classifier classifier = null;
-		int k = CommonConfig.getInstance().getK();
+		int k = Config.getInstance().getK();
 		switch (this) {
 		case REGRESSION:
 			classifier = new J48();

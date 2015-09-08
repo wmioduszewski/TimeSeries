@@ -12,12 +12,14 @@ import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.DataExporters.ArffExporterBase;
 import pl.poznan.put.TimeSeries.DataImporters.Importer;
 import pl.poznan.put.TimeSeries.Model.IRecord;
-import pl.poznan.put.TimeSeries.Util.CommonConfig;
+import pl.poznan.put.TimeSeries.Util.Config;
 import weka.core.Instances;
 
 public abstract class WorkflowBase {
 
-	private static int repetitions = CommonConfig.getInstance()
+	private static final String NEWLINE = System.getProperty("line.separator");
+
+	private static int repetitions = Config.getInstance()
 			.getCrossValidationRepetitions();
 
 	public static <T extends IRecord> void reportInputStatistics(List<T> records) {
@@ -36,13 +38,13 @@ public abstract class WorkflowBase {
 
 	protected String arffPath;
 	protected DivisionOptions divisionOption;
-	protected int divisionPartsAmount = CommonConfig.getInstance()
+	protected int divisionPartsAmount = Config.getInstance()
 			.getDivisionPartsAmount();
 	protected ArffExporterBase exporter;
 	protected boolean isGlaucoma;
 
 	protected List<? extends IRecord> records;
-	protected int windowLen = CommonConfig.getInstance().getNgramSize();
+	protected int windowLen = Config.getInstance().getNgramSize();
 	protected List<Pair<String, ? extends Object>> concerningParameters = new ArrayList<Pair<String, ? extends Object>>();
 
 	public WorkflowBase(DivisionOptions divisionOption, boolean isGlaucoma) {
@@ -51,21 +53,21 @@ public abstract class WorkflowBase {
 		this.isGlaucoma = isGlaucoma;
 	}
 
-	public void executeArff(ExperimentBase experiment, String arffPath)
+	public String executeArff(ExperimentBase experiment, String arffPath)
 			throws Exception {
 		ExperimentResult result = experiment.runFileExperimentRepeatedly(
 				arffPath, repetitions);
-		printResult(result);
+		return constructResult(result, arffPath);
 	}
 
-	public void runExperiment(ExperimentBase experiment) throws Exception {
+	public String runExperiment(ExperimentBase experiment) throws Exception {
 		importData();
 		processData();
 		Instances instances = buildInstances();
 		ExperimentResult result = experiment.runExperimentRepeatedly(instances,
 				repetitions);
 		reportStatistics();
-		printResult(result);
+		return constructResult(result);
 	}
 
 	public String saveArff() throws Exception {
@@ -78,23 +80,30 @@ public abstract class WorkflowBase {
 		return arffPath;
 	}
 
-	private void printResult(ExperimentResult experimentResult) {
-		String dataSource = CommonConfig.getInstance().getCurrentDataset()
-				.name();
-		String experiment = CommonConfig.getInstance().getCurrentExperiment()
-				.name();
+	private String constructResult(ExperimentResult experimentResult,
+			String filePath) {
+		StringBuilder sb = new StringBuilder();
+		String experiment = Config.getInstance().getCurrentExperiment().name();
+		sb.append(experiment + " for " + filePath + NEWLINE);
+		sb.append(experimentResult);
+		return sb.toString();
+	}
+
+	private String constructResult(ExperimentResult experimentResult) {
+		String dataSource = Config.getInstance().getCurrentDataset().name();
+		String experiment = Config.getInstance().getCurrentExperiment().name();
 		setConcerningParams();
-		System.out.println(experiment + " for " + dataSource +" with params:");
+		StringBuilder sb = new StringBuilder();
+		sb.append(experiment + " for " + dataSource + " with params:" + NEWLINE);
 		for (Pair<String, ? extends Object> pair : concerningParameters) {
-			System.out.println(pair.getLeft() + ": " + pair.getRight());
+			sb.append(pair.getLeft() + ": " + pair.getRight() + NEWLINE);
 		}
-		
-		System.out.println();
+		sb.append(NEWLINE);
 		if (experimentResult != null)
-			System.out.println(experimentResult);
+			sb.append(experimentResult);
 		else
-			System.out.println("Experiment result is null!");
-		System.out.println();
+			sb.append("Experiment result is null!" + NEWLINE + NEWLINE);
+		return sb.toString();
 	}
 
 	protected abstract Instances buildInstances();
@@ -117,13 +126,11 @@ public abstract class WorkflowBase {
 
 	private void setArffPath() {
 		setConcerningParams();
-		String dataSource = CommonConfig.getInstance().getCurrentDataset()
-				.name();
-		String experiment = CommonConfig.getInstance().getCurrentExperiment()
-				.name();
+		String dataSource = Config.getInstance().getCurrentDataset().name();
+		String experiment = Config.getInstance().getCurrentExperiment().name();
 
 		arffPath = String.format("output/arffOutput/%s/%s for %s with",
-				experiment,experiment, dataSource);
+				experiment, experiment, dataSource);
 
 		for (Pair<String, ? extends Object> pair : concerningParameters) {
 			arffPath += " " + pair.getLeft() + "-" + pair.getRight();

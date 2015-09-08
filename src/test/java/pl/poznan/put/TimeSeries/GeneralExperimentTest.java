@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import pl.poznan.put.TimeSeries.Classifying.Datasets;
 import pl.poznan.put.TimeSeries.Classifying.Experiments;
-import pl.poznan.put.TimeSeries.Util.CommonConfig;
+import pl.poznan.put.TimeSeries.Util.Config;
 
 public class GeneralExperimentTest {
 
@@ -17,16 +17,16 @@ public class GeneralExperimentTest {
 
 	@BeforeClass
 	public static void beforeClass() throws Exception {
-		path = CommonConfig.getInstance().getSingleDataPath();
-		folderPath = CommonConfig.getInstance().getDataFolderPath();
-		CommonConfig.getInstance().setSingleDataPath("SAMPLEDATASET");
-		CommonConfig.getInstance().setDataFolderPath("testData/");
+		path = Config.getInstance().getSingleDataPath();
+		folderPath = Config.getInstance().getDataFolderPath();
+		Config.getInstance().setSingleDataPath("SAMPLEDATASET");
+		Config.getInstance().setDataFolderPath("testData/");
 	}
 
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
-		CommonConfig.getInstance().setSingleDataPath(path);
-		CommonConfig.getInstance().setDataFolderPath(folderPath);
+		Config.getInstance().setSingleDataPath(path);
+		Config.getInstance().setDataFolderPath(folderPath);
 	}
 
 	@Test

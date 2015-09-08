@@ -5,7 +5,7 @@ import java.util.List;
 
 import pl.poznan.put.TimeSeries.Model.IRecord;
 import pl.poznan.put.TimeSeries.Model.Patient;
-import pl.poznan.put.TimeSeries.Util.CommonConfig;
+import pl.poznan.put.TimeSeries.Util.Config;
 
 public class Importer {
 	
@@ -18,7 +18,7 @@ public class Importer {
 	
 	private static List<? extends IRecord> importEamonnData() throws Exception {
 		List<? extends IRecord> records = null;
-		DataImporterEamonn importer = new DataImporterEamonn(CommonConfig
+		DataImporterEamonn importer = new DataImporterEamonn(Config
 				.getInstance().getSingleDataPath());
 		try {
 			records = importer.importEamonnData();
@@ -32,7 +32,7 @@ public class Importer {
 	
 	private static List<? extends IRecord> importPatients(){
 		List<? extends IRecord> records = null;
-		String pureDataPath = CommonConfig.getInstance().getGlaucomaDataSet();
+		String pureDataPath = Config.getInstance().getGlaucomaDataSet();
 		List<Patient> purePatients = null;
 		PatientDataImporterBase importer;
 		try {

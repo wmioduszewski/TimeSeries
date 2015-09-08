@@ -2,14 +2,14 @@ package pl.poznan.put.TimeSeries.Classifying;
 
 import java.util.Random;
 
-import pl.poznan.put.TimeSeries.Util.CommonConfig;
+import pl.poznan.put.TimeSeries.Util.Config;
 import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
 import weka.core.Instances;
 
 public class CrossValidationExperiment extends ExperimentBase {
 
-	private int folds = CommonConfig.getInstance().getCrossValidationFolds();
+	private int folds = Config.getInstance().getCrossValidationFolds();
 
 	public CrossValidationExperiment(Classifier classifier) {
 		super(classifier);

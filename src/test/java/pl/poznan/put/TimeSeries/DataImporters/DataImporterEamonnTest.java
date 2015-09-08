@@ -14,7 +14,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import pl.poznan.put.TimeSeries.Model.EamonnRecord;
-import pl.poznan.put.TimeSeries.Util.CommonConfig;
+import pl.poznan.put.TimeSeries.Util.Config;
 
 public class DataImporterEamonnTest {
 
@@ -35,8 +35,8 @@ public class DataImporterEamonnTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		oldAlphaVal = CommonConfig.getInstance().getSaxAlphabeatSize();
-		oldOutputVal = CommonConfig.getInstance().getSaxOutputLength();
+		oldAlphaVal = Config.getInstance().getSaxAlphabeatSize();
+		oldOutputVal = Config.getInstance().getSaxOutputLength();
 		File f = new File(String.format("%s", testSetName));
 		f.mkdir();
 	}
@@ -45,12 +45,12 @@ public class DataImporterEamonnTest {
 	public static void tearDownAfterClass() throws Exception {
 		File f = new File(String.format("%s", testSetName));
 		f.delete();
-		CommonConfig.getInstance().setSaxAlphabeatSize(oldAlphaVal);
-		CommonConfig.getInstance().setSaxOutputLength(oldOutputVal);
+		Config.getInstance().setSaxAlphabeatSize(oldAlphaVal);
+		Config.getInstance().setSaxOutputLength(oldOutputVal);
 	}
 
 	private void setConfiguration(int alphabet, int output) {
-		CommonConfig cfg = CommonConfig.getInstance();
+		Config cfg = Config.getInstance();
 		cfg.setSaxAlphabeatSize(alphabet);
 		cfg.setSaxOutputLength(output);
 	}

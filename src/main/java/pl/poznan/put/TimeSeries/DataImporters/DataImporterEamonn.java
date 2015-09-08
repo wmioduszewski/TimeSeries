@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 import pl.poznan.put.TimeSeries.Model.EamonnRecord;
-import pl.poznan.put.TimeSeries.Util.CommonConfig;
+import pl.poznan.put.TimeSeries.Util.Config;
 import pl.poznan.put.TimeSeries.Util.SaxPerformer;
 
 public class DataImporterEamonn {
@@ -49,8 +49,8 @@ public class DataImporterEamonn {
 		readData(String.format("/%s_TRAIN", datasetName));
 		readData(String.format("/%s_TEST", datasetName));
 
-		int alphabeatSize = CommonConfig.getInstance().getSaxAlphabeatSize();
-		int outputLength = CommonConfig.getInstance().getSaxOutputLength();
+		int alphabeatSize = Config.getInstance().getSaxAlphabeatSize();
+		int outputLength = Config.getInstance().getSaxOutputLength();
 		
 		SaxPerformer.applyNormalizedSax(records, outputLength, alphabeatSize);
 

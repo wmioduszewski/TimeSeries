@@ -11,7 +11,7 @@ import pl.poznan.put.TimeSeries.DataExporters.DominantArffBuilder;
 import pl.poznan.put.TimeSeries.DataProcessors.PeriodicNgramCounter;
 import pl.poznan.put.TimeSeries.Model.CalculatedRecord;
 import pl.poznan.put.TimeSeries.Model.IRecord;
-import pl.poznan.put.TimeSeries.Util.CommonConfig;
+import pl.poznan.put.TimeSeries.Util.Config;
 import pl.poznan.put.TimeSeries.Util.DataDivider;
 import weka.core.Instances;
 
@@ -56,7 +56,7 @@ public class DominantWorkflow extends WorkflowBase {
 	protected void setConcerningParams() {
 		concerningParameters.add(Pair.of("parts",divisionPartsAmount));
 		concerningParameters.add(Pair.of("ngram", windowLen));
-		concerningParameters.add(Pair.of("alpha", CommonConfig.getInstance().getSaxAlphabeatSize()));
+		concerningParameters.add(Pair.of("alpha", Config.getInstance().getSaxAlphabeatSize()));
 	}
 
 }
