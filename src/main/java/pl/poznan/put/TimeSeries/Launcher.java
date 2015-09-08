@@ -12,7 +12,6 @@ public class Launcher {
 
 	public static String exportArff(Experiments chosenExperiment, Datasets dataset)
 			throws Exception {
-		Config.getInstance().setCurrentDataset(dataset);
 		Config.getInstance().setCurrentExperiment(chosenExperiment);
 
 		System.out.println("Arff export for " + dataset.name()
@@ -40,7 +39,6 @@ public class Launcher {
 
 	public static String runExperiment(Experiments chosenExperiment,
 			Datasets dataset) throws Exception {
-		Config.getInstance().setCurrentDataset(dataset);
 		Config.getInstance().setCurrentExperiment(chosenExperiment);
 		System.out.println("Experiment " + chosenExperiment.name() + " for "
 				+ dataset.name() + " has been started.");

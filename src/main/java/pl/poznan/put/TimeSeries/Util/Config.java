@@ -67,12 +67,11 @@ public class Config {
 	private String glaucomaDataSet = getProperty("glaucomaDataSet");
 	private String inputArff = getProperty("inputArffPath");
 	private boolean isFolderDataUsed = getIntProperty("isFolderDataUsed") == 1;
-	private boolean isGlaucoma = getIntProperty("isGlaucoma") == 1;
 	private int k = getIntProperty("k");
 	private int ngramSize = getIntProperty("ngramSize");
 	private int saxAlphabeatSize = getIntProperty("saxAlphabeatSize");
 	private int saxOutputLength = getIntProperty("saxOutputLength");
-	private String singleDataPath = getProperty("singleDataPath");
+	private String singleDataPath;// = getProperty("singleDataPath");
 	private int targetDataset = getIntProperty("targetDataset");
 	private int variant = getIntProperty("variant");
 	private String xlsReportPath = getProperty("xlsReportPath");
@@ -160,10 +159,6 @@ public class Config {
 		return isFolderDataUsed;
 	}
 
-	public boolean isGlaucoma() {
-		return isGlaucoma;
-	}
-
 	public void setAttributesToCutRatio(float attributesToCutRatio) {
 		this.attributesToCutRatio = attributesToCutRatio;
 	}
@@ -198,10 +193,6 @@ public class Config {
 
 	public void setFolderDataUsed(boolean isFolderDataUsed) {
 		this.isFolderDataUsed = isFolderDataUsed;
-	}
-
-	public void setGlaucoma(boolean isGlaucoma) {
-		this.isGlaucoma = isGlaucoma;
 	}
 
 	public void setK(int k) {

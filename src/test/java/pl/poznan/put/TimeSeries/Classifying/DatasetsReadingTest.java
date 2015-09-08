@@ -33,10 +33,9 @@ public class DatasetsReadingTest {
 	}
 	
 	@Test
-	public void reatVariantsEnum(){
+	public void readVariantsEnum(){
 		assertTrue(Variants.values()[0].name().equals("ARFFEXPORT"));
 		assertTrue(Variants.values()[1].name().equals("ARFFPROCESS"));
 		assertTrue(Variants.values()[2].name().equals("FULL"));
 	}
-
 }

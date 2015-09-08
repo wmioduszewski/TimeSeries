@@ -9,8 +9,28 @@ import pl.poznan.put.TimeSeries.Util.Config;
 
 public class Main {
 
+	private interface Experimentable {
+		String runExperiment(Experiments experiment, Datasets dataset)
+				throws Exception;
+	}
+
 	public static void main(String[] args) throws Exception {
 		doTheJob();
+	}
+
+	private static void datasetJob(Experimentable experimentable,
+			Experiments experiment) throws Exception {
+
+		Datasets dataset = getDataset();
+		if (dataset == null) {
+			for (Datasets elem : Datasets.values()) {
+				dataset = elem;
+				if (dataset == Datasets.SAMPLEUNITTEST)
+					continue;
+				runExperimentableSingular(experimentable, experiment, dataset);
+			}
+		} else
+			runExperimentableSingular(experimentable, experiment, dataset);
 	}
 
 	private static void doTheJob() throws Exception {
@@ -22,9 +42,10 @@ public class Main {
 		switch (variant) {
 		case ARFFEXPORT:
 			experimentable = new Experimentable() {
-				
+
 				@Override
-				public String runExperiment(Experiments experiment, Datasets dataset) throws Exception {
+				public String runExperiment(Experiments experiment,
+						Datasets dataset) throws Exception {
 					return Launcher.exportArff(experiment, dataset);
 				}
 			};
@@ -38,10 +59,10 @@ public class Main {
 
 		case FULL:
 			experimentable = new Experimentable() {
-				
+
 				@Override
-				public String runExperiment(Experiments experiment, Datasets dataset)
-						throws Exception {
+				public String runExperiment(Experiments experiment,
+						Datasets dataset) throws Exception {
 					return Launcher.runExperiment(experiment, dataset);
 				}
 			};
@@ -62,23 +83,9 @@ public class Main {
 		return Experiments.values()[id];
 	}
 
-	private static void datasetJob(Experimentable experimentable, Experiments experiment)
-			throws Exception {
-
-		Datasets dataset = getDataset();
-		if (dataset == null) {
-			for (Datasets elem : Datasets.values()) {
-				dataset = elem;
-				if (dataset == Datasets.SAMPLEUNITTEST)
-					continue;
-				runExperimentableSingular(experimentable, experiment, dataset);
-			}
-		} else
-			runExperimentableSingular(experimentable, experiment, dataset);
-	}
-
-	private static void runExperimentableSingular(Experimentable experimentable,
-			Experiments experiment, Datasets dataset) throws Exception {
+	private static void runExperimentableSingular(
+			Experimentable experimentable, Experiments experiment,
+			Datasets dataset) throws Exception {
 		long startTime = System.currentTimeMillis();
 
 		experimentable.runExperiment(experiment, dataset);
@@ -87,9 +94,5 @@ public class Main {
 		long diff = endTime - startTime;
 		Duration d = Duration.ofMillis(diff);
 		System.out.println("Execution took " + d);
-	}
-
-	private interface Experimentable {
-		String runExperiment(Experiments experiment, Datasets dataset) throws Exception;
 	}
 }

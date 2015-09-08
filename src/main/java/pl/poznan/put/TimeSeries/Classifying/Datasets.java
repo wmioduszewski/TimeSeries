@@ -8,7 +8,6 @@ public enum Datasets {
 	public void setAsCurrent() {
 		String path = null;
 		Config cfg = Config.getInstance();
-		boolean isGlaucoma = false;
 
 		switch (this) {
 		case ECG200:
@@ -45,15 +44,13 @@ public enum Datasets {
 			path = "SAMPLEDATASET";
 			break;
 		case PATIENTS:
-			isGlaucoma = true;
 			break;
 		}
 
-		cfg.setGlaucoma(isGlaucoma);
 		if (path != null) {
 			cfg.setSingleDataPath(path);
 		}
-
+		Config.getInstance().setCurrentDataset(this);
 	}
 
 }

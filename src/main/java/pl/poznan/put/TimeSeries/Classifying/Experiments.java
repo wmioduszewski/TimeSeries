@@ -19,7 +19,7 @@ public enum Experiments {
 	public WorkflowBase getWorkflow() {
 		WorkflowBase workflow = null;
 		DivisionOptions divisionOption = DivisionOptions.Regular;
-		boolean isGlaucoma = Config.getInstance().isGlaucoma();
+		boolean isGlaucoma = Config.getInstance().getCurrentDataset() == Datasets.PATIENTS;
 		switch (this) {
 		case REGRESSION:
 			workflow = new RegressionWorkflow(divisionOption, isGlaucoma);
