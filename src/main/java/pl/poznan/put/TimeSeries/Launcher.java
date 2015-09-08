@@ -10,10 +10,6 @@ import weka.classifiers.Classifier;
 
 public class Launcher {
 
-	enum Variants {
-		ARFFEXPORT, ARFFPROCESS, FULL;
-	}
-
 	public static String exportArff(Experiments chosenExperiment, Datasets dataset)
 			throws Exception {
 		Config.getInstance().setCurrentDataset(dataset);

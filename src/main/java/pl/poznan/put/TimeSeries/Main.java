@@ -4,7 +4,7 @@ import java.time.Duration;
 
 import pl.poznan.put.TimeSeries.Classifying.Datasets;
 import pl.poznan.put.TimeSeries.Classifying.Experiments;
-import pl.poznan.put.TimeSeries.Launcher.Variants;
+import pl.poznan.put.TimeSeries.Classifying.Variants;
 import pl.poznan.put.TimeSeries.Util.Config;
 
 public class Main {
