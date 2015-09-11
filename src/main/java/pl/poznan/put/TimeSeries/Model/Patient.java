@@ -12,12 +12,12 @@ public class Patient implements Cloneable, IRecord {
 	DateTime awake;
 	List<Characteristic> characteristics;
 	String chartCaption;
-	int id;
+	String id;
 
 	boolean isSick;
 	String saxString;
 
-	public Patient(int id) {
+	public Patient(String id) {
 		super();
 		this.id = id;
 		characteristics = new ArrayList<Characteristic>();
@@ -61,7 +61,7 @@ public class Patient implements Cloneable, IRecord {
 		return isSick() ? 1d : 0d;
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
@@ -127,7 +127,12 @@ public class Patient implements Cloneable, IRecord {
 		Characteristic c = new Characteristic(new DateTime());
 		c.setTfadj(value);
 		characteristics.add(c);
-		
+	}
+	
+	@Override
+	public String toString() {
+		String sickness =this.isSick() ? "Sick" : "Healthy";
+		return this.getId() + " " + sickness;
 	}
 
 }

@@ -36,7 +36,7 @@ public class Importer {
 		List<Patient> purePatients = null;
 		PatientDataImporterBase importer;
 		try {
-			importer = new PatientDataImporterPure(pureDataPath);
+			importer = new PatientDataImporter2(pureDataPath);
 			purePatients = importer.importData();
 		} catch (IOException e) {
 			System.out.println("Patients import failed.");

@@ -29,7 +29,13 @@ public class Config {
 	}
 
 	private static int getIntProperty(String propertyName) {
-		return Integer.parseInt(getProperty(propertyName));
+		int res = -1;
+		try {
+			res = Integer.parseInt(getProperty(propertyName));
+		} catch (Exception e) {
+			System.out.println("Failed to import property '" + propertyName + "' from config file.");
+		}
+		return res;
 	}
 
 	private static String getProperty(String propertyName) {
@@ -82,7 +88,7 @@ public class Config {
 	public float getAttributesToCutRatio() {
 		return attributesToCutRatio;
 	}
-    
+
 	public int getCrossValidationFolds() {
 		return crossValidationFolds;
 	}

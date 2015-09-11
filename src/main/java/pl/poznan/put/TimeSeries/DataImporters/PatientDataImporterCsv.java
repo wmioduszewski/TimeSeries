@@ -27,15 +27,15 @@ public class PatientDataImporterCsv extends PatientDataImporterBase {
 		String currLine = br.readLine();
 		currLine = br.readLine();
 
-		int lastId = -1;// Integer.parseInt(currLine.split(",")[0]);
+		String lastId = "-1";// Integer.parseInt(currLine.split(",")[0]);
 		Patient lastPatient = null;
 		boolean isFirstLine = true;
 
 		while (currLine != null) {
 			String[] fields = currLine.split(",");
-			int currentId = Integer.parseInt(fields[0]);
+			String currentId = fields[0];
 
-			if (currentId != lastId && !isFirstLine) {
+			if (!currentId.equals(lastId) && !isFirstLine) {
 				patientList.add(lastPatient);
 				lastPatient = new Patient(currentId);
 			}

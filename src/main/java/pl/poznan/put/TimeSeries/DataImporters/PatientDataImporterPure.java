@@ -25,8 +25,7 @@ public class PatientDataImporterPure extends PatientDataImporterBase {
 	}
 
 	private Patient readData(String filePath) throws Exception {
-		BufferedReader br = new BufferedReader(new FileReader(folderPath
-				+ filePath));
+		BufferedReader br = new BufferedReader(new FileReader(folderPath + filePath));
 		boolean isSick = false;
 		// skip first line
 		String currLine = br.readLine();
@@ -43,8 +42,7 @@ public class PatientDataImporterPure extends PatientDataImporterBase {
 		currLine = br.readLine();
 
 		String fileName = filePath.substring(filePath.lastIndexOf("/") + 1);
-		int patientId = Integer.parseInt(fileName.substring(0,
-				fileName.lastIndexOf(".")));
+		String patientId = fileName.substring(0, fileName.lastIndexOf("."));
 		Patient currentPatient = new Patient(patientId);
 
 		boolean isFirstLine = true;
@@ -65,8 +63,7 @@ public class PatientDataImporterPure extends PatientDataImporterBase {
 					awakeTime = getDateTimeByStringClock(fields[6]);
 				}
 				try {
-					adjMedian = fields[7].isEmpty() ? 0 : Float
-							.parseFloat(fields[7]);
+					adjMedian = fields[7].isEmpty() ? 0 : Float.parseFloat(fields[7]);
 				} catch (Exception e1) {
 					adjMedian = 0;
 				}
@@ -89,8 +86,7 @@ public class PatientDataImporterPure extends PatientDataImporterBase {
 
 			else {
 				int burstId = Integer.parseInt(fields[2]);
-				DateTime currCharacteristicTime = startExaminationTime
-						.plusMinutes(minutePeriod * (burstId - 1));
+				DateTime currCharacteristicTime = startExaminationTime.plusMinutes(minutePeriod * (burstId - 1));
 
 				Characteristic c = new Characteristic(currCharacteristicTime);
 				float tf = Float.parseFloat(fields[1]) - firstBurstMedian;
@@ -104,26 +100,6 @@ public class PatientDataImporterPure extends PatientDataImporterBase {
 		br.close();
 
 		return currentPatient;
-	}
-
-	private DateTime getDateTimeByStringClock(String clock) throws Exception {
-
-		int minutes = 0;
-		int hours = 0;
-		if (clock.contains(":")) {
-			String[] minuteElems = clock.trim().split(":");
-
-			minutes = Integer.parseInt(minuteElems[1]);
-			hours = Integer.parseInt(minuteElems[0]);
-		} else {
-			throw new Exception("Data is in wrong format");
-		}
-		int days = 2;
-		hours = hours < 24 ? hours : 0;
-		if (hours >= 12)
-			days = 1;
-		DateTime dt = new DateTime(2014, 4, days, hours, minutes, 0);
-		return dt;
 	}
 
 	public List<Patient> importData() throws IOException {
