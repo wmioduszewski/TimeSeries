@@ -1,0 +1,227 @@
+Experiment COUNTED for ECG200 has been started.
+Dataset ECG200 - 200 records.
+Data contains 2 classes:
+Class '-1' contains 67 records
+Class '1' contains 133 records
+COUNTED for ECG200 with params:
+parts: 5
+ngram: 3
+alpha: 11
+
+Accuracy: 	0.780000
+F1 score: 	0.780490
+Sensitivity: 	0.780000
+Specificity: 	0.728697
+G-Mean: 	0.753840
+PCC: 		0.780000
+Experiment performed successfully
+Execution took PT2.583S
+
+
+Experiment COUNTED for ECGFIVEDAYS has been started.
+Dataset ECGFiveDays - 884 records.
+Data contains 2 classes:
+Class '1' contains 442 records
+Class '2' contains 442 records
+COUNTED for ECGFIVEDAYS with params:
+parts: 5
+ngram: 3
+alpha: 11
+
+Accuracy: 	0.941176
+F1 score: 	0.941250
+Sensitivity: 	0.941176
+Specificity: 	0.941176
+G-Mean: 	0.941176
+PCC: 		0.941176
+Experiment performed successfully
+Execution took PT3.953S
+
+
+Experiment COUNTED for TWOLEADECG has been started.
+Dataset TwoLeadECG - 1162 records.
+Data contains 2 classes:
+Class '2' contains 581 records
+Class '1' contains 581 records
+COUNTED for TWOLEADECG with params:
+parts: 5
+ngram: 3
+alpha: 11
+
+Accuracy: 	0.928858
+F1 score: 	0.928953
+Sensitivity: 	0.928858
+Specificity: 	0.928858
+G-Mean: 	0.928858
+PCC: 		0.928858
+Experiment performed successfully
+Execution took PT3.322S
+
+
+Experiment COUNTED for YOGA has been started.
+Dataset yoga - 3300 records.
+Data contains 2 classes:
+Class '1' contains 1530 records
+Class '2' contains 1770 records
+COUNTED for YOGA with params:
+parts: 5
+ngram: 3
+alpha: 11
+
+Accuracy: 	0.810909
+F1 score: 	0.810848
+Sensitivity: 	0.810909
+Specificity: 	0.807894
+G-Mean: 	0.809400
+PCC: 		0.810909
+Experiment performed successfully
+Execution took PT2M35.784S
+
+
+Experiment COUNTED for MOTESTRAIN has been started.
+Dataset MoteStrain - 1272 records.
+Data contains 2 classes:
+Class '2' contains 587 records
+Class '1' contains 685 records
+COUNTED for MOTESTRAIN with params:
+parts: 5
+ngram: 3
+alpha: 11
+
+Accuracy: 	0.905136
+F1 score: 	0.905164
+Sensitivity: 	0.905136
+Specificity: 	0.904247
+G-Mean: 	0.904692
+PCC: 		0.905136
+Experiment performed successfully
+Execution took PT37.458S
+
+
+Experiment COUNTED for ITALYPOWERDEMAND has been started.
+Dataset ItalyPowerDemand - 1096 records.
+Data contains 2 classes:
+Class '1' contains 547 records
+Class '2' contains 549 records
+COUNTED for ITALYPOWERDEMAND with params:
+parts: 5
+ngram: 3
+alpha: 11
+
+Accuracy: 	0.926095
+F1 score: 	0.926143
+Sensitivity: 	0.926095
+Specificity: 	0.926111
+G-Mean: 	0.926103
+PCC: 		0.926095
+Experiment performed successfully
+Execution took PT8.428S
+
+
+Experiment COUNTED for CHLORINECONCENTRATION has been started.
+Dataset ChlorineConcentration - 4307 records.
+Data contains 3 classes:
+Class '1' contains 1000 records
+Class '3' contains 2307 records
+Class '2' contains 1000 records
+COUNTED for CHLORINECONCENTRATION with params:
+parts: 5
+ngram: 3
+alpha: 11
+
+Accuracy: 	0.828961
+F1 score: 	0.743008
+Sensitivity: 	-1.000000
+Specificity: 	-1.000000
+G-Mean: 	-1.000000
+PCC: 		0.743441
+Experiment performed successfully
+Execution took PT8M14.272S
+
+
+Experiment COUNTED for TWOPATTERNS has been started.
+Dataset Two_Patterns - 5000 records.
+Data contains 4 classes:
+Class '2' contains 1248 records
+Class '3' contains 1245 records
+Class '4' contains 1201 records
+Class '1' contains 1306 records
+COUNTED for TWOPATTERNS with params:
+parts: 5
+ngram: 3
+alpha: 11
+
+Accuracy: 	0.876467
+F1 score: 	0.752826
+Sensitivity: 	-1.000000
+Specificity: 	-1.000000
+G-Mean: 	-1.000000
+PCC: 		0.752933
+Experiment performed successfully
+Execution took PT18M55.664S
+
+
+Experiment COUNTED for WAFER has been started.
+Dataset wafer - 7164 records.
+Data contains 2 classes:
+Class '1' contains 6402 records
+Class '-1' contains 762 records
+COUNTED for WAFER with params:
+parts: 5
+ngram: 3
+alpha: 11
+
+Accuracy: 	0.988042
+F1 score: 	0.987981
+Sensitivity: 	0.988042
+Specificity: 	0.928052
+G-Mean: 	0.957577
+PCC: 		0.988042
+Experiment performed successfully
+Execution took PT15M41.132S
+
+
+Experiment COUNTED for INLINESKATE has been started.
+Dataset InlineSkate - 650 records.
+Data contains 7 classes:
+Class '2' contains 100 records
+Class '3' contains 103 records
+Class '7' contains 62 records
+Class '6' contains 98 records
+Class '4' contains 108 records
+Class '5' contains 117 records
+Class '1' contains 62 records
+COUNTED for INLINESKATE with params:
+parts: 5
+ngram: 3
+alpha: 11
+
+Accuracy: 	0.822271
+F1 score: 	0.379307
+Sensitivity: 	-1.000000
+Specificity: 	-1.000000
+G-Mean: 	-1.000000
+PCC: 		0.377949
+Experiment performed successfully
+Execution took PT17.36S
+
+
+Experiment COUNTED for PATIENTS has been started.
+Data contains 2 classes:
+Class '0' contains 65 records
+Class '1' contains 51 records
+COUNTED for PATIENTS with params:
+parts: 5
+ngram: 3
+alpha: 11
+
+Accuracy: 	0.465517
+F1 score: 	0.468210
+Sensitivity: 	0.465517
+Specificity: 	0.460978
+G-Mean: 	0.463221
+PCC: 		0.465517
+Experiment performed successfully
+Execution took PT2.653S
+
+
