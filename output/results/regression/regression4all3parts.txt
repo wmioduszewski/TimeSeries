@@ -1,0 +1,205 @@
+Experiment REGRESSION for ECG200 has been started.
+Dataset ECG200 - 200 records.
+Data contains 2 classes:
+Class '-1' contains 67 records
+Class '1' contains 133 records
+REGRESSION for ECG200 with params:
+parts: 3
+
+Accuracy: 	0.745000
+F1 score: 	0.747409
+Sensitivity: 	0.745000
+Specificity: 	0.698721
+G-Mean: 	0.721469
+PCC: 		0.745000
+Experiment performed successfully
+Execution took PT0.54S
+
+
+Experiment REGRESSION for ECGFIVEDAYS has been started.
+Dataset ECGFiveDays - 884 records.
+Data contains 2 classes:
+Class '1' contains 442 records
+Class '2' contains 442 records
+REGRESSION for ECGFIVEDAYS with params:
+parts: 3
+
+Accuracy: 	0.943439
+F1 score: 	0.943494
+Sensitivity: 	0.943439
+Specificity: 	0.943439
+G-Mean: 	0.943439
+PCC: 		0.943439
+Experiment performed successfully
+Execution took PT0.939S
+
+
+Experiment REGRESSION for TWOLEADECG has been started.
+Dataset TwoLeadECG - 1162 records.
+Data contains 2 classes:
+Class '2' contains 581 records
+Class '1' contains 581 records
+REGRESSION for TWOLEADECG with params:
+parts: 3
+
+Accuracy: 	0.867183
+F1 score: 	0.867370
+Sensitivity: 	0.867183
+Specificity: 	0.867183
+G-Mean: 	0.867183
+PCC: 		0.867183
+Experiment performed successfully
+Execution took PT0.896S
+
+
+Experiment REGRESSION for YOGA has been started.
+Dataset yoga - 3300 records.
+Data contains 2 classes:
+Class '1' contains 1530 records
+Class '2' contains 1770 records
+REGRESSION for YOGA with params:
+parts: 3
+
+Accuracy: 	0.794040
+F1 score: 	0.793956
+Sensitivity: 	0.794040
+Specificity: 	0.790181
+G-Mean: 	0.792108
+PCC: 		0.794040
+Experiment performed successfully
+Execution took PT5.918S
+
+
+Experiment REGRESSION for MOTESTRAIN has been started.
+Dataset MoteStrain - 1272 records.
+Data contains 2 classes:
+Class '2' contains 587 records
+Class '1' contains 685 records
+REGRESSION for MOTESTRAIN with params:
+parts: 3
+
+Accuracy: 	0.864256
+F1 score: 	0.864434
+Sensitivity: 	0.864256
+Specificity: 	0.859954
+G-Mean: 	0.862101
+PCC: 		0.864256
+Experiment performed successfully
+Execution took PT0.544S
+
+
+Experiment REGRESSION for ITALYPOWERDEMAND has been started.
+Dataset ItalyPowerDemand - 1096 records.
+Data contains 2 classes:
+Class '1' contains 547 records
+Class '2' contains 549 records
+REGRESSION for ITALYPOWERDEMAND with params:
+parts: 3
+
+Accuracy: 	0.946776
+F1 score: 	0.946814
+Sensitivity: 	0.946776
+Specificity: 	0.946759
+G-Mean: 	0.946768
+PCC: 		0.946776
+Experiment performed successfully
+Execution took PT0.229S
+
+
+Experiment REGRESSION for CHLORINECONCENTRATION has been started.
+Dataset ChlorineConcentration - 4307 records.
+Data contains 3 classes:
+Class '1' contains 1000 records
+Class '3' contains 2307 records
+Class '2' contains 1000 records
+REGRESSION for CHLORINECONCENTRATION with params:
+parts: 3
+
+Accuracy: 	0.794392
+F1 score: 	0.687782
+Sensitivity: 	-1.000000
+Specificity: 	-1.000000
+G-Mean: 	-1.000000
+PCC: 		0.691587
+Experiment performed successfully
+Execution took PT6.393S
+
+
+Experiment REGRESSION for TWOPATTERNS has been started.
+Dataset Two_Patterns - 5000 records.
+Data contains 4 classes:
+Class '2' contains 1248 records
+Class '3' contains 1245 records
+Class '4' contains 1201 records
+Class '1' contains 1306 records
+REGRESSION for TWOPATTERNS with params:
+parts: 3
+
+Accuracy: 	0.895900
+F1 score: 	0.792022
+Sensitivity: 	-1.000000
+Specificity: 	-1.000000
+G-Mean: 	-1.000000
+PCC: 		0.791800
+Experiment performed successfully
+Execution took PT5.087S
+
+
+Experiment REGRESSION for WAFER has been started.
+Dataset wafer - 7164 records.
+Data contains 2 classes:
+Class '1' contains 6402 records
+Class '-1' contains 762 records
+REGRESSION for WAFER with params:
+parts: 3
+
+Accuracy: 	0.994835
+F1 score: 	0.994836
+Sensitivity: 	0.994835
+Specificity: 	0.977804
+G-Mean: 	0.986283
+PCC: 		0.994835
+Experiment performed successfully
+Execution took PT4.517S
+
+
+Experiment REGRESSION for INLINESKATE has been started.
+Dataset InlineSkate - 650 records.
+Data contains 7 classes:
+Class '2' contains 100 records
+Class '3' contains 103 records
+Class '7' contains 62 records
+Class '6' contains 98 records
+Class '4' contains 108 records
+Class '5' contains 117 records
+Class '1' contains 62 records
+REGRESSION for INLINESKATE with params:
+parts: 3
+
+Accuracy: 	0.810403
+F1 score: 	0.337151
+Sensitivity: 	-1.000000
+Specificity: 	-1.000000
+G-Mean: 	-1.000000
+PCC: 		0.336410
+Experiment performed successfully
+Execution took PT4.618S
+
+
+Experiment REGRESSION for PATIENTS has been started.
+Data contains 2 classes:
+Class '0' contains 65 records
+Class '1' contains 51 records
+REGRESSION for PATIENTS with params:
+parts: 3
+
+Accuracy: 	0.545977
+F1 score: 	0.523415
+Sensitivity: 	0.545977
+Specificity: 	0.439644
+G-Mean: 	0.489928
+PCC: 		0.545977
+Experiment performed successfully
+Execution took PT1.212S
+
+

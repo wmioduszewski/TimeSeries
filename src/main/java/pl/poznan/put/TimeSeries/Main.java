@@ -94,5 +94,7 @@ public class Main {
 		long diff = endTime - startTime;
 		Duration d = Duration.ofMillis(diff);
 		System.out.println("Execution took " + d);
+		System.out.println();
+		System.out.println();
 	}
 }
