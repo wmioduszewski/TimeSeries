@@ -1,0 +1,216 @@
+Experiment DTW for ECG200 has been started.
+Dataset ECG200 - 200 records.
+Data contains 2 classes:
+Class '-1' contains 67 records
+Class '1' contains 133 records
+DTW for ECG200 with params:
+knn: 7
+DtwWin: 5
+
+Accuracy: 	0.833333
+F1 score: 	0.833177
+Sensitivity: 	0.833333
+Specificity: 	0.733345
+G-Mean: 	0.781733
+PCC: 		0.833333
+Experiment performed successfully
+Execution took PT25.15S
+
+
+Experiment DTW for ECGFIVEDAYS has been started.
+Dataset ECGFiveDays - 884 records.
+Data contains 2 classes:
+Class '1' contains 442 records
+Class '2' contains 442 records
+DTW for ECGFIVEDAYS with params:
+knn: 7
+DtwWin: 5
+
+Accuracy: 	0.977753
+F1 score: 	0.977922
+Sensitivity: 	0.977753
+Specificity: 	0.977753
+G-Mean: 	0.977753
+PCC: 		0.977753
+Experiment performed successfully
+Execution took PT13M4.933S
+
+
+Experiment DTW for TWOLEADECG has been started.
+Dataset TwoLeadECG - 1162 records.
+Data contains 2 classes:
+Class '2' contains 581 records
+Class '1' contains 581 records
+DTW for TWOLEADECG with params:
+knn: 7
+DtwWin: 5
+
+Accuracy: 	0.997992
+F1 score: 	0.997996
+Sensitivity: 	0.997992
+Specificity: 	0.997992
+G-Mean: 	0.997992
+PCC: 		0.997992
+Experiment performed successfully
+Execution took PT10M48.034S
+
+
+Experiment DTW for YOGA has been started.
+Dataset yoga - 3300 records.
+Data contains 2 classes:
+Class '1' contains 1530 records
+Class '2' contains 1770 records
+DTW for YOGA with params:
+knn: 7
+DtwWin: 5
+
+Accuracy: 	0.912929
+F1 score: 	0.913188
+Sensitivity: 	0.912929
+Specificity: 	0.908872
+G-Mean: 	0.910898
+PCC: 		0.912929
+Experiment performed successfully
+Execution took PT21H18M16.727S
+
+
+Experiment DTW for MOTESTRAIN has been started.
+Dataset MoteStrain - 1272 records.
+Data contains 2 classes:
+Class '2' contains 587 records
+Class '1' contains 685 records
+DTW for MOTESTRAIN with params:
+knn: 7
+DtwWin: 5
+
+Accuracy: 	0.964885
+F1 score: 	0.964960
+Sensitivity: 	0.964885
+Specificity: 	0.962841
+G-Mean: 	0.963862
+PCC: 		0.964885
+Experiment performed successfully
+Execution took PT15M4.348S
+
+
+Experiment DTW for ITALYPOWERDEMAND has been started.
+Dataset ItalyPowerDemand - 1096 records.
+Data contains 2 classes:
+Class '1' contains 547 records
+Class '2' contains 549 records
+DTW for ITALYPOWERDEMAND with params:
+knn: 7
+DtwWin: 5
+
+Accuracy: 	0.958029
+F1 score: 	0.958245
+Sensitivity: 	0.958029
+Specificity: 	0.958084
+G-Mean: 	0.958057
+PCC: 		0.958029
+Experiment performed successfully
+Execution took PT1M29.289S
+
+
+Experiment DTW for CHLORINECONCENTRATION has been started.
+Dataset ChlorineConcentration - 4307 records.
+Data contains 3 classes:
+Class '1' contains 1000 records
+Class '3' contains 2307 records
+Class '2' contains 1000 records
+DTW for CHLORINECONCENTRATION with params:
+knn: 7
+DtwWin: 5
+
+Accuracy: 	0.880143
+F1 score: 	0.820249
+Sensitivity: 	-1.000000
+Specificity: 	-1.000000
+G-Mean: 	-1.000000
+PCC: 		0.820215
+Experiment performed successfully
+Execution took PT8H53M6.877S
+
+
+Experiment DTW for TWOPATTERNS has been started.
+Dataset Two_Patterns - 5000 records.
+Data contains 4 classes:
+Class '2' contains 1248 records
+Class '3' contains 1245 records
+Class '4' contains 1201 records
+Class '1' contains 1306 records
+DTW for TWOPATTERNS with params:
+knn: 7
+DtwWin: 5
+
+Accuracy: 	1.000000
+F1 score: 	1.000000
+Sensitivity: 	-1.000000
+Specificity: 	-1.000000
+G-Mean: 	-1.000000
+PCC: 		1.000000
+Experiment performed successfully
+Execution took PT7H26M55.225S
+
+
+Experiment DTW for WAFER has been started.
+Dataset wafer - 7164 records.
+Data contains 2 classes:
+Class '1' contains 6402 records
+Class '-1' contains 762 records
+DTW for WAFER with params:
+knn: 7
+DtwWin: 5
+
+Accuracy: 	0.992323
+F1 score: 	0.992298
+Sensitivity: 	0.992323
+Specificity: 	0.955538
+G-Mean: 	0.973756
+PCC: 		0.992323
+Experiment performed successfully
+Execution took PT19H23M44.363S
+
+
+Experiment DTW for INLINESKATE has been started.
+Dataset InlineSkate - 650 records.
+Data contains 7 classes:
+Class '2' contains 100 records
+Class '3' contains 103 records
+Class '7' contains 62 records
+Class '6' contains 98 records
+Class '4' contains 108 records
+Class '5' contains 117 records
+Class '1' contains 62 records
+DTW for INLINESKATE with params:
+knn: 7
+DtwWin: 5
+
+Accuracy: 	0.856264
+F1 score: 	0.503696
+Sensitivity: 	-1.000000
+Specificity: 	-1.000000
+G-Mean: 	-1.000000
+PCC: 		0.496923
+Experiment performed successfully
+Execution took PT15H57M8.187S
+
+
+Experiment DTW for PATIENTS has been started.
+Data contains 2 classes:
+Class '0' contains 65 records
+Class '1' contains 51 records
+DTW for PATIENTS with params:
+knn: 7
+DtwWin: 5
+
+Accuracy: 	0.554598
+F1 score: 	0.553333
+Sensitivity: 	0.554598
+Specificity: 	0.535096
+G-Mean: 	0.544758
+PCC: 		0.554598
+Experiment performed successfully
+Execution took PT44.065S
+
+
