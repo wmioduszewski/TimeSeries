@@ -96,7 +96,7 @@ public abstract class WorkflowBase {
 		StringBuilder sb = new StringBuilder();
 		sb.append(experiment + " for " + dataSource + " with params:" + NEWLINE);
 		for (Pair<String, ? extends Object> pair : concerningParameters) {
-			sb.append(pair.getLeft() + ": " + pair.getRight() + NEWLINE);
+			sb.append(pair.getLeft() + ": " + pair.getRight() + ", ");
 		}
 		sb.append(NEWLINE);
 		if (experimentResult != null)
