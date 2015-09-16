@@ -52,7 +52,7 @@ public class ExperimentResult {
 		sb.append(String.format("Sensitivity: \t%f\n", sensitivity));
 		sb.append(String.format("Specificity: \t%f\n", specificity));
 		sb.append(String.format("G-Mean: \t%f\n", gMean));
-		sb.append(String.format("PCC: \t\t%f\n", pcc));
+		sb.append(String.format("PCC: \t%f\n", pcc));
 		return sb.toString();
 	}
 

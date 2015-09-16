@@ -20,8 +20,7 @@ public class CrossValidationExperiment extends ExperimentBase {
 	}
 
 	@Override
-	public ExperimentResult runExperiment(Instances baseDataSet)
-			throws Exception {
+	public ExperimentResult runExperiment(Instances baseDataSet) throws Exception {
 		// from
 		// https://weka.wikispaces.com/Generating+classifier+evaluation+output+manually
 		Evaluation eval = new Evaluation(baseDataSet);
@@ -30,14 +29,12 @@ public class CrossValidationExperiment extends ExperimentBase {
 	}
 
 	@Override
-	public ExperimentResult runFileExperiment(String pathToArff)
-			throws Exception {
+	public ExperimentResult runFileExperiment(String pathToArff) throws Exception {
 		Instances dataSet = Utils.readInstances(pathToArff);
 		return runExperiment(dataSet);
 	}
 
-	public ExperimentResult runFileExperimentRepeatedly(String pathToArff,
-			int times) throws Exception {
+	public ExperimentResult runFileExperimentRepeatedly(String pathToArff, int times) throws Exception {
 		Instances dataSet = Utils.readInstances(pathToArff);
 		return runExperimentRepeatedly(dataSet, times);
 	}
@@ -56,22 +53,21 @@ public class CrossValidationExperiment extends ExperimentBase {
 			fn += eval.numFalseNegatives(i);
 		}
 
-		double sensitivity = -1, specificity = -1,gMean =-1;
+		double sensitivity = 0, specificity = 0, gMean = 0;
 
 		if (numClasses == 2) {
 			sensitivity = eval.weightedTruePositiveRate();
 			specificity = eval.weightedTrueNegativeRate();
 			gMean = Math.sqrt(specificity * sensitivity);
 		}
-		
+
 		double accuracy = (tp + tn) / (tp + tn + fp + fn);
-		
+
 		double pr = eval.weightedPrecision();
 		double rec = eval.weightedRecall();
 		double f1 = 2 * ((pr * rec) / (pr + rec));
 		double pcc = eval.correct() / eval.numInstances();
-		ExperimentResult result = new ExperimentResult(accuracy, sensitivity,
-				specificity, gMean, f1, pcc);
+		ExperimentResult result = new ExperimentResult(accuracy, sensitivity, specificity, gMean, f1, pcc);
 		return result;
 	}
 }
