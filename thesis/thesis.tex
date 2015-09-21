@@ -1,0 +1,365 @@
+%% LyX 2.1.4 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[11pt,a4paper,english,thesis]{dcsbook}
+\usepackage[utf8]{inputenc}
+\setcounter{secnumdepth}{3}
+\usepackage{color}
+\usepackage{babel}
+\usepackage{prettyref}
+\usepackage{booktabs}
+\usepackage{pmboxdraw}
+\usepackage{graphicx}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=1,
+ breaklinks=true,pdfborder={0 0 0},backref=false,colorlinks=true]
+ {hyperref}
+\hypersetup{
+ urlcolor=linkcolor,linkcolor=linkcolor,citecolor=linkcolor}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\pdfpageheight\paperheight
+\pdfpagewidth\paperwidth
+
+\providecommand{\LyX}{\texorpdfstring%
+  {L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
+  {LyX}}
+\DeclareRobustCommand*{\lyxarrow}{%
+\@ifstar
+{\leavevmode\,$\triangleleft$\,\allowbreak}
+{\leavevmode\,$\triangleright$\,\allowbreak}}
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\RequirePackage{dcslib}[2012/01/30]
+ \newlength{\labelingxwidth}
+ \newenvironment{labelingx}[2][]%
+   {\ifthenelse{\equal{#2}{default}}%
+      {\setlength{\labelingxwidth}{\leftmargin}}
+      {\settowidth{\labelingxwidth}{#2}}
+    \begin{labeling}[leftmargin=\labelingxwidth,#1]}
+   {\end{labeling}}
+ \newlist{lyxcodelist}{itemize}{1}
+ \setlist[lyxcodelist]{listparindent=0pt,itemsep=0pt,parsep=0pt,partopsep=0pt}
+ \providecommand{\lyxcodesetup}{}
+ \newenvironment{lyxcode}
+   {\par\begin{lyxcodelist}\normalfont\ttfamily\small\lyxcodesetup\item[]}
+   {\end{lyxcodelist}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+%
+%  $Id: thesis-template.lyx,v 1.7 2011/12/22 12:10:18 sobaniec Exp $
+%
+
+\@ifundefined{showcaptionsetup}{}{%
+ \PassOptionsToPackage{caption=false}{subfig}}
+\usepackage{subfig}
+\makeatother
+
+\usepackage{listings}
+\renewcommand{\lstlistingname}{\inputencoding{latin9}Listing}
+
+\begin{document}
+
+\author{Wojciech Mioduszewski}
+
+
+\title{Klasyfikacja danych opisanych za pomocą szeregów czasowych}
+
+
+\date{Poznań, 2015}
+
+
+\supervisor{dr inż. Jerzy Błaszczyński}
+
+\maketitle
+
+
+\frontmatter
+
+\tableofcontents{}
+
+\mainmatter
+
+
+\chapter{Wstęp}
+
+The Introduction may  be put \dcsemph{before} the \dcscode{\textbackslash{}mainmatter}
+command which will disable numbering of this chapter while still adding
+to the table of contents.
+
+
+\paragraph{The goal and the scope of the thesis}
+
+
+\chapter{Background}
+
+The thesis can be structured using the following sectioning styles:
+
+
+\section{Section}
+
+
+\subsection{Subsection}
+
+
+\subsubsection{Subsubsection}
+
+
+\paragraph{Paragraph}
+
+
+\subparagraph{Subparagraph}
+
+
+\section{Inline formatting}
+
+We suggest using \dcsemph{Insets}, like:
+\begin{labelingx}{00.00.0000}
+\item [{\dcsstrong{strong}}] for strong emphasizing some text.
+\item [{\dcsemph{emph}}] for emphasizing some text.
+\item [{\dcscode{Code}}] for formatting of names of modules, procedures,
+class names, variables, etc.
+\item [{\dcspath{path}}] for formatting of file names and directories,
+like \dcspath{/usr/share/doc/packages/texlive-latex}. The names are
+properly broken at the ends of lines. However, path names containing
+special \LaTeX{} characters must be typeset using ERT and the \dcscode{\textbackslash{}dcspath}
+command, e.g.\ \dcspath{sample_file}.
+\item [{\dcskbd{kbd}}] for formatting of shortcuts, e.g.: \dcskbd{Ctrl-c}.
+\item [{\dcscmd{cmd}}] for formatting system commands.
+\item [{\dcsname{name}}] for formatting other special names.
+\end{labelingx}
+
+\section{Special characters}
+\begin{enumerate}
+\item Non-breaking space can be inserted using \dcskbd{Ctrl-space}. It
+produces ``\dcscode{\textasciitilde{}}'' in \LaTeX{} code.
+\item A normal, inter-word space can be inserted using \dcskbd{Ctrl-Alt-space}.
+It produces ``\dcscode{\textbackslash{} }'' in \LaTeX{} code. This
+type of space is useful for formatting spacing after dots, e.g.\ here.
+By default \LaTeX{} produces here a longer space used for separating
+whole sentences.
+\item A thin space can be produced by \dcskbd{Ctrl-Shift-space}, e.g.\,here.
+It produces ``\dcscode{\textbackslash{},}'' in \LaTeX{} code.
+\item Sentence-ending space can be inserted using \dcskbd{Ctrl-.}, which
+produces ``\dcscode{\textbackslash{}@.}'' in \LaTeX{} code. This
+type of space is useful in sentences ending with a capital letter.
+In such cases \LaTeX{} recognizes the last word as a acronym and places
+a regular inter-word space instead of inter-sentence space. Consider
+the following example:
+
+\begin{quote}
+\emph{This can be achieved by using HTTP\@. This protocol...}
+\end{quote}
+\item Hyphenation indicator can be inserted using \dcskbd{Ctrl-~--}, which
+is used for marking possible places of hyphenation, e.g.\ de\-mo\-cra\-cy.
+\end{enumerate}
+
+\section{Figures}
+
+The figures should be put in floats, like Fig.~\ref{fig:ex-fig1}.
+You can also reference figures using \dcsname{prettyref} package
+like this: \prettyref{fig:ex-fig1}.
+
+\begin{figure}[tbph]
+\begin{centering}
+\includegraphics[width=0.4\textwidth]{logopp/logopp-jasne-czarne}
+\par\end{centering}
+
+\caption{Example figure \label{fig:ex-fig1}}
+\end{figure}
+
+
+It is possible to combine several pictures inside one float. Just
+insert a float inside a float. See Fig.~\ref{fig:ex-fig2} for example.
+Please note the horizontal spacing between subfigures.
+
+\begin{figure}[tbph]
+\centering{}\hfill{}\subfloat[The first subfigure]{\begin{centering}
+\includegraphics[width=0.3\textwidth]{logopp/logopp-jasne-czarne}
+\par\end{centering}
+
+}\hfill{}\subfloat[The second subfigure]{\begin{centering}
+\includegraphics[width=0.3\textwidth]{logopp/logopp-jasne}
+\par\end{centering}
+
+}\hfill{}\mbox{}\caption{Example figure \label{fig:ex-fig2}}
+\end{figure}
+
+
+
+\section{Tables}
+
+Tables should have captions above like Table~\ref{tab:ex-tab}. Use
+small sans-serif fonts inside tables.
+
+\begin{table}[h]
+\caption{Example table \label{tab:ex-tab}}
+
+
+\textsf{\small{}}%
+\begin{tabular}{lcc}
+\toprule 
+\textsf{\textbf{\small{}Column 1}} & \textsf{\textbf{\small{}Column 2}} & \textsf{\textbf{\small{}Column 3}}\tabularnewline
+\midrule 
+\textsf{\small{}One} & \textsf{\small{}1} & \textsf{\small{}4}\tabularnewline
+\midrule 
+\textsf{\small{}Two} & \textsf{\small{}2} & \textsf{\small{}5}\tabularnewline
+\midrule 
+\textsf{\small{}Three} & \textsf{\small{}3} & \textsf{\small{}6}\tabularnewline
+\bottomrule
+\end{tabular}{\small \par}
+\end{table}
+
+
+\newpage{}
+
+
+\section{Source code examples}
+
+There are a few different methods of including sample codes:
+\begin{enumerate}
+\item Using standard \dcscode{\LyX{}-Code} style:
+
+\begin{lyxcode}
+\#include~<stdio.h>
+
+~
+
+int~main()~\{
+
+~~printf(\textquotedbl{}Hello~world!\textbackslash{}n\textquotedbl{});
+
+~~return~0;
+
+\}
+\end{lyxcode}
+
+Note 1: Empty lines must contain at least one single space to remain
+visible.
+
+
+Note 2: There is no way to activate automatic syntax highlighting
+inside \dcscode{\LyX{}-Code}. However, you can use normal inline
+formatting inside.
+
+
+Note 3: \dcscode{Lyx-Code} can contain special characters, so it
+can be used to produce some ASCII art, e.g.:
+\begin{lyxcode}
+┌──────────┐~~~~╔══════════╗
+
+│~~Test~1~~├────╢~~Test~2~~║
+
+└──────────┘~~~~╚══════════╝
+\end{lyxcode}
+\item By inserting \dcsemph{Program Listing}:
+
+
+\inputencoding{latin9}\begin{lstlisting}[language=C,tabsize=2,xleftmargin=2em]
+#include <stdio.h>
+
+int main() {
+  printf("Hello world!\n");
+  return 0;
+}
+\end{lstlisting}
+\inputencoding{utf8}
+
+
+Note: By default the \dcscode{lstlisting} environment does not add
+any left margin. You can change it by adding \dcscode{xleftmargin}
+in the \dcsemph{Settings} \lyxarrow{} \dcsemph{Advanced} dialog
+box, e.g.:
+
+
+\inputencoding{latin9}\begin{lstlisting}[tabsize=2,xleftmargin=6em]
+procedure sayHello()
+\end{lstlisting}
+\inputencoding{utf8}
+
+\item By inserting \LaTeX{} Code (ERT block) and using \dcscode{codeblock}
+environment:
+
+
+\begin{codeblock}[language=c]
+#include <stdio.h>
+ 
+int main() {
+  printf("Hello world!\n");
+  return 0;
+}
+\end{codeblock}
+
+\item The \dcsname{listings} package can produce floats by itself. See
+Listing.~\ref{lst:hello} for example.
+
+
+\inputencoding{latin9}\begin{lstlisting}[caption={The Hello World program in C},float,label={lst:hello},language=C,style=linesbg,tabsize=2]
+#include <stdio.h>
+
+int main() {
+  printf("Hello world!\n");
+  return 0;
+}
+\end{lstlisting}
+\inputencoding{utf8}
+
+\item And finally, You can include code from external file:
+
+
+\codeincp[language={[latex]tex},lastline=9]{thesis-template-latex.tex}
+
+\end{enumerate}
+
+\section{Math}
+
+Can be put inline like this: $S=\sum_{i=1}^{i=K}x_{i}^{2}$ or in
+dedicated lines:
+\[
+S=\sum_{i=1}^{i=K}x_{i}^{2}
+\]
+The equations can be also numbered like equation~\ref{eq:est}. 
+\begin{equation}
+s=\sqrt{\frac{1}{n-1}\sum_{i=1}^{n}\left(x_{i}-\overline{x}\right)^{2}}\label{eq:est}
+\end{equation}
+
+
+
+\section{Algorithms}
+
+Use \dcsname{dcsalg} package or directly \dcsname{algorithmicx}
+package.
+
+
+\section{Bibliography}
+
+The bibliography can be included in the thesis like in this case.
+You can then cite the publications like this~\cite{sop}. The other
+(more professional) solution is to use Bib\TeX{}\@. See \dcsemph{\LyX{} User's Guide}
+for details.
+
+
+\chapter{Concept and Design of the System}
+
+
+\chapter{Implementation}
+
+
+\chapter{Performance Evaluation}
+
+
+\chapter{Conclusions}
+
+\appendix
+
+\chapter{Users Guide}
+
+\backmatter
+\begin{thebibliography}{Odnośniki}
+\bibitem{sop}A.~Tanenbaum. \emph{Operating Systems Design and Implementation}.
+Prentice Hall, 2006.\end{thebibliography}
+
+\end{document}
