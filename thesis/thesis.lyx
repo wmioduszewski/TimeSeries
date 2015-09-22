@@ -94,11 +94,11 @@ dcs
 \begin_body
 
 \begin_layout Author
-<Insert Your name here>
+Wojciech Mioduszewski
 \end_layout
 
 \begin_layout Title
-<Insert title of the thesis here>
+Klasyfikacja danych opisanych za pomocą szeregów czasowych
 \end_layout
 
 \begin_layout Date
@@ -165,38 +165,24 @@ mainmatter
 \end_layout
 
 \begin_layout Chapter
-Introduction
-\end_layout
-
-\begin_layout Standard
-The Introduction may be put 
-\begin_inset Flex Emph
-status collapsed
-
-\begin_layout Plain Layout
-before
-\end_layout
-
-\end_inset
-
- the 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-
-\backslash
-mainmatter
-\end_layout
-
-\end_inset
-
- command which will disable numbering of this chapter while still adding
- to the table of contents.
+Wstęp
 \end_layout
 
 \begin_layout Paragraph
 The goal and the scope of the thesis
+\end_layout
+
+\begin_layout Standard
+Celem pracy jest opracowanie / wykonanie analizy / zaprojektowanie / .....................
+ Struktura pracy jest następująca.
+ W rozdziale 2 przedstawiono przegląd literatury na temat ........
+ Rozdział 3 jest poświęcony .......
+ (kilka zdań).
+ Rozdział 4 zawiera .....
+ (kilka zdań) ............
+ itd.
+ Rozdział x stanowi podsumowanie pracy.
+ 
 \end_layout
 
 \begin_layout Chapter
