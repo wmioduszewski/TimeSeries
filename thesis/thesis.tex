@@ -86,26 +86,75 @@
 
 \chapter{Wstęp}
 
-The Introduction may  be put \dcsemph{before} the \dcscode{\textbackslash{}mainmatter}
-command which will disable numbering of this chapter while still adding
-to the table of contents.
 
+\section*{Cel i zakres pracy}
+
+Cel: Opracowanie i implementacja różnych podejść do klasyfikacji danych
+czasowych. \\
+Zadania: 
+\begin{itemize}
+\item Zapoznać się z literaturą tematu.
+\item Opracować wybrane podejścia do klasyfikacji danych czasowych.
+\item Zaimplementować i udokumentować zaproponowan rozwiązania.
+\item Przeprowadzić eksperyment obliczeniowy
+\end{itemize}
 
 \paragraph{The goal and the scope of the thesis}
+
+Celem pracy jest opracowanie / wykonanie analizy / zaprojektowanie
+/ ..................... Struktura pracy jest następująca. W rozdziale
+2 przedstawiono przegląd literatury na temat ........ Rozdział 3 jest
+poświęcony ....... (kilka zdań). Rozdział 4 zawiera ..... (kilka zdań)
+............ itd. Rozdział x stanowi podsumowanie pracy. 
 
 
 \chapter{Background}
 
-The thesis can be structured using the following sectioning styles:
+
+\section{Definicja szeregu czasowego}
+
+Szereg czasowy jest to seria pewnych obserwacji osadzonych w czasie.
+Można powiedzieć, że jest to przyporządkowanie danych liczbowych do
+odpowiadających im punktów czasowych, najczęściej z jednakowymi odstępami
+między kolejnymi wartościami.
+
+http://www.cs.put.poznan.pl/jstefanowski/aed/TPtimeseries.pdf
 
 
-\section{Section}
+\section{Przykładowe metody analizy danych czasowych}
+
+Tak obszerny problem jak analiza danych czasowych musi nieść za sobą
+rozmaite metody przeprowadzania tej analizy. Poniżej przedstawiono
+kilka z nich.
 
 
-\subsection{Subsection}
+\subsection{Regresja liniowa}
+
+Regresja w odniesieniu do danych czasowych sprowadza się do estymowania
+liniowego trendu jaki prezentuje badany szereg{[}fav{]}. Koncepcyjnie
+metoda polega na stworzeniu funkcji liniowej, która w najbardziej
+dokładny sposób przybliża wartości na kolejnych obserwacjach. Matematyczny
+model regresji ma zatem następującą postać: 
+\[
+y=ax+b
+\]
+Jako miarę błędu przyjmuje się sumę kwadratów różnicy między oszacowaniami,
+a wartościami właściwymi.
+\[
+S=\sum_{i=1}^{n}(y_{i}-\hat{(}y_{i}))^{2}
+\]
 
 
-\subsubsection{Subsubsection}
+http://www.cs.put.poznan.pl/jstefanowski/aed/TPDregresjawieloraka.pdf
+
+
+\subsection{Wygładzanie (``Smoothing'')}
+
+
+\subsection{Modele ARIMA}
+
+
+\subsection{Analiza spektrum}
 
 
 \paragraph{Paragraph}

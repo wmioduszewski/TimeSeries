@@ -168,6 +168,36 @@ mainmatter
 Wstęp
 \end_layout
 
+\begin_layout Section*
+Cel i zakres pracy
+\end_layout
+
+\begin_layout Standard
+Cel: Opracowanie i implementacja różnych podejść do klasyfikacji danych
+ czasowych.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Zadania: 
+\end_layout
+
+\begin_layout Itemize
+Zapoznać się z literaturą tematu.
+\end_layout
+
+\begin_layout Itemize
+Opracować wybrane podejścia do klasyfikacji danych czasowych.
+\end_layout
+
+\begin_layout Itemize
+Zaimplementować i udokumentować zaproponowan rozwiązania.
+\end_layout
+
+\begin_layout Itemize
+Przeprowadzić eksperyment obliczeniowy
+\end_layout
+
 \begin_layout Paragraph
 The goal and the scope of the thesis
 \end_layout
@@ -189,20 +219,90 @@ Celem pracy jest opracowanie / wykonanie analizy / zaprojektowanie / ...........
 Background
 \end_layout
 
+\begin_layout Section
+Definicja szeregu czasowego
+\end_layout
+
 \begin_layout Standard
-The thesis can be structured using the following sectioning styles:
+Szereg czasowy jest to seria pewnych obserwacji osadzonych w czasie.
+ Można powiedzieć, że jest to przyporządkowanie danych liczbowych do odpowiadają
+cych im punktów czasowych, najczęściej z jednakowymi odstępami między kolejnymi
+ wartościami.
+\end_layout
+
+\begin_layout Standard
+http://www.cs.put.poznan.pl/jstefanowski/aed/TPtimeseries.pdf
 \end_layout
 
 \begin_layout Section
-Section
+Przykładowe metody analizy danych czasowych
+\end_layout
+
+\begin_layout Standard
+Tak obszerny problem jak analiza danych czasowych musi nieść za sobą rozmaite
+ metody przeprowadzania tej analizy.
+ Poniżej przedstawiono kilka z nich.
 \end_layout
 
 \begin_layout Subsection
-Subsection
+Regresja liniowa
 \end_layout
 
-\begin_layout Subsubsection
-Subsubsection
+\begin_layout Standard
+Regresja w odniesieniu do danych czasowych sprowadza się do estymowania
+ liniowego trendu jaki prezentuje badany szereg[fav].
+ Koncepcyjnie metoda polega na stworzeniu funkcji liniowej, która w najbardziej
+ dokładny sposób przybliża wartości na kolejnych obserwacjach.
+ Matematyczny model regresji ma zatem następującą postać: 
+\begin_inset Formula 
+\[
+y=ax+b
+\]
+
+\end_inset
+
+Jako miarę błędu przyjmuje się sumę kwadratów różnicy między oszacowaniami,
+ a wartościami właściwymi.
+\begin_inset Formula 
+\[
+S=\sum_{i=1}^{n}(y_{i}-\hat{y_{i}})^{2}
+\]
+
+\end_inset
+
+http://www.cs.put.poznan.pl/jstefanowski/aed/TPDregresjawieloraka.pdf
+\end_layout
+
+\begin_layout Subsection
+Wygładzanie (
+\begin_inset Quotes eld
+\end_inset
+
+Smoothing
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+Wygładzanie to metoda starająca się zniwelować ponadprzeciętne różnice wartości
+ między kolejnymi pomiarami.
+ Dzięki temu podejściu można dokładniej przyjrzeć się ogólnemu zarysowi
+ funkcji, czy jej okresowymi trendami, rezygnując z precyzji.
+ Podejście to pozwala wyeliminować ewentualne szumy z badanego zbioru.
+\end_layout
+
+\begin_layout Standard
+<opisz wygladzanie wykresów w początkowej fazie>
+\end_layout
+
+\begin_layout Subsection
+Modele ARIMA
+\end_layout
+
+\begin_layout Subsection
+Analiza spektrum
 \end_layout
 
 \begin_layout Paragraph
