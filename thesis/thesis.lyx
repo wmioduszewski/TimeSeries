@@ -206,7 +206,9 @@ Początkowo celem niniejszej pracy była analiza szeregów czasowych zawierając
  Równie ważne było to, aby nie testować sposobów klasyfikacji tylko i wyłącznie
  na danych zebranych w celu oceny jaskry, lecz również sprawdzić jak wybrane
  i stworzone metody poradzą sobie w odniesieniu do innych szeregów czasowych.
- 
+ Kolejną rzeczą, od której należało się uniezależnić są klasyfikatory, dlatego
+ też eksperymenty przeprowadzone zostały na kilku różnych technikach kategoryzow
+ania instancji.
 \end_layout
 
 \begin_layout Paragraph
@@ -247,12 +249,21 @@ http://www.cs.put.poznan.pl/jstefanowski/aed/TPtimeseries.pdf
 
 \begin_layout Section
 Przykładowe metody analizy danych czasowych
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Shum2010"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Tak obszerny problem jak analiza danych czasowych musi nieść za sobą rozmaite
  metody przeprowadzania tej analizy.
- Poniżej przedstawiono kilka z nich.
+ Pomimo tego, że do ostatecznego eksperymentu wybrano tylko jedną z nich
+ - regresję, to postanowiono przedstawić po krótce czym charakteryzują się
+ poszczególne metody oraz ewentualnie dlaczego zostały porzucone.
 \end_layout
 
 \begin_layout Subsection
@@ -261,7 +272,7 @@ Regresja liniowa
 
 \begin_layout Standard
 Regresja w odniesieniu do danych czasowych sprowadza się do estymowania
- liniowego trendu jaki prezentuje badany szereg[fav].
+ liniowego trendu jaki prezentuje badany szereg.
  Koncepcyjnie metoda polega na stworzeniu funkcji liniowej, która w najbardziej
  dokładny sposób przybliża wartości na kolejnych obserwacjach.
  Matematyczny model regresji ma zatem następującą postać: 
@@ -300,8 +311,8 @@ Smoothing
 Wygładzanie to metoda starająca się zniwelować ponadprzeciętne różnice wartości
  między kolejnymi pomiarami.
  Dzięki temu podejściu można dokładniej przyjrzeć się ogólnemu zarysowi
- funkcji, czy jej okresowymi trendami, rezygnując z precyzji.
- Podejście to pozwala wyeliminować ewentualne szumy z badanego zbioru.
+ funkcji, czy jej okresowymi trendami, kosztem precyzji.
+ Podejście to pozwala zminimalizować ewentualne szumy z badanego zbioru.
  Metoda ta jako argument przyjmuje szerokość okna 
 \begin_inset Formula $k$
 \end_inset
@@ -353,7 +364,7 @@ reference "fig:Wygładzony-sygnał-TFADJ"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -390,7 +401,7 @@ name "fig:Czysty-sygnał-TFADJ"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -433,7 +444,7 @@ Modele ARIMA
 \begin_layout Standard
 Model ARIMA (ang.
  Autoregressive Integrated Moving Average) koncepcyjnie składają się z trzech
- części - jest to autoregresja, zintegrowanie oraz średnia ruchoma.
+ części - jest to autoregresja, integracja oraz średnia ruchoma.
  
 \end_layout
 
@@ -444,7 +455,7 @@ Autoregresja jest to idea, która skupia się na wyrażeniu bieżącej wartości
 \end_inset
 
  poprzednich.
- Funkcja dla 
+ Dla przykładu, funkcja dla 
 \begin_inset Formula $n=2$
 \end_inset
 
@@ -468,8 +479,8 @@ x_{t}=\omega_{t-2}x_{t-2}-\omega_{t-1}x_{t-1}+\omega_{t}
 
 \begin_layout Standard
 Integracja z kolei pozwala na zastosowanie modelu ARIMA do procesów niestacjonar
-nych, które da się sprowadzić do procesów stacjonarnych za pomocą różnic
- (ang.
+nych, które da się sprowadzić do procesów stacjonarnych dzięki przekształceniu
+ oryginalnego sygnału na różnice (ang.
  difference equations) pomiędzy wartością obecną, a poprzednią.
  
 \end_layout
@@ -483,184 +494,910 @@ Podsumowując, modele ARIMA doskonale spisują się w prognozowaniu wartości,
 \end_layout
 
 \begin_layout Subsection
-Analiza spektrum
-\end_layout
-
-\begin_layout Paragraph
-Paragraph
-\end_layout
-
-\begin_layout Subparagraph
-Subparagraph
-\end_layout
-
-\begin_layout Section
-Inline formatting
+Analiza spektralna (widmowa)
 \end_layout
 
 \begin_layout Standard
-We suggest using 
-\begin_inset Flex Emph
+Celem analizy spektralnej (ang.
+ spectral analysis) szeregów czasowych jest zidentyfikowanie najczęściej
+ powtarzających się wzorców w czasie, a następnie przybliżenie danego szeregu
+ do procesu okresowego określonego wzorem:
+\begin_inset Formula 
+\[
+x_{t}=U_{1}\cos(2\Pi\omega t)+U_{2}\sin(2\Pi\omega t)
+\]
+
+\end_inset
+
+gdzie amplituda funkcji to 
+\begin_inset Formula $A=\sqrt{U_{1}^{2}+U_{2}^{2}}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Jak widać jest to kolejn metoda, za którą stoi solidne matematyczne zaplecze
+ i która wymierzona jest w szeregi cykliczne, z którymi w zbiorze danych
+ pacjentów jaskry nie mamy do czynienia, zatem metodę tę odrzucono.
+\end_layout
+
+\begin_layout Section
+Badane zbiory danych
+\end_layout
+
+\begin_layout Standard
+Jak wspomniano wcześniej, podstawowy zbiór, który miał zostać zbadany to
+ pacjenci z jaskrą (lub bez).
+ Z tego powodu będzie on opisany nieco szerzej niż pozostałe zbiory
+\end_layout
+
+\begin_layout Subsection
+Pacjenci
+\end_layout
+
+\begin_layout Standard
+Zbiór dostarczony przez dr.
+ J.
+ Błaszczyńskiego.
+ Zbiór zawiera pomiary dla 116 pacjentów, z których 65 to pacjenci zdrowi,
+ a 51 to pacjenci ze zdiagnozowaną jaskrą.
+ Dla każdego pacjenta zebrano 288 pomiarów (pomiar co 5 minut przez całą
+ dobę) tzw.
+ TFADJ <tu rozwinięcie?> będącym przekształceniem zmierzonego w danym momencie
+ ciśnienia w oku.
+ Poniżej poglądowe zdjęcie metody zbierania pomiarów:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
 status collapsed
 
 \begin_layout Plain Layout
-Insets
+\begin_inset Graphics
+	filename C:/Users/womi/Documents/prv/TimeSeries/doc/rozne/pomiar jaskry.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Metoda zbierania pomiarów od pacjentów
 \end_layout
 
 \end_inset
 
-, like:
+
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Dane prof.
+ Eamonna Keogh'a
+\begin_inset CommandInset citation
+LatexCommand cite
+key "UCRArchive"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Zbiory pobrane od prof.
+ Eamonn'a nie zawierają opisu poszczególnych zbiorów, dlatego też ich tu
+ nie przedstawiono.
+ Jednak przetwarzając dane można było wyciągnąć z nich pewne interesujące
+ statystyki, które przedstawiono w poniższej tabeli (w ostatnim wierszu
+ porównawczo zestawiono zbiór dr.
+ Błaszczyńskiego):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Szczegóły danych
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Szczegóły-danych"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="5">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="2.5cm">
+<column alignment="center" valignment="top" width="1.5cm">
+<column alignment="left" valignment="top" width="3.5cm">
+<column alignment="center" valignment="top" width="1.7cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 \begin_inset Flex Strong
 status open
 
 \begin_layout Plain Layout
-strong
+nazwa zbióru
 \end_layout
 
 \end_inset
 
- for strong emphasizing some text.
+
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Strong
+status open
+
+\begin_layout Plain Layout
+liczba instancji
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Strong
+status open
+
+\begin_layout Plain Layout
+liczba klas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Strong
+status open
+
+\begin_layout Plain Layout
+podział na klasy
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Strong
+status open
+
+\begin_layout Plain Layout
+długość szeregu
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ECG200
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+200
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+'-1' - 67 rekordów '1'
+\begin_inset space ~
+\end_inset
+
+-
+\begin_inset space ~
+\end_inset
+
+133
+\begin_inset space ~
+\end_inset
+
+rekordów
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+96
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ECGFiveDays
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+884
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+'1' - 442 rekordów 
+\end_layout
+
+\begin_layout Plain Layout
+'2' - 442 rekordów
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+136
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+TwoLeadECG
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1162
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+'2' - 581 rekordów 
+\end_layout
+
+\begin_layout Plain Layout
+'1' - 581 rekordów
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+82
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Yoga
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3300
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+'1' - 1530 rekordów 
+\end_layout
+
+\begin_layout Plain Layout
+'2' - 1770 rekordów
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+426
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MoteStrain
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1272
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+'2' - 587 rekordów
+\end_layout
+
+\begin_layout Plain Layout
+'1' - 685 rekordów
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+84
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ItalyPowerDemand
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1096
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+'1' - 547 rekordów 
+\end_layout
+
+\begin_layout Plain Layout
+'2' - 549 rekordów
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+24
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ChlorineConcentration
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4307
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+'1' - 1000 rekordów 
+\end_layout
+
+\begin_layout Plain Layout
+'3' - 2307 rekordów 
+\end_layout
+
+\begin_layout Plain Layout
+'2' - 1000 rekordów
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+166
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Two Patterns
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+'2' - 1248 rekordów 
+\end_layout
+
+\begin_layout Plain Layout
+'3' - 1245 rekordów 
+\end_layout
+
+\begin_layout Plain Layout
+'4' - 1201 rekordów 
+\end_layout
+
+\begin_layout Plain Layout
+'1' - 1306 rekordów
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+128
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Wafer
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7174
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+'1' - 6402 rekordów
+\end_layout
+
+\begin_layout Plain Layout
+'-1' - 762 rekordów
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+152
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+InlineSkate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+650
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+'2' - 100 rekordów 
+\end_layout
+
+\begin_layout Plain Layout
+'3' - 103 rekordów 
+\end_layout
+
+\begin_layout Plain Layout
+'7' - 62 rekordów 
+\end_layout
+
+\begin_layout Plain Layout
+'6' - 98 rekordów 
+\end_layout
+
+\begin_layout Plain Layout
+'4' - 108 rekordów 
+\end_layout
+
+\begin_layout Plain Layout
+'5' - 117 rekordów 
+\end_layout
+
+\begin_layout Plain Layout
+'1' - 62 rekordów
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1882
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 \begin_inset Flex Emph
 status open
 
 \begin_layout Plain Layout
-emph
+Pacjenci 
 \end_layout
 
 \end_inset
 
- for emphasizing some text.
+
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-\begin_inset Flex Code
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Emph
 status open
 
 \begin_layout Plain Layout
-Code
+116
 \end_layout
 
 \end_inset
 
- for formatting of names of modules, procedures, class names, variables,
- etc.
+
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-\begin_inset Flex Path
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Emph
 status open
 
 \begin_layout Plain Layout
-path
+2
 \end_layout
 
 \end_inset
 
- for formatting of file names and directories, like 
-\begin_inset Flex Path
-status collapsed
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
 
 \begin_layout Plain Layout
-/usr/share/doc/packages/texlive-latex
-\end_layout
-
-\end_inset
-
-.
- The names are properly broken at the ends of lines.
- However, path names containing special LaTeX characters must be typeset
- using ERT and the 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-
-\backslash
-dcspath
-\end_layout
-
-\end_inset
-
- command, e.g.
-\begin_inset space \space{}
-\end_inset
-
-
-\begin_inset ERT
+\begin_inset Flex Emph
 status open
 
 \begin_layout Plain Layout
+'0' - 65 rekordów 
+\begin_inset Newline newline
+\end_inset
 
-
-\backslash
-dcspath{sample_file}
+'1' - 51 rekordów
 \end_layout
 
 \end_inset
 
-.
+
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-\begin_inset Flex Kbd
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Emph
 status open
 
 \begin_layout Plain Layout
-kbd
+288
 \end_layout
 
 \end_inset
 
- for formatting of shortcuts, e.g.: 
-\begin_inset Flex Kbd
-status collapsed
 
-\begin_layout Plain Layout
-Ctrl-c
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
-.
-\end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-\begin_inset Flex Cmd
-status open
-
-\begin_layout Plain Layout
-cmd
-\end_layout
-
-\end_inset
-
- for formatting system commands.
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-\begin_inset Flex Name
-status open
-
-\begin_layout Plain Layout
-name
-\end_layout
-
-\end_inset
-
- for formatting other special names.
 \end_layout
 
 \begin_layout Section

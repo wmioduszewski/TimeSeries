@@ -34,6 +34,9 @@ public abstract class WorkflowBase {
 			System.out.println(String.format("Class '%d' contains %d records",
 					distClass.intValue(), count));
 		}
+		IRecord rec = records.stream().findFirst().get();
+		int length  = rec.getValues().size()-2;
+		System.out.println("Dataset is " + length + " elements long.");
 	}
 
 	protected String arffPath;
