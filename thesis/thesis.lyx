@@ -198,6 +198,17 @@ Zaimplementować i udokumentować zaproponowan rozwiązania.
 Przeprowadzić eksperyment obliczeniowy
 \end_layout
 
+\begin_layout Standard
+Początkowo celem niniejszej pracy była analiza szeregów czasowych zawierających
+ dane ciśnienia w oku pacjentów zdrowych, oraz tych ze zdiagnozowaną jaskrą.
+ Ponadto zamiarem było użycie do tego celu metody SAX, a następnie zbudowanie
+ klasyfikatora potrafiącego sklasyfikować dane wytworzone przez tą metodę.
+ Równie ważne było to, aby nie testować sposobów klasyfikacji tylko i wyłącznie
+ na danych zebranych w celu oceny jaskry, lecz również sprawdzić jak wybrane
+ i stworzone metody poradzą sobie w odniesieniu do innych szeregów czasowych.
+ 
+\end_layout
+
 \begin_layout Paragraph
 The goal and the scope of the thesis
 \end_layout
@@ -226,7 +237,7 @@ Definicja szeregu czasowego
 \begin_layout Standard
 Szereg czasowy jest to seria pewnych obserwacji osadzonych w czasie.
  Można powiedzieć, że jest to przyporządkowanie danych liczbowych do odpowiadają
-cych im punktów czasowych, najczęściej z jednakowymi odstępami między kolejnymi
+cych im punktów w czasie, najczęściej z jednakowymi odstępami między kolejnymi
  wartościami.
 \end_layout
 
@@ -291,14 +302,184 @@ Wygładzanie to metoda starająca się zniwelować ponadprzeciętne różnice wa
  Dzięki temu podejściu można dokładniej przyjrzeć się ogólnemu zarysowi
  funkcji, czy jej okresowymi trendami, rezygnując z precyzji.
  Podejście to pozwala wyeliminować ewentualne szumy z badanego zbioru.
+ Metoda ta jako argument przyjmuje szerokość okna 
+\begin_inset Formula $k$
+\end_inset
+
+, w ramach którego będą uśredniane wartości.
+ W pierwszym kroku liczy się średnią z 
+\begin_inset Formula $k$
+\end_inset
+
+ pierwszych wartości szeregu, następnie przesuwa okno o jeden element i
+ znów liczy średnią z 
+\begin_inset Formula $k$
+\end_inset
+
+ wartości.
+ Wyjściowy zbiór dla 
+\begin_inset Formula $n$
+\end_inset
+
+-elementowego zbioru będzie miał 
+\begin_inset Formula $n-k$
+\end_inset
+
+ wartości.
 \end_layout
 
 \begin_layout Standard
-<opisz wygladzanie wykresów w początkowej fazie>
+Poniżej dla porównania zaprezentowano wykres miary TFADJ w przeciągu doby
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Czysty-sygnał-TFADJ"
+
+\end_inset
+
+, oraz jego wygładzony odpowiednik 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Wygładzony-sygnał-TFADJ"
+
+\end_inset
+
+.
+ Jak widać operacja wygładzania zredukowała skrajne wychylenia szeregu i
+ wyklarowała paraboliczną tendencję tego zbioru.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/Clean 15 D1.jpg
+	width 15cm
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Czysty sygnał TFADJ
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Czysty-sygnał-TFADJ"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/Smooth 15 D1.jpg
+	width 15cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Wygładzony sygnał TFADJ
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Wygładzony-sygnał-TFADJ"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
 Modele ARIMA
+\end_layout
+
+\begin_layout Standard
+Model ARIMA (ang.
+ Autoregressive Integrated Moving Average) koncepcyjnie składają się z trzech
+ części - jest to autoregresja, zintegrowanie oraz średnia ruchoma.
+ 
+\end_layout
+
+\begin_layout Standard
+Autoregresja jest to idea, która skupia się na wyrażeniu bieżącej wartości
+ na podstawie
+\begin_inset Formula $n$
+\end_inset
+
+ poprzednich.
+ Funkcja dla 
+\begin_inset Formula $n=2$
+\end_inset
+
+ wygląda w ten sposób:
+\begin_inset Formula 
+\[
+x_{t}=\omega_{t-2}x_{t-2}-\omega_{t-1}x_{t-1}+\omega_{t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Średnia ruchoma ideowo jest bardzo zbliżona do autoregresji, jednak skupia
+ się na zaburzeniach (ang.
+ lags) w szeregu, a nie bezpośrednio na wartościach.
+ Wzór przedstawia się analogicznie jak w autoregresji.
+\end_layout
+
+\begin_layout Standard
+Integracja z kolei pozwala na zastosowanie modelu ARIMA do procesów niestacjonar
+nych, które da się sprowadzić do procesów stacjonarnych za pomocą różnic
+ (ang.
+ difference equations) pomiędzy wartością obecną, a poprzednią.
+ 
+\end_layout
+
+\begin_layout Standard
+Podsumowując, modele ARIMA doskonale spisują się w prognozowaniu wartości,
+ bazując na danych historycznych szeregu, jednak nie są najlepszym wyborem
+ jako metoda klasyfikacji.
+ Ponadto metoda nie jest najłatwiejsza matematycznie.
+ Biorąc pod uwagę te argumenty, metoda ta została odrzucona.
 \end_layout
 
 \begin_layout Subsection
@@ -1567,38 +1748,6 @@ algorithmicx
  package.
 \end_layout
 
-\begin_layout Section
-Bibliography
-\end_layout
-
-\begin_layout Standard
-The bibliography can be included in the thesis like in this case.
- You can then cite the publications like this
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand cite
-key "sop"
-
-\end_inset
-
-.
- The other (more professional) solution is to use BibTeX\SpecialChar \@.
- See 
-\begin_inset Flex Emph
-status collapsed
-
-\begin_layout Plain Layout
-LyX User's Guide
-\end_layout
-
-\end_inset
-
- for details.
-\end_layout
-
 \begin_layout Chapter
 Concept and Design of the System
 \end_layout
@@ -1636,25 +1785,15 @@ backmatter
 
 \end_layout
 
-\begin_layout Bibliography
-\labelwidthstring Odnośniki
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "sop"
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "bibliography"
+options "plain"
 
 \end_inset
 
-A.
-\begin_inset space ~
-\end_inset
 
-Tanenbaum.
- 
-\emph on
-Operating Systems Design and Implementation
-\emph default
-.
- Prentice Hall, 2006.
 \end_layout
 
 \end_body
