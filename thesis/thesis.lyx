@@ -524,6 +524,735 @@ Jak widać jest to kolejn metoda, za którą stoi solidne matematyczne zaplecze
 \end_layout
 
 \begin_layout Section
+SAX (Symbolic Aggregate approXimation)
+\end_layout
+
+\begin_layout Standard
+Już na początkowym etapie rozważań nad zakresem niniejszej pracy zadecydowano,
+ że jednym głównych nurtów jaki przyjmie, będzie przekształcanie sygnału
+ według metody SAX.
+ Mówiąc po krótce, jest to metoda odzwierciedlająca oryginalny sygnał w
+ ciąg znaków, co stwarza możliwości klastfikacji danych za pomocą istniejących
+ już algorytmów tekstowych.
+\end_layout
+
+\begin_layout Subsection
+Założenia
+\end_layout
+
+\begin_layout Standard
+Korzystając z pomysłu prof.
+ Eamonna przyjęto założenie, że dla szeregów czasowych o równych odstępach
+ czasowych między pomiarami, można pominąć dane dotyczące momentu, w którym
+ pomiaru dokonano i uprościć ten szereg do sekwencji samych wartości.
+ W następujących rozdziałach przyjęto że operuje się na zbiorze 
+\begin_inset Formula $N$
+\end_inset
+
+-elementowym o postaci 
+\begin_inset Formula $x_{1},x_{2},\ldots,x_{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Schemat działania
+\end_layout
+
+\begin_layout Standard
+Stworzenie reprezentacji SAX dla szeregu czasowego składa się z trzech etapów:
+\end_layout
+
+\begin_layout Subsubsection
+Z-normalizacja szeregu czasowego
+\end_layout
+
+\begin_layout Standard
+Na potrzeby przedstawienia wzoru dla odchylenia standardowego przyjęto następują
+cą definicję sumy elementów zbioru:
+\begin_inset Formula 
+\[
+s_{j}=\sum_{k=1}^{N}x_{k}^{j}
+\]
+
+\end_inset
+
+dzięki któremu można przedstawić wzór na odchylenie standardowe tak jak
+ poniżej
+\begin_inset CommandInset citation
+LatexCommand cite
+key "FormulaStdDeviation"
+
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+std=\sqrt{\frac{Ns_{2}-s_{1}^{2}}{N(N-1)}}
+\]
+
+\end_inset
+
+Mając obliczone odchylenie standardowe i średnią wartość dla zbioru, którą
+ wyrażono poniżej symbolem 
+\begin_inset Formula $mean$
+\end_inset
+
+ można przejść do właściwej normalizacji, co oznacza przekształcenie każdego
+ z elementów zbioru w sposób przedstawiony poniżej:
+\begin_inset Formula 
+\[
+x_{i}=\frac{x_{i}-mean}{std}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Dyskretyzacja sygnału za pomocą algorytmu PAA (Piecewise Aggregate Approximation
+)
+\end_layout
+
+\begin_layout Standard
+Jednym z argumentów, jaki przyjmuje algorytm SAX jest długość łańcucha wyjściowe
+go - co w praktyce sprowadza się do tego na ile części podzielić długość
+ szeregu czasowego.
+ Oznacza to, że metoda zmniejsza wymiarowość szeregu z 
+\begin_inset Formula $N$
+\end_inset
+
+ do żądanych 
+\begin_inset Formula $M$
+\end_inset
+
+ elementów.
+ Przebieg algorytmu jest intuicyjny - sekwencja 
+\begin_inset Formula $x_{1},x_{2},\ldots,x_{N}$
+\end_inset
+
+transformowana jest do postaci 
+\begin_inset Formula $y_{1}y_{2},\ldots,y_{M}$
+\end_inset
+
+ poprzez podział sekwencji 
+\begin_inset Formula $N$
+\end_inset
+
+-elementowej na 
+\begin_inset Formula $M$
+\end_inset
+
+ równych części według wzoru
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SaxFundamentals"
+
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+y_{i}=\frac{M}{N}\sum_{j=\frac{N}{M}(i-1)+1}^{(N/M)i}
+\]
+
+\end_inset
+
+Poniżej przedstawiono przykładową dyskretyzację dla następującego szeregu
+ czasowego:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="11">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+i
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+oryginalny sygnał 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+dzieląc szereg dziesięcioelementowy na pięć równych części algorytmem PAA
+\begin_inset CommandInset citation
+LatexCommand cite
+key "PaaGithub"
+
+\end_inset
+
+:
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/paa_moje.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Porównanie oryginalnego szeregu czasowego i jego 5-elementowej dyskretyzacji
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+Dzięki temu otrzymano redukcję pięciowymiarową:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="6">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+i
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+zdyskretyzowany sygnał 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Algorytm SAX
+\end_layout
+
+\begin_layout Standard
+Jak wspomniano wyżej, jednym z argumentów jakie przyjmuje algorytm SAX jest
+ długość sekwencji wyjściowej, zaś drugim - liczba dostępnych liter w alfabecie.
+ Ta liczba precyzuje na ile części podzielić zbiór wartości danego (przetworzone
+go już) szeregu, a tym samym jakie indeksy (znaki) przypisać wartościom
+ lądującym w poszczególnych zakresach.
+ Do przypisania znaków dla odpowiednich przedziałów potrzebny jest przedział
+ danych zatem obliczyć różnicę między elementem minimalnym a maksymalnym
+ zbioru 
+\begin_inset Formula $y$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+d=|max(y)-min(y)|
+\]
+
+\end_inset
+
+a następnie ustalić krok 
+\begin_inset Formula $k$
+\end_inset
+
+, ustalający rozmiar okna, dzieląc zbiór wartości 
+\begin_inset Formula $d$
+\end_inset
+
+ przez liczbę części 
+\begin_inset Formula $M$
+\end_inset
+
+.
+ W ostatnim kroku, począwszy od wartości minimalnej przydzielamy kolejne
+ przedziały kolejnym znakom.
+ Dla powyższego przykładu przyjęto alfabet trójelementowy 
+\begin_inset Formula $alpha={a,b,c}$
+\end_inset
+
+.
+ Dla 
+\begin_inset Formula $d=9.5-15=8$
+\end_inset
+
+ wielkość okna wynosi 
+\begin_inset Formula $k=\frac{8}{3}=2\frac{2}{3}$
+\end_inset
+
+.
+ Co prowadzi do podziału:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+c
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $<1\frac{1}{2},4\frac{1}{6})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $<4\frac{1}{6},6\frac{5}{6})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $<6\frac{5}{6},9\frac{1}{2}>$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+dzięki czemu otrzymujemy przypisania naniesione na wykres:
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/sax_moj.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Oryginalny sygnał z dyskretyzacją i naniesionym SAXem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+co oznacza, że ostatecznym wynikiem metody SAX dla szeregu czasowego 
+\begin_inset Formula $x$
+\end_inset
+
+ przy zadanych parametrach długości łańcucha wyjściowego 5 oraz alfabetu
+ trójelementowego jest ciąg znaków 
+\begin_inset Formula $abcab$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
 Badane zbiory danych
 \end_layout
 
@@ -613,7 +1342,7 @@ Zbiory pobrane od prof.
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1590,446 +2319,6 @@ cra\SpecialChar \-
 cy.
 \end_layout
 
-\begin_layout Section
-Figures
-\end_layout
-
-\begin_layout Standard
-The figures should be put in floats, like Fig.
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:ex-fig1"
-
-\end_inset
-
-.
- You can also reference figures using 
-\begin_inset Flex Name
-status collapsed
-
-\begin_layout Plain Layout
-prettyref
-\end_layout
-
-\end_inset
-
- package like this: 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:ex-fig1"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename logopp/logopp-jasne-czarne.pdf
-	lyxscale 40
-	width 40text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Example figure 
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:ex-fig1"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-It is possible to combine several pictures inside one float.
- Just insert a float inside a float.
- See Fig.
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:ex-fig2"
-
-\end_inset
-
- for example.
- Please note the horizontal spacing between subfigures.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset space \hfill{}
-\end_inset
-
-
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename logopp/logopp-jasne-czarne.pdf
-	lyxscale 40
-	width 30text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-The first subfigure
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset space \hfill{}
-\end_inset
-
-
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename logopp/logopp-jasne.pdf
-	lyxscale 40
-	width 30text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-The second subfigure
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset space \hfill{}
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-mbox{}
-\end_layout
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Example figure 
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:ex-fig2"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Tables
-\end_layout
-
-\begin_layout Standard
-Tables should have captions above like Table
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:ex-tab"
-
-\end_inset
-
-.
- Use small sans-serif fonts inside tables.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-placement h
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Example table 
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:ex-tab"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\family sans
-\size small
-\begin_inset Tabular
-<lyxtabular version="3" rows="4" columns="3">
-<features rotate="0" booktabs="true" tabularvalignment="middle">
-<column alignment="left" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family sans
-\series bold
-\size small
-Column 1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family sans
-\series bold
-\size small
-Column 2
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family sans
-\series bold
-\size small
-Column 3
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family sans
-\size small
-One
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family sans
-\size small
-1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family sans
-\size small
-4
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family sans
-\size small
-Two
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family sans
-\size small
-2
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family sans
-\size small
-5
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family sans
-\size small
-Three
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family sans
-\size small
-3
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family sans
-\size small
-6
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Standard
 \begin_inset Newpage newpage
 \end_inset
@@ -2417,74 +2706,6 @@ codeincp[language={[latex]tex},lastline=9]{thesis-template-latex.tex}
 \end_layout
 
 \end_deeper
-\begin_layout Section
-Math
-\end_layout
-
-\begin_layout Standard
-Can be put inline like this: 
-\begin_inset Formula $S=\sum_{i=1}^{i=K}x_{i}^{2}$
-\end_inset
-
- or in dedicated lines:
-\begin_inset Formula 
-\[
-S=\sum_{i=1}^{i=K}x_{i}^{2}
-\]
-
-\end_inset
-
-The equations can be also numbered like equation
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:est"
-
-\end_inset
-
-.
- 
-\begin_inset Formula 
-\begin{equation}
-s=\sqrt{\frac{1}{n-1}\sum_{i=1}^{n}\left(x_{i}-\overline{x}\right)^{2}}\label{eq:est}
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Algorithms
-\end_layout
-
-\begin_layout Standard
-Use 
-\begin_inset Flex Name
-status collapsed
-
-\begin_layout Plain Layout
-dcsalg
-\end_layout
-
-\end_inset
-
- package or directly 
-\begin_inset Flex Name
-status collapsed
-
-\begin_layout Plain Layout
-algorithmicx
-\end_layout
-
-\end_inset
-
- package.
-\end_layout
-
 \begin_layout Chapter
 Concept and Design of the System
 \end_layout
