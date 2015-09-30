@@ -12,7 +12,7 @@ F1 score: 	0.556095
 Sensitivity: 	0.523333
 Specificity: 	0.559897
 G-Mean: 	0.541145
-PCC: 		0.523333
+PCC:	0.523333
 Experiment performed successfully
 Execution took PT0.531S
 
@@ -31,7 +31,7 @@ F1 score: 	0.741712
 Sensitivity: 	0.739442
 Specificity: 	0.739442
 G-Mean: 	0.739442
-PCC: 		0.739442
+PCC:	0.739442
 Experiment performed successfully
 Execution took PT1.162S
 
@@ -50,7 +50,7 @@ F1 score: 	0.809444
 Sensitivity: 	0.806942
 Specificity: 	0.806942
 G-Mean: 	0.806942
-PCC: 		0.806942
+PCC:	0.806942
 Experiment performed successfully
 Execution took PT0.609S
 
@@ -69,7 +69,7 @@ F1 score: 	0.608661
 Sensitivity: 	0.599899
 Specificity: 	0.616928
 G-Mean: 	0.608354
-PCC: 		0.599899
+PCC:	0.599899
 Experiment performed successfully
 Execution took PT4.636S
 
@@ -88,7 +88,7 @@ F1 score: 	0.818066
 Sensitivity: 	0.818134
 Specificity: 	0.813687
 G-Mean: 	0.815908
-PCC: 		0.818134
+PCC:	0.818134
 Experiment performed successfully
 Execution took PT0.5S
 
@@ -107,7 +107,7 @@ F1 score: 	0.571858
 Sensitivity: 	0.569951
 Specificity: 	0.570355
 G-Mean: 	0.570153
-PCC: 		0.569951
+PCC:	0.569951
 Experiment performed successfully
 Execution took PT0.281S
 
@@ -127,7 +127,7 @@ F1 score: 	0.371444
 Sensitivity: 	-1.000000
 Specificity: 	-1.000000
 G-Mean: 	-1.000000
-PCC: 		0.341537
+PCC:	0.341537
 Experiment performed successfully
 Execution took PT2.609S
 
@@ -148,7 +148,7 @@ F1 score: 	0.336444
 Sensitivity: 	-1.000000
 Specificity: 	-1.000000
 G-Mean: 	-1.000000
-PCC: 		0.342600
+PCC:	0.342600
 Experiment performed successfully
 Execution took PT2.704S
 
@@ -167,7 +167,7 @@ F1 score: 	0.729403
 Sensitivity: 	0.644938
 Specificity: 	0.538062
 G-Mean: 	0.589081
-PCC: 		0.644938
+PCC:	0.644938
 Experiment performed successfully
 Execution took PT4.248S
 
@@ -191,7 +191,7 @@ F1 score: 	0.206872
 Sensitivity: 	-1.000000
 Specificity: 	-1.000000
 G-Mean: 	-1.000000
-PCC: 		0.208718
+PCC:	0.208718
 Experiment performed successfully
 Execution took PT3.562S
 
@@ -209,7 +209,7 @@ F1 score: 	0.525839
 Sensitivity: 	0.520115
 Specificity: 	0.529156
 G-Mean: 	0.524614
-PCC: 		0.520115
+PCC:	0.520115
 Experiment performed successfully
 Execution took PT1.031S
 

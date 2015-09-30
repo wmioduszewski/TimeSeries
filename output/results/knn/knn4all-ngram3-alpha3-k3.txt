@@ -1,0 +1,194 @@
+Experiment KNN for ECG200 has been started.
+Dataset ECG200 - 200 records.
+Data contains 2 classes:
+Class '-1' contains 67 records
+Class '1' contains 133 records
+KNN for ECG200 with params:
+ngram: 3, alpha: 3, knn: 3, 
+Accuracy: 	0.856667
+F1 score: 	0.856122
+Sensitivity: 	0.856667
+Specificity: 	0.784601
+G-Mean: 	0.819836
+PCC: 	0.856667
+Experiment performed successfully
+Execution took PT0.681S
+
+
+Experiment KNN for ECGFIVEDAYS has been started.
+Dataset ECGFiveDays - 884 records.
+Data contains 2 classes:
+Class '1' contains 442 records
+Class '2' contains 442 records
+KNN for ECGFIVEDAYS with params:
+ngram: 3, alpha: 3, knn: 3, 
+Accuracy: 	0.994344
+F1 score: 	0.994346
+Sensitivity: 	0.994344
+Specificity: 	0.994344
+G-Mean: 	0.994344
+PCC: 	0.994344
+Experiment performed successfully
+Execution took PT2.878S
+
+
+Experiment KNN for TWOLEADECG has been started.
+Dataset TwoLeadECG - 1162 records.
+Data contains 2 classes:
+Class '2' contains 581 records
+Class '1' contains 581 records
+KNN for TWOLEADECG with params:
+ngram: 3, alpha: 3, knn: 3, 
+Accuracy: 	0.838784
+F1 score: 	0.838832
+Sensitivity: 	0.838784
+Specificity: 	0.838784
+G-Mean: 	0.838784
+PCC: 	0.838784
+Experiment performed successfully
+Execution took PT3.018S
+
+
+Experiment KNN for YOGA has been started.
+Dataset yoga - 3300 records.
+Data contains 2 classes:
+Class '1' contains 1530 records
+Class '2' contains 1770 records
+KNN for YOGA with params:
+ngram: 3, alpha: 3, knn: 3, 
+Accuracy: 	0.880303
+F1 score: 	0.880301
+Sensitivity: 	0.880303
+Specificity: 	0.877450
+G-Mean: 	0.878875
+PCC: 	0.880303
+Experiment performed successfully
+Execution took PT17.21S
+
+
+Experiment KNN for MOTESTRAIN has been started.
+Dataset MoteStrain - 1272 records.
+Data contains 2 classes:
+Class '2' contains 587 records
+Class '1' contains 685 records
+KNN for MOTESTRAIN with params:
+ngram: 3, alpha: 3, knn: 3, 
+Accuracy: 	0.933438
+F1 score: 	0.933555
+Sensitivity: 	0.933438
+Specificity: 	0.934024
+G-Mean: 	0.933731
+PCC: 	0.933438
+Experiment performed successfully
+Execution took PT3.179S
+
+
+Experiment KNN for ITALYPOWERDEMAND has been started.
+Dataset ItalyPowerDemand - 1096 records.
+Data contains 2 classes:
+Class '1' contains 547 records
+Class '2' contains 549 records
+KNN for ITALYPOWERDEMAND with params:
+ngram: 3, alpha: 3, knn: 3, 
+Accuracy: 	0.954684
+F1 score: 	0.954777
+Sensitivity: 	0.954684
+Specificity: 	0.954720
+G-Mean: 	0.954702
+PCC: 	0.954684
+Experiment performed successfully
+Execution took PT2.31S
+
+
+Experiment KNN for CHLORINECONCENTRATION has been started.
+Dataset ChlorineConcentration - 4307 records.
+Data contains 3 classes:
+Class '1' contains 1000 records
+Class '3' contains 2307 records
+Class '2' contains 1000 records
+KNN for CHLORINECONCENTRATION with params:
+ngram: 3, alpha: 3, knn: 3, 
+Accuracy: 	0.793979
+F1 score: 	0.685964
+Sensitivity: 	0.000000
+Specificity: 	0.000000
+G-Mean: 	0.000000
+PCC: 	0.690968
+Experiment performed successfully
+Execution took PT23.081S
+
+
+Experiment KNN for TWOPATTERNS has been started.
+Dataset Two_Patterns - 5000 records.
+Data contains 4 classes:
+Class '2' contains 1248 records
+Class '3' contains 1245 records
+Class '4' contains 1201 records
+Class '1' contains 1306 records
+KNN for TWOPATTERNS with params:
+ngram: 3, alpha: 3, knn: 3, 
+Accuracy: 	0.986900
+F1 score: 	0.973816
+Sensitivity: 	0.000000
+Specificity: 	0.000000
+G-Mean: 	0.000000
+PCC: 	0.973800
+Experiment performed successfully
+Execution took PT1M18.368S
+
+
+Experiment KNN for WAFER has been started.
+Dataset wafer - 7164 records.
+Data contains 2 classes:
+Class '1' contains 6402 records
+Class '-1' contains 762 records
+KNN for WAFER with params:
+ngram: 3, alpha: 3, knn: 3, 
+Accuracy: 	0.996743
+F1 score: 	0.996740
+Sensitivity: 	0.996743
+Specificity: 	0.983812
+G-Mean: 	0.990256
+PCC: 	0.996743
+Experiment performed successfully
+Execution took PT54.891S
+
+
+Experiment KNN for INLINESKATE has been started.
+Dataset InlineSkate - 650 records.
+Data contains 7 classes:
+Class '2' contains 100 records
+Class '3' contains 103 records
+Class '7' contains 62 records
+Class '6' contains 98 records
+Class '4' contains 108 records
+Class '5' contains 117 records
+Class '1' contains 62 records
+KNN for INLINESKATE with params:
+ngram: 3, alpha: 3, knn: 3, 
+Accuracy: 	0.822125
+F1 score: 	0.383368
+Sensitivity: 	0.000000
+Specificity: 	0.000000
+G-Mean: 	0.000000
+PCC: 	0.377436
+Experiment performed successfully
+Execution took PT5.253S
+
+
+Experiment KNN for PATIENTS has been started.
+Data contains 2 classes:
+Class '0' contains 65 records
+Class '1' contains 51 records
+KNN for PATIENTS with params:
+ngram: 3, alpha: 3, knn: 3, 
+Accuracy: 	0.528736
+F1 score: 	0.523280
+Sensitivity: 	0.528736
+Specificity: 	0.492280
+G-Mean: 	0.510170
+PCC: 	0.528736
+Experiment performed successfully
+Execution took PT1.285S
+
+
