@@ -44,7 +44,7 @@
 @attribute o1atLcab numeric
 @attribute o1atMbac numeric
 @attribute o1atLbac numeric
-@attribute destClass {-1.0,1.0}
+@attribute destClass {-1,1}
 
 @data
 30,44,29,63,27,29,64,41,44,47,44,46,47,44,43,62,28,64,28,65,47,43,47,43,43,46,27,65,29,62,29,47,29,47,29,44,28,47,28,47,29,47,29,46,-1.0

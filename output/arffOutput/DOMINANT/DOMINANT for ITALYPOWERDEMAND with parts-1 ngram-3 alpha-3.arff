@@ -28,7 +28,7 @@
 @attribute o1atLabc numeric
 @attribute o1atMcba numeric
 @attribute o1atLcba numeric
-@attribute destClass {1.0,2.0}
+@attribute destClass {1,2}
 
 @data
 29,33,61,31,60,54,39,33,53,37,31,63,51,59,57,36,55,35,30,61,33,36,31,39,33,39,31,37,1.0

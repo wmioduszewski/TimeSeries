@@ -12,7 +12,7 @@
 @attribute o1atLba numeric
 @attribute o1atMcb numeric
 @attribute o1atLcb numeric
-@attribute destClass {2.0,3.0,7.0,6.0,4.0,5.0,1.0}
+@attribute destClass {2,3,7,6,4,5,1}
 
 @data
 66,54,37,27,39,56,67,28,39,56,67,28,2.0

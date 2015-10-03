@@ -42,7 +42,7 @@
 @attribute o1atLca numeric
 @attribute o1atMec numeric
 @attribute o1atLec numeric
-@attribute destClass {1.0,2.0}
+@attribute destClass {1,2}
 
 @data
 23,33,69,52,59,77,38,13,25,71,35,61,54,41,80,15,55,16,24,70,79,15,54,40,34,60,35,41,35,16,25,16,25,61,25,41,34,40,24,60,54,15,1.0

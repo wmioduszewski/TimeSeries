@@ -40,7 +40,7 @@
 @attribute o3atLac numeric
 @attribute o3atMba numeric
 @attribute o3atLba numeric
-@attribute destClass {1.0,2.0}
+@attribute destClass {1,2}
 
 @data
 29,31,1,30,2,0,30,0,31,0,29,1,17,12,27,2,13,18,3,28,13,18,3,28,3,18,9,31,19,11,21,10,20,0,0,31,0,21,0,31,1.0

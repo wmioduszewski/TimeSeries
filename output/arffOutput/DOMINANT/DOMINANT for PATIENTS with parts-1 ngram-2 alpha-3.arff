@@ -16,7 +16,7 @@
 @attribute o1atLba numeric
 @attribute o1atMca numeric
 @attribute o1atLca numeric
-@attribute destClass {0.0,1.0}
+@attribute destClass ,1}
 
 @data
 18,64,63,23,71,23,26,68,28,25,70,24,27,67,27,24,0.0

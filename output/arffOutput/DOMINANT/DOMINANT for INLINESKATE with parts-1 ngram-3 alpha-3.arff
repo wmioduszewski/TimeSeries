@@ -30,7 +30,7 @@
 @attribute o1atLbab numeric
 @attribute o1atMcbc numeric
 @attribute o1atLcbc numeric
-@attribute destClass {2.0,3.0,7.0,6.0,4.0,5.0,1.0}
+@attribute destClass {2,3,7,6,4,5,1}
 
 @data
 39,53,35,39,53,65,28,26,65,28,64,51,37,55,37,55,66,27,66,27,39,28,35,55,64,28,39,51,66,26,2.0

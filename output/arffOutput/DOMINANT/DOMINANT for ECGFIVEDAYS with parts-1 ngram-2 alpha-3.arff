@@ -16,7 +16,7 @@
 @attribute o1atLac numeric
 @attribute o1atMba numeric
 @attribute o1atLba numeric
-@attribute destClass {1.0,2.0}
+@attribute destClass {1,2}
 
 @data
 83,89,7,3,5,91,86,10,4,9,85,8,5,10,3,90,1.0

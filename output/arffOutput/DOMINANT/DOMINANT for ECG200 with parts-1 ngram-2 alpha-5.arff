@@ -46,7 +46,7 @@
 @attribute o1atLdb numeric
 @attribute o1atMda numeric
 @attribute o1atLda numeric
-@attribute destClass {-1.0,1.0}
+@attribute destClass {-1,1}
 
 @data
 85,48,5,34,70,44,56,22,88,8,36,58,23,72,46,49,24,50,87,7,45,49,36,58,23,71,23,59,46,8,45,7,23,58,24,8,37,49,36,7,37,8,36,49,23,49,-1.0

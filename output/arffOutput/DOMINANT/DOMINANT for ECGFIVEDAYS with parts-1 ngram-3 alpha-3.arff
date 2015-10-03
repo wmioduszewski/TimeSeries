@@ -46,7 +46,7 @@
 @attribute o1atLaac numeric
 @attribute o1atMaba numeric
 @attribute o1atLaba numeric
-@attribute destClass {1.0,2.0}
+@attribute destClass {1,2}
 
 @data
 5,89,4,7,2,83,10,3,9,5,82,7,80,87,85,7,3,90,84,6,5,8,2,9,2,88,2,89,80,8,3,8,5,7,5,10,85,5,3,10,3,87,3,10,2,90,1.0

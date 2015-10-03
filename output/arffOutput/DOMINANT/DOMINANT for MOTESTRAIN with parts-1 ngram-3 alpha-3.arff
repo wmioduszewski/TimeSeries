@@ -52,7 +52,7 @@
 @attribute o1atLacb numeric
 @attribute o1atMbca numeric
 @attribute o1atLbca numeric
-@attribute destClass {2.0,1.0}
+@attribute destClass {2,1}
 
 @data
 14,79,13,78,9,73,20,72,18,14,70,76,76,17,74,16,11,80,11,81,9,81,13,76,14,20,70,19,13,16,13,18,14,17,11,20,75,14,11,18,9,19,13,18,13,14,13,20,14,19,13,19,2.0
