@@ -4,18 +4,15 @@ Data contains 2 classes:
 Class '-1' contains 67 records
 Class '1' contains 133 records
 KNN for ECG200 with params:
-ngram: 3
-alpha: 11
-knn: 7
-
-Accuracy: 	0.861667
-F1 score: 	0.861243
-Sensitivity: 	0.861667
-Specificity: 	0.789588
-G-Mean: 	0.824834
-PCC: 		0.861667
+ngram: 3, alpha: 11, knn: 7, 
+Accuracy: 	0.860000
+F1 score: 	0.859612
+Sensitivity: 	0.860000
+Specificity: 	0.783811
+G-Mean: 	0.821019
+PCC: 	0.860000
 Experiment performed successfully
-Execution took PT0.657S
+Execution took PT0.706S
 
 
 Experiment KNN for ECGFIVEDAYS has been started.
@@ -24,18 +21,15 @@ Data contains 2 classes:
 Class '1' contains 442 records
 Class '2' contains 442 records
 KNN for ECGFIVEDAYS with params:
-ngram: 3
-alpha: 11
-knn: 7
-
-Accuracy: 	0.986048
-F1 score: 	0.986156
-Sensitivity: 	0.986048
-Specificity: 	0.986048
-G-Mean: 	0.986048
-PCC: 		0.986048
+ngram: 3, alpha: 11, knn: 7, 
+Accuracy: 	0.985294
+F1 score: 	0.985445
+Sensitivity: 	0.985294
+Specificity: 	0.985294
+G-Mean: 	0.985294
+PCC: 	0.985294
 Experiment performed successfully
-Execution took PT2.685S
+Execution took PT2.074S
 
 
 Experiment KNN for TWOLEADECG has been started.
@@ -44,18 +38,15 @@ Data contains 2 classes:
 Class '2' contains 581 records
 Class '1' contains 581 records
 KNN for TWOLEADECG with params:
-ngram: 3
-alpha: 11
-knn: 7
-
-Accuracy: 	0.965290
-F1 score: 	0.965304
-Sensitivity: 	0.965290
-Specificity: 	0.965290
-G-Mean: 	0.965290
-PCC: 		0.965290
+ngram: 3, alpha: 11, knn: 7, 
+Accuracy: 	0.960700
+F1 score: 	0.960764
+Sensitivity: 	0.960700
+Specificity: 	0.960700
+G-Mean: 	0.960700
+PCC: 	0.960700
 Experiment performed successfully
-Execution took PT5.44S
+Execution took PT3.436S
 
 
 Experiment KNN for YOGA has been started.
@@ -64,18 +55,15 @@ Data contains 2 classes:
 Class '1' contains 1530 records
 Class '2' contains 1770 records
 KNN for YOGA with params:
-ngram: 3
-alpha: 11
-knn: 7
-
-Accuracy: 	0.900606
-F1 score: 	0.900822
-Sensitivity: 	0.900606
-Specificity: 	0.896447
-G-Mean: 	0.898524
-PCC: 		0.900606
+ngram: 3, alpha: 11, knn: 7, 
+Accuracy: 	0.903434
+F1 score: 	0.903761
+Sensitivity: 	0.903434
+Specificity: 	0.898803
+G-Mean: 	0.901116
+PCC: 	0.903434
 Experiment performed successfully
-Execution took PT25.059S
+Execution took PT15.502S
 
 
 Experiment KNN for MOTESTRAIN has been started.
@@ -84,18 +72,15 @@ Data contains 2 classes:
 Class '2' contains 587 records
 Class '1' contains 685 records
 KNN for MOTESTRAIN with params:
-ngram: 3
-alpha: 11
-knn: 7
-
+ngram: 3, alpha: 11, knn: 7, 
 Accuracy: 	0.955713
 F1 score: 	0.955710
 Sensitivity: 	0.955713
 Specificity: 	0.954981
 G-Mean: 	0.955347
-PCC: 		0.955713
+PCC: 	0.955713
 Experiment performed successfully
-Execution took PT4.736S
+Execution took PT3.565S
 
 
 Experiment KNN for ITALYPOWERDEMAND has been started.
@@ -104,18 +89,15 @@ Data contains 2 classes:
 Class '1' contains 547 records
 Class '2' contains 549 records
 KNN for ITALYPOWERDEMAND with params:
-ngram: 3
-alpha: 11
-knn: 7
-
-Accuracy: 	0.969586
-F1 score: 	0.969589
-Sensitivity: 	0.969586
-Specificity: 	0.969582
-G-Mean: 	0.969584
-PCC: 		0.969586
+ngram: 3, alpha: 11, knn: 7, 
+Accuracy: 	0.968674
+F1 score: 	0.968677
+Sensitivity: 	0.968674
+Specificity: 	0.968675
+G-Mean: 	0.968674
+PCC: 	0.968674
 Experiment performed successfully
-Execution took PT2.936S
+Execution took PT2.283S
 
 
 Experiment KNN for CHLORINECONCENTRATION has been started.
@@ -125,18 +107,15 @@ Class '1' contains 1000 records
 Class '3' contains 2307 records
 Class '2' contains 1000 records
 KNN for CHLORINECONCENTRATION with params:
-ngram: 3
-alpha: 11
-knn: 7
-
-Accuracy: 	0.810180
-F1 score: 	0.711991
-Sensitivity: 	-1.000000
-Specificity: 	-1.000000
-G-Mean: 	-1.000000
-PCC: 		0.715270
+ngram: 3, alpha: 11, knn: 7, 
+Accuracy: 	0.811263
+F1 score: 	0.713785
+Sensitivity: 	0.000000
+Specificity: 	0.000000
+G-Mean: 	0.000000
+PCC: 	0.716895
 Experiment performed successfully
-Execution took PT30.097S
+Execution took PT21.565S
 
 
 Experiment KNN for TWOPATTERNS has been started.
@@ -147,18 +126,15 @@ Class '3' contains 1245 records
 Class '4' contains 1201 records
 Class '1' contains 1306 records
 KNN for TWOPATTERNS with params:
-ngram: 3
-alpha: 11
-knn: 7
-
-Accuracy: 	0.985667
-F1 score: 	0.971359
-Sensitivity: 	-1.000000
-Specificity: 	-1.000000
-G-Mean: 	-1.000000
-PCC: 		0.971333
+ngram: 3, alpha: 11, knn: 7, 
+Accuracy: 	0.985133
+F1 score: 	0.970278
+Sensitivity: 	0.000000
+Specificity: 	0.000000
+G-Mean: 	0.000000
+PCC: 	0.970267
 Experiment performed successfully
-Execution took PT1M31.063S
+Execution took PT1M0.772S
 
 
 Experiment KNN for WAFER has been started.
@@ -167,18 +143,15 @@ Data contains 2 classes:
 Class '1' contains 6402 records
 Class '-1' contains 762 records
 KNN for WAFER with params:
-ngram: 3
-alpha: 11
-knn: 7
-
-Accuracy: 	0.997255
-F1 score: 	0.997265
-Sensitivity: 	0.997255
-Specificity: 	0.993122
-G-Mean: 	0.995186
-PCC: 		0.997255
+ngram: 3, alpha: 11, knn: 7, 
+Accuracy: 	0.997208
+F1 score: 	0.997215
+Sensitivity: 	0.997208
+Specificity: 	0.991575
+G-Mean: 	0.994387
+PCC: 	0.997208
 Experiment performed successfully
-Execution took PT59.368S
+Execution took PT43.417S
 
 
 Experiment KNN for INLINESKATE has been started.
@@ -192,18 +165,15 @@ Class '4' contains 108 records
 Class '5' contains 117 records
 Class '1' contains 62 records
 KNN for INLINESKATE with params:
-ngram: 3
-alpha: 11
-knn: 7
-
-Accuracy: 	0.826960
-F1 score: 	0.399168
-Sensitivity: 	-1.000000
-Specificity: 	-1.000000
-G-Mean: 	-1.000000
-PCC: 		0.394359
+ngram: 3, alpha: 11, knn: 7, 
+Accuracy: 	0.827399
+F1 score: 	0.399381
+Sensitivity: 	0.000000
+Specificity: 	0.000000
+G-Mean: 	0.000000
+PCC: 	0.395897
 Experiment performed successfully
-Execution took PT5.838S
+Execution took PT3.661S
 
 
 Experiment KNN for PATIENTS has been started.
@@ -211,17 +181,14 @@ Data contains 2 classes:
 Class '0' contains 65 records
 Class '1' contains 51 records
 KNN for PATIENTS with params:
-ngram: 3
-alpha: 11
-knn: 7
-
-Accuracy: 	0.459770
-F1 score: 	0.459725
-Sensitivity: 	0.459770
-Specificity: 	0.443800
-G-Mean: 	0.451708
-PCC: 		0.459770
+ngram: 3, alpha: 11, knn: 7, 
+Accuracy: 	0.474138
+F1 score: 	0.472041
+Sensitivity: 	0.474138
+Specificity: 	0.450849
+G-Mean: 	0.462343
+PCC: 	0.474138
 Experiment performed successfully
-Execution took PT1.386S
+Execution took PT0.891S
 
 
