@@ -48,7 +48,7 @@
 @attribute o3atLab numeric
 @attribute o3atMca numeric
 @attribute o3atLca numeric
-@attribute destClass ,1}
+@attribute destClass {0,1}
 
 @data
 1,26,9,16,28,2,18,12,19,3,28,3,19,12,19,3,2,18,28,8,3,29,21,11,20,10,2,28,2,10,3,11,19,25,4,8,21,9,5,10,21,10,5,26,4,26,5,10,0.0

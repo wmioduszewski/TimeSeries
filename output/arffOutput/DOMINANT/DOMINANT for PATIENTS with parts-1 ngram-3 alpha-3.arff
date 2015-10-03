@@ -50,7 +50,7 @@
 @attribute o1atLcab numeric
 @attribute o1atMbca numeric
 @attribute o1atLbca numeric
-@attribute destClass ,1}
+@attribute destClass {0,1}
 
 @data
 28,18,60,22,25,63,26,62,21,22,67,64,23,64,21,26,61,14,23,24,70,18,58,59,27,24,23,66,22,67,70,16,70,14,27,18,25,24,23,24,26,23,22,24,27,21,26,23,26,22,0.0

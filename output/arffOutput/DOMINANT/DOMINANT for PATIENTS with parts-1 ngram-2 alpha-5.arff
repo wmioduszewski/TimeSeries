@@ -48,7 +48,7 @@
 @attribute o1atLda numeric
 @attribute o1atMae numeric
 @attribute o1atLae numeric
-@attribute destClass ,1}
+@attribute destClass {0,1}
 
 @data
 78,27,47,58,32,73,12,2,17,78,33,61,56,36,86,8,58,9,34,38,35,10,57,9,85,7,55,37,34,60,17,78,17,61,17,9,34,9,34,37,17,60,17,38,17,37,17,10,0.0
