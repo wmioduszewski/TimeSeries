@@ -2805,6 +2805,17 @@ weka.classifiers.Evaluation
 
  do przeprowadzania eksperymentów daje pewność, że wykorzystywane rozwiązanie
  jest dobrze przetestowane i powinno zwracać rzetelne wyniki.
+ Stąd również przyjęto format wyjściowy plików klasyfikacyjnych 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+*.arff
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -2979,87 +2990,6 @@ reference "code:Kod-eksperymentu-Counted"
 lstparams "language=Java,float,numbers=left,tabsize=4"
 inline false
 status open
-
-\begin_layout Plain Layout
-
-package pl.poznan.put.TimeSeries.Workflows;
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-import java.util.ArrayList;
-\end_layout
-
-\begin_layout Plain Layout
-
-import java.util.HashMap;
-\end_layout
-
-\begin_layout Plain Layout
-
-import java.util.List;
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-import org.apache.commons.lang3.tuple.Pair;
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
-\end_layout
-
-\begin_layout Plain Layout
-
-import pl.poznan.put.TimeSeries.DataExporters.CountedSaxArffBuilder;
-\end_layout
-
-\begin_layout Plain Layout
-
-import pl.poznan.put.TimeSeries.DataProcessors.PeriodicNgramCounter;
-\end_layout
-
-\begin_layout Plain Layout
-
-import pl.poznan.put.TimeSeries.Model.CalculatedRecord;
-\end_layout
-
-\begin_layout Plain Layout
-
-import pl.poznan.put.TimeSeries.Model.IRecord;
-\end_layout
-
-\begin_layout Plain Layout
-
-import pl.poznan.put.TimeSeries.Util.Config;
-\end_layout
-
-\begin_layout Plain Layout
-
-import pl.poznan.put.TimeSeries.Util.DataDivider;
-\end_layout
-
-\begin_layout Plain Layout
-
-import weka.core.Instances;
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 
@@ -3420,6 +3350,464 @@ DataImporterEamonn
 
 \begin_layout Subsection
 Eksportowanie pliku arff
+\end_layout
+
+\begin_layout Standard
+Jedną z funkcji programu jest wygenerowanie pliku 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+arff
+\end_layout
+
+\end_inset
+
+ w którym zapisane są już przetworzone dane o instacjach, gotowe do klasyfikacji
+ klasyfikatorami 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+weki
+\end_layout
+
+\end_inset
+
+.
+ Aby stworzyć taki eksporter na własny użytek można posiłkować się klasą
+ abstrakcyjną 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+ArffExporterBase
+\end_layout
+
+\end_inset
+
+ i rozszerzyć ją.
+ Eksporter taki zostanie poniżej opisany na przykładzie 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+RegressionArffBuilder
+\end_layout
+
+\end_inset
+
+.
+ Jego kod można znaleźć na listingu 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "code:RegressionExporter"
+
+\end_inset
+
+.
+ Klasa nadrzędna wymaga od programisty zaimplementowania dwóch metod oraz
+ kontruktora.
+ 
+\end_layout
+
+\begin_layout Standard
+Metoda 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+setAttributes
+\end_layout
+
+\end_inset
+
+ służy do tego aby nadać i nazwać atrybuty dla formatu danych jaki zdecydowano
+ użyć w docelowym pliku 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+arff
+\end_layout
+
+\end_inset
+
+.
+ W pliku dla eksperymentu Regression tworzy się tyle par 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+slope-intercept
+\end_layout
+
+\end_inset
+
+ (współczynników a i b regresji) na ile części został podzielony sygnał.
+ Należy również pamiętać o tym aby w liście atrybutów zawrzeć również atrybut
+ decyzyjny.
+\end_layout
+
+\begin_layout Standard
+W funkcji buildInstances programista musi obsłużyć przeniesienie danych
+ ze struktury w jakiej trzymał dane po ewentualnych obliczeniach w metodzie
+ 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+processData
+\end_layout
+
+\end_inset
+
+ klasy 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+WorkflowBase
+\end_layout
+
+\end_inset
+
+ do obiektu 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Instances
+\end_layout
+
+\end_inset
+
+.
+ Dzięki temu umożliwione będzie wygodne eksportowanie pliku 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+arff
+\end_layout
+
+\end_inset
+
+ oraz przeprowadzanie eksperymentu za pomocą klasy 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Evaluation
+\end_layout
+
+\end_inset
+
+.
+ Ostatnią rzeczą o którą trzeba zadbać, to wywołanie metod 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+setDestinationClasses
+\end_layout
+
+\end_inset
+
+ oraz 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+setAttributes
+\end_layout
+
+\end_inset
+
+ w kontruktorze tak jak pokazano na wspomnianym listingu.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+public class RegressionArffBuilder extends ArffExporterBase {
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	private List<RegressionRow> input;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	public RegressionArffBuilder(List<RegressionRow> input) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		this.input = input;
+\end_layout
+
+\begin_layout Plain Layout
+
+		setDestinationClasses(input);
+\end_layout
+
+\begin_layout Plain Layout
+
+		setAttributes();
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	protected void setAttributes() {
+\end_layout
+
+\begin_layout Plain Layout
+
+		attrInfo = new FastVector();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		int regressionCount = input.stream().findFirst().get()
+\end_layout
+
+\begin_layout Plain Layout
+
+				.getRegressionResults().size();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		for (int i = 0; i < regressionCount; i++) {
+\end_layout
+
+\begin_layout Plain Layout
+
+			attrInfo.addElement(new Attribute(String.format("slope%d", i + 1)));
+\end_layout
+
+\begin_layout Plain Layout
+
+			attrInfo.addElement(new Attribute(String.format("intercept%d",
+\end_layout
+
+\begin_layout Plain Layout
+
+					i + 1)));
+\end_layout
+
+\begin_layout Plain Layout
+
+		}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		Attribute destClassAttribute = null;
+\end_layout
+
+\begin_layout Plain Layout
+
+		try {
+\end_layout
+
+\begin_layout Plain Layout
+
+			destClassAttribute = constructDestinationClassesNominalAttribute(destClasses)
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+		} catch (Exception e) {
+\end_layout
+
+\begin_layout Plain Layout
+
+			e.printStackTrace();
+\end_layout
+
+\begin_layout Plain Layout
+
+		}
+\end_layout
+
+\begin_layout Plain Layout
+
+		attrInfo.addElement(destClassAttribute);
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	@Override
+\end_layout
+
+\begin_layout Plain Layout
+
+	public Instances buildInstances() {
+\end_layout
+
+\begin_layout Plain Layout
+
+		instances = new Instances("Regression", attrInfo, input.size());
+\end_layout
+
+\begin_layout Plain Layout
+
+		instances.setClassIndex(instances.numAttributes() - 1);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		for (RegressionRow row : input) {
+\end_layout
+
+\begin_layout Plain Layout
+
+			Instance instance = new Instance(attrInfo.size());
+\end_layout
+
+\begin_layout Plain Layout
+
+			int attrIdx = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+			for (RegressionResult regResult : row.getRegressionResults()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+				instance.setValue(attrIdx++, regResult.getSlope());
+\end_layout
+
+\begin_layout Plain Layout
+
+				instance.setValue(attrIdx++, regResult.getIntercept());
+\end_layout
+
+\begin_layout Plain Layout
+
+			}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+			int destClassIndex = getIndexOfDestinationClass(row
+\end_layout
+
+\begin_layout Plain Layout
+
+					.getDestinationClass());
+\end_layout
+
+\begin_layout Plain Layout
+
+			instance.setValue(attrIdx, destClassIndex);
+\end_layout
+
+\begin_layout Plain Layout
+
+			instances.add(instance);
+\end_layout
+
+\begin_layout Plain Layout
+
+		}
+\end_layout
+
+\begin_layout Plain Layout
+
+		return instances;
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+Kod eksportera dla eksperymentu Regression
+\begin_inset CommandInset label
+LatexCommand label
+name "code:RegressionExporter"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
