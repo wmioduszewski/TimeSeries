@@ -11,6 +11,7 @@ import pl.poznan.put.TimeSeries.Workflows.RegressionWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.WorkflowBase;
 import weka.classifiers.Classifier;
 import weka.classifiers.lazy.IBk;
+import weka.classifiers.meta.Bagging;
 import weka.classifiers.trees.J48;
 
 public enum Experiments {
@@ -42,13 +43,23 @@ public enum Experiments {
 		}
 		return workflow;
 	}
+	
+	private static Classifier getBaggingClassifier(){
+		Bagging b = new Bagging();
+		b.setSeed(64);
+		b.setClassifier(new J48());
+		b.setNumIterations(50);
+		
+		return b;
+	}
 
 	public Classifier getClassifier() {
 		Classifier classifier = null;
 		int k = Config.getInstance().getK();
 		switch (this) {
 		case REGRESSION:
-			classifier = new J48();
+//			classifier = new J48();			
+			classifier = getBaggingClassifier();
 			break;
 		case DOMINANT:
 			classifier = new J48();
