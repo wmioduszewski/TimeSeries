@@ -48,8 +48,9 @@ public enum Experiments {
 		Bagging b = new Bagging();
 		b.setSeed(64);
 		b.setClassifier(new J48());
+		J48 j48 = new J48();
+		j48.setReducedErrorPruning(true);
 		b.setNumIterations(50);
-		
 		return b;
 	}
 
