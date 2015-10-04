@@ -14,7 +14,7 @@
 dcs
 \end_modules
 \maintain_unincluded_children false
-\language english
+\language polish
 \language_package default
 \inputencoding utf8
 \fontencoding default
@@ -80,7 +80,7 @@ dcs
 \tocdepth 2
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\quotes_language polish
 \papercolumns 1
 \papersides 2
 \paperpagestyle default
@@ -2685,7 +2685,15 @@ n");
 
 \end_deeper
 \begin_layout Enumerate
-And finally, You can include code from external file:
+And finally, You can include code from exte
+\end_layout
+
+\begin_layout Enumerate
+rn
+\end_layout
+
+\begin_layout Enumerate
+al file:
 \end_layout
 
 \begin_deeper
@@ -2703,6 +2711,17 @@ codeincp[language={[latex]tex},lastline=9]{thesis-template-latex.tex}
 \end_inset
 
 
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -2712,6 +2731,695 @@ Concept and Design of the System
 
 \begin_layout Chapter
 Implementation
+\end_layout
+
+\begin_layout Section
+Koncepcja budowy biblioteki
+\end_layout
+
+\begin_layout Standard
+Wiodącym założeniem przyświecającym pracom implementacyjnym nad biblioteką
+ obliczeniową było podążanie za dobrymi praktykami wytwarzania oprogramowania
+ według Roberta C.
+ Martina - z głównym naciskiem na OCP (Open Closed Principle)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "MartinPrinciples"
+
+\end_inset
+
+ - zasadę 
+\begin_inset Quotes pld
+\end_inset
+
+otwarte-zamknięte
+\begin_inset Quotes prd
+\end_inset
+
+.
+ Oznacza to, że oprogramowanie ma być otwarte na zmiany, lecz zamknięte
+ na modyfikacje - starano się zatem osiągnąć stan, w którym istniejący kod
+ można rozszerzyć z jak najmniejszym wysiłkiem wniesionym w edycję istniejącego
+ kodu.
+ Szczegóły tej idei przedstawiono w poniższych sekcjach.
+\end_layout
+
+\begin_layout Subsection
+Użyte biblioteki pomocnicze
+\end_layout
+
+\begin_layout Standard
+Żeby móc w pełni opisać funkcjonalność i sposób budowy programu należy nadmienić
+ jakimi bibliotekami wspomagano się podczas tego procesu.
+\end_layout
+
+\begin_layout Subsubsection
+Weka
+\end_layout
+
+\begin_layout Standard
+Najważniejsza biblioteka, z którą program współpracuje najściślej.
+ Więdząc, że Weka jest często używana do klasyfikacji czy uczenia maszynowego,
+ autor chciał stworzyć narzędzie kompatybilne z programem stworzonym na
+ Uniwesytecie w australijskim Waikato.
+ Kilka kluczowych klas programu autora rozszerza klasy pakietu 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+weka
+\end_layout
+
+\end_inset
+
+ stwarzając możliwości wykorzystania rozmaitych składowych tego systemu.
+ Ponadto używanie klas takich jak 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+weka.classifiers.Evaluation
+\end_layout
+
+\end_inset
+
+ do przeprowadzania eksperymentów daje pewność, że wykorzystywane rozwiązanie
+ jest dobrze przetestowane i powinno zwracać rzetelne wyniki.
+\end_layout
+
+\begin_layout Subsubsection
+jMotif
+\end_layout
+
+\begin_layout Standard
+Z pakietu 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+jMotif
+\end_layout
+
+\end_inset
+
+ zaczerpnięto metody zajmujące się tworzeniem łańcucha danych na podstawie
+ zadanego szeregu czasowego za pomocą
+\begin_inset space \space{}
+\end_inset
+
+algorytmu SAX.
+\end_layout
+
+\begin_layout Subsubsection
+JFreeChart
+\end_layout
+
+\begin_layout Standard
+Biblioteka służąca do rysowania wykresów.
+ Bardzo pomocna w początkowej fazie implementacji, kiedy autorowi zależało
+ na zobrazowaniu przebiegu szeregów szasowych.
+ Ich wizualizacja mogła przyczynić się do lepszego zrozumienia zależności
+ między przebiegami, a diagnozą pacjenta.
+\end_layout
+
+\begin_layout Subsubsection
+Jxl
+\end_layout
+
+\begin_layout Standard
+Dzięki pakietowi 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+jxl
+\end_layout
+
+\end_inset
+
+w początkowej fazie implementacji autor mógł ściśle współpracować z arkuszami
+ kalkulacyjnymi w celu raportowania danych do plików .xls w celu ich dalszej
+ analizy statystycznej.
+\end_layout
+
+\begin_layout Subsubsection
+joda-time
+\end_layout
+
+\begin_layout Standard
+W momencie gdy prace nad tą pracą dyplomową zostały rozpoczęte, wspracie
+ dla obiektów typu data czy czas było dla autora niewystarczające, dlatego
+ zdecydowano się na wykorzystanie biblioteki 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+joda-time
+\end_layout
+
+\end_inset
+
+ w celu zapewnienia wymaganej obsługi tego rodzaju danych.
+\end_layout
+
+\begin_layout Subsubsection
+fast-dtw
+\end_layout
+
+\begin_layout Standard
+Pakiet fast-dtw dostarcza obsługę obliczeniową dla eksperymentu bazującego
+ na algorytmie Dynamic Time Warping, dzięki czemu autor mógł skorzystać
+ z gotowego, przetestowanego i relatywnie wydajnego czasowo i pamięciowo
+ rozwiązania dla tego celu.
+\end_layout
+
+\begin_layout Subsubsection
+apache-commons
+\end_layout
+
+\begin_layout Standard
+W momentach gdy brakowało pewnych struktur danych w obecnej wersji Java
+ - takich jak choćby Pair (ang.
+ para) lub należało skorzystać z popularnych metod takich jak obliczenie
+ regresji, korzystano z bibliotek apache-commons.
+\end_layout
+
+\begin_layout Subsection
+Punkt wyjścia
+\end_layout
+
+\begin_layout Standard
+Praca programu zorientowana jest wokół obiektu 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Workflow
+\end_layout
+
+\end_inset
+
+ (ang.
+ 
+\begin_inset Quotes pld
+\end_inset
+
+przepływ
+\begin_inset Quotes prd
+\end_inset
+
+, 
+\begin_inset Quotes pld
+\end_inset
+
+proces
+\begin_inset Quotes prd
+\end_inset
+
+) - ma on na celu zdefiniowanie następujących po sobie kroków składających
+ się na przebieg eksperymentu - począwszy od wczytania danych, aż do wypisania
+ ostatecznego wyniku.
+ Jego rdzeń zawiera się w abstrakcyjnej klasie 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+WorkflowBase
+\end_layout
+
+\end_inset
+
+która posiada trzy główne metody - odpalenia przebiegu pełnego eksperymentu,
+ wygenerowania pliku arff dla eksperymentu oraz wyliczenia wyniku eksperymentu
+ dla zadanego pliku arff.
+ Ponadto jest w stanie opisać podstawowe statystyki wczytanych danych, takie
+ jak liczba klas decyzyjnych, podział instacji w klasach, czy liczba atrybutów
+ w ramach instancji.
+ Aby stworzyć własny eksperyment wystarczy stworzyć klasę dziedziczącą z
+ 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+WorkflowBase
+\end_layout
+
+\end_inset
+
+ oraz zaimplementować wymagane metody.
+ Przykładowy szkic takiej klasy przedstawiono na listingu 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "code:Kod-eksperymentu-Counted"
+
+\end_inset
+
+:
+\begin_inset listings
+lstparams "language=Java,float,numbers=left,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+package pl.poznan.put.TimeSeries.Workflows;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import java.util.ArrayList;
+\end_layout
+
+\begin_layout Plain Layout
+
+import java.util.HashMap;
+\end_layout
+
+\begin_layout Plain Layout
+
+import java.util.List;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import org.apache.commons.lang3.tuple.Pair;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
+\end_layout
+
+\begin_layout Plain Layout
+
+import pl.poznan.put.TimeSeries.DataExporters.CountedSaxArffBuilder;
+\end_layout
+
+\begin_layout Plain Layout
+
+import pl.poznan.put.TimeSeries.DataProcessors.PeriodicNgramCounter;
+\end_layout
+
+\begin_layout Plain Layout
+
+import pl.poznan.put.TimeSeries.Model.CalculatedRecord;
+\end_layout
+
+\begin_layout Plain Layout
+
+import pl.poznan.put.TimeSeries.Model.IRecord;
+\end_layout
+
+\begin_layout Plain Layout
+
+import pl.poznan.put.TimeSeries.Util.Config;
+\end_layout
+
+\begin_layout Plain Layout
+
+import pl.poznan.put.TimeSeries.Util.DataDivider;
+\end_layout
+
+\begin_layout Plain Layout
+
+import weka.core.Instances;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+public class CountedWorkflow extends WorkflowBase {
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	private List<CalculatedRecord> calculatedRecords;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	public CountedWorkflow(DivisionOptions divisionOption, boolean glaucoma)
+ {
+\end_layout
+
+\begin_layout Plain Layout
+
+		super(divisionOption, glaucoma);
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	@Override
+\end_layout
+
+\begin_layout Plain Layout
+
+	protected Instances buildInstances() {
+\end_layout
+
+\begin_layout Plain Layout
+
+		exporter = new CountedSaxArffBuilder(calculatedRecords);
+\end_layout
+
+\begin_layout Plain Layout
+
+		return exporter.buildInstances();
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	@Override
+\end_layout
+
+\begin_layout Plain Layout
+
+	protected void processData() throws Exception {
+\end_layout
+
+\begin_layout Plain Layout
+
+		calculatedRecords = new ArrayList<CalculatedRecord>();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		for (IRecord record : records) {
+\end_layout
+
+\begin_layout Plain Layout
+
+			ArrayList<HashMap<String, Integer>> periodicallyCountedNgrams = 
+\end_layout
+
+\begin_layout Plain Layout
+
+									new ArrayList<HashMap<String, Integer>>();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+			List<String> dividedSax = DataDivider.divideStringRegularly(
+\end_layout
+
+\begin_layout Plain Layout
+
+					record.getSaxString(), divisionPartsAmount);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+			for (String elem : dividedSax) {
+\end_layout
+
+\begin_layout Plain Layout
+
+				HashMap<String, Integer> ngramCountMap = PeriodicNgramCounter
+\end_layout
+
+\begin_layout Plain Layout
+
+						.slashStringAndCountNgrams(elem, windowLen);
+\end_layout
+
+\begin_layout Plain Layout
+
+				periodicallyCountedNgrams.add(ngramCountMap);
+\end_layout
+
+\begin_layout Plain Layout
+
+			}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+			CalculatedRecord calcRecord = new CalculatedRecord(
+\end_layout
+
+\begin_layout Plain Layout
+
+					periodicallyCountedNgrams, record.getDestinationClass());
+\end_layout
+
+\begin_layout Plain Layout
+
+			calculatedRecords.add(calcRecord);
+\end_layout
+
+\begin_layout Plain Layout
+
+		}
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	@Override
+\end_layout
+
+\begin_layout Plain Layout
+
+	protected void setConcerningParams() {
+\end_layout
+
+\begin_layout Plain Layout
+
+		concerningParameters.add(Pair.of("parts", divisionPartsAmount));
+\end_layout
+
+\begin_layout Plain Layout
+
+		concerningParameters.add(Pair.of("ngram", windowLen));
+\end_layout
+
+\begin_layout Plain Layout
+
+		concerningParameters.add(Pair.of("alpha", Config.getInstance().getSaxAlphabeatSize
+()));
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+Kod eksperymentu Counted
+\begin_inset CommandInset label
+LatexCommand label
+name "code:Kod-eksperymentu-Counted"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Jeżeli wczytane przez nas dane wymagają jakiejkolwiek ingerencji obliczeniowej
+ - tak jak na przykład eksperyment Counted, to fragment kodu odpowiadający
+ za te obliczenia powinien znaleźć się w metodzie 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+processData
+\end_layout
+
+\end_inset
+
+.
+ Jak widać w przywołanym listingu, wszystkie wymagane kalkulacje odbywają
+ się w tym fragmencie kodu.
+ Kolejna metoda to 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+buildInstances
+\end_layout
+
+\end_inset
+
+ która odpowiada za ustawienie odpowiedniego eksportera danych (w szczegółach
+ zostanie omówiony niżej) oraz przekazanie mu przeliczonych danych.
+ Za jego pomocą tworzony jest obiekt 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Instaces
+\end_layout
+
+\end_inset
+
+, który musi zostać zwrócony jako wynik metody.
+ Funkcja 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+setConcerningParams
+\end_layout
+
+\end_inset
+
+służy już tylko do tego, aby podczas wyświetlania wyniku eksperymentu wypisać,
+ które parametry programu mają wpływ na pracę tego eksperymentu, oraz jakie
+ ich wartości zostały ustawione podczas bierzącego wykonania.
+ 
+\end_layout
+
+\begin_layout Subsection
+Importowanie danych
+\end_layout
+
+\begin_layout Standard
+Importowanie danych zostało rozdzielone ze względu na dwa różne formaty
+ danych jakie potrafi wczytać program.
+ Ostateczną wersją danych pacjentów jest opisanie danych każdego pacjenta
+ w osobnym pliku 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+.csv
+\end_layout
+
+\end_inset
+
+.
+ W każdym z nich podany jest identyfikator pacjenta, oraz dane z poszczególnych
+ pomiarów ciśnienia w oku.
+ W ramach każdego pomiaru udostępnionych jest sporo danych, takich jak godzina
+ o której pomiar został zdjęty, pozycja ciała w której znajdował się pacjent
+ itp.
+ choć na potrzebę tej pracy korzystano tylko z miary 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+TFADJ
+\end_layout
+
+\end_inset
+
+.
+ Jedyna informacja, której nie ma w tym pliku to diagnoza - ta opisana jest
+ w pliku zbiorczym dla wszystkich pacjentów.
+ W kolejnych wierszach znajdują się pary identyfikator pacjenta - diagnoza.
+\end_layout
+
+\begin_layout Standard
+Drugim formatem, jaki wspiera program jest format danych prof.
+ Eamonna.
+ Ich charakterystyka jest prosta - każdy nowy wiersz w pliku to nowa instacja.
+ W ramach każdego wiersza figurują atrybuty oddzielone spacjami, z których
+ pierwszy to atrybut decyzyjny, a kolejne to szereg wartości składające
+ się w szereg czasowy dla tej instancji.
+ Tak jak wspomniano wcześniej, zapis ten pomija dokładny czas zebrania pomiaru.
+ Klasy odpowiadające za wczytywanie danych to odpowiednio 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+PatientDataImporter2
+\end_layout
+
+\end_inset
+
+ oraz 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+DataImporterEamonn
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Eksportowanie pliku arff
 \end_layout
 
 \begin_layout Chapter
