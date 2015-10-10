@@ -20,12 +20,15 @@ public abstract class ArffExporterBase {
 
 	protected static Attribute constructDestinationClassesNominalAttribute(
 			List<Double> destClasses) throws Exception {
+		
 		if (destClasses.size() == 1)
 			throw new Exception("There is only one class in dataset!");
 
 		FastVector destValues = new FastVector();
 		for (Double elem : destClasses) {
-			destValues.addElement(elem.toString());
+			Integer ii = elem.intValue();
+			if(ii==-1) ii=2;
+			destValues.addElement(ii.toString());
 		}
 		Attribute destClassAttribute = new Attribute("destClass", destValues);
 		return destClassAttribute;
@@ -52,17 +55,6 @@ public abstract class ArffExporterBase {
 			System.out.println(String.format("Unable to save arff to path: %s",
 					path));
 			e.printStackTrace();
-		}
-	}
-
-	protected void cutAttributes() {
-		float attributesToCutRatio = Config.getInstance()
-				.getAttributesToCutRatio();
-		int attributesToCut = (int) ((instances.numAttributes() - 1) * attributesToCutRatio);
-		Random rand = new Random();
-		for (int i = 0; i < attributesToCut; i++) {
-			int index = rand.nextInt(instances.numAttributes() - 1);
-			instances.deleteAttributeAt(index);
 		}
 	}
 	

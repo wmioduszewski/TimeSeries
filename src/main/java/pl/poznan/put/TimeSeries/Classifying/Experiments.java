@@ -2,6 +2,7 @@ package pl.poznan.put.TimeSeries.Classifying;
 
 import pl.poznan.put.TimeSeries.Constants.DivisionOptions;
 import pl.poznan.put.TimeSeries.Util.Config;
+import pl.poznan.put.TimeSeries.Workflows.BaggingWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.CountedWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.NgramWorkflow;
 import pl.poznan.put.TimeSeries.Workflows.DominantWorkflow;
@@ -15,7 +16,7 @@ import weka.classifiers.meta.Bagging;
 import weka.classifiers.trees.J48;
 
 public enum Experiments {
-	REGRESSION, DOMINANT, COUNTED, NGRAM, KNN, DTW;
+	REGRESSION, DOMINANT, COUNTED, NGRAM, KNN, DTW, BAGGING;
 
 	public WorkflowBase getWorkflow() {
 		WorkflowBase workflow = null;
@@ -40,6 +41,8 @@ public enum Experiments {
 		case DTW:
 			workflow = new DtwWorkflow(divisionOption, isGlaucoma);
 			break;
+		case BAGGING:
+			workflow = new BaggingWorkflow(divisionOption, isGlaucoma);
 		}
 		return workflow;
 	}
@@ -51,6 +54,7 @@ public enum Experiments {
 		J48 j48 = new J48();
 		j48.setReducedErrorPruning(true);
 		b.setNumIterations(50);
+		b.setBagSizePercent(20);
 		return b;
 	}
 
@@ -59,8 +63,7 @@ public enum Experiments {
 		int k = Config.getInstance().getK();
 		switch (this) {
 		case REGRESSION:
-//			classifier = new J48();			
-			classifier = getBaggingClassifier();
+			classifier = new J48();						
 			break;
 		case DOMINANT:
 			classifier = new J48();
@@ -79,6 +82,9 @@ public enum Experiments {
 			ibk.setNearestNeighbourSearchAlgorithm(new DtwSearch());
 			classifier = ibk;
 			break;		
+		case BAGGING:
+			classifier = getBaggingClassifier();
+			break;
 		}
 		return classifier;
 	}

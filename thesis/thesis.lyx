@@ -229,7 +229,7 @@ Celem pracy jest opracowanie / wykonanie analizy / zaprojektowanie / ...........
 \end_layout
 
 \begin_layout Chapter
-Background
+Kontekst teoretyczny
 \end_layout
 
 \begin_layout Section
@@ -2132,11 +2132,100 @@ status open
 \end_layout
 
 \begin_layout Chapter
-Concept and Design of the System
+Koncepcja projektu
+\end_layout
+
+\begin_layout Section
+Klasyfikatory
+\end_layout
+
+\begin_layout Standard
+DRSA w dominacji, dyskretyzacja knna saxem, ogólnie- użycie saxa
+\end_layout
+
+\begin_layout Standard
+Klasyfikatory drzewiaste, regułowe, bagging
+\end_layout
+
+\begin_layout Section
+Miary
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ActivityLearning"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Do oceniania poprawności eksperymentów wybrano sześć miar statystycznychm
+ które opisano poniżej.
+\end_layout
+
+\begin_layout Subsection
+Dokładność (ang.
+ accuracy)
+\end_layout
+
+\begin_layout Standard
+Najbardziej znana i intuicyjna miara ewaluacji klasyfikatora to właśnie
+ dokładność.
+ Określa ją stosunek poprawnie sklasyfikowanych instacji do liczby wszystkich
+ instacji.
+ Dzięki swojej prostej koncepcji może być z powodzeniem używana zarówno
+ w problemach binarnych jak i wieloklasowych.
+\begin_inset Formula 
+\[
+Accuracy=\frac{correctly\,classified\,instances}{total\,instances}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Wrażliwość (ang.
+ sensitivity)
+\end_layout
+
+\begin_layout Standard
+asd
+\end_layout
+
+\begin_layout Subsection
+Specyficzność (ang.
+ specificity)
+\end_layout
+
+\begin_layout Standard
+asd
+\end_layout
+
+\begin_layout Subsection
+Średnia geometryczna (ang.
+ geometric mean)
+\end_layout
+
+\begin_layout Standard
+asd
+\end_layout
+
+\begin_layout Subsection
+Miara F (f-measure)
+\end_layout
+
+\begin_layout Standard
+asd
+\end_layout
+
+\begin_layout Subsection
+PCC
 \end_layout
 
 \begin_layout Chapter
-Implementation
+Implementacja
 \end_layout
 
 \begin_layout Section
@@ -2611,7 +2700,6 @@ public class CountedWorkflow extends WorkflowBase {
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
 Kod eksperymentu Counted
 \begin_inset CommandInset label
 LatexCommand label
@@ -3196,7 +3284,6 @@ public class RegressionArffBuilder extends ArffExporterBase {
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
 Kod eksportera dla eksperymentu Regression
 \begin_inset CommandInset label
 LatexCommand label
@@ -3218,12 +3305,12 @@ name "code:RegressionExporter"
 \end_layout
 
 \begin_layout Chapter
-Conclusions
+Wnioski
 \end_layout
 
 \begin_layout Chapter
 \start_of_appendix
-Users Guide
+Podręcznik użytkownika
 \end_layout
 
 \begin_layout Standard

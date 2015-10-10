@@ -139,6 +139,8 @@ public abstract class WorkflowBase {
 			arffPath += " " + pair.getLeft() + "-" + pair.getRight();
 		}
 
+		arffPath = arffPath.replaceAll(" ", "");
+		
 		arffPath += ".arff";
 	}
 }
