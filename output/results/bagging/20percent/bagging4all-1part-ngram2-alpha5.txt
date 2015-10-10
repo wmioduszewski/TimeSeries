@@ -1,0 +1,205 @@
+Experiment BAGGING for ECG200 has been started.
+Dataset ECG200 - 200 records.
+Data contains 2 classes:
+Class '-1' contains 67 records
+Class '1' contains 133 records
+Dataset is 96 elements long.
+BAGGING for ECG200 with params:
+parts: 1, ngram: 2, alpha: 5, 
+Accuracy: 	0.775000
+F1 score: 	0.772674
+Sensitivity: 	0.775000
+Specificity: 	0.644706
+G-Mean: 	0.706800
+PCC: 	0.775000
+Experiment performed successfully
+Execution took PT1.094S
+
+
+Experiment BAGGING for ECGFIVEDAYS has been started.
+Dataset ECGFiveDays - 884 records.
+Data contains 2 classes:
+Class '1' contains 442 records
+Class '2' contains 442 records
+Dataset is 136 elements long.
+BAGGING for ECGFIVEDAYS with params:
+parts: 1, ngram: 2, alpha: 5, 
+Accuracy: 	0.865008
+F1 score: 	0.866640
+Sensitivity: 	0.865008
+Specificity: 	0.865008
+G-Mean: 	0.865008
+PCC: 	0.865008
+Experiment performed successfully
+Execution took PT2.27S
+
+
+Experiment BAGGING for TWOLEADECG has been started.
+Dataset TwoLeadECG - 1162 records.
+Data contains 2 classes:
+Class '2' contains 581 records
+Class '1' contains 581 records
+Dataset is 82 elements long.
+BAGGING for TWOLEADECG with params:
+parts: 1, ngram: 2, alpha: 5, 
+Accuracy: 	0.931440
+F1 score: 	0.931748
+Sensitivity: 	0.931440
+Specificity: 	0.931440
+G-Mean: 	0.931440
+PCC: 	0.931440
+Experiment performed successfully
+Execution took PT1.5S
+
+
+Experiment BAGGING for YOGA has been started.
+Dataset yoga - 3300 records.
+Data contains 2 classes:
+Class '1' contains 1530 records
+Class '2' contains 1770 records
+Dataset is 426 elements long.
+BAGGING for YOGA with params:
+parts: 1, ngram: 2, alpha: 5, 
+Accuracy: 	0.780707
+F1 score: 	0.780625
+Sensitivity: 	0.780707
+Specificity: 	0.776145
+G-Mean: 	0.778422
+PCC: 	0.780707
+Experiment performed successfully
+Execution took PT11.989S
+
+
+Experiment BAGGING for MOTESTRAIN has been started.
+Dataset MoteStrain - 1272 records.
+Data contains 2 classes:
+Class '2' contains 587 records
+Class '1' contains 685 records
+Dataset is 84 elements long.
+BAGGING for MOTESTRAIN with params:
+parts: 1, ngram: 2, alpha: 5, 
+Accuracy: 	0.844864
+F1 score: 	0.844995
+Sensitivity: 	0.844864
+Specificity: 	0.839193
+G-Mean: 	0.842023
+PCC: 	0.844864
+Experiment performed successfully
+Execution took PT2.339S
+
+
+Experiment BAGGING for ITALYPOWERDEMAND has been started.
+Dataset ItalyPowerDemand - 1096 records.
+Data contains 2 classes:
+Class '1' contains 547 records
+Class '2' contains 549 records
+Dataset is 24 elements long.
+BAGGING for ITALYPOWERDEMAND with params:
+parts: 1, ngram: 2, alpha: 5, 
+Accuracy: 	0.864051
+F1 score: 	0.864139
+Sensitivity: 	0.864051
+Specificity: 	0.864011
+G-Mean: 	0.864031
+PCC: 	0.864051
+Experiment performed successfully
+Execution took PT1.724S
+
+
+Experiment BAGGING for CHLORINECONCENTRATION has been started.
+Dataset ChlorineConcentration - 4307 records.
+Data contains 3 classes:
+Class '1' contains 1000 records
+Class '3' contains 2307 records
+Class '2' contains 1000 records
+Dataset is 166 elements long.
+BAGGING for CHLORINECONCENTRATION with params:
+parts: 1, ngram: 2, alpha: 5, 
+Accuracy: 	0.749142
+F1 score: 	0.634107
+Sensitivity: 	0.000000
+Specificity: 	0.000000
+G-Mean: 	0.000000
+PCC: 	0.623713
+Experiment performed successfully
+Execution took PT18.297S
+
+
+Experiment BAGGING for TWOPATTERNS has been started.
+Dataset Two_Patterns - 5000 records.
+Data contains 4 classes:
+Class '2' contains 1248 records
+Class '3' contains 1245 records
+Class '4' contains 1201 records
+Class '1' contains 1306 records
+Dataset is 128 elements long.
+BAGGING for TWOPATTERNS with params:
+parts: 1, ngram: 2, alpha: 5, 
+Accuracy: 	0.814267
+F1 score: 	0.617998
+Sensitivity: 	0.000000
+Specificity: 	0.000000
+G-Mean: 	0.000000
+PCC: 	0.628533
+Experiment performed successfully
+Execution took PT20.121S
+
+
+Experiment BAGGING for WAFER has been started.
+Dataset wafer - 7164 records.
+Data contains 2 classes:
+Class '1' contains 6402 records
+Class '-1' contains 762 records
+Dataset is 152 elements long.
+BAGGING for WAFER with params:
+parts: 1, ngram: 2, alpha: 5, 
+Accuracy: 	0.975479
+F1 score: 	0.975199
+Sensitivity: 	0.975479
+Specificity: 	0.854491
+G-Mean: 	0.912979
+PCC: 	0.975479
+Experiment performed successfully
+Execution took PT12.298S
+
+
+Experiment BAGGING for INLINESKATE has been started.
+Dataset InlineSkate - 650 records.
+Data contains 7 classes:
+Class '2' contains 100 records
+Class '3' contains 103 records
+Class '7' contains 62 records
+Class '6' contains 98 records
+Class '4' contains 108 records
+Class '5' contains 117 records
+Class '1' contains 62 records
+Dataset is 1882 elements long.
+BAGGING for INLINESKATE with params:
+parts: 1, ngram: 2, alpha: 5, 
+Accuracy: 	0.810842
+F1 score: 	0.340184
+Sensitivity: 	0.000000
+Specificity: 	0.000000
+G-Mean: 	0.000000
+PCC: 	0.337949
+Experiment performed successfully
+Execution took PT4.538S
+
+
+Experiment BAGGING for PATIENTS has been started.
+Data contains 2 classes:
+Class '0' contains 65 records
+Class '1' contains 51 records
+Dataset is 288 elements long.
+BAGGING for PATIENTS with params:
+parts: 1, ngram: 2, alpha: 5, 
+Accuracy: 	0.543103
+F1 score: 	0.538398
+Sensitivity: 	0.543103
+Specificity: 	0.507776
+G-Mean: 	0.525139
+PCC: 	0.543103
+Experiment performed successfully
+Execution took PT0.984S
+
+
