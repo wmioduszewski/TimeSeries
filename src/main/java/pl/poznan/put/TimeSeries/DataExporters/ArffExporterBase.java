@@ -3,7 +3,6 @@ package pl.poznan.put.TimeSeries.DataExporters;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
-import java.util.Random;
 import java.util.stream.Collectors;
 
 import pl.poznan.put.TimeSeries.Model.IAssignedClass;
