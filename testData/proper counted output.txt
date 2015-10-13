@@ -12,9 +12,9 @@
 @attribute o3bb numeric
 @attribute o3ab numeric
 @attribute o3ba numeric
-@attribute destClass {1.0,2.0,3.0}
+@attribute destClass {1,2,3}
 
 @data
-1,1,1,0,3,0,0,0,1,1,1,0,1.0
-0,1,1,1,0,2,1,0,0,1,1,1,2.0
-2,1,0,0,2,0,0,1,3,0,0,0,3.0
+1,1,1,0,3,0,0,0,1,1,1,0,1
+0,1,1,1,0,2,1,0,0,1,1,1,2
+2,1,0,0,2,0,0,1,3,0,0,0,3
