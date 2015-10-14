@@ -36,6 +36,8 @@ public class DataImporterEamonn {
 			for (int i = 0; i < valsCount; i++) {
 				vals.add(Float.parseFloat(tokenizer.nextToken()));
 			}
+			if(destClass==-1) 
+				destClass = 2;
 			EamonnRecord currRecord = new EamonnRecord(destClass, vals);
 			records.add(currRecord);
 			currLine = br.readLine();

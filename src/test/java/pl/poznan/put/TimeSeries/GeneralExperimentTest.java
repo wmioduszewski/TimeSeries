@@ -33,8 +33,7 @@ public class GeneralExperimentTest {
 	public void directExperiments() {
 		for (Experiments chosenExperiment : Experiments.values()) {
 			try {
-				Launcher.runExperiment(chosenExperiment,
-						Datasets.SAMPLEUNITTEST);
+				Launcher.runExperiment(chosenExperiment, Datasets.SAMPLEUNITTEST);
 			} catch (Exception e) {
 				fail(e.getMessage());
 			}
@@ -44,8 +43,7 @@ public class GeneralExperimentTest {
 	@Test
 	public void fileBasedExperiments() throws Exception {
 		for (Experiments chosenExperiment : Experiments.values()) {
-			String path = Launcher.exportArff(chosenExperiment,
-					Datasets.SAMPLEUNITTEST);
+			String path = Launcher.exportArff(chosenExperiment, Datasets.SAMPLEUNITTEST);
 			Launcher.processArff(chosenExperiment, path);
 		}
 	}

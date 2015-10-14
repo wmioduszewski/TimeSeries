@@ -26,7 +26,6 @@ public abstract class ArffExporterBase {
 		FastVector destValues = new FastVector();
 		for (Double elem : destClasses) {
 			Integer ii = elem.intValue();
-			if(ii==-1) ii=2;
 			destValues.addElement(ii.toString());
 		}
 		Attribute destClassAttribute = new Attribute("destClass", destValues);
