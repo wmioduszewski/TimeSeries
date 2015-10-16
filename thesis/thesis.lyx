@@ -2136,7 +2136,7 @@ Koncepcja projektu
 \end_layout
 
 \begin_layout Section
-Klasyfikatory
+Metody przetwarzania danych dla klasyfikatorów
 \end_layout
 
 \begin_layout Standard
@@ -2159,8 +2159,127 @@ key "ActivityLearning"
 \end_layout
 
 \begin_layout Standard
-Do oceniania poprawności eksperymentów wybrano sześć miar statystycznychm
- które opisano poniżej.
+Do oceniania poprawności eksperymentów wybrano sześć miar statystycznych.
+ Niektóre z nich bazują na kilku definicjach c 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+confussion matrix
+\end_layout
+
+\end_inset
+
+, których znaczenie przedstawiono w tabeli poniżej:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="4cm">
+<column alignment="center" valignment="middle" width="4cm">
+<column alignment="center" valignment="middle" width="4cm">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rzeczywista wartość pozytywna
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rzeczywista wartość negatywna
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Przewidywana wartość pozytywna
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+True Positive
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+False Positive
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Przewidywana wartość negatywna
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+False Negative
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+True Negative
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -2191,7 +2310,30 @@ Wrażliwość (ang.
 \end_layout
 
 \begin_layout Standard
-asd
+Miara ta, znana również pod nazwą 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+True positive rate
+\end_layout
+
+\end_inset
+
+, skupia się na zobrazowaniu stosunku instacji poprawnie zidentyfikowanych
+ w klasie umownie uznanej za pozytywną do liczby instacji w tej klasie.
+ Na przykładzie zbioru Pacjentów opisywanego w tej pracy można powiedzieć,
+ że jest to proporcja pacjentów poprawnie sklasyfikowanych jako chorzy na
+ jaskrę do wszystkich, którzy są na tę jaskrę chorzy.
+ Wzór na wrażliwość podano poniżej:
+\begin_inset Formula 
+\[
+Sensitivity=\frac{TP}{TP+FN}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -2200,7 +2342,21 @@ Specyficzność (ang.
 \end_layout
 
 \begin_layout Standard
-asd
+Specyficzność to w pewnym sensie przeciwieństwo wrażliwości - uwydatnia
+ proporcję instancji dobrze sklasyfikowanych w klasie uznanej umownie za
+ negatywną do liczby instancji w tej klasie.
+ Ponownie odwołując się do analizowanych tutaj Pacjentów wynik specyficzności
+ to iloraz pacjentów prawidłowo sklasyfikowanych jako zdrowi i liczby wszystkich
+ zdrowych pacjentów.
+ Poniżej przedstawiono jej wzór ogólny:
+\begin_inset Formula 
+\[
+Specificity=\frac{TN}{TN+FP}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -2209,19 +2365,77 @@ asd
 \end_layout
 
 \begin_layout Standard
-asd
+Miara 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+G-mean
+\end_layout
+
+\end_inset
+
+ to geometryczne uśrednienie miar wspomnianych powyżej, czyli wrażliwości
+ i specyficzności.
+ Estymuje więc skuteczność klasyfikatora zarówno na klasie pozytywnej jak
+ i negatywnej.
+ Dla formalności poniżej przedstawiono jej wzór:
+\begin_inset Formula 
+\[
+Gmean=\sqrt{\frac{TP}{TP+FN}\times\frac{TN}{TN+FP}}=\sqrt{Sensitivity\times Specificity}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
-Miara F (f-measure)
+Miara F (ang.
+ F-measure, F1)
 \end_layout
 
 \begin_layout Standard
-asd
+Na potrzeby zobrazowania miary F posłużono się definicjami precyzji (ang.
+ precision) oraz przywołania (ang.
+ recall).
+ Precyzja wyraża to ile było trafień w klasie pozytywnej w odniesieniu do
+ wszystkich instancji, które klasyfikator uznał za należące do klasy pozytywnej
+ (
+\begin_inset Formula $Precision=\frac{TP}{TP+FP})$
+\end_inset
+
+.
+ Przywołanie natomiast to nic innego co wspomniana już wcześniej wrażliwość.
+ Miara F1 zaś jest dwukrotnym ilorazem iloczynu precyzji i przywołania oraz
+ ich sumy: 
+\begin_inset Formula 
+\[
+F1=2\frac{precision\times recall}{precision+recall}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
-PCC
+Procent poprawnie sklasyfikowanych (ang.
+ Percent Correctly Classified)
+\end_layout
+
+\begin_layout Standard
+Jest to prosta miara uwidaczniająca udział prawidłowo sklasyfikowanych instancji
+ w odniesieniu do ogółu.
+ Jej wzór prezentuje się następująco:
+\begin_inset Formula 
+\[
+PCC=\frac{correctly\,classified\,instances}{instances}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
@@ -3311,6 +3525,14 @@ Wnioski
 \begin_layout Chapter
 \start_of_appendix
 Podręcznik użytkownika
+\end_layout
+
+\begin_layout Section
+Uruchomienie projektu w środowisku Eclipse
+\end_layout
+
+\begin_layout Section
+Uruchomienie programu z linii komend
 \end_layout
 
 \begin_layout Standard
