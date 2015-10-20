@@ -1,0 +1,205 @@
+Experiment NGRAM for ECG200 has been started.
+Dataset ECG200 - 200 records.
+Data contains 2 classes:
+Class '2' contains 67 records
+Class '1' contains 133 records
+Dataset is 96 elements long.
+NGRAM for ECG200 with params:
+ngram: 30, alpha: 3, 
+Accuracy: 	0.788333
+F1 score: 	0.806472
+Sensitivity: 	0.788333
+Specificity: 	0.831649
+G-Mean: 	0.809701
+PCC: 	0.788333
+Experiment performed successfully
+Execution took PT0.506S
+
+
+Experiment NGRAM for ECGFIVEDAYS has been started.
+Dataset ECGFiveDays - 884 records.
+Data contains 2 classes:
+Class '1' contains 442 records
+Class '2' contains 442 records
+Dataset is 136 elements long.
+NGRAM for ECGFIVEDAYS with params:
+ngram: 30, alpha: 3, 
+Accuracy: 	0.837858
+F1 score: 	0.839159
+Sensitivity: 	0.837858
+Specificity: 	0.837858
+G-Mean: 	0.837858
+PCC: 	0.837858
+Experiment performed successfully
+Execution took PT0.836S
+
+
+Experiment NGRAM for TWOLEADECG has been started.
+Dataset TwoLeadECG - 1162 records.
+Data contains 2 classes:
+Class '2' contains 581 records
+Class '1' contains 581 records
+Dataset is 82 elements long.
+NGRAM for TWOLEADECG with params:
+ngram: 30, alpha: 3, 
+Accuracy: 	0.654045
+F1 score: 	0.657586
+Sensitivity: 	0.654045
+Specificity: 	0.654045
+G-Mean: 	0.654045
+PCC: 	0.654045
+Experiment performed successfully
+Execution took PT0.477S
+
+
+Experiment NGRAM for YOGA has been started.
+Dataset yoga - 3300 records.
+Data contains 2 classes:
+Class '1' contains 1530 records
+Class '2' contains 1770 records
+Dataset is 426 elements long.
+NGRAM for YOGA with params:
+ngram: 30, alpha: 3, 
+Accuracy: 	0.666970
+F1 score: 	0.677264
+Sensitivity: 	0.666970
+Specificity: 	0.634640
+G-Mean: 	0.650604
+PCC: 	0.666970
+Experiment performed successfully
+Execution took PT4.28S
+
+
+Experiment NGRAM for MOTESTRAIN has been started.
+Dataset MoteStrain - 1272 records.
+Data contains 2 classes:
+Class '2' contains 587 records
+Class '1' contains 685 records
+Dataset is 84 elements long.
+NGRAM for MOTESTRAIN with params:
+ngram: 30, alpha: 3, 
+Accuracy: 	0.802673
+F1 score: 	0.807601
+Sensitivity: 	0.802673
+Specificity: 	0.784759
+G-Mean: 	0.793665
+PCC: 	0.802673
+Experiment performed successfully
+Execution took PT0.58S
+
+
+Experiment NGRAM for ITALYPOWERDEMAND has been started.
+Dataset ItalyPowerDemand - 1096 records.
+Data contains 2 classes:
+Class '1' contains 547 records
+Class '2' contains 549 records
+Dataset is 24 elements long.
+NGRAM for ITALYPOWERDEMAND with params:
+ngram: 30, alpha: 3, 
+Accuracy: 	0.809915
+F1 score: 	0.810781
+Sensitivity: 	0.809915
+Specificity: 	0.809777
+G-Mean: 	0.809846
+PCC: 	0.809915
+Experiment performed successfully
+Execution took PT0.273S
+
+
+Experiment NGRAM for CHLORINECONCENTRATION has been started.
+Dataset ChlorineConcentration - 4307 records.
+Data contains 3 classes:
+Class '1' contains 1000 records
+Class '3' contains 2307 records
+Class '2' contains 1000 records
+Dataset is 166 elements long.
+NGRAM for CHLORINECONCENTRATION with params:
+ngram: 30, alpha: 3, 
+Accuracy: 	0.650698
+F1 score: 	0.510470
+Sensitivity: 	0.000000
+Specificity: 	0.000000
+G-Mean: 	0.000000
+PCC: 	0.476047
+Experiment performed successfully
+Execution took PT2.835S
+
+
+Experiment NGRAM for TWOPATTERNS has been started.
+Dataset Two_Patterns - 5000 records.
+Data contains 4 classes:
+Class '2' contains 1248 records
+Class '3' contains 1245 records
+Class '4' contains 1201 records
+Class '1' contains 1306 records
+Dataset is 128 elements long.
+NGRAM for TWOPATTERNS with params:
+ngram: 30, alpha: 3, 
+Accuracy: 	0.749700
+F1 score: 	0.485512
+Sensitivity: 	0.000000
+Specificity: 	0.000000
+G-Mean: 	0.000000
+PCC: 	0.499400
+Experiment performed successfully
+Execution took PT3.441S
+
+
+Experiment NGRAM for WAFER has been started.
+Dataset wafer - 7164 records.
+Data contains 2 classes:
+Class '1' contains 6402 records
+Class '2' contains 762 records
+Dataset is 152 elements long.
+NGRAM for WAFER with params:
+ngram: 30, alpha: 3, 
+Accuracy: 	0.881863
+F1 score: 	0.848667
+Sensitivity: 	0.881863
+Specificity: 	0.130399
+G-Mean: 	0.339108
+PCC: 	0.881863
+Experiment performed successfully
+Execution took PT3.747S
+
+
+Experiment NGRAM for INLINESKATE has been started.
+Dataset InlineSkate - 650 records.
+Data contains 7 classes:
+Class '2' contains 100 records
+Class '3' contains 103 records
+Class '7' contains 62 records
+Class '6' contains 98 records
+Class '4' contains 108 records
+Class '5' contains 117 records
+Class '1' contains 62 records
+Dataset is 1882 elements long.
+NGRAM for INLINESKATE with params:
+ngram: 30, alpha: 3, 
+Accuracy: 	0.793114
+F1 score: 	0.294736
+Sensitivity: 	0.000000
+Specificity: 	0.000000
+G-Mean: 	0.000000
+PCC: 	0.275897
+Experiment performed successfully
+Execution took PT3.252S
+
+
+Experiment NGRAM for PATIENTS has been started.
+Data contains 2 classes:
+Class '0' contains 65 records
+Class '1' contains 51 records
+Dataset is 288 elements long.
+NGRAM for PATIENTS with params:
+ngram: 30, alpha: 3, 
+Accuracy: 	0.589080
+F1 score: 	0.591326
+Sensitivity: 	0.589080
+Specificity: 	0.586083
+G-Mean: 	0.587569
+PCC: 	0.589080
+Experiment performed successfully
+Execution took PT1.028S
+
+
