@@ -1255,6 +1255,171 @@ co oznacza, że ostatecznym wynikiem metody SAX dla szeregu czasowego
 \end_layout
 
 \begin_layout Section
+DTW (Dynamic Time Warping)
+\end_layout
+
+\begin_layout Standard
+Algorytm DTW jest metodą, która stara się wyeliminować błąd porównywania
+ dwóch szeregów czasowych, których charakterystyczne cechy były wobec siebie
+ nieco przesunięte w czasie bądź w jednym szeregu zdarzenie postępowało
+ wolniej niż w drugim - choć nadal było to to samo zdarzenie.
+ Potrafi też poradzić sobie z pojedynczymi błędami pomiaru czy drobnymi
+ szumami.
+ Te cechy widać na rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Dopasowywanie-DTW"
+
+\end_inset
+
+ na którym sygnał 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+vec1
+\end_layout
+
+\end_inset
+
+ wyraźnie dostosowywuje się do sygnału 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+vec2
+\end_layout
+
+\end_inset
+
+ mimo dużego spadku wartości w połowie przebiegu.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename other/dtwBridgePlot02.png
+	width 15cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Dopasowywanie DTW
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chinczyk"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Dopasowywanie-DTW"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To jak realizowany jest algorytm DTW obrazuje rysunek 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Macierz-DTW"
+
+\end_inset
+
+.
+ W momencie przyrównywania dwóch sygnałów, tworzona jest macierz odległości,
+ której wartiści obliczane są rekurencyjnie.
+ Ostatni wiersz macierzy to różnice między kolejnymi wartościami szeregów.
+ Kolejne wiersze powstają na ich podstawie.
+ Gdy maciesz jest już skonstruowana, wybiera się najkrótszą kosztowo ścieżkę
+ między skrajnymi wierzchołkami macierzy - suma wartości komórek, przez
+ które przechodzi ścieżka jest dystansem między tymi szeregami.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename other/dtw2Plot01.png
+	width 15cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Macierz DTW
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chinczyk"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Macierz-DTW"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ Należy nadmienić, że metoda ta jest dokładna, lecz za jej skutecznością
+ idzie spory nakład czasowy - czas przetwarzania jest nieporównywalnie większy
+ od pozostałych metod.
+ Szczegółowo zostanie to omówione w rodziale poświęconym wynikom.
+\end_layout
+
+\begin_layout Standard
+Teoretycznie metoda jako parametr przyjmuje szerokość okna DTW - określa
+ to ramy części macierzy, na której można szukać ścieżki pomiędzy wierzchołkami.
+ Jednak ze względu na wspomniany już ogromny narzut czasowy, metoda została
+ odpalona tylko na jednej konfiguracji o najmniejszym możliwym - dwuelementowym
+ - oknie DTW.
+\end_layout
+
+\begin_layout Section
 Badane zbiory danych
 \end_layout
 
@@ -2262,7 +2427,7 @@ lniono 2gramy pojawiające się w ramach każdej z części.
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Tabular
@@ -2433,7 +2598,7 @@ ab
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2442,7 +2607,7 @@ ab
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2451,7 +2616,7 @@ aa
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2460,7 +2625,7 @@ aa
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2593,7 +2758,7 @@ bb
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2602,7 +2767,7 @@ bb
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2611,7 +2776,7 @@ ba
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2620,7 +2785,7 @@ ba
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2792,7 +2957,7 @@ W kolejnym kroku należy zliczyć ile razy wystąpił każdy z 2gramów.
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Tabular
@@ -3437,7 +3602,7 @@ status open
 
 \begin_layout Plain Layout
 
-@attribute destClass {2,1}
+@attribute destClass {1,2}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3497,8 +3662,734 @@ Dominant
 )
 \end_layout
 
+\begin_layout Standard
+Eksperyment nazwany eksperymentem dominacyjnym jest łudząco podobny do eksperyme
+ntu 'Counted' - różni się jedynie sposobem zliczania ngramów, dlatego zostanie
+ zobrazowany na tym samym przykładzie.
+ Tym razem analizując każdy z ngramów w poszczególnej części zlicza się
+ ngramy będące co najmniej tak samo 
+\begin_inset Quotes pld
+\end_inset
+
+wysokie
+\begin_inset Quotes prd
+\end_inset
+
+ na każdym z argumentów (tutaj: znaków w łańcuchu) w opcji 'atMost' lub
+ też co najwyżej tak samo opisany na każdym z agrumentów ('atLeast') jak
+ ten badany.
+ W tabeli 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Dominacja-ngramów"
+
+\end_inset
+
+ przedstawiono jak wyglądają wyniki zliczania z dominacją dla rekordów przedstaw
+ionych w tabeli 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Podział-łańcuchów-SAX"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="4">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rekord 1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rekord 2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rekord 3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+o1<=ab
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+o1>=ab
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+o1<=bb
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+o1>=bb
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+o1<=ba
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+o1>=ba
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+o1<=aa
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+o1>=aa
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Dominacja ngramów dla rekordów z tabeli 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Podział-łańcuchów-SAX"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Dominacja-ngramów"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Jak można zauważyć, w takim podejściu podwaja się liczba argumentów dla
+ każdego rekordu (w tabeli przestawiono tylko część dotyczącą pierwszego
+ okresu - stąd prefiksy 'o1').
+ Wartość '2' dla rekordu 1 w wierszu o1<=ab oznacza, że spośród ngramów
+ w tym okresie dwa z nich były co najwyżej takie jak 2gram 'ab' - są to
+ 2gramy 'ab' oraz 'aa' - oba występowały jednokrotnie.
+ Z kolei na przykład wartość 0 dla rekordu 3 w wierszu o1>=ba oznajmia,
+ że nie było żadnego 2gramu większego lub równego 2gramowi 'ba' w łańcuchu
+ odzwierciedlającym przebieg sygnału dla rekordu nr 3.
+\end_layout
+
+\begin_layout Standard
+Jak zauważono, dla ngramów prezentujących co najmniej najmniejsze lub co
+ najwyżej największe wartości na każdym ze znaków łańcucha, wartości zliczeń
+ są zawsze maksymalne (w tym przykładzie wiersze 'o1<=bb' oraz 'o1>=aa').
+ Nie wnoszą zatem one żadnej informacji godnej uwagi klasyfikatora, zatem
+ wiersze te były wycinane przed eksportem do pliku arff.
+\end_layout
+
+\begin_layout Standard
+Ze względów technicznych w plikach arff znaki '<=', '>=' zostały zmienione
+ na 'atL', 'atM' czyli odpowiednio atLeast (co najmniej) oraz at Most (co
+ najwyżej).
+ W listingu 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "code:Wynikowy-plik-arff-dominant"
+
+\end_inset
+
+ przedstawiono pełny plik arff dla omawianego przypadku w wariancie eksperymentu
+ 'Dominant'.
+ 
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+@relation 'Sax dominant'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+@attribute o1atMaa numeric
+\end_layout
+
+\begin_layout Plain Layout
+
+@attribute o1atMab numeric
+\end_layout
+
+\begin_layout Plain Layout
+
+@attribute o1atLab numeric
+\end_layout
+
+\begin_layout Plain Layout
+
+@attribute o1atMba numeric
+\end_layout
+
+\begin_layout Plain Layout
+
+@attribute o1atLba numeric
+\end_layout
+
+\begin_layout Plain Layout
+
+@attribute o1atLbb numeric
+\end_layout
+
+\begin_layout Plain Layout
+
+@attribute o2atLbb numeric
+\end_layout
+
+\begin_layout Plain Layout
+
+@attribute o2atMaa numeric
+\end_layout
+
+\begin_layout Plain Layout
+
+@attribute o2atMba numeric
+\end_layout
+
+\begin_layout Plain Layout
+
+@attribute o2atLba numeric
+\end_layout
+
+\begin_layout Plain Layout
+
+@attribute o2atMab numeric
+\end_layout
+
+\begin_layout Plain Layout
+
+@attribute o2atLab numeric
+\end_layout
+
+\begin_layout Plain Layout
+
+@attribute o3atMaa numeric
+\end_layout
+
+\begin_layout Plain Layout
+
+@attribute o3atLbb numeric
+\end_layout
+
+\begin_layout Plain Layout
+
+@attribute o3atMab numeric
+\end_layout
+
+\begin_layout Plain Layout
+
+@attribute o3atLab numeric
+\end_layout
+
+\begin_layout Plain Layout
+
+@attribute o3atMba numeric
+\end_layout
+
+\begin_layout Plain Layout
+
+@attribute o3atLba numeric
+\end_layout
+
+\begin_layout Plain Layout
+
+@attribute destClass {1,2}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+@data
+\end_layout
+
+\begin_layout Plain Layout
+
+1,2,1,2,1,0,3,0,0,3,0,3,1,1,2,2,1,1,1
+\end_layout
+
+\begin_layout Plain Layout
+
+0,1,2,1,2,1,0,2,3,1,2,0,0,1,1,2,1,2,1
+\end_layout
+
+\begin_layout Plain Layout
+
+2,3,1,2,0,0,2,0,0,2,1,3,3,0,3,0,3,0,2
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+Wynikowy plik arff dla eksperymentu 'Dominant'
+\begin_inset CommandInset label
+LatexCommand label
+name "code:Wynikowy-plik-arff-dominant"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Użyte klasyfikatory
+\end_layout
+
+\begin_layout Subsection
+J48
+\end_layout
+
+\begin_layout Standard
+J48 to jeden z podstawowych klasyfikatorów pakietu 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+weka
+\end_layout
+
+\end_inset
+
+, opierający algorytm klasyfikacji na drzewach decyzyjnych.
+ Jego działanie rozpoczyna się na przypisaniu wszystkich instancji treningowych
+ do jednego liścia.
+ Jeżeli wszystkie elementy należą do tej samej klasy, to algorytm się kończy
+ - jeśli nie, wybiera atrybut, który najlepiej rozdziela instancje w liściu
+ na różne klasy i tworzy odpowiedni liść.
+ Algorytm trwa aż w liściach pozostaną jednorodne grupy elementów lub nie
+ będzie można dobrać kolejnych atrybutów jako kryterium podziału.
+\end_layout
+
+\begin_layout Subsection
+IBk
+\end_layout
+
+\begin_layout Standard
+Klasyfikator stworzony do przeprowadzania klasyfikacji za pomocą algorytmu
+ k-najbliższych sąsiadów (ang.
+ KNN: K-Nearest-Neighbors) z pakietu 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+weka
+\end_layout
+
+\end_inset
+
+.
+ Dzięki temu, że klasyfikator ten można w łatwy sposób zmodyfikować na poziomie
+ kodu, dostosowano go również do eksperymentu DTW, który również bazuje
+ na metodzie KNN, jednak używa innego algorytmu wyszukiwania ów najbliższych
+ sąsiadów.
+\end_layout
+
+\begin_layout Subsection
+VCDomLem
+\end_layout
+
+\begin_layout Subsection
+NgramClassifier
+\end_layout
+
+\begin_layout Standard
+Autorski klasyfikator zbudowany na wzór klasyfikatora pakietu weka (rozszerza
+ klasę 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+weka.classifiers.Classifier
+\end_layout
+
+\end_inset
+
+).
+ Jako wejście przyjmuje jeden argument - łańcuch wyjściowy z algorytmu SAX.
+ Następnie dla każdej klasy decyzyjnej wyznacza liczności występowań danych
+ n-gramów (gdzie n jest parametrem metody).
+ W momencie klasyfikacji instancji zlicza się występowanie ngramów w ramach
+ badanej instancji, by potem zmierzyć dystanse dzielące instancję oraz wszystkie
+ klasy decyzyjne.
+ Instancja zostaje przypisana do klasy, z którą dzieli ją najmniejszy dystans.
+ Aby przedstawić sposób liczenia tej odległości zdefiniowano następującą
+ funkcję: 
+\begin_inset Formula $occ(klasa,ngram)$
+\end_inset
+
+ która jako wynik zwraca ile wystąpień danego ngramu miało miejsce w ramach
+ podanej klasy decyzyjnej.
+ Analogicznie 
+\begin_inset Formula $occ(instancja,ngram)$
+\end_inset
+
+ podaje liczbę wystąpień ngramu dla zadanej instancji.
+ 
+\end_layout
+
+\begin_layout Standard
+Zatem dla każdej klasy liczony jest następująca odległość między instancją
+ a klasą:
+\begin_inset Formula 
+\[
+dist(instance,class)=\sqrt{\sum_{ngram}^{instance}(occ(klasa,ngram)-occ(instancja,ngram))^{2}}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
