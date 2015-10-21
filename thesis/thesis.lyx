@@ -1299,7 +1299,7 @@ vec2
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -1361,7 +1361,7 @@ reference "fig:Macierz-DTW"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -4262,7 +4262,6 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
 Wynikowy plik arff dla eksperymentu 'Dominant'
 \begin_inset CommandInset label
 LatexCommand label
@@ -4635,7 +4634,7 @@ Gmean=\sqrt{\frac{TP}{TP+FN}\times\frac{TN}{TN+FP}}=\sqrt{Sensitivity\times Spec
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Miara F (ang.
  F-measure, F1)
 \end_layout
@@ -6052,6 +6051,150 @@ name "code:RegressionExporter"
 
 \begin_layout Chapter
 Wnioski
+\end_layout
+
+\begin_layout Section
+Analiza wyników
+\end_layout
+
+\begin_layout Standard
+Gdy udało się już uruchomić eksperymenty zgodnie z zamierzeniami, nadszedł
+ czas na interpretację wyników.
+\end_layout
+
+\begin_layout Standard
+Spośród wszystkich rezultatów jakie zostały sporządzone dla każdego eksperymentu
+ oraz dla wszystkich opcjonalnych zestawów parametrów, wybrano najlepszy
+ zestaw dla każdego z nich.
+ Celem było wybranie obiektywnie najlepszego radzącego sobie dobrze na każdym
+ ze zbiorów danych, aby móc następnie przeprowadzić analizę porównawczą
+ pomiędzy eksperymentami.
+ Kryterium wyboru była największa liczba zbiorów, na których dany zestaw
+ był najlepszy.
+ Przy ewentualnym 'remisie' wybierany był ten, który więcej razy był lepszy
+ od drugiego.
+ 
+\end_layout
+
+\begin_layout Standard
+Tym sposobem zostały wybrane następujące uruchomienia eksperymentów:
+\end_layout
+
+\begin_layout Itemize
+Zliczanie - części: 5, ngram: 2, alfabet: 11
+\end_layout
+
+\begin_layout Itemize
+Regresja - części: 10
+\end_layout
+
+\begin_layout Itemize
+Klasyfikator ngramowy - ngram: 30, alfabet: 3
+\end_layout
+
+\begin_layout Itemize
+DTW - knn: 7, szerokość okna DTW: 5
+\end_layout
+
+\begin_layout Itemize
+KNN - ngram: 3, alfabet: 11, knn: 3
+\end_layout
+
+\begin_layout Itemize
+Bagging - części: 5, ngram: 3, alfabet: 5
+\end_layout
+
+\begin_layout Standard
+W ramach tych wykonań ekserymentów obliczono średnią dokładność na wszystkich
+ zbiorach, która prezentuje się jak przedstawiono na wykresie 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Wykres-średniej-dokładności"
+
+\end_inset
+
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename other/średnia dokładność eksp na zbiorach.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Wykres średniej dokładności eksperymentów
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Wykres-średniej-dokładności"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ Zaobserwowano, że eksperymentem cechującym się najlepszą dokładnością na
+ wszystkich z badanych zbiorów jest eksperyment DTW.
+ Jednak jak już wspomniano wcześniej, DTW pojawia się tu jako pewne odniesienie,
+ a nie równy przeciwnik, ponieważ czas przetwarzania tego eksperymentu jest
+ nieporównywalnie większy od konkurentów.
+ Miłym zaskoczeniem jest wysoki wynik eksperymentu KNN, ponieważ jego działanie
+ bezpośrednio zależy od algorytmu SAX, w którym pokładano pewne nadzieje.
+ Niestety zawiódł autorski klasyfikator ngramowy, lecz jego koncept działania
+ nie był mocno wyszukany, więc jego niska dokładność nie jest rozczarowaniem.
+ 
+\end_layout
+
+\begin_layout Standard
+Z drugiej strony jednak prosta idea nie jest przeszkodą do zdobywania dobrych
+ wyników - czego potwierdzeniem jest znakomity wynik regresji - tutaj wprawdzie
+ nieco zmienionej, bo była ona liczona wielokrotnie dla kolejnych części
+ sygnału w ramach każdej instacji - jednak nadal u podstaw leży nieskomplikowana
+ estymacja danych do funckcji liniowej.
+\end_layout
+
+\begin_layout Standard
+Powstaje pytanie dlaczego skupiono się tylko na mierze dokładności, skoro
+ w większości przypadków badano aż sześć miar.
+ Otóż jak się okazuje, wyniki wszystkich miar w większości eksperymentów
+ (szczególnie w tych dwuklasowych) są do siebie bardzo zbliżone.
+ Obliczono, że odchylenie standardowe miar eksperymentów na zbiorach ECG200,
+ ECGFiveDays, TwoLeadEcg, Yoga, MoteStrain, ItalyPowerDemand, Wafer, oraz
+ Patients jest mniejsze od 0.05.
+ Pozostałe zbiory (ChlorineConcentration, TwoPatterns, InlineSkate) to zbiory
+ wieloklasowe na których zróżnicowanie miar było bardziej wyraźne.
+ Miary F1 oraz PCC często są aż o 0.1 mniejsze niż dokładność co może wskazywać
+ na to, że wiele z instancji nie zostało sklasyfikowanych (Jurek: dobrze
+ to jest? czy bzdura?).
+\end_layout
+
+\begin_layout Standard
+Podsumowując wyniki są zadowalające dzięki eksperymentowi KNN, który nieznacznie
+ odstępuje kroku w jakości wobec matematycznie skomplikowanego DTW, a zdecydowan
+ie deklasuje go w kontekście czasu przetwarzania.
+ Największą zagadką był klasyfikator ngramowy, którego model działania powstał
+ na bazie pomysłu autora, jednak nie okazał się miłą niespodzianką - jedynie
+ potwierdził, że stworzenie dobrego klasyfikatora nie jest prostym zadaniem.
 \end_layout
 
 \begin_layout Chapter
