@@ -1,13 +1,12 @@
 %% LyX 2.1.4 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
-\documentclass[11pt,a4paper,english,thesis]{dcsbook}
+\documentclass[11pt,a4paper,polish,thesis]{dcsbook}
 \usepackage[utf8]{inputenc}
 \setcounter{secnumdepth}{3}
 \usepackage{color}
 \usepackage{babel}
-\usepackage{prettyref}
-\usepackage{booktabs}
-\usepackage{pmboxdraw}
+\usepackage{array}
+\usepackage{multirow}
 \usepackage{graphicx}
 \usepackage[unicode=true,pdfusetitle,
  bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=1,
@@ -22,44 +21,21 @@
 \pdfpageheight\paperheight
 \pdfpagewidth\paperwidth
 
-\providecommand{\LyX}{\texorpdfstring%
-  {L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
-  {LyX}}
-\DeclareRobustCommand*{\lyxarrow}{%
-\@ifstar
-{\leavevmode\,$\triangleleft$\,\allowbreak}
-{\leavevmode\,$\triangleright$\,\allowbreak}}
 %% Because html converters don't know tabularnewline
 \providecommand{\tabularnewline}{\\}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
 \RequirePackage{dcslib}[2012/01/30]
- \newlength{\labelingxwidth}
- \newenvironment{labelingx}[2][]%
-   {\ifthenelse{\equal{#2}{default}}%
-      {\setlength{\labelingxwidth}{\leftmargin}}
-      {\settowidth{\labelingxwidth}{#2}}
-    \begin{labeling}[leftmargin=\labelingxwidth,#1]}
-   {\end{labeling}}
- \newlist{lyxcodelist}{itemize}{1}
- \setlist[lyxcodelist]{listparindent=0pt,itemsep=0pt,parsep=0pt,partopsep=0pt}
- \providecommand{\lyxcodesetup}{}
- \newenvironment{lyxcode}
-   {\par\begin{lyxcodelist}\normalfont\ttfamily\small\lyxcodesetup\item[]}
-   {\end{lyxcodelist}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
 %
 %  $Id: thesis-template.lyx,v 1.7 2011/12/22 12:10:18 sobaniec Exp $
 %
 
-\@ifundefined{showcaptionsetup}{}{%
- \PassOptionsToPackage{caption=false}{subfig}}
-\usepackage{subfig}
 \makeatother
 
 \usepackage{listings}
-\renewcommand{\lstlistingname}{\inputencoding{latin9}Listing}
+\renewcommand{\lstlistingname}{\inputencoding{latin2}Listing}
 
 \begin{document}
 
@@ -98,6 +74,18 @@ Zadania:
 \item Zaimplementować i udokumentować zaproponowan rozwiązania.
 \item Przeprowadzić eksperyment obliczeniowy
 \end{itemize}
+Początkowo celem niniejszej pracy była analiza szeregów czasowych
+zawierających dane ciśnienia w oku pacjentów zdrowych, oraz tych ze
+zdiagnozowaną jaskrą. Ponadto zamiarem było użycie do tego celu metody
+SAX, a następnie zbudowanie klasyfikatora potrafiącego sklasyfikować
+dane wytworzone przez tą metodę. Równie ważne było to, aby nie testować
+sposobów klasyfikacji tylko i wyłącznie na danych zebranych w celu
+oceny jaskry, lecz również sprawdzić jak wybrane i stworzone metody
+poradzą sobie w odniesieniu do innych szeregów czasowych. Kolejną
+rzeczą, od której należało się uniezależnić są klasyfikatory, dlatego
+też eksperymenty przeprowadzone zostały na kilku różnych technikach
+kategoryzowania instancji.
+
 
 \paragraph{The goal and the scope of the thesis}
 
@@ -108,32 +96,34 @@ poświęcony ....... (kilka zdań). Rozdział 4 zawiera ..... (kilka zdań)
 ............ itd. Rozdział x stanowi podsumowanie pracy. 
 
 
-\chapter{Background}
+\chapter{Kontekst teoretyczny}
 
 
 \section{Definicja szeregu czasowego}
 
 Szereg czasowy jest to seria pewnych obserwacji osadzonych w czasie.
 Można powiedzieć, że jest to przyporządkowanie danych liczbowych do
-odpowiadających im punktów czasowych, najczęściej z jednakowymi odstępami
+odpowiadających im punktów w czasie, najczęściej z jednakowymi odstępami
 między kolejnymi wartościami.
 
 http://www.cs.put.poznan.pl/jstefanowski/aed/TPtimeseries.pdf
 
 
-\section{Przykładowe metody analizy danych czasowych}
+\section{Przykładowe metody analizy danych czasowych\cite{Shum2010}}
 
 Tak obszerny problem jak analiza danych czasowych musi nieść za sobą
-rozmaite metody przeprowadzania tej analizy. Poniżej przedstawiono
-kilka z nich.
+rozmaite metody przeprowadzania tej analizy. Pomimo tego, że do ostatecznego
+eksperymentu wybrano tylko jedną z nich - regresję, to postanowiono
+przedstawić po krótce czym charakteryzują się poszczególne metody
+oraz ewentualnie dlaczego zostały porzucone.
 
 
 \subsection{Regresja liniowa}
 
 Regresja w odniesieniu do danych czasowych sprowadza się do estymowania
-liniowego trendu jaki prezentuje badany szereg{[}fav{]}. Koncepcyjnie
-metoda polega na stworzeniu funkcji liniowej, która w najbardziej
-dokładny sposób przybliża wartości na kolejnych obserwacjach. Matematyczny
+liniowego trendu jaki prezentuje badany szereg. Koncepcyjnie metoda
+polega na stworzeniu funkcji liniowej, która w najbardziej dokładny
+sposób przybliża wartości na kolejnych obserwacjach. Matematyczny
 model regresji ma zatem następującą postać: 
 \[
 y=ax+b
@@ -141,274 +131,1154 @@ y=ax+b
 Jako miarę błędu przyjmuje się sumę kwadratów różnicy między oszacowaniami,
 a wartościami właściwymi.
 \[
-S=\sum_{i=1}^{n}(y_{i}-\hat{(}y_{i}))^{2}
+S=\sum_{i=1}^{n}(y_{i}-\hat{y_{i}})^{2}
 \]
-
-
 http://www.cs.put.poznan.pl/jstefanowski/aed/TPDregresjawieloraka.pdf
 
 
 \subsection{Wygładzanie (``Smoothing'')}
 
+Wygładzanie to metoda starająca się zniwelować ponadprzeciętne różnice
+wartości między kolejnymi pomiarami. Dzięki temu podejściu można dokładniej
+przyjrzeć się ogólnemu zarysowi funkcji, czy jej okresowymi trendami,
+kosztem precyzji. Podejście to pozwala zminimalizować ewentualne szumy
+z badanego zbioru. Metoda ta jako argument przyjmuje szerokość okna
+$k$, w ramach którego będą uśredniane wartości. W pierwszym kroku
+liczy się średnią z $k$ pierwszych wartości szeregu, następnie przesuwa
+okno o jeden element i znów liczy średnią z $k$ wartości. Wyjściowy
+zbiór dla $n$-elementowego zbioru będzie miał $n-k$ wartości.
+
+Poniżej dla porównania zaprezentowano wykres miary TFADJ w przeciągu
+doby \ref{fig:Czysty-sygna=000142-TFADJ}, oraz jego wygładzony odpowiednik
+\ref{fig:Wyg=000142adzony-sygna=000142-TFADJ}. Jak widać operacja
+wygładzania zredukowała skrajne wychylenia szeregu i wyklarowała paraboliczną
+tendencję tego zbioru.
+
+\begin{figure}[tbph]
+\includegraphics[width=15cm]{\string"figures/Clean 15 D1\string".jpg}\caption{Czysty sygnał TFADJ\label{fig:Czysty-sygna=000142-TFADJ}}
+\end{figure}
+
+
+\begin{figure}[tbph]
+\includegraphics[width=15cm]{\string"figures/Smooth 15 D1\string".jpg}
+
+\caption{Wygładzony sygnał TFADJ\label{fig:Wyg=000142adzony-sygna=000142-TFADJ}}
+\end{figure}
+
+
 
 \subsection{Modele ARIMA}
 
+Model ARIMA (ang. Autoregressive Integrated Moving Average) koncepcyjnie
+składają się z trzech części - jest to autoregresja, integracja oraz
+średnia ruchoma. 
 
-\subsection{Analiza spektrum}
+Autoregresja jest to idea, która skupia się na wyrażeniu bieżącej
+wartości na podstawie$n$ poprzednich. Dla przykładu, funkcja dla
+$n=2$ wygląda w ten sposób:
+\[
+x_{t}=\omega_{t-2}x_{t-2}-\omega_{t-1}x_{t-1}+\omega_{t}
+\]
 
 
-\paragraph{Paragraph}
+Średnia ruchoma ideowo jest bardzo zbliżona do autoregresji, jednak
+skupia się na zaburzeniach (ang. lags) w szeregu, a nie bezpośrednio
+na wartościach. Wzór przedstawia się analogicznie jak w autoregresji.
+
+Integracja z kolei pozwala na zastosowanie modelu ARIMA do procesów
+niestacjonarnych, które da się sprowadzić do procesów stacjonarnych
+dzięki przekształceniu oryginalnego sygnału na różnice (ang. difference
+equations) pomiędzy wartością obecną, a poprzednią. 
+
+Podsumowując, modele ARIMA doskonale spisują się w prognozowaniu wartości,
+bazując na danych historycznych szeregu, jednak nie są najlepszym
+wyborem jako metoda klasyfikacji. Ponadto metoda nie jest najłatwiejsza
+matematycznie. Biorąc pod uwagę te argumenty, metoda ta została odrzucona.
 
 
-\subparagraph{Subparagraph}
+\subsection{Analiza spektralna (widmowa)}
+
+Celem analizy spektralnej (ang. spectral analysis) szeregów czasowych
+jest zidentyfikowanie najczęściej powtarzających się wzorców w czasie,
+a następnie przybliżenie danego szeregu do procesu okresowego określonego
+wzorem:
+\[
+x_{t}=U_{1}\cos(2\Pi\omega t)+U_{2}\sin(2\Pi\omega t)
+\]
+gdzie amplituda funkcji to $A=\sqrt{U_{1}^{2}+U_{2}^{2}}$. 
+
+Jak widać jest to kolejn metoda, za którą stoi solidne matematyczne
+zaplecze i która wymierzona jest w szeregi cykliczne, z którymi w
+zbiorze danych pacjentów jaskry nie mamy do czynienia, zatem metodę
+tę odrzucono.
 
 
-\section{Inline formatting}
+\section{SAX (Symbolic Aggregate approXimation)}
 
-We suggest using \dcsemph{Insets}, like:
-\begin{labelingx}{00.00.0000}
-\item [{\dcsstrong{strong}}] for strong emphasizing some text.
-\item [{\dcsemph{emph}}] for emphasizing some text.
-\item [{\dcscode{Code}}] for formatting of names of modules, procedures,
-class names, variables, etc.
-\item [{\dcspath{path}}] for formatting of file names and directories,
-like \dcspath{/usr/share/doc/packages/texlive-latex}. The names are
-properly broken at the ends of lines. However, path names containing
-special \LaTeX{} characters must be typeset using ERT and the \dcscode{\textbackslash{}dcspath}
-command, e.g.\ \dcspath{sample_file}.
-\item [{\dcskbd{kbd}}] for formatting of shortcuts, e.g.: \dcskbd{Ctrl-c}.
-\item [{\dcscmd{cmd}}] for formatting system commands.
-\item [{\dcsname{name}}] for formatting other special names.
-\end{labelingx}
+Już na początkowym etapie rozważań nad zakresem niniejszej pracy zadecydowano,
+że jednym głównych nurtów jaki przyjmie, będzie przekształcanie sygnału
+według metody SAX. Mówiąc po krótce, jest to metoda odzwierciedlająca
+oryginalny sygnał w ciąg znaków, co stwarza możliwości klastfikacji
+danych za pomocą istniejących już algorytmów tekstowych.
 
-\section{Special characters}
-\begin{enumerate}
-\item Non-breaking space can be inserted using \dcskbd{Ctrl-space}. It
-produces ``\dcscode{\textasciitilde{}}'' in \LaTeX{} code.
-\item A normal, inter-word space can be inserted using \dcskbd{Ctrl-Alt-space}.
-It produces ``\dcscode{\textbackslash{} }'' in \LaTeX{} code. This
-type of space is useful for formatting spacing after dots, e.g.\ here.
-By default \LaTeX{} produces here a longer space used for separating
-whole sentences.
-\item A thin space can be produced by \dcskbd{Ctrl-Shift-space}, e.g.\,here.
-It produces ``\dcscode{\textbackslash{},}'' in \LaTeX{} code.
-\item Sentence-ending space can be inserted using \dcskbd{Ctrl-.}, which
-produces ``\dcscode{\textbackslash{}@.}'' in \LaTeX{} code. This
-type of space is useful in sentences ending with a capital letter.
-In such cases \LaTeX{} recognizes the last word as a acronym and places
-a regular inter-word space instead of inter-sentence space. Consider
-the following example:
 
-\begin{quote}
-\emph{This can be achieved by using HTTP\@. This protocol...}
-\end{quote}
-\item Hyphenation indicator can be inserted using \dcskbd{Ctrl-~--}, which
-is used for marking possible places of hyphenation, e.g.\ de\-mo\-cra\-cy.
-\end{enumerate}
+\subsection{Założenia}
 
-\section{Figures}
+Korzystając z pomysłu prof. Eamonna przyjęto założenie, że dla szeregów
+czasowych o równych odstępach czasowych między pomiarami, można pominąć
+dane dotyczące momentu, w którym pomiaru dokonano i uprościć ten szereg
+do sekwencji samych wartości. W następujących rozdziałach przyjęto
+że operuje się na zbiorze $N$-elementowym o postaci $x_{1},x_{2},\ldots,x_{n}$
 
-The figures should be put in floats, like Fig.~\ref{fig:ex-fig1}.
-You can also reference figures using \dcsname{prettyref} package
-like this: \prettyref{fig:ex-fig1}.
+
+\subsection{Schemat działania}
+
+Stworzenie reprezentacji SAX dla szeregu czasowego składa się z trzech
+etapów:
+
+
+\subsubsection{Z-normalizacja szeregu czasowego}
+
+Na potrzeby przedstawienia wzoru dla odchylenia standardowego przyjęto
+następującą definicję sumy elementów zbioru:
+\[
+s_{j}=\sum_{k=1}^{N}x_{k}^{j}
+\]
+dzięki któremu można przedstawić wzór na odchylenie standardowe tak
+jak poniżej\cite{FormulaStdDeviation}:
+\[
+std=\sqrt{\frac{Ns_{2}-s_{1}^{2}}{N(N-1)}}
+\]
+Mając obliczone odchylenie standardowe i średnią wartość dla zbioru,
+którą wyrażono poniżej symbolem $mean$ można przejść do właściwej
+normalizacji, co oznacza przekształcenie każdego z elementów zbioru
+w sposób przedstawiony poniżej:
+\[
+x_{i}=\frac{x_{i}-mean}{std}
+\]
+
+
+
+\subsubsection{Dyskretyzacja sygnału za pomocą algorytmu PAA (Piecewise Aggregate
+Approximation)}
+
+Jednym z argumentów, jaki przyjmuje algorytm SAX jest długość łańcucha
+wyjściowego - co w praktyce sprowadza się do tego na ile części podzielić
+długość szeregu czasowego. Oznacza to, że metoda zmniejsza wymiarowość
+szeregu z $N$ do żądanych $M$ elementów. Przebieg algorytmu jest
+intuicyjny - sekwencja $x_{1},x_{2},\ldots,x_{N}$transformowana jest
+do postaci $y_{1}y_{2},\ldots,y_{M}$ poprzez podział sekwencji $N$-elementowej
+na $M$ równych części według wzoru\cite{SaxFundamentals}:
+\[
+y_{i}=\frac{M}{N}\sum_{j=\frac{N}{M}(i-1)+1}^{(N/M)i}
+\]
+Poniżej przedstawiono przykładową dyskretyzację dla następującego
+szeregu czasowego:
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline 
+i & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\tabularnewline
+\hline 
+oryginalny sygnał $x_{i}$ & 2 & 6 & 3 & 9 & 10 & 9 & 2 & 1 & 7 & 4\tabularnewline
+\hline 
+\end{tabular}
+
+dzieląc szereg dziesięcioelementowy na pięć równych części algorytmem
+PAA\cite{PaaGithub}:
+\begin{figure}[tbph]
+\includegraphics[width=15cm]{figures/paa_moje}
+
+\caption{Porównanie oryginalnego szeregu czasowego i jego 5-elementowej dyskretyzacji}
+
+
+\end{figure}
+Dzięki temu otrzymano redukcję pięciowymiarową:
+
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline 
+i & 1 & 2 & 3 & 4 & 5\tabularnewline
+\hline 
+zdyskretyzowany sygnał $y_{i}$ & 4 & 6 & 9.5 & 1.5 & 5.5\tabularnewline
+\hline 
+\end{tabular}
+
+
+\subsubsection{Algorytm SAX}
+
+Jak wspomniano wyżej, jednym z argumentów jakie przyjmuje algorytm
+SAX jest długość sekwencji wyjściowej, zaś drugim - liczba dostępnych
+liter w alfabecie. Ta liczba precyzuje na ile części podzielić zbiór
+wartości danego (przetworzonego już) szeregu, a tym samym jakie indeksy
+(znaki) przypisać wartościom lądującym w poszczególnych zakresach.
+Do przypisania znaków dla odpowiednich przedziałów potrzebny jest
+przedział danych zatem obliczyć różnicę między elementem minimalnym
+a maksymalnym zbioru $y$ 
+\[
+d=|max(y)-min(y)|
+\]
+a następnie ustalić krok $k$, ustalający rozmiar okna, dzieląc zbiór
+wartości $d$ przez liczbę części $M$. W ostatnim kroku, począwszy
+od wartości minimalnej przydzielamy kolejne przedziały kolejnym znakom.
+Dla powyższego przykładu przyjęto alfabet trójelementowy $alpha={a,b,c}$.
+Dla $d=9.5-15=8$ wielkość okna wynosi $k=\frac{8}{3}=2\frac{2}{3}$.
+Co prowadzi do podziału:
+
+\begin{tabular}{|c|c|c|}
+\hline 
+a & b & c\tabularnewline
+\hline 
+$<1\frac{1}{2},4\frac{1}{6})$ & $<4\frac{1}{6},6\frac{5}{6})$ & $<6\frac{5}{6},9\frac{1}{2}>$\tabularnewline
+\hline 
+\end{tabular}
+
+dzięki czemu otrzymujemy przypisania naniesione na wykres:
+\begin{figure}[tbph]
+\includegraphics[width=15cm]{figures/sax_moj}
+
+\caption{Oryginalny sygnał z dyskretyzacją i naniesionym SAXem}
+
+
+\end{figure}
+co oznacza, że ostatecznym wynikiem metody SAX dla szeregu czasowego
+$x$ przy zadanych parametrach długości łańcucha wyjściowego 5 oraz
+alfabetu trójelementowego jest ciąg znaków $abcab$.
+
+
+\section{DTW (Dynamic Time Warping)}
+
+Algorytm DTW jest metodą, która stara się wyeliminować błąd porównywania
+dwóch szeregów czasowych, których charakterystyczne cechy były wobec
+siebie nieco przesunięte w czasie bądź w jednym szeregu zdarzenie
+postępowało wolniej niż w drugim - choć nadal było to to samo zdarzenie.
+Potrafi też poradzić sobie z pojedynczymi błędami pomiaru czy drobnymi
+szumami. Te cechy widać na rysunku \ref{fig:Dopasowywanie-DTW} na
+którym sygnał \dcscode{vec1} wyraźnie dostosowywuje się do sygnału
+\dcscode{vec2} mimo dużego spadku wartości w połowie przebiegu.
 
 \begin{figure}[tbph]
-\begin{centering}
-\includegraphics[width=0.4\textwidth]{logopp/logopp-jasne-czarne}
-\par\end{centering}
+\includegraphics[width=15cm]{other/dtwBridgePlot02}
 
-\caption{Example figure \label{fig:ex-fig1}}
+\caption{Dopasowywanie DTW\cite{chinczyk}\label{fig:Dopasowywanie-DTW}}
 \end{figure}
 
 
-It is possible to combine several pictures inside one float. Just
-insert a float inside a float. See Fig.~\ref{fig:ex-fig2} for example.
-Please note the horizontal spacing between subfigures.
+To jak realizowany jest algorytm DTW obrazuje rysunek \ref{fig:Macierz-DTW}.
+W momencie przyrównywania dwóch sygnałów, tworzona jest macierz odległości,
+której wartiści obliczane są rekurencyjnie. Ostatni wiersz macierzy
+to różnice między kolejnymi wartościami szeregów. Kolejne wiersze
+powstają na ich podstawie. Gdy maciesz jest już skonstruowana, wybiera
+się najkrótszą kosztowo ścieżkę między skrajnymi wierzchołkami macierzy
+- suma wartości komórek, przez które przechodzi ścieżka jest dystansem
+między tymi szeregami.
+\begin{figure}[tbph]
+\includegraphics[width=15cm]{other/dtw2Plot01}
+
+\caption{Macierz DTW\cite{chinczyk}\label{fig:Macierz-DTW}}
+
+
+\end{figure}
+ Należy nadmienić, że metoda ta jest dokładna, lecz za jej skutecznością
+idzie spory nakład czasowy - czas przetwarzania jest nieporównywalnie
+większy od pozostałych metod. Szczegółowo zostanie to omówione w rodziale
+poświęconym wynikom.
+
+Teoretycznie metoda jako parametr przyjmuje szerokość okna DTW - określa
+to ramy części macierzy, na której można szukać ścieżki pomiędzy wierzchołkami.
+Jednak ze względu na wspomniany już ogromny narzut czasowy, metoda
+została odpalona tylko na jednej konfiguracji o najmniejszym możliwym
+- dwuelementowym - oknie DTW.
+
+
+\section{Badane zbiory danych}
+
+Jak wspomniano wcześniej, podstawowy zbiór, który miał zostać zbadany
+to pacjenci z jaskrą (lub bez). Z tego powodu będzie on opisany nieco
+szerzej niż pozostałe zbiory
+
+
+\subsection{Pacjenci}
+
+Zbiór dostarczony przez dr. J. Błaszczyńskiego. Zbiór zawiera pomiary
+dla 116 pacjentów, z których 65 to pacjenci zdrowi, a 51 to pacjenci
+ze zdiagnozowaną jaskrą. Dla każdego pacjenta zebrano 288 pomiarów
+(pomiar co 5 minut przez całą dobę) tzw. TFADJ <tu rozwinięcie?> będącym
+przekształceniem zmierzonego w danym momencie ciśnienia w oku. Poniżej
+poglądowe zdjęcie metody zbierania pomiarów:
 
 \begin{figure}[tbph]
-\centering{}\hfill{}\subfloat[The first subfigure]{\begin{centering}
-\includegraphics[width=0.3\textwidth]{logopp/logopp-jasne-czarne}
-\par\end{centering}
+\includegraphics[width=15cm]{\string"C:/Users/womi/Documents/prv/TimeSeries/doc/rozne/pomiar jaskry\string".png}
 
-}\hfill{}\subfloat[The second subfigure]{\begin{centering}
-\includegraphics[width=0.3\textwidth]{logopp/logopp-jasne}
-\par\end{centering}
+\caption{Metoda zbierania pomiarów od pacjentów}
 
-}\hfill{}\mbox{}\caption{Example figure \label{fig:ex-fig2}}
+
 \end{figure}
 
 
 
-\section{Tables}
+\subsection{Dane prof. Eamonna Keogh'a\cite{UCRArchive}}
 
-Tables should have captions above like Table~\ref{tab:ex-tab}. Use
-small sans-serif fonts inside tables.
+Zbiory pobrane od prof. Eamonn'a nie zawierają opisu poszczególnych
+zbiorów, dlatego też ich tu nie przedstawiono. Jednak przetwarzając
+dane można było wyciągnąć z nich pewne interesujące statystyki, które
+przedstawiono w poniższej tabeli (w ostatnim wierszu porównawczo zestawiono
+zbiór dr. Błaszczyńskiego):
 
-\begin{table}[h]
-\caption{Example table \label{tab:ex-tab}}
+\begin{table}[tbph]
+\caption{Szczegóły danych\label{tab:Szczeg=0000F3=000142y-danych}}
 
 
-\textsf{\small{}}%
-\begin{tabular}{lcc}
-\toprule 
-\textsf{\textbf{\small{}Column 1}} & \textsf{\textbf{\small{}Column 2}} & \textsf{\textbf{\small{}Column 3}}\tabularnewline
-\midrule 
-\textsf{\small{}One} & \textsf{\small{}1} & \textsf{\small{}4}\tabularnewline
-\midrule 
-\textsf{\small{}Two} & \textsf{\small{}2} & \textsf{\small{}5}\tabularnewline
-\midrule 
-\textsf{\small{}Three} & \textsf{\small{}3} & \textsf{\small{}6}\tabularnewline
-\bottomrule
-\end{tabular}{\small \par}
+\begin{tabular}{c>{\centering}p{2.5cm}>{\centering}p{1.5cm}>{\raggedright}p{3.5cm}>{\centering}p{1.7cm}}
+\hline 
+\dcsstrong{nazwa zbióru} & \dcsstrong{liczba instancji} & \dcsstrong{liczba klas} & \dcsstrong{podział na klasy} & \dcsstrong{długość szeregu}\tabularnewline
+\hline 
+ECG200 & 200
+
+~ & 2 & \multirow{1}{3.5cm}{'-1' - 67 rekordów '1'~-~133~rekordów} & 96\tabularnewline
+\hline 
+ECGFiveDays & 884 & 2 & '1' - 442 rekordów 
+
+'2' - 442 rekordów & 136\tabularnewline
+\hline 
+TwoLeadECG & 1162 & 2 & '2' - 581 rekordów 
+
+'1' - 581 rekordów & 82\tabularnewline
+\hline 
+Yoga & 3300 & 2 & '1' - 1530 rekordów 
+
+'2' - 1770 rekordów & 426\tabularnewline
+\hline 
+MoteStrain & 1272 & 2 & '2' - 587 rekordów
+
+'1' - 685 rekordów & 84\tabularnewline
+\hline 
+ItalyPowerDemand & 1096 & 2 & '1' - 547 rekordów 
+
+'2' - 549 rekordów & 24\tabularnewline
+\hline 
+ChlorineConcentration & 4307 & 3 & '1' - 1000 rekordów 
+
+'3' - 2307 rekordów 
+
+'2' - 1000 rekordów & 166\tabularnewline
+\hline 
+Two Patterns & 5000 & 3 & '2' - 1248 rekordów 
+
+'3' - 1245 rekordów 
+
+'4' - 1201 rekordów 
+
+'1' - 1306 rekordów & 128\tabularnewline
+\hline 
+Wafer & 7174 & 2 & '1' - 6402 rekordów
+
+'-1' - 762 rekordów & 152\tabularnewline
+\hline 
+InlineSkate & 650 & 7 & '2' - 100 rekordów 
+
+'3' - 103 rekordów 
+
+'7' - 62 rekordów 
+
+'6' - 98 rekordów 
+
+'4' - 108 rekordów 
+
+'5' - 117 rekordów 
+
+'1' - 62 rekordów & 1882\tabularnewline
+\hline 
+\dcsemph{Pacjenci } & \dcsemph{116} & \dcsemph{2} & \dcsemph{'0' - 65 rekordów \\
+'1' - 51 rekordów} & \dcsemph{288}\tabularnewline
+\hline 
+\end{tabular}
 \end{table}
 
 
-\newpage{}
+
+\chapter{Koncepcja projektu}
 
 
-\section{Source code examples}
+\section{Metody przetwarzania danych dla klasyfikatorów}
 
-There are a few different methods of including sample codes:
-\begin{enumerate}
-\item Using standard \dcscode{\LyX{}-Code} style:
-
-\begin{lyxcode}
-\#include~<stdio.h>
-
-~
-
-int~main()~\{
-
-~~printf(\textquotedbl{}Hello~world!\textbackslash{}n\textquotedbl{});
-
-~~return~0;
-
-\}
-\end{lyxcode}
-
-Note 1: Empty lines must contain at least one single space to remain
-visible.
+W celu osiągnięcia jak najlepszych wyników, postanowiono przy rozpoczęciu
+prac nad tą pracą dyplomową spróbować podejścia polegającego na zmodyfikowaniu
+sygnału wejściowego przed przekazaniem go do klasyfikatora. Zrealizowano
+to na kilka sposobów, które zostały opisane w niniejszym podrozdziale.
 
 
-Note 2: There is no way to activate automatic syntax highlighting
-inside \dcscode{\LyX{}-Code}. However, you can use normal inline
-formatting inside.
+\subsection{Dzielenie sygnału na części}
+
+Pierwszym oraz jeden z prostszych koncepcyjnie pomysłów jaki został
+wdrożony było podzielenie wejściowego sygnału na części. Przykładowo
+dla regresji znacznie dzięki temu wzrasta liczba atrybutów, a co za
+tym idzie - dokładność klasyfikacji. Tak jak klasyczna regresja zwróci
+dwa argumenty - parametr \dcscode{a} oraz \dcscode{b}, tak po podzieleniu
+sygnału na 3 części dostaniemy aż trzy pary takich parametrów. Jako
+możliwe wartości tego parametru na przestrzeni eksperymentów wybrano
+1, 3 oraz 5. Dodatkowo dla eksperymentu z regresją dodano dodatkowe
+10, 20 oraz 48.
 
 
-Note 3: \dcscode{Lyx-Code} can contain special characters, so it
-can be used to produce some ASCII art, e.g.:
-\begin{lyxcode}
-┌──────────┐~~~~╔══════════╗
+\subsection{Podejście SAX}
 
-│~~Test~1~~├────╢~~Test~2~~║
-
-└──────────┘~~~~╚══════════╝
-\end{lyxcode}
-\item By inserting \dcsemph{Program Listing}:
+Opisana wyżej metoda dyskretyzacji sygnału została użyta do kilku
+spośród przeprowadzonych eksperymentów. Żeby zbadać różne możliwości
+przebiegu tej dyskretyzacji zdecydowano się na parametryzację tej
+metody. W ramach dopuszczalnych długości alfabetu wybrano 3, 5 oraz
+11 znaków, a w kwestii długości łańcucha wynikowego zdecydowano się
+na stałą długość 96 znaków.
 
 
-\inputencoding{latin9}\begin{lstlisting}[language=C,tabsize=2,xleftmargin=2em]
-#include <stdio.h>
+\subsection{Zliczanie (eksperyment ,,Counted'')}
 
-int main() {
-  printf("Hello world!\n");
-  return 0;
-}
+Metoda zliczania ściśle bazuje na metodzie SAX - modyfikacje danych
+następują na poziomie wynikowego łańcucha znaków, a nie czystego szeregu
+czasowego. Pierwszym krokiem zatem jest wyliczenie łańcucha SAX dla
+instancji. Następnie łancuch ten dzieli się na zadaną liczbę części.
+W kolejnym kroku potrzebny jest kolejny parametr - ngram - który może
+przyjąć wartość 2 lub 3. Polega on na zliczeniu wszystkich możliwych
+2- lub 3gramów w łańcuchu badanej części. Wynikiem są wystąpienia
+danych ngramów w każdej z części. Poniżej przedstawiono to na przykładzie.
+
+Dla tego przykładu przyjęto podane założenia: metoda otrzymuje 3 rekordy,
+a dla ich sygnałów metoda SAX wyliczyła odpowiednie łańcuchy:
+\begin{itemize}
+\item r1: 'abaabbbbaabb' z przypisaniem do klasy '1'
+\item r2: 'abbabaaaabba' z przypisaniem do klasy '1'
+\item r3: 'aaababbbaaaa' z przypisaniem do klasy '2'
+\end{itemize}
+W tabeli zamieszczono przebieg algorytmu dla podziału na 3 części
+oraz wyszczególniono 2gramy pojawiające się w ramach każdej z części.
+
+\begin{table}[tbph]
+\begin{tabular}{|c|c|c|c|}
+\hline 
+ & okres 1 & okres 2 & okres 3\tabularnewline
+\hline 
+\hline 
+\textbf{rekord 1} & \textbf{abaa} & \textbf{bbbb} & \textbf{aabb}\tabularnewline
+\hline 
+ & ab & bb & aa\tabularnewline
+\hline 
+ & ba &  & ab\tabularnewline
+\hline 
+ & aa &  & bb\tabularnewline
+\hline 
+\hline 
+\textbf{rekord 2} & \textbf{abba} & \textbf{baaa} & \textbf{abba}\tabularnewline
+\hline 
+ & ab & ba & ab\tabularnewline
+\hline 
+ & bb & aa & bb\tabularnewline
+\hline 
+ & ba &  & ba\tabularnewline
+\hline 
+\hline 
+\textbf{rekord 3} & \textbf{aaab} & \textbf{abbb} & \textbf{aaaa}\tabularnewline
+\hline 
+ & aa & ab & aa\tabularnewline
+\hline 
+ & ab & bb & \tabularnewline
+\hline 
+\end{tabular}
+
+\caption{Podział łańcuchów SAX instancji na 2gramy 'Counted'\label{tab:Podzia=000142-=000142a=000144cuch=0000F3w-SAX}}
+
+
+\end{table}
+W kolejnym kroku należy zliczyć ile razy wystąpił każdy z 2gramów.
+Wyniki przedstawia tabela 
+
+\begin{table}[tbph]
+\begin{tabular}{|c|c|c|c|}
+\hline 
+ & rekord 1 & rekord 2 & rekord 3\tabularnewline
+\hline 
+\hline 
+o1ab & 1 & 1 & 1\tabularnewline
+\hline 
+o1ba & 1 & 1 & 0\tabularnewline
+\hline 
+o1aa & 1 & 0 & 2\tabularnewline
+\hline 
+o1bb & 0 & 1 & 0\tabularnewline
+\hline 
+\hline 
+o2bb & 3 & 0 & 2\tabularnewline
+\hline 
+o2ba & 0 & 1 & 0\tabularnewline
+\hline 
+o2aa & 0 & 2 & 0\tabularnewline
+\hline 
+o2ab & 0 & 0 & 1\tabularnewline
+\hline 
+\hline 
+o3aa & 1 & 0 & 3\tabularnewline
+\hline 
+o3ab & 1 & 1 & 0\tabularnewline
+\hline 
+o3bb & 1 & 1 & 0\tabularnewline
+\hline 
+o3ba & 0 & 1 & 0\tabularnewline
+\hline 
+\end{tabular}
+
+\caption{Zliczenie 2gramów dla instacji przedstawionych w \ref{tab:Podzia=000142-=000142a=000144cuch=0000F3w-SAX}
+\label{tab:Zliczenie-2gram=0000F3w} }
+\end{table}
+Na podstawie tabeli \ref{tab:Zliczenie-2gram=0000F3w} generowany
+jest plik wejściowy \dcscode{arff}dla klasyfikatora, który dla omawianego
+przykładu wyglądałby tak, jak pokazano w listingu \ref{code:Wynikowy-plik-arff-counted}.
+\inputencoding{latin2}\begin{lstlisting}[caption={Wynikowy plik arff dla eksperymentu 'Counted'},label={code:Wynikowy-plik-arff-counted}]
+@relation 'Sax counted'
+
+@attribute o1ab numeric
+@attribute o1ba numeric
+@attribute o1aa numeric
+@attribute o1bb numeric
+@attribute o2bb numeric
+@attribute o2ba numeric
+@attribute o2aa numeric
+@attribute o2ab numeric
+@attribute o3aa numeric
+@attribute o3ab numeric
+@attribute o3bb numeric
+@attribute o3ba numeric
+
+@attribute destClass {1,2}
+
+@data
+1,1,1,0,3,0,0,0,1,1,1,0,1
+1,1,0,1,0,1,2,0,0,1,1,1,1
+1,0,2,0,2,0,0,1,3,0,0,0,2
 \end{lstlisting}
 \inputencoding{utf8}
 
 
-Note: By default the \dcscode{lstlisting} environment does not add
-any left margin. You can change it by adding \dcscode{xleftmargin}
-in the \dcsemph{Settings} \lyxarrow{} \dcsemph{Advanced} dialog
-box, e.g.:
+\subsection{Dominacja (eksperyment ,,Dominant'')}
+
+Eksperyment nazwany eksperymentem dominacyjnym jest łudząco podobny
+do eksperymentu 'Counted' - różni się jedynie sposobem zliczania ngramów,
+dlatego zostanie zobrazowany na tym samym przykładzie. Tym razem analizując
+każdy z ngramów w poszczególnej części zlicza się ngramy będące co
+najmniej tak samo ,,wysokie'' na każdym z argumentów (tutaj: znaków
+w łańcuchu) w opcji 'atMost' lub też co najwyżej tak samo opisany
+na każdym z agrumentów ('atLeast') jak ten badany. W tabeli \ref{tab:Dominacja-ngram=0000F3w}
+przedstawiono jak wyglądają wyniki zliczania z dominacją dla rekordów
+przedstawionych w tabeli \ref{tab:Podzia=000142-=000142a=000144cuch=0000F3w-SAX}. 
+
+\begin{table}[tbph]
+\begin{tabular}{|c|c|c|c|}
+\hline 
+ & rekord 1 & rekord 2 & rekord 3\tabularnewline
+\hline 
+\hline 
+o1<=ab & 2 & 1 & 3\tabularnewline
+\hline 
+o1>=ab & 1 & 2 & 1\tabularnewline
+\hline 
+o1<=bb & 3 & 3 & 3\tabularnewline
+\hline 
+o1>=bb & 0 & 1 & 0\tabularnewline
+\hline 
+o1<=ba & 2 & 1 & 2\tabularnewline
+\hline 
+o1>=ba & 1 & 2 & 0\tabularnewline
+\hline 
+o1<=aa & 1 & 0 & 2\tabularnewline
+\hline 
+o1>=aa & 3 & 3 & 3\tabularnewline
+\hline 
+\end{tabular}
+
+\caption{Dominacja ngramów dla rekordów z tabeli \ref{tab:Podzia=000142-=000142a=000144cuch=0000F3w-SAX}\label{tab:Dominacja-ngram=0000F3w}}
 
 
-\inputencoding{latin9}\begin{lstlisting}[tabsize=2,xleftmargin=6em]
-procedure sayHello()
-\end{lstlisting}
-\inputencoding{utf8}
-
-\item By inserting \LaTeX{} Code (ERT block) and using \dcscode{codeblock}
-environment:
-
-
-\begin{codeblock}[language=c]
-#include <stdio.h>
+\end{table}
  
-int main() {
-  printf("Hello world!\n");
-  return 0;
+
+Jak można zauważyć, w takim podejściu podwaja się liczba argumentów
+dla każdego rekordu (w tabeli przestawiono tylko część dotyczącą pierwszego
+okresu - stąd prefiksy 'o1'). Wartość '2' dla rekordu 1 w wierszu
+o1<=ab oznacza, że spośród ngramów w tym okresie dwa z nich były co
+najwyżej takie jak 2gram 'ab' - są to 2gramy 'ab' oraz 'aa' - oba
+występowały jednokrotnie. Z kolei na przykład wartość 0 dla rekordu
+3 w wierszu o1>=ba oznajmia, że nie było żadnego 2gramu większego
+lub równego 2gramowi 'ba' w łańcuchu odzwierciedlającym przebieg sygnału
+dla rekordu nr 3.
+
+Jak zauważono, dla ngramów prezentujących co najmniej najmniejsze
+lub co najwyżej największe wartości na każdym ze znaków łańcucha,
+wartości zliczeń są zawsze maksymalne (w tym przykładzie wiersze 'o1<=bb'
+oraz 'o1>=aa'). Nie wnoszą zatem one żadnej informacji godnej uwagi
+klasyfikatora, zatem wiersze te były wycinane przed eksportem do pliku
+arff.
+
+Ze względów technicznych w plikach arff znaki '<=', '>=' zostały zmienione
+na 'atL', 'atM' czyli odpowiednio atLeast (co najmniej) oraz at Most
+(co najwyżej). W listingu \ref{code:Wynikowy-plik-arff-dominant}
+przedstawiono pełny plik arff dla omawianego przypadku w wariancie
+eksperymentu 'Dominant'. \inputencoding{latin2}
+\begin{lstlisting}[caption={Wynikowy plik arff dla eksperymentu 'Dominant'},label={code:Wynikowy-plik-arff-dominant}]
+@relation 'Sax dominant'
+
+@attribute o1atMaa numeric
+@attribute o1atMab numeric
+@attribute o1atLab numeric
+@attribute o1atMba numeric
+@attribute o1atLba numeric
+@attribute o1atLbb numeric
+@attribute o2atLbb numeric
+@attribute o2atMaa numeric
+@attribute o2atMba numeric
+@attribute o2atLba numeric
+@attribute o2atMab numeric
+@attribute o2atLab numeric
+@attribute o3atMaa numeric
+@attribute o3atLbb numeric
+@attribute o3atMab numeric
+@attribute o3atLab numeric
+@attribute o3atMba numeric
+@attribute o3atLba numeric
+@attribute destClass {1,2}
+
+@data
+1,2,1,2,1,0,3,0,0,3,0,3,1,1,2,2,1,1,1
+0,1,2,1,2,1,0,2,3,1,2,0,0,1,1,2,1,2,1
+2,3,1,2,0,0,2,0,0,2,1,3,3,0,3,0,3,0,2
+\end{lstlisting}
+\inputencoding{utf8}
+
+
+\section{Użyte klasyfikatory}
+
+
+\subsection{J48}
+
+J48 to jeden z podstawowych klasyfikatorów pakietu \dcscode{weka},
+opierający algorytm klasyfikacji na drzewach decyzyjnych. Jego działanie
+rozpoczyna się na przypisaniu wszystkich instancji treningowych do
+jednego liścia. Jeżeli wszystkie elementy należą do tej samej klasy,
+to algorytm się kończy - jeśli nie, wybiera atrybut, który najlepiej
+rozdziela instancje w liściu na różne klasy i tworzy odpowiedni liść.
+Algorytm trwa aż w liściach pozostaną jednorodne grupy elementów lub
+nie będzie można dobrać kolejnych atrybutów jako kryterium podziału.
+
+
+\subsection{IBk}
+
+Klasyfikator stworzony do przeprowadzania klasyfikacji za pomocą algorytmu
+k-najbliższych sąsiadów (ang. KNN: K-Nearest-Neighbors) z pakietu
+\dcscode{weka}. Dzięki temu, że klasyfikator ten można w łatwy sposób
+zmodyfikować na poziomie kodu, dostosowano go również do eksperymentu
+DTW, który również bazuje na metodzie KNN, jednak używa innego algorytmu
+wyszukiwania ów najbliższych sąsiadów.
+
+
+\subsection{VCDomLem}
+
+
+\subsection{NgramClassifier}
+
+Autorski klasyfikator zbudowany na wzór klasyfikatora pakietu weka
+(rozszerza klasę \dcscode{weka.classifiers.Classifier}). Jako wejście
+przyjmuje jeden argument - łańcuch wyjściowy z algorytmu SAX. Następnie
+dla każdej klasy decyzyjnej wyznacza liczności występowań danych n-gramów
+(gdzie n jest parametrem metody). W momencie klasyfikacji instancji
+zlicza się występowanie ngramów w ramach badanej instancji, by potem
+zmierzyć dystanse dzielące instancję oraz wszystkie klasy decyzyjne.
+Instancja zostaje przypisana do klasy, z którą dzieli ją najmniejszy
+dystans. Aby przedstawić sposób liczenia tej odległości zdefiniowano
+następującą funkcję: $occ(klasa,ngram)$ która jako wynik zwraca ile
+wystąpień danego ngramu miało miejsce w ramach podanej klasy decyzyjnej.
+Analogicznie $occ(instancja,ngram)$ podaje liczbę wystąpień ngramu
+dla zadanej instancji. 
+
+Zatem dla każdej klasy liczony jest następująca odległość między instancją
+a klasą:
+\[
+dist(instance,class)=\sqrt{\sum_{ngram}^{instance}(occ(klasa,ngram)-occ(instancja,ngram))^{2}}
+\]
+
+
+
+\section{Miary\cite{ActivityLearning}}
+
+Do oceniania poprawności eksperymentów wybrano sześć miar statystycznych.
+Niektóre z nich bazują na kilku definicjach c \dcsemph{confussion matrix},
+których znaczenie przedstawiono w tabeli poniżej:
+
+\begin{tabular}{|>{\centering}p{4cm}|>{\centering}m{4cm}|>{\centering}m{4cm}|}
+\cline{2-3} 
+\multicolumn{1}{>{\centering}p{4cm}|}{} & Rzeczywista wartość pozytywna & Rzeczywista wartość negatywna\tabularnewline
+\hline 
+Przewidywana wartość pozytywna & \textbf{True Positive} & \textbf{False Positive}\tabularnewline
+\hline 
+Przewidywana wartość negatywna & \textbf{False Negative} & \textbf{True Negative}\tabularnewline
+\hline 
+\end{tabular}
+
+
+\subsection{Dokładność (ang. accuracy)}
+
+Najbardziej znana i intuicyjna miara ewaluacji klasyfikatora to właśnie
+dokładność. Określa ją stosunek poprawnie sklasyfikowanych instacji
+do liczby wszystkich instacji. Dzięki swojej prostej koncepcji może
+być z powodzeniem używana zarówno w problemach binarnych jak i wieloklasowych.
+\[
+Accuracy=\frac{correctly\,classified\,instances}{total\,instances}
+\]
+
+
+
+\subsection{Wrażliwość (ang. sensitivity)}
+
+Miara ta, znana również pod nazwą \dcsemph{True positive rate}, skupia
+się na zobrazowaniu stosunku instacji poprawnie zidentyfikowanych
+w klasie umownie uznanej za pozytywną do liczby instacji w tej klasie.
+Na przykładzie zbioru Pacjentów opisywanego w tej pracy można powiedzieć,
+że jest to proporcja pacjentów poprawnie sklasyfikowanych jako chorzy
+na jaskrę do wszystkich, którzy są na tę jaskrę chorzy. Wzór na wrażliwość
+podano poniżej:
+\[
+Sensitivity=\frac{TP}{TP+FN}
+\]
+
+
+
+\subsection{Specyficzność (ang. specificity)}
+
+Specyficzność to w pewnym sensie przeciwieństwo wrażliwości - uwydatnia
+proporcję instancji dobrze sklasyfikowanych w klasie uznanej umownie
+za negatywną do liczby instancji w tej klasie. Ponownie odwołując
+się do analizowanych tutaj Pacjentów wynik specyficzności to iloraz
+pacjentów prawidłowo sklasyfikowanych jako zdrowi i liczby wszystkich
+zdrowych pacjentów. Poniżej przedstawiono jej wzór ogólny:
+\[
+Specificity=\frac{TN}{TN+FP}
+\]
+
+
+
+\subsection{Średnia geometryczna (ang. geometric mean)}
+
+Miara \dcsemph{G-mean} to geometryczne uśrednienie miar wspomnianych
+powyżej, czyli wrażliwości i specyficzności. Estymuje więc skuteczność
+klasyfikatora zarówno na klasie pozytywnej jak i negatywnej. Dla formalności
+poniżej przedstawiono jej wzór:
+\[
+Gmean=\sqrt{\frac{TP}{TP+FN}\times\frac{TN}{TN+FP}}=\sqrt{Sensitivity\times Specificity}
+\]
+
+
+
+\subsubsection{Miara F (ang. F-measure, F1)}
+
+Na potrzeby zobrazowania miary F posłużono się definicjami precyzji
+(ang. precision) oraz przywołania (ang. recall). Precyzja wyraża to
+ile było trafień w klasie pozytywnej w odniesieniu do wszystkich instancji,
+które klasyfikator uznał za należące do klasy pozytywnej ($Precision=\frac{TP}{TP+FP})$.
+Przywołanie natomiast to nic innego co wspomniana już wcześniej wrażliwość.
+Miara F1 zaś jest dwukrotnym ilorazem iloczynu precyzji i przywołania
+oraz ich sumy: 
+\[
+F1=2\frac{precision\times recall}{precision+recall}
+\]
+
+
+
+\subsection{Procent poprawnie sklasyfikowanych (ang. Percent Correctly Classified)}
+
+Jest to prosta miara uwidaczniająca udział prawidłowo sklasyfikowanych
+instancji w odniesieniu do ogółu. Jej wzór prezentuje się następująco:
+\[
+PCC=\frac{correctly\,classified\,instances}{instances}
+\]
+
+
+
+\section{Posumowanie}
+
+Jak szczegółowo opisano wyżej, przeprowadzono aż 7 zróżnicowanych
+eksperymentów na 11 zbiorach danych. W poniższej tabeli przedstawiono
+zebrane informacje dotyczące tego jak przetworzono dane zanim przekazano
+je do klasyfikatora oraz jaki klasyfikator te dane przeliczał.
+
+\begin{table}[tbph]
+\begin{tabular}{|>{\centering}p{3cm}|>{\centering}p{6cm}|>{\centering}p{3cm}|}
+\hline 
+\textbf{Nazwa eksperymentu} & \textbf{dane wejściowe} & \textbf{klasyfikator}\tabularnewline
+\hline 
+Regresja & oryginalny sygnał & J48\tabularnewline
+\hline 
+Dominacja & zliczone dominujące n-gramy SAX & VCDomLem\tabularnewline
+\hline 
+Zliczanie & zliczone n-gramy SAX & J48\tabularnewline
+\hline 
+Ngram & SAX & NgramClassifier\tabularnewline
+\hline 
+KNN & sygnał zdyskretyzowany metodą SAX & IBk\tabularnewline
+\hline 
+DTW & oryginalny sygnał & IBk\tabularnewline
+\hline 
+Bagging & zliczone n-gramy SAX & J48\tabularnewline
+\hline 
+\end{tabular}
+
+\caption{Zrealizowane eksperymenty}
+\end{table}
+
+
+
+\chapter{Implementacja}
+
+
+\section{Koncepcja budowy biblioteki}
+
+Wiodącym założeniem przyświecającym pracom implementacyjnym nad biblioteką
+obliczeniową było podążanie za dobrymi praktykami wytwarzania oprogramowania
+według Roberta C. Martina - z głównym naciskiem na OCP (Open Closed
+Principle)\cite{MartinPrinciples} - zasadę ,,otwarte-zamknięte''.
+Oznacza to, że oprogramowanie ma być otwarte na zmiany, lecz zamknięte
+na modyfikacje - starano się zatem osiągnąć stan, w którym istniejący
+kod można rozszerzyć z jak najmniejszym wysiłkiem wniesionym w edycję
+istniejącego kodu. Szczegóły tej idei przedstawiono w poniższych sekcjach.
+
+
+\subsection{Użyte biblioteki pomocnicze}
+
+Żeby móc w pełni opisać funkcjonalność i sposób budowy programu należy
+nadmienić jakimi bibliotekami wspomagano się podczas tego procesu.
+
+
+\subsubsection{Weka}
+
+Najważniejsza biblioteka, z którą program współpracuje najściślej.
+Więdząc, że Weka jest często używana do klasyfikacji czy uczenia maszynowego,
+autor chciał stworzyć narzędzie kompatybilne z programem stworzonym
+na Uniwesytecie w australijskim Waikato. Kilka kluczowych klas programu
+autora rozszerza klasy pakietu \dcscode{weka} stwarzając możliwości
+wykorzystania rozmaitych składowych tego systemu. Ponadto używanie
+klas takich jak \dcscode{weka.classifiers.Evaluation} do przeprowadzania
+eksperymentów daje pewność, że wykorzystywane rozwiązanie jest dobrze
+przetestowane i powinno zwracać rzetelne wyniki. Stąd również przyjęto
+format wyjściowy plików klasyfikacyjnych \dcscode{{*}.arff}
+
+
+\subsubsection{jMotif}
+
+Z pakietu \dcscode{jMotif} zaczerpnięto metody zajmujące się tworzeniem
+łańcucha danych na podstawie zadanego szeregu czasowego za pomocą\ algorytmu
+SAX.
+
+
+\subsubsection{JFreeChart}
+
+Biblioteka służąca do rysowania wykresów. Bardzo pomocna w początkowej
+fazie implementacji, kiedy autorowi zależało na zobrazowaniu przebiegu
+szeregów szasowych. Ich wizualizacja mogła przyczynić się do lepszego
+zrozumienia zależności między przebiegami, a diagnozą pacjenta.
+
+
+\subsubsection{Jxl}
+
+Dzięki pakietowi \dcscode{jxl}w początkowej fazie implementacji autor
+mógł ściśle współpracować z arkuszami kalkulacyjnymi w celu raportowania
+danych do plików .xls w celu ich dalszej analizy statystycznej.
+
+
+\subsubsection{joda-time}
+
+W momencie gdy prace nad tą pracą dyplomową zostały rozpoczęte, wspracie
+dla obiektów typu data czy czas było dla autora niewystarczające,
+dlatego zdecydowano się na wykorzystanie biblioteki \dcscode{joda-time}
+w celu zapewnienia wymaganej obsługi tego rodzaju danych.
+
+
+\subsubsection{fast-dtw}
+
+Pakiet fast-dtw dostarcza obsługę obliczeniową dla eksperymentu bazującego
+na algorytmie Dynamic Time Warping, dzięki czemu autor mógł skorzystać
+z gotowego, przetestowanego i relatywnie wydajnego czasowo i pamięciowo
+rozwiązania dla tego celu.
+
+
+\subsubsection{apache-commons}
+
+W momentach gdy brakowało pewnych struktur danych w obecnej wersji
+Java - takich jak choćby Pair (ang. para) lub należało skorzystać
+z popularnych metod takich jak obliczenie regresji, korzystano z bibliotek
+apache-commons.
+
+
+\subsection{Punkt wyjścia}
+
+Praca programu zorientowana jest wokół obiektu \dcscode{Workflow}
+(ang. ,,przepływ'', ,,proces'') - ma on na celu zdefiniowanie
+następujących po sobie kroków składających się na przebieg eksperymentu
+- począwszy od wczytania danych, aż do wypisania ostatecznego wyniku.
+Jego rdzeń zawiera się w abstrakcyjnej klasie \dcscode{WorkflowBase}która
+posiada trzy główne metody - odpalenia przebiegu pełnego eksperymentu,
+wygenerowania pliku arff dla eksperymentu oraz wyliczenia wyniku eksperymentu
+dla zadanego pliku arff. Ponadto jest w stanie opisać podstawowe statystyki
+wczytanych danych, takie jak liczba klas decyzyjnych, podział instacji
+w klasach, czy liczba atrybutów w ramach instancji. Aby stworzyć własny
+eksperyment wystarczy stworzyć klasę dziedziczącą z \dcscode{WorkflowBase}
+oraz zaimplementować wymagane metody. Przykładowy szkic takiej klasy
+przedstawiono na listingu \ref{code:Kod-eksperymentu-Counted}:\inputencoding{latin2}
+\begin{lstlisting}[caption={Kod eksperymentu Counted},label={code:Kod-eksperymentu-Counted},language=Java,float,numbers=left,tabsize=4]
+public class CountedWorkflow extends WorkflowBase {
+
+	private List<CalculatedRecord> calculatedRecords;
+
+	public CountedWorkflow(DivisionOptions divisionOption, boolean glaucoma) {
+		super(divisionOption, glaucoma);
+	}
+
+	@Override
+	protected Instances buildInstances() {
+		exporter = new CountedSaxArffBuilder(calculatedRecords);
+		return exporter.buildInstances();
+	}
+
+	@Override
+	protected void processData() throws Exception {
+		calculatedRecords = new ArrayList<CalculatedRecord>();
+
+		for (IRecord record : records) {
+			ArrayList<HashMap<String, Integer>> periodicallyCountedNgrams = 
+									new ArrayList<HashMap<String, Integer>>();
+
+			List<String> dividedSax = DataDivider.divideStringRegularly(
+					record.getSaxString(), divisionPartsAmount);
+
+			for (String elem : dividedSax) {
+				HashMap<String, Integer> ngramCountMap = PeriodicNgramCounter
+						.slashStringAndCountNgrams(elem, windowLen);
+				periodicallyCountedNgrams.add(ngramCountMap);
+			}
+
+			CalculatedRecord calcRecord = new CalculatedRecord(
+					periodicallyCountedNgrams, record.getDestinationClass());
+			calculatedRecords.add(calcRecord);
+		}
+	}
+
+	@Override
+	protected void setConcerningParams() {
+		concerningParameters.add(Pair.of("parts", divisionPartsAmount));
+		concerningParameters.add(Pair.of("ngram", windowLen));
+		concerningParameters.add(Pair.of("alpha", Config.getInstance().getSaxAlphabeatSize()));
+	}
 }
-\end{codeblock}
+\end{lstlisting}
+\inputencoding{utf8}Jeżeli wczytane przez nas dane wymagają jakiejkolwiek ingerencji obliczeniowej
+- tak jak na przykład eksperyment Counted, to fragment kodu odpowiadający
+za te obliczenia powinien znaleźć się w metodzie \dcscode{processData}.
+Jak widać w przywołanym listingu, wszystkie wymagane kalkulacje odbywają
+się w tym fragmencie kodu. Kolejna metoda to \dcscode{buildInstances}
+która odpowiada za ustawienie odpowiedniego eksportera danych (w szczegółach
+zostanie omówiony niżej) oraz przekazanie mu przeliczonych danych.
+Za jego pomocą tworzony jest obiekt \dcscode{Instaces}, który musi
+zostać zwrócony jako wynik metody. Funkcja \dcscode{setConcerningParams}służy
+już tylko do tego, aby podczas wyświetlania wyniku eksperymentu wypisać,
+które parametry programu mają wpływ na pracę tego eksperymentu, oraz
+jakie ich wartości zostały ustawione podczas bierzącego wykonania. 
 
-\item The \dcsname{listings} package can produce floats by itself. See
-Listing.~\ref{lst:hello} for example.
+
+\subsection{Importowanie danych}
+
+Importowanie danych zostało rozdzielone ze względu na dwa różne formaty
+danych jakie potrafi wczytać program. Ostateczną wersją danych pacjentów
+jest opisanie danych każdego pacjenta w osobnym pliku \dcscode{.csv}.
+W każdym z nich podany jest identyfikator pacjenta, oraz dane z poszczególnych
+pomiarów ciśnienia w oku. W ramach każdego pomiaru udostępnionych
+jest sporo danych, takich jak godzina o której pomiar został zdjęty,
+pozycja ciała w której znajdował się pacjent itp. choć na potrzebę
+tej pracy korzystano tylko z miary \dcscode{TFADJ}. Jedyna informacja,
+której nie ma w tym pliku to diagnoza - ta opisana jest w pliku zbiorczym
+dla wszystkich pacjentów. W kolejnych wierszach znajdują się pary
+identyfikator pacjenta - diagnoza.
+
+Drugim formatem, jaki wspiera program jest format danych prof. Eamonna.
+Ich charakterystyka jest prosta - każdy nowy wiersz w pliku to nowa
+instacja. W ramach każdego wiersza figurują atrybuty oddzielone spacjami,
+z których pierwszy to atrybut decyzyjny, a kolejne to szereg wartości
+składające się w szereg czasowy dla tej instancji. Tak jak wspomniano
+wcześniej, zapis ten pomija dokładny czas zebrania pomiaru. Klasy
+odpowiadające za wczytywanie danych to odpowiednio \dcscode{PatientDataImporter2}
+oraz \dcscode{DataImporterEamonn}.
 
 
-\inputencoding{latin9}\begin{lstlisting}[caption={The Hello World program in C},float,label={lst:hello},language=C,style=linesbg,tabsize=2]
-#include <stdio.h>
+\subsection{Eksportowanie pliku arff}
 
-int main() {
-  printf("Hello world!\n");
-  return 0;
+Jedną z funkcji programu jest wygenerowanie pliku \dcscode{arff}
+w którym zapisane są już przetworzone dane o instacjach, gotowe do
+klasyfikacji klasyfikatorami \dcscode{weki}. Aby stworzyć taki eksporter
+na własny użytek można posiłkować się klasą abstrakcyjną \dcscode{ArffExporterBase}
+i rozszerzyć ją. Eksporter taki zostanie poniżej opisany na przykładzie
+\dcscode{RegressionArffBuilder}. Jego kod można znaleźć na listingu
+\ref{code:RegressionExporter}. Klasa nadrzędna wymaga od programisty
+zaimplementowania dwóch metod oraz kontruktora. 
+
+Metoda \dcscode{setAttributes} służy do tego aby nadać i nazwać atrybuty
+dla formatu danych jaki zdecydowano użyć w docelowym pliku \dcscode{arff}.
+W pliku dla eksperymentu Regression tworzy się tyle par \dcscode{slope-intercept}
+(współczynników a i b regresji) na ile części został podzielony sygnał.
+Należy również pamiętać o tym aby w liście atrybutów zawrzeć również
+atrybut decyzyjny.
+
+W funkcji buildInstances programista musi obsłużyć przeniesienie danych
+ze struktury w jakiej trzymał dane po ewentualnych obliczeniach w
+metodzie \dcscode{processData} klasy \dcscode{WorkflowBase} do obiektu
+\dcscode{Instances}. Dzięki temu umożliwione będzie wygodne eksportowanie
+pliku \dcscode{arff} oraz przeprowadzanie eksperymentu za pomocą
+klasy \dcscode{Evaluation}. Ostatnią rzeczą o którą trzeba zadbać,
+to wywołanie metod \dcscode{setDestinationClasses} oraz \dcscode{setAttributes}
+w kontruktorze tak jak pokazano na wspomnianym listingu.
+
+\inputencoding{latin2}\begin{lstlisting}[caption={Kod eksportera dla eksperymentu Regression},label={code:RegressionExporter},language=Java,numbers=left,tabsize=4]
+public class RegressionArffBuilder extends ArffExporterBase {
+
+	private List<RegressionRow> input;
+
+	public RegressionArffBuilder(List<RegressionRow> input) {
+		this.input = input;
+		setDestinationClasses(input);
+		setAttributes();
+	}
+
+	protected void setAttributes() {
+		attrInfo = new FastVector();
+
+		int regressionCount = input.stream().findFirst().get()
+				.getRegressionResults().size();
+
+		for (int i = 0; i < regressionCount; i++) {
+			attrInfo.addElement(new Attribute(String.format("slope%d", i + 1)));
+			attrInfo.addElement(new Attribute(String.format("intercept%d",
+					i + 1)));
+		}
+
+		Attribute destClassAttribute = null;
+		try {
+			destClassAttribute = constructDestinationClassesNominalAttribute(destClasses);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		attrInfo.addElement(destClassAttribute);
+	}
+
+	@Override
+	public Instances buildInstances() {
+		instances = new Instances("Regression", attrInfo, input.size());
+		instances.setClassIndex(instances.numAttributes() - 1);
+
+		for (RegressionRow row : input) {
+			Instance instance = new Instance(attrInfo.size());
+			int attrIdx = 0;
+			for (RegressionResult regResult : row.getRegressionResults()) {
+				instance.setValue(attrIdx++, regResult.getSlope());
+				instance.setValue(attrIdx++, regResult.getIntercept());
+			}
+
+			int destClassIndex = getIndexOfDestinationClass(row
+					.getDestinationClass());
+			instance.setValue(attrIdx, destClassIndex);
+			instances.add(instance);
+		}
+		return instances;
+	}
 }
 \end{lstlisting}
 \inputencoding{utf8}
 
-\item And finally, You can include code from external file:
+
+\chapter{Wnioski}
 
 
-\codeincp[language={[latex]tex},lastline=9]{thesis-template-latex.tex}
+\section{Analiza wyników}
 
-\end{enumerate}
+Gdy udało się już uruchomić eksperymenty zgodnie z zamierzeniami,
+nadszedł czas na interpretację wyników.
 
-\section{Math}
+Spośród wszystkich rezultatów jakie zostały sporządzone dla każdego
+eksperymentu oraz dla wszystkich opcjonalnych zestawów parametrów,
+wybrano najlepszy zestaw dla każdego z nich. Celem było wybranie obiektywnie
+najlepszego radzącego sobie dobrze na każdym ze zbiorów danych, aby
+móc następnie przeprowadzić analizę porównawczą pomiędzy eksperymentami.
+Kryterium wyboru była największa liczba zbiorów, na których dany zestaw
+był najlepszy. Przy ewentualnym 'remisie' wybierany był ten, który
+więcej razy był lepszy od drugiego. 
 
-Can be put inline like this: $S=\sum_{i=1}^{i=K}x_{i}^{2}$ or in
-dedicated lines:
-\[
-S=\sum_{i=1}^{i=K}x_{i}^{2}
-\]
-The equations can be also numbered like equation~\ref{eq:est}. 
-\begin{equation}
-s=\sqrt{\frac{1}{n-1}\sum_{i=1}^{n}\left(x_{i}-\overline{x}\right)^{2}}\label{eq:est}
-\end{equation}
+Tym sposobem zostały wybrane następujące uruchomienia eksperymentów:
+\begin{itemize}
+\item Zliczanie - części: 5, ngram: 2, alfabet: 11
+\item Regresja - części: 10
+\item Klasyfikator ngramowy - ngram: 30, alfabet: 3
+\item DTW - knn: 7, szerokość okna DTW: 5
+\item KNN - ngram: 3, alfabet: 11, knn: 3
+\item Bagging - części: 5, ngram: 3, alfabet: 5
+\end{itemize}
+W ramach tych wykonań ekserymentów obliczono średnią dokładność na
+wszystkich zbiorach, która prezentuje się jak przedstawiono na wykresie
+\ref{fig:Wykres-=00015Bredniej-dok=000142adno=00015Bci} 
+\begin{figure}[tbph]
+\includegraphics{\string"other/średnia dokładność eksp na zbiorach\string".png}
 
-
-
-\section{Algorithms}
-
-Use \dcsname{dcsalg} package or directly \dcsname{algorithmicx}
-package.
-
-
-\section{Bibliography}
-
-The bibliography can be included in the thesis like in this case.
-You can then cite the publications like this~\cite{sop}. The other
-(more professional) solution is to use Bib\TeX{}\@. See \dcsemph{\LyX{} User's Guide}
-for details.
-
-
-\chapter{Concept and Design of the System}
+\caption{Wykres średniej dokładności eksperymentów\label{fig:Wykres-=00015Bredniej-dok=000142adno=00015Bci}}
 
 
-\chapter{Implementation}
+\end{figure}
+ Zaobserwowano, że eksperymentem cechującym się najlepszą dokładnością
+na wszystkich z badanych zbiorów jest eksperyment DTW. Jednak jak
+już wspomniano wcześniej, DTW pojawia się tu jako pewne odniesienie,
+a nie równy przeciwnik, ponieważ czas przetwarzania tego eksperymentu
+jest nieporównywalnie większy od konkurentów. Miłym zaskoczeniem jest
+wysoki wynik eksperymentu KNN, ponieważ jego działanie bezpośrednio
+zależy od algorytmu SAX, w którym pokładano pewne nadzieje. Niestety
+zawiódł autorski klasyfikator ngramowy, lecz jego koncept działania
+nie był mocno wyszukany, więc jego niska dokładność nie jest rozczarowaniem. 
 
+Z drugiej strony jednak prosta idea nie jest przeszkodą do zdobywania
+dobrych wyników - czego potwierdzeniem jest znakomity wynik regresji
+- tutaj wprawdzie nieco zmienionej, bo była ona liczona wielokrotnie
+dla kolejnych części sygnału w ramach każdej instacji - jednak nadal
+u podstaw leży nieskomplikowana estymacja danych do funckcji liniowej.
 
-\chapter{Performance Evaluation}
+Powstaje pytanie dlaczego skupiono się tylko na mierze dokładności,
+skoro w większości przypadków badano aż sześć miar. Otóż jak się okazuje,
+wyniki wszystkich miar w większości eksperymentów (szczególnie w tych
+dwuklasowych) są do siebie bardzo zbliżone. Obliczono, że odchylenie
+standardowe miar eksperymentów na zbiorach ECG200, ECGFiveDays, TwoLeadEcg,
+Yoga, MoteStrain, ItalyPowerDemand, Wafer, oraz Patients jest mniejsze
+od 0.05. Pozostałe zbiory (ChlorineConcentration, TwoPatterns, InlineSkate)
+to zbiory wieloklasowe na których zróżnicowanie miar było bardziej
+wyraźne. Miary F1 oraz PCC często są aż o 0.1 mniejsze niż dokładność
+co może wskazywać na to, że wiele z instancji nie zostało sklasyfikowanych
+(Jurek: dobrze to jest? czy bzdura?).
 
-
-\chapter{Conclusions}
+Podsumowując wyniki są zadowalające dzięki eksperymentowi KNN, który
+nieznacznie odstępuje kroku w jakości wobec matematycznie skomplikowanego
+DTW, a zdecydowanie deklasuje go w kontekście czasu przetwarzania.
+Największą zagadką był klasyfikator ngramowy, którego model działania
+powstał na bazie pomysłu autora, jednak nie okazał się miłą niespodzianką
+- jedynie potwierdził, że stworzenie dobrego klasyfikatora nie jest
+prostym zadaniem.
 
 \appendix
 
-\chapter{Users Guide}
+\chapter{Podręcznik użytkownika}
+
+
+\section{Uruchomienie projektu w środowisku Eclipse}
+
+
+\section{Uruchomienie programu z linii komend}
 
 \backmatter
-\begin{thebibliography}{Odnośniki}
-\bibitem{sop}A.~Tanenbaum. \emph{Operating Systems Design and Implementation}.
-Prentice Hall, 2006.\end{thebibliography}
+
+\bibliographystyle{plain}
+\bibliography{bibliography}
 
 \end{document}

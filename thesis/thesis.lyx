@@ -4282,6 +4282,52 @@ name "code:Wynikowy-plik-arff-dominant"
 
 \end_layout
 
+\begin_layout Subsection
+KNN
+\end_layout
+
+\begin_layout Standard
+asd
+\end_layout
+
+\begin_layout Subsection
+Bagging
+\end_layout
+
+\begin_layout Standard
+Przygotowanie danych dla eksperymentu Bagging przebiegało dokładnie w ten
+ sam sposób co dla eksperymentu Zliczającego.
+ Eksperymenty różniły się sposobem użycia klasyfikatora.
+ Oba eksperymenty skorzystały z 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+J48
+\end_layout
+
+\end_inset
+
+, lecz dla Baggingu był on opakowany w meta-klasyfikator 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+weka.classifiers.meta.Bagging
+\end_layout
+
+\end_inset
+
+, który bliżej zostanie opisany w podrozdziale 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Bagging"
+
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Section
 Użyte klasyfikatory
 \end_layout
@@ -4339,6 +4385,10 @@ weka
 VCDomLem
 \end_layout
 
+\begin_layout Standard
+asd
+\end_layout
+
 \begin_layout Subsection
 NgramClassifier
 \end_layout
@@ -4389,6 +4439,21 @@ dist(instance,class)=\sqrt{\sum_{ngram}^{instance}(occ(klasa,ngram)-occ(instancj
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Bagging
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Bagging"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+asd
 \end_layout
 
 \begin_layout Section
@@ -6158,11 +6223,73 @@ name "fig:Wykres-średniej-dokładności"
  Jednak jak już wspomniano wcześniej, DTW pojawia się tu jako pewne odniesienie,
  a nie równy przeciwnik, ponieważ czas przetwarzania tego eksperymentu jest
  nieporównywalnie większy od konkurentów.
- Miłym zaskoczeniem jest wysoki wynik eksperymentu KNN, ponieważ jego działanie
+ Choć za czas spędzony na czekaniu na wyniki można otrzymać stosowne wynagrodzen
+ie - jak można zauważyć na zbiorze TwoPatterns eksperyment ten osiągnął
+ stuprocentową dokładność klasyfikując poprawnie aż 5000 instancji.
+ Rezultaty tego i innych eksperymentów na tym zbiorze można porównać na
+ wykresie 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Dokładność-eksperymentów-TwoPatterns"
+
+\end_inset
+
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename other/TwoPatterns acc.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Dokładność eksperymentów na zbiorze TwoPatterns
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Dokładność-eksperymentów-TwoPatterns"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Miłym zaskoczeniem jest wysoki wynik eksperymentu KNN, ponieważ jego działanie
  bezpośrednio zależy od algorytmu SAX, w którym pokładano pewne nadzieje.
  Niestety zawiódł autorski klasyfikator ngramowy, lecz jego koncept działania
  nie był mocno wyszukany, więc jego niska dokładność nie jest rozczarowaniem.
  
+\end_layout
+
+\begin_layout Standard
+Na osobny komentarz zasługuje zbiór Pacjentów, który jak widać na przestrzeni
+ innych zbiorów danych, nie był zbiorem łatwym - zebrał zdecydowanie najsłabsze
+ wyniki na wszystkich klasyfikatorach, co może wskazywać na to, że niekoniecznie
+ podejście do rozwiązania było złe, lecz zbiór był zbyt trudny do rozwikłania.
 \end_layout
 
 \begin_layout Standard

@@ -50,9 +50,9 @@ public enum Experiments {
 	private static Classifier getBaggingClassifier(){
 		Bagging b = new Bagging();
 		b.setSeed(64);
-		b.setClassifier(new J48());
 		J48 j48 = new J48();
 		j48.setReducedErrorPruning(true);
+		b.setClassifier(j48);
 		b.setNumIterations(50);
 		b.setBagSizePercent(20);
 		return b;
