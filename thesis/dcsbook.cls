@@ -94,7 +94,7 @@
   {\textcolor{red}{\texttt{\small Unknown. Use \textbackslash{}supervisor command.}}}
 \newcommand{\supervisor}[1]{\renewcommand{\@supervisorname}{#1}}
 % subtitle
-\newcommand{\@subtitle}{\translate{Master's Thesis}}
+\newcommand{\@subtitle}{\translate{Praca magisterska}}
 \newcommand{\subtitle}[1]{\renewcommand{\@subtitle}{#1}}
 % university
 \newcommand{\@university}{\translate{Poznań University of Technology}}
@@ -213,7 +213,7 @@
     \vfill\vfill
 
     \begin{center}
-    {\large \translate{Supervisor}:~ \@supervisorname}\par
+    {\large \translate{Promotor}:~ \@supervisorname}\par
     {\bigskip\large \@date}
     \end{center}
 

@@ -112,7 +112,7 @@ dr inż.
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Subtitle
 Bachelor's Thesis
@@ -296,15 +296,8 @@ http://www.cs.put.poznan.pl/jstefanowski/aed/TPDregresjawieloraka.pdf
 \end_layout
 
 \begin_layout Subsection
-Wygładzanie (
-\begin_inset Quotes eld
-\end_inset
-
-Smoothing
-\begin_inset Quotes erd
-\end_inset
-
-)
+Wygładzanie (ang.
+ smoothing)
 \end_layout
 
 \begin_layout Standard
