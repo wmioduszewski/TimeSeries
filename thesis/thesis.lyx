@@ -203,29 +203,43 @@ Początkowo celem niniejszej pracy była analiza szeregów czasowych zawierając
  dane ciśnienia w oku pacjentów zdrowych, oraz tych ze zdiagnozowaną jaskrą.
  Ponadto zamiarem było użycie do tego celu metody SAX, a następnie zbudowanie
  klasyfikatora potrafiącego sklasyfikować dane wytworzone przez tą metodę.
- Równie ważne było to, aby nie testować sposobów klasyfikacji tylko i wyłącznie
- na danych zebranych w celu oceny jaskry, lecz również sprawdzić jak wybrane
- i stworzone metody poradzą sobie w odniesieniu do innych szeregów czasowych.
+ Następnie, aby nie testować sposobów klasyfikacji tylko i wyłącznie na
+ danych zebranych w celu oceny jaskry, lecz również sprawdzić jak wybrane
+ i stworzone metody poradzą sobie w odniesieniu do innych szeregów czasowych,
+ rozszerzono zbiór danych o kolejne zestawy szeregów czasowych.
  Kolejną rzeczą, od której należało się uniezależnić są klasyfikatory, dlatego
  też eksperymenty przeprowadzone zostały na kilku różnych technikach kategoryzow
 ania instancji.
 \end_layout
 
-\begin_layout Paragraph
-The goal and the scope of the thesis
+\begin_layout Standard
+Ostatecznie po wielu testach wyklarowano sześć eksperymentów, których wyniki
+ porównano i zinterpretowano.
+ Składowe każdego z eksperymentów zostały dokładnie opisane.
+ 
 \end_layout
 
 \begin_layout Standard
-Celem pracy jest opracowanie / wykonanie analizy / zaprojektowanie / .....................
- Struktura pracy jest następująca.
- W rozdziale 2 przedstawiono przegląd literatury na temat ........
- Rozdział 3 jest poświęcony .......
- (kilka zdań).
- Rozdział 4 zawiera .....
- (kilka zdań) ............
- itd.
- Rozdział x stanowi podsumowanie pracy.
+W rozdziale 2 przedstawiono kilka podejść analizy szeregów czasowych wybranych
+ z przeanalizowanej literatury.
+ Ponadto zademonstrowano działanie dwóch kluczowych algorytmów tej pracy,
+ to jest algorytmu SAX oraz DTW.
+ Rozdział 3 poświęcono zobrazowaniu koncepcji projektu, toteż rozdział ten
+ skupia się na przestudiowaniu różnych sposobów przetwarzania danych jeszcze
+ zanim te trafią do klasyfikatora.
+ Czytelnik znajdzie tu również krótki opis użytych klasyfikatorów, a także
+ miary jakie użyto do oceniania dokładności klasyfikacji.
  
+\end_layout
+
+\begin_layout Standard
+Rozdział 4 przedstawia sposób implemetacji programu potrzebnego do przeprowadzen
+ia eksperymentów.
+ Zamieszczono tutaj zwięzłe opisy użytych bibliotek, oraz szczegółowy opis
+ importu oraz eksportu danych - tak aby w przyszłości nie było problemu
+ z ewentualnym rozszerzeniem istniejącego kodu.
+ Rozdział 5 zawiera analizę wyników oraz wnioski, a tym samym stanowi podsumowan
+ie niniejszej pracy.
 \end_layout
 
 \begin_layout Chapter
