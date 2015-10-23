@@ -4761,9 +4761,17 @@ Posumowanie
 \begin_layout Standard
 Jak szczegółowo opisano wyżej, przeprowadzono aż 7 zróżnicowanych eksperymentów
  na 11 zbiorach danych.
- W poniższej tabeli przedstawiono zebrane informacje dotyczące tego jak
- przetworzono dane zanim przekazano je do klasyfikatora oraz jaki klasyfikator
- te dane przeliczał.
+ W tabeli 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Lista-eksperymentów"
+
+\end_inset
+
+ przedstawiono zebrane informacje dotyczące tego jak przetworzono dane zanim
+ przekazano je do klasyfikatora oraz jaki klasyfikator te dane przeliczał.
+ Dla przejrzystości użyto skrótu 'sax' dla pary parametrów: rozmiar ngramu
+ oraz liczba liter w alfabecie.
 \end_layout
 
 \begin_layout Standard
@@ -4774,10 +4782,11 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="8" columns="3">
+<lyxtabular version="3" rows="8" columns="4">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="3cm">
 <column alignment="center" valignment="top" width="6cm">
+<column alignment="center" valignment="top" width="3cm">
 <column alignment="center" valignment="top" width="3cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
@@ -4802,13 +4811,24 @@ dane wejściowe
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \series bold
 klasyfikator
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+parametry
 \end_layout
 
 \end_inset
@@ -4833,11 +4853,20 @@ oryginalny sygnał
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 J48
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+części
 \end_layout
 
 \end_inset
@@ -4862,11 +4891,20 @@ zliczone dominujące n-gramy SAX
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 VCDomLem
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+części, sax
 \end_layout
 
 \end_inset
@@ -4891,11 +4929,20 @@ zliczone n-gramy SAX
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 J48
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+części, sax
 \end_layout
 
 \end_inset
@@ -4920,11 +4967,20 @@ SAX
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 NgramClassifier
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+sax
 \end_layout
 
 \end_inset
@@ -4949,11 +5005,20 @@ sygnał zdyskretyzowany metodą SAX
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 IBk
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+sax, k
 \end_layout
 
 \end_inset
@@ -4978,11 +5043,20 @@ oryginalny sygnał
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 IBk
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+k, okno dtw
 \end_layout
 
 \end_inset
@@ -5007,11 +5081,20 @@ zliczone n-gramy SAX
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 J48
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+części, sax
 \end_layout
 
 \end_inset
@@ -5029,6 +5112,13 @@ J48
 
 \begin_layout Plain Layout
 Zrealizowane eksperymenty
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Lista-eksperymentów"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -6331,17 +6421,413 @@ ie deklasuje go w kontekście czasu przetwarzania.
  potwierdził, że stworzenie dobrego klasyfikatora nie jest prostym zadaniem.
 \end_layout
 
+\begin_layout Standard
+Pełne zestawienie wyników zostało zamieszczone w Dodatku B.
+\end_layout
+
 \begin_layout Chapter
 \start_of_appendix
 Podręcznik użytkownika
+\end_layout
+
+\begin_layout Standard
+Dla przejrzystości tego rozdziału przyjęto, że materiały z płyty zostały
+ rozpakowane do ścieżki 
+\begin_inset Flex Path
+status open
+
+\begin_layout Plain Layout
+D:/TimeSeries/
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
 Uruchomienie projektu w środowisku Eclipse
 \end_layout
 
+\begin_layout Standard
+Projekt programu rozwijany był na środowisku deweloperskim Eclipse Mars,
+ wersja 'Java Developers', na systemie Windows.
+ Projekt zbudowany jest według koncepcji narzędzia Maven, dlatego przy wgrywaniu
+ go do Eclipse należy użyć opcji 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+File->Import->Existing Maven Project
+\end_layout
+
+\end_inset
+
+ .
+ Po tym kroku projekt powinien być w stanie bezbłędnie się uruchomić.
+\end_layout
+
 \begin_layout Section
 Uruchomienie programu z linii komend
+\end_layout
+
+\begin_layout Standard
+Wraz z kodem źródłowym projektu został dostarczony również wykonywalny plik
+ 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+.jar
+\end_layout
+
+\end_inset
+
+ pozwalający na uruchomienie programu bez potrzeby instalacji środowiska
+ deweloperskiego i kompilowania kodu.
+ By przeprowadzić ten proces, należy upewnić się, że dane, które planuje
+ się przetworzyć zlokalizowane są w folderze 
+\begin_inset Flex Path
+status open
+
+\begin_layout Plain Layout
+/data
+\end_layout
+
+\end_inset
+
+ w stosunku do pliku wykonywalnego.
+ Nie należy zmieniać drzewa folderów w tej ścieżce.
+\end_layout
+
+\begin_layout Standard
+Przed uruchomieniem programu trzeba sprecyzować jaki wariant eksperymentu
+ zamierza się uruchomić (właściwość 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+variant
+\end_layout
+
+\end_inset
+
+).
+ W przypadku importowania istniejącego pliku arff należy podać dokładną
+ ścieżkę do pliku we właściowości 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+inputArffPath
+\end_layout
+
+\end_inset
+
+.
+ Następnie należy wybrać zbiór danych na jakim eksperyment będzie działał
+ - odpowiada za to właściwość 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+targetDataset
+\end_layout
+
+\end_inset
+
+.
+ Ostatnim parametrem jaki należy doprecyzować w pliku konfiguracyjnym jest
+ rodzaj eksperymentu jaki się uruchomi, sterowanym właściwością 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+experimentId
+\end_layout
+
+\end_inset
+
+.
+ Przykładowy pełny plik konfiguracyjny z podanymi możliwymi wartościami
+ na poszczególnych właściwosciach w komentarzach przedstawiono na listingu
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:config.properties"
+
+\end_inset
+
+.
+ Po dostosowaniu parametrów do potrzeb, można przejść do uruchomienia programu.
+ Potrzebna będzie do tego linia komend, w której należy przejść do ścieżki
+ bazowej 
+\begin_inset Flex Path
+status open
+
+\begin_layout Plain Layout
+D:/TimeSeries
+\end_layout
+
+\end_inset
+
+.
+ Z tego miejsca należy wydać polecenie 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+java -jar timeseries.jar 
+\end_layout
+
+\end_inset
+
+ i oczekiwać na wyniki.
+ Dla wygody można przekierować wynik przetwarzania do pliku dodając do ubiegłego
+ polecenia 
+\begin_inset Flex Path
+status open
+
+\begin_layout Plain Layout
+> output.txt
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#paths
+\end_layout
+
+\begin_layout Plain Layout
+
+dataFolderPath = data/
+\end_layout
+
+\begin_layout Plain Layout
+
+glaucomaDataSet = dataset glaucoma/
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# --- Experiment variables ---
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# 1, 3, 5 - for regression additionally: 10,20,48
+\end_layout
+
+\begin_layout Plain Layout
+
+divisionPartsAmount = 3
+\end_layout
+
+\begin_layout Plain Layout
+
+#2, 3
+\end_layout
+
+\begin_layout Plain Layout
+
+ngramSize = 3
+\end_layout
+
+\begin_layout Plain Layout
+
+#3, 5, 11
+\end_layout
+
+\begin_layout Plain Layout
+
+saxAlphabeatSize = 5
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#3, 5, 7
+\end_layout
+
+\begin_layout Plain Layout
+
+k = 7
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+dtwSearchRadius = 3
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#----------------------------
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# --- Target job variant
+\end_layout
+
+\begin_layout Plain Layout
+
+# 0:ARFFEXPORT 1:ARFFPROCESS 2:FULL
+\end_layout
+
+\begin_layout Plain Layout
+
+variant = 2
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# --- Arff path - file which will be used to run experiment on
+\end_layout
+
+\begin_layout Plain Layout
+
+# (needed only if variant=1 was picked)
+\end_layout
+
+\begin_layout Plain Layout
+
+inputArffPath = output/arffOutput/NGRAM/NGRAM for ECGFIVEDAYS with ngram-3
+ alpha-4.arff
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# --- Target dataset - the one which experiment would be launched with
+\end_layout
+
+\begin_layout Plain Layout
+
+# 0:ECG200 1:ECGFIVEDAYS 2:SAMPLEUNITTEST 3:TWOLEADECG 4:YOGA 5:MOTESTRAIN
+\end_layout
+
+\begin_layout Plain Layout
+
+# 6:ITALYPOWERDEMAND 7:CHLORINECONCENTRATION 8:TWOPATTERNS 9:WAFER
+\end_layout
+
+\begin_layout Plain Layout
+
+# 10:INLINESKATE 11:PATIENTS
+\end_layout
+
+\begin_layout Plain Layout
+
+# -1: run experiment for all datasets (except sample unit test one)
+\end_layout
+
+\begin_layout Plain Layout
+
+targetDataset = -1
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# --- Experiments
+\end_layout
+
+\begin_layout Plain Layout
+
+# 0:REGRESSION 1:DOMINANT 2:COUNTED 3:NGRAM 4:KNN 5:DTW 6:BAGGING
+\end_layout
+
+\begin_layout Plain Layout
+
+experimentId = 6
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# --- 'constants'
+\end_layout
+
+\begin_layout Plain Layout
+
+saxOutputLength = 96
+\end_layout
+
+\begin_layout Plain Layout
+
+crossValidationRepetitions =3
+\end_layout
+
+\begin_layout Plain Layout
+
+crossValidationFolds = 5
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+config.properties - plik konfiguracyjny
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:config.properties"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
