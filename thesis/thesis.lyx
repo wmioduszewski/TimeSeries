@@ -4290,11 +4290,18 @@ name "code:Wynikowy-plik-arff-dominant"
 \end_layout
 
 \begin_layout Subsection
-KNN
+K najbliższych sąsiadów (ang.
+ KNN - k Nearest Neighbors)
 \end_layout
 
 \begin_layout Standard
-asd
+W eksperymencie zorientowanym wokół algorytmu KNN zdecydowano się na dość
+ nowatorskie podejście z dyskretyzacją danych.
+ Przeważnie używając algorytmu najbliższych sąsiadów, za dane wejściowe
+ uznaje się czysty zebrany sygnał.
+ W tym projekcie postanowiono zdyskretyzować dane używając do tego metody
+ SAX, a dopiero potem przekazać jej rezultat do klasyfikatora KNN, dzięki
+ czemu zyskaliśmy swego rodzaju normalizację danych.
 \end_layout
 
 \begin_layout Subsection
@@ -4390,10 +4397,17 @@ weka
 
 \begin_layout Subsection
 VCDomLem
+\begin_inset CommandInset citation
+LatexCommand cite
+key "VcDomLem"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-asd
+VCDomLem 
 \end_layout
 
 \begin_layout Subsection
@@ -4460,7 +4474,14 @@ name "sub:Bagging"
 \end_layout
 
 \begin_layout Standard
-asd
+Attribute Bagging
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bagging"
+
+\end_inset
+
+ to  
 \end_layout
 
 \begin_layout Section
@@ -4703,7 +4724,12 @@ Gmean=\sqrt{\frac{TP}{TP+FN}\times\frac{TN}{TN+FP}}=\sqrt{Sensitivity\times Spec
 
 \end_inset
 
-
+Jak można zauważyć dalej w wynikach, dla zbiorów wieloklasowych miary Sensitivit
+y, Specificity oraz GMean nie były obliczane, ze względu na to, że musiałyby
+ zostać przedstawione dla każdej klasy osobno.
+ Porównywanie takich wyników między zbiorem trójklasowym a siedmioklasowym
+ byłoby niemiarodajne, dlategoteż w zbiorach posiadających co najmniej 3
+ klasy zrezygnowano z obliczania tych trzech miar.
 \end_layout
 
 \begin_layout Subsubsection
@@ -6211,6 +6237,101 @@ name "code:RegressionExporter"
 
 \end_layout
 
+\begin_layout Section
+Serwisy zewnętrzne
+\end_layout
+
+\begin_layout Subsection
+Git
+\end_layout
+
+\begin_layout Standard
+Dla zapewnienia jak najwyższej jakości kodu oraz niezawodnego dostępu do
+ niego, używano systemu kontroli wersji, który był dostarczany przez oprogramowa
+nie 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+git
+\end_layout
+
+\end_inset
+
+.
+ Dzięki darmowym serwisom udostępniającym swoje serwery na potrzeby wersjonowani
+a źródeł, takim jak 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+gitlab.com
+\end_layout
+
+\end_inset
+
+ zapewnione było bezpieczeństwo danych, a także wspólny dostęp do postępów
+ prac zarówno przez autora, jak i promotora.
+ Na potrzeby obsługi tego narzędzia użyto oprogramowania 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+SourceTree
+\end_layout
+
+\end_inset
+
+, które wyraźnie ułatwia i przyspiesza pracę z systemem 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+git
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Travis
+\end_layout
+
+\begin_layout Standard
+Portal 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+travis.com
+\end_layout
+
+\end_inset
+
+ jest to serwis Continuous Integration ściśle współpracujący z opisanym
+ wyżej 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+gitlab.com
+\end_layout
+
+\end_inset
+
+.
+ Jego zadaniem jest sprawdzanie każdej kolejnej udostępnionej wersji kodu
+ na serwerze.
+ W momencie gdy pojawia się jego nowa wersja, Travis kompiluje świeżo pobrany
+ kod, uruchamia wszystkie zamieszczone w kodzie testy i ocenia tzw.
+ 'build' pozytywnie lub negatywnie.
+ Dzięki organizacji pracy z takim serwsisem Continuous Integration i pokryciu
+ kluczowych obliczeniowych metod testami, wyłapano wiele błędów implementacyjnyc
+h we wczesnym ich etapie.
+\end_layout
+
 \begin_layout Chapter
 Wnioski
 \end_layout
@@ -6809,7 +6930,6 @@ crossValidationFolds = 5
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
 config.properties - plik konfiguracyjny
 \begin_inset CommandInset label
 LatexCommand label
