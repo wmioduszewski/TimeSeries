@@ -6341,11 +6341,15 @@ Analiza wyników
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 Gdy udało się już uruchomić eksperymenty zgodnie z zamierzeniami, nadszedł
  czas na interpretację wyników.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Spośród wszystkich rezultatów jakie zostały sporządzone dla każdego eksperymentu
  oraz dla wszystkich opcjonalnych zestawów parametrów, wybrano najlepszy
  zestaw dla każdego z nich.
@@ -6359,7 +6363,7 @@ Spośród wszystkich rezultatów jakie zostały sporządzone dla każdego eksper
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Tym sposobem zostały wybrane następujące uruchomienia eksperymentów:
 \end_layout
 
@@ -6387,7 +6391,7 @@ KNN - ngram: 3, alfabet: 11, knn: 3
 Bagging - części: 5, ngram: 3, alfabet: 5
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 W ramach tych wykonań ekserymentów obliczono średnią dokładność na wszystkich
  zbiorach, która prezentuje się jak przedstawiono na wykresie 
 \begin_inset CommandInset ref
@@ -6427,10 +6431,6 @@ name "fig:Wykres-średniej-dokładności"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -6486,7 +6486,140 @@ name "fig:Dokładność-eksperymentów-TwoPatterns"
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Plain Layout
+Miłym zaskoczeniem jest wysoki wynik eksperymentu KNN, ponieważ jego działanie
+ bezpośrednio zależy od algorytmu SAX, w którym pokładano pewne nadzieje.
+ Niestety zawiódł autorski klasyfikator ngramowy, lecz jego koncept działania
+ nie był mocno wyszukany, więc jego niska dokładność nie jest rozczarowaniem.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+Na osobny komentarz zasługuje zbiór Pacjentów, który jak widać na przestrzeni
+ innych zbiorów danych, nie był zbiorem łatwym - zebrał zdecydowanie najsłabsze
+ wyniki na wszystkich klasyfikatorach, co może wskazywać na to, że niekoniecznie
+ podejście do rozwiązania było złe, lecz zbiór był zbyt trudny do rozwikłania.
+\end_layout
+
+\begin_layout Plain Layout
+Z drugiej strony jednak prosta idea nie jest przeszkodą do zdobywania dobrych
+ wyników - czego potwierdzeniem jest znakomity wynik regresji - tutaj wprawdzie
+ nieco zmienionej, bo była ona liczona wielokrotnie dla kolejnych części
+ sygnału w ramach każdej instacji - jednak nadal u podstaw leży nieskomplikowana
+ estymacja danych do funckcji liniowej.
+\end_layout
+
+\begin_layout Plain Layout
+Powstaje pytanie dlaczego skupiono się tylko na mierze dokładności, skoro
+ w większości przypadków badano aż sześć miar.
+ Otóż jak się okazuje, wyniki wszystkich miar w większości eksperymentów
+ (szczególnie w tych dwuklasowych) są do siebie bardzo zbliżone.
+ Obliczono, że odchylenie standardowe miar eksperymentów na zbiorach ECG200,
+ ECGFiveDays, TwoLeadEcg, Yoga, MoteStrain, ItalyPowerDemand, Wafer, oraz
+ Patients jest mniejsze od 0.05.
+ Pozostałe zbiory (ChlorineConcentration, TwoPatterns, InlineSkate) to zbiory
+ wieloklasowe na których zróżnicowanie miar było bardziej wyraźne.
+ Miary F1 oraz PCC często są aż o 0.1 mniejsze niż dokładność co może wskazywać
+ na to, że wiele z instancji nie zostało sklasyfikowanych (Jurek: dobrze
+ to jest? czy bzdura?).
+\end_layout
+
+\begin_layout Plain Layout
+Podsumowując wyniki są zadowalające dzięki eksperymentowi KNN, który nieznacznie
+ odstępuje kroku w jakości wobec matematycznie skomplikowanego DTW, a zdecydowan
+ie deklasuje go w kontekście czasu przetwarzania.
+ Największą zagadką był klasyfikator ngramowy, którego model działania powstał
+ na bazie pomysłu autora, jednak nie okazał się miłą niespodzianką - jedynie
+ potwierdził, że stworzenie dobrego klasyfikatora nie jest prostym zadaniem.
+\end_layout
+
+\begin_layout Plain Layout
+Pełne zestawienie wyników zostało zamieszczone w Dodatku B.
+\end_layout
+
+\end_inset
+
+ <stara wersja w notatce>
+\end_layout
+
+\begin_layout Section
+Analiza wyników - podejście drugie
+\end_layout
+
+\begin_layout Standard
+Gdy nadszedł czas na analizę wyników, dla uproszczenia porównań postanowiono
+ wybrać najlepsze wyniki dla każdego z eksperymentów, a dopiero wówczas
+ przeanalizować je bliżej.
+ Aby wyłuskać najskuteczniejsze zestawy parametrów dla każdego z nich posłużono
+ się prostym zliczeniem zbiorów na których dany zestaw był najlepszy.
+ Po tym kroku zostały wybrane następujące uruchomienia:
+\end_layout
+
+\begin_layout Itemize
+Zliczanie - części: 5, ngram: 2, alfabet: 11
+\end_layout
+
+\begin_layout Itemize
+Regresja - części: 10
+\end_layout
+
+\begin_layout Itemize
+Klasyfikator ngramowy - ngram: 30, alfabet: 3
+\end_layout
+
+\begin_layout Itemize
+DTW - knn: 7, szerokość okna DTW: 5
+\end_layout
+
+\begin_layout Itemize
+KNN - ngram: 3, alfabet: 11, knn: 3
+\end_layout
+
+\begin_layout Itemize
+Bagging - części: 5, ngram: 3, alfabet: 5
+\end_layout
+
+\begin_layout Standard
+Ze względu na to, że uśrednianie wyników ze wszystkich zbiorów może być
+ zgubne, postanowiono choć kilkoma słowami opisać wynik na każdym z badanych
+ zbiorów.
+\end_layout
+
+\begin_layout Subsection*
+ECG200
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename other/aggr ecg200.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Dokładność eksperymentów na zbiorze ECG200
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Dokładność-aggr ecg200"
+
+\end_inset
+
 
 \end_layout
 
@@ -6495,27 +6628,495 @@ name "fig:Dokładność-eksperymentów-TwoPatterns"
 
 \end_layout
 
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ Dość mały zbiór z relatywnie krótkim szeregiem do przeanalizowania.
+ W kwestii dokładności klasyfikacji widać zdecydowaną dominację podejścia
+ KNN SAX, któremu zbiór wyraźnie odpowiadał.
+ Krok niżej, na podobnym poziomie dokładności uplasowały się metody C4.5
+ regression oraz DTW raw.
+ Najgorzej z tymi danymi poradziły sobie warianty C4.5 ngrams, Basic ngrams
+ oraz C4.5 bagging ngrams.
+ Zły wynik Basic ngrams nie zaskakuje - bo jak się okaże niebawem na większości
+ zbiorów nie wypadł dobrze, jednak poza tym widać, że algorytmy zliczeniowe
+ nie byłyby dla takiego zbioru najlepszym wyborem.
+\end_layout
+
+\begin_layout Subsection*
+ECG Five Days
+\end_layout
+
 \begin_layout Standard
-Miłym zaskoczeniem jest wysoki wynik eksperymentu KNN, ponieważ jego działanie
- bezpośrednio zależy od algorytmu SAX, w którym pokładano pewne nadzieje.
- Niestety zawiódł autorski klasyfikator ngramowy, lecz jego koncept działania
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename other/aggr ecgfivedays.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Dokładność eksperymentów na zbiorze ECGFiveDays
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ Wydaje się, że dość prosty w klasyfikacji zbiór danych - wszystkie klasyfikacje
+ za wyjątkiem Basic ngrams (choć na tę metodę patrzono z przymrużeniem oka
+ ze względu na kiepskie wyniki na większości zbiorów) zanotowały znakomitą
+ dokładność w przyporządkowywaniu instancji do klas.
+ Co cieszy, to fakt, że znów najlepiej poradził sobie algorytm KNN SAX śrubując
+ wynik aż na 99% poprawnie sklasyfikowanych przypadków.
+\end_layout
+
+\begin_layout Subsection*
+TwoLeadECG
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename other/aggr Twoleadecg.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Dokładność eksperymentów na zbiorze TwoLeadECG
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ Podobnie jak w powyższym zbiorze danych, w TwoLeadECG wszystkie klasyfikatory
+ za wyjątkiem Basic ngrams wypadły bardzo dobrze, jednak tym razem najlepszym
+ z nich okazał się DTW raw - choć jak wspomniano w części teoretycznej -
+ wyniki z tego podejścia zestawione są raczej w celach porównawczych, biorąc
+ pod uwagę fakt, że czas spędzony na przetwarzanie jest nieporównywalnie
+ większy niż w pozostałych przypadkach.
+ Pomijając zatem ten algorytm, najlepszą lokatę znów zajmuje KNN SAX.
+\end_layout
+
+\begin_layout Subsection*
+Yoga
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename other/aggr yoga.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Dokładność eksperymentów na zbiorze Yoga
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ Yoga nie jest już tak prostym zbiorem jak jej dwaj poprzednicy.
+ Zbiór ma 3300 instacji oraz charakteryzuje się długością szeregu 426.
+ Poziom skomplikowania odzwierciedla się na wynikach - tym razem dokładności
+ klasyfikacji rozpościerają się w przedziale 0.667 - 0.924.
+ Znów najlepszymi wynikami pochwalić się mogą dwa wiodące dotąd klasyfikacje
+ - czyli odpowiednio KNN SAX oraz DTW raw.
+ Pozostałe podejścia (oprócz Basic ngrams) odnotowały wynik na bardzo podobnym
+ poziomie.
+ 
+\end_layout
+
+\begin_layout Subsection*
+MoteStrain oraz ItalyPowerDemand
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename other/aggr motestrain.png
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Dokładność eksperymentów na zbiorze MoteStrain
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename other/aggr italypowerdemand.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Dokładność eksperymentów na zbiorze ItalyPowerDemand
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ Dwa podobne pod względem wyników, jak i liczby instancji, zbiory.
+ Choć długość szeregu wyraźnie różna - odpowiednio 84 i 24.
+ Wszystkie podejścia wypadły zadowalająco, Basic ngrams wyjątkowo nie odstawał
+ odczuwalnie od pozostałych.
+ Tak jak dotychczas, czołówka pozostała ta sama - DTW raw oraz KNN SAX.
+\end_layout
+
+\begin_layout Subsection*
+ChlorineConcentration
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename other/aggr clorineconcentration.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Dokładność eksperymentów na zbiorze ChlorineConcentration
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ Pierwszy z wieloklasowych zbiorów i również pierwsza zmiana lidera - w
+ tym przypadku na tle innych najlepszą dokładność uzyskała regresja ex aequo
+ z DTW raw.
+ Warto odnotować, że w porównaniu do pozostałych, jest to duży zbiór (4307
+ instancji), a mimo to, tak prosta ideowo koncepcja jak regresja okazała
+ się być najlepszym wyborem, co na pewno jest pewnego rodzaju ciekawostką.
+\end_layout
+
+\begin_layout Subsection*
+TwoPatterns
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename other/aggr twopatterns.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Dokładność eksperymentów na zbiorze TwoPatterns
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ Kolejny 'sensacyjny' zbiór - tym razem dlatego, że wariantowi DTW raw udało
+ się uzyskać stuprocentową skuteczność, czym zdeklasował swoich konkurentów.
+ Podobny wynik (aż 99%) odnotował KNN SAX, nieco gorzej C4.5 bagging ngrams,
+ a już wyraźnie gorzej (choć wciąż nienagannie) pozostałe algorytmy.
+ Jest to jeden z największych zbiorów w tej analizie (5000 instancji) z
+ dość długim szeregiem - 128 wartości, a także aż czteroma klasami, co tym
+ bardziej podkreśla znakomity wynik wiodących metod klasyfikacji.
+\end_layout
+
+\begin_layout Subsection*
+Wafer
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename other/aggr wafer.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Dokładność eksperymentów na zbiorze Wafer
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ Znów doskonała dokładność algorytmu KNN SAX który otarł się o maksymalną
+ jej możliwą wartość.
+ Pozostałe podejścia - za wyjątkiem Basic ngrams odnotowały równie dobry
+ wynik - bliski lub nawet przekraczający 99%.
+ Niestety Basic ngrams aż 11% niżej w tym zestawieniu.
+ 
+\end_layout
+
+\begin_layout Subsection*
+InlineSkate
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename other/aggr inlineskate.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Dokładność eksperymentów na zbiorze InlineSkate
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ Tym razem otrzymano trochę bardziej różnorodne wyniki niż w poprzedzających
+ przypadkach.
+ Nie licząc DTW raw, najlepszy tym razem okazał się C4.5 bagging ngrams z
+ wynikie 84%.
+ Dalej kolejno KNN SAX, C4.5 regression oraz C4.5 ngrams.
+ Jak w każdym z ubiegłych wyników Basic ngrams zamyka stawkę - tym razem
+ z wynikiem 79.3%
+\end_layout
+
+\begin_layout Subsection*
+Pacjenci
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename other/aggr patients.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Dokładność eksperymentów na zbiorze Pacjentów
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ Na sam koniec słowo o zbiorze Pacjentów, który na tle pozostałych zbiorów
+ wypadł zaskakująco słabo - na wszystkich analizowanych metodach.
+ Nieoczekiwanie najlepszym wynikiem może się pochwalić klasyfikator Basic
+ ngrams, choć ten wynik po serii niepowodzeń raczej uznano za przypadek
+ niż faktyczne dostosowanie algorytmu do charakterystyki danych.
+ Na pewno nie jest przypadkiem fakt, że żadne z podejść nie potrafiło poradzić
+ sobie ze zbiorem z przyzwoitą dokładnością.
+ Najprawdopodbniej szeregi te na obu klasach są relatywnie jednorodne, przez
+ co klasyfikatorom łatwo pomylić osobę chorą ze zdrową.
+\end_layout
+
+\begin_layout Subsection*
+Podsumowanie
+\end_layout
+
+\begin_layout Standard
+Podsumowując powyższe krótkie analizy wyników eksperymentów na poszczególnych
+ zbiorach danych, widać gołym okiem, że najskuteczniejszym podejściem okazał
+ się algorytm KNN SAX, odnotowujący najlepszy lub prawie najlepszy wynik
+ na każdym z nich.
+ Nie bierzemy pod uwagę równie dobrze wypadającego DTW raw ze względu na
+ zbyt długie obliczenia przeprowadzane podczas klasyfikowania instancji.
+ Tak dobry wynik KNN SAX jest o tyle satysfakcjonujący dla autora, że ściśle
+ bazuje na metodzie, którą wybrano już na początku realizacji tej pracy,
+ a mianowicie metody SAX.
+\end_layout
+
+\begin_layout Standard
+Niestety zawiódł autorski klasyfikator ngramowy, lecz jego koncept działania
  nie był mocno wyszukany, więc jego niska dokładność nie jest rozczarowaniem.
  
 \end_layout
 
 \begin_layout Standard
-Na osobny komentarz zasługuje zbiór Pacjentów, który jak widać na przestrzeni
- innych zbiorów danych, nie był zbiorem łatwym - zebrał zdecydowanie najsłabsze
- wyniki na wszystkich klasyfikatorach, co może wskazywać na to, że niekoniecznie
- podejście do rozwiązania było złe, lecz zbiór był zbyt trudny do rozwikłania.
-\end_layout
-
-\begin_layout Standard
 Z drugiej strony jednak prosta idea nie jest przeszkodą do zdobywania dobrych
  wyników - czego potwierdzeniem jest znakomity wynik regresji - tutaj wprawdzie
- nieco zmienionej, bo była ona liczona wielokrotnie dla kolejnych części
- sygnału w ramach każdej instacji - jednak nadal u podstaw leży nieskomplikowana
- estymacja danych do funckcji liniowej.
+ nieco zmienionej, bo była ona liczona bowiem wielokrotnie dla kolejnych
+ części sygnału w ramach każdej instacji - jednak nadal u podstaw leży nieskompl
+ikowana estymacja danych do funckcji liniowej.
 \end_layout
 
 \begin_layout Standard
@@ -6538,12 +7139,9 @@ Podsumowując wyniki są zadowalające dzięki eksperymentowi KNN, który niezna
  odstępuje kroku w jakości wobec matematycznie skomplikowanego DTW, a zdecydowan
 ie deklasuje go w kontekście czasu przetwarzania.
  Największą zagadką był klasyfikator ngramowy, którego model działania powstał
- na bazie pomysłu autora, jednak nie okazał się miłą niespodzianką - jedynie
- potwierdził, że stworzenie dobrego klasyfikatora nie jest prostym zadaniem.
-\end_layout
-
-\begin_layout Standard
-Pełne zestawienie wyników zostało zamieszczone w Dodatku B.
+ na bazie pomysłu autora, jednak jego rezultaty nie okazały się miłą niespodzian
+ką - jedynie potwierdziły, że stworzenie dobrego klasyfikatora nie jest
+ prostym zadaniem.
 \end_layout
 
 \begin_layout Chapter
