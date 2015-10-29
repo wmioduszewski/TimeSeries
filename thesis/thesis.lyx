@@ -6636,14 +6636,82 @@ name "fig:Dokładność-aggr ecg200"
 
  Dość mały zbiór z relatywnie krótkim szeregiem do przeanalizowania.
  W kwestii dokładności klasyfikacji widać zdecydowaną dominację podejścia
- KNN SAX, któremu zbiór wyraźnie odpowiadał.
- Krok niżej, na podobnym poziomie dokładności uplasowały się metody C4.5
- regression oraz DTW raw.
- Najgorzej z tymi danymi poradziły sobie warianty C4.5 ngrams, Basic ngrams
- oraz C4.5 bagging ngrams.
- Zły wynik Basic ngrams nie zaskakuje - bo jak się okaże niebawem na większości
- zbiorów nie wypadł dobrze, jednak poza tym widać, że algorytmy zliczeniowe
- nie byłyby dla takiego zbioru najlepszym wyborem.
+ 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+KNN SAX
+\end_layout
+
+\end_inset
+
+, któremu zbiór wyraźnie odpowiadał.
+ Nieco niżej, na podobnym poziomie dokładności, uplasowały się metody 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+C4.5 regression
+\end_layout
+
+\end_inset
+
+ oraz 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+DTW raw
+\end_layout
+
+\end_inset
+
+.
+ Najgorzej z tymi danymi poradziły sobie warianty 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+C4.5 ngrams
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+Basic ngrams
+\end_layout
+
+\end_inset
+
+ oraz 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+C4.5 bagging ngrams
+\end_layout
+
+\end_inset
+
+.
+ Zły wynik 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+Basic ngrams
+\end_layout
+
+\end_inset
+
+ nie zaskakuje - bo jak się okaże niebawem na większości zbiorów nie wypadł
+ dobrze, jednak poza tym widać, że algorytmy zliczeniowe nie byłyby dla
+ takiego zbioru najlepszym wyborem.
 \end_layout
 
 \begin_layout Subsection*
@@ -6684,11 +6752,30 @@ Dokładność eksperymentów na zbiorze ECGFiveDays
 \end_inset
 
  Wydaje się, że dość prosty w klasyfikacji zbiór danych - wszystkie klasyfikacje
- za wyjątkiem Basic ngrams (choć na tę metodę patrzono z przymrużeniem oka
- ze względu na kiepskie wyniki na większości zbiorów) zanotowały znakomitą
- dokładność w przyporządkowywaniu instancji do klas.
- Co cieszy, to fakt, że znów najlepiej poradził sobie algorytm KNN SAX śrubując
- wynik aż na 99% poprawnie sklasyfikowanych przypadków.
+ za wyjątkiem 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+Basic ngrams
+\end_layout
+
+\end_inset
+
+ (choć na tę metodę patrzono z przymrużeniem oka ze względu na kiepskie
+ wyniki na większości zbiorów) zanotowały znakomitą dokładność w przyporządkowyw
+aniu instancji do klas.
+ Co cieszy, to fakt, że znów najlepiej poradził sobie algorytm 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+KNN SAX
+\end_layout
+
+\end_inset
+
+ śrubując wynik aż na 99% poprawnie sklasyfikowanych przypadków.
 \end_layout
 
 \begin_layout Subsection*
@@ -6728,13 +6815,50 @@ Dokładność eksperymentów na zbiorze TwoLeadECG
 
 \end_inset
 
- Podobnie jak w powyższym zbiorze danych, w TwoLeadECG wszystkie klasyfikatory
- za wyjątkiem Basic ngrams wypadły bardzo dobrze, jednak tym razem najlepszym
- z nich okazał się DTW raw - choć jak wspomniano w części teoretycznej -
- wyniki z tego podejścia zestawione są raczej w celach porównawczych, biorąc
- pod uwagę fakt, że czas spędzony na przetwarzanie jest nieporównywalnie
- większy niż w pozostałych przypadkach.
- Pomijając zatem ten algorytm, najlepszą lokatę znów zajmuje KNN SAX.
+ Podobnie jak w powyższym zbiorze danych, w 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+TwoLeadECG
+\end_layout
+
+\end_inset
+
+ wszystkie klasyfikatory za wyjątkiem 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+Basic ngrams
+\end_layout
+
+\end_inset
+
+ wypadły bardzo dobrze, jednak tym razem najlepszym z nich okazał się 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+DTW raw
+\end_layout
+
+\end_inset
+
+ - choć jak wspomniano w części teoretycznej - wyniki z tego podejścia zestawion
+e są raczej w celach porównawczych, biorąc pod uwagę fakt, że czas spędzony
+ na przetwarzanie jest nieporównywalnie większy niż w pozostałych przypadkach.
+ Pomijając zatem ten algorytm, najlepszą lokatę znów zajmuje 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+KNN SAX
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection*
@@ -6774,14 +6898,57 @@ Dokładność eksperymentów na zbiorze Yoga
 
 \end_inset
 
- Yoga nie jest już tak prostym zbiorem jak jej dwaj poprzednicy.
+ 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+Yoga
+\end_layout
+
+\end_inset
+
+ nie jest już tak prostym zbiorem jak jej dwaj poprzednicy.
  Zbiór ma 3300 instacji oraz charakteryzuje się długością szeregu 426.
  Poziom skomplikowania odzwierciedla się na wynikach - tym razem dokładności
- klasyfikacji rozpościerają się w przedziale 0.667 - 0.924.
+ klasyfikacji rozpościerają się w przedziale 
+\begin_inset Formula $0.667-0.924$
+\end_inset
+
+.
  Znów najlepszymi wynikami pochwalić się mogą dwa wiodące dotąd klasyfikacje
- - czyli odpowiednio KNN SAX oraz DTW raw.
- Pozostałe podejścia (oprócz Basic ngrams) odnotowały wynik na bardzo podobnym
- poziomie.
+ - czyli odpowiednio 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+KNN SAX
+\end_layout
+
+\end_inset
+
+ oraz 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+DTW raw
+\end_layout
+
+\end_inset
+
+.
+ Pozostałe podejścia (oprócz 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+Basic ngrams
+\end_layout
+
+\end_inset
+
+) odnotowały wynik na bardzo podobnym poziomie.
  
 \end_layout
 
@@ -6854,9 +7021,38 @@ Dokładność eksperymentów na zbiorze ItalyPowerDemand
 
  Dwa podobne pod względem wyników, jak i liczby instancji, zbiory.
  Choć długość szeregu wyraźnie różna - odpowiednio 84 i 24.
- Wszystkie podejścia wypadły zadowalająco, Basic ngrams wyjątkowo nie odstawał
- odczuwalnie od pozostałych.
- Tak jak dotychczas, czołówka pozostała ta sama - DTW raw oraz KNN SAX.
+ Wszystkie podejścia wypadły zadowalająco, 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+Basic ngrams
+\end_layout
+
+\end_inset
+
+ wyjątkowo nie odstawał odczuwalnie od pozostałych.
+ Tak jak dotychczas, czołówka pozostała ta sama - 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+DTW raw
+\end_layout
+
+\end_inset
+
+ oraz 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+KNN SAX
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection*
@@ -6898,7 +7094,17 @@ Dokładność eksperymentów na zbiorze ChlorineConcentration
 
  Pierwszy z wieloklasowych zbiorów i również pierwsza zmiana lidera - w
  tym przypadku na tle innych najlepszą dokładność uzyskała regresja ex aequo
- z DTW raw.
+ z 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+DTW raw
+\end_layout
+
+\end_inset
+
+.
  Warto odnotować, że w porównaniu do pozostałych, jest to duży zbiór (4307
  instancji), a mimo to, tak prosta ideowo koncepcja jak regresja okazała
  się być najlepszym wyborem, co na pewno jest pewnego rodzaju ciekawostką.
@@ -6941,10 +7147,39 @@ Dokładność eksperymentów na zbiorze TwoPatterns
 
 \end_inset
 
- Kolejny 'sensacyjny' zbiór - tym razem dlatego, że wariantowi DTW raw udało
- się uzyskać stuprocentową skuteczność, czym zdeklasował swoich konkurentów.
- Podobny wynik (aż 99%) odnotował KNN SAX, nieco gorzej C4.5 bagging ngrams,
- a już wyraźnie gorzej (choć wciąż nienagannie) pozostałe algorytmy.
+ Kolejny 'sensacyjny' zbiór - tym razem dlatego, że wariantowi 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+DTW raw
+\end_layout
+
+\end_inset
+
+ udało się uzyskać stuprocentową skuteczność, czym zdeklasował swoich konkurentó
+w.
+ Podobny wynik (aż 99%) odnotował 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+KNN SAX
+\end_layout
+
+\end_inset
+
+, nieco gorzej 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+C4.5 bagging ngrams
+\end_layout
+
+\end_inset
+
+, a już wyraźnie gorzej (choć wciąż nienagannie) pozostałe algorytmy.
  Jest to jeden z największych zbiorów w tej analizie (5000 instancji) z
  dość długim szeregiem - 128 wartości, a także aż czteroma klasami, co tym
  bardziej podkreśla znakomity wynik wiodących metod klasyfikacji.
@@ -6987,11 +7222,39 @@ Dokładność eksperymentów na zbiorze Wafer
 
 \end_inset
 
- Znów doskonała dokładność algorytmu KNN SAX który otarł się o maksymalną
- jej możliwą wartość.
- Pozostałe podejścia - za wyjątkiem Basic ngrams odnotowały równie dobry
- wynik - bliski lub nawet przekraczający 99%.
- Niestety Basic ngrams aż 11% niżej w tym zestawieniu.
+ Znów doskonała dokładność algorytmu 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+KNN SAX
+\end_layout
+
+\end_inset
+
+ który otarł się o maksymalną jej możliwą wartość.
+ Pozostałe podejścia - za wyjątkiem 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+Basic ngrams
+\end_layout
+
+\end_inset
+
+ odnotowały równie dobry wynik - bliski lub nawet przekraczający 99%.
+ Niestety 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+Basic ngrams
+\end_layout
+
+\end_inset
+
+ aż 11% niżej w tym zestawieniu.
  
 \end_layout
 
@@ -7034,11 +7297,69 @@ Dokładność eksperymentów na zbiorze InlineSkate
 
  Tym razem otrzymano trochę bardziej różnorodne wyniki niż w poprzedzających
  przypadkach.
- Nie licząc DTW raw, najlepszy tym razem okazał się C4.5 bagging ngrams z
- wynikie 84%.
- Dalej kolejno KNN SAX, C4.5 regression oraz C4.5 ngrams.
- Jak w każdym z ubiegłych wyników Basic ngrams zamyka stawkę - tym razem
- z wynikiem 79.3%
+ Nie licząc 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+DTW raw
+\end_layout
+
+\end_inset
+
+, najlepszy tym razem okazał się 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+C4.5 bagging ngrams
+\end_layout
+
+\end_inset
+
+ z wynikiem 84%.
+ Dalej kolejno 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+KNN SAX
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+C4.5 regression
+\end_layout
+
+\end_inset
+
+ oraz 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+C4.5 ngrams
+\end_layout
+
+\end_inset
+
+.
+ Jak w każdym z ubiegłych wyników 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+Basic ngrams
+\end_layout
+
+\end_inset
+
+ zamyka stawkę - tym razem z wynikiem 79.3%
 \end_layout
 
 \begin_layout Subsection*
@@ -7078,11 +7399,30 @@ Dokładność eksperymentów na zbiorze Pacjentów
 
 \end_inset
 
- Na sam koniec słowo o zbiorze Pacjentów, który na tle pozostałych zbiorów
- wypadł zaskakująco słabo - na wszystkich analizowanych metodach.
- Nieoczekiwanie najlepszym wynikiem może się pochwalić klasyfikator Basic
- ngrams, choć ten wynik po serii niepowodzeń raczej uznano za przypadek
- niż faktyczne dostosowanie algorytmu do charakterystyki danych.
+ Na sam koniec słowo o zbiorze 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+Pacjentów
+\end_layout
+
+\end_inset
+
+, który na tle pozostałych zbiorów wypadł zaskakująco słabo - na wszystkich
+ analizowanych metodach.
+ Nieoczekiwanie najlepszym wynikiem może się pochwalić klasyfikator 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+Basic ngrams
+\end_layout
+
+\end_inset
+
+, choć ten wynik po serii niepowodzeń raczej uznano za przypadek niż faktyczne
+ dostosowanie algorytmu do charakterystyki danych.
  Na pewno nie jest przypadkiem fakt, że żadne z podejść nie potrafiło poradzić
  sobie ze zbiorem z przyzwoitą dokładnością.
  Najprawdopodbniej szeregi te na obu klasach są relatywnie jednorodne, przez
@@ -7096,13 +7436,42 @@ Podsumowanie
 \begin_layout Standard
 Podsumowując powyższe krótkie analizy wyników eksperymentów na poszczególnych
  zbiorach danych, widać gołym okiem, że najskuteczniejszym podejściem okazał
- się algorytm KNN SAX, odnotowujący najlepszy lub prawie najlepszy wynik
- na każdym z nich.
- Nie bierzemy pod uwagę równie dobrze wypadającego DTW raw ze względu na
- zbyt długie obliczenia przeprowadzane podczas klasyfikowania instancji.
- Tak dobry wynik KNN SAX jest o tyle satysfakcjonujący dla autora, że ściśle
- bazuje na metodzie, którą wybrano już na początku realizacji tej pracy,
- a mianowicie metody SAX.
+ się algorytm 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+KNN SAX
+\end_layout
+
+\end_inset
+
+, odnotowujący najlepszy lub prawie najlepszy wynik na każdym z nich.
+ Nie bierzemy pod uwagę równie dobrze wypadającego 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+DTW raw
+\end_layout
+
+\end_inset
+
+ ze względu na zbyt długie obliczenia przeprowadzane podczas klasyfikowania
+ instancji.
+ Tak dobry wynik 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+KNN SAX
+\end_layout
+
+\end_inset
+
+ jest o tyle satysfakcjonujący dla autora, że ściśle bazuje na metodzie,
+ którą wybrano już na początku realizacji tej pracy, a mianowicie metody
+ SAX.
 \end_layout
 
 \begin_layout Standard
@@ -7124,11 +7493,38 @@ Powstaje pytanie dlaczego skupiono się tylko na mierze dokładności, skoro
  w większości przypadków badano aż sześć miar.
  Otóż jak się okazuje, wyniki wszystkich miar w większości eksperymentów
  (szczególnie w tych dwuklasowych) są do siebie bardzo zbliżone.
- Obliczono, że odchylenie standardowe miar eksperymentów na zbiorach ECG200,
- ECGFiveDays, TwoLeadEcg, Yoga, MoteStrain, ItalyPowerDemand, Wafer, oraz
- Patients jest mniejsze od 0.05.
- Pozostałe zbiory (ChlorineConcentration, TwoPatterns, InlineSkate) to zbiory
- wieloklasowe na których zróżnicowanie miar było bardziej wyraźne.
+ Obliczono, że odchylenie standardowe miar eksperymentów na zbiorach
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+ ECG200, ECGFiveDays, TwoLeadEcg, Yoga, MoteStrain, ItalyPowerDemand, Wafer
+\end_layout
+
+\end_inset
+
+, oraz 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+Patients
+\end_layout
+
+\end_inset
+
+ jest mniejsze od 0.05.
+ Pozostałe zbiory (
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+ChlorineConcentration, TwoPatterns, InlineSkate
+\end_layout
+
+\end_inset
+
+) to zbiory wieloklasowe na których zróżnicowanie miar było bardziej wyraźne.
  Miary F1 oraz PCC często są aż o 0.1 mniejsze niż dokładność co może wskazywać
  na to, że wiele z instancji nie zostało sklasyfikowanych (Jurek: dobrze
  to jest? czy bzdura?).
