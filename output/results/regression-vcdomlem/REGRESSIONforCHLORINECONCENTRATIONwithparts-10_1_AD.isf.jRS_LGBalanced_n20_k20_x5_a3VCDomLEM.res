@@ -1,3 +1,16357 @@
+Generic consistency parameter = 0.990, consistency calculated with respect to = POS, condition selection method = DEFAULT, negative examples treatment = COVER_ONLY_INCONSISTENT_NEGATIVE_EXAMPLES, rules type = DEFAULT, minimal rate of covered positive examples = -1.0, partial matching closest rule = false, all directions = false, all positive examples = false, check confidence during minimality test = true, delete not minimal rules = true, delete redundant conditions = true, delete redundant rules = true, each rule must have at least one condition = false, maximal quantity of rules for positive examples = -1, classifier type = pl.poznan.put.cs.idss.jrs.classifiers.RulesDRSAClassificationMethod, generate intermediate files = false, number of cross valdation folds = 5, number of repetitions = 3, seed = 64, input file name = ./REGRESSION/REGRESSIONforCHLORINECONCENTRATIONwithparts-10_1_AD.isf, input test file name = null, output file name = null, majority class = false, median class = false, consistency measure = pl.poznan.put.cs.idss.jrs.approximations.LGBalanceMeasure, number of classifiers in ensemble = 20, aggregation method = MajorityVoting, percentage size of bootstrap sample = 20.0, attributes confirmation mode = false, features collection mode = true, ln consistency sampling, number of HVDM objects = -1, neighborhood bagging alpha = 0.5, neighborhood bagging beta = 0.5, neighborhood bagging tau = 1.0, neighborhood bagging psi = 1.0, underbagging = false, depends on attributes and classes = false, debug mode = false
+0 [main] INFO pl.poznan.put.cs.idss.jrs.executors.GenericVCdomLEMCommand  - STARTED  Tue Oct 13 08:12:49 CEST 2015
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances	3133.3333333333335	72.74978716817584%	(0.3241295811682056%)
+Incorrectly Classified Instances	1165.0	27.048990016252613%	(0.3631721447767221%)
+Unknown Classification Instances	8.666666666666515	0.20122281557154667%
+
+Average Classification Accuracy	78.55351826379989
+Average Precision	70.56780614900796
+G-mean	77.83775124878282	(0.002756986372715708)
+F1	76.01634583824558	(0.0032572674262800983)
+RMSE	0.5205980518005265	(0.0034015013525334164)
+MAE	0.271033901749955	(0.0035338120285793215)
+
+
+=== Detailed Accuracy By Class ===
+
+TP Rate	FP Rate	Precision	Class
+0.6797724006446999 (0.004541447988951787)	0.32022759935530004 (0.004541447988951812)	0.9537783781868319 (0.0010341297586483212)	n1
+0.8912979646312978 (0.002456845749099337)	0.10870203536870204 (0.0024568457490993616)	0.4575777447933273 (0.003779544886661634)	1
+
+Rules confirmation
+=== Attribute confirmation ===
+
+	a	b	c	d
+slope1 	5187	359633	3179	105977
+cslope1 	9150	355670	4881	104275
+intercept1 	9358	355462	5513	103643
+cintercept1 	16534	348286	6370	102786
+slope2 	7207	357613	1851	107305
+cslope2 	18411	346409	5297	103859
+intercept2 	12343	352477	6719	102437
+cintercept2 	9932	354888	3358	105798
+slope3 	18643	346177	5374	103782
+cslope3 	31579	333241	6398	102758
+intercept3 	28272	336548	8385	100771
+cintercept3 	10449	354371	8226	100930
+slope4 	21216	343604	6894	102262
+cslope4 	20593	344227	8393	100763
+intercept4 	15500	349320	4654	104502
+cintercept4 	16433	348387	6227	102929
+slope5 	2363	362457	3232	105924
+cslope5 	21015	343805	5337	103819
+intercept5 	43802	321018	6442	102714
+cintercept5 	1885	362935	2636	106520
+slope6 	30326	334494	6363	102793
+cslope6 	5449	359371	4874	104282
+intercept6 	12039	352781	5505	103651
+cintercept6 	11689	353131	3962	105194
+slope7 	57984	306836	9701	99455
+cslope7 	2501	362319	1773	107383
+intercept7 	4331	360489	3690	105466
+cintercept7 	21980	342840	5964	103192
+slope8 	39408	325412	8793	100363
+cslope8 	2606	362214	2592	106564
+intercept8 	25119	339701	4987	104169
+cintercept8 	6386	358434	2790	106366
+slope9 	6008	358812	2989	106167
+cslope9 	12694	352126	4711	104445
+intercept9 	55900	308920	7699	101457
+cintercept9 	6503	358317	2290	106866
+slope10 	38397	326423	6350	102806
+cslope10 	4183	360637	4929	104227
+intercept10 	2369	362451	3640	105516
+cintercept10 	49152	315668	10030	99126
+destClass 	0	364820	0	109156
+
+	f	A	Z	l	c1	s
+slope1 	-0.343908517028317	-0.011678914415769553	-0.1944804221189028	-0.7170372161085639	-0.0972402110594514	-0.15238149437816653
+cslope1 	-0.28131649506414513	-0.015574091015756873	-0.15275272253727523	-0.5782222671667419	-0.07637636126863762	-0.12116067842035189
+intercept1 	-0.32636249872486367	-0.01975035959455421	-0.182438221486982	-0.6775033767126832	-0.091219110743491	-0.14497143782551
+cintercept1 	-0.12573437554084968	-0.010543205856667081	-0.06212640081473678	-0.2528066323027493	-0.03106320040736839	-0.0502468642372665
+slope2 	0.07620234318603032	6.568277958324476E-4	0.11267474762359188	0.15270071280178218	0.05633737381179594	0.026454395724839208
+cslope2 	0.019588324042244108	4.7008640379699393E-4	0.02983904239088865	0.0391816599635187	0.014919521195444325	0.007233715278944631
+intercept2 	-0.2906152436610766	-0.022230946880469102	-0.15874051021526442	-0.5984762627253826	-0.07937025510763221	-0.12730255155201373
+cintercept2 	-0.06102892250243408	-0.0028024971474066053	-0.02906659680527693	-0.12220972055859011	-0.014533298402638464	-0.023018011935463913
+slope3 	0.018633943219563253	4.53553424092047E-4	0.028399694035357616	0.03727220077086367	0.014199847017678808	0.00688950993784655
+cslope3 	0.19250804248017894	0.006996799204309664	0.26846969880002036	0.3898808716384961	0.13423484940001018	0.06721363682534828
+intercept3 	0.004400716967624045	1.6950151288754297E-4	0.006758433300032118	0.008801490753007188	0.003379216650016059	0.0016869231506024343
+cintercept3 	-0.4492097490541415	-0.03743424247696881	-0.2730712739670925	-0.9674196193054198	-0.13653563698354626	-0.2188044000972427
+slope4 	-0.04123754264706963	-0.004093274823071392	-0.019426000173065273	-0.08252188364038299	-0.009713000086532636	-0.015894895289476376
+cslope4 	-0.15331787273639502	-0.01675991286052375	-0.07698439365004563	-0.3090728424266408	-0.03849219682502281	-0.0631147812117343
+intercept4 	-0.0017565334454850109	-1.2019768282752495E-4	-8.09821607327868E-4	-0.0035130705040603153	-4.04910803663934E-4	-6.51002196423604E-4
+cintercept4 	-0.11756837203866492	-0.009702319222521844	-0.05781830529974448	-0.2362291972403233	-0.02890915264987224	-0.046737262005895605
+slope5 	-0.6410166332976085	-0.018017287991253367	-0.4512919353670024	-1.5197951720032397	-0.2256459676835012	-0.35150939910156437
+cslope5 	0.08179025262048831	0.0021240927934150504	0.1205880559572133	0.16394674155611105	0.06029402797860665	0.029406175352674507
+intercept5 	0.34089706438938616	0.01572640546398099	0.44326919489427197	0.7102143979822066	0.22163459744713598	0.11418890298084437
+cintercept5 	-0.6474991814888804	-0.014751170244203514	-0.4583053329296352	-1.5419608252894481	-0.2291526664648176	-0.3561554388799555
+slope6 	0.1756006546950949	0.006198888788637694	0.24693097037108505	0.3548794365789312	0.12346548518554253	0.06163914546242207
+cslope6 	-0.49868507109249166	-0.02338134330656552	-0.3142140345381537	-1.0951088791512145	-0.15710701726907686	-0.24723567857904347
+intercept6 	-0.2089428768821536	-0.013933622814294506	-0.1084627195796424	-0.4241314197709152	-0.0542313597898212	-0.08669280277685426
+cintercept6 	-0.062282652493906715	-0.0033878873152731847	-0.02968447593823909	-0.12472674919988719	-0.014842237969119544	-0.023628408905882036
+slope7 	0.282738532854572	0.018824211686065122	0.3776526993322587	0.5813121078922063	0.18882634966612935	0.10146190304070736
+cslope7 	-0.4064106732230905	-0.007291221628839206	-0.23974919894983757	-0.8626084047457502	-0.11987459947491878	-0.18621445674252982
+intercept7 	-0.4801867871609623	-0.01717264113943492	-0.2984843244353207	-1.0464540253691075	-0.14924216221766035	-0.2336986430889114
+cintercept7 	0.04884386292481027	0.0013732822352198646	0.07326022927896175	0.09776552252382194	0.036630114639480876	0.01792874409722699
+slope8 	0.14565017951968146	0.007041451672480903	0.20788221638572854	0.2933868614321558	0.10394110819286427	0.05329479469626114
+cslope8 	-0.5374903598480812	-0.012920730716740093	-0.3486478534302358	-1.201239329336536	-0.1743239267151179	-0.27133037362764173
+intercept8 	0.20225439302375464	0.005697011718329566	0.28072486071707103	0.4101639757772576	0.14036243035853552	0.06903553494589093
+cintercept8 	-0.18705126484600415	-0.006322520993340296	-0.09582348644351824	-0.37855953108984536	-0.04791174322175912	-0.07521154114527609
+slope9 	-0.24889688296075185	-0.00856340480029769	-0.13241923248395995	-0.5084729983891285	-0.06620961624197998	-0.10389541117942588
+cslope9 	-0.10728392117991645	-0.0066825381703235764	-0.05244990635057722	-0.21539678838278695	-0.02622495317528861	-0.04190974642458146
+intercept9 	0.3695691044701993	0.021995785309404107	0.474354717111276	0.7758479003159797	0.237177358555638	0.12617340518839615
+cintercept9 	-0.08127743288923747	-0.0024734635132211964	-0.03915265738373692	-0.16291423822829487	-0.01957632869186846	-0.030705491100781634
+slope10 	0.2880598339530551	0.011971646236503895	0.3838044747364252	0.5928984890880027	0.1919022373682126	0.09760421883034284
+cslope10 	-0.5949972599932051	-0.02643923894288381	-0.4035804564570768	-1.3707334648123406	-0.2017902282285384	-0.3167253694084093
+intercept10 	-0.6740185313637925	-0.020934314907038357	-0.4877988264026853	-1.6361417860211622	-0.24389941320134265	-0.38028059211061394
+cintercept10 	0.18905354750301884	0.01127433969119523	0.26409791356341616	0.3827109060022014	0.13204895678170808	0.06949924987566902
+
+Rules original attributes confirmation
+=== Original attribute confirmation ===
+
+	a	b	c	d
+slope1 	14246	350574	7897	101259
+intercept1 	25296	339524	11405	97751
+slope2 	25365	339455	6918	102238
+intercept2 	21977	342843	9731	99425
+slope3 	49745	315075	10916	98240
+intercept3 	38385	326435	15901	93255
+slope4 	41106	323714	14423	94733
+intercept4 	31496	333324	10602	98554
+slope5 	23246	341574	8357	100799
+intercept5 	45504	319316	8956	100200
+slope6 	35628	329192	10824	98332
+intercept6 	22533	342287	8985	100171
+slope7 	60214	304606	11245	97911
+intercept7 	25942	338878	9285	99871
+slope8 	41410	323410	10826	98330
+intercept8 	30813	334007	7571	101585
+slope9 	17814	347006	7425	101731
+intercept9 	60901	303919	9386	99770
+slope10 	42466	322354	11038	98118
+intercept10 	51261	313559	13351	95805
+
+	f	A	Z	l	c1	s
+slope1 	-0.2989046913918319	-0.02688441924386342	-0.16413874923561958	-0.616632804508443	-0.08206937461780979	-0.13252927186845304
+intercept1 	-0.20219091413345305	-0.02932174804215388	-0.10452870788556465	-0.4100316048183964	-0.052264353942782324	-0.08720865178848938
+slope2 	0.046275690772116296	0.0015199177775633262	0.06950207192284573	0.09261753095451515	0.034751035961422864	0.017176111377835167
+intercept2 	-0.19350225971462015	-0.023844914668278275	-0.09951336550153697	-0.3919462434449395	-0.049756682750768486	-0.0820870286845775
+slope3 	0.15379704172490644	0.009600321969252944	0.21861926318945968	0.3100543236460697	0.10930963159472984	0.05773708743381842
+intercept3 	-0.1612508131704411	-0.03516678939358839	-0.08134717456804616	-0.3253412715995594	-0.04067358728402308	-0.07071189741455502
+slope4 	-0.0794800461931231	-0.016963663884372496	-0.038248044727541924	-0.15929608790171754	-0.019124022363770962	-0.03334628203213751
+intercept4 	-0.05883603738052791	-0.009118059913395368	-0.027987946362718952	-0.11780813847333924	-0.013993973181359476	-0.023642238298887945
+slope5 	-0.09153925750454485	-0.010589875091896725	-0.044352705039423165	-0.18359246634694415	-0.022176352519711583	-0.03657717322820868
+intercept5 	0.20641630665612334	0.011105722544282274	0.2859227667802476	0.4188505058951061	0.1429613833901238	0.07439569773420968
+slope6 	-0.007629889360299463	-0.001281461328255651	-0.003528828568717942	-0.015260074848025107	-0.001764414284358971	-0.0030112630833349233
+intercept6 	-0.14262182505307475	-0.01694300839130782	-0.07116605637114926	-0.2872016484126992	-0.03558302818557463	-0.05867856538998656
+slope7 	0.231408960112847	0.016822482367540092	0.31670024616272235	0.47135526845641756	0.15835012308136118	0.08588390569873601
+intercept7 	-0.08934261473302235	-0.011601681952418242	-0.04323449688084769	-0.17916294743534905	-0.021617248440423845	-0.035949504505015065
+slope8 	0.0673706539159713	0.003708641985361124	0.10007389824599694	0.1349457196335285	0.05003694912299847	0.025901423713520277
+intercept8 	0.09817548926607116	0.003784289792513354	0.14353079059243157	0.19698549018144623	0.07176539529621578	0.035967710559210136
+slope9 	-0.16424571513228886	-0.01560324759596788	-0.08300489608689104	-0.33149404922824693	-0.04150244804344552	-0.0674823921148013
+intercept9 	0.3200494257470771	0.021887861770339734	0.420151842301581	0.6634043480208995	0.2100759211507905	0.11360749115846945
+slope10 	0.07025101943064867	0.0039670732967789606	0.10419624788349968	0.1407338611931311	0.05209812394174984	0.027049709930676222
+intercept10 	0.06924546028541644	0.00485277647101699	0.1027585048999758	0.1387129111771267	0.0513792524499879	0.027400326752869717
+
+Selected at least rules:
+
+1 : (slope9 >= -0.020355) & (cintercept10 <= -1.062491) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 29
+SupportingExamples: 56, 64, 65, 89, 164, 222, 255, 258, 285, 294, 311, 322, 337, 356, 388, 398, 429, 467, 504, 508, 513, 582, 601, 613, 637, 644, 653, 655, 678
+Strength: 0.0420899854862119
+Confidence: 1.0
+CoverageFactor: 0.06318082788671024
+Coverage: 29
+CoveredExamples: 56, 64, 65, 89, 164, 222, 255, 258, 285, 294, 311, 322, 337, 356, 388, 398, 429, 467, 504, 508, 513, 582, 601, 613, 637, 644, 653, 655, 678
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.082625
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413125
+s-ConfirmationMeasure: 0.7869047619047619
+
+2 : (slope9 >= -0.020355) & (cintercept10 <= -1.05821) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 24
+SupportingExamples: 49, 97, 120, 126, 127, 134, 162, 175, 191, 195, 218, 230, 286, 382, 407, 440, 447, 453, 502, 506, 566, 629, 652, 680
+Strength: 0.03483309143686502
+Confidence: 1.0
+CoverageFactor: 0.05052631578947368
+Coverage: 24
+CoveredExamples: 49, 97, 120, 126, 127, 134, 162, 175, 191, 195, 218, 230, 286, 382, 407, 440, 447, 453, 502, 506, 566, 629, 652, 680
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.082625
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413125
+s-ConfirmationMeasure: 0.7869047619047619
+
+3 : (slope9 >= -0.019675) & (cintercept10 <= -1.053313) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 28
+SupportingExamples: 11, 26, 37, 46, 115, 151, 152, 202, 213, 215, 221, 338, 356, 360, 388, 398, 412, 470, 520, 550, 586, 605, 611, 615, 652, 664, 667, 675
+Strength: 0.040638606676342524
+Confidence: 1.0
+CoverageFactor: 0.06181015452538632
+Coverage: 28
+CoveredExamples: 11, 26, 37, 46, 115, 151, 152, 202, 213, 215, 221, 338, 356, 360, 388, 398, 412, 470, 520, 550, 586, 605, 611, 615, 652, 664, 667, 675
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07859690844233055
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5392984542211653
+s-ConfirmationMeasure: 0.7859690844233056
+
+4 : (slope9 >= -0.019675) & (cintercept10 <= -1.038013) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 22
+SupportingExamples: 4, 103, 138, 145, 185, 192, 201, 227, 272, 289, 295, 303, 312, 442, 514, 519, 541, 618, 629, 636, 644, 647
+Strength: 0.03193033381712627
+Confidence: 1.0
+CoverageFactor: 0.04899777282850779
+Coverage: 22
+CoveredExamples: 4, 103, 138, 145, 185, 192, 201, 227, 272, 289, 295, 303, 312, 442, 514, 519, 541, 618, 629, 636, 644, 647
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+5 : (slope9 >= -0.018184) & (slope10 >= 0.229864) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 19
+SupportingExamples: 44, 52, 57, 153, 155, 164, 196, 198, 202, 301, 310, 320, 350, 492, 504, 599, 600, 621, 646
+Strength: 0.027576197387518143
+Confidence: 1.0
+CoverageFactor: 0.04318181818181818
+Coverage: 19
+CoveredExamples: 44, 52, 57, 153, 155, 164, 196, 198, 202, 301, 310, 320, 350, 492, 504, 599, 600, 621, 646
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+6 : (slope9 >= -0.015653) & (cintercept10 <= -1.001933) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 14
+SupportingExamples: 20, 113, 119, 130, 236, 241, 318, 341, 357, 387, 399, 453, 555, 668
+Strength: 0.020319303338171262
+Confidence: 1.0
+CoverageFactor: 0.030634573304157548
+Coverage: 14
+CoveredExamples: 20, 113, 119, 130, 236, 241, 318, 341, 357, 387, 399, 453, 555, 668
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+7 : (slope8 >= -6.84E-4) & (slope10 >= 0.228356) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 37
+SupportingExamples: 2, 8, 16, 52, 61, 75, 85, 134, 154, 171, 179, 182, 202, 204, 241, 242, 256, 273, 304, 305, 324, 327, 338, 340, 348, 350, 379, 400, 468, 475, 487, 510, 577, 582, 595, 605, 681
+Strength: 0.05370101596516691
+Confidence: 1.0
+CoverageFactor: 0.08185840707964602
+Coverage: 37
+CoveredExamples: 2, 8, 16, 52, 61, 75, 85, 134, 154, 171, 179, 182, 202, 204, 241, 242, 256, 273, 304, 305, 324, 327, 338, 340, 348, 350, 379, 400, 468, 475, 487, 510, 577, 582, 595, 605, 681
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.12757539203860072
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5637876960193003
+s-ConfirmationMeasure: 0.7973462002412546
+
+8 : (slope8 >= -6.84E-4) & (intercept8 >= -0.651728) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 35
+SupportingExamples: 17, 37, 40, 88, 89, 172, 207, 212, 217, 222, 266, 297, 390, 443, 444, 448, 468, 470, 473, 481, 495, 501, 521, 544, 559, 571, 573, 587, 589, 642, 651, 659, 664, 666, 674
+Strength: 0.05079825834542816
+Confidence: 1.0
+CoverageFactor: 0.07777777777777778
+Coverage: 35
+CoveredExamples: 17, 37, 40, 88, 89, 172, 207, 212, 217, 222, 266, 297, 390, 443, 444, 448, 468, 470, 473, 481, 495, 501, 521, 544, 559, 571, 573, 587, 589, 642, 651, 659, 664, 666, 674
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.11109243697478992
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5555462184873949
+s-ConfirmationMeasure: 0.7935174069627852
+
+9 : (slope8 >= -6.84E-4) & (cintercept10 <= -0.957602) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 56
+SupportingExamples: 34, 48, 52, 58, 72, 114, 128, 135, 140, 151, 157, 162, 169, 182, 186, 195, 196, 200, 201, 211, 212, 219, 238, 254, 256, 265, 268, 284, 300, 310, 328, 333, 340, 346, 351, 355, 362, 364, 366, 375, 404, 457, 464, 475, 490, 497, 507, 510, 566, 576, 584, 623, 647, 653, 678, 679
+Strength: 0.08127721335268505
+Confidence: 1.0
+CoverageFactor: 0.13023255813953488
+Coverage: 56
+CoveredExamples: 34, 48, 52, 58, 72, 114, 128, 135, 140, 151, 157, 162, 169, 182, 186, 195, 196, 200, 201, 211, 212, 219, 238, 254, 256, 265, 268, 284, 300, 310, 328, 333, 340, 346, 351, 355, 362, 364, 366, 375, 404, 457, 464, 475, 490, 497, 507, 510, 566, 576, 584, 623, 647, 653, 678, 679
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.082625
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413125
+s-ConfirmationMeasure: 0.7869047619047619
+
+10 : (slope8 >= -6.75E-4) & (slope10 >= 0.228356) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 28
+SupportingExamples: 16, 49, 78, 97, 120, 126, 127, 134, 151, 162, 175, 191, 195, 218, 230, 286, 333, 373, 407, 412, 447, 453, 477, 502, 506, 629, 652, 680
+Strength: 0.040638606676342524
+Confidence: 1.0
+CoverageFactor: 0.05894736842105263
+Coverage: 28
+CoveredExamples: 16, 49, 78, 97, 120, 126, 127, 134, 151, 162, 175, 191, 195, 218, 230, 286, 333, 373, 407, 412, 447, 453, 477, 502, 506, 629, 652, 680
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.12757539203860072
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5637876960193003
+s-ConfirmationMeasure: 0.7973462002412546
+
+11 : (slope8 >= -6.5E-4) & (slope10 >= 0.22974) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 31
+SupportingExamples: 17, 59, 81, 91, 104, 125, 130, 132, 146, 185, 188, 195, 200, 277, 289, 294, 349, 382, 387, 390, 427, 498, 535, 579, 580, 599, 606, 619, 627, 644, 689
+Strength: 0.04499274310595065
+Confidence: 1.0
+CoverageFactor: 0.07226107226107226
+Coverage: 31
+CoveredExamples: 17, 59, 81, 91, 104, 125, 130, 132, 146, 185, 188, 195, 200, 277, 289, 294, 349, 382, 387, 390, 427, 498, 535, 579, 580, 599, 606, 619, 627, 644, 689
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07859690844233055
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5392984542211653
+s-ConfirmationMeasure: 0.7859690844233056
+
+12 : (slope8 >= -6.5E-4) & (slope10 >= 0.229358) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 37
+SupportingExamples: 8, 54, 61, 72, 123, 126, 141, 146, 179, 201, 211, 265, 291, 311, 313, 315, 319, 322, 368, 370, 391, 409, 411, 413, 415, 457, 462, 475, 492, 559, 570, 586, 620, 622, 632, 640, 674
+Strength: 0.05370101596516691
+Confidence: 1.0
+CoverageFactor: 0.09046454767726161
+Coverage: 37
+CoveredExamples: 8, 54, 61, 72, 123, 126, 141, 146, 179, 201, 211, 265, 291, 311, 313, 315, 319, 322, 368, 370, 391, 409, 411, 413, 415, 457, 462, 475, 492, 559, 570, 586, 620, 622, 632, 640, 674
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09071002386634845
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5453550119331743
+s-ConfirmationMeasure: 0.788782816229117
+
+13 : (slope8 >= -6.5E-4) & (slope10 >= 0.228356) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 40
+SupportingExamples: 4, 66, 83, 99, 120, 126, 134, 161, 180, 185, 194, 206, 209, 241, 264, 302, 308, 352, 369, 393, 408, 456, 478, 494, 524, 558, 579, 580, 583, 584, 593, 602, 611, 612, 647, 666, 674, 678, 679, 685
+Strength: 0.05805515239477504
+Confidence: 1.0
+CoverageFactor: 0.09153318077803203
+Coverage: 40
+CoveredExamples: 4, 66, 83, 99, 120, 126, 134, 161, 180, 185, 194, 206, 209, 241, 264, 302, 308, 352, 369, 393, 408, 456, 478, 494, 524, 558, 579, 580, 583, 584, 593, 602, 611, 612, 647, 666, 674, 678, 679, 685
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.12757539203860072
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5637876960193003
+s-ConfirmationMeasure: 0.7973462002412546
+
+14 : (slope8 >= -5.57E-4) & (slope10 >= 0.228896) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 42
+SupportingExamples: 10, 22, 44, 63, 78, 101, 132, 155, 165, 171, 173, 179, 189, 208, 270, 273, 294, 305, 313, 353, 362, 366, 376, 393, 400, 403, 404, 472, 484, 531, 532, 535, 545, 560, 593, 614, 641, 664, 671, 675, 680, 687
+Strength: 0.06095791001451379
+Confidence: 1.0
+CoverageFactor: 0.09744779582366589
+Coverage: 42
+CoveredExamples: 10, 22, 44, 63, 78, 101, 132, 155, 165, 171, 173, 179, 189, 208, 270, 273, 294, 305, 313, 353, 362, 366, 376, 393, 400, 403, 404, 472, 484, 531, 532, 535, 545, 560, 593, 614, 641, 664, 671, 675, 680, 687
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.082625
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413125
+s-ConfirmationMeasure: 0.7869047619047619
+
+15 : (slope8 >= -2.66E-4) & (slope10 >= 0.229717) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 36
+SupportingExamples: 52, 60, 98, 128, 132, 137, 168, 178, 190, 197, 229, 230, 241, 252, 254, 262, 267, 273, 304, 354, 363, 382, 385, 435, 485, 492, 496, 527, 543, 545, 568, 569, 579, 588, 626, 645
+Strength: 0.05224963715529753
+Confidence: 1.0
+CoverageFactor: 0.08181818181818182
+Coverage: 36
+CoveredExamples: 52, 60, 98, 128, 132, 137, 168, 178, 190, 197, 229, 230, 241, 252, 254, 262, 267, 273, 304, 354, 363, 382, 385, 435, 485, 492, 496, 527, 543, 545, 568, 569, 579, 588, 626, 645
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.10291017964071857
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5514550898203593
+s-ConfirmationMeasure: 0.7916167664670659
+
+16 : (slope8 >= -2.66E-4) & (slope10 >= 0.227053) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 39
+SupportingExamples: 13, 41, 43, 54, 124, 145, 161, 165, 168, 170, 172, 188, 190, 259, 265, 268, 272, 314, 342, 343, 354, 358, 361, 377, 379, 384, 386, 440, 477, 487, 491, 502, 553, 555, 565, 610, 649, 678, 689
+Strength: 0.05660377358490566
+Confidence: 1.0
+CoverageFactor: 0.08315565031982942
+Coverage: 39
+CoveredExamples: 13, 41, 43, 54, 124, 145, 161, 165, 168, 170, 172, 188, 190, 259, 265, 268, 272, 314, 342, 343, 354, 358, 361, 377, 379, 384, 386, 440, 477, 487, 491, 502, 553, 555, 565, 610, 649, 678, 689
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07859690844233055
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5392984542211653
+s-ConfirmationMeasure: 0.7859690844233056
+
+17 : (slope8 >= -2.66E-4) & (cintercept10 <= -0.94757) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 49
+SupportingExamples: 7, 12, 17, 39, 41, 47, 49, 59, 104, 107, 118, 123, 125, 152, 162, 165, 180, 182, 187, 199, 243, 257, 276, 290, 321, 330, 361, 364, 379, 390, 408, 425, 433, 458, 461, 475, 484, 493, 534, 594, 600, 603, 605, 607, 620, 621, 627, 634, 656
+Strength: 0.07111756168359942
+Confidence: 1.0
+CoverageFactor: 0.10816777041942605
+Coverage: 49
+CoveredExamples: 7, 12, 17, 39, 41, 47, 49, 59, 104, 107, 118, 123, 125, 152, 162, 165, 180, 182, 187, 199, 243, 257, 276, 290, 321, 330, 361, 364, 379, 390, 408, 425, 433, 458, 461, 475, 484, 493, 534, 594, 600, 603, 605, 607, 620, 621, 627, 634, 656
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+18 : (slope8 >= -2.66E-4) & (cintercept10 <= -0.936241) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 28
+SupportingExamples: 35, 56, 58, 68, 77, 125, 168, 171, 200, 203, 206, 233, 244, 278, 292, 342, 363, 398, 421, 423, 454, 498, 506, 530, 582, 586, 623, 631
+Strength: 0.040638606676342524
+Confidence: 1.0
+CoverageFactor: 0.062360801781737196
+Coverage: 28
+CoveredExamples: 35, 56, 58, 68, 77, 125, 168, 171, 200, 203, 206, 233, 244, 278, 292, 342, 363, 398, 421, 423, 454, 498, 506, 530, 582, 586, 623, 631
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08265160523186682
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413258026159334
+s-ConfirmationMeasure: 0.7871581450653984
+
+19 : (slope8 >= -2.44E-4) & (slope10 >= 0.225533) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 36
+SupportingExamples: 11, 26, 92, 115, 151, 152, 202, 213, 215, 221, 268, 280, 308, 338, 356, 360, 365, 388, 398, 401, 412, 428, 466, 470, 520, 550, 586, 600, 605, 611, 615, 652, 657, 667, 669, 675
+Strength: 0.05224963715529753
+Confidence: 1.0
+CoverageFactor: 0.07947019867549669
+Coverage: 36
+CoveredExamples: 11, 26, 92, 115, 151, 152, 202, 213, 215, 221, 268, 280, 308, 338, 356, 360, 365, 388, 398, 401, 412, 428, 466, 470, 520, 550, 586, 600, 605, 611, 615, 652, 657, 667, 669, 675
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.1317210144927536
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5658605072463768
+s-ConfirmationMeasure: 0.7983091787439613
+
+20 : (slope8 >= -0.023243) & (cintercept10 <= -1.062026) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 37
+SupportingExamples: 3, 29, 41, 43, 50, 65, 87, 109, 116, 117, 119, 124, 139, 155, 206, 236, 248, 254, 328, 329, 347, 366, 444, 449, 458, 467, 476, 489, 514, 522, 535, 564, 571, 600, 625, 654, 689
+Strength: 0.05370101596516691
+Confidence: 1.0
+CoverageFactor: 0.08564814814814815
+Coverage: 37
+CoveredExamples: 3, 29, 41, 43, 50, 65, 87, 109, 116, 117, 119, 124, 139, 155, 206, 236, 248, 254, 328, 329, 347, 366, 444, 449, 458, 467, 476, 489, 514, 522, 535, 564, 571, 600, 625, 654, 689
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09073897497020263
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5453694874851013
+s-ConfirmationMeasure: 0.7890345649582837
+
+21 : (slope8 >= -0.021594) & (cintercept10 <= -1.071869) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 39
+SupportingExamples: 36, 70, 74, 75, 111, 112, 123, 127, 136, 148, 160, 163, 171, 175, 186, 197, 208, 219, 223, 226, 274, 282, 312, 314, 315, 343, 373, 435, 447, 452, 475, 480, 494, 502, 515, 580, 591, 604, 648
+Strength: 0.05660377358490566
+Confidence: 1.0
+CoverageFactor: 0.08647450110864745
+Coverage: 39
+CoveredExamples: 36, 70, 74, 75, 111, 112, 123, 127, 136, 148, 160, 163, 171, 175, 186, 197, 208, 219, 223, 226, 274, 282, 312, 314, 315, 343, 373, 435, 447, 452, 475, 480, 494, 502, 515, 580, 591, 604, 648
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07859690844233055
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5392984542211653
+s-ConfirmationMeasure: 0.7859690844233056
+
+22 : (slope8 >= -0.020655) & (cintercept10 <= -1.053313) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 35
+SupportingExamples: 11, 16, 71, 78, 95, 120, 131, 132, 143, 195, 201, 207, 240, 252, 282, 283, 328, 341, 349, 413, 429, 439, 489, 508, 512, 531, 543, 557, 578, 579, 616, 624, 630, 678, 682
+Strength: 0.05079825834542816
+Confidence: 1.0
+CoverageFactor: 0.07575757575757576
+Coverage: 35
+CoveredExamples: 11, 16, 71, 78, 95, 120, 131, 132, 143, 195, 201, 207, 240, 252, 282, 283, 328, 341, 349, 413, 429, 439, 489, 508, 512, 531, 543, 557, 578, 579, 616, 624, 630, 678, 682
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.082625
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413125
+s-ConfirmationMeasure: 0.7869047619047619
+
+23 : (slope8 >= -0.020321) & (cintercept10 <= -1.080075) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 29
+SupportingExamples: 10, 38, 67, 69, 94, 104, 108, 118, 120, 149, 195, 253, 296, 303, 337, 371, 415, 444, 454, 468, 495, 508, 551, 594, 598, 603, 628, 644, 689
+Strength: 0.0420899854862119
+Confidence: 1.0
+CoverageFactor: 0.0645879732739421
+Coverage: 29
+CoveredExamples: 10, 38, 67, 69, 94, 104, 108, 118, 120, 149, 195, 253, 296, 303, 337, 371, 415, 444, 454, 468, 495, 508, 551, 594, 598, 603, 628, 644, 689
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09073897497020263
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5453694874851013
+s-ConfirmationMeasure: 0.7890345649582837
+
+24 : (slope8 >= -0.020321) & (cintercept10 <= -1.078148) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 36
+SupportingExamples: 17, 23, 43, 82, 88, 117, 153, 160, 163, 171, 190, 270, 276, 296, 323, 363, 374, 412, 415, 427, 440, 442, 475, 479, 483, 512, 549, 564, 575, 587, 609, 633, 636, 660, 667, 678
+Strength: 0.05224963715529753
+Confidence: 1.0
+CoverageFactor: 0.0767590618336887
+Coverage: 36
+CoveredExamples: 17, 23, 43, 82, 88, 117, 153, 160, 163, 171, 190, 270, 276, 296, 323, 363, 374, 412, 415, 427, 440, 442, 475, 479, 483, 512, 549, 564, 575, 587, 609, 633, 636, 660, 667, 678
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09073897497020263
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5453694874851013
+s-ConfirmationMeasure: 0.7890345649582837
+
+25 : (slope8 >= -0.020157) & (intercept8 >= -0.329914) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 19
+SupportingExamples: 11, 123, 172, 183, 221, 285, 299, 344, 361, 367, 392, 396, 484, 499, 548, 583, 586, 646, 652
+Strength: 0.027576197387518143
+Confidence: 1.0
+CoverageFactor: 0.042222222222222223
+Coverage: 19
+CoveredExamples: 11, 123, 172, 183, 221, 285, 299, 344, 361, 367, 392, 396, 484, 499, 548, 583, 586, 646, 652
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09071002386634845
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5453550119331743
+s-ConfirmationMeasure: 0.788782816229117
+
+26 : (slope8 >= -0.019526) & (cintercept10 <= -1.038013) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 33
+SupportingExamples: 3, 16, 120, 124, 193, 194, 217, 268, 315, 317, 322, 342, 351, 370, 376, 378, 381, 401, 432, 446, 451, 505, 543, 584, 597, 604, 612, 613, 622, 634, 642, 646, 674
+Strength: 0.047895500725689405
+Confidence: 1.0
+CoverageFactor: 0.06947368421052631
+Coverage: 33
+CoveredExamples: 3, 16, 120, 124, 193, 194, 217, 268, 315, 317, 322, 342, 351, 370, 376, 378, 381, 401, 432, 446, 451, 505, 543, 584, 597, 604, 612, 613, 622, 634, 642, 646, 674
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09883373205741627
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5494168660287081
+s-ConfirmationMeasure: 0.7906698564593302
+
+27 : (slope8 >= -0.019526) & (cintercept10 <= -1.036005) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 40
+SupportingExamples: 2, 52, 54, 62, 83, 88, 95, 122, 136, 148, 163, 169, 182, 189, 220, 225, 232, 245, 279, 318, 336, 346, 354, 358, 384, 396, 414, 425, 450, 470, 506, 510, 512, 549, 573, 583, 605, 609, 644, 663
+Strength: 0.05805515239477504
+Confidence: 1.0
+CoverageFactor: 0.08908685968819599
+Coverage: 40
+CoveredExamples: 2, 52, 54, 62, 83, 88, 95, 122, 136, 148, 163, 169, 182, 189, 220, 225, 232, 245, 279, 318, 336, 346, 354, 358, 384, 396, 414, 425, 450, 470, 506, 510, 512, 549, 573, 583, 605, 609, 644, 663
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0866626936829559
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543331346841478
+s-ConfirmationMeasure: 0.7878426698450537
+
+28 : (slope8 >= -0.019193) & (cintercept10 <= -1.075545) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 38
+SupportingExamples: 24, 26, 50, 53, 57, 97, 111, 121, 128, 153, 158, 163, 164, 186, 210, 290, 312, 316, 326, 328, 369, 370, 383, 387, 406, 417, 422, 530, 534, 541, 551, 567, 641, 643, 653, 662, 666, 668
+Strength: 0.055152394775036286
+Confidence: 1.0
+CoverageFactor: 0.08775981524249422
+Coverage: 38
+CoveredExamples: 24, 26, 50, 53, 57, 97, 111, 121, 128, 153, 158, 163, 164, 186, 210, 290, 312, 316, 326, 328, 369, 370, 383, 387, 406, 417, 422, 530, 534, 541, 551, 567, 641, 643, 653, 662, 666, 668
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09476702508960573
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5473835125448029
+s-ConfirmationMeasure: 0.7897252090800478
+
+29 : (slope8 >= -0.019193) & (cintercept10 <= -1.070184) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 40
+SupportingExamples: 15, 28, 32, 79, 83, 93, 115, 121, 144, 164, 165, 178, 189, 194, 221, 255, 279, 289, 292, 297, 316, 353, 371, 387, 401, 413, 450, 457, 483, 496, 513, 532, 539, 555, 579, 583, 600, 614, 631, 654
+Strength: 0.05805515239477504
+Confidence: 1.0
+CoverageFactor: 0.09345794392523364
+Coverage: 40
+CoveredExamples: 15, 28, 32, 79, 83, 93, 115, 121, 144, 164, 165, 178, 189, 194, 221, 255, 279, 289, 292, 297, 316, 353, 371, 387, 401, 413, 450, 457, 483, 496, 513, 532, 539, 555, 579, 583, 600, 614, 631, 654
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09476702508960573
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5473835125448029
+s-ConfirmationMeasure: 0.7897252090800478
+
+30 : (slope8 >= -0.018529) & (cintercept10 <= -1.040515) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 51
+SupportingExamples: 29, 34, 53, 70, 76, 79, 82, 105, 114, 128, 136, 138, 141, 162, 188, 197, 212, 224, 232, 242, 263, 274, 280, 287, 300, 312, 316, 327, 328, 338, 370, 373, 382, 412, 425, 432, 433, 438, 448, 453, 456, 510, 519, 523, 528, 569, 585, 610, 652, 656, 679
+Strength: 0.07402031930333818
+Confidence: 1.0
+CoverageFactor: 0.11258278145695365
+Coverage: 51
+CoveredExamples: 29, 34, 53, 70, 76, 79, 82, 105, 114, 128, 136, 138, 141, 162, 188, 197, 212, 224, 232, 242, 263, 274, 280, 287, 300, 312, 316, 327, 328, 338, 370, 373, 382, 412, 425, 432, 433, 438, 448, 453, 456, 510, 519, 523, 528, 569, 585, 610, 652, 656, 679
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09883373205741627
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5494168660287081
+s-ConfirmationMeasure: 0.7906698564593302
+
+31 : (slope8 >= -0.017678) & (cintercept10 <= -1.032721) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 39
+SupportingExamples: 52, 77, 78, 87, 96, 107, 113, 136, 149, 150, 154, 168, 174, 181, 184, 187, 190, 206, 234, 263, 272, 282, 286, 319, 324, 364, 392, 394, 429, 441, 468, 481, 546, 562, 600, 611, 633, 660, 678
+Strength: 0.05660377358490566
+Confidence: 1.0
+CoverageFactor: 0.08571428571428572
+Coverage: 39
+CoveredExamples: 52, 77, 78, 87, 96, 107, 113, 136, 149, 150, 154, 168, 174, 181, 184, 187, 190, 206, 234, 263, 272, 282, 286, 319, 324, 364, 392, 394, 429, 441, 468, 481, 546, 562, 600, 611, 633, 660, 678
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.082625
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413125
+s-ConfirmationMeasure: 0.7869047619047619
+
+32 : (slope8 >= -0.017252) & (cintercept10 <= -1.063887) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 29
+SupportingExamples: 71, 78, 82, 94, 103, 132, 143, 205, 254, 261, 266, 267, 295, 341, 361, 403, 423, 471, 488, 550, 556, 559, 569, 591, 601, 604, 614, 638, 683
+Strength: 0.0420899854862119
+Confidence: 1.0
+CoverageFactor: 0.06331877729257641
+Coverage: 29
+CoveredExamples: 71, 78, 82, 94, 103, 132, 143, 205, 254, 261, 266, 267, 295, 341, 361, 403, 423, 471, 488, 550, 556, 559, 569, 591, 601, 604, 614, 638, 683
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.11109243697478992
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5555462184873949
+s-ConfirmationMeasure: 0.7935174069627852
+
+33 : (slope8 >= -0.017252) & (cintercept10 <= -1.062026) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 39
+SupportingExamples: 4, 21, 24, 26, 58, 82, 127, 128, 143, 147, 176, 180, 185, 220, 233, 242, 245, 250, 277, 289, 297, 315, 335, 336, 374, 390, 402, 428, 466, 520, 555, 593, 605, 628, 638, 650, 654, 664, 687
+Strength: 0.05660377358490566
+Confidence: 1.0
+CoverageFactor: 0.08685968819599109
+Coverage: 39
+CoveredExamples: 4, 21, 24, 26, 58, 82, 127, 128, 143, 147, 176, 180, 185, 220, 233, 242, 245, 250, 277, 289, 297, 315, 335, 336, 374, 390, 402, 428, 466, 520, 555, 593, 605, 628, 638, 650, 654, 664, 687
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08669047619047619
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543345238095238
+s-ConfirmationMeasure: 0.7880952380952381
+
+34 : (slope8 >= -0.008071) & (intercept8 >= -0.530972) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 25
+SupportingExamples: 100, 280, 288, 293, 314, 328, 341, 348, 367, 374, 379, 393, 396, 463, 473, 504, 523, 546, 549, 556, 560, 607, 616, 624, 684
+Strength: 0.036284470246734396
+Confidence: 1.0
+CoverageFactor: 0.05387931034482758
+Coverage: 25
+CoveredExamples: 100, 280, 288, 293, 314, 328, 341, 348, 367, 374, 379, 393, 396, 463, 473, 504, 523, 546, 549, 556, 560, 607, 616, 624, 684
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09883373205741627
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5494168660287081
+s-ConfirmationMeasure: 0.7906698564593302
+
+35 : (slope8 >= -0.007539) & (intercept8 >= -0.530972) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 34
+SupportingExamples: 6, 43, 56, 106, 123, 124, 133, 144, 153, 219, 227, 259, 276, 283, 296, 318, 373, 385, 394, 396, 398, 444, 456, 482, 536, 554, 560, 583, 597, 620, 632, 633, 644, 689
+Strength: 0.04934687953555878
+Confidence: 1.0
+CoverageFactor: 0.07727272727272727
+Coverage: 34
+CoveredExamples: 6, 43, 56, 106, 123, 124, 133, 144, 153, 219, 227, 259, 276, 283, 296, 318, 373, 385, 394, 396, 398, 444, 456, 482, 536, 554, 560, 583, 597, 620, 632, 633, 644, 689
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+36 : (slope8 >= -0.006171) & (intercept8 >= -0.556471) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 33
+SupportingExamples: 18, 27, 43, 50, 116, 139, 143, 151, 156, 161, 193, 227, 229, 257, 263, 271, 295, 398, 401, 445, 454, 456, 459, 467, 479, 484, 506, 547, 558, 599, 607, 629, 662
+Strength: 0.047895500725689405
+Confidence: 1.0
+CoverageFactor: 0.07399103139013453
+Coverage: 33
+CoveredExamples: 18, 27, 43, 50, 116, 139, 143, 151, 156, 161, 193, 227, 229, 257, 263, 271, 295, 398, 401, 445, 454, 456, 459, 467, 479, 484, 506, 547, 558, 599, 607, 629, 662
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07862232779097388
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.539311163895487
+s-ConfirmationMeasure: 0.7862232779097387
+
+37 : (slope8 >= -0.005798) & (intercept8 >= -0.563988) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 52
+SupportingExamples: 12, 23, 30, 36, 62, 69, 87, 100, 124, 146, 155, 159, 169, 200, 201, 216, 221, 262, 289, 298, 343, 363, 365, 382, 391, 404, 405, 414, 433, 444, 446, 459, 468, 505, 518, 531, 540, 547, 565, 571, 604, 623, 625, 634, 635, 640, 651, 655, 660, 661, 667, 670
+Strength: 0.07547169811320754
+Confidence: 1.0
+CoverageFactor: 0.1137855579868709
+Coverage: 52
+CoveredExamples: 12, 23, 30, 36, 62, 69, 87, 100, 124, 146, 155, 159, 169, 200, 201, 216, 221, 262, 289, 298, 343, 363, 365, 382, 391, 404, 405, 414, 433, 444, 446, 459, 468, 505, 518, 531, 540, 547, 565, 571, 604, 623, 625, 634, 635, 640, 651, 655, 660, 661, 667, 670
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07862232779097388
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.539311163895487
+s-ConfirmationMeasure: 0.7862232779097387
+
+38 : (slope8 >= -0.004958) & (cintercept10 <= -0.985848) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 33
+SupportingExamples: 20, 23, 59, 63, 67, 80, 108, 109, 141, 157, 166, 169, 183, 203, 204, 219, 234, 242, 263, 275, 315, 364, 415, 466, 483, 492, 498, 554, 571, 575, 577, 594, 606
+Strength: 0.047895500725689405
+Confidence: 1.0
+CoverageFactor: 0.075
+Coverage: 33
+CoveredExamples: 20, 23, 59, 63, 67, 80, 108, 109, 141, 157, 166, 169, 183, 203, 204, 219, 234, 242, 263, 275, 315, 364, 415, 466, 483, 492, 498, 554, 571, 575, 577, 594, 606
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08265160523186682
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413258026159334
+s-ConfirmationMeasure: 0.7871581450653984
+
+39 : (slope8 >= -0.004934) & (intercept8 >= -0.580533) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 37
+SupportingExamples: 27, 80, 92, 99, 106, 108, 113, 126, 130, 139, 154, 158, 191, 194, 198, 218, 234, 277, 289, 292, 298, 322, 324, 361, 396, 404, 490, 539, 540, 552, 563, 576, 592, 628, 672, 676, 677
+Strength: 0.05370101596516691
+Confidence: 1.0
+CoverageFactor: 0.08428246013667426
+Coverage: 37
+CoveredExamples: 27, 80, 92, 99, 106, 108, 113, 126, 130, 139, 154, 158, 191, 194, 198, 218, 234, 277, 289, 292, 298, 322, 324, 361, 396, 404, 490, 539, 540, 552, 563, 576, 592, 628, 672, 676, 677
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08265160523186682
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413258026159334
+s-ConfirmationMeasure: 0.7871581450653984
+
+40 : (slope8 >= -0.004904) & (cintercept10 <= -0.985848) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 44
+SupportingExamples: 23, 25, 26, 49, 64, 105, 118, 174, 186, 195, 234, 256, 265, 294, 300, 313, 317, 339, 349, 368, 375, 377, 403, 407, 414, 435, 443, 445, 471, 500, 505, 541, 549, 556, 566, 577, 580, 587, 617, 622, 665, 668, 680, 689
+Strength: 0.06386066763425254
+Confidence: 1.0
+CoverageFactor: 0.10476190476190476
+Coverage: 44
+CoveredExamples: 23, 25, 26, 49, 64, 105, 118, 174, 186, 195, 234, 256, 265, 294, 300, 313, 317, 339, 349, 368, 375, 377, 403, 407, 414, 435, 443, 445, 471, 500, 505, 541, 549, 556, 566, 577, 580, 587, 617, 622, 665, 668, 680, 689
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09073897497020263
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5453694874851013
+s-ConfirmationMeasure: 0.7890345649582837
+
+41 : (slope8 >= -0.004619) & (cintercept10 <= -0.981844) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 38
+SupportingExamples: 42, 52, 63, 79, 86, 112, 116, 117, 119, 162, 215, 229, 231, 234, 241, 251, 257, 264, 266, 274, 297, 305, 338, 342, 365, 366, 397, 435, 446, 473, 493, 500, 523, 541, 626, 634, 661, 686
+Strength: 0.055152394775036286
+Confidence: 1.0
+CoverageFactor: 0.08558558558558559
+Coverage: 38
+CoveredExamples: 42, 52, 63, 79, 86, 112, 116, 117, 119, 162, 215, 229, 231, 234, 241, 251, 257, 264, 266, 274, 297, 305, 338, 342, 365, 366, 397, 435, 446, 473, 493, 500, 523, 541, 626, 634, 661, 686
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08669047619047619
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543345238095238
+s-ConfirmationMeasure: 0.7880952380952381
+
+42 : (slope8 >= -0.004236) & (cintercept10 <= -0.985848) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 55
+SupportingExamples: 6, 9, 10, 17, 33, 40, 51, 99, 107, 146, 168, 169, 189, 194, 196, 201, 206, 217, 227, 228, 242, 243, 244, 261, 267, 280, 288, 296, 308, 330, 335, 344, 360, 374, 376, 398, 404, 418, 421, 438, 460, 466, 468, 472, 492, 496, 548, 587, 616, 627, 632, 643, 661, 680, 685
+Strength: 0.07982583454281568
+Confidence: 1.0
+CoverageFactor: 0.11777301927194861
+Coverage: 55
+CoveredExamples: 6, 9, 10, 17, 33, 40, 51, 99, 107, 146, 168, 169, 189, 194, 196, 201, 206, 217, 227, 228, 242, 243, 244, 261, 267, 280, 288, 296, 308, 330, 335, 344, 360, 374, 376, 398, 404, 418, 421, 438, 460, 466, 468, 472, 492, 496, 548, 587, 616, 627, 632, 643, 661, 680, 685
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07859690844233055
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5392984542211653
+s-ConfirmationMeasure: 0.7859690844233056
+
+43 : (slope8 >= -0.003971) & (cintercept10 <= -0.988461) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 45
+SupportingExamples: 18, 27, 30, 43, 50, 77, 116, 139, 143, 151, 156, 161, 166, 186, 193, 229, 241, 257, 263, 271, 278, 295, 329, 335, 376, 398, 400, 401, 405, 445, 454, 456, 459, 467, 479, 484, 506, 515, 547, 558, 599, 605, 607, 629, 662
+Strength: 0.06531204644412192
+Confidence: 1.0
+CoverageFactor: 0.10089686098654709
+Coverage: 45
+CoveredExamples: 18, 27, 30, 43, 50, 77, 116, 139, 143, 151, 156, 161, 166, 186, 193, 229, 241, 257, 263, 271, 278, 295, 329, 335, 376, 398, 400, 401, 405, 445, 454, 456, 459, 467, 479, 484, 506, 515, 547, 558, 599, 605, 607, 629, 662
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08265160523186682
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413258026159334
+s-ConfirmationMeasure: 0.7871581450653984
+
+44 : (slope8 >= -0.00367) & (cintercept10 <= -0.989649) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 40
+SupportingExamples: 12, 20, 31, 35, 40, 68, 90, 93, 101, 115, 137, 205, 220, 237, 288, 291, 316, 341, 345, 350, 351, 355, 360, 362, 373, 386, 396, 397, 412, 414, 439, 461, 545, 575, 591, 594, 605, 641, 678, 686
+Strength: 0.05805515239477504
+Confidence: 1.0
+CoverageFactor: 0.09090909090909091
+Coverage: 40
+CoveredExamples: 12, 20, 31, 35, 40, 68, 90, 93, 101, 115, 137, 205, 220, 237, 288, 291, 316, 341, 345, 350, 351, 355, 360, 362, 373, 386, 396, 397, 412, 414, 439, 461, 545, 575, 591, 594, 605, 641, 678, 686
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09886499402628435
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5494324970131421
+s-ConfirmationMeasure: 0.7909199522102748
+
+45 : (slope8 >= -0.003428) & (slope10 >= 0.230113) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 46
+SupportingExamples: 2, 5, 8, 34, 46, 52, 53, 90, 103, 135, 137, 186, 193, 197, 204, 230, 248, 262, 265, 270, 290, 309, 313, 315, 337, 341, 350, 394, 415, 436, 456, 472, 503, 523, 547, 549, 552, 554, 560, 566, 573, 581, 601, 611, 618, 631
+Strength: 0.06676342525399129
+Confidence: 1.0
+CoverageFactor: 0.10526315789473684
+Coverage: 46
+CoveredExamples: 2, 5, 8, 34, 46, 52, 53, 90, 103, 135, 137, 186, 193, 197, 204, 230, 248, 262, 265, 270, 290, 309, 313, 315, 337, 341, 350, 394, 415, 436, 456, 472, 503, 523, 547, 549, 552, 554, 560, 566, 573, 581, 601, 611, 618, 631
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.11931407942238267
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5596570397111913
+s-ConfirmationMeasure: 0.7954271961492179
+
+46 : (slope8 >= -0.003428) & (intercept8 >= -0.622355) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 34
+SupportingExamples: 32, 62, 129, 135, 139, 159, 165, 180, 183, 204, 226, 233, 240, 268, 276, 302, 307, 332, 345, 348, 374, 384, 447, 448, 488, 508, 594, 597, 605, 615, 618, 653, 679, 685
+Strength: 0.04934687953555878
+Confidence: 1.0
+CoverageFactor: 0.07640449438202247
+Coverage: 34
+CoveredExamples: 32, 62, 129, 135, 139, 159, 165, 180, 183, 204, 226, 233, 240, 268, 276, 302, 307, 332, 345, 348, 374, 384, 447, 448, 488, 508, 594, 597, 605, 615, 618, 653, 679, 685
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07859690844233055
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5392984542211653
+s-ConfirmationMeasure: 0.7859690844233056
+
+47 : (slope8 >= -0.003321) & (slope10 >= 0.230273) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 43
+SupportingExamples: 24, 31, 36, 42, 43, 56, 62, 97, 111, 125, 133, 206, 209, 243, 246, 254, 286, 288, 294, 295, 320, 321, 343, 349, 359, 381, 388, 404, 418, 425, 432, 449, 476, 486, 522, 526, 541, 542, 555, 594, 612, 671, 681
+Strength: 0.062409288824383166
+Confidence: 1.0
+CoverageFactor: 0.09429824561403509
+Coverage: 43
+CoveredExamples: 24, 31, 36, 42, 43, 56, 62, 97, 111, 125, 133, 206, 209, 243, 246, 254, 286, 288, 294, 295, 320, 321, 343, 349, 359, 381, 388, 404, 418, 425, 432, 449, 476, 486, 522, 526, 541, 542, 555, 594, 612, 671, 681
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0866626936829559
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543331346841478
+s-ConfirmationMeasure: 0.7878426698450537
+
+48 : (slope8 >= -0.003321) & (cintercept10 <= -0.989376) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 46
+SupportingExamples: 6, 62, 114, 132, 133, 155, 158, 166, 194, 197, 219, 245, 256, 275, 287, 293, 296, 298, 311, 338, 355, 360, 362, 366, 368, 377, 388, 417, 428, 443, 445, 447, 466, 477, 522, 534, 539, 575, 587, 593, 611, 632, 654, 659, 678, 689
+Strength: 0.06676342525399129
+Confidence: 1.0
+CoverageFactor: 0.10747663551401869
+Coverage: 46
+CoveredExamples: 6, 62, 114, 132, 133, 155, 158, 166, 194, 197, 219, 245, 256, 275, 287, 293, 296, 298, 311, 338, 355, 360, 362, 366, 368, 377, 388, 417, 428, 443, 445, 447, 466, 477, 522, 534, 539, 575, 587, 593, 611, 632, 654, 659, 678, 689
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09886499402628435
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5494324970131421
+s-ConfirmationMeasure: 0.7909199522102748
+
+49 : (slope8 >= -0.00266) & (intercept8 >= -0.612596) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 32
+SupportingExamples: 24, 30, 47, 75, 94, 111, 119, 135, 143, 157, 192, 203, 221, 227, 228, 236, 247, 291, 328, 349, 350, 353, 363, 403, 405, 449, 456, 464, 499, 575, 585, 617
+Strength: 0.04644412191582003
+Confidence: 1.0
+CoverageFactor: 0.07272727272727272
+Coverage: 32
+CoveredExamples: 24, 30, 47, 75, 94, 111, 119, 135, 143, 157, 192, 203, 221, 227, 228, 236, 247, 291, 328, 349, 350, 353, 363, 403, 405, 449, 456, 464, 499, 575, 585, 617
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07862232779097388
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.539311163895487
+s-ConfirmationMeasure: 0.7862232779097387
+
+50 : (slope8 >= -0.002542) & (slope10 >= 0.229295) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 50
+SupportingExamples: 17, 61, 119, 124, 144, 146, 165, 181, 189, 207, 211, 216, 222, 263, 264, 265, 272, 279, 291, 306, 317, 335, 352, 385, 386, 393, 394, 396, 407, 408, 417, 442, 457, 465, 472, 481, 500, 539, 540, 552, 561, 573, 578, 584, 587, 627, 632, 657, 660, 680
+Strength: 0.07256894049346879
+Confidence: 1.0
+CoverageFactor: 0.1111111111111111
+Coverage: 50
+CoveredExamples: 17, 61, 119, 124, 144, 146, 165, 181, 189, 207, 211, 216, 222, 263, 264, 265, 272, 279, 291, 306, 317, 335, 352, 385, 386, 393, 394, 396, 407, 408, 417, 442, 457, 465, 472, 481, 500, 539, 540, 552, 561, 573, 578, 584, 587, 627, 632, 657, 660, 680
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.082625
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413125
+s-ConfirmationMeasure: 0.7869047619047619
+
+51 : (slope8 >= -0.002478) & (slope10 >= 0.230506) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 35
+SupportingExamples: 83, 99, 120, 126, 134, 161, 180, 185, 194, 206, 209, 264, 297, 302, 352, 369, 393, 408, 456, 478, 494, 558, 579, 580, 583, 584, 593, 602, 611, 647, 666, 674, 678, 679, 685
+Strength: 0.05079825834542816
+Confidence: 1.0
+CoverageFactor: 0.08009153318077804
+Coverage: 35
+CoveredExamples: 83, 99, 120, 126, 134, 161, 180, 185, 194, 206, 209, 264, 297, 302, 352, 369, 393, 408, 456, 478, 494, 558, 579, 580, 583, 584, 593, 602, 611, 647, 666, 674, 678, 679, 685
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.11519831730769231
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5575991586538461
+s-ConfirmationMeasure: 0.7944711538461539
+
+52 : (slope8 >= -0.002478) & (cintercept10 <= -0.97974) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 62
+SupportingExamples: 4, 12, 18, 23, 26, 43, 47, 75, 108, 116, 127, 137, 158, 165, 211, 212, 216, 223, 232, 234, 241, 242, 244, 249, 292, 328, 329, 335, 351, 352, 378, 385, 399, 401, 414, 426, 440, 455, 456, 498, 504, 505, 507, 508, 511, 512, 524, 526, 532, 539, 542, 544, 555, 571, 577, 580, 592, 602, 611, 617, 628, 674
+Strength: 0.0899854862119013
+Confidence: 1.0
+CoverageFactor: 0.13656387665198239
+Coverage: 62
+CoveredExamples: 4, 12, 18, 23, 26, 43, 47, 75, 108, 116, 127, 137, 158, 165, 211, 212, 216, 223, 232, 234, 241, 242, 244, 249, 292, 328, 329, 335, 351, 352, 378, 385, 399, 401, 414, 426, 440, 455, 456, 498, 504, 505, 507, 508, 511, 512, 524, 526, 532, 539, 542, 544, 555, 571, 577, 580, 592, 602, 611, 617, 628, 674
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0866626936829559
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543331346841478
+s-ConfirmationMeasure: 0.7878426698450537
+
+53 : (slope8 >= -0.002478) & (cintercept10 <= -0.973708) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 46
+SupportingExamples: 5, 10, 11, 23, 48, 56, 68, 89, 129, 132, 137, 146, 155, 187, 196, 254, 257, 263, 278, 288, 291, 300, 309, 313, 332, 349, 399, 402, 415, 418, 421, 451, 497, 500, 527, 531, 548, 558, 604, 616, 617, 621, 630, 647, 650, 687
+Strength: 0.06676342525399129
+Confidence: 1.0
+CoverageFactor: 0.10176991150442478
+Coverage: 46
+CoveredExamples: 5, 10, 11, 23, 48, 56, 68, 89, 129, 132, 137, 146, 155, 187, 196, 254, 257, 263, 278, 288, 291, 300, 309, 313, 332, 349, 399, 402, 415, 418, 421, 451, 497, 500, 527, 531, 548, 558, 604, 616, 617, 621, 630, 647, 650, 687
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09073897497020263
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5453694874851013
+s-ConfirmationMeasure: 0.7890345649582837
+
+54 : (slope8 >= -0.00206) & (slope10 >= 0.230046) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 33
+SupportingExamples: 5, 57, 77, 98, 106, 119, 125, 165, 173, 189, 203, 207, 263, 284, 310, 322, 323, 334, 372, 395, 400, 448, 449, 452, 503, 509, 539, 558, 592, 633, 654, 671, 687
+Strength: 0.047895500725689405
+Confidence: 1.0
+CoverageFactor: 0.07482993197278912
+Coverage: 33
+CoveredExamples: 5, 57, 77, 98, 106, 119, 125, 165, 173, 189, 203, 207, 263, 284, 310, 322, 323, 334, 372, 395, 400, 448, 449, 452, 503, 509, 539, 558, 592, 633, 654, 671, 687
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.10291017964071857
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5514550898203593
+s-ConfirmationMeasure: 0.7916167664670659
+
+55 : (slope8 >= -0.002014) & (slope10 >= 0.23039) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 31
+SupportingExamples: 15, 17, 33, 49, 77, 86, 116, 135, 171, 178, 184, 199, 204, 211, 213, 225, 247, 263, 275, 299, 330, 387, 399, 458, 518, 522, 561, 578, 600, 606, 686
+Strength: 0.04499274310595065
+Confidence: 1.0
+CoverageFactor: 0.07159353348729793
+Coverage: 31
+CoveredExamples: 15, 17, 33, 49, 77, 86, 116, 135, 171, 178, 184, 199, 204, 211, 213, 225, 247, 263, 275, 299, 330, 387, 399, 458, 518, 522, 561, 578, 600, 606, 686
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08265160523186682
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413258026159334
+s-ConfirmationMeasure: 0.7871581450653984
+
+56 : (slope8 >= -0.002014) & (cintercept10 <= -0.97974) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 30
+SupportingExamples: 35, 56, 58, 68, 77, 125, 168, 171, 200, 203, 206, 223, 233, 244, 278, 292, 300, 342, 398, 410, 421, 454, 498, 506, 530, 582, 586, 623, 631, 648
+Strength: 0.04354136429608128
+Confidence: 1.0
+CoverageFactor: 0.066815144766147
+Coverage: 30
+CoveredExamples: 35, 56, 58, 68, 77, 125, 168, 171, 200, 203, 206, 223, 233, 244, 278, 292, 300, 342, 398, 410, 421, 454, 498, 506, 530, 582, 586, 623, 631, 648
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08265160523186682
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413258026159334
+s-ConfirmationMeasure: 0.7871581450653984
+
+57 : (slope8 >= -0.00176) & (slope10 >= 0.228429) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 34
+SupportingExamples: 6, 34, 59, 61, 89, 114, 117, 138, 158, 163, 255, 268, 292, 310, 350, 359, 369, 384, 396, 405, 442, 454, 460, 477, 481, 482, 516, 522, 539, 580, 599, 614, 646, 680
+Strength: 0.04934687953555878
+Confidence: 1.0
+CoverageFactor: 0.08018867924528301
+Coverage: 34
+CoveredExamples: 6, 34, 59, 61, 89, 114, 117, 138, 158, 163, 255, 268, 292, 310, 350, 359, 369, 384, 396, 405, 442, 454, 460, 477, 481, 482, 516, 522, 539, 580, 599, 614, 646, 680
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.11109243697478992
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5555462184873949
+s-ConfirmationMeasure: 0.7935174069627852
+
+58 : (slope8 >= -0.001542) & (slope10 >= 0.230428) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 39
+SupportingExamples: 10, 22, 44, 63, 78, 101, 132, 155, 165, 171, 173, 189, 208, 270, 273, 294, 305, 313, 353, 362, 393, 400, 403, 404, 484, 531, 532, 535, 545, 560, 593, 614, 641, 664, 671, 675, 680, 682, 687
+Strength: 0.05660377358490566
+Confidence: 1.0
+CoverageFactor: 0.09048723897911833
+Coverage: 39
+CoveredExamples: 10, 22, 44, 63, 78, 101, 132, 155, 165, 171, 173, 189, 208, 270, 273, 294, 305, 313, 353, 362, 393, 400, 403, 404, 484, 531, 532, 535, 545, 560, 593, 614, 641, 664, 671, 675, 680, 682, 687
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.082625
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413125
+s-ConfirmationMeasure: 0.7869047619047619
+
+59 : (slope8 >= -0.001542) & (cintercept10 <= -0.957602) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 51
+SupportingExamples: 7, 12, 17, 39, 41, 47, 49, 59, 104, 107, 117, 118, 123, 125, 162, 165, 180, 182, 187, 199, 243, 257, 276, 290, 310, 321, 330, 361, 364, 365, 379, 390, 408, 425, 433, 458, 461, 475, 484, 493, 534, 594, 600, 603, 605, 607, 620, 621, 627, 634, 656
+Strength: 0.07402031930333818
+Confidence: 1.0
+CoverageFactor: 0.11258278145695365
+Coverage: 51
+CoveredExamples: 7, 12, 17, 39, 41, 47, 49, 59, 104, 107, 117, 118, 123, 125, 162, 165, 180, 182, 187, 199, 243, 257, 276, 290, 310, 321, 330, 361, 364, 365, 379, 390, 408, 425, 433, 458, 461, 475, 484, 493, 534, 594, 600, 603, 605, 607, 620, 621, 627, 634, 656
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+60 : (slope8 >= -0.00144) & (cintercept10 <= -0.966321) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 30
+SupportingExamples: 35, 56, 58, 68, 77, 125, 168, 171, 200, 203, 206, 219, 233, 244, 278, 292, 300, 342, 398, 421, 454, 498, 505, 506, 530, 582, 586, 623, 631, 648
+Strength: 0.04354136429608128
+Confidence: 1.0
+CoverageFactor: 0.066815144766147
+Coverage: 30
+CoveredExamples: 35, 56, 58, 68, 77, 125, 168, 171, 200, 203, 206, 219, 233, 244, 278, 292, 300, 342, 398, 421, 454, 498, 505, 506, 530, 582, 586, 623, 631, 648
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08265160523186682
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413258026159334
+s-ConfirmationMeasure: 0.7871581450653984
+
+61 : (slope8 >= -0.0012) & (intercept8 >= -0.639653) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 41
+SupportingExamples: 19, 27, 35, 84, 98, 108, 133, 148, 157, 181, 193, 222, 241, 249, 262, 264, 293, 308, 320, 339, 342, 381, 385, 417, 427, 432, 442, 450, 466, 476, 481, 482, 514, 543, 559, 570, 598, 604, 658, 664, 671
+Strength: 0.059506531204644414
+Confidence: 1.0
+CoverageFactor: 0.09111111111111111
+Coverage: 41
+CoveredExamples: 19, 27, 35, 84, 98, 108, 133, 148, 157, 181, 193, 222, 241, 249, 262, 264, 293, 308, 320, 339, 342, 381, 385, 417, 427, 432, 442, 450, 466, 476, 481, 482, 514, 543, 559, 570, 598, 604, 658, 664, 671
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07859690844233055
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5392984542211653
+s-ConfirmationMeasure: 0.7859690844233056
+
+62 : (slope8 >= -0.001125) & (slope10 >= 0.227523) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 35
+SupportingExamples: 27, 34, 59, 61, 72, 89, 114, 117, 138, 158, 163, 246, 255, 268, 310, 350, 359, 369, 384, 396, 405, 442, 454, 460, 477, 481, 482, 516, 522, 539, 580, 599, 614, 646, 680
+Strength: 0.05079825834542816
+Confidence: 1.0
+CoverageFactor: 0.08254716981132075
+Coverage: 35
+CoveredExamples: 27, 34, 59, 61, 72, 89, 114, 117, 138, 158, 163, 246, 255, 268, 310, 350, 359, 369, 384, 396, 405, 442, 454, 460, 477, 481, 482, 516, 522, 539, 580, 599, 614, 646, 680
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.11109243697478992
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5555462184873949
+s-ConfirmationMeasure: 0.7935174069627852
+
+63 : (slope8 >= -0.001082) & (slope10 >= 0.228896) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 31
+SupportingExamples: 6, 19, 21, 65, 151, 158, 163, 171, 182, 195, 199, 200, 216, 264, 287, 329, 360, 363, 370, 495, 506, 521, 534, 544, 565, 601, 608, 630, 635, 668, 684
+Strength: 0.04499274310595065
+Confidence: 1.0
+CoverageFactor: 0.06919642857142858
+Coverage: 31
+CoveredExamples: 6, 19, 21, 65, 151, 158, 163, 171, 182, 195, 199, 200, 216, 264, 287, 329, 360, 363, 370, 495, 506, 521, 534, 544, 565, 601, 608, 630, 635, 668, 684
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.11519831730769231
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5575991586538461
+s-ConfirmationMeasure: 0.7944711538461539
+
+64 : (slope8 >= -0.001082) & (slope10 >= 0.227053) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 34
+SupportingExamples: 47, 66, 111, 121, 162, 193, 199, 204, 217, 220, 238, 243, 278, 289, 324, 364, 384, 390, 392, 420, 438, 443, 444, 459, 464, 466, 468, 490, 537, 547, 630, 645, 661, 669
+Strength: 0.04934687953555878
+Confidence: 1.0
+CoverageFactor: 0.07068607068607069
+Coverage: 34
+CoveredExamples: 47, 66, 111, 121, 162, 193, 199, 204, 217, 220, 238, 243, 278, 289, 324, 364, 384, 390, 392, 420, 438, 443, 444, 459, 464, 466, 468, 490, 537, 547, 630, 645, 661, 669
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.11109243697478992
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5555462184873949
+s-ConfirmationMeasure: 0.7935174069627852
+
+65 : (slope8 >= -0.001082) & (cintercept10 <= -0.966321) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 22
+SupportingExamples: 45, 63, 113, 128, 243, 246, 274, 283, 333, 336, 369, 389, 414, 455, 470, 484, 517, 525, 539, 579, 591, 592
+Strength: 0.03193033381712627
+Confidence: 1.0
+CoverageFactor: 0.05116279069767442
+Coverage: 22
+CoveredExamples: 45, 63, 113, 128, 243, 246, 274, 283, 333, 336, 369, 389, 414, 455, 470, 484, 517, 525, 539, 579, 591, 592
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08669047619047619
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543345238095238
+s-ConfirmationMeasure: 0.7880952380952381
+
+66 : (slope7 >= -0.063355) & (cintercept10 <= -1.047397) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 28
+SupportingExamples: 71, 78, 82, 94, 132, 143, 205, 253, 254, 261, 267, 295, 341, 361, 403, 471, 488, 550, 556, 559, 569, 591, 601, 604, 614, 638, 648, 683
+Strength: 0.040638606676342524
+Confidence: 1.0
+CoverageFactor: 0.0611353711790393
+Coverage: 28
+CoveredExamples: 71, 78, 82, 94, 132, 143, 205, 253, 254, 261, 267, 295, 341, 361, 403, 471, 488, 550, 556, 559, 569, 591, 601, 604, 614, 638, 648, 683
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.11519831730769231
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5575991586538461
+s-ConfirmationMeasure: 0.7944711538461539
+
+67 : (slope7 >= -0.062848) & (cintercept10 <= -1.040515) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 39
+SupportingExamples: 13, 41, 43, 124, 145, 161, 165, 168, 170, 178, 188, 190, 259, 265, 268, 272, 289, 314, 342, 343, 354, 358, 361, 376, 377, 379, 384, 386, 440, 477, 487, 502, 553, 555, 565, 610, 615, 649, 678
+Strength: 0.05660377358490566
+Confidence: 1.0
+CoverageFactor: 0.08315565031982942
+Coverage: 39
+CoveredExamples: 13, 41, 43, 124, 145, 161, 165, 168, 170, 178, 188, 190, 259, 265, 268, 272, 289, 314, 342, 343, 354, 358, 361, 376, 377, 379, 384, 386, 440, 477, 487, 502, 553, 555, 565, 610, 615, 649, 678
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07859690844233055
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5392984542211653
+s-ConfirmationMeasure: 0.7859690844233056
+
+68 : (slope7 >= -0.062251) & (cintercept10 <= -1.032721) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 34
+SupportingExamples: 32, 46, 68, 73, 74, 89, 115, 139, 141, 191, 203, 230, 249, 259, 273, 293, 316, 360, 371, 402, 423, 461, 479, 486, 487, 563, 568, 593, 598, 606, 621, 630, 637, 665
+Strength: 0.04934687953555878
+Confidence: 1.0
+CoverageFactor: 0.0734341252699784
+Coverage: 34
+CoveredExamples: 32, 46, 68, 73, 74, 89, 115, 139, 141, 191, 203, 230, 249, 259, 273, 293, 316, 360, 371, 402, 423, 461, 479, 486, 487, 563, 568, 593, 598, 606, 621, 630, 637, 665
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.082625
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413125
+s-ConfirmationMeasure: 0.7869047619047619
+
+69 : (slope7 >= -0.046502) & (slope10 >= 0.230874) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 41
+SupportingExamples: 5, 30, 32, 38, 55, 64, 86, 129, 164, 177, 215, 283, 310, 317, 323, 340, 359, 390, 408, 410, 411, 412, 436, 453, 459, 474, 485, 491, 497, 533, 552, 577, 591, 604, 627, 636, 637, 642, 650, 676, 685
+Strength: 0.059506531204644414
+Confidence: 1.0
+CoverageFactor: 0.0891304347826087
+Coverage: 41
+CoveredExamples: 5, 30, 32, 38, 55, 64, 86, 129, 164, 177, 215, 283, 310, 317, 323, 340, 359, 390, 408, 410, 411, 412, 436, 453, 459, 474, 485, 491, 497, 533, 552, 577, 591, 604, 627, 636, 637, 642, 650, 676, 685
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+70 : (slope7 >= -0.046502) & (slope10 >= 0.230812) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 44
+SupportingExamples: 9, 32, 39, 48, 83, 90, 112, 113, 116, 135, 175, 179, 188, 225, 246, 292, 325, 349, 351, 383, 386, 411, 417, 420, 423, 424, 465, 472, 473, 476, 488, 493, 508, 513, 517, 538, 561, 571, 626, 651, 653, 662, 668, 679
+Strength: 0.06386066763425254
+Confidence: 1.0
+CoverageFactor: 0.09977324263038549
+Coverage: 44
+CoveredExamples: 9, 32, 39, 48, 83, 90, 112, 113, 116, 135, 175, 179, 188, 225, 246, 292, 325, 349, 351, 383, 386, 411, 417, 420, 423, 424, 465, 472, 473, 476, 488, 493, 508, 513, 517, 538, 561, 571, 626, 651, 653, 662, 668, 679
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09883373205741627
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5494168660287081
+s-ConfirmationMeasure: 0.7906698564593302
+
+71 : (slope7 >= -0.046502) & (slope10 >= 0.230765) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 50
+SupportingExamples: 23, 26, 36, 61, 67, 83, 120, 126, 134, 161, 180, 182, 194, 206, 209, 233, 238, 250, 252, 264, 302, 352, 369, 389, 390, 393, 408, 420, 454, 474, 478, 494, 503, 558, 564, 579, 582, 583, 584, 593, 602, 611, 643, 647, 665, 666, 674, 678, 679, 685
+Strength: 0.07256894049346879
+Confidence: 1.0
+CoverageFactor: 0.11441647597254005
+Coverage: 50
+CoveredExamples: 23, 26, 36, 61, 67, 83, 120, 126, 134, 161, 180, 182, 194, 206, 209, 233, 238, 250, 252, 264, 302, 352, 369, 389, 390, 393, 408, 420, 454, 474, 478, 494, 503, 558, 564, 579, 582, 583, 584, 593, 602, 611, 643, 647, 665, 666, 674, 678, 679, 685
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.12343975903614458
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5617198795180723
+s-ConfirmationMeasure: 0.7963855421686747
+
+72 : (slope7 >= -0.046502) & (slope10 >= 0.23056) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 39
+SupportingExamples: 10, 27, 118, 147, 172, 175, 218, 220, 225, 233, 246, 252, 258, 273, 286, 293, 304, 322, 342, 349, 362, 382, 402, 407, 411, 413, 418, 451, 461, 491, 503, 570, 586, 609, 611, 613, 622, 633, 682
+Strength: 0.05660377358490566
+Confidence: 1.0
+CoverageFactor: 0.08369098712446352
+Coverage: 39
+CoveredExamples: 10, 27, 118, 147, 172, 175, 218, 220, 225, 233, 246, 252, 258, 273, 286, 293, 304, 322, 342, 349, 362, 382, 402, 407, 411, 413, 418, 451, 461, 491, 503, 570, 586, 609, 611, 613, 622, 633, 682
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.14421818181818183
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5721090909090909
+s-ConfirmationMeasure: 0.8012121212121213
+
+73 : (slope7 >= -0.046299) & (slope10 >= 0.231567) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 44
+SupportingExamples: 13, 18, 40, 62, 80, 119, 122, 155, 157, 160, 169, 196, 210, 215, 239, 244, 247, 255, 259, 264, 270, 318, 322, 364, 376, 383, 388, 394, 426, 442, 452, 473, 479, 484, 500, 553, 561, 564, 571, 586, 633, 638, 665, 684
+Strength: 0.06386066763425254
+Confidence: 1.0
+CoverageFactor: 0.10401891252955082
+Coverage: 44
+CoveredExamples: 13, 18, 40, 62, 80, 119, 122, 155, 157, 160, 169, 196, 210, 215, 239, 244, 247, 255, 259, 264, 270, 318, 322, 364, 376, 383, 388, 394, 426, 442, 452, 473, 479, 484, 500, 553, 561, 564, 571, 586, 633, 638, 665, 684
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09073897497020263
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5453694874851013
+s-ConfirmationMeasure: 0.7890345649582837
+
+74 : (slope7 >= -0.046299) & (slope10 >= 0.231413) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 48
+SupportingExamples: 4, 20, 54, 87, 90, 99, 103, 116, 130, 135, 144, 163, 173, 204, 207, 229, 230, 246, 251, 255, 259, 283, 284, 307, 363, 389, 391, 394, 395, 406, 417, 472, 481, 489, 493, 494, 531, 545, 549, 558, 571, 587, 590, 593, 608, 633, 661, 685
+Strength: 0.06966618287373004
+Confidence: 1.0
+CoverageFactor: 0.11136890951276102
+Coverage: 48
+CoveredExamples: 4, 20, 54, 87, 90, 99, 103, 116, 130, 135, 144, 163, 173, 204, 207, 229, 230, 246, 251, 255, 259, 283, 284, 307, 363, 389, 391, 394, 395, 406, 417, 472, 481, 489, 493, 494, 531, 545, 549, 558, 571, 587, 590, 593, 608, 633, 661, 685
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09073897497020263
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5453694874851013
+s-ConfirmationMeasure: 0.7890345649582837
+
+75 : (slope7 >= -0.046299) & (slope10 >= 0.231336) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 50
+SupportingExamples: 11, 23, 48, 56, 68, 89, 129, 137, 146, 147, 155, 159, 187, 196, 254, 257, 263, 278, 288, 291, 300, 313, 332, 380, 399, 402, 415, 421, 451, 497, 500, 518, 527, 531, 544, 548, 558, 589, 596, 604, 606, 616, 617, 620, 621, 635, 647, 650, 652, 687
+Strength: 0.07256894049346879
+Confidence: 1.0
+CoverageFactor: 0.11061946902654868
+Coverage: 50
+CoveredExamples: 11, 23, 48, 56, 68, 89, 129, 137, 146, 147, 155, 159, 187, 196, 254, 257, 263, 278, 288, 291, 300, 313, 332, 380, 399, 402, 415, 421, 451, 497, 500, 518, 527, 531, 544, 548, 558, 589, 596, 604, 606, 616, 617, 620, 621, 635, 647, 650, 652, 687
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09073897497020263
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5453694874851013
+s-ConfirmationMeasure: 0.7890345649582837
+
+76 : (slope7 >= -0.046299) & (slope10 >= 0.231222) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 49
+SupportingExamples: 15, 21, 23, 28, 31, 32, 38, 39, 47, 68, 74, 88, 98, 106, 130, 136, 165, 194, 203, 223, 241, 249, 253, 269, 292, 294, 328, 361, 395, 406, 413, 421, 437, 469, 503, 525, 538, 542, 578, 586, 592, 596, 598, 600, 602, 608, 618, 639, 651
+Strength: 0.07111756168359942
+Confidence: 1.0
+CoverageFactor: 0.11136363636363636
+Coverage: 49
+CoveredExamples: 15, 21, 23, 28, 31, 32, 38, 39, 47, 68, 74, 88, 98, 106, 130, 136, 165, 194, 203, 223, 241, 249, 253, 269, 292, 294, 328, 361, 395, 406, 413, 421, 437, 469, 503, 525, 538, 542, 578, 586, 592, 596, 598, 600, 602, 608, 618, 639, 651
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.11519831730769231
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5575991586538461
+s-ConfirmationMeasure: 0.7944711538461539
+
+77 : (slope7 >= -0.046299) & (slope10 >= 0.230914) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 34
+SupportingExamples: 25, 37, 74, 107, 140, 157, 172, 182, 242, 256, 281, 287, 290, 311, 350, 392, 406, 436, 455, 470, 484, 510, 513, 527, 539, 543, 560, 608, 626, 629, 631, 634, 660, 664
+Strength: 0.04934687953555878
+Confidence: 1.0
+CoverageFactor: 0.08076009501187649
+Coverage: 34
+CoveredExamples: 25, 37, 74, 107, 140, 157, 172, 182, 242, 256, 281, 287, 290, 311, 350, 392, 406, 436, 455, 470, 484, 510, 513, 527, 539, 543, 560, 608, 626, 629, 631, 634, 660, 664
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09073897497020263
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5453694874851013
+s-ConfirmationMeasure: 0.7890345649582837
+
+78 : (slope7 >= -0.046092) & (slope10 >= 0.231687) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 41
+SupportingExamples: 50, 52, 78, 95, 100, 105, 177, 182, 197, 245, 246, 249, 257, 264, 272, 281, 302, 339, 362, 374, 388, 389, 427, 440, 450, 463, 479, 490, 505, 513, 519, 520, 551, 554, 566, 569, 622, 626, 632, 640, 671
+Strength: 0.059506531204644414
+Confidence: 1.0
+CoverageFactor: 0.09090909090909091
+Coverage: 41
+CoveredExamples: 50, 52, 78, 95, 100, 105, 177, 182, 197, 245, 246, 249, 257, 264, 272, 281, 302, 339, 362, 374, 388, 389, 427, 440, 450, 463, 479, 490, 505, 513, 519, 520, 551, 554, 566, 569, 622, 626, 632, 640, 671
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09071002386634845
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5453550119331743
+s-ConfirmationMeasure: 0.788782816229117
+
+79 : (slope7 >= -0.043162) & (cintercept10 <= -1.014432) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 41
+SupportingExamples: 36, 37, 41, 55, 56, 86, 93, 97, 102, 137, 145, 153, 165, 179, 218, 232, 240, 288, 323, 333, 361, 413, 414, 439, 458, 471, 477, 492, 519, 530, 550, 559, 572, 587, 601, 616, 644, 645, 648, 652, 675
+Strength: 0.059506531204644414
+Confidence: 1.0
+CoverageFactor: 0.09255079006772009
+Coverage: 41
+CoveredExamples: 36, 37, 41, 55, 56, 86, 93, 97, 102, 137, 145, 153, 165, 179, 218, 232, 240, 288, 323, 333, 361, 413, 414, 439, 458, 471, 477, 492, 519, 530, 550, 559, 572, 587, 601, 616, 644, 645, 648, 652, 675
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08669047619047619
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543345238095238
+s-ConfirmationMeasure: 0.7880952380952381
+
+80 : (slope7 >= -0.042507) & (slope10 >= 0.230423) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 22
+SupportingExamples: 64, 68, 130, 132, 144, 165, 193, 276, 278, 353, 380, 399, 447, 473, 490, 542, 565, 581, 607, 617, 666, 687
+Strength: 0.03193033381712627
+Confidence: 1.0
+CoverageFactor: 0.04793028322440087
+Coverage: 22
+CoveredExamples: 64, 68, 130, 132, 144, 165, 193, 276, 278, 353, 380, 399, 447, 473, 490, 542, 565, 581, 607, 617, 666, 687
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0866626936829559
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543331346841478
+s-ConfirmationMeasure: 0.7878426698450537
+
+81 : (slope7 >= -0.042507) & (slope10 >= 0.230173) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 43
+SupportingExamples: 9, 32, 39, 48, 83, 90, 112, 113, 116, 135, 175, 179, 188, 225, 246, 325, 349, 360, 383, 386, 411, 417, 420, 423, 424, 465, 472, 473, 488, 489, 493, 508, 517, 538, 561, 571, 626, 637, 651, 653, 662, 668, 679
+Strength: 0.062409288824383166
+Confidence: 1.0
+CoverageFactor: 0.09750566893424037
+Coverage: 43
+CoveredExamples: 9, 32, 39, 48, 83, 90, 112, 113, 116, 135, 175, 179, 188, 225, 246, 325, 349, 360, 383, 386, 411, 417, 420, 423, 424, 465, 472, 473, 488, 489, 493, 508, 517, 538, 561, 571, 626, 637, 651, 653, 662, 668, 679
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0866626936829559
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543331346841478
+s-ConfirmationMeasure: 0.7878426698450537
+
+82 : (slope7 >= -0.042507) & (cintercept10 <= -1.019009) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 44
+SupportingExamples: 25, 36, 38, 70, 74, 75, 111, 123, 127, 160, 163, 171, 175, 186, 197, 208, 219, 223, 226, 282, 305, 312, 315, 329, 343, 345, 373, 411, 416, 435, 446, 447, 450, 452, 475, 480, 502, 512, 515, 576, 580, 586, 591, 604
+Strength: 0.06386066763425254
+Confidence: 1.0
+CoverageFactor: 0.0975609756097561
+Coverage: 44
+CoveredExamples: 25, 36, 38, 70, 74, 75, 111, 123, 127, 160, 163, 171, 175, 186, 197, 208, 219, 223, 226, 282, 305, 312, 315, 329, 343, 345, 373, 411, 416, 435, 446, 447, 450, 452, 475, 480, 502, 512, 515, 576, 580, 586, 591, 604
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07859690844233055
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5392984542211653
+s-ConfirmationMeasure: 0.7859690844233056
+
+83 : (slope7 >= -0.041882) & (slope10 >= 0.230914) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 32
+SupportingExamples: 46, 48, 53, 86, 130, 138, 143, 163, 201, 221, 230, 245, 267, 299, 345, 361, 372, 396, 419, 446, 469, 472, 491, 492, 496, 514, 525, 572, 574, 602, 606, 609
+Strength: 0.04644412191582003
+Confidence: 1.0
+CoverageFactor: 0.0730593607305936
+Coverage: 32
+CoveredExamples: 46, 48, 53, 86, 130, 138, 143, 163, 201, 221, 230, 245, 267, 299, 345, 361, 372, 396, 419, 446, 469, 472, 491, 492, 496, 514, 525, 572, 574, 602, 606, 609
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08265160523186682
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413258026159334
+s-ConfirmationMeasure: 0.7871581450653984
+
+84 : (slope7 >= -0.041882) & (slope10 >= 0.230812) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 34
+SupportingExamples: 42, 52, 54, 63, 79, 86, 112, 116, 117, 119, 162, 183, 224, 231, 241, 251, 266, 274, 297, 305, 338, 342, 365, 366, 435, 446, 466, 473, 493, 500, 523, 541, 547, 565
+Strength: 0.04934687953555878
+Confidence: 1.0
+CoverageFactor: 0.07657657657657657
+Coverage: 34
+CoveredExamples: 42, 52, 54, 63, 79, 86, 112, 116, 117, 119, 162, 183, 224, 231, 241, 251, 266, 274, 297, 305, 338, 342, 365, 366, 435, 446, 466, 473, 493, 500, 523, 541, 547, 565
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08265160523186682
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413258026159334
+s-ConfirmationMeasure: 0.7871581450653984
+
+85 : (slope7 >= -0.041882) & (slope10 >= 0.230765) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 34
+SupportingExamples: 8, 51, 75, 79, 81, 83, 172, 197, 222, 243, 247, 262, 268, 300, 319, 340, 344, 354, 360, 384, 389, 420, 424, 432, 438, 453, 475, 489, 569, 579, 594, 617, 632, 688
+Strength: 0.04934687953555878
+Confidence: 1.0
+CoverageFactor: 0.07692307692307693
+Coverage: 34
+CoveredExamples: 8, 51, 75, 79, 81, 83, 172, 197, 222, 243, 247, 262, 268, 300, 319, 340, 344, 354, 360, 384, 389, 420, 424, 432, 438, 453, 475, 489, 569, 579, 594, 617, 632, 688
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0866626936829559
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543331346841478
+s-ConfirmationMeasure: 0.7878426698450537
+
+86 : (slope7 >= -0.041283) & (slope10 >= 0.231336) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 33
+SupportingExamples: 2, 18, 60, 70, 103, 117, 131, 133, 143, 145, 191, 219, 224, 225, 298, 340, 343, 352, 356, 380, 405, 411, 412, 427, 428, 440, 444, 492, 563, 630, 640, 646, 663
+Strength: 0.047895500725689405
+Confidence: 1.0
+CoverageFactor: 0.07894736842105263
+Coverage: 33
+CoveredExamples: 2, 18, 60, 70, 103, 117, 131, 133, 143, 145, 191, 219, 224, 225, 298, 340, 343, 352, 356, 380, 405, 411, 412, 427, 428, 440, 444, 492, 563, 630, 640, 646, 663
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07859690844233055
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5392984542211653
+s-ConfirmationMeasure: 0.7859690844233056
+
+87 : (slope7 >= -0.041283) & (slope10 >= 0.231222) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 37
+SupportingExamples: 4, 28, 36, 139, 151, 161, 169, 171, 172, 185, 191, 222, 251, 269, 274, 321, 340, 342, 345, 350, 351, 392, 399, 400, 441, 469, 482, 520, 541, 607, 614, 637, 652, 670, 680, 683, 689
+Strength: 0.05370101596516691
+Confidence: 1.0
+CoverageFactor: 0.0835214446952596
+Coverage: 37
+CoveredExamples: 4, 28, 36, 139, 151, 161, 169, 171, 172, 185, 191, 222, 251, 269, 274, 321, 340, 342, 345, 350, 351, 392, 399, 400, 441, 469, 482, 520, 541, 607, 614, 637, 652, 670, 680, 683, 689
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08265160523186682
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413258026159334
+s-ConfirmationMeasure: 0.7871581450653984
+
+88 : (slope7 >= -0.041283) & (slope10 >= 0.230812) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 32
+SupportingExamples: 49, 78, 97, 119, 120, 126, 127, 134, 151, 162, 166, 191, 195, 207, 218, 230, 266, 286, 325, 333, 373, 412, 421, 447, 453, 477, 502, 506, 559, 629, 652, 680
+Strength: 0.04644412191582003
+Confidence: 1.0
+CoverageFactor: 0.06736842105263158
+Coverage: 32
+CoveredExamples: 49, 78, 97, 119, 120, 126, 127, 134, 151, 162, 166, 191, 195, 207, 218, 230, 266, 286, 325, 333, 373, 412, 421, 447, 453, 477, 502, 506, 559, 629, 652, 680
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.10291017964071857
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5514550898203593
+s-ConfirmationMeasure: 0.7916167664670659
+
+89 : (slope7 >= -0.040712) & (slope10 >= 0.231687) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 36
+SupportingExamples: 11, 21, 34, 48, 52, 76, 112, 116, 165, 206, 226, 231, 238, 247, 253, 284, 305, 308, 340, 346, 352, 354, 452, 489, 516, 543, 550, 557, 559, 568, 587, 602, 608, 634, 661, 664
+Strength: 0.05224963715529753
+Confidence: 1.0
+CoverageFactor: 0.08035714285714286
+Coverage: 36
+CoveredExamples: 11, 21, 34, 48, 52, 76, 112, 116, 165, 206, 226, 231, 238, 247, 253, 284, 305, 308, 340, 346, 352, 354, 452, 489, 516, 543, 550, 557, 559, 568, 587, 602, 608, 634, 661, 664
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0866626936829559
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543331346841478
+s-ConfirmationMeasure: 0.7878426698450537
+
+90 : (slope7 >= -0.040712) & (slope10 >= 0.231222) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 38
+SupportingExamples: 4, 46, 48, 86, 89, 114, 124, 130, 151, 172, 174, 216, 254, 264, 277, 289, 322, 335, 343, 369, 409, 443, 455, 474, 475, 482, 496, 518, 532, 593, 616, 640, 643, 656, 661, 664, 678, 686
+Strength: 0.055152394775036286
+Confidence: 1.0
+CoverageFactor: 0.08333333333333333
+Coverage: 38
+CoveredExamples: 4, 46, 48, 86, 89, 114, 124, 130, 151, 172, 174, 216, 254, 264, 277, 289, 322, 335, 343, 369, 409, 443, 455, 474, 475, 482, 496, 518, 532, 593, 616, 640, 643, 656, 661, 664, 678, 686
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.10291017964071857
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5514550898203593
+s-ConfirmationMeasure: 0.7916167664670659
+
+91 : (slope7 >= -0.040172) & (slope10 >= 0.231962) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 25
+SupportingExamples: 35, 56, 58, 68, 77, 88, 108, 171, 200, 203, 206, 233, 244, 256, 278, 342, 398, 421, 498, 506, 530, 582, 586, 623, 670
+Strength: 0.036284470246734396
+Confidence: 1.0
+CoverageFactor: 0.0556792873051225
+Coverage: 25
+CoveredExamples: 35, 56, 58, 68, 77, 88, 108, 171, 200, 203, 206, 233, 244, 256, 278, 342, 398, 421, 498, 506, 530, 582, 586, 623, 670
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07862232779097388
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.539311163895487
+s-ConfirmationMeasure: 0.7862232779097387
+
+92 : (slope7 >= -0.037542) & (slope10 >= 0.231337) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 31
+SupportingExamples: 10, 18, 47, 63, 79, 180, 182, 189, 199, 225, 282, 309, 313, 331, 335, 348, 364, 383, 387, 402, 416, 438, 507, 518, 535, 539, 543, 572, 580, 602, 654
+Strength: 0.04499274310595065
+Confidence: 1.0
+CoverageFactor: 0.07226107226107226
+Coverage: 31
+CoveredExamples: 10, 18, 47, 63, 79, 180, 182, 189, 199, 225, 282, 309, 313, 331, 335, 348, 364, 383, 387, 402, 416, 438, 507, 518, 535, 539, 543, 572, 580, 602, 654
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09071002386634845
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5453550119331743
+s-ConfirmationMeasure: 0.788782816229117
+
+93 : (slope7 >= -0.037377) & (slope10 >= 0.230812) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 35
+SupportingExamples: 17, 23, 26, 43, 82, 117, 153, 160, 163, 171, 190, 270, 276, 296, 323, 363, 374, 412, 415, 425, 427, 440, 442, 475, 479, 483, 512, 549, 564, 575, 609, 636, 660, 667, 678
+Strength: 0.05079825834542816
+Confidence: 1.0
+CoverageFactor: 0.07462686567164178
+Coverage: 35
+CoveredExamples: 17, 23, 26, 43, 82, 117, 153, 160, 163, 171, 190, 270, 276, 296, 323, 363, 374, 412, 415, 425, 427, 440, 442, 475, 479, 483, 512, 549, 564, 575, 609, 636, 660, 667, 678
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+94 : (slope7 >= -0.037377) & (slope10 >= 0.230765) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 26
+SupportingExamples: 37, 77, 113, 170, 195, 240, 242, 273, 309, 328, 329, 333, 408, 415, 446, 453, 460, 479, 485, 498, 509, 562, 585, 639, 654, 666
+Strength: 0.03773584905660377
+Confidence: 1.0
+CoverageFactor: 0.06326034063260341
+Coverage: 26
+CoveredExamples: 37, 77, 113, 170, 195, 240, 242, 273, 309, 328, 329, 333, 408, 415, 446, 453, 460, 479, 485, 498, 509, 562, 585, 639, 654, 666
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+95 : (slope7 >= -0.03725) & (slope10 >= 0.230173) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 23
+SupportingExamples: 20, 59, 63, 80, 108, 109, 141, 157, 166, 183, 202, 219, 234, 263, 275, 315, 415, 466, 483, 498, 571, 575, 594
+Strength: 0.033381712626995644
+Confidence: 1.0
+CoverageFactor: 0.05227272727272727
+Coverage: 23
+CoveredExamples: 20, 59, 63, 80, 108, 109, 141, 157, 166, 183, 202, 219, 234, 263, 275, 315, 415, 466, 483, 498, 571, 575, 594
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07862232779097388
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.539311163895487
+s-ConfirmationMeasure: 0.7862232779097387
+
+96 : (slope7 >= -0.037137) & (slope10 >= 0.229431) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 39
+SupportingExamples: 12, 18, 32, 38, 40, 62, 93, 146, 153, 162, 170, 190, 206, 225, 232, 250, 270, 308, 316, 323, 372, 373, 379, 407, 412, 421, 427, 469, 483, 507, 523, 578, 581, 642, 650, 656, 684, 685, 688
+Strength: 0.05660377358490566
+Confidence: 1.0
+CoverageFactor: 0.08863636363636364
+Coverage: 39
+CoveredExamples: 12, 18, 32, 38, 40, 62, 93, 146, 153, 162, 170, 190, 206, 225, 232, 250, 270, 308, 316, 323, 372, 373, 379, 407, 412, 421, 427, 469, 483, 507, 523, 578, 581, 642, 650, 656, 684, 685, 688
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+97 : (slope7 >= -0.037013) & (slope10 >= 0.228596) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 36
+SupportingExamples: 33, 49, 52, 54, 58, 155, 158, 173, 182, 187, 232, 247, 261, 300, 310, 340, 341, 357, 368, 390, 452, 466, 469, 514, 515, 520, 525, 528, 532, 534, 535, 559, 621, 628, 642, 660
+Strength: 0.05224963715529753
+Confidence: 1.0
+CoverageFactor: 0.08200455580865604
+Coverage: 36
+CoveredExamples: 33, 49, 52, 54, 58, 155, 158, 173, 182, 187, 232, 247, 261, 300, 310, 340, 341, 357, 368, 390, 452, 466, 469, 514, 515, 520, 525, 528, 532, 534, 535, 559, 621, 628, 642, 660
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+98 : (slope7 >= -0.037013) & (slope10 >= 0.228486) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 30
+SupportingExamples: 12, 82, 139, 161, 164, 202, 206, 220, 286, 290, 301, 312, 345, 361, 363, 382, 421, 423, 441, 446, 467, 510, 517, 534, 553, 576, 583, 593, 661, 680
+Strength: 0.04354136429608128
+Confidence: 1.0
+CoverageFactor: 0.06711409395973154
+Coverage: 30
+CoveredExamples: 12, 82, 139, 161, 164, 202, 206, 220, 286, 290, 301, 312, 345, 361, 363, 382, 421, 423, 441, 446, 467, 510, 517, 534, 553, 576, 583, 593, 661, 680
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+99 : (slope7 >= -0.036853) & (slope10 >= 0.227677) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 38
+SupportingExamples: 27, 80, 92, 99, 106, 108, 113, 126, 130, 139, 154, 158, 191, 194, 198, 218, 234, 277, 289, 292, 322, 324, 340, 360, 396, 404, 490, 522, 539, 540, 552, 563, 576, 592, 628, 672, 676, 677
+Strength: 0.055152394775036286
+Confidence: 1.0
+CoverageFactor: 0.08656036446469248
+Coverage: 38
+CoveredExamples: 27, 80, 92, 99, 106, 108, 113, 126, 130, 139, 154, 158, 191, 194, 198, 218, 234, 277, 289, 292, 322, 324, 340, 360, 396, 404, 490, 522, 539, 540, 552, 563, 576, 592, 628, 672, 676, 677
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+100 : (slope7 >= -0.036327) & (slope8 >= -0.00266) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 31
+SupportingExamples: 15, 66, 79, 115, 139, 171, 182, 188, 189, 218, 229, 246, 247, 326, 329, 356, 384, 392, 397, 398, 400, 410, 424, 451, 498, 532, 541, 573, 611, 638, 641
+Strength: 0.04499274310595065
+Confidence: 1.0
+CoverageFactor: 0.06666666666666667
+Coverage: 31
+CoveredExamples: 15, 66, 79, 115, 139, 171, 182, 188, 189, 218, 229, 246, 247, 326, 329, 356, 384, 392, 397, 398, 400, 410, 424, 451, 498, 532, 541, 573, 611, 638, 641
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0866626936829559
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543331346841478
+s-ConfirmationMeasure: 0.7878426698450537
+
+101 : (slope7 >= -0.035362) & (slope8 >= -0.002109) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 35
+SupportingExamples: 13, 41, 124, 145, 161, 165, 168, 170, 188, 190, 198, 259, 268, 272, 314, 342, 343, 354, 358, 361, 377, 379, 384, 386, 398, 412, 440, 477, 487, 502, 553, 555, 565, 649, 678
+Strength: 0.05079825834542816
+Confidence: 1.0
+CoverageFactor: 0.07462686567164178
+Coverage: 35
+CoveredExamples: 13, 41, 124, 145, 161, 165, 168, 170, 188, 190, 198, 259, 268, 272, 314, 342, 343, 354, 358, 361, 377, 379, 384, 386, 398, 412, 440, 477, 487, 502, 553, 555, 565, 649, 678
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07859690844233055
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5392984542211653
+s-ConfirmationMeasure: 0.7859690844233056
+
+102 : (slope7 >= -0.032702) & (slope8 >= -0.0024) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 41
+SupportingExamples: 5, 8, 12, 40, 55, 56, 61, 75, 76, 77, 80, 121, 139, 144, 158, 218, 312, 326, 337, 344, 346, 370, 380, 387, 406, 417, 432, 435, 438, 451, 455, 471, 492, 504, 508, 515, 517, 531, 533, 619, 669
+Strength: 0.059506531204644414
+Confidence: 1.0
+CoverageFactor: 0.09490740740740741
+Coverage: 41
+CoveredExamples: 5, 8, 12, 40, 55, 56, 61, 75, 76, 77, 80, 121, 139, 144, 158, 218, 312, 326, 337, 344, 346, 370, 380, 387, 406, 417, 432, 435, 438, 451, 455, 471, 492, 504, 508, 515, 517, 531, 533, 619, 669
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08265160523186682
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413258026159334
+s-ConfirmationMeasure: 0.7871581450653984
+
+103 : (slope7 >= -0.030117) & (slope8 >= -0.003429) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 40
+SupportingExamples: 18, 32, 51, 58, 81, 87, 92, 100, 119, 134, 143, 144, 178, 185, 188, 208, 232, 244, 315, 369, 372, 373, 377, 381, 388, 398, 404, 415, 439, 448, 453, 458, 472, 503, 577, 600, 613, 625, 638, 649
+Strength: 0.05805515239477504
+Confidence: 1.0
+CoverageFactor: 0.08791208791208792
+Coverage: 40
+CoveredExamples: 18, 32, 51, 58, 81, 87, 92, 100, 119, 134, 143, 144, 178, 185, 188, 208, 232, 244, 315, 369, 372, 373, 377, 381, 388, 398, 404, 415, 439, 448, 453, 458, 472, 503, 577, 600, 613, 625, 638, 649
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+104 : (slope7 >= -0.028622) & (slope8 >= -0.004129) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 27
+SupportingExamples: 9, 60, 155, 158, 176, 190, 200, 201, 238, 242, 272, 300, 326, 349, 354, 389, 442, 479, 488, 490, 547, 551, 570, 589, 641, 667, 673
+Strength: 0.03918722786647315
+Confidence: 1.0
+CoverageFactor: 0.060810810810810814
+Coverage: 27
+CoveredExamples: 9, 60, 155, 158, 176, 190, 200, 201, 238, 242, 272, 300, 326, 349, 354, 389, 442, 479, 488, 490, 547, 551, 570, 589, 641, 667, 673
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07859690844233055
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5392984542211653
+s-ConfirmationMeasure: 0.7859690844233056
+
+105 : (slope7 >= -0.026684) & (slope8 >= -0.010512) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 26
+SupportingExamples: 52, 69, 107, 112, 136, 156, 160, 176, 180, 186, 204, 218, 276, 337, 349, 422, 442, 471, 497, 509, 512, 563, 593, 610, 665, 672
+Strength: 0.03773584905660377
+Confidence: 1.0
+CoverageFactor: 0.06190476190476191
+Coverage: 26
+CoveredExamples: 52, 69, 107, 112, 136, 156, 160, 176, 180, 186, 204, 218, 276, 337, 349, 422, 442, 471, 497, 509, 512, 563, 593, 610, 665, 672
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+106 : (slope7 >= -0.023503) & (slope8 >= -0.008654) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 28
+SupportingExamples: 12, 31, 43, 55, 69, 86, 171, 182, 200, 256, 257, 281, 331, 382, 387, 392, 429, 463, 464, 504, 510, 543, 583, 590, 595, 600, 615, 620
+Strength: 0.040638606676342524
+Confidence: 1.0
+CoverageFactor: 0.06140350877192982
+Coverage: 28
+CoveredExamples: 12, 31, 43, 55, 69, 86, 171, 182, 200, 256, 257, 281, 331, 382, 387, 392, 429, 463, 464, 504, 510, 543, 583, 590, 595, 600, 615, 620
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.082625
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413125
+s-ConfirmationMeasure: 0.7869047619047619
+
+107 : (slope7 >= -0.023503) & (slope8 >= -0.006727) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 28
+SupportingExamples: 17, 37, 40, 88, 89, 162, 212, 217, 222, 266, 297, 390, 443, 448, 470, 473, 481, 495, 501, 521, 559, 571, 587, 589, 651, 659, 664, 674
+Strength: 0.040638606676342524
+Confidence: 1.0
+CoverageFactor: 0.06222222222222222
+Coverage: 28
+CoveredExamples: 17, 37, 40, 88, 89, 162, 212, 217, 222, 266, 297, 390, 443, 448, 470, 473, 481, 495, 501, 521, 559, 571, 587, 589, 651, 659, 664, 674
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09883373205741627
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5494168660287081
+s-ConfirmationMeasure: 0.7906698564593302
+
+108 : (slope7 >= -0.019721) & (slope8 >= -0.008669) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 22
+SupportingExamples: 9, 60, 158, 190, 201, 242, 300, 326, 354, 389, 442, 479, 488, 490, 547, 551, 562, 570, 589, 641, 667, 673
+Strength: 0.03193033381712627
+Confidence: 1.0
+CoverageFactor: 0.04954954954954955
+Coverage: 22
+CoveredExamples: 9, 60, 158, 190, 201, 242, 300, 326, 354, 389, 442, 479, 488, 490, 547, 551, 562, 570, 589, 641, 667, 673
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+109 : (slope7 >= -0.017764) & (slope8 >= -0.009646) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 32
+SupportingExamples: 52, 77, 78, 87, 96, 107, 113, 136, 150, 168, 174, 181, 187, 206, 263, 272, 282, 286, 319, 364, 392, 394, 429, 441, 461, 468, 546, 562, 611, 633, 660, 678
+Strength: 0.04644412191582003
+Confidence: 1.0
+CoverageFactor: 0.07032967032967033
+Coverage: 32
+CoveredExamples: 52, 77, 78, 87, 96, 107, 113, 136, 150, 168, 174, 181, 187, 206, 263, 272, 282, 286, 319, 364, 392, 394, 429, 441, 461, 468, 546, 562, 611, 633, 660, 678
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+110 : (slope7 >= -0.017764) & (cintercept10 <= -0.505694) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 51
+SupportingExamples: 12, 23, 30, 36, 62, 69, 87, 100, 124, 146, 155, 159, 169, 200, 201, 216, 221, 262, 298, 343, 365, 382, 391, 404, 405, 411, 414, 433, 444, 446, 459, 468, 505, 518, 531, 540, 547, 565, 571, 604, 623, 625, 634, 635, 640, 651, 655, 660, 661, 667, 670
+Strength: 0.07402031930333818
+Confidence: 1.0
+CoverageFactor: 0.11159737417943107
+Coverage: 51
+CoveredExamples: 12, 23, 30, 36, 62, 69, 87, 100, 124, 146, 155, 159, 169, 200, 201, 216, 221, 262, 298, 343, 365, 382, 391, 404, 405, 411, 414, 433, 444, 446, 459, 468, 505, 518, 531, 540, 547, 565, 571, 604, 623, 625, 634, 635, 640, 651, 655, 660, 661, 667, 670
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+111 : (slope7 >= -0.01577) & (slope8 >= -0.010637) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 32
+SupportingExamples: 17, 37, 118, 170, 181, 200, 202, 230, 238, 242, 255, 279, 299, 332, 334, 355, 361, 395, 416, 434, 436, 445, 463, 491, 498, 507, 566, 583, 626, 628, 631, 640
+Strength: 0.04644412191582003
+Confidence: 1.0
+CoverageFactor: 0.07191011235955057
+Coverage: 32
+CoveredExamples: 17, 37, 118, 170, 181, 200, 202, 230, 238, 242, 255, 279, 299, 332, 334, 355, 361, 395, 416, 434, 436, 445, 463, 491, 498, 507, 566, 583, 626, 628, 631, 640
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07862232779097388
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.539311163895487
+s-ConfirmationMeasure: 0.7862232779097387
+
+112 : (slope7 >= -0.01577) & (slope10 >= 0.203571) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 30
+SupportingExamples: 7, 61, 62, 64, 65, 80, 86, 118, 119, 120, 144, 157, 176, 241, 325, 335, 342, 346, 347, 348, 355, 425, 450, 461, 520, 540, 574, 582, 627, 665
+Strength: 0.04354136429608128
+Confidence: 1.0
+CoverageFactor: 0.06521739130434782
+Coverage: 30
+CoveredExamples: 7, 61, 62, 64, 65, 80, 86, 118, 119, 120, 144, 157, 176, 241, 325, 335, 342, 346, 347, 348, 355, 425, 450, 461, 520, 540, 574, 582, 627, 665
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07862232779097388
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.539311163895487
+s-ConfirmationMeasure: 0.7862232779097387
+
+113 : (slope7 >= -0.015079) & (slope8 >= -0.018111) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 26
+SupportingExamples: 16, 20, 23, 42, 68, 80, 93, 116, 121, 135, 166, 178, 182, 198, 227, 322, 328, 333, 345, 377, 410, 419, 449, 535, 549, 573
+Strength: 0.03773584905660377
+Confidence: 1.0
+CoverageFactor: 0.05603448275862069
+Coverage: 26
+CoveredExamples: 16, 20, 23, 42, 68, 80, 93, 116, 121, 135, 166, 178, 182, 198, 227, 322, 328, 333, 345, 377, 410, 419, 449, 535, 549, 573
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09883373205741627
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5494168660287081
+s-ConfirmationMeasure: 0.7906698564593302
+
+114 : (slope7 >= -0.013743) & (slope8 >= -0.015052) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 20
+SupportingExamples: 63, 131, 139, 150, 218, 290, 318, 367, 387, 389, 446, 452, 562, 606, 609, 641, 651, 660, 674, 683
+Strength: 0.02902757619738752
+Confidence: 1.0
+CoverageFactor: 0.0468384074941452
+Coverage: 20
+CoveredExamples: 63, 131, 139, 150, 218, 290, 318, 367, 387, 389, 446, 452, 562, 606, 609, 641, 651, 660, 674, 683
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+115 : (slope7 >= -0.013743) & (slope8 >= -0.011666) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 20
+SupportingExamples: 71, 78, 82, 132, 143, 205, 254, 261, 267, 295, 343, 361, 471, 488, 569, 604, 614, 620, 638, 683
+Strength: 0.02902757619738752
+Confidence: 1.0
+CoverageFactor: 0.043668122270742356
+Coverage: 20
+CoveredExamples: 71, 78, 82, 132, 143, 205, 254, 261, 267, 295, 343, 361, 471, 488, 569, 604, 614, 620, 638, 683
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.082625
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413125
+s-ConfirmationMeasure: 0.7869047619047619
+
+116 : (slope7 >= -0.013743) & (cintercept10 <= -0.443006) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 26
+SupportingExamples: 9, 11, 26, 92, 115, 152, 202, 213, 221, 338, 356, 360, 365, 398, 412, 466, 470, 520, 550, 586, 605, 611, 615, 652, 667, 675
+Strength: 0.03773584905660377
+Confidence: 1.0
+CoverageFactor: 0.05739514348785872
+Coverage: 26
+CoveredExamples: 9, 11, 26, 92, 115, 152, 202, 213, 221, 338, 356, 360, 365, 398, 412, 466, 470, 520, 550, 586, 605, 611, 615, 652, 667, 675
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.082625
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413125
+s-ConfirmationMeasure: 0.7869047619047619
+
+117 : (slope7 >= -0.011686) & (cintercept10 <= -0.410308) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 31
+SupportingExamples: 78, 107, 119, 150, 154, 172, 180, 210, 213, 216, 243, 244, 251, 289, 296, 352, 363, 378, 403, 443, 461, 470, 494, 496, 550, 567, 578, 593, 619, 635, 647
+Strength: 0.04499274310595065
+Confidence: 1.0
+CoverageFactor: 0.07061503416856492
+Coverage: 31
+CoveredExamples: 78, 107, 119, 150, 154, 172, 180, 210, 213, 216, 243, 244, 251, 289, 296, 352, 363, 378, 403, 443, 461, 470, 494, 496, 550, 567, 578, 593, 619, 635, 647
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+118 : (slope7 >= -0.009605) & (cintercept10 <= -0.37682) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 16
+SupportingExamples: 6, 21, 69, 77, 142, 158, 235, 356, 398, 436, 438, 478, 484, 582, 596, 670
+Strength: 0.023222060957910014
+Confidence: 1.0
+CoverageFactor: 0.03644646924829157
+Coverage: 16
+CoveredExamples: 6, 21, 69, 77, 142, 158, 235, 356, 398, 436, 438, 478, 484, 582, 596, 670
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+119 : (slope7 >= -0.008334) & (cslope9 <= 0.012065) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 23
+SupportingExamples: 83, 87, 106, 132, 165, 181, 209, 229, 299, 318, 319, 332, 368, 374, 432, 477, 515, 539, 544, 570, 616, 668, 681
+Strength: 0.033381712626995644
+Confidence: 1.0
+CoverageFactor: 0.0515695067264574
+Coverage: 23
+CoveredExamples: 83, 87, 106, 132, 165, 181, 209, 229, 299, 318, 319, 332, 368, 374, 432, 477, 515, 539, 544, 570, 616, 668, 681
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+120 : (slope7 >= -0.006184) & (cslope9 <= 0.013801) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 24
+SupportingExamples: 33, 44, 75, 81, 95, 128, 149, 150, 155, 204, 230, 258, 298, 367, 414, 455, 496, 518, 521, 524, 532, 558, 644, 657
+Strength: 0.03483309143686502
+Confidence: 1.0
+CoverageFactor: 0.05454545454545454
+Coverage: 24
+CoveredExamples: 33, 44, 75, 81, 95, 128, 149, 150, 155, 204, 230, 258, 298, 367, 414, 455, 496, 518, 521, 524, 532, 558, 644, 657
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07859690844233055
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5392984542211653
+s-ConfirmationMeasure: 0.7859690844233056
+
+121 : (slope7 >= -0.005402) & (slope8 >= -0.016687) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 28
+SupportingExamples: 16, 30, 46, 66, 119, 180, 182, 183, 221, 225, 248, 261, 272, 300, 353, 367, 408, 411, 413, 465, 521, 531, 609, 620, 626, 654, 655, 684
+Strength: 0.040638606676342524
+Confidence: 1.0
+CoverageFactor: 0.06181015452538632
+Coverage: 28
+CoveredExamples: 16, 30, 46, 66, 119, 180, 182, 183, 221, 225, 248, 261, 272, 300, 353, 367, 408, 411, 413, 465, 521, 531, 609, 620, 626, 654, 655, 684
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+122 : (slope7 >= -0.00411) & (slope8 >= -0.026948) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 29
+SupportingExamples: 2, 16, 96, 137, 162, 187, 210, 231, 243, 283, 299, 337, 358, 411, 417, 432, 441, 453, 463, 482, 498, 526, 539, 563, 576, 602, 626, 631, 648
+Strength: 0.0420899854862119
+Confidence: 1.0
+CoverageFactor: 0.06415929203539823
+Coverage: 29
+CoveredExamples: 2, 16, 96, 137, 162, 187, 210, 231, 243, 283, 299, 337, 358, 411, 417, 432, 441, 453, 463, 482, 498, 526, 539, 563, 576, 602, 626, 631, 648
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+123 : (slope6 >= -0.051227) & (cintercept10 <= -1.047397) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 40
+SupportingExamples: 13, 41, 43, 82, 100, 124, 145, 161, 165, 168, 170, 178, 188, 190, 259, 263, 265, 268, 272, 314, 335, 342, 343, 354, 358, 361, 377, 379, 384, 386, 440, 477, 487, 502, 553, 555, 565, 610, 649, 678
+Strength: 0.05805515239477504
+Confidence: 1.0
+CoverageFactor: 0.08528784648187633
+Coverage: 40
+CoveredExamples: 13, 41, 43, 82, 100, 124, 145, 161, 165, 168, 170, 178, 188, 190, 259, 263, 265, 268, 272, 314, 335, 342, 343, 354, 358, 361, 377, 379, 384, 386, 440, 477, 487, 502, 553, 555, 565, 610, 649, 678
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+124 : (slope6 >= -0.04703) & (cintercept10 <= -1.036005) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 28
+SupportingExamples: 20, 59, 63, 67, 80, 108, 109, 141, 157, 166, 169, 183, 219, 234, 242, 263, 275, 315, 415, 466, 483, 492, 498, 523, 554, 571, 575, 594
+Strength: 0.040638606676342524
+Confidence: 1.0
+CoverageFactor: 0.06363636363636363
+Coverage: 28
+CoveredExamples: 20, 59, 63, 67, 80, 108, 109, 141, 157, 166, 169, 183, 219, 234, 242, 263, 275, 315, 415, 466, 483, 492, 498, 523, 554, 571, 575, 594
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08265160523186682
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413258026159334
+s-ConfirmationMeasure: 0.7871581450653984
+
+125 : (slope6 >= -0.042114) & (slope10 >= 0.231222) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 32
+SupportingExamples: 17, 29, 38, 40, 125, 169, 202, 206, 228, 237, 246, 256, 276, 282, 331, 338, 363, 423, 436, 445, 452, 455, 458, 476, 490, 532, 541, 577, 587, 620, 652, 664
+Strength: 0.04644412191582003
+Confidence: 1.0
+CoverageFactor: 0.07048458149779736
+Coverage: 32
+CoveredExamples: 17, 29, 38, 40, 125, 169, 202, 206, 228, 237, 246, 256, 276, 282, 331, 338, 363, 423, 436, 445, 452, 455, 458, 476, 490, 532, 541, 577, 587, 620, 652, 664
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09886499402628435
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5494324970131421
+s-ConfirmationMeasure: 0.7909199522102748
+
+126 : (slope6 >= -0.040404) & (slope10 >= 0.232033) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 49
+SupportingExamples: 23, 25, 26, 49, 64, 86, 105, 118, 174, 186, 195, 234, 256, 265, 294, 300, 313, 317, 339, 340, 349, 368, 375, 377, 403, 407, 414, 424, 435, 443, 445, 456, 458, 471, 496, 500, 549, 552, 556, 566, 577, 580, 587, 617, 622, 647, 665, 668, 689
+Strength: 0.07111756168359942
+Confidence: 1.0
+CoverageFactor: 0.11666666666666667
+Coverage: 49
+CoveredExamples: 23, 25, 26, 49, 64, 86, 105, 118, 174, 186, 195, 234, 256, 265, 294, 300, 313, 317, 339, 340, 349, 368, 375, 377, 403, 407, 414, 424, 435, 443, 445, 456, 458, 471, 496, 500, 549, 552, 556, 566, 577, 580, 587, 617, 622, 647, 665, 668, 689
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08669047619047619
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543345238095238
+s-ConfirmationMeasure: 0.7880952380952381
+
+127 : (slope6 >= -0.040404) & (slope10 >= 0.231743) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 34
+SupportingExamples: 42, 52, 54, 63, 79, 86, 112, 116, 117, 119, 162, 229, 231, 241, 251, 266, 274, 297, 305, 338, 342, 365, 366, 435, 446, 473, 493, 500, 522, 523, 532, 541, 565, 571
+Strength: 0.04934687953555878
+Confidence: 1.0
+CoverageFactor: 0.07657657657657657
+Coverage: 34
+CoveredExamples: 42, 52, 54, 63, 79, 86, 112, 116, 117, 119, 162, 229, 231, 241, 251, 266, 274, 297, 305, 338, 342, 365, 366, 435, 446, 473, 493, 500, 522, 523, 532, 541, 565, 571
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09073897497020263
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5453694874851013
+s-ConfirmationMeasure: 0.7890345649582837
+
+128 : (slope6 >= -0.036135) & (slope10 >= 0.230812) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 37
+SupportingExamples: 17, 26, 34, 52, 63, 64, 69, 79, 96, 97, 110, 133, 138, 167, 254, 312, 316, 349, 354, 372, 376, 387, 388, 393, 413, 414, 433, 449, 531, 574, 583, 615, 617, 634, 638, 676, 689
+Strength: 0.05370101596516691
+Confidence: 1.0
+CoverageFactor: 0.08390022675736962
+Coverage: 37
+CoveredExamples: 17, 26, 34, 52, 63, 64, 69, 79, 96, 97, 110, 133, 138, 167, 254, 312, 316, 349, 354, 372, 376, 387, 388, 393, 413, 414, 433, 449, 531, 574, 583, 615, 617, 634, 638, 676, 689
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.10699640287769784
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5534982014388489
+s-ConfirmationMeasure: 0.7925659472422062
+
+129 : (slope6 >= -0.034554) & (slope10 >= 0.230173) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 24
+SupportingExamples: 24, 50, 92, 113, 127, 226, 231, 290, 350, 353, 359, 409, 437, 484, 501, 539, 548, 551, 573, 592, 606, 610, 658, 670
+Strength: 0.03483309143686502
+Confidence: 1.0
+CoverageFactor: 0.052980132450331126
+Coverage: 24
+CoveredExamples: 24, 50, 92, 113, 127, 226, 231, 290, 350, 353, 359, 409, 437, 484, 501, 539, 548, 551, 573, 592, 606, 610, 658, 670
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0866626936829559
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543331346841478
+s-ConfirmationMeasure: 0.7878426698450537
+
+130 : (slope6 >= -0.032933) & (slope10 >= 0.229431) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 48
+SupportingExamples: 7, 17, 36, 70, 74, 75, 111, 123, 127, 160, 163, 171, 175, 186, 197, 208, 212, 219, 223, 226, 258, 282, 297, 305, 312, 315, 343, 350, 373, 421, 435, 446, 447, 452, 475, 480, 494, 502, 515, 540, 576, 580, 591, 604, 632, 649, 652, 675
+Strength: 0.06966618287373004
+Confidence: 1.0
+CoverageFactor: 0.10643015521064302
+Coverage: 48
+CoveredExamples: 7, 17, 36, 70, 74, 75, 111, 123, 127, 160, 163, 171, 175, 186, 197, 208, 212, 219, 223, 226, 258, 282, 297, 305, 312, 315, 343, 350, 373, 421, 435, 446, 447, 452, 475, 480, 494, 502, 515, 540, 576, 580, 591, 604, 632, 649, 652, 675
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+131 : (slope6 >= -0.031301) & (slope10 >= 0.228596) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 34
+SupportingExamples: 15, 66, 79, 115, 139, 161, 171, 182, 189, 218, 225, 229, 247, 253, 326, 329, 356, 365, 384, 392, 397, 398, 400, 410, 444, 451, 498, 532, 541, 573, 611, 630, 638, 641
+Strength: 0.04934687953555878
+Confidence: 1.0
+CoverageFactor: 0.07311827956989247
+Coverage: 34
+CoveredExamples: 15, 66, 79, 115, 139, 161, 171, 182, 189, 218, 225, 229, 247, 253, 326, 329, 356, 365, 384, 392, 397, 398, 400, 410, 444, 451, 498, 532, 541, 573, 611, 630, 638, 641
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.082625
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413125
+s-ConfirmationMeasure: 0.7869047619047619
+
+132 : (slope6 >= -0.030335) & (slope10 >= 0.229358) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 32
+SupportingExamples: 15, 17, 33, 49, 77, 86, 107, 116, 135, 171, 184, 190, 199, 211, 213, 225, 247, 263, 275, 298, 299, 330, 375, 399, 458, 502, 518, 522, 566, 578, 600, 686
+Strength: 0.04644412191582003
+Confidence: 1.0
+CoverageFactor: 0.07390300230946882
+Coverage: 32
+CoveredExamples: 15, 17, 33, 49, 77, 86, 107, 116, 135, 171, 184, 190, 199, 211, 213, 225, 247, 263, 275, 298, 299, 330, 375, 399, 458, 502, 518, 522, 566, 578, 600, 686
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08265160523186682
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413258026159334
+s-ConfirmationMeasure: 0.7871581450653984
+
+133 : (slope6 >= -0.028915) & (slope10 >= 0.228816) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 30
+SupportingExamples: 15, 17, 33, 49, 66, 77, 86, 116, 135, 171, 184, 199, 211, 213, 225, 247, 263, 275, 299, 375, 399, 458, 478, 502, 518, 522, 578, 600, 682, 686
+Strength: 0.04354136429608128
+Confidence: 1.0
+CoverageFactor: 0.06928406466512702
+Coverage: 30
+CoveredExamples: 15, 17, 33, 49, 66, 77, 86, 116, 135, 171, 184, 199, 211, 213, 225, 247, 263, 275, 299, 375, 399, 458, 478, 502, 518, 522, 578, 600, 682, 686
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08669047619047619
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543345238095238
+s-ConfirmationMeasure: 0.7880952380952381
+
+134 : (slope6 >= -0.025865) & (slope10 >= 0.227738) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 31
+SupportingExamples: 52, 55, 60, 98, 128, 132, 137, 168, 178, 190, 197, 229, 230, 239, 252, 254, 262, 273, 304, 354, 382, 385, 485, 492, 527, 543, 545, 568, 569, 579, 645
+Strength: 0.04499274310595065
+Confidence: 1.0
+CoverageFactor: 0.07045454545454545
+Coverage: 31
+CoveredExamples: 52, 55, 60, 98, 128, 132, 137, 168, 178, 190, 197, 229, 230, 239, 252, 254, 262, 273, 304, 354, 382, 385, 485, 492, 527, 543, 545, 568, 569, 579, 645
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09476702508960573
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5473835125448029
+s-ConfirmationMeasure: 0.7897252090800478
+
+135 : (slope6 >= -0.024545) & (slope10 >= 0.230113) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 25
+SupportingExamples: 9, 19, 20, 28, 41, 44, 62, 64, 92, 141, 168, 173, 204, 412, 425, 427, 506, 541, 542, 566, 606, 612, 670, 678, 687
+Strength: 0.036284470246734396
+Confidence: 1.0
+CoverageFactor: 0.056818181818181816
+Coverage: 25
+CoveredExamples: 9, 19, 20, 28, 41, 44, 62, 64, 92, 141, 168, 173, 204, 412, 425, 427, 506, 541, 542, 566, 606, 612, 670, 678, 687
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+136 : (slope6 >= -0.024545) & (slope10 >= 0.229824) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 28
+SupportingExamples: 17, 37, 40, 88, 89, 212, 217, 222, 266, 297, 374, 390, 443, 448, 470, 473, 481, 495, 501, 521, 559, 571, 587, 589, 651, 659, 664, 674
+Strength: 0.040638606676342524
+Confidence: 1.0
+CoverageFactor: 0.06222222222222222
+Coverage: 28
+CoveredExamples: 17, 37, 40, 88, 89, 212, 217, 222, 266, 297, 374, 390, 443, 448, 470, 473, 481, 495, 501, 521, 559, 571, 587, 589, 651, 659, 664, 674
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09883373205741627
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5494168660287081
+s-ConfirmationMeasure: 0.7906698564593302
+
+137 : (slope6 >= -0.021696) & (slope7 >= -0.0033) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 24
+SupportingExamples: 4, 7, 26, 30, 71, 153, 154, 158, 167, 206, 247, 257, 330, 355, 360, 362, 384, 445, 568, 594, 615, 656, 679, 688
+Strength: 0.03483309143686502
+Confidence: 1.0
+CoverageFactor: 0.05161290322580645
+Coverage: 24
+CoveredExamples: 4, 7, 26, 30, 71, 153, 154, 158, 167, 206, 247, 257, 330, 355, 360, 362, 384, 445, 568, 594, 615, 656, 679, 688
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+138 : (slope6 >= -0.021632) & (slope7 >= -0.0033) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 32
+SupportingExamples: 65, 72, 86, 110, 125, 138, 178, 195, 201, 205, 218, 243, 253, 297, 310, 325, 327, 384, 392, 397, 432, 434, 457, 461, 463, 513, 514, 519, 527, 551, 571, 640
+Strength: 0.04644412191582003
+Confidence: 1.0
+CoverageFactor: 0.07158836689038031
+Coverage: 32
+CoveredExamples: 65, 72, 86, 110, 125, 138, 178, 195, 201, 205, 218, 243, 253, 297, 310, 325, 327, 384, 392, 397, 432, 434, 457, 461, 463, 513, 514, 519, 527, 551, 571, 640
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+139 : (slope6 >= -0.021336) & (slope7 >= -0.0033) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 30
+SupportingExamples: 3, 15, 95, 120, 128, 133, 147, 160, 165, 201, 224, 252, 254, 272, 297, 332, 341, 345, 361, 396, 456, 475, 477, 518, 545, 555, 579, 587, 600, 633
+Strength: 0.04354136429608128
+Confidence: 1.0
+CoverageFactor: 0.06726457399103139
+Coverage: 30
+CoveredExamples: 3, 15, 95, 120, 128, 133, 147, 160, 165, 201, 224, 252, 254, 272, 297, 332, 341, 345, 361, 396, 456, 475, 477, 518, 545, 555, 579, 587, 600, 633
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+140 : (slope6 >= -0.02115) & (slope7 >= -0.0033) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 28
+SupportingExamples: 20, 35, 40, 56, 76, 90, 93, 101, 115, 137, 167, 237, 288, 291, 345, 350, 360, 373, 380, 382, 396, 412, 439, 461, 545, 575, 594, 605
+Strength: 0.040638606676342524
+Confidence: 1.0
+CoverageFactor: 0.06363636363636363
+Coverage: 28
+CoveredExamples: 20, 35, 40, 56, 76, 90, 93, 101, 115, 137, 167, 237, 288, 291, 345, 350, 360, 373, 380, 382, 396, 412, 439, 461, 545, 575, 594, 605
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+141 : (slope6 >= -0.02083) & (slope7 >= -0.005402) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 28
+SupportingExamples: 13, 20, 35, 40, 56, 76, 90, 93, 101, 115, 137, 167, 237, 288, 291, 345, 350, 360, 373, 380, 396, 412, 439, 461, 545, 575, 594, 605
+Strength: 0.040638606676342524
+Confidence: 1.0
+CoverageFactor: 0.06363636363636363
+Coverage: 28
+CoveredExamples: 13, 20, 35, 40, 56, 76, 90, 93, 101, 115, 137, 167, 237, 288, 291, 345, 350, 360, 373, 380, 396, 412, 439, 461, 545, 575, 594, 605
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+142 : (slope6 >= -0.019578) & (slope8 >= -6.75E-4) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 15
+SupportingExamples: 47, 142, 240, 246, 263, 317, 372, 373, 382, 484, 490, 513, 541, 620, 643
+Strength: 0.02177068214804064
+Confidence: 1.0
+CoverageFactor: 0.033783783783783786
+Coverage: 15
+CoveredExamples: 47, 142, 240, 246, 263, 317, 372, 373, 382, 484, 490, 513, 541, 620, 643
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07862232779097388
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.539311163895487
+s-ConfirmationMeasure: 0.7862232779097387
+
+143 : (slope6 >= -0.019578) & (slope10 >= 0.224721) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 26
+SupportingExamples: 15, 25, 52, 65, 104, 198, 232, 246, 252, 341, 369, 381, 419, 487, 494, 516, 563, 566, 580, 606, 612, 624, 651, 669, 675, 677
+Strength: 0.03773584905660377
+Confidence: 1.0
+CoverageFactor: 0.06074766355140187
+Coverage: 26
+CoveredExamples: 15, 25, 52, 65, 104, 198, 232, 246, 252, 341, 369, 381, 419, 487, 494, 516, 563, 566, 580, 606, 612, 624, 651, 669, 675, 677
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07862232779097388
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.539311163895487
+s-ConfirmationMeasure: 0.7862232779097387
+
+144 : (slope6 >= -0.019198) & (slope10 >= 0.226585) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 29
+SupportingExamples: 10, 21, 37, 47, 58, 68, 78, 86, 89, 103, 197, 204, 213, 249, 296, 300, 309, 337, 376, 380, 421, 437, 481, 492, 501, 613, 633, 654, 664
+Strength: 0.0420899854862119
+Confidence: 1.0
+CoverageFactor: 0.06728538283062645
+Coverage: 29
+CoveredExamples: 10, 21, 37, 47, 58, 68, 78, 86, 89, 103, 197, 204, 213, 249, 296, 300, 309, 337, 376, 380, 421, 437, 481, 492, 501, 613, 633, 654, 664
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0866626936829559
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543331346841478
+s-ConfirmationMeasure: 0.7878426698450537
+
+145 : (slope6 >= -0.019108) & (slope7 >= -0.001257) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 21
+SupportingExamples: 106, 111, 175, 211, 224, 258, 295, 308, 310, 353, 376, 427, 452, 455, 465, 484, 560, 589, 597, 634, 640
+Strength: 0.030478955007256895
+Confidence: 1.0
+CoverageFactor: 0.048723897911832945
+Coverage: 21
+CoveredExamples: 106, 111, 175, 211, 224, 258, 295, 308, 310, 353, 376, 427, 452, 455, 465, 484, 560, 589, 597, 634, 640
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+146 : (slope6 >= -0.01867) & (slope10 >= 0.225622) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 28
+SupportingExamples: 83, 120, 126, 134, 161, 180, 194, 206, 209, 264, 302, 352, 369, 393, 408, 558, 579, 583, 584, 593, 611, 647, 652, 666, 674, 678, 679, 685
+Strength: 0.040638606676342524
+Confidence: 1.0
+CoverageFactor: 0.06407322654462243
+Coverage: 28
+CoveredExamples: 83, 120, 126, 134, 161, 180, 194, 206, 209, 264, 302, 352, 369, 393, 408, 558, 579, 583, 584, 593, 611, 647, 652, 666, 674, 678, 679, 685
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0866626936829559
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543331346841478
+s-ConfirmationMeasure: 0.7878426698450537
+
+147 : (slope6 >= -0.018242) & (slope8 >= -4.83E-4) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 22
+SupportingExamples: 4, 66, 78, 92, 103, 145, 201, 227, 272, 289, 312, 324, 365, 436, 439, 442, 486, 514, 612, 629, 644, 647
+Strength: 0.03193033381712627
+Confidence: 1.0
+CoverageFactor: 0.04899777282850779
+Coverage: 22
+CoveredExamples: 4, 66, 78, 92, 103, 145, 201, 227, 272, 289, 312, 324, 365, 436, 439, 442, 486, 514, 612, 629, 644, 647
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+148 : (slope6 >= -0.018242) & (slope10 >= 0.225622) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 22
+SupportingExamples: 10, 38, 67, 69, 94, 108, 116, 118, 195, 253, 337, 371, 454, 468, 508, 551, 594, 603, 628, 640, 644, 689
+Strength: 0.03193033381712627
+Confidence: 1.0
+CoverageFactor: 0.04899777282850779
+Coverage: 22
+CoveredExamples: 10, 38, 67, 69, 94, 108, 116, 118, 195, 253, 337, 371, 454, 468, 508, 551, 594, 603, 628, 640, 644, 689
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+149 : (slope6 >= -0.018176) & (slope8 >= -0.0012) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 25
+SupportingExamples: 17, 94, 145, 150, 153, 186, 206, 261, 330, 332, 349, 383, 422, 466, 470, 472, 478, 513, 551, 584, 588, 617, 626, 653, 655
+Strength: 0.036284470246734396
+Confidence: 1.0
+CoverageFactor: 0.057208237986270026
+Coverage: 25
+CoveredExamples: 17, 94, 145, 150, 153, 186, 206, 261, 330, 332, 349, 383, 422, 466, 470, 472, 478, 513, 551, 584, 588, 617, 626, 653, 655
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07862232779097388
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.539311163895487
+s-ConfirmationMeasure: 0.7862232779097387
+
+150 : (slope6 >= -0.018176) & (slope10 >= 0.223888) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 29
+SupportingExamples: 65, 93, 123, 191, 192, 196, 206, 231, 237, 285, 313, 350, 399, 476, 479, 486, 487, 490, 503, 504, 522, 533, 541, 576, 640, 646, 669, 679, 687
+Strength: 0.0420899854862119
+Confidence: 1.0
+CoverageFactor: 0.06502242152466367
+Coverage: 29
+CoveredExamples: 65, 93, 123, 191, 192, 196, 206, 231, 237, 285, 313, 350, 399, 476, 479, 486, 487, 490, 503, 504, 522, 533, 541, 576, 640, 646, 669, 679, 687
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07859690844233055
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5392984542211653
+s-ConfirmationMeasure: 0.7859690844233056
+
+151 : (slope6 >= -0.018176) & (cintercept10 <= -0.806456) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 22
+SupportingExamples: 15, 17, 33, 49, 69, 86, 116, 135, 171, 199, 211, 213, 247, 263, 275, 299, 458, 518, 522, 578, 600, 686
+Strength: 0.03193033381712627
+Confidence: 1.0
+CoverageFactor: 0.050808314087759814
+Coverage: 22
+CoveredExamples: 15, 17, 33, 49, 69, 86, 116, 135, 171, 199, 211, 213, 247, 263, 275, 299, 458, 518, 522, 578, 600, 686
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+152 : (slope6 >= -0.018036) & (cintercept10 <= -0.787401) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 33
+SupportingExamples: 47, 72, 88, 90, 102, 156, 223, 231, 234, 250, 264, 272, 353, 356, 359, 369, 402, 411, 412, 418, 437, 456, 459, 466, 467, 472, 482, 530, 572, 578, 588, 608, 627
+Strength: 0.047895500725689405
+Confidence: 1.0
+CoverageFactor: 0.0744920993227991
+Coverage: 33
+CoveredExamples: 47, 72, 88, 90, 102, 156, 223, 231, 234, 250, 264, 272, 353, 356, 359, 369, 402, 411, 412, 418, 437, 456, 459, 466, 467, 472, 482, 530, 572, 578, 588, 608, 627
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0866626936829559
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543331346841478
+s-ConfirmationMeasure: 0.7878426698450537
+
+153 : (slope6 >= -0.017507) & (slope8 >= -5.57E-4) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 18
+SupportingExamples: 64, 69, 149, 192, 209, 295, 310, 363, 426, 444, 456, 498, 509, 527, 566, 610, 612, 660
+Strength: 0.026124818577648767
+Confidence: 1.0
+CoverageFactor: 0.040268456375838924
+Coverage: 18
+CoveredExamples: 64, 69, 149, 192, 209, 295, 310, 363, 426, 444, 456, 498, 509, 527, 566, 610, 612, 660
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07059241706161137
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5352962085308057
+s-ConfirmationMeasure: 0.7843601895734598
+
+154 : (slope6 >= -0.017507) & (slope8 >= -0.00144) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 28
+SupportingExamples: 11, 26, 92, 115, 152, 202, 213, 221, 326, 338, 356, 360, 365, 374, 398, 412, 428, 466, 470, 520, 550, 586, 605, 611, 615, 652, 667, 675
+Strength: 0.040638606676342524
+Confidence: 1.0
+CoverageFactor: 0.06181015452538632
+Coverage: 28
+CoveredExamples: 11, 26, 92, 115, 152, 202, 213, 221, 326, 338, 356, 360, 365, 374, 398, 412, 428, 466, 470, 520, 550, 586, 605, 611, 615, 652, 667, 675
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.082625
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413125
+s-ConfirmationMeasure: 0.7869047619047619
+
+155 : (slope6 >= -0.017507) & (slope10 >= 0.22464) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 21
+SupportingExamples: 64, 70, 80, 82, 140, 274, 344, 356, 390, 414, 472, 513, 531, 549, 581, 603, 609, 622, 634, 669, 672
+Strength: 0.030478955007256895
+Confidence: 1.0
+CoverageFactor: 0.04849884526558892
+Coverage: 21
+CoveredExamples: 64, 70, 80, 82, 140, 274, 344, 356, 390, 414, 472, 513, 531, 549, 581, 603, 609, 622, 634, 669, 672
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+156 : (slope6 >= -0.017126) & (slope7 >= -0.020002) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 30
+SupportingExamples: 4, 26, 30, 71, 109, 153, 154, 158, 206, 247, 257, 269, 301, 316, 320, 330, 360, 362, 383, 384, 445, 526, 568, 588, 594, 615, 645, 656, 679, 688
+Strength: 0.04354136429608128
+Confidence: 1.0
+CoverageFactor: 0.06451612903225806
+Coverage: 30
+CoveredExamples: 4, 26, 30, 71, 109, 153, 154, 158, 206, 247, 257, 269, 301, 316, 320, 330, 360, 362, 383, 384, 445, 526, 568, 588, 594, 615, 645, 656, 679, 688
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08265160523186682
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413258026159334
+s-ConfirmationMeasure: 0.7871581450653984
+
+157 : (slope6 >= -0.016975) & (slope8 >= -8.87E-4) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 27
+SupportingExamples: 44, 49, 65, 82, 92, 95, 117, 134, 151, 235, 273, 288, 294, 308, 372, 383, 396, 446, 450, 503, 563, 593, 638, 645, 655, 661, 683
+Strength: 0.03918722786647315
+Confidence: 1.0
+CoverageFactor: 0.06279069767441861
+Coverage: 27
+CoveredExamples: 44, 49, 65, 82, 92, 95, 117, 134, 151, 235, 273, 288, 294, 308, 372, 383, 396, 446, 450, 503, 563, 593, 638, 645, 655, 661, 683
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+158 : (slope6 >= -0.016975) & (slope8 >= -0.001811) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 26
+SupportingExamples: 21, 33, 36, 103, 128, 141, 158, 160, 251, 294, 353, 358, 395, 408, 432, 456, 459, 467, 501, 523, 558, 560, 564, 660, 673, 677
+Strength: 0.03773584905660377
+Confidence: 1.0
+CoverageFactor: 0.058823529411764705
+Coverage: 26
+CoveredExamples: 21, 33, 36, 103, 128, 141, 158, 160, 251, 294, 353, 358, 395, 408, 432, 456, 459, 467, 501, 523, 558, 560, 564, 660, 673, 677
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+159 : (slope6 >= -0.016975) & (slope8 >= -0.00144) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 30
+SupportingExamples: 10, 18, 47, 51, 63, 79, 180, 182, 189, 199, 225, 282, 309, 313, 335, 348, 364, 383, 387, 390, 402, 416, 507, 510, 518, 539, 543, 580, 602, 654
+Strength: 0.04354136429608128
+Confidence: 1.0
+CoverageFactor: 0.06993006993006994
+Coverage: 30
+CoveredExamples: 10, 18, 47, 51, 63, 79, 180, 182, 189, 199, 225, 282, 309, 313, 335, 348, 364, 383, 387, 390, 402, 416, 507, 510, 518, 539, 543, 580, 602, 654
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+160 : (slope6 >= -0.016975) & (slope10 >= 0.223635) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 28
+SupportingExamples: 83, 120, 126, 134, 161, 180, 194, 206, 209, 264, 302, 352, 369, 393, 408, 558, 562, 579, 583, 584, 593, 611, 647, 666, 674, 678, 679, 685
+Strength: 0.040638606676342524
+Confidence: 1.0
+CoverageFactor: 0.06407322654462243
+Coverage: 28
+CoveredExamples: 83, 120, 126, 134, 161, 180, 194, 206, 209, 264, 302, 352, 369, 393, 408, 558, 562, 579, 583, 584, 593, 611, 647, 666, 674, 678, 679, 685
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.082625
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413125
+s-ConfirmationMeasure: 0.7869047619047619
+
+161 : (slope6 >= -0.016975) & (slope10 >= 0.222602) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 29
+SupportingExamples: 20, 45, 78, 108, 206, 216, 235, 236, 243, 249, 265, 302, 304, 337, 353, 419, 423, 436, 446, 461, 473, 491, 499, 520, 556, 560, 622, 627, 628
+Strength: 0.0420899854862119
+Confidence: 1.0
+CoverageFactor: 0.06712962962962964
+Coverage: 29
+CoveredExamples: 20, 45, 78, 108, 206, 216, 235, 236, 243, 249, 265, 302, 304, 337, 353, 419, 423, 436, 446, 461, 473, 491, 499, 520, 556, 560, 622, 627, 628
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09883373205741627
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5494168660287081
+s-ConfirmationMeasure: 0.7906698564593302
+
+162 : (slope6 >= -0.016921) & (slope8 >= -0.002109) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 27
+SupportingExamples: 4, 46, 64, 86, 89, 114, 130, 172, 277, 289, 322, 343, 369, 443, 455, 474, 475, 482, 518, 532, 593, 616, 640, 643, 656, 664, 686
+Strength: 0.03918722786647315
+Confidence: 1.0
+CoverageFactor: 0.05921052631578947
+Coverage: 27
+CoveredExamples: 4, 46, 64, 86, 89, 114, 130, 172, 277, 289, 322, 343, 369, 443, 455, 474, 475, 482, 518, 532, 593, 616, 640, 643, 656, 664, 686
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0866626936829559
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543331346841478
+s-ConfirmationMeasure: 0.7878426698450537
+
+163 : (slope6 >= -0.016921) & (slope8 >= -0.001811) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 27
+SupportingExamples: 19, 106, 111, 122, 175, 211, 258, 295, 299, 308, 310, 353, 372, 376, 390, 427, 447, 452, 455, 465, 484, 560, 589, 597, 634, 640, 643
+Strength: 0.03918722786647315
+Confidence: 1.0
+CoverageFactor: 0.06264501160092807
+Coverage: 27
+CoveredExamples: 19, 106, 111, 122, 175, 211, 258, 295, 299, 308, 310, 353, 372, 376, 390, 427, 447, 452, 455, 465, 484, 560, 589, 597, 634, 640, 643
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+164 : (slope6 >= -0.016921) & (slope10 >= 0.223042) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 28
+SupportingExamples: 20, 35, 40, 68, 90, 93, 101, 115, 137, 144, 237, 288, 291, 345, 350, 360, 362, 373, 396, 412, 414, 439, 461, 545, 575, 594, 605, 641
+Strength: 0.040638606676342524
+Confidence: 1.0
+CoverageFactor: 0.06363636363636363
+Coverage: 28
+CoveredExamples: 20, 35, 40, 68, 90, 93, 101, 115, 137, 144, 237, 288, 291, 345, 350, 360, 362, 373, 396, 412, 414, 439, 461, 545, 575, 594, 605, 641
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+165 : (slope6 >= -0.016921) & (cintercept10 <= -0.787401) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 29
+SupportingExamples: 4, 40, 44, 53, 56, 112, 166, 184, 221, 225, 276, 293, 308, 316, 317, 375, 386, 439, 452, 480, 484, 487, 540, 583, 610, 618, 619, 631, 672
+Strength: 0.0420899854862119
+Confidence: 1.0
+CoverageFactor: 0.0737913486005089
+Coverage: 29
+CoveredExamples: 4, 40, 44, 53, 56, 112, 166, 184, 221, 225, 276, 293, 308, 316, 317, 375, 386, 439, 452, 480, 484, 487, 540, 583, 610, 618, 619, 631, 672
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07059241706161137
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5352962085308057
+s-ConfirmationMeasure: 0.7843601895734598
+
+166 : (slope6 >= -0.016621) & (slope8 >= -0.00144) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 28
+SupportingExamples: 2, 3, 25, 101, 111, 112, 128, 140, 141, 168, 197, 234, 266, 275, 332, 346, 347, 356, 424, 442, 465, 488, 515, 566, 608, 637, 673, 683
+Strength: 0.040638606676342524
+Confidence: 1.0
+CoverageFactor: 0.06526806526806526
+Coverage: 28
+CoveredExamples: 2, 3, 25, 101, 111, 112, 128, 140, 141, 168, 197, 234, 266, 275, 332, 346, 347, 356, 424, 442, 465, 488, 515, 566, 608, 637, 673, 683
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07059241706161137
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5352962085308057
+s-ConfirmationMeasure: 0.7843601895734598
+
+167 : (slope6 >= -0.016415) & (slope8 >= -0.002182) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 21
+SupportingExamples: 60, 87, 108, 148, 224, 309, 366, 392, 401, 432, 456, 490, 510, 525, 529, 549, 557, 584, 588, 622, 677
+Strength: 0.030478955007256895
+Confidence: 1.0
+CoverageFactor: 0.04838709677419355
+Coverage: 21
+CoveredExamples: 60, 87, 108, 148, 224, 309, 366, 392, 401, 432, 456, 490, 510, 525, 529, 549, 557, 584, 588, 622, 677
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+168 : (slope6 >= -0.015023) & (slope10 >= 0.22134) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 29
+SupportingExamples: 18, 57, 69, 73, 81, 154, 168, 174, 188, 191, 200, 212, 229, 230, 238, 351, 352, 354, 371, 396, 467, 481, 502, 514, 517, 526, 536, 556, 587
+Strength: 0.0420899854862119
+Confidence: 1.0
+CoverageFactor: 0.06697459584295612
+Coverage: 29
+CoveredExamples: 18, 57, 69, 73, 81, 154, 168, 174, 188, 191, 200, 212, 229, 230, 238, 351, 352, 354, 371, 396, 467, 481, 502, 514, 517, 526, 536, 556, 587
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+169 : (slope6 >= -0.01447) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 42
+SupportingExamples: 23, 36, 47, 90, 130, 137, 163, 182, 187, 191, 221, 226, 249, 258, 268, 271, 275, 287, 327, 358, 373, 395, 404, 423, 441, 442, 458, 461, 473, 480, 486, 503, 508, 529, 576, 585, 594, 601, 602, 662, 663, 664
+Strength: 0.06095791001451379
+Confidence: 1.0
+CoverageFactor: 0.08993576017130621
+Coverage: 42
+CoveredExamples: 23, 36, 47, 90, 130, 137, 163, 182, 187, 191, 221, 226, 249, 258, 268, 271, 275, 287, 327, 358, 373, 395, 404, 423, 441, 442, 458, 461, 473, 480, 486, 503, 508, 529, 576, 585, 594, 601, 602, 662, 663, 664
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.082625
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413125
+s-ConfirmationMeasure: 0.7869047619047619
+
+170 : (slope6 >= -0.014276) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 29
+SupportingExamples: 39, 58, 83, 87, 106, 110, 132, 181, 209, 229, 299, 318, 319, 332, 368, 371, 374, 432, 503, 515, 539, 544, 563, 565, 570, 616, 656, 668, 681
+Strength: 0.0420899854862119
+Confidence: 1.0
+CoverageFactor: 0.06502242152466367
+Coverage: 29
+CoveredExamples: 39, 58, 83, 87, 106, 110, 132, 181, 209, 229, 299, 318, 319, 332, 368, 371, 374, 432, 503, 515, 539, 544, 563, 565, 570, 616, 656, 668, 681
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0866626936829559
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543331346841478
+s-ConfirmationMeasure: 0.7878426698450537
+
+171 : (slope6 >= -0.014231) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 33
+SupportingExamples: 16, 30, 46, 63, 66, 89, 119, 180, 182, 183, 225, 248, 261, 272, 280, 300, 353, 367, 408, 411, 413, 453, 461, 465, 521, 531, 609, 620, 626, 654, 655, 677, 684
+Strength: 0.047895500725689405
+Confidence: 1.0
+CoverageFactor: 0.0728476821192053
+Coverage: 33
+CoveredExamples: 16, 30, 46, 63, 66, 89, 119, 180, 182, 183, 225, 248, 261, 272, 280, 300, 353, 367, 408, 411, 413, 453, 461, 465, 521, 531, 609, 620, 626, 654, 655, 677, 684
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0866626936829559
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543331346841478
+s-ConfirmationMeasure: 0.7878426698450537
+
+172 : (slope6 >= -0.014231) & (cintercept10 <= -0.710907) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 18
+SupportingExamples: 92, 94, 99, 150, 163, 204, 281, 327, 328, 404, 406, 413, 477, 515, 541, 581, 653, 657
+Strength: 0.026124818577648767
+Confidence: 1.0
+CoverageFactor: 0.04054054054054054
+Coverage: 18
+CoveredExamples: 92, 94, 99, 150, 163, 204, 281, 327, 328, 404, 406, 413, 477, 515, 541, 581, 653, 657
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+173 : (slope6 >= -0.01289) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 28
+SupportingExamples: 15, 42, 66, 79, 115, 171, 182, 189, 218, 247, 326, 329, 356, 384, 392, 397, 398, 400, 410, 451, 498, 532, 541, 573, 611, 638, 641, 680
+Strength: 0.040638606676342524
+Confidence: 1.0
+CoverageFactor: 0.060215053763440864
+Coverage: 28
+CoveredExamples: 15, 42, 66, 79, 115, 171, 182, 189, 218, 247, 326, 329, 356, 384, 392, 397, 398, 400, 410, 451, 498, 532, 541, 573, 611, 638, 641, 680
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+174 : (slope6 >= -0.012822) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 25
+SupportingExamples: 57, 77, 98, 106, 119, 165, 173, 189, 203, 263, 284, 322, 334, 354, 448, 449, 503, 509, 539, 558, 633, 654, 670, 671, 687
+Strength: 0.036284470246734396
+Confidence: 1.0
+CoverageFactor: 0.05668934240362812
+Coverage: 25
+CoveredExamples: 57, 77, 98, 106, 119, 165, 173, 189, 203, 263, 284, 322, 334, 354, 448, 449, 503, 509, 539, 558, 633, 654, 670, 671, 687
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0866626936829559
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543331346841478
+s-ConfirmationMeasure: 0.7878426698450537
+
+175 : (slope4 >= -0.021191) & (slope10 >= 0.231413) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 22
+SupportingExamples: 125, 128, 175, 218, 220, 227, 234, 256, 325, 355, 386, 443, 449, 460, 473, 484, 492, 501, 504, 533, 583, 678
+Strength: 0.03193033381712627
+Confidence: 1.0
+CoverageFactor: 0.050808314087759814
+Coverage: 22
+CoveredExamples: 125, 128, 175, 218, 220, 227, 234, 256, 325, 355, 386, 443, 449, 460, 473, 484, 492, 501, 504, 533, 583, 678
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+176 : (slope4 >= -0.018336) & (cintercept10 <= -0.993081) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 27
+SupportingExamples: 43, 82, 88, 117, 153, 163, 171, 190, 276, 296, 323, 363, 374, 415, 425, 427, 440, 442, 475, 479, 483, 564, 575, 609, 660, 663, 670
+Strength: 0.03918722786647315
+Confidence: 1.0
+CoverageFactor: 0.057569296375266525
+Coverage: 27
+CoveredExamples: 43, 82, 88, 117, 153, 163, 171, 190, 276, 296, 323, 363, 374, 415, 425, 427, 440, 442, 475, 479, 483, 564, 575, 609, 660, 663, 670
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+177 : (slope4 >= -0.015503) & (slope10 >= 0.228807) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 18
+SupportingExamples: 218, 234, 256, 325, 355, 361, 443, 449, 470, 473, 484, 492, 501, 504, 533, 583, 662, 678
+Strength: 0.026124818577648767
+Confidence: 1.0
+CoverageFactor: 0.04157043879907621
+Coverage: 18
+CoveredExamples: 218, 234, 256, 325, 355, 361, 443, 449, 470, 473, 484, 492, 501, 504, 533, 583, 662, 678
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+178 : (slope4 >= -0.015503) & (cintercept10 <= -0.965711) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 23
+SupportingExamples: 10, 18, 19, 47, 79, 110, 180, 182, 184, 189, 225, 282, 309, 313, 335, 348, 364, 383, 402, 507, 543, 602, 608
+Strength: 0.033381712626995644
+Confidence: 1.0
+CoverageFactor: 0.053613053613053616
+Coverage: 23
+CoveredExamples: 10, 18, 19, 47, 79, 110, 180, 182, 184, 189, 225, 282, 309, 313, 335, 348, 364, 383, 402, 507, 543, 602, 608
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07859690844233055
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5392984542211653
+s-ConfirmationMeasure: 0.7859690844233056
+
+179 : (slope4 >= -0.015195) & (slope10 >= 0.226832) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 25
+SupportingExamples: 57, 73, 81, 85, 130, 168, 174, 180, 188, 191, 243, 351, 352, 354, 371, 396, 467, 481, 502, 517, 526, 536, 556, 587, 665
+Strength: 0.036284470246734396
+Confidence: 1.0
+CoverageFactor: 0.057736720554272515
+Coverage: 25
+CoveredExamples: 57, 73, 81, 85, 130, 168, 174, 180, 188, 191, 243, 351, 352, 354, 371, 396, 467, 481, 502, 517, 526, 536, 556, 587, 665
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07862232779097388
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.539311163895487
+s-ConfirmationMeasure: 0.7862232779097387
+
+180 : (slope4 >= -0.01345) & (slope10 >= 0.227932) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 22
+SupportingExamples: 108, 128, 196, 284, 349, 350, 354, 430, 433, 471, 487, 495, 566, 587, 594, 595, 624, 627, 646, 656, 660, 674
+Strength: 0.03193033381712627
+Confidence: 1.0
+CoverageFactor: 0.05200945626477541
+Coverage: 22
+CoveredExamples: 108, 128, 196, 284, 349, 350, 354, 430, 433, 471, 487, 495, 566, 587, 594, 595, 624, 627, 646, 656, 660, 674
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0866626936829559
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543331346841478
+s-ConfirmationMeasure: 0.7878426698450537
+
+181 : (slope4 >= -0.006893) & (slope10 >= 0.224843) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 19
+SupportingExamples: 8, 66, 73, 92, 114, 168, 192, 199, 223, 238, 312, 375, 426, 530, 531, 582, 620, 624, 640
+Strength: 0.027576197387518143
+Confidence: 1.0
+CoverageFactor: 0.04185022026431718
+Coverage: 19
+CoveredExamples: 8, 66, 73, 92, 114, 168, 192, 199, 223, 238, 312, 375, 426, 530, 531, 582, 620, 624, 640
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07859690844233055
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5392984542211653
+s-ConfirmationMeasure: 0.7859690844233056
+
+182 : (slope4 >= -0.004359) & (slope8 >= -0.004934) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 23
+SupportingExamples: 175, 187, 220, 224, 233, 252, 293, 303, 304, 322, 342, 349, 381, 382, 407, 413, 418, 451, 491, 570, 586, 611, 682
+Strength: 0.033381712626995644
+Confidence: 1.0
+CoverageFactor: 0.04935622317596566
+Coverage: 23
+CoveredExamples: 175, 187, 220, 224, 233, 252, 293, 303, 304, 322, 342, 349, 381, 382, 407, 413, 418, 451, 491, 570, 586, 611, 682
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.082625
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413125
+s-ConfirmationMeasure: 0.7869047619047619
+
+183 : (slope3 >= -0.025854) & (slope6 >= -0.01569) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 28
+SupportingExamples: 2, 3, 25, 71, 101, 111, 112, 128, 140, 141, 168, 197, 234, 266, 275, 332, 346, 347, 356, 424, 442, 465, 488, 515, 566, 608, 637, 673
+Strength: 0.040638606676342524
+Confidence: 1.0
+CoverageFactor: 0.06526806526806526
+Coverage: 28
+CoveredExamples: 2, 3, 25, 71, 101, 111, 112, 128, 140, 141, 168, 197, 234, 266, 275, 332, 346, 347, 356, 424, 442, 465, 488, 515, 566, 608, 637, 673
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07059241706161137
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5352962085308057
+s-ConfirmationMeasure: 0.7843601895734598
+
+184 : (slope3 >= -0.025479) & (slope6 >= -0.016975) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 31
+SupportingExamples: 4, 48, 52, 57, 74, 95, 99, 111, 130, 150, 151, 182, 184, 214, 220, 248, 253, 295, 296, 365, 421, 432, 475, 491, 511, 536, 566, 580, 619, 632, 640
+Strength: 0.04499274310595065
+Confidence: 1.0
+CoverageFactor: 0.07029478458049887
+Coverage: 31
+CoveredExamples: 4, 48, 52, 57, 74, 95, 99, 111, 130, 150, 151, 182, 184, 214, 220, 248, 253, 295, 296, 365, 421, 432, 475, 491, 511, 536, 566, 580, 619, 632, 640
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+185 : (slope3 >= -0.025427) & (slope6 >= -0.016921) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 32
+SupportingExamples: 7, 30, 68, 124, 133, 148, 186, 211, 224, 239, 308, 326, 349, 364, 386, 388, 478, 521, 525, 527, 529, 530, 541, 559, 574, 588, 590, 628, 630, 633, 675, 684
+Strength: 0.04644412191582003
+Confidence: 1.0
+CoverageFactor: 0.07511737089201878
+Coverage: 32
+CoveredExamples: 7, 30, 68, 124, 133, 148, 186, 211, 224, 239, 308, 326, 349, 364, 386, 388, 478, 521, 525, 527, 529, 530, 541, 559, 574, 588, 590, 628, 630, 633, 675, 684
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+186 : (slope3 >= -0.025427) & (slope6 >= -0.016621) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 28
+SupportingExamples: 5, 26, 37, 40, 67, 216, 218, 220, 228, 251, 264, 285, 323, 327, 332, 354, 388, 407, 457, 535, 552, 558, 625, 637, 646, 653, 659, 667
+Strength: 0.040638606676342524
+Confidence: 1.0
+CoverageFactor: 0.05970149253731343
+Coverage: 28
+CoveredExamples: 5, 26, 37, 40, 67, 216, 218, 220, 228, 251, 264, 285, 323, 327, 332, 354, 388, 407, 457, 535, 552, 558, 625, 637, 646, 653, 659, 667
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09071002386634845
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5453550119331743
+s-ConfirmationMeasure: 0.788782816229117
+
+187 : (slope3 >= -0.025344) & (slope6 >= -0.016415) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 33
+SupportingExamples: 2, 16, 96, 129, 137, 162, 187, 210, 215, 231, 243, 283, 299, 310, 337, 358, 378, 411, 417, 432, 441, 453, 463, 482, 488, 498, 526, 539, 563, 602, 626, 631, 648
+Strength: 0.047895500725689405
+Confidence: 1.0
+CoverageFactor: 0.07300884955752213
+Coverage: 33
+CoveredExamples: 2, 16, 96, 129, 137, 162, 187, 210, 215, 231, 243, 283, 299, 310, 337, 358, 378, 411, 417, 432, 441, 453, 463, 482, 488, 498, 526, 539, 563, 602, 626, 631, 648
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07862232779097388
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.539311163895487
+s-ConfirmationMeasure: 0.7862232779097387
+
+188 : (slope3 >= -0.025224) & (slope6 >= -0.016573) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 25
+SupportingExamples: 13, 26, 44, 55, 80, 90, 121, 163, 200, 206, 225, 320, 324, 370, 462, 510, 522, 523, 548, 604, 611, 623, 634, 656, 680
+Strength: 0.036284470246734396
+Confidence: 1.0
+CoverageFactor: 0.0576036866359447
+Coverage: 25
+CoveredExamples: 13, 26, 44, 55, 80, 90, 121, 163, 200, 206, 225, 320, 324, 370, 462, 510, 522, 523, 548, 604, 611, 623, 634, 656, 680
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.082625
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413125
+s-ConfirmationMeasure: 0.7869047619047619
+
+189 : (slope3 >= -0.025059) & (slope6 >= -0.016607) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 27
+SupportingExamples: 3, 11, 29, 41, 50, 65, 97, 117, 119, 139, 155, 206, 236, 248, 270, 328, 347, 366, 444, 449, 467, 476, 489, 514, 564, 654, 689
+Strength: 0.03918722786647315
+Confidence: 1.0
+CoverageFactor: 0.0625
+Coverage: 27
+CoveredExamples: 3, 11, 29, 41, 50, 65, 97, 117, 119, 139, 155, 206, 236, 248, 270, 328, 347, 366, 444, 449, 467, 476, 489, 514, 564, 654, 689
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08265160523186682
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413258026159334
+s-ConfirmationMeasure: 0.7871581450653984
+
+190 : (slope3 >= -0.024842) & (slope6 >= -0.016395) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 25
+SupportingExamples: 8, 57, 72, 92, 96, 127, 137, 165, 195, 276, 289, 328, 336, 345, 367, 484, 512, 514, 547, 558, 560, 599, 624, 679, 683
+Strength: 0.036284470246734396
+Confidence: 1.0
+CoverageFactor: 0.05518763796909492
+Coverage: 25
+CoveredExamples: 8, 57, 72, 92, 96, 127, 137, 165, 195, 276, 289, 328, 336, 345, 367, 484, 512, 514, 547, 558, 560, 599, 624, 679, 683
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07059241706161137
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5352962085308057
+s-ConfirmationMeasure: 0.7843601895734598
+
+191 : (slope3 >= -0.024803) & (slope6 >= -0.017232) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 41
+SupportingExamples: 12, 21, 30, 79, 93, 112, 132, 133, 137, 152, 189, 219, 225, 227, 240, 258, 279, 289, 295, 343, 356, 410, 412, 417, 420, 480, 486, 513, 529, 534, 540, 553, 562, 565, 583, 587, 611, 641, 642, 653, 664
+Strength: 0.059506531204644414
+Confidence: 1.0
+CoverageFactor: 0.09172259507829977
+Coverage: 41
+CoveredExamples: 12, 21, 30, 79, 93, 112, 132, 133, 137, 152, 189, 219, 225, 227, 240, 258, 279, 289, 295, 343, 356, 410, 412, 417, 420, 480, 486, 513, 529, 534, 540, 553, 562, 565, 583, 587, 611, 641, 642, 653, 664
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08265160523186682
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413258026159334
+s-ConfirmationMeasure: 0.7871581450653984
+
+192 : (slope3 >= -0.024565) & (slope6 >= -0.016975) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 32
+SupportingExamples: 19, 23, 45, 74, 132, 177, 182, 183, 187, 277, 280, 328, 369, 383, 449, 463, 465, 471, 480, 498, 532, 547, 561, 566, 571, 578, 603, 644, 651, 655, 667, 674
+Strength: 0.04644412191582003
+Confidence: 1.0
+CoverageFactor: 0.07048458149779736
+Coverage: 32
+CoveredExamples: 19, 23, 45, 74, 132, 177, 182, 183, 187, 277, 280, 328, 369, 383, 449, 463, 465, 471, 480, 498, 532, 547, 561, 566, 571, 578, 603, 644, 651, 655, 667, 674
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08265160523186682
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413258026159334
+s-ConfirmationMeasure: 0.7871581450653984
+
+193 : (slope3 >= -0.024565) & (slope6 >= -0.016607) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 32
+SupportingExamples: 6, 59, 74, 76, 81, 94, 137, 138, 141, 149, 166, 173, 179, 183, 187, 206, 218, 239, 255, 285, 286, 338, 381, 384, 399, 475, 532, 578, 590, 600, 656, 667
+Strength: 0.04644412191582003
+Confidence: 1.0
+CoverageFactor: 0.07017543859649122
+Coverage: 32
+CoveredExamples: 6, 59, 74, 76, 81, 94, 137, 138, 141, 149, 166, 173, 179, 183, 187, 206, 218, 239, 255, 285, 286, 338, 381, 384, 399, 475, 532, 578, 590, 600, 656, 667
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08265160523186682
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413258026159334
+s-ConfirmationMeasure: 0.7871581450653984
+
+194 : (slope3 >= -0.02422) & (slope6 >= -0.016622) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 28
+SupportingExamples: 6, 27, 45, 75, 78, 105, 144, 166, 196, 202, 207, 212, 217, 276, 284, 299, 315, 337, 355, 357, 389, 441, 463, 556, 558, 568, 599, 617
+Strength: 0.040638606676342524
+Confidence: 1.0
+CoverageFactor: 0.06263982102908278
+Coverage: 28
+CoveredExamples: 6, 27, 45, 75, 78, 105, 144, 166, 196, 202, 207, 212, 217, 276, 284, 299, 315, 337, 355, 357, 389, 441, 463, 556, 558, 568, 599, 617
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08265160523186682
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413258026159334
+s-ConfirmationMeasure: 0.7871581450653984
+
+195 : (slope3 >= -0.023293) & (slope6 >= -0.017126) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 31
+SupportingExamples: 23, 43, 82, 117, 153, 163, 171, 190, 213, 270, 276, 296, 323, 363, 374, 375, 415, 425, 427, 440, 442, 475, 479, 483, 564, 575, 609, 636, 660, 667, 678
+Strength: 0.04499274310595065
+Confidence: 1.0
+CoverageFactor: 0.06609808102345416
+Coverage: 31
+CoveredExamples: 23, 43, 82, 117, 153, 163, 171, 190, 213, 270, 276, 296, 323, 363, 374, 375, 415, 425, 427, 440, 442, 475, 479, 483, 564, 575, 609, 636, 660, 667, 678
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08265160523186682
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413258026159334
+s-ConfirmationMeasure: 0.7871581450653984
+
+196 : (slope3 >= -0.023293) & (slope6 >= -0.016622) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 20
+SupportingExamples: 64, 69, 149, 183, 192, 209, 270, 295, 363, 426, 444, 456, 498, 509, 527, 566, 610, 612, 654, 660
+Strength: 0.02902757619738752
+Confidence: 1.0
+CoverageFactor: 0.0447427293064877
+Coverage: 20
+CoveredExamples: 64, 69, 149, 183, 192, 209, 270, 295, 363, 426, 444, 456, 498, 509, 527, 566, 610, 612, 654, 660
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07059241706161137
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5352962085308057
+s-ConfirmationMeasure: 0.7843601895734598
+
+197 : (slope3 >= -0.023293) & (slope6 >= -0.016621) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 29
+SupportingExamples: 62, 129, 135, 138, 139, 159, 165, 204, 233, 240, 268, 276, 302, 307, 332, 345, 358, 374, 384, 440, 447, 448, 475, 508, 536, 597, 605, 653, 679
+Strength: 0.0420899854862119
+Confidence: 1.0
+CoverageFactor: 0.0651685393258427
+Coverage: 29
+CoveredExamples: 62, 129, 135, 138, 139, 159, 165, 204, 233, 240, 268, 276, 302, 307, 332, 345, 358, 374, 384, 440, 447, 448, 475, 508, 536, 597, 605, 653, 679
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07859690844233055
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5392984542211653
+s-ConfirmationMeasure: 0.7859690844233056
+
+198 : (slope3 >= -0.023293) & (slope6 >= -0.016607) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 26
+SupportingExamples: 45, 60, 113, 128, 132, 174, 197, 243, 267, 274, 283, 333, 336, 357, 369, 389, 470, 484, 485, 517, 525, 579, 591, 592, 642, 653
+Strength: 0.03773584905660377
+Confidence: 1.0
+CoverageFactor: 0.06046511627906977
+Coverage: 26
+CoveredExamples: 45, 60, 113, 128, 132, 174, 197, 243, 267, 274, 283, 333, 336, 357, 369, 389, 470, 484, 485, 517, 525, 579, 591, 592, 642, 653
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07059241706161137
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5352962085308057
+s-ConfirmationMeasure: 0.7843601895734598
+
+199 : (slope3 >= -0.023129) & (slope6 >= -0.019443) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 30
+SupportingExamples: 15, 25, 52, 65, 104, 106, 198, 199, 232, 246, 252, 257, 350, 369, 381, 419, 487, 494, 516, 563, 566, 580, 606, 608, 612, 624, 651, 669, 675, 677
+Strength: 0.04354136429608128
+Confidence: 1.0
+CoverageFactor: 0.07009345794392523
+Coverage: 30
+CoveredExamples: 15, 25, 52, 65, 104, 106, 198, 199, 232, 246, 252, 257, 350, 369, 381, 419, 487, 494, 516, 563, 566, 580, 606, 608, 612, 624, 651, 669, 675, 677
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+200 : (slope3 >= -0.022039) & (slope6 >= -0.016724) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 31
+SupportingExamples: 4, 26, 30, 71, 109, 153, 154, 158, 162, 206, 247, 257, 269, 316, 320, 330, 360, 362, 384, 421, 445, 456, 526, 568, 588, 594, 615, 645, 656, 679, 688
+Strength: 0.04499274310595065
+Confidence: 1.0
+CoverageFactor: 0.06666666666666667
+Coverage: 31
+CoveredExamples: 4, 26, 30, 71, 109, 153, 154, 158, 162, 206, 247, 257, 269, 316, 320, 330, 360, 362, 384, 421, 445, 456, 526, 568, 588, 594, 615, 645, 656, 679, 688
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07862232779097388
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.539311163895487
+s-ConfirmationMeasure: 0.7862232779097387
+
+201 : (slope3 >= -0.021302) & (slope6 >= -0.016415) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 25
+SupportingExamples: 17, 26, 34, 64, 69, 79, 97, 110, 138, 140, 254, 312, 316, 354, 372, 376, 393, 413, 583, 615, 617, 634, 638, 676, 689
+Strength: 0.036284470246734396
+Confidence: 1.0
+CoverageFactor: 0.05668934240362812
+Coverage: 25
+CoveredExamples: 17, 26, 34, 64, 69, 79, 97, 110, 138, 140, 254, 312, 316, 354, 372, 376, 393, 413, 583, 615, 617, 634, 638, 676, 689
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.082625
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413125
+s-ConfirmationMeasure: 0.7869047619047619
+
+202 : (slope3 >= -0.020411) & (slope6 >= -0.021756) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 23
+SupportingExamples: 3, 38, 132, 195, 205, 264, 295, 298, 311, 328, 344, 347, 380, 392, 432, 439, 464, 595, 620, 633, 638, 651, 666
+Strength: 0.033381712626995644
+Confidence: 1.0
+CoverageFactor: 0.05145413870246085
+Coverage: 23
+CoveredExamples: 3, 38, 132, 195, 205, 264, 295, 298, 311, 328, 344, 347, 380, 392, 432, 439, 464, 595, 620, 633, 638, 651, 666
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08265160523186682
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413258026159334
+s-ConfirmationMeasure: 0.7871581450653984
+
+203 : (slope3 >= -0.019497) & (slope6 >= -0.022141) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 24
+SupportingExamples: 3, 38, 132, 195, 205, 264, 295, 298, 311, 328, 344, 380, 381, 392, 432, 439, 464, 508, 595, 620, 633, 638, 639, 666
+Strength: 0.03483309143686502
+Confidence: 1.0
+CoverageFactor: 0.053691275167785234
+Coverage: 24
+CoveredExamples: 3, 38, 132, 195, 205, 264, 295, 298, 311, 328, 344, 380, 381, 392, 432, 439, 464, 508, 595, 620, 633, 638, 639, 666
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07862232779097388
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.539311163895487
+s-ConfirmationMeasure: 0.7862232779097387
+
+204 : (slope3 >= -0.018739) & (slope6 >= -0.016724) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 34
+SupportingExamples: 6, 43, 56, 106, 123, 124, 133, 144, 153, 219, 227, 276, 283, 296, 318, 373, 385, 394, 396, 398, 444, 456, 482, 509, 536, 554, 560, 583, 597, 620, 632, 633, 644, 689
+Strength: 0.04934687953555878
+Confidence: 1.0
+CoverageFactor: 0.07727272727272727
+Coverage: 34
+CoveredExamples: 6, 43, 56, 106, 123, 124, 133, 144, 153, 219, 227, 276, 283, 296, 318, 373, 385, 394, 396, 398, 444, 456, 482, 509, 536, 554, 560, 583, 597, 620, 632, 633, 644, 689
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+205 : (slope3 >= -0.017905) & (slope6 >= -0.025113) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 23
+SupportingExamples: 26, 32, 48, 57, 82, 117, 139, 150, 216, 273, 295, 299, 303, 348, 349, 413, 424, 465, 472, 487, 607, 611, 660
+Strength: 0.033381712626995644
+Confidence: 1.0
+CoverageFactor: 0.05251141552511415
+Coverage: 23
+CoveredExamples: 26, 32, 48, 57, 82, 117, 139, 150, 216, 273, 295, 299, 303, 348, 349, 413, 424, 465, 472, 487, 607, 611, 660
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07862232779097388
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.539311163895487
+s-ConfirmationMeasure: 0.7862232779097387
+
+206 : (slope3 >= -0.017803) & (slope6 >= -0.017126) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 26
+SupportingExamples: 11, 26, 92, 115, 152, 202, 213, 216, 221, 338, 356, 360, 365, 398, 412, 466, 470, 520, 550, 586, 605, 611, 615, 652, 667, 675
+Strength: 0.03773584905660377
+Confidence: 1.0
+CoverageFactor: 0.05739514348785872
+Coverage: 26
+CoveredExamples: 11, 26, 92, 115, 152, 202, 213, 216, 221, 338, 356, 360, 365, 398, 412, 466, 470, 520, 550, 586, 605, 611, 615, 652, 667, 675
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+207 : (slope3 >= -0.017593) & (cintercept10 <= -0.483836) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 26
+SupportingExamples: 6, 59, 76, 137, 138, 141, 149, 173, 179, 183, 187, 200, 218, 239, 255, 285, 286, 338, 381, 384, 475, 532, 578, 590, 656, 667
+Strength: 0.03773584905660377
+Confidence: 1.0
+CoverageFactor: 0.05701754385964912
+Coverage: 26
+CoveredExamples: 6, 59, 76, 137, 138, 141, 149, 173, 179, 183, 187, 200, 218, 239, 255, 285, 286, 338, 381, 384, 475, 532, 578, 590, 656, 667
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+208 : (slope3 >= -0.016848) & (slope6 >= -0.01867) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 20
+SupportingExamples: 83, 98, 120, 126, 134, 161, 177, 180, 206, 209, 264, 352, 369, 579, 583, 584, 611, 647, 678, 679
+Strength: 0.02902757619738752
+Confidence: 1.0
+CoverageFactor: 0.04576659038901602
+Coverage: 20
+CoveredExamples: 83, 98, 120, 126, 134, 161, 177, 180, 206, 209, 264, 352, 369, 579, 583, 584, 611, 647, 678, 679
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+209 : (slope3 >= -0.016848) & (slope6 >= -0.017757) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 26
+SupportingExamples: 6, 59, 76, 137, 138, 141, 149, 173, 179, 183, 187, 218, 239, 255, 285, 286, 320, 338, 381, 384, 475, 532, 578, 590, 656, 667
+Strength: 0.03773584905660377
+Confidence: 1.0
+CoverageFactor: 0.05701754385964912
+Coverage: 26
+CoveredExamples: 6, 59, 76, 137, 138, 141, 149, 173, 179, 183, 187, 218, 239, 255, 285, 286, 320, 338, 381, 384, 475, 532, 578, 590, 656, 667
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+210 : (slope3 >= -0.016132) & (slope6 >= -0.01867) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 23
+SupportingExamples: 78, 97, 120, 126, 127, 151, 162, 191, 195, 218, 230, 286, 333, 373, 447, 453, 477, 502, 506, 629, 652, 676, 680
+Strength: 0.033381712626995644
+Confidence: 1.0
+CoverageFactor: 0.04842105263157895
+Coverage: 23
+CoveredExamples: 78, 97, 120, 126, 127, 151, 162, 191, 195, 218, 230, 286, 333, 373, 447, 453, 477, 502, 506, 629, 652, 676, 680
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+211 : (slope3 >= -0.01589) & (slope6 >= -0.01867) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 19
+SupportingExamples: 19, 94, 188, 240, 245, 258, 276, 289, 315, 367, 394, 417, 441, 444, 453, 503, 506, 507, 624
+Strength: 0.027576197387518143
+Confidence: 1.0
+CoverageFactor: 0.04008438818565401
+Coverage: 19
+CoveredExamples: 19, 94, 188, 240, 245, 258, 276, 289, 315, 367, 394, 417, 441, 444, 453, 503, 506, 507, 624
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+212 : (slope3 >= -0.015715) & (cintercept10 <= -0.406432) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 26
+SupportingExamples: 11, 49, 106, 123, 172, 183, 221, 235, 238, 264, 285, 299, 344, 361, 367, 392, 396, 484, 499, 507, 509, 548, 586, 604, 646, 652
+Strength: 0.03773584905660377
+Confidence: 1.0
+CoverageFactor: 0.057777777777777775
+Coverage: 26
+CoveredExamples: 11, 49, 106, 123, 172, 183, 221, 235, 238, 264, 285, 299, 344, 361, 367, 392, 396, 484, 499, 507, 509, 548, 586, 604, 646, 652
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+213 : (slope3 >= -0.015122) & (slope4 >= -0.00532) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 14
+SupportingExamples: 10, 21, 68, 103, 213, 296, 300, 333, 358, 380, 437, 501, 654, 671
+Strength: 0.020319303338171262
+Confidence: 1.0
+CoverageFactor: 0.03248259860788863
+Coverage: 14
+CoveredExamples: 10, 21, 68, 103, 213, 296, 300, 333, 358, 380, 437, 501, 654, 671
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+214 : (slope3 >= -0.015001) & (slope8 >= -0.032744) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 28
+SupportingExamples: 22, 35, 37, 38, 86, 102, 111, 128, 172, 185, 207, 220, 272, 273, 281, 300, 315, 339, 363, 396, 432, 461, 465, 506, 514, 552, 646, 667
+Strength: 0.040638606676342524
+Confidence: 1.0
+CoverageFactor: 0.0611353711790393
+Coverage: 28
+CoveredExamples: 22, 35, 37, 38, 86, 102, 111, 128, 172, 185, 207, 220, 272, 273, 281, 300, 315, 339, 363, 396, 432, 461, 465, 506, 514, 552, 646, 667
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07862232779097388
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.539311163895487
+s-ConfirmationMeasure: 0.7862232779097387
+
+215 : (slope3 >= -0.014942) & (slope6 >= -0.019904) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 22
+SupportingExamples: 3, 27, 75, 78, 105, 144, 166, 196, 207, 217, 284, 299, 315, 337, 355, 357, 389, 441, 463, 558, 568, 617
+Strength: 0.03193033381712627
+Confidence: 1.0
+CoverageFactor: 0.049217002237136466
+Coverage: 22
+CoveredExamples: 3, 27, 75, 78, 105, 144, 166, 196, 207, 217, 284, 299, 315, 337, 355, 357, 389, 441, 463, 558, 568, 617
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07059241706161137
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5352962085308057
+s-ConfirmationMeasure: 0.7843601895734598
+
+216 : (slope3 >= -0.014086) & (slope4 >= -0.004107) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 19
+SupportingExamples: 26, 126, 148, 161, 212, 248, 249, 252, 277, 305, 336, 361, 368, 385, 405, 437, 457, 643, 681
+Strength: 0.027576197387518143
+Confidence: 1.0
+CoverageFactor: 0.04112554112554113
+Coverage: 19
+CoveredExamples: 26, 126, 148, 161, 212, 248, 249, 252, 277, 305, 336, 361, 368, 385, 405, 437, 457, 643, 681
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+217 : (slope3 >= -0.013517) & (intercept9 >= -0.152765) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 33
+SupportingExamples: 17, 94, 109, 128, 166, 179, 191, 194, 229, 244, 302, 369, 371, 414, 423, 428, 431, 473, 497, 527, 541, 546, 565, 572, 594, 618, 624, 630, 639, 665, 668, 681, 685
+Strength: 0.047895500725689405
+Confidence: 1.0
+CoverageFactor: 0.0744920993227991
+Coverage: 33
+CoveredExamples: 17, 94, 109, 128, 166, 179, 191, 194, 229, 244, 302, 369, 371, 414, 423, 428, 431, 473, 497, 527, 541, 546, 565, 572, 594, 618, 624, 630, 639, 665, 668, 681, 685
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07059241706161137
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5352962085308057
+s-ConfirmationMeasure: 0.7843601895734598
+
+218 : (slope3 >= -0.013103) & (slope4 >= -0.007623) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 26
+SupportingExamples: 6, 56, 61, 72, 95, 120, 179, 258, 265, 282, 287, 305, 316, 393, 414, 417, 434, 464, 472, 481, 484, 537, 559, 581, 586, 596
+Strength: 0.03773584905660377
+Confidence: 1.0
+CoverageFactor: 0.05963302752293578
+Coverage: 26
+CoveredExamples: 6, 56, 61, 72, 95, 120, 179, 258, 265, 282, 287, 305, 316, 393, 414, 417, 434, 464, 472, 481, 484, 537, 559, 581, 586, 596
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.082625
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413125
+s-ConfirmationMeasure: 0.7869047619047619
+
+219 : (slope3 >= -0.012226) & (slope6 >= -0.025171) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 17
+SupportingExamples: 25, 102, 213, 231, 234, 235, 241, 307, 324, 506, 543, 577, 603, 608, 623, 641, 647
+Strength: 0.02467343976777939
+Confidence: 1.0
+CoverageFactor: 0.0378619153674833
+Coverage: 17
+CoveredExamples: 25, 102, 213, 231, 234, 235, 241, 307, 324, 506, 543, 577, 603, 608, 623, 641, 647
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0866626936829559
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543331346841478
+s-ConfirmationMeasure: 0.7878426698450537
+
+220 : (slope3 >= -0.011389) & (cslope9 <= 0.020899) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 31
+SupportingExamples: 7, 78, 107, 119, 150, 154, 172, 180, 210, 213, 216, 244, 251, 289, 296, 352, 363, 378, 403, 443, 461, 470, 484, 494, 496, 550, 593, 606, 635, 647, 688
+Strength: 0.04499274310595065
+Confidence: 1.0
+CoverageFactor: 0.07061503416856492
+Coverage: 31
+CoveredExamples: 7, 78, 107, 119, 150, 154, 172, 180, 210, 213, 216, 244, 251, 289, 296, 352, 363, 378, 403, 443, 461, 470, 484, 494, 496, 550, 593, 606, 635, 647, 688
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07059241706161137
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5352962085308057
+s-ConfirmationMeasure: 0.7843601895734598
+
+221 : (slope3 >= -0.009877) & (cslope9 <= 0.020899) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 16
+SupportingExamples: 10, 21, 34, 154, 209, 276, 338, 368, 465, 475, 520, 580, 597, 626, 630, 636
+Strength: 0.023222060957910014
+Confidence: 1.0
+CoverageFactor: 0.036036036036036036
+Coverage: 16
+CoveredExamples: 10, 21, 34, 154, 209, 276, 338, 368, 465, 475, 520, 580, 597, 626, 630, 636
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07059241706161137
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5352962085308057
+s-ConfirmationMeasure: 0.7843601895734598
+
+222 : (slope10 >= 0.233629) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 35
+SupportingExamples: 61, 72, 79, 120, 172, 179, 193, 209, 221, 238, 258, 265, 270, 287, 305, 384, 388, 392, 393, 414, 434, 464, 471, 484, 491, 559, 586, 589, 613, 623, 648, 658, 662, 672, 687
+Strength: 0.05079825834542816
+Confidence: 1.0
+CoverageFactor: 0.08027522935779817
+Coverage: 35
+CoveredExamples: 61, 72, 79, 120, 172, 179, 193, 209, 221, 238, 258, 265, 270, 287, 305, 384, 388, 392, 393, 414, 434, 464, 471, 484, 491, 559, 586, 589, 613, 623, 648, 658, 662, 672, 687
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.11931407942238267
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5596570397111913
+s-ConfirmationMeasure: 0.7954271961492179
+
+223 : (slope10 >= 0.233432) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 33
+SupportingExamples: 12, 31, 43, 55, 69, 86, 114, 171, 175, 182, 200, 205, 256, 281, 331, 349, 382, 386, 387, 392, 429, 435, 463, 464, 504, 510, 543, 583, 590, 595, 600, 615, 620
+Strength: 0.047895500725689405
+Confidence: 1.0
+CoverageFactor: 0.07236842105263158
+Coverage: 33
+CoveredExamples: 12, 31, 43, 55, 69, 86, 114, 171, 175, 182, 200, 205, 256, 281, 331, 349, 382, 386, 387, 392, 429, 435, 463, 464, 504, 510, 543, 583, 590, 595, 600, 615, 620
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.10291017964071857
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5514550898203593
+s-ConfirmationMeasure: 0.7916167664670659
+
+224 : (slope10 >= 0.233414) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 41
+SupportingExamples: 4, 42, 48, 52, 95, 99, 109, 111, 137, 150, 151, 184, 214, 220, 224, 235, 248, 253, 254, 357, 364, 365, 392, 406, 421, 432, 475, 481, 491, 495, 511, 518, 544, 566, 571, 573, 580, 608, 632, 634, 656
+Strength: 0.059506531204644414
+Confidence: 1.0
+CoverageFactor: 0.09297052154195011
+Coverage: 41
+CoveredExamples: 4, 42, 48, 52, 95, 99, 109, 111, 137, 150, 151, 184, 214, 220, 224, 235, 248, 253, 254, 357, 364, 365, 392, 406, 421, 432, 475, 481, 491, 495, 511, 518, 544, 566, 571, 573, 580, 608, 632, 634, 656
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.082625
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413125
+s-ConfirmationMeasure: 0.7869047619047619
+
+225 : (slope10 >= 0.233133) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 42
+SupportingExamples: 11, 21, 31, 34, 48, 52, 76, 112, 116, 117, 136, 165, 206, 226, 231, 238, 247, 253, 305, 308, 337, 346, 352, 354, 419, 452, 489, 502, 516, 543, 547, 550, 557, 559, 568, 587, 602, 604, 608, 634, 660, 664
+Strength: 0.06095791001451379
+Confidence: 1.0
+CoverageFactor: 0.09375
+Coverage: 42
+CoveredExamples: 11, 21, 31, 34, 48, 52, 76, 112, 116, 117, 136, 165, 206, 226, 231, 238, 247, 253, 305, 308, 337, 346, 352, 354, 419, 452, 489, 502, 516, 543, 547, 550, 557, 559, 568, 587, 602, 604, 608, 634, 660, 664
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0866626936829559
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543331346841478
+s-ConfirmationMeasure: 0.7878426698450537
+
+226 : (slope10 >= 0.233123) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 50
+SupportingExamples: 7, 19, 38, 60, 77, 97, 98, 136, 145, 147, 200, 203, 224, 230, 235, 243, 244, 249, 252, 254, 276, 294, 299, 306, 308, 310, 357, 358, 373, 380, 383, 387, 397, 437, 438, 468, 513, 514, 537, 562, 568, 585, 591, 620, 623, 625, 636, 641, 650, 685
+Strength: 0.07256894049346879
+Confidence: 1.0
+CoverageFactor: 0.11961722488038277
+Coverage: 50
+CoveredExamples: 7, 19, 38, 60, 77, 97, 98, 136, 145, 147, 200, 203, 224, 230, 235, 243, 244, 249, 252, 254, 276, 294, 299, 306, 308, 310, 357, 358, 373, 380, 383, 387, 397, 437, 438, 468, 513, 514, 537, 562, 568, 585, 591, 620, 623, 625, 636, 641, 650, 685
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.082625
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413125
+s-ConfirmationMeasure: 0.7869047619047619
+
+227 : (slope10 >= 0.23277) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 45
+SupportingExamples: 3, 13, 25, 29, 30, 68, 82, 114, 135, 148, 149, 188, 194, 211, 224, 245, 247, 256, 270, 281, 296, 301, 316, 329, 330, 349, 358, 372, 384, 394, 403, 404, 459, 465, 474, 484, 550, 553, 574, 577, 599, 607, 648, 651, 687
+Strength: 0.06531204644412192
+Confidence: 1.0
+CoverageFactor: 0.10714285714285714
+Coverage: 45
+CoveredExamples: 3, 13, 25, 29, 30, 68, 82, 114, 135, 148, 149, 188, 194, 211, 224, 245, 247, 256, 270, 281, 296, 301, 316, 329, 330, 349, 358, 372, 384, 394, 403, 404, 459, 465, 474, 484, 550, 553, 574, 577, 599, 607, 648, 651, 687
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09071002386634845
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5453550119331743
+s-ConfirmationMeasure: 0.788782816229117
+
+228 : (slope10 >= 0.232703) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 46
+SupportingExamples: 21, 27, 42, 59, 69, 70, 77, 95, 107, 114, 118, 134, 167, 198, 242, 256, 266, 278, 298, 299, 317, 327, 349, 352, 371, 372, 381, 399, 416, 424, 431, 458, 464, 483, 484, 494, 500, 509, 517, 536, 566, 586, 623, 643, 662, 672
+Strength: 0.06676342525399129
+Confidence: 1.0
+CoverageFactor: 0.10065645514223195
+Coverage: 46
+CoveredExamples: 21, 27, 42, 59, 69, 70, 77, 95, 107, 114, 118, 134, 167, 198, 242, 256, 266, 278, 298, 299, 317, 327, 349, 352, 371, 372, 381, 399, 416, 424, 431, 458, 464, 483, 484, 494, 500, 509, 517, 536, 566, 586, 623, 643, 662, 672
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07862232779097388
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.539311163895487
+s-ConfirmationMeasure: 0.7862232779097387
+
+229 : (slope10 >= 0.232676) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 45
+SupportingExamples: 4, 21, 24, 26, 38, 58, 82, 127, 128, 143, 147, 150, 176, 180, 185, 201, 220, 233, 242, 245, 250, 277, 289, 297, 315, 335, 336, 361, 374, 385, 390, 402, 428, 466, 491, 520, 555, 605, 628, 638, 650, 654, 655, 664, 687
+Strength: 0.06531204644412192
+Confidence: 1.0
+CoverageFactor: 0.10022271714922049
+Coverage: 45
+CoveredExamples: 4, 21, 24, 26, 38, 58, 82, 127, 128, 143, 147, 150, 176, 180, 185, 201, 220, 233, 242, 245, 250, 277, 289, 297, 315, 335, 336, 361, 374, 385, 390, 402, 428, 466, 491, 520, 555, 605, 628, 638, 650, 654, 655, 664, 687
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09073897497020263
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5453694874851013
+s-ConfirmationMeasure: 0.7890345649582837
+
+230 : (slope10 >= 0.2316) & (cintercept10 <= -1.070184) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 35
+SupportingExamples: 3, 55, 60, 62, 65, 100, 125, 151, 173, 203, 208, 214, 235, 254, 256, 280, 281, 324, 326, 339, 347, 390, 397, 405, 406, 410, 475, 483, 506, 515, 544, 575, 635, 650, 676
+Strength: 0.05079825834542816
+Confidence: 1.0
+CoverageFactor: 0.07936507936507936
+Coverage: 35
+CoveredExamples: 3, 55, 60, 62, 65, 100, 125, 151, 173, 203, 208, 214, 235, 254, 256, 280, 281, 324, 326, 339, 347, 390, 397, 405, 406, 410, 475, 483, 506, 515, 544, 575, 635, 650, 676
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08669047619047619
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543345238095238
+s-ConfirmationMeasure: 0.7880952380952381
+
+231 : (slope10 >= 0.231458) & (cintercept10 <= -1.070184) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 31
+SupportingExamples: 6, 71, 82, 89, 119, 132, 141, 197, 203, 205, 250, 320, 346, 379, 402, 416, 444, 462, 477, 531, 537, 576, 593, 603, 615, 622, 628, 631, 638, 644, 677
+Strength: 0.04499274310595065
+Confidence: 1.0
+CoverageFactor: 0.07110091743119266
+Coverage: 31
+CoveredExamples: 6, 71, 82, 89, 119, 132, 141, 197, 203, 205, 250, 320, 346, 379, 402, 416, 444, 462, 477, 531, 537, 576, 593, 603, 615, 622, 628, 631, 638, 644, 677
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09479713603818615
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.547398568019093
+s-ConfirmationMeasure: 0.7899761336515513
+
+232 : (slope10 >= 0.231413) & (cintercept10 <= -1.075545) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 41
+SupportingExamples: 12, 21, 61, 79, 93, 112, 123, 132, 133, 137, 152, 160, 163, 189, 219, 227, 240, 241, 258, 289, 343, 344, 356, 412, 417, 420, 480, 486, 513, 529, 534, 553, 562, 565, 579, 583, 611, 641, 642, 664, 665
+Strength: 0.059506531204644414
+Confidence: 1.0
+CoverageFactor: 0.09172259507829977
+Coverage: 41
+CoveredExamples: 12, 21, 61, 79, 93, 112, 123, 132, 133, 137, 152, 160, 163, 189, 219, 227, 240, 241, 258, 289, 343, 344, 356, 412, 417, 420, 480, 486, 513, 529, 534, 553, 562, 565, 579, 583, 611, 641, 642, 664, 665
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08669047619047619
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543345238095238
+s-ConfirmationMeasure: 0.7880952380952381
+
+233 : (intercept8 >= -0.673695) & (slope10 >= 0.23218) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 32
+SupportingExamples: 23, 59, 81, 91, 104, 125, 130, 132, 146, 188, 195, 268, 273, 277, 294, 349, 382, 387, 390, 427, 498, 535, 566, 572, 573, 579, 580, 599, 606, 619, 627, 644
+Strength: 0.04644412191582003
+Confidence: 1.0
+CoverageFactor: 0.07459207459207459
+Coverage: 32
+CoveredExamples: 23, 59, 81, 91, 104, 125, 130, 132, 146, 188, 195, 268, 273, 277, 294, 349, 382, 387, 390, 427, 498, 535, 566, 572, 573, 579, 580, 599, 606, 619, 627, 644
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09071002386634845
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5453550119331743
+s-ConfirmationMeasure: 0.788782816229117
+
+234 : (intercept8 >= -0.673695) & (slope10 >= 0.232033) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 50
+SupportingExamples: 26, 36, 67, 83, 99, 118, 120, 121, 126, 134, 161, 180, 182, 185, 194, 206, 209, 238, 250, 252, 264, 302, 352, 369, 389, 393, 408, 420, 456, 474, 478, 494, 503, 558, 564, 579, 580, 583, 584, 593, 602, 611, 643, 647, 665, 666, 674, 678, 679, 685
+Strength: 0.07256894049346879
+Confidence: 1.0
+CoverageFactor: 0.11441647597254005
+Coverage: 50
+CoveredExamples: 26, 36, 67, 83, 99, 118, 120, 121, 126, 134, 161, 180, 182, 185, 194, 206, 209, 238, 250, 252, 264, 302, 352, 369, 389, 393, 408, 420, 456, 474, 478, 494, 503, 558, 564, 579, 580, 583, 584, 593, 602, 611, 643, 647, 665, 666, 674, 678, 679, 685
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.12343975903614458
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5617198795180723
+s-ConfirmationMeasure: 0.7963855421686747
+
+235 : (intercept8 >= -0.668069) & (slope10 >= 0.232703) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 38
+SupportingExamples: 20, 29, 61, 87, 111, 153, 193, 201, 205, 206, 208, 219, 221, 225, 227, 230, 254, 257, 286, 290, 315, 334, 361, 374, 410, 412, 442, 482, 495, 520, 523, 530, 548, 594, 601, 614, 663, 688
+Strength: 0.055152394775036286
+Confidence: 1.0
+CoverageFactor: 0.08501118568232663
+Coverage: 38
+CoveredExamples: 20, 29, 61, 87, 111, 153, 193, 201, 205, 206, 208, 219, 221, 225, 227, 230, 254, 257, 286, 290, 315, 334, 361, 374, 410, 412, 442, 482, 495, 520, 523, 530, 548, 594, 601, 614, 663, 688
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07059241706161137
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5352962085308057
+s-ConfirmationMeasure: 0.7843601895734598
+
+236 : (intercept8 >= -0.657672) & (slope10 >= 0.231962) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 36
+SupportingExamples: 9, 41, 95, 113, 149, 184, 188, 198, 205, 209, 288, 307, 314, 336, 357, 369, 374, 396, 417, 440, 489, 500, 505, 506, 526, 605, 614, 618, 622, 628, 637, 639, 641, 650, 669, 682
+Strength: 0.05224963715529753
+Confidence: 1.0
+CoverageFactor: 0.07912087912087912
+Coverage: 36
+CoveredExamples: 9, 41, 95, 113, 149, 184, 188, 198, 205, 209, 288, 307, 314, 336, 357, 369, 374, 396, 417, 440, 489, 500, 505, 506, 526, 605, 614, 618, 622, 628, 637, 639, 641, 650, 669, 682
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09071002386634845
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5453550119331743
+s-ConfirmationMeasure: 0.788782816229117
+
+237 : (intercept8 >= -0.656457) & (slope10 >= 0.232158) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 24
+SupportingExamples: 31, 39, 76, 82, 99, 101, 128, 170, 173, 185, 203, 245, 263, 267, 277, 351, 352, 353, 496, 541, 569, 578, 617, 641
+Strength: 0.03483309143686502
+Confidence: 1.0
+CoverageFactor: 0.05783132530120482
+Coverage: 24
+CoveredExamples: 31, 39, 76, 82, 99, 101, 128, 170, 173, 185, 203, 245, 263, 267, 277, 351, 352, 353, 496, 541, 569, 578, 617, 641
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.11109243697478992
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5555462184873949
+s-ConfirmationMeasure: 0.7935174069627852
+
+238 : (intercept8 >= -0.654126) & (slope10 >= 0.232212) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 33
+SupportingExamples: 61, 72, 79, 120, 172, 179, 193, 209, 221, 258, 265, 270, 287, 305, 384, 392, 393, 414, 434, 464, 471, 484, 491, 559, 586, 589, 602, 613, 648, 658, 662, 672, 688
+Strength: 0.047895500725689405
+Confidence: 1.0
+CoverageFactor: 0.07568807339449542
+Coverage: 33
+CoveredExamples: 61, 72, 79, 120, 172, 179, 193, 209, 221, 258, 265, 270, 287, 305, 384, 392, 393, 414, 434, 464, 471, 484, 491, 559, 586, 589, 602, 613, 648, 658, 662, 672, 688
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.11931407942238267
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5596570397111913
+s-ConfirmationMeasure: 0.7954271961492179
+
+239 : (intercept8 >= -0.426068) & (cintercept10 <= -1.036005) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 19
+SupportingExamples: 26, 32, 48, 57, 82, 139, 150, 242, 273, 295, 299, 348, 349, 379, 465, 472, 607, 611, 660
+Strength: 0.027576197387518143
+Confidence: 1.0
+CoverageFactor: 0.04337899543378995
+Coverage: 19
+CoveredExamples: 26, 32, 48, 57, 82, 139, 150, 242, 273, 295, 299, 348, 349, 379, 465, 472, 607, 611, 660
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+240 : (intercept8 >= -0.426068) & (cintercept10 <= -1.02481) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 18
+SupportingExamples: 4, 66, 103, 145, 201, 227, 272, 289, 312, 324, 356, 402, 439, 442, 514, 629, 644, 647
+Strength: 0.026124818577648767
+Confidence: 1.0
+CoverageFactor: 0.0400890868596882
+Coverage: 18
+CoveredExamples: 4, 66, 103, 145, 201, 227, 272, 289, 312, 324, 356, 402, 439, 442, 514, 629, 644, 647
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+241 : (intercept8 >= -0.419144) & (cintercept10 <= -1.02481) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 28
+SupportingExamples: 78, 107, 119, 150, 154, 172, 180, 210, 213, 216, 244, 251, 289, 296, 352, 356, 363, 378, 403, 443, 461, 470, 494, 496, 550, 593, 635, 647
+Strength: 0.040638606676342524
+Confidence: 1.0
+CoverageFactor: 0.06378132118451026
+Coverage: 28
+CoveredExamples: 78, 107, 119, 150, 154, 172, 180, 210, 213, 216, 244, 251, 289, 296, 352, 356, 363, 378, 403, 443, 461, 470, 494, 496, 550, 593, 635, 647
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+242 : (intercept5 >= -0.994231) & (slope10 >= 0.232158) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 46
+SupportingExamples: 5, 10, 40, 47, 49, 54, 55, 58, 71, 77, 81, 102, 103, 106, 109, 137, 140, 160, 165, 167, 175, 182, 191, 200, 204, 228, 260, 277, 340, 355, 370, 387, 395, 414, 445, 493, 504, 540, 556, 566, 588, 593, 610, 633, 654, 664
+Strength: 0.06676342525399129
+Confidence: 1.0
+CoverageFactor: 0.1050228310502283
+Coverage: 46
+CoveredExamples: 5, 10, 40, 47, 49, 54, 55, 58, 71, 77, 81, 102, 103, 106, 109, 137, 140, 160, 165, 167, 175, 182, 191, 200, 204, 228, 260, 277, 340, 355, 370, 387, 395, 414, 445, 493, 504, 540, 556, 566, 588, 593, 610, 633, 654, 664
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09073897497020263
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5453694874851013
+s-ConfirmationMeasure: 0.7890345649582837
+
+243 : (intercept5 >= -0.986911) & (slope10 >= 0.232268) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 34
+SupportingExamples: 5, 25, 26, 37, 40, 67, 136, 145, 157, 179, 218, 220, 228, 236, 251, 257, 264, 285, 323, 327, 354, 388, 407, 457, 528, 535, 552, 558, 561, 646, 653, 659, 665, 667
+Strength: 0.04934687953555878
+Confidence: 1.0
+CoverageFactor: 0.07249466950959488
+Coverage: 34
+CoveredExamples: 5, 25, 26, 37, 40, 67, 136, 145, 157, 179, 218, 220, 228, 236, 251, 257, 264, 285, 323, 327, 354, 388, 407, 457, 528, 535, 552, 558, 561, 646, 653, 659, 665, 667
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.082625
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413125
+s-ConfirmationMeasure: 0.7869047619047619
+
+244 : (intercept5 >= -0.979589) & (slope10 >= 0.232289) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 28
+SupportingExamples: 35, 56, 58, 68, 77, 88, 171, 200, 203, 206, 233, 244, 256, 278, 292, 300, 329, 342, 398, 421, 498, 506, 530, 582, 586, 623, 624, 631
+Strength: 0.040638606676342524
+Confidence: 1.0
+CoverageFactor: 0.062360801781737196
+Coverage: 28
+CoveredExamples: 35, 56, 58, 68, 77, 88, 171, 200, 203, 206, 233, 244, 256, 278, 292, 300, 329, 342, 398, 421, 498, 506, 530, 582, 586, 623, 624, 631
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09073897497020263
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5453694874851013
+s-ConfirmationMeasure: 0.7890345649582837
+
+245 : (intercept5 >= -0.975536) & (slope10 >= 0.231687) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 37
+SupportingExamples: 4, 8, 63, 66, 78, 92, 103, 124, 138, 142, 145, 185, 201, 220, 227, 272, 275, 289, 303, 312, 324, 395, 436, 439, 442, 451, 486, 494, 514, 544, 591, 612, 620, 629, 644, 647, 654
+Strength: 0.05370101596516691
+Confidence: 1.0
+CoverageFactor: 0.08240534521158129
+Coverage: 37
+CoveredExamples: 4, 8, 63, 66, 78, 92, 103, 124, 138, 142, 145, 185, 201, 220, 227, 272, 275, 289, 303, 312, 324, 395, 436, 439, 442, 451, 486, 494, 514, 544, 591, 612, 620, 629, 644, 647, 654
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09073897497020263
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5453694874851013
+s-ConfirmationMeasure: 0.7890345649582837
+
+246 : (intercept5 >= -0.966945) & (slope10 >= 0.231638) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 29
+SupportingExamples: 27, 44, 52, 57, 66, 79, 95, 164, 196, 198, 202, 301, 310, 333, 350, 465, 477, 492, 504, 542, 557, 599, 600, 630, 644, 646, 653, 665, 675
+Strength: 0.0420899854862119
+Confidence: 1.0
+CoverageFactor: 0.0659090909090909
+Coverage: 29
+CoveredExamples: 27, 44, 52, 57, 66, 79, 95, 164, 196, 198, 202, 301, 310, 333, 350, 465, 477, 492, 504, 542, 557, 599, 600, 630, 644, 646, 653, 665, 675
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.10699640287769784
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5534982014388489
+s-ConfirmationMeasure: 0.7925659472422062
+
+247 : (intercept5 >= -0.964919) & (slope10 >= 0.232033) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 43
+SupportingExamples: 9, 14, 33, 46, 74, 80, 86, 92, 125, 177, 200, 246, 293, 300, 307, 327, 334, 349, 376, 382, 410, 419, 427, 432, 439, 473, 508, 512, 519, 523, 544, 552, 565, 580, 588, 601, 633, 639, 642, 645, 647, 650, 676
+Strength: 0.062409288824383166
+Confidence: 1.0
+CoverageFactor: 0.10023310023310024
+Coverage: 43
+CoveredExamples: 9, 14, 33, 46, 74, 80, 86, 92, 125, 177, 200, 246, 293, 300, 307, 327, 334, 349, 376, 382, 410, 419, 427, 432, 439, 473, 508, 512, 519, 523, 544, 552, 565, 580, 588, 601, 633, 639, 642, 645, 647, 650, 676
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08265160523186682
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413258026159334
+s-ConfirmationMeasure: 0.7871581450653984
+
+248 : (intercept5 >= -0.96175) & (slope10 >= 0.231458) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 33
+SupportingExamples: 7, 33, 60, 109, 110, 116, 120, 122, 149, 153, 156, 177, 190, 212, 236, 248, 259, 272, 284, 311, 319, 343, 392, 397, 428, 485, 488, 499, 607, 622, 667, 668, 677
+Strength: 0.047895500725689405
+Confidence: 1.0
+CoverageFactor: 0.07096774193548387
+Coverage: 33
+CoveredExamples: 7, 33, 60, 109, 110, 116, 120, 122, 149, 153, 156, 177, 190, 212, 236, 248, 259, 272, 284, 311, 319, 343, 392, 397, 428, 485, 488, 499, 607, 622, 667, 668, 677
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08669047619047619
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543345238095238
+s-ConfirmationMeasure: 0.7880952380952381
+
+249 : (intercept5 >= -0.957555) & (slope10 >= 0.231743) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 46
+SupportingExamples: 78, 107, 119, 150, 154, 172, 180, 201, 210, 213, 216, 227, 232, 234, 238, 243, 244, 251, 289, 294, 296, 301, 310, 324, 352, 363, 372, 378, 403, 426, 443, 461, 470, 494, 496, 512, 513, 550, 560, 578, 593, 619, 626, 635, 647, 689
+Strength: 0.06676342525399129
+Confidence: 1.0
+CoverageFactor: 0.10478359908883828
+Coverage: 46
+CoveredExamples: 78, 107, 119, 150, 154, 172, 180, 201, 210, 213, 216, 227, 232, 234, 238, 243, 244, 251, 289, 294, 296, 301, 310, 324, 352, 363, 372, 378, 403, 426, 443, 461, 470, 494, 496, 512, 513, 550, 560, 578, 593, 619, 626, 635, 647, 689
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08669047619047619
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543345238095238
+s-ConfirmationMeasure: 0.7880952380952381
+
+250 : (intercept5 >= -0.956519) & (cintercept10 <= -1.087065) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 36
+SupportingExamples: 40, 65, 72, 108, 110, 125, 138, 195, 201, 205, 218, 243, 297, 303, 304, 310, 325, 327, 375, 392, 397, 433, 434, 457, 461, 463, 512, 514, 519, 527, 542, 551, 621, 623, 640, 659
+Strength: 0.05224963715529753
+Confidence: 1.0
+CoverageFactor: 0.08053691275167785
+Coverage: 36
+CoveredExamples: 40, 65, 72, 108, 110, 125, 138, 195, 201, 205, 218, 243, 297, 303, 304, 310, 325, 327, 375, 392, 397, 433, 434, 457, 461, 463, 512, 514, 519, 527, 542, 551, 621, 623, 640, 659
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+251 : (intercept5 >= -0.956519) & (cintercept10 <= -1.078148) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 43
+SupportingExamples: 18, 32, 51, 58, 81, 87, 92, 100, 121, 134, 143, 178, 185, 188, 208, 232, 244, 315, 342, 343, 369, 372, 373, 377, 381, 398, 404, 415, 439, 448, 453, 454, 458, 472, 486, 503, 577, 593, 600, 613, 625, 638, 649
+Strength: 0.062409288824383166
+Confidence: 1.0
+CoverageFactor: 0.0945054945054945
+Coverage: 43
+CoveredExamples: 18, 32, 51, 58, 81, 87, 92, 100, 121, 134, 143, 178, 185, 188, 208, 232, 244, 315, 342, 343, 369, 372, 373, 377, 381, 398, 404, 415, 439, 448, 453, 454, 458, 472, 486, 503, 577, 593, 600, 613, 625, 638, 649
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07862232779097388
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.539311163895487
+s-ConfirmationMeasure: 0.7862232779097387
+
+252 : (intercept5 >= -0.95613) & (slope10 >= 0.231169) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 35
+SupportingExamples: 3, 29, 41, 43, 50, 55, 56, 65, 109, 117, 119, 139, 155, 206, 220, 236, 248, 270, 294, 328, 329, 347, 366, 444, 449, 458, 467, 476, 489, 514, 564, 581, 625, 654, 689
+Strength: 0.05079825834542816
+Confidence: 1.0
+CoverageFactor: 0.08101851851851852
+Coverage: 35
+CoveredExamples: 3, 29, 41, 43, 50, 55, 56, 65, 109, 117, 119, 139, 155, 206, 220, 236, 248, 270, 294, 328, 329, 347, 366, 444, 449, 458, 467, 476, 489, 514, 564, 581, 625, 654, 689
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07862232779097388
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.539311163895487
+s-ConfirmationMeasure: 0.7862232779097387
+
+253 : (intercept5 >= -0.951813) & (cintercept10 <= -1.083197) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 29
+SupportingExamples: 28, 41, 46, 71, 83, 87, 129, 148, 156, 175, 191, 319, 322, 343, 357, 361, 375, 388, 466, 469, 470, 476, 542, 548, 560, 617, 634, 681, 682
+Strength: 0.0420899854862119
+Confidence: 1.0
+CoverageFactor: 0.06502242152466367
+Coverage: 29
+CoveredExamples: 28, 41, 46, 71, 83, 87, 129, 148, 156, 175, 191, 319, 322, 343, 357, 361, 375, 388, 466, 469, 470, 476, 542, 548, 560, 617, 634, 681, 682
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0866626936829559
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543331346841478
+s-ConfirmationMeasure: 0.7878426698450537
+
+254 : (intercept5 >= -0.950226) & (slope10 >= 0.230765) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 27
+SupportingExamples: 10, 33, 38, 49, 67, 69, 94, 108, 118, 149, 195, 253, 337, 371, 415, 454, 468, 495, 508, 551, 594, 603, 622, 628, 640, 644, 689
+Strength: 0.03918722786647315
+Confidence: 1.0
+CoverageFactor: 0.060133630289532294
+Coverage: 27
+CoveredExamples: 10, 33, 38, 49, 67, 69, 94, 108, 118, 149, 195, 253, 337, 371, 415, 454, 468, 495, 508, 551, 594, 603, 622, 628, 640, 644, 689
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+255 : (intercept5 >= -0.950226) & (slope10 >= 0.23056) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 49
+SupportingExamples: 12, 21, 61, 79, 93, 112, 128, 132, 133, 137, 152, 165, 189, 219, 227, 240, 258, 289, 343, 344, 356, 384, 398, 412, 417, 420, 439, 480, 486, 503, 507, 513, 527, 529, 534, 540, 550, 553, 562, 565, 583, 587, 591, 599, 611, 641, 642, 653, 664
+Strength: 0.07111756168359942
+Confidence: 1.0
+CoverageFactor: 0.10961968680089486
+Coverage: 49
+CoveredExamples: 12, 21, 61, 79, 93, 112, 128, 132, 133, 137, 152, 165, 189, 219, 227, 240, 258, 289, 343, 344, 356, 384, 398, 412, 417, 420, 439, 480, 486, 503, 507, 513, 527, 529, 534, 540, 550, 553, 562, 565, 583, 587, 591, 599, 611, 641, 642, 653, 664
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+256 : (intercept5 >= -0.950226) & (slope10 >= 0.230423) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 38
+SupportingExamples: 10, 21, 37, 47, 58, 68, 78, 86, 89, 98, 103, 193, 197, 204, 213, 249, 278, 296, 300, 309, 337, 363, 380, 421, 437, 451, 471, 481, 492, 501, 503, 540, 580, 633, 654, 664, 675, 679
+Strength: 0.055152394775036286
+Confidence: 1.0
+CoverageFactor: 0.08816705336426914
+Coverage: 38
+CoveredExamples: 10, 21, 37, 47, 58, 68, 78, 86, 89, 98, 103, 193, 197, 204, 213, 249, 278, 296, 300, 309, 337, 363, 380, 421, 437, 451, 471, 481, 492, 501, 503, 540, 580, 633, 654, 664, 675, 679
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.10291017964071857
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5514550898203593
+s-ConfirmationMeasure: 0.7916167664670659
+
+257 : (intercept5 >= -0.950157) & (slope10 >= 0.230914) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 35
+SupportingExamples: 13, 31, 56, 84, 94, 112, 144, 181, 184, 203, 226, 328, 343, 346, 351, 354, 368, 372, 377, 381, 382, 406, 432, 442, 444, 485, 517, 519, 549, 552, 606, 648, 669, 681, 684
+Strength: 0.05079825834542816
+Confidence: 1.0
+CoverageFactor: 0.08215962441314555
+Coverage: 35
+CoveredExamples: 13, 31, 56, 84, 94, 112, 144, 181, 184, 203, 226, 328, 343, 346, 351, 354, 368, 372, 377, 381, 382, 406, 432, 442, 444, 485, 517, 519, 549, 552, 606, 648, 669, 681, 684
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+258 : (intercept5 >= -0.947343) & (cintercept10 <= -1.078148) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 40
+SupportingExamples: 19, 23, 45, 74, 128, 132, 177, 182, 187, 198, 277, 280, 282, 299, 327, 328, 369, 383, 420, 449, 461, 463, 465, 470, 471, 498, 532, 547, 566, 570, 571, 578, 603, 624, 630, 644, 651, 655, 667, 674
+Strength: 0.05805515239477504
+Confidence: 1.0
+CoverageFactor: 0.0881057268722467
+Coverage: 40
+CoveredExamples: 19, 23, 45, 74, 128, 132, 177, 182, 187, 198, 277, 280, 282, 299, 327, 328, 369, 383, 420, 449, 461, 463, 465, 470, 471, 498, 532, 547, 566, 570, 571, 578, 603, 624, 630, 644, 651, 655, 667, 674
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07059241706161137
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5352962085308057
+s-ConfirmationMeasure: 0.7843601895734598
+
+259 : (intercept5 >= -0.947343) & (cintercept10 <= -1.064422) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 38
+SupportingExamples: 17, 19, 27, 35, 84, 108, 133, 148, 157, 181, 193, 218, 241, 249, 264, 293, 299, 308, 342, 385, 417, 427, 432, 442, 450, 452, 466, 476, 481, 482, 514, 543, 570, 598, 604, 658, 668, 671
+Strength: 0.055152394775036286
+Confidence: 1.0
+CoverageFactor: 0.08444444444444445
+Coverage: 38
+CoveredExamples: 17, 19, 27, 35, 84, 108, 133, 148, 157, 181, 193, 218, 241, 249, 264, 293, 299, 308, 342, 385, 417, 427, 432, 442, 450, 452, 466, 476, 481, 482, 514, 543, 570, 598, 604, 658, 668, 671
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+260 : (intercept5 >= -0.947343) & (cintercept10 <= -1.055902) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 26
+SupportingExamples: 4, 14, 60, 104, 108, 114, 135, 182, 206, 264, 276, 285, 302, 308, 317, 330, 337, 364, 405, 427, 446, 476, 542, 544, 577, 587
+Strength: 0.03773584905660377
+Confidence: 1.0
+CoverageFactor: 0.06018518518518518
+Coverage: 26
+CoveredExamples: 4, 14, 60, 104, 108, 114, 135, 182, 206, 264, 276, 285, 302, 308, 317, 330, 337, 364, 405, 427, 446, 476, 542, 544, 577, 587
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+261 : (intercept5 >= -0.944176) & (slope10 >= 0.230236) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 29
+SupportingExamples: 3, 16, 91, 97, 120, 159, 193, 194, 217, 268, 304, 315, 322, 351, 376, 378, 381, 432, 446, 451, 543, 584, 597, 612, 613, 622, 634, 645, 646
+Strength: 0.0420899854862119
+Confidence: 1.0
+CoverageFactor: 0.061052631578947365
+Coverage: 29
+CoveredExamples: 3, 16, 91, 97, 120, 159, 193, 194, 217, 268, 304, 315, 322, 351, 376, 378, 381, 432, 446, 451, 543, 584, 597, 612, 613, 622, 634, 645, 646
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09476702508960573
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5473835125448029
+s-ConfirmationMeasure: 0.7897252090800478
+
+262 : (intercept5 >= -0.94326) & (cintercept10 <= -1.071869) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 33
+SupportingExamples: 5, 10, 40, 47, 49, 54, 55, 58, 71, 77, 81, 90, 103, 109, 167, 175, 191, 204, 228, 260, 277, 340, 355, 370, 387, 504, 556, 566, 588, 593, 610, 633, 646
+Strength: 0.047895500725689405
+Confidence: 1.0
+CoverageFactor: 0.07534246575342465
+Coverage: 33
+CoveredExamples: 5, 10, 40, 47, 49, 54, 55, 58, 71, 77, 81, 90, 103, 109, 167, 175, 191, 204, 228, 260, 277, 340, 355, 370, 387, 504, 556, 566, 588, 593, 610, 633, 646
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+263 : (intercept5 >= -0.942688) & (slope10 >= 0.230812) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 40
+SupportingExamples: 40, 65, 72, 89, 110, 125, 138, 195, 201, 205, 218, 221, 243, 253, 297, 303, 304, 310, 325, 327, 375, 383, 384, 392, 397, 433, 434, 457, 461, 463, 512, 514, 519, 527, 542, 551, 621, 623, 640, 659
+Strength: 0.05805515239477504
+Confidence: 1.0
+CoverageFactor: 0.0894854586129754
+Coverage: 40
+CoveredExamples: 40, 65, 72, 89, 110, 125, 138, 195, 201, 205, 218, 221, 243, 253, 297, 303, 304, 310, 325, 327, 375, 383, 384, 392, 397, 433, 434, 457, 461, 463, 512, 514, 519, 527, 542, 551, 621, 623, 640, 659
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+264 : (intercept5 >= -0.940833) & (cintercept10 <= -1.038013) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 31
+SupportingExamples: 13, 44, 55, 80, 90, 121, 152, 163, 200, 206, 208, 225, 239, 279, 320, 324, 365, 370, 462, 510, 522, 523, 548, 590, 604, 623, 634, 639, 656, 680, 685
+Strength: 0.04499274310595065
+Confidence: 1.0
+CoverageFactor: 0.07142857142857142
+Coverage: 31
+CoveredExamples: 13, 44, 55, 80, 90, 121, 152, 163, 200, 206, 208, 225, 239, 279, 320, 324, 365, 370, 462, 510, 522, 523, 548, 590, 604, 623, 634, 639, 656, 680, 685
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.082625
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413125
+s-ConfirmationMeasure: 0.7869047619047619
+
+265 : (intercept5 >= -0.939563) & (cintercept10 <= -1.064422) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 29
+SupportingExamples: 62, 90, 129, 135, 139, 159, 165, 204, 211, 233, 240, 268, 276, 302, 307, 332, 345, 348, 374, 384, 432, 447, 448, 466, 508, 597, 605, 653, 679
+Strength: 0.0420899854862119
+Confidence: 1.0
+CoverageFactor: 0.0651685393258427
+Coverage: 29
+CoveredExamples: 62, 90, 129, 135, 139, 159, 165, 204, 211, 233, 240, 268, 276, 302, 307, 332, 345, 348, 374, 384, 432, 447, 448, 466, 508, 597, 605, 653, 679
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+266 : (intercept5 >= -0.938065) & (slope10 >= 0.22958) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 27
+SupportingExamples: 3, 16, 97, 120, 180, 193, 194, 217, 268, 315, 322, 351, 376, 378, 381, 432, 446, 451, 543, 584, 597, 612, 613, 622, 634, 645, 646
+Strength: 0.03918722786647315
+Confidence: 1.0
+CoverageFactor: 0.056842105263157895
+Coverage: 27
+CoveredExamples: 3, 16, 97, 120, 180, 193, 194, 217, 268, 315, 322, 351, 376, 378, 381, 432, 446, 451, 543, 584, 597, 612, 613, 622, 634, 645, 646
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09476702508960573
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5473835125448029
+s-ConfirmationMeasure: 0.7897252090800478
+
+267 : (intercept5 >= -0.937838) & (cintercept10 <= -1.029048) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 34
+SupportingExamples: 5, 25, 26, 31, 37, 39, 40, 67, 143, 145, 218, 220, 228, 251, 257, 264, 285, 323, 327, 354, 388, 407, 415, 457, 533, 535, 552, 558, 561, 640, 646, 653, 659, 667
+Strength: 0.04934687953555878
+Confidence: 1.0
+CoverageFactor: 0.07249466950959488
+Coverage: 34
+CoveredExamples: 5, 25, 26, 31, 37, 39, 40, 67, 143, 145, 218, 220, 228, 251, 257, 264, 285, 323, 327, 354, 388, 407, 415, 457, 533, 535, 552, 558, 561, 640, 646, 653, 659, 667
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.082625
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413125
+s-ConfirmationMeasure: 0.7869047619047619
+
+268 : (intercept5 >= -0.936205) & (cintercept10 <= -1.046399) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 44
+SupportingExamples: 6, 72, 137, 140, 163, 165, 177, 181, 194, 198, 202, 219, 247, 251, 256, 269, 276, 278, 282, 291, 299, 319, 321, 322, 323, 336, 341, 376, 382, 397, 444, 450, 468, 487, 492, 505, 518, 524, 573, 613, 642, 676, 681, 689
+Strength: 0.06386066763425254
+Confidence: 1.0
+CoverageFactor: 0.09954751131221719
+Coverage: 44
+CoveredExamples: 6, 72, 137, 140, 163, 165, 177, 181, 194, 198, 202, 219, 247, 251, 256, 269, 276, 278, 282, 291, 299, 319, 321, 322, 323, 336, 341, 376, 382, 397, 444, 450, 468, 487, 492, 505, 518, 524, 573, 613, 642, 676, 681, 689
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.11109243697478992
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5555462184873949
+s-ConfirmationMeasure: 0.7935174069627852
+
+269 : (intercept5 >= -0.935083) & (slope10 >= 0.230173) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 34
+SupportingExamples: 10, 22, 54, 90, 113, 139, 212, 241, 253, 259, 287, 298, 302, 340, 349, 351, 369, 383, 393, 397, 412, 447, 449, 456, 468, 519, 547, 579, 597, 605, 624, 648, 673, 677
+Strength: 0.04934687953555878
+Confidence: 1.0
+CoverageFactor: 0.07657657657657657
+Coverage: 34
+CoveredExamples: 10, 22, 54, 90, 113, 139, 212, 241, 253, 259, 287, 298, 302, 340, 349, 351, 369, 383, 393, 397, 412, 447, 449, 456, 468, 519, 547, 579, 597, 605, 624, 648, 673, 677
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08265160523186682
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413258026159334
+s-ConfirmationMeasure: 0.7871581450653984
+
+270 : (intercept5 >= -0.935083) & (slope10 >= 0.230113) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 31
+SupportingExamples: 11, 49, 121, 195, 205, 221, 225, 228, 239, 297, 298, 324, 333, 337, 355, 400, 401, 405, 445, 467, 483, 524, 544, 559, 606, 615, 623, 626, 638, 672, 674
+Strength: 0.04499274310595065
+Confidence: 1.0
+CoverageFactor: 0.06919642857142858
+Coverage: 31
+CoveredExamples: 11, 49, 121, 195, 205, 221, 225, 228, 239, 297, 298, 324, 333, 337, 355, 400, 401, 405, 445, 467, 483, 524, 544, 559, 606, 615, 623, 626, 638, 672, 674
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09476702508960573
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5473835125448029
+s-ConfirmationMeasure: 0.7897252090800478
+
+271 : (intercept5 >= -0.93313) & (cintercept10 <= -1.046399) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 31
+SupportingExamples: 6, 59, 76, 81, 137, 138, 141, 149, 173, 179, 183, 187, 206, 218, 239, 255, 285, 286, 338, 347, 381, 384, 475, 483, 532, 578, 590, 600, 656, 667, 680
+Strength: 0.04499274310595065
+Confidence: 1.0
+CoverageFactor: 0.06798245614035088
+Coverage: 31
+CoveredExamples: 6, 59, 76, 81, 137, 138, 141, 149, 173, 179, 183, 187, 206, 218, 239, 255, 285, 286, 338, 347, 381, 384, 475, 483, 532, 578, 590, 600, 656, 667, 680
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07059241706161137
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5352962085308057
+s-ConfirmationMeasure: 0.7843601895734598
+
+272 : (intercept5 >= -0.93313) & (cintercept10 <= -1.024061) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 34
+SupportingExamples: 36, 70, 74, 75, 111, 123, 127, 160, 171, 175, 186, 197, 208, 219, 226, 259, 282, 305, 312, 315, 343, 373, 435, 446, 447, 452, 475, 480, 502, 515, 576, 580, 591, 604
+Strength: 0.04934687953555878
+Confidence: 1.0
+CoverageFactor: 0.07538802660753881
+Coverage: 34
+CoveredExamples: 36, 70, 74, 75, 111, 123, 127, 160, 171, 175, 186, 197, 208, 219, 226, 259, 282, 305, 312, 315, 343, 373, 435, 446, 447, 452, 475, 480, 502, 515, 576, 580, 591, 604
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.082625
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413125
+s-ConfirmationMeasure: 0.7869047619047619
+
+273 : (intercept5 >= -0.930279) & (cintercept10 <= -1.036005) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 31
+SupportingExamples: 8, 24, 39, 43, 86, 92, 95, 130, 132, 149, 158, 203, 245, 254, 306, 338, 349, 389, 442, 475, 479, 480, 493, 506, 522, 550, 594, 606, 641, 647, 677
+Strength: 0.04499274310595065
+Confidence: 1.0
+CoverageFactor: 0.07328605200945626
+Coverage: 31
+CoveredExamples: 8, 24, 39, 43, 86, 92, 95, 130, 132, 149, 158, 203, 245, 254, 306, 338, 349, 389, 442, 475, 479, 480, 493, 506, 522, 550, 594, 606, 641, 647, 677
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+274 : (intercept5 >= -0.927849) & (cintercept10 <= -0.997427) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 39
+SupportingExamples: 11, 19, 28, 72, 90, 106, 117, 123, 128, 170, 179, 220, 223, 247, 251, 253, 271, 277, 285, 298, 300, 308, 344, 348, 349, 389, 434, 442, 449, 457, 487, 495, 546, 554, 586, 606, 628, 632, 642
+Strength: 0.05660377358490566
+Confidence: 1.0
+CoverageFactor: 0.08609271523178808
+Coverage: 39
+CoveredExamples: 11, 19, 28, 72, 90, 106, 117, 123, 128, 170, 179, 220, 223, 247, 251, 253, 271, 277, 285, 298, 300, 308, 344, 348, 349, 389, 434, 442, 449, 457, 487, 495, 546, 554, 586, 606, 628, 632, 642
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0866626936829559
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543331346841478
+s-ConfirmationMeasure: 0.7878426698450537
+
+275 : (intercept5 >= -0.927589) & (cintercept10 <= -1.02481) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 33
+SupportingExamples: 18, 57, 69, 73, 81, 154, 168, 174, 188, 191, 200, 212, 229, 230, 243, 255, 351, 352, 354, 371, 396, 467, 481, 486, 502, 514, 517, 520, 526, 536, 544, 556, 587
+Strength: 0.047895500725689405
+Confidence: 1.0
+CoverageFactor: 0.07621247113163972
+Coverage: 33
+CoveredExamples: 18, 57, 69, 73, 81, 154, 168, 174, 188, 191, 200, 212, 229, 230, 243, 255, 351, 352, 354, 371, 396, 467, 481, 486, 502, 514, 517, 520, 526, 536, 544, 556, 587
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07862232779097388
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.539311163895487
+s-ConfirmationMeasure: 0.7862232779097387
+
+276 : (intercept5 >= -0.927589) & (cintercept10 <= -1.024061) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 33
+SupportingExamples: 8, 24, 39, 43, 86, 90, 92, 95, 130, 132, 149, 203, 245, 254, 306, 338, 349, 389, 442, 474, 475, 479, 493, 506, 522, 550, 594, 603, 606, 630, 641, 647, 677
+Strength: 0.047895500725689405
+Confidence: 1.0
+CoverageFactor: 0.07801418439716312
+Coverage: 33
+CoveredExamples: 8, 24, 39, 43, 86, 90, 92, 95, 130, 132, 149, 203, 245, 254, 306, 338, 349, 389, 442, 474, 475, 479, 493, 506, 522, 550, 594, 603, 606, 630, 641, 647, 677
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.082625
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413125
+s-ConfirmationMeasure: 0.7869047619047619
+
+277 : (intercept5 >= -0.924995) & (cintercept10 <= -1.012903) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 26
+SupportingExamples: 75, 91, 128, 165, 170, 178, 209, 220, 233, 235, 240, 246, 288, 312, 325, 334, 364, 445, 453, 505, 524, 551, 560, 624, 677, 681
+Strength: 0.03773584905660377
+Confidence: 1.0
+CoverageFactor: 0.05922551252847381
+Coverage: 26
+CoveredExamples: 75, 91, 128, 165, 170, 178, 209, 220, 233, 235, 240, 246, 288, 312, 325, 334, 364, 445, 453, 505, 524, 551, 560, 624, 677, 681
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.10291017964071857
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5514550898203593
+s-ConfirmationMeasure: 0.7916167664670659
+
+278 : (intercept5 >= -0.919188) & (slope10 >= 0.228531) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 31
+SupportingExamples: 9, 28, 37, 41, 46, 71, 83, 87, 129, 148, 156, 175, 191, 319, 322, 343, 357, 361, 375, 388, 396, 466, 469, 470, 476, 542, 560, 617, 634, 681, 682
+Strength: 0.04499274310595065
+Confidence: 1.0
+CoverageFactor: 0.06950672645739911
+Coverage: 31
+CoveredExamples: 9, 28, 37, 41, 46, 71, 83, 87, 129, 148, 156, 175, 191, 319, 322, 343, 357, 361, 375, 388, 396, 466, 469, 470, 476, 542, 560, 617, 634, 681, 682
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09476702508960573
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5473835125448029
+s-ConfirmationMeasure: 0.7897252090800478
+
+279 : (intercept5 >= -0.918278) & (slope10 >= 0.22697) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 41
+SupportingExamples: 6, 43, 56, 105, 106, 123, 124, 133, 139, 144, 153, 157, 162, 219, 227, 274, 276, 283, 296, 318, 373, 385, 394, 396, 398, 444, 456, 482, 507, 517, 528, 536, 554, 560, 583, 597, 620, 632, 633, 644, 689
+Strength: 0.059506531204644414
+Confidence: 1.0
+CoverageFactor: 0.09318181818181819
+Coverage: 41
+CoveredExamples: 6, 43, 56, 105, 106, 123, 124, 133, 139, 144, 153, 157, 162, 219, 227, 274, 276, 283, 296, 318, 373, 385, 394, 396, 398, 444, 456, 482, 507, 517, 528, 536, 554, 560, 583, 597, 620, 632, 633, 644, 689
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08265160523186682
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413258026159334
+s-ConfirmationMeasure: 0.7871581450653984
+
+280 : (intercept5 >= -0.91079) & (slope10 >= 0.227677) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 30
+SupportingExamples: 19, 106, 111, 175, 211, 258, 270, 287, 295, 299, 308, 310, 353, 376, 390, 407, 427, 447, 448, 452, 455, 465, 484, 529, 556, 560, 589, 597, 634, 640
+Strength: 0.04354136429608128
+Confidence: 1.0
+CoverageFactor: 0.06960556844547564
+Coverage: 30
+CoveredExamples: 19, 106, 111, 175, 211, 258, 270, 287, 295, 299, 308, 310, 353, 376, 390, 407, 427, 447, 448, 452, 455, 465, 484, 529, 556, 560, 589, 597, 634, 640
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08265160523186682
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413258026159334
+s-ConfirmationMeasure: 0.7871581450653984
+
+281 : (intercept5 >= -0.891517) & (slope10 >= 0.224246) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 41
+SupportingExamples: 43, 46, 48, 53, 79, 86, 114, 121, 130, 143, 163, 175, 179, 201, 214, 221, 245, 267, 279, 298, 299, 301, 345, 361, 372, 395, 396, 446, 472, 473, 491, 492, 496, 514, 525, 574, 601, 602, 606, 609, 646
+Strength: 0.059506531204644414
+Confidence: 1.0
+CoverageFactor: 0.09360730593607305
+Coverage: 41
+CoveredExamples: 43, 46, 48, 53, 79, 86, 114, 121, 130, 143, 163, 175, 179, 201, 214, 221, 245, 267, 279, 298, 299, 301, 345, 361, 372, 395, 396, 446, 472, 473, 491, 492, 496, 514, 525, 574, 601, 602, 606, 609, 646
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+282 : (intercept5 >= -0.882945) & (slope10 >= 0.224246) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 22
+SupportingExamples: 26, 126, 148, 161, 208, 212, 248, 249, 252, 277, 305, 336, 355, 361, 385, 405, 417, 457, 568, 569, 643, 681
+Strength: 0.03193033381712627
+Confidence: 1.0
+CoverageFactor: 0.047619047619047616
+Coverage: 22
+CoveredExamples: 26, 126, 148, 161, 208, 212, 248, 249, 252, 277, 305, 336, 355, 361, 385, 405, 417, 457, 568, 569, 643, 681
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.10291017964071857
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5514550898203593
+s-ConfirmationMeasure: 0.7916167664670659
+
+283 : (intercept5 >= -0.882945) & (cintercept10 <= -0.90995) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 36
+SupportingExamples: 4, 7, 15, 18, 112, 148, 163, 164, 173, 223, 230, 231, 236, 245, 253, 284, 298, 304, 308, 314, 319, 358, 375, 405, 460, 474, 488, 509, 513, 554, 565, 577, 593, 614, 634, 653
+Strength: 0.05224963715529753
+Confidence: 1.0
+CoverageFactor: 0.07860262008733625
+Coverage: 36
+CoveredExamples: 4, 7, 15, 18, 112, 148, 163, 164, 173, 223, 230, 231, 236, 245, 253, 284, 298, 304, 308, 314, 319, 358, 375, 405, 460, 474, 488, 509, 513, 554, 565, 577, 593, 614, 634, 653
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09476702508960573
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5473835125448029
+s-ConfirmationMeasure: 0.7897252090800478
+
+284 : (intercept5 >= -0.869561) & (cintercept10 <= -0.876117) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 24
+SupportingExamples: 17, 40, 169, 228, 237, 276, 282, 331, 338, 363, 436, 445, 455, 458, 490, 532, 541, 577, 587, 601, 620, 652, 664, 684
+Strength: 0.03483309143686502
+Confidence: 1.0
+CoverageFactor: 0.05286343612334802
+Coverage: 24
+CoveredExamples: 17, 40, 169, 228, 237, 276, 282, 331, 338, 363, 436, 445, 455, 458, 490, 532, 541, 577, 587, 601, 620, 652, 664, 684
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07059241706161137
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5352962085308057
+s-ConfirmationMeasure: 0.7843601895734598
+
+285 : (intercept5 >= -0.869561) & (cintercept10 <= -0.870124) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 31
+SupportingExamples: 5, 22, 70, 72, 88, 120, 202, 208, 218, 231, 245, 250, 256, 264, 294, 297, 317, 323, 340, 354, 401, 425, 458, 478, 485, 568, 600, 627, 637, 639, 649
+Strength: 0.04499274310595065
+Confidence: 1.0
+CoverageFactor: 0.07061503416856492
+Coverage: 31
+CoveredExamples: 5, 22, 70, 72, 88, 120, 202, 208, 218, 231, 245, 250, 256, 264, 294, 297, 317, 323, 340, 354, 401, 425, 458, 478, 485, 568, 600, 627, 637, 639, 649
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08265160523186682
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413258026159334
+s-ConfirmationMeasure: 0.7871581450653984
+
+286 : (intercept5 >= -0.86418) & (cintercept10 <= -0.85795) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 22
+SupportingExamples: 27, 44, 52, 66, 79, 196, 198, 202, 266, 301, 310, 333, 350, 503, 504, 542, 599, 600, 630, 644, 646, 675
+Strength: 0.03193033381712627
+Confidence: 1.0
+CoverageFactor: 0.05
+Coverage: 22
+CoveredExamples: 27, 44, 52, 66, 79, 196, 198, 202, 266, 301, 310, 333, 350, 503, 504, 542, 599, 600, 630, 644, 646, 675
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07859690844233055
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5392984542211653
+s-ConfirmationMeasure: 0.7859690844233056
+
+287 : (intercept5 >= -0.859193) & (cintercept10 <= -0.838879) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 38
+SupportingExamples: 6, 137, 140, 160, 165, 177, 181, 194, 198, 202, 247, 251, 256, 269, 276, 278, 282, 291, 299, 319, 321, 322, 323, 341, 376, 382, 444, 450, 468, 487, 492, 505, 518, 573, 582, 642, 676, 689
+Strength: 0.055152394775036286
+Confidence: 1.0
+CoverageFactor: 0.08597285067873303
+Coverage: 38
+CoveredExamples: 6, 137, 140, 160, 165, 177, 181, 194, 198, 202, 247, 251, 256, 269, 276, 278, 282, 291, 299, 319, 321, 322, 323, 341, 376, 382, 444, 450, 468, 487, 492, 505, 518, 573, 582, 642, 676, 689
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09071002386634845
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5453550119331743
+s-ConfirmationMeasure: 0.788782816229117
+
+288 : (intercept5 >= -0.84898) & (cintercept10 <= -0.79775) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 25
+SupportingExamples: 2, 4, 64, 66, 75, 197, 211, 217, 222, 228, 254, 262, 308, 332, 334, 373, 384, 390, 409, 462, 490, 548, 574, 622, 683
+Strength: 0.036284470246734396
+Confidence: 1.0
+CoverageFactor: 0.057208237986270026
+Coverage: 25
+CoveredExamples: 2, 4, 64, 66, 75, 197, 211, 217, 222, 228, 254, 262, 308, 332, 334, 373, 384, 390, 409, 462, 490, 548, 574, 622, 683
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07859690844233055
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5392984542211653
+s-ConfirmationMeasure: 0.7859690844233056
+
+289 : (intercept5 >= -0.843071) & (cintercept10 <= -0.775512) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 33
+SupportingExamples: 36, 70, 74, 75, 111, 123, 127, 160, 175, 197, 208, 219, 226, 282, 305, 312, 315, 343, 373, 413, 435, 446, 447, 452, 475, 480, 502, 515, 576, 580, 591, 604, 659
+Strength: 0.047895500725689405
+Confidence: 1.0
+CoverageFactor: 0.07317073170731707
+Coverage: 33
+CoveredExamples: 36, 70, 74, 75, 111, 123, 127, 160, 175, 197, 208, 219, 226, 282, 305, 312, 315, 343, 373, 413, 435, 446, 447, 452, 475, 480, 502, 515, 576, 580, 591, 604, 659
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07859690844233055
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5392984542211653
+s-ConfirmationMeasure: 0.7859690844233056
+
+290 : (intercept5 >= -0.808643) & (slope8 >= -0.003864) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 24
+SupportingExamples: 4, 26, 30, 71, 153, 154, 158, 206, 247, 257, 330, 360, 362, 384, 422, 445, 464, 497, 568, 594, 615, 656, 679, 688
+Strength: 0.03483309143686502
+Confidence: 1.0
+CoverageFactor: 0.05161290322580645
+Coverage: 24
+CoveredExamples: 4, 26, 30, 71, 153, 154, 158, 206, 247, 257, 330, 360, 362, 384, 422, 445, 464, 497, 568, 594, 615, 656, 679, 688
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+291 : (intercept5 >= -0.754972) & (slope8 >= -0.007539) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 35
+SupportingExamples: 6, 114, 132, 133, 155, 158, 166, 194, 219, 256, 275, 296, 298, 300, 311, 355, 360, 362, 368, 377, 388, 417, 428, 447, 522, 534, 539, 575, 587, 593, 611, 632, 654, 678, 689
+Strength: 0.05079825834542816
+Confidence: 1.0
+CoverageFactor: 0.08177570093457943
+Coverage: 35
+CoveredExamples: 6, 114, 132, 133, 155, 158, 166, 194, 219, 256, 275, 296, 298, 300, 311, 355, 360, 362, 368, 377, 388, 417, 428, 447, 522, 534, 539, 575, 587, 593, 611, 632, 654, 678, 689
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+292 : (intercept5 >= -0.754972) & (cintercept10 <= -0.602865) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 23
+SupportingExamples: 30, 34, 37, 72, 89, 96, 106, 110, 142, 155, 186, 281, 312, 331, 368, 388, 421, 458, 507, 562, 617, 653, 663
+Strength: 0.033381712626995644
+Confidence: 1.0
+CoverageFactor: 0.05088495575221239
+Coverage: 23
+CoveredExamples: 30, 34, 37, 72, 89, 96, 106, 110, 142, 155, 186, 281, 312, 331, 368, 388, 421, 458, 507, 562, 617, 653, 663
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+293 : (intercept5 >= -0.734293) & (slope8 >= -0.008999) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 30
+SupportingExamples: 16, 30, 46, 66, 80, 119, 180, 182, 183, 223, 225, 248, 261, 272, 299, 300, 353, 367, 408, 411, 413, 465, 521, 531, 609, 620, 626, 654, 655, 684
+Strength: 0.04354136429608128
+Confidence: 1.0
+CoverageFactor: 0.06622516556291391
+Coverage: 30
+CoveredExamples: 16, 30, 46, 66, 80, 119, 180, 182, 183, 223, 225, 248, 261, 272, 299, 300, 353, 367, 408, 411, 413, 465, 521, 531, 609, 620, 626, 654, 655, 684
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+294 : (intercept5 >= -0.716565) & (cintercept10 <= -0.774531) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 18
+SupportingExamples: 64, 70, 80, 82, 140, 274, 344, 356, 472, 493, 513, 531, 581, 609, 622, 634, 669, 672
+Strength: 0.026124818577648767
+Confidence: 1.0
+CoverageFactor: 0.04157043879907621
+Coverage: 18
+CoveredExamples: 64, 70, 80, 82, 140, 274, 344, 356, 472, 493, 513, 531, 581, 609, 622, 634, 669, 672
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07059241706161137
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5352962085308057
+s-ConfirmationMeasure: 0.7843601895734598
+
+295 : (intercept5 >= -0.585054) & (slope6 >= -0.016975) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 26
+SupportingExamples: 13, 31, 56, 90, 112, 144, 181, 184, 226, 303, 346, 354, 377, 381, 382, 390, 406, 432, 458, 465, 485, 517, 646, 669, 681, 684
+Strength: 0.03773584905660377
+Confidence: 1.0
+CoverageFactor: 0.06103286384976526
+Coverage: 26
+CoveredExamples: 13, 31, 56, 90, 112, 144, 181, 184, 226, 303, 346, 354, 377, 381, 382, 390, 406, 432, 458, 465, 485, 517, 646, 669, 681, 684
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07059241706161137
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5352962085308057
+s-ConfirmationMeasure: 0.7843601895734598
+
+296 : (intercept2 >= -0.282214) & (slope7 >= -0.006184) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 36
+SupportingExamples: 39, 68, 105, 120, 130, 145, 151, 162, 244, 264, 265, 267, 268, 270, 287, 354, 368, 369, 393, 411, 422, 450, 455, 478, 505, 536, 538, 586, 590, 611, 621, 635, 651, 656, 671, 677
+Strength: 0.05224963715529753
+Confidence: 1.0
+CoverageFactor: 0.07894736842105263
+Coverage: 36
+CoveredExamples: 39, 68, 105, 120, 130, 145, 151, 162, 244, 264, 265, 267, 268, 270, 287, 354, 368, 369, 393, 411, 422, 450, 455, 478, 505, 536, 538, 586, 590, 611, 621, 635, 651, 656, 671, 677
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0866626936829559
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543331346841478
+s-ConfirmationMeasure: 0.7878426698450537
+
+297 : (intercept2 >= -0.250405) & (slope7 >= -0.005402) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 38
+SupportingExamples: 5, 8, 34, 46, 52, 53, 103, 135, 193, 197, 204, 262, 265, 270, 290, 308, 309, 313, 315, 337, 341, 350, 394, 409, 415, 436, 472, 503, 523, 547, 552, 566, 573, 581, 601, 618, 623, 631
+Strength: 0.055152394775036286
+Confidence: 1.0
+CoverageFactor: 0.08695652173913043
+Coverage: 38
+CoveredExamples: 5, 8, 34, 46, 52, 53, 103, 135, 193, 197, 204, 262, 265, 270, 290, 308, 309, 313, 315, 337, 341, 350, 394, 409, 415, 436, 472, 503, 523, 547, 552, 566, 573, 581, 601, 618, 623, 631
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+298 : (intercept2 >= -0.240924) & (slope7 >= -0.005456) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 32
+SupportingExamples: 6, 96, 140, 160, 165, 177, 181, 198, 202, 247, 251, 256, 276, 278, 282, 291, 299, 319, 321, 322, 323, 341, 382, 444, 450, 487, 492, 505, 518, 642, 676, 689
+Strength: 0.04644412191582003
+Confidence: 1.0
+CoverageFactor: 0.07239819004524888
+Coverage: 32
+CoveredExamples: 6, 96, 140, 160, 165, 177, 181, 198, 202, 247, 251, 256, 276, 278, 282, 291, 299, 319, 321, 322, 323, 341, 382, 444, 450, 487, 492, 505, 518, 642, 676, 689
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+299 : (intercept2 >= -0.197638) & (slope7 >= -0.007454) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 23
+SupportingExamples: 15, 28, 79, 93, 115, 121, 144, 279, 289, 292, 363, 401, 413, 450, 457, 488, 496, 532, 539, 555, 583, 600, 631
+Strength: 0.033381712626995644
+Confidence: 1.0
+CoverageFactor: 0.053738317757009345
+Coverage: 23
+CoveredExamples: 15, 28, 79, 93, 115, 121, 144, 279, 289, 292, 363, 401, 413, 450, 457, 488, 496, 532, 539, 555, 583, 600, 631
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+300 : (cslope5 <= 0.085961) & (cintercept10 <= -1.087065) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 33
+SupportingExamples: 6, 59, 76, 81, 84, 137, 138, 149, 173, 179, 183, 187, 206, 218, 239, 244, 255, 285, 338, 347, 381, 384, 437, 475, 483, 532, 578, 590, 600, 609, 656, 667, 687
+Strength: 0.047895500725689405
+Confidence: 1.0
+CoverageFactor: 0.07236842105263158
+Coverage: 33
+CoveredExamples: 6, 59, 76, 81, 84, 137, 138, 149, 173, 179, 183, 187, 206, 218, 239, 244, 255, 285, 338, 347, 381, 384, 437, 475, 483, 532, 578, 590, 600, 609, 656, 667, 687
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09073897497020263
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5453694874851013
+s-ConfirmationMeasure: 0.7890345649582837
+
+301 : (cslope5 <= 0.085837) & (cintercept10 <= -1.089831) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 45
+SupportingExamples: 40, 65, 72, 100, 110, 125, 138, 153, 160, 195, 201, 205, 216, 218, 222, 243, 297, 303, 304, 310, 325, 327, 370, 375, 389, 392, 397, 433, 434, 457, 461, 463, 512, 514, 517, 519, 527, 535, 541, 542, 551, 621, 623, 640, 659
+Strength: 0.06531204644412192
+Confidence: 1.0
+CoverageFactor: 0.10067114093959731
+Coverage: 45
+CoveredExamples: 40, 65, 72, 100, 110, 125, 138, 153, 160, 195, 201, 205, 216, 218, 222, 243, 297, 303, 304, 310, 325, 327, 370, 375, 389, 392, 397, 433, 434, 457, 461, 463, 512, 514, 517, 519, 527, 535, 541, 542, 551, 621, 623, 640, 659
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09073897497020263
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5453694874851013
+s-ConfirmationMeasure: 0.7890345649582837
+
+302 : (cslope5 <= 0.085837) & (cintercept10 <= -1.089506) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 48
+SupportingExamples: 55, 61, 177, 181, 189, 208, 209, 225, 239, 248, 259, 263, 275, 281, 283, 291, 292, 306, 314, 321, 377, 383, 384, 398, 400, 405, 418, 432, 437, 440, 441, 444, 454, 463, 486, 498, 509, 521, 539, 561, 578, 579, 590, 629, 646, 651, 670, 677
+Strength: 0.06966618287373004
+Confidence: 1.0
+CoverageFactor: 0.10434782608695652
+Coverage: 48
+CoveredExamples: 55, 61, 177, 181, 189, 208, 209, 225, 239, 248, 259, 263, 275, 281, 283, 291, 292, 306, 314, 321, 377, 383, 384, 398, 400, 405, 418, 432, 437, 440, 441, 444, 454, 463, 486, 498, 509, 521, 539, 561, 578, 579, 590, 629, 646, 651, 670, 677
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09073897497020263
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5453694874851013
+s-ConfirmationMeasure: 0.7890345649582837
+
+303 : (cslope5 <= 0.085837) & (cintercept10 <= -1.087031) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 34
+SupportingExamples: 6, 10, 38, 46, 86, 99, 117, 126, 160, 170, 185, 204, 234, 243, 271, 290, 308, 351, 372, 393, 481, 494, 504, 509, 511, 518, 531, 588, 602, 606, 623, 629, 648, 677
+Strength: 0.04934687953555878
+Confidence: 1.0
+CoverageFactor: 0.07327586206896551
+Coverage: 34
+CoveredExamples: 6, 10, 38, 46, 86, 99, 117, 126, 160, 170, 185, 204, 234, 243, 271, 290, 308, 351, 372, 393, 481, 494, 504, 509, 511, 518, 531, 588, 602, 606, 623, 629, 648, 677
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09073897497020263
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5453694874851013
+s-ConfirmationMeasure: 0.7890345649582837
+
+304 : (cslope5 <= 0.085675) & (cintercept10 <= -1.091566) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 32
+SupportingExamples: 32, 48, 65, 83, 90, 112, 113, 116, 135, 175, 179, 188, 225, 246, 325, 349, 350, 385, 417, 420, 423, 424, 465, 473, 493, 538, 571, 602, 604, 626, 651, 668
+Strength: 0.04644412191582003
+Confidence: 1.0
+CoverageFactor: 0.07256235827664399
+Coverage: 32
+CoveredExamples: 32, 48, 65, 83, 90, 112, 113, 116, 135, 175, 179, 188, 225, 246, 325, 349, 350, 385, 417, 420, 423, 424, 465, 473, 493, 538, 571, 602, 604, 626, 651, 668
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07859690844233055
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5392984542211653
+s-ConfirmationMeasure: 0.7859690844233056
+
+305 : (cslope5 <= 0.085675) & (cintercept10 <= -1.091251) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 39
+SupportingExamples: 2, 52, 54, 62, 80, 83, 88, 95, 122, 136, 148, 163, 182, 189, 220, 225, 232, 245, 279, 315, 318, 336, 346, 354, 358, 384, 396, 414, 418, 423, 425, 450, 470, 506, 512, 605, 609, 644, 663
+Strength: 0.05660377358490566
+Confidence: 1.0
+CoverageFactor: 0.08685968819599109
+Coverage: 39
+CoveredExamples: 2, 52, 54, 62, 80, 83, 88, 95, 122, 136, 148, 163, 182, 189, 220, 225, 232, 245, 279, 315, 318, 336, 346, 354, 358, 384, 396, 414, 418, 423, 425, 450, 470, 506, 512, 605, 609, 644, 663
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07859690844233055
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5392984542211653
+s-ConfirmationMeasure: 0.7859690844233056
+
+306 : (cslope5 <= 0.085675) & (cintercept10 <= -1.083197) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 40
+SupportingExamples: 25, 72, 79, 117, 120, 140, 172, 179, 193, 209, 221, 238, 258, 265, 270, 287, 305, 384, 392, 393, 414, 434, 443, 464, 471, 484, 491, 519, 559, 586, 589, 597, 613, 623, 628, 648, 658, 662, 672, 687
+Strength: 0.05805515239477504
+Confidence: 1.0
+CoverageFactor: 0.09174311926605505
+Coverage: 40
+CoveredExamples: 25, 72, 79, 117, 120, 140, 172, 179, 193, 209, 221, 238, 258, 265, 270, 287, 305, 384, 392, 393, 414, 434, 443, 464, 471, 484, 491, 519, 559, 586, 589, 597, 613, 623, 628, 648, 658, 662, 672, 687
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.11109243697478992
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5555462184873949
+s-ConfirmationMeasure: 0.7935174069627852
+
+307 : (cslope5 <= 0.085473) & (cintercept10 <= -1.09234) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 30
+SupportingExamples: 4, 75, 94, 116, 139, 149, 152, 167, 204, 210, 219, 245, 268, 276, 340, 356, 374, 406, 440, 468, 500, 513, 518, 557, 595, 615, 642, 643, 664, 688
+Strength: 0.04354136429608128
+Confidence: 1.0
+CoverageFactor: 0.07142857142857142
+Coverage: 30
+CoveredExamples: 4, 75, 94, 116, 139, 149, 152, 167, 204, 210, 219, 245, 268, 276, 340, 356, 374, 406, 440, 468, 500, 513, 518, 557, 595, 615, 642, 643, 664, 688
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+308 : (cslope5 <= 0.085473) & (cintercept10 <= -1.092215) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 31
+SupportingExamples: 6, 13, 21, 31, 69, 77, 114, 132, 158, 181, 235, 343, 371, 383, 393, 398, 430, 438, 462, 478, 484, 516, 560, 582, 596, 604, 643, 664, 667, 670, 687
+Strength: 0.04499274310595065
+Confidence: 1.0
+CoverageFactor: 0.07061503416856492
+Coverage: 31
+CoveredExamples: 6, 13, 21, 31, 69, 77, 114, 132, 158, 181, 235, 343, 371, 383, 393, 398, 430, 438, 462, 478, 484, 516, 560, 582, 596, 604, 643, 664, 667, 670, 687
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09071002386634845
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5453550119331743
+s-ConfirmationMeasure: 0.788782816229117
+
+309 : (cslope5 <= 0.085473) & (cintercept10 <= -1.091251) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 42
+SupportingExamples: 3, 8, 17, 37, 118, 137, 161, 181, 200, 213, 221, 230, 238, 242, 253, 265, 275, 279, 299, 332, 334, 353, 355, 416, 434, 436, 439, 445, 461, 463, 477, 491, 498, 507, 551, 566, 583, 626, 628, 631, 640, 657
+Strength: 0.06095791001451379
+Confidence: 1.0
+CoverageFactor: 0.09438202247191012
+Coverage: 42
+CoveredExamples: 3, 8, 17, 37, 118, 137, 161, 181, 200, 213, 221, 230, 238, 242, 253, 265, 275, 279, 299, 332, 334, 353, 355, 416, 434, 436, 439, 445, 461, 463, 477, 491, 498, 507, 551, 566, 583, 626, 628, 631, 640, 657
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08669047619047619
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543345238095238
+s-ConfirmationMeasure: 0.7880952380952381
+
+310 : (cslope5 <= 0.085473) & (cintercept10 <= -1.089506) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 51
+SupportingExamples: 12, 21, 55, 61, 79, 93, 98, 112, 121, 123, 132, 133, 137, 138, 152, 160, 184, 189, 219, 227, 234, 240, 241, 258, 264, 289, 306, 343, 344, 356, 374, 412, 417, 420, 477, 480, 486, 513, 529, 534, 553, 562, 565, 579, 583, 592, 611, 641, 642, 664, 665
+Strength: 0.07402031930333818
+Confidence: 1.0
+CoverageFactor: 0.11409395973154363
+Coverage: 51
+CoveredExamples: 12, 21, 55, 61, 79, 93, 98, 112, 121, 123, 132, 133, 137, 138, 152, 160, 184, 189, 219, 227, 234, 240, 241, 258, 264, 289, 306, 343, 344, 356, 374, 412, 417, 420, 477, 480, 486, 513, 529, 534, 553, 562, 565, 579, 583, 592, 611, 641, 642, 664, 665
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09073897497020263
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5453694874851013
+s-ConfirmationMeasure: 0.7890345649582837
+
+311 : (cslope5 <= 0.085228) & (cintercept10 <= -1.092215) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 25
+SupportingExamples: 4, 14, 60, 104, 108, 114, 135, 182, 206, 212, 264, 276, 285, 302, 308, 317, 337, 405, 427, 446, 476, 542, 577, 587, 642
+Strength: 0.036284470246734396
+Confidence: 1.0
+CoverageFactor: 0.05787037037037037
+Coverage: 25
+CoveredExamples: 4, 14, 60, 104, 108, 114, 135, 182, 206, 212, 264, 276, 285, 302, 308, 317, 337, 405, 427, 446, 476, 542, 577, 587, 642
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+312 : (cslope5 <= 0.08494) & (cintercept10 <= -1.091251) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 37
+SupportingExamples: 24, 26, 50, 53, 57, 97, 111, 121, 128, 153, 158, 163, 164, 186, 210, 290, 312, 316, 326, 328, 369, 370, 383, 387, 417, 422, 478, 530, 541, 551, 567, 641, 643, 653, 662, 666, 668
+Strength: 0.05370101596516691
+Confidence: 1.0
+CoverageFactor: 0.08545034642032333
+Coverage: 37
+CoveredExamples: 24, 26, 50, 53, 57, 97, 111, 121, 128, 153, 158, 163, 164, 186, 210, 290, 312, 316, 326, 328, 369, 370, 383, 387, 417, 422, 478, 530, 541, 551, 567, 641, 643, 653, 662, 666, 668
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09476702508960573
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5473835125448029
+s-ConfirmationMeasure: 0.7897252090800478
+
+313 : (cslope5 <= 0.084608) & (cintercept10 <= -1.089506) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 32
+SupportingExamples: 26, 35, 53, 70, 78, 82, 100, 156, 158, 169, 219, 246, 265, 290, 322, 335, 350, 352, 366, 405, 414, 415, 443, 455, 550, 559, 586, 592, 594, 615, 636, 681
+Strength: 0.04644412191582003
+Confidence: 1.0
+CoverageFactor: 0.0735632183908046
+Coverage: 32
+CoveredExamples: 26, 35, 53, 70, 78, 82, 100, 156, 158, 169, 219, 246, 265, 290, 322, 335, 350, 352, 366, 405, 414, 415, 443, 455, 550, 559, 586, 592, 594, 615, 636, 681
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.11109243697478992
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5555462184873949
+s-ConfirmationMeasure: 0.7935174069627852
+
+314 : (cslope5 <= 0.083915) & (cintercept10 <= -1.040515) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 54
+SupportingExamples: 23, 66, 71, 90, 102, 122, 131, 135, 153, 160, 161, 173, 176, 187, 188, 197, 200, 214, 220, 236, 256, 282, 286, 288, 290, 299, 308, 329, 332, 396, 415, 421, 437, 452, 465, 466, 491, 516, 564, 568, 571, 589, 597, 598, 612, 622, 624, 634, 637, 639, 656, 667, 668, 674
+Strength: 0.0783744557329463
+Confidence: 1.0
+CoverageFactor: 0.1210762331838565
+Coverage: 54
+CoveredExamples: 23, 66, 71, 90, 102, 122, 131, 135, 153, 160, 161, 173, 176, 187, 188, 197, 200, 214, 220, 236, 256, 282, 286, 288, 290, 299, 308, 329, 332, 396, 415, 421, 437, 452, 465, 466, 491, 516, 564, 568, 571, 589, 597, 598, 612, 622, 624, 634, 637, 639, 656, 667, 668, 674
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08669047619047619
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543345238095238
+s-ConfirmationMeasure: 0.7880952380952381
+
+315 : (cslope5 <= 0.083359) & (cintercept10 <= -1.080075) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 34
+SupportingExamples: 9, 13, 19, 20, 41, 44, 50, 92, 96, 141, 173, 204, 213, 269, 296, 300, 412, 425, 427, 447, 473, 506, 515, 520, 542, 566, 573, 593, 606, 612, 661, 678, 680, 687
+Strength: 0.04934687953555878
+Confidence: 1.0
+CoverageFactor: 0.07727272727272727
+Coverage: 34
+CoveredExamples: 9, 13, 19, 20, 41, 44, 50, 92, 96, 141, 173, 204, 213, 269, 296, 300, 412, 425, 427, 447, 473, 506, 515, 520, 542, 566, 573, 593, 606, 612, 661, 678, 680, 687
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08265160523186682
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413258026159334
+s-ConfirmationMeasure: 0.7871581450653984
+
+316 : (cslope5 <= 0.082301) & (cintercept10 <= -1.070184) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 44
+SupportingExamples: 15, 21, 23, 28, 31, 32, 38, 39, 47, 66, 88, 98, 106, 130, 136, 147, 165, 203, 220, 223, 230, 249, 253, 285, 288, 292, 328, 361, 395, 406, 469, 480, 503, 509, 525, 538, 542, 586, 592, 598, 600, 602, 608, 651
+Strength: 0.06386066763425254
+Confidence: 1.0
+CoverageFactor: 0.1
+Coverage: 44
+CoveredExamples: 15, 21, 23, 28, 31, 32, 38, 39, 47, 66, 88, 98, 106, 130, 136, 147, 165, 203, 220, 223, 230, 249, 253, 285, 288, 292, 328, 361, 395, 406, 469, 480, 503, 509, 525, 538, 542, 586, 592, 598, 600, 602, 608, 651
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09476702508960573
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5473835125448029
+s-ConfirmationMeasure: 0.7897252090800478
+
+317 : (cslope5 <= 0.081697) & (cintercept10 <= -1.063887) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 41
+SupportingExamples: 25, 37, 74, 92, 107, 109, 116, 140, 157, 172, 199, 242, 256, 287, 290, 297, 311, 322, 390, 392, 405, 406, 410, 414, 436, 455, 470, 479, 484, 513, 527, 535, 539, 543, 571, 589, 626, 629, 634, 663, 667
+Strength: 0.059506531204644414
+Confidence: 1.0
+CoverageFactor: 0.09738717339667459
+Coverage: 41
+CoveredExamples: 25, 37, 74, 92, 107, 109, 116, 140, 157, 172, 199, 242, 256, 287, 290, 297, 311, 322, 390, 392, 405, 406, 410, 414, 436, 455, 470, 479, 484, 513, 527, 535, 539, 543, 571, 589, 626, 629, 634, 663, 667
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08669047619047619
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543345238095238
+s-ConfirmationMeasure: 0.7880952380952381
+
+318 : (cslope5 <= 0.081196) & (slope10 >= 0.231962) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 41
+SupportingExamples: 53, 54, 95, 101, 102, 104, 116, 121, 125, 126, 128, 144, 154, 178, 192, 197, 214, 226, 237, 329, 332, 342, 356, 357, 358, 359, 367, 389, 394, 425, 451, 462, 470, 500, 530, 553, 578, 582, 607, 626, 635
+Strength: 0.059506531204644414
+Confidence: 1.0
+CoverageFactor: 0.09151785714285714
+Coverage: 41
+CoveredExamples: 53, 54, 95, 101, 102, 104, 116, 121, 125, 126, 128, 144, 154, 178, 192, 197, 214, 226, 237, 329, 332, 342, 356, 357, 358, 359, 367, 389, 394, 425, 451, 462, 470, 500, 530, 553, 578, 582, 607, 626, 635
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09479713603818615
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.547398568019093
+s-ConfirmationMeasure: 0.7899761336515513
+
+319 : (cslope5 <= 0.081039) & (cintercept10 <= -1.056542) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 31
+SupportingExamples: 26, 85, 100, 126, 148, 158, 161, 212, 225, 230, 248, 249, 252, 277, 305, 336, 355, 361, 385, 405, 417, 457, 500, 534, 568, 593, 598, 630, 643, 657, 681
+Strength: 0.04499274310595065
+Confidence: 1.0
+CoverageFactor: 0.0670995670995671
+Coverage: 31
+CoveredExamples: 26, 85, 100, 126, 148, 158, 161, 212, 225, 230, 248, 249, 252, 277, 305, 336, 355, 361, 385, 405, 417, 457, 500, 534, 568, 593, 598, 630, 643, 657, 681
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.11109243697478992
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5555462184873949
+s-ConfirmationMeasure: 0.7935174069627852
+
+320 : (cslope5 <= 0.081039) & (cintercept10 <= -1.038013) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 52
+SupportingExamples: 13, 24, 36, 43, 68, 85, 98, 105, 119, 120, 122, 145, 149, 151, 160, 162, 204, 207, 229, 244, 245, 248, 264, 265, 267, 268, 270, 304, 320, 346, 354, 368, 369, 381, 388, 417, 422, 442, 445, 478, 490, 504, 522, 550, 553, 582, 586, 590, 635, 641, 651, 656
+Strength: 0.07547169811320754
+Confidence: 1.0
+CoverageFactor: 0.11403508771929824
+Coverage: 52
+CoveredExamples: 13, 24, 36, 43, 68, 85, 98, 105, 119, 120, 122, 145, 149, 151, 160, 162, 204, 207, 229, 244, 245, 248, 264, 265, 267, 268, 270, 304, 320, 346, 354, 368, 369, 381, 388, 417, 422, 442, 445, 478, 490, 504, 522, 550, 553, 582, 586, 590, 635, 641, 651, 656
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09883373205741627
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5494168660287081
+s-ConfirmationMeasure: 0.7906698564593302
+
+321 : (cslope5 <= 0.080327) & (cintercept10 <= -1.047397) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 32
+SupportingExamples: 13, 29, 44, 52, 55, 69, 80, 90, 121, 152, 163, 200, 206, 208, 225, 279, 320, 324, 370, 462, 510, 522, 523, 540, 548, 581, 604, 623, 634, 639, 656, 680
+Strength: 0.04644412191582003
+Confidence: 1.0
+CoverageFactor: 0.07373271889400922
+Coverage: 32
+CoveredExamples: 13, 29, 44, 52, 55, 69, 80, 90, 121, 152, 163, 200, 206, 208, 225, 279, 320, 324, 370, 462, 510, 522, 523, 540, 548, 581, 604, 623, 634, 639, 656, 680
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07859690844233055
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5392984542211653
+s-ConfirmationMeasure: 0.7859690844233056
+
+322 : (cslope5 <= 0.079561) & (slope10 >= 0.231169) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 48
+SupportingExamples: 14, 19, 52, 58, 60, 65, 68, 76, 92, 147, 157, 169, 177, 181, 197, 206, 208, 212, 230, 245, 265, 266, 270, 271, 274, 278, 331, 349, 360, 362, 387, 388, 408, 430, 465, 470, 505, 532, 569, 575, 586, 590, 610, 613, 630, 652, 682, 684
+Strength: 0.06966618287373004
+Confidence: 1.0
+CoverageFactor: 0.10714285714285714
+Coverage: 48
+CoveredExamples: 14, 19, 52, 58, 60, 65, 68, 76, 92, 147, 157, 169, 177, 181, 197, 206, 208, 212, 230, 245, 265, 266, 270, 271, 274, 278, 331, 349, 360, 362, 387, 388, 408, 430, 465, 470, 505, 532, 569, 575, 586, 590, 610, 613, 630, 652, 682, 684
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09073897497020263
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5453694874851013
+s-ConfirmationMeasure: 0.7890345649582837
+
+323 : (cslope5 <= 0.078741) & (slope10 >= 0.231169) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 40
+SupportingExamples: 2, 3, 25, 28, 32, 85, 101, 111, 112, 113, 123, 128, 140, 141, 168, 192, 197, 234, 266, 275, 277, 298, 332, 346, 347, 356, 420, 424, 442, 461, 465, 488, 507, 515, 566, 608, 614, 637, 672, 673
+Strength: 0.05805515239477504
+Confidence: 1.0
+CoverageFactor: 0.09324009324009325
+Coverage: 40
+CoveredExamples: 2, 3, 25, 28, 32, 85, 101, 111, 112, 113, 123, 128, 140, 141, 168, 192, 197, 234, 266, 275, 277, 298, 332, 346, 347, 356, 420, 424, 442, 461, 465, 488, 507, 515, 566, 608, 614, 637, 672, 673
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.08265160523186682
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413258026159334
+s-ConfirmationMeasure: 0.7871581450653984
+
+324 : (cslope5 <= 0.077868) & (slope10 >= 0.230765) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 54
+SupportingExamples: 57, 73, 92, 98, 114, 115, 157, 168, 177, 192, 199, 200, 202, 209, 210, 223, 238, 256, 259, 267, 277, 312, 330, 340, 354, 360, 363, 375, 379, 431, 460, 482, 488, 489, 501, 510, 527, 530, 531, 539, 544, 552, 555, 559, 561, 582, 616, 619, 620, 623, 624, 629, 650, 687
+Strength: 0.0783744557329463
+Confidence: 1.0
+CoverageFactor: 0.11894273127753303
+Coverage: 54
+CoveredExamples: 57, 73, 92, 98, 114, 115, 157, 168, 177, 192, 199, 200, 202, 209, 210, 223, 238, 256, 259, 267, 277, 312, 330, 340, 354, 360, 363, 375, 379, 431, 460, 482, 488, 489, 501, 510, 527, 530, 531, 539, 544, 552, 555, 559, 561, 582, 616, 619, 620, 623, 624, 629, 650, 687
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.12757539203860072
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5637876960193003
+s-ConfirmationMeasure: 0.7973462002412546
+
+325 : (cslope5 <= 0.076945) & (cintercept10 <= -0.999806) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 28
+SupportingExamples: 10, 38, 49, 67, 69, 94, 108, 118, 149, 195, 253, 337, 356, 371, 415, 454, 468, 497, 498, 508, 551, 594, 598, 603, 628, 640, 644, 689
+Strength: 0.040638606676342524
+Confidence: 1.0
+CoverageFactor: 0.062360801781737196
+Coverage: 28
+CoveredExamples: 10, 38, 49, 67, 69, 94, 108, 118, 149, 195, 253, 337, 356, 371, 415, 454, 468, 497, 498, 508, 551, 594, 598, 603, 628, 640, 644, 689
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07862232779097388
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.539311163895487
+s-ConfirmationMeasure: 0.7862232779097387
+
+326 : (cslope5 <= 0.075969) & (cintercept10 <= -0.98358) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 28
+SupportingExamples: 33, 44, 68, 69, 75, 81, 95, 128, 149, 150, 155, 204, 230, 258, 269, 290, 298, 307, 414, 455, 496, 518, 521, 532, 558, 573, 644, 657
+Strength: 0.040638606676342524
+Confidence: 1.0
+CoverageFactor: 0.06363636363636363
+Coverage: 28
+CoveredExamples: 33, 44, 68, 69, 75, 81, 95, 128, 149, 150, 155, 204, 230, 258, 269, 290, 298, 307, 414, 455, 496, 518, 521, 532, 558, 573, 644, 657
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09476702508960573
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5473835125448029
+s-ConfirmationMeasure: 0.7897252090800478
+
+327 : (cslope5 <= 0.074791) & (slope10 >= 0.231337) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 30
+SupportingExamples: 12, 48, 64, 65, 66, 89, 94, 125, 127, 221, 258, 278, 285, 316, 322, 398, 406, 407, 429, 504, 508, 513, 516, 535, 538, 561, 562, 637, 655, 674
+Strength: 0.04354136429608128
+Confidence: 1.0
+CoverageFactor: 0.06535947712418301
+Coverage: 30
+CoveredExamples: 12, 48, 64, 65, 66, 89, 94, 125, 127, 221, 258, 278, 285, 316, 322, 398, 406, 407, 429, 504, 508, 513, 516, 535, 538, 561, 562, 637, 655, 674
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0866626936829559
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543331346841478
+s-ConfirmationMeasure: 0.7878426698450537
+
+328 : (cslope5 <= 0.073865) & (cintercept10 <= -0.946386) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 33
+SupportingExamples: 23, 32, 44, 49, 65, 82, 92, 95, 117, 122, 134, 151, 193, 204, 235, 273, 288, 293, 294, 308, 372, 435, 446, 450, 503, 532, 563, 593, 638, 645, 655, 661, 683
+Strength: 0.047895500725689405
+Confidence: 1.0
+CoverageFactor: 0.07674418604651163
+Coverage: 33
+CoveredExamples: 23, 32, 44, 49, 65, 82, 92, 95, 117, 122, 134, 151, 193, 204, 235, 273, 288, 293, 294, 308, 372, 435, 446, 450, 503, 532, 563, 593, 638, 645, 655, 661, 683
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07859690844233055
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5392984542211653
+s-ConfirmationMeasure: 0.7859690844233056
+
+329 : (cslope5 <= 0.072159) & (slope10 >= 0.229431) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 38
+SupportingExamples: 18, 26, 35, 47, 72, 88, 90, 102, 156, 223, 231, 234, 250, 264, 269, 299, 353, 356, 359, 369, 379, 402, 411, 412, 418, 437, 456, 459, 466, 467, 472, 482, 530, 563, 572, 578, 588, 608
+Strength: 0.055152394775036286
+Confidence: 1.0
+CoverageFactor: 0.08577878103837472
+Coverage: 38
+CoveredExamples: 18, 26, 35, 47, 72, 88, 90, 102, 156, 223, 231, 234, 250, 264, 269, 299, 353, 356, 359, 369, 379, 402, 411, 412, 418, 437, 456, 459, 466, 467, 472, 482, 530, 563, 572, 578, 588, 608
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0866626936829559
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.543331346841478
+s-ConfirmationMeasure: 0.7878426698450537
+
+330 : (cslope5 <= 0.063205) & (slope8 >= -5.57E-4) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 27
+SupportingExamples: 18, 31, 49, 75, 101, 108, 114, 134, 156, 160, 170, 211, 220, 258, 259, 288, 301, 313, 336, 351, 399, 469, 542, 576, 611, 665, 686
+Strength: 0.03918722786647315
+Confidence: 1.0
+CoverageFactor: 0.0630841121495327
+Coverage: 27
+CoveredExamples: 18, 31, 49, 75, 101, 108, 114, 134, 156, 160, 170, 211, 220, 258, 259, 288, 301, 313, 336, 351, 399, 469, 542, 576, 611, 665, 686
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09071002386634845
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5453550119331743
+s-ConfirmationMeasure: 0.788782816229117
+
+331 : (cslope5 <= 0.061333) & (slope8 >= -0.002998) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 24
+SupportingExamples: 55, 62, 88, 100, 203, 214, 235, 254, 256, 280, 324, 326, 347, 397, 405, 406, 410, 506, 544, 575, 635, 650, 676, 681
+Strength: 0.03483309143686502
+Confidence: 1.0
+CoverageFactor: 0.05442176870748299
+Coverage: 24
+CoveredExamples: 55, 62, 88, 100, 203, 214, 235, 254, 256, 280, 324, 326, 347, 397, 405, 406, 410, 506, 544, 575, 635, 650, 676, 681
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07059241706161137
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5352962085308057
+s-ConfirmationMeasure: 0.7843601895734598
+
+332 : (cslope5 <= 0.060461) & (slope8 >= -0.002503) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 19
+SupportingExamples: 125, 218, 220, 227, 234, 243, 256, 325, 443, 449, 473, 484, 492, 501, 504, 533, 583, 614, 678
+Strength: 0.027576197387518143
+Confidence: 1.0
+CoverageFactor: 0.04387990762124711
+Coverage: 19
+CoveredExamples: 125, 218, 220, 227, 234, 243, 256, 325, 443, 449, 473, 484, 492, 501, 504, 533, 583, 614, 678
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+333 : (cslope5 <= 0.059948) & (slope8 >= -0.003864) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 35
+SupportingExamples: 7, 9, 17, 62, 87, 97, 112, 138, 184, 208, 280, 286, 294, 311, 344, 356, 369, 390, 414, 448, 479, 485, 486, 512, 518, 569, 573, 600, 616, 619, 620, 649, 671, 681, 683
+Strength: 0.05079825834542816
+Confidence: 1.0
+CoverageFactor: 0.07954545454545454
+Coverage: 35
+CoveredExamples: 7, 9, 17, 62, 87, 97, 112, 138, 184, 208, 280, 286, 294, 311, 344, 356, 369, 390, 414, 448, 479, 485, 486, 512, 518, 569, 573, 600, 616, 619, 620, 649, 671, 681, 683
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07059241706161137
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5352962085308057
+s-ConfirmationMeasure: 0.7843601895734598
+
+334 : (cslope5 <= 0.04652) & (cintercept10 <= -0.634016) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 22
+SupportingExamples: 2, 24, 127, 132, 166, 175, 197, 206, 280, 289, 309, 335, 401, 421, 425, 480, 508, 614, 633, 649, 664, 668
+Strength: 0.03193033381712627
+Confidence: 1.0
+CoverageFactor: 0.051643192488262914
+Coverage: 22
+CoveredExamples: 2, 24, 127, 132, 166, 175, 197, 206, 280, 289, 309, 335, 401, 421, 425, 480, 508, 614, 633, 649, 664, 668
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07059241706161137
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5352962085308057
+s-ConfirmationMeasure: 0.7843601895734598
+
+335 : (cslope4 <= -0.027429) & (cintercept6 <= 0.092403) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 18
+SupportingExamples: 96, 98, 111, 256, 317, 323, 340, 341, 357, 371, 374, 395, 434, 457, 613, 679, 685, 687
+Strength: 0.026124818577648767
+Confidence: 1.0
+CoverageFactor: 0.038461538461538464
+Coverage: 18
+CoveredExamples: 96, 98, 111, 256, 317, 323, 340, 341, 357, 371, 374, 395, 434, 457, 613, 679, 685, 687
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+336 : (cslope2 <= 0.049184) & (slope7 >= -0.010544) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 27
+SupportingExamples: 26, 33, 44, 75, 81, 95, 122, 128, 149, 150, 155, 204, 230, 258, 269, 298, 414, 455, 467, 496, 518, 521, 524, 532, 558, 644, 657
+Strength: 0.03918722786647315
+Confidence: 1.0
+CoverageFactor: 0.06136363636363636
+Coverage: 27
+CoveredExamples: 26, 33, 44, 75, 81, 95, 122, 128, 149, 150, 155, 204, 230, 258, 269, 298, 414, 455, 467, 496, 518, 521, 524, 532, 558, 644, 657
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09071002386634845
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5453550119331743
+s-ConfirmationMeasure: 0.788782816229117
+
+337 : (cintercept9 <= 0.082254) & (slope10 >= 0.231638) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 24
+SupportingExamples: 6, 21, 31, 69, 77, 158, 169, 235, 252, 320, 343, 371, 383, 393, 398, 430, 462, 478, 516, 560, 582, 596, 604, 643
+Strength: 0.03483309143686502
+Confidence: 1.0
+CoverageFactor: 0.05466970387243736
+Coverage: 24
+CoveredExamples: 6, 21, 31, 69, 77, 158, 169, 235, 252, 320, 343, 371, 383, 393, 398, 430, 462, 478, 516, 560, 582, 596, 604, 643
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07859690844233055
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5392984542211653
+s-ConfirmationMeasure: 0.7859690844233056
+
+338 : (cintercept9 <= 0.052739) & (cintercept10 <= -1.053313) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 24
+SupportingExamples: 49, 97, 120, 126, 134, 151, 162, 175, 195, 218, 230, 286, 298, 407, 412, 440, 447, 453, 477, 492, 506, 566, 629, 652
+Strength: 0.03483309143686502
+Confidence: 1.0
+CoverageFactor: 0.05052631578947368
+Coverage: 24
+CoveredExamples: 49, 97, 120, 126, 134, 151, 162, 175, 195, 218, 230, 286, 298, 407, 412, 440, 447, 453, 477, 492, 506, 566, 629, 652
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.082625
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5413125
+s-ConfirmationMeasure: 0.7869047619047619
+
+339 : (cintercept7 <= 0.336613) & (cintercept10 <= -1.080075) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 33
+SupportingExamples: 16, 52, 61, 75, 134, 154, 171, 179, 182, 202, 204, 241, 242, 256, 273, 304, 305, 324, 327, 338, 340, 348, 350, 379, 400, 468, 487, 510, 577, 582, 605, 679, 681
+Strength: 0.047895500725689405
+Confidence: 1.0
+CoverageFactor: 0.07300884955752213
+Coverage: 33
+CoveredExamples: 16, 52, 61, 75, 134, 154, 171, 179, 182, 202, 204, 241, 242, 256, 273, 304, 305, 324, 327, 338, 340, 348, 350, 379, 400, 468, 487, 510, 577, 582, 605, 679, 681
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.11109243697478992
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5555462184873949
+s-ConfirmationMeasure: 0.7935174069627852
+
+340 : (cintercept7 <= 0.330269) & (cintercept10 <= -1.05821) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 30
+SupportingExamples: 9, 15, 26, 31, 52, 59, 63, 64, 91, 149, 167, 185, 188, 190, 203, 205, 271, 295, 340, 364, 386, 393, 417, 474, 487, 522, 525, 588, 665, 685
+Strength: 0.04354136429608128
+Confidence: 1.0
+CoverageFactor: 0.06741573033707865
+Coverage: 30
+CoveredExamples: 9, 15, 26, 31, 52, 59, 63, 64, 91, 149, 167, 185, 188, 190, 203, 205, 271, 295, 340, 364, 386, 393, 417, 474, 487, 522, 525, 588, 665, 685
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.11519831730769231
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5575991586538461
+s-ConfirmationMeasure: 0.7944711538461539
+
+341 : (cintercept7 <= 0.299884) & (cintercept10 <= -1.05821) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 25
+SupportingExamples: 116, 145, 155, 175, 277, 320, 328, 338, 346, 369, 383, 386, 397, 409, 410, 420, 424, 526, 541, 546, 553, 576, 577, 587, 590
+Strength: 0.036284470246734396
+Confidence: 1.0
+CoverageFactor: 0.05980861244019139
+Coverage: 25
+CoveredExamples: 116, 145, 155, 175, 277, 320, 328, 338, 346, 369, 383, 386, 397, 409, 410, 420, 424, 526, 541, 546, 553, 576, 577, 587, 590
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.10291017964071857
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5514550898203593
+s-ConfirmationMeasure: 0.7916167664670659
+
+342 : (cintercept7 <= -0.110075) & (cintercept10 <= -0.954331) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 27
+SupportingExamples: 8, 11, 50, 113, 119, 120, 137, 156, 169, 237, 243, 284, 298, 333, 357, 367, 373, 381, 407, 469, 507, 530, 561, 585, 601, 603, 635
+Strength: 0.03918722786647315
+Confidence: 1.0
+CoverageFactor: 0.061224489795918366
+Coverage: 27
+CoveredExamples: 8, 11, 50, 113, 119, 120, 137, 156, 169, 237, 243, 284, 298, 333, 357, 367, 373, 381, 407, 469, 507, 530, 561, 585, 601, 603, 635
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07859690844233055
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5392984542211653
+s-ConfirmationMeasure: 0.7859690844233056
+
+343 : (cintercept3 <= -0.065282) & (slope8 >= -0.003628) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 20
+SupportingExamples: 31, 62, 79, 103, 122, 166, 180, 241, 308, 324, 329, 363, 421, 457, 494, 495, 507, 593, 606, 653
+Strength: 0.02902757619738752
+Confidence: 1.0
+CoverageFactor: 0.0449438202247191
+Coverage: 20
+CoveredExamples: 31, 62, 79, 103, 122, 166, 180, 241, 308, 324, 329, 363, 421, 457, 494, 495, 507, 593, 606, 653
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+344 : (cintercept2 <= 0.345844) & (slope10 >= 0.230236) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 36
+SupportingExamples: 11, 23, 48, 56, 129, 137, 146, 151, 155, 187, 196, 254, 257, 263, 278, 291, 300, 313, 336, 399, 402, 415, 421, 497, 500, 527, 531, 548, 558, 604, 616, 617, 621, 647, 650, 687
+Strength: 0.05224963715529753
+Confidence: 1.0
+CoverageFactor: 0.07964601769911504
+Coverage: 36
+CoveredExamples: 11, 23, 48, 56, 129, 137, 146, 151, 155, 187, 196, 254, 257, 263, 278, 291, 300, 313, 336, 399, 402, 415, 421, 497, 500, 527, 531, 548, 558, 604, 616, 617, 621, 647, 650, 687
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07862232779097388
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.539311163895487
+s-ConfirmationMeasure: 0.7862232779097387
+
+345 : (cintercept2 <= 0.331643) & (slope8 >= -0.010722) & (slope10 >= 0.22958) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 28
+SupportingExamples: 50, 61, 62, 87, 125, 126, 223, 272, 278, 300, 311, 356, 365, 366, 379, 391, 393, 417, 428, 470, 483, 488, 497, 505, 537, 561, 576, 622
+Strength: 0.040638606676342524
+Confidence: 1.0
+CoverageFactor: 0.06635071090047394
+Coverage: 28
+CoveredExamples: 50, 61, 62, 87, 125, 126, 223, 272, 278, 300, 311, 356, 365, 366, 379, 391, 393, 417, 428, 470, 483, 488, 497, 505, 537, 561, 576, 622
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09071002386634845
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5453550119331743
+s-ConfirmationMeasure: 0.788782816229117
+
+346 : (cintercept2 <= 0.331643) & (slope10 >= 0.22958) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 39
+SupportingExamples: 18, 32, 51, 58, 81, 87, 92, 100, 134, 143, 144, 174, 178, 185, 188, 208, 232, 244, 315, 369, 372, 373, 377, 381, 388, 398, 404, 448, 453, 458, 472, 503, 516, 577, 600, 613, 625, 638, 649
+Strength: 0.05660377358490566
+Confidence: 1.0
+CoverageFactor: 0.08571428571428572
+Coverage: 39
+CoveredExamples: 18, 32, 51, 58, 81, 87, 92, 100, 134, 143, 144, 174, 178, 185, 188, 208, 232, 244, 315, 369, 372, 373, 377, 381, 388, 398, 404, 448, 453, 458, 472, 503, 516, 577, 600, 613, 625, 638, 649
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07460260972716488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5373013048635824
+s-ConfirmationMeasure: 0.7852906287069988
+
+347 : (cintercept2 <= 0.331643) & (slope10 >= 0.228248) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 32
+SupportingExamples: 26, 34, 51, 73, 87, 94, 113, 122, 153, 194, 198, 206, 248, 250, 254, 325, 336, 370, 397, 439, 474, 491, 492, 505, 517, 532, 539, 559, 566, 590, 611, 664
+Strength: 0.04644412191582003
+Confidence: 1.0
+CoverageFactor: 0.07322654462242563
+Coverage: 32
+CoveredExamples: 26, 34, 51, 73, 87, 94, 113, 122, 153, 194, 198, 206, 248, 250, 254, 325, 336, 370, 397, 439, 474, 491, 492, 505, 517, 532, 539, 559, 566, 590, 611, 664
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.10291017964071857
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5514550898203593
+s-ConfirmationMeasure: 0.7916167664670659
+
+348 : (cintercept2 <= 0.331643) & (cslope5 <= 0.075969) & (slope10 >= 0.22958) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 25
+SupportingExamples: 32, 46, 115, 141, 191, 230, 249, 259, 273, 293, 316, 360, 371, 402, 423, 461, 479, 486, 487, 598, 606, 617, 621, 630, 665
+Strength: 0.036284470246734396
+Confidence: 1.0
+CoverageFactor: 0.05399568034557235
+Coverage: 25
+CoveredExamples: 32, 46, 115, 141, 191, 230, 249, 259, 273, 293, 316, 360, 371, 402, 423, 461, 479, 486, 487, 598, 606, 617, 621, 630, 665
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07457838479809976
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5372891923990499
+s-ConfirmationMeasure: 0.7850356294536817
+
+349 : (cintercept2 <= 0.31672) & (slope10 >= 0.228807) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 28
+SupportingExamples: 23, 61, 86, 100, 109, 177, 214, 244, 250, 259, 276, 291, 310, 316, 340, 373, 386, 478, 483, 500, 521, 548, 578, 587, 610, 643, 668, 685
+Strength: 0.040638606676342524
+Confidence: 1.0
+CoverageFactor: 0.0603448275862069
+Coverage: 28
+CoveredExamples: 23, 61, 86, 100, 109, 177, 214, 244, 250, 259, 276, 291, 310, 316, 340, 373, 386, 478, 483, 500, 521, 548, 578, 587, 610, 643, 668, 685
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07859690844233055
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5392984542211653
+s-ConfirmationMeasure: 0.7859690844233056
+
+350 : (cintercept2 <= 0.31672) & (slope10 >= 0.227802) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 33
+SupportingExamples: 25, 27, 34, 62, 71, 90, 91, 98, 105, 152, 158, 159, 207, 253, 255, 307, 337, 388, 421, 422, 453, 469, 471, 475, 483, 564, 585, 606, 639, 660, 662, 671, 672
+Strength: 0.047895500725689405
+Confidence: 1.0
+CoverageFactor: 0.07081545064377683
+Coverage: 33
+CoveredExamples: 25, 27, 34, 62, 71, 90, 91, 98, 105, 152, 158, 159, 207, 253, 255, 307, 337, 388, 421, 422, 453, 469, 471, 475, 483, 564, 585, 606, 639, 660, 662, 671, 672
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07859690844233055
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5392984542211653
+s-ConfirmationMeasure: 0.7859690844233056
+
+351 : (cintercept2 <= 0.30105) & (slope10 >= 0.227932) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 28
+SupportingExamples: 26, 34, 51, 73, 87, 94, 122, 153, 194, 198, 250, 336, 370, 397, 439, 474, 491, 492, 505, 517, 532, 539, 559, 566, 590, 600, 611, 664
+Strength: 0.040638606676342524
+Confidence: 1.0
+CoverageFactor: 0.06407322654462243
+Coverage: 28
+CoveredExamples: 26, 34, 51, 73, 87, 94, 122, 153, 194, 198, 250, 336, 370, 397, 439, 474, 491, 492, 505, 517, 532, 539, 559, 566, 590, 600, 611, 664
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.09883373205741627
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5494168660287081
+s-ConfirmationMeasure: 0.7906698564593302
+
+352 : (cintercept2 <= 0.284613) & (slope10 >= 0.22697) => (destClass >= 1) |CERTAIN, AT_LEAST, 1|
+Support: 29
+SupportingExamples: 9, 46, 58, 74, 86, 92, 100, 125, 200, 226, 293, 307, 327, 382, 410, 419, 439, 512, 519, 523, 552, 565, 633, 639, 642, 647, 650, 676, 683
+Strength: 0.0420899854862119
+Confidence: 1.0
+CoverageFactor: 0.0675990675990676
+Coverage: 29
+CoveredExamples: 9, 46, 58, 74, 86, 92, 100, 125, 200, 226, 293, 307, 327, 382, 410, 419, 439, 512, 519, 523, 552, 565, 633, 639, 642, 647, 650, 676, 683
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.07059241706161137
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5352962085308057
+s-ConfirmationMeasure: 0.7843601895734598
+
+
+Selected at most rules:
+
+1 : (slope9 <= 0.065088) & (cslope9 >= 0.064478) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 49, 337, 403, 475, 643
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.02074688796680498
+Coverage: 5
+CoveredExamples: 49, 337, 403, 475, 643
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002473454532605431
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5012367272663028
+s-ConfirmationMeasure: 0.23391812865497075
+
+2 : (slope9 <= 0.063602) & (cslope9 >= 0.062541) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 10
+SupportingExamples: 94, 225, 330, 394, 429, 447, 526, 601, 637, 640
+Strength: 0.01451378809869376
+Confidence: 1.0
+CoverageFactor: 0.03731343283582089
+Coverage: 10
+CoveredExamples: 94, 225, 330, 394, 429, 447, 526, 601, 637, 640
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.46222583265637696
+A-ConfirmationMeasure: 0.0020176446392352098
+Z-ConfirmationMeasure: 0.569
+l-ConfirmationMeasure: 1.0002763879472478
+c1-ConfirmationMeasure: 0.2845
+s-ConfirmationMeasure: 0.1335680751173709
+
+3 : (slope9 <= 0.05938) & (cslope9 >= 0.057712) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 281, 399, 499, 639, 657, 676
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.024896265560165973
+Coverage: 6
+CoveredExamples: 281, 399, 499, 639, 657, 676
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002473454532605431
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5012367272663028
+s-ConfirmationMeasure: 0.23391812865497075
+
+4 : (slope9 <= 0.058812) & (cslope9 >= 0.057014) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 27, 212, 219, 309, 321, 357, 538
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.029787234042553193
+Coverage: 7
+CoveredExamples: 27, 212, 219, 309, 321, 357, 538
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5676028739386022
+A-ConfirmationMeasure: 0.0030923176013009797
+Z-ConfirmationMeasure: 0.6684615384615384
+l-ConfirmationMeasure: 1.2879584603990288
+c1-ConfirmationMeasure: 0.3342307692307692
+s-ConfirmationMeasure: 0.1574703270816345
+
+5 : (slope9 <= 0.057014) & (cslope9 >= 0.057014) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 1
+SupportingExamples: 202
+Strength: 0.001451378809869376
+Confidence: 1.0
+CoverageFactor: 0.00398406374501992
+Coverage: 1
+CoveredExamples: 202
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+6 : (slope9 <= 0.054063) & (cslope9 >= 0.053764) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 60, 183, 345, 382, 657
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.019762845849802372
+Coverage: 5
+CoveredExamples: 60, 183, 345, 382, 657
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0010551157286101665
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500527557864305
+s-ConfirmationMeasure: 0.23282887077997672
+
+7 : (slope9 <= 0.052956) & (cslope9 >= 0.052771) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 164, 495
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.007692307692307693
+Coverage: 2
+CoveredExamples: 164, 495
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+8 : (slope9 <= 0.029925) & (intercept9 <= -0.270366) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 524, 546
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.007462686567164179
+Coverage: 2
+CoveredExamples: 524, 546
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+9 : (slope8 <= -0.092468) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 1
+SupportingExamples: 342
+Strength: 0.001451378809869376
+Confidence: 1.0
+CoverageFactor: 0.00398406374501992
+Coverage: 1
+CoveredExamples: 342
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+10 : (slope8 <= -0.091825) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 1
+SupportingExamples: 38
+Strength: 0.001451378809869376
+Confidence: 1.0
+CoverageFactor: 0.0033783783783783786
+Coverage: 1
+CoveredExamples: 38
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0010551157286101665
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500527557864305
+s-ConfirmationMeasure: 0.23282887077997672
+
+11 : (slope8 <= -0.090241) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 89, 289, 434
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.011152416356877323
+Coverage: 3
+CoveredExamples: 89, 289, 434
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002473454532605431
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5012367272663028
+s-ConfirmationMeasure: 0.23391812865497075
+
+12 : (slope8 <= -0.089816) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 30, 218, 298, 476, 667
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.019230769230769232
+Coverage: 5
+CoveredExamples: 30, 218, 298, 476, 667
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0028301152564438187
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5014150576282219
+s-ConfirmationMeasure: 0.234192037470726
+
+13 : (slope8 <= -0.089682) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 72, 243, 283, 386, 582
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.0199203187250996
+Coverage: 5
+CoveredExamples: 72, 243, 283, 386, 582
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0028301152564438187
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5014150576282219
+s-ConfirmationMeasure: 0.234192037470726
+
+14 : (slope8 <= -0.085285) & (cintercept9 >= -0.253874) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 247, 419
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.007462686567164179
+Coverage: 2
+CoveredExamples: 247, 419
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+15 : (slope8 <= -0.072697) & (cintercept9 >= -0.101344) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 1
+SupportingExamples: 204
+Strength: 0.001451378809869376
+Confidence: 1.0
+CoverageFactor: 0.0038461538461538464
+Coverage: 1
+CoveredExamples: 204
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+16 : (slope8 <= -0.071322) & (intercept8 <= -0.113536) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 176, 377, 506, 516
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.01593625498007968
+Coverage: 4
+CoveredExamples: 176, 377, 506, 516
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0010551157286101665
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500527557864305
+s-ConfirmationMeasure: 0.23282887077997672
+
+17 : (slope8 <= -0.071224) & (slope10 <= 0.123093) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 206, 280, 617
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.011538461538461539
+Coverage: 3
+CoveredExamples: 206, 280, 617
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+18 : (slope8 <= -0.070622) & (slope10 <= 0.123093) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 23, 235, 281, 304, 563
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.0199203187250996
+Coverage: 5
+CoveredExamples: 23, 235, 281, 304, 563
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+19 : (slope8 <= -0.068675) & (intercept8 <= -0.16151) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 26, 233, 568
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.01090909090909091
+Coverage: 3
+CoveredExamples: 26, 233, 568
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0010551157286101665
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500527557864305
+s-ConfirmationMeasure: 0.23282887077997672
+
+20 : (slope8 <= -0.06759) & (intercept8 <= -0.177268) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 267, 327
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.008298755186721992
+Coverage: 2
+CoveredExamples: 267, 327
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+21 : (slope8 <= -0.066037) & (intercept8 <= -0.194787) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 440, 570
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.007462686567164179
+Coverage: 2
+CoveredExamples: 440, 570
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+22 : (slope8 <= -0.003027) & (intercept8 <= -0.714727) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 78, 316, 578, 582
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.014545454545454545
+Coverage: 4
+CoveredExamples: 78, 316, 578, 582
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+23 : (slope7 <= -0.069409) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 129, 144, 218, 316, 369, 558, 578
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.025454545454545455
+Coverage: 7
+CoveredExamples: 129, 144, 218, 316, 369, 558, 578
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.005350321197615897
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5026751605988079
+s-ConfirmationMeasure: 0.2361275088547816
+
+24 : (slope7 <= -0.069331) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 18, 53, 63, 501, 662
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.019762845849802372
+Coverage: 5
+CoveredExamples: 18, 53, 63, 501, 662
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.005350321197615897
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5026751605988079
+s-ConfirmationMeasure: 0.2361275088547816
+
+25 : (slope7 <= -0.069163) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 48, 369, 529, 629, 664
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.019230769230769232
+Coverage: 5
+CoveredExamples: 48, 369, 529, 629, 664
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.006078049303705822
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5030390246518529
+s-ConfirmationMeasure: 0.23668639053254437
+
+26 : (slope7 <= -0.069055) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 240, 448, 503, 514, 622
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.020080321285140562
+Coverage: 5
+CoveredExamples: 240, 448, 503, 514, 622
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0068092304494450475
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5034046152247226
+s-ConfirmationMeasure: 0.2372479240806643
+
+27 : (slope7 <= -0.068855) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 69, 73, 528, 536, 553
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.020833333333333332
+Coverage: 5
+CoveredExamples: 69, 73, 528, 536, 553
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0068092304494450475
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5034046152247226
+s-ConfirmationMeasure: 0.2372479240806643
+
+28 : (slope7 <= -0.067616) & (cintercept7 >= 0.392904) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 13, 147, 205, 377, 475, 490, 498
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.027888446215139442
+Coverage: 7
+CoveredExamples: 13, 147, 205, 377, 475, 490, 498
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.6384489350081922
+A-ConfirmationMeasure: 0.004174612357423954
+Z-ConfirmationMeasure: 0.730625
+l-ConfirmationMeasure: 1.5111020117132385
+c1-ConfirmationMeasure: 0.3653125
+s-ConfirmationMeasure: 0.17272458628841608
+
+29 : (slope7 <= -0.066957) & (intercept9 <= 0.076565) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 16
+SupportingExamples: 17, 55, 68, 77, 146, 210, 239, 299, 332, 379, 468, 473, 491, 604, 612, 632
+Strength: 0.023222060957910014
+Confidence: 1.0
+CoverageFactor: 0.05947955390334572
+Coverage: 16
+CoveredExamples: 17, 55, 68, 77, 146, 210, 239, 299, 332, 379, 468, 473, 491, 604, 612, 632
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5941140404659718
+A-ConfirmationMeasure: 0.0034522316593513084
+Z-ConfirmationMeasure: 0.6921428571428572
+l-ConfirmationMeasure: 1.3680011680725652
+c1-ConfirmationMeasure: 0.3460714285714286
+s-ConfirmationMeasure: 0.16324123989218328
+
+30 : (slope7 <= -0.066873) & (intercept7 <= 0.340511) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 17, 27, 180, 219
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.014925373134328358
+Coverage: 4
+CoveredExamples: 17, 27, 180, 219
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.004626021728068209
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5023130108640341
+s-ConfirmationMeasure: 0.23557126030624265
+
+31 : (slope7 <= -0.066873) & (cslope9 >= -0.020678) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 20, 27, 77, 219, 274, 389
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.022388059701492536
+Coverage: 6
+CoveredExamples: 20, 27, 77, 219, 274, 389
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.4394580863674852
+A-ConfirmationMeasure: 0.003719990108696821
+Z-ConfirmationMeasure: 0.5463157894736842
+l-ConfirmationMeasure: 0.9431179741072993
+c1-ConfirmationMeasure: 0.2731578947368421
+s-ConfirmationMeasure: 0.1296122869451208
+
+32 : (slope7 <= -0.066786) & (cslope7 >= -0.066957) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 32, 51, 498, 511, 524, 550
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.023076923076923078
+Coverage: 6
+CoveredExamples: 32, 51, 498, 511, 524, 550
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+33 : (slope7 <= -0.065659) & (cintercept9 >= 0.215934) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 20, 467, 555, 590, 607, 609
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.022304832713754646
+Coverage: 6
+CoveredExamples: 20, 467, 555, 590, 607, 609
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+34 : (slope7 <= -0.063994) & (intercept9 <= -0.085394) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 38, 102, 264, 635, 660
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.01858736059479554
+Coverage: 5
+CoveredExamples: 38, 102, 264, 635, 660
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.003905126721362108
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5019525633606811
+s-ConfirmationMeasure: 0.23501762632197415
+
+35 : (slope7 <= -0.063938) & (cintercept9 >= 0.240628) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 147, 531, 559, 584
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.013513513513513514
+Coverage: 4
+CoveredExamples: 147, 531, 559, 584
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+36 : (slope7 <= -0.063424) & (slope9 <= -0.032587) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 9
+SupportingExamples: 73, 118, 163, 235, 381, 393, 524, 536, 558
+Strength: 0.013062409288824383
+Confidence: 1.0
+CoverageFactor: 0.0375
+Coverage: 9
+CoveredExamples: 73, 118, 163, 235, 381, 393, 524, 536, 558
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.46222583265637696
+A-ConfirmationMeasure: 0.0020176446392352098
+Z-ConfirmationMeasure: 0.569
+l-ConfirmationMeasure: 1.0002763879472478
+c1-ConfirmationMeasure: 0.2845
+s-ConfirmationMeasure: 0.1335680751173709
+
+37 : (slope7 <= -0.061821) & (intercept9 <= -0.157817) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 196, 363, 397, 504, 594
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.0199203187250996
+Coverage: 5
+CoveredExamples: 196, 363, 397, 504, 594
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.4146772767462423
+A-ConfirmationMeasure: 0.0033576266090118985
+Z-ConfirmationMeasure: 0.5211111111111111
+l-ConfirmationMeasure: 0.8824933522908643
+c1-ConfirmationMeasure: 0.26055555555555554
+s-ConfirmationMeasure: 0.12348604528699315
+
+38 : (slope7 <= -0.061683) & (intercept9 <= -0.184287) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 56, 209, 407, 424, 466, 502, 612
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.029045643153526972
+Coverage: 7
+CoveredExamples: 56, 209, 407, 424, 466, 502, 612
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5941140404659718
+A-ConfirmationMeasure: 0.0034522316593513084
+Z-ConfirmationMeasure: 0.6921428571428572
+l-ConfirmationMeasure: 1.3680011680725652
+c1-ConfirmationMeasure: 0.3460714285714286
+s-ConfirmationMeasure: 0.16324123989218328
+
+39 : (slope7 <= -0.06119) & (intercept9 <= -0.244374) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 437, 584
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.007462686567164179
+Coverage: 2
+CoveredExamples: 437, 584
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002117627128215264
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5010588135641076
+s-ConfirmationMeasure: 0.2336448598130841
+
+40 : (slope7 <= -0.06119) & (intercept9 <= -0.174681) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 196, 209, 397, 594
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.01593625498007968
+Coverage: 4
+CoveredExamples: 196, 209, 397, 594
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.4146772767462423
+A-ConfirmationMeasure: 0.0033576266090118985
+Z-ConfirmationMeasure: 0.5211111111111111
+l-ConfirmationMeasure: 0.8824933522908643
+c1-ConfirmationMeasure: 0.26055555555555554
+s-ConfirmationMeasure: 0.12348604528699315
+
+41 : (slope7 <= -0.060453) & (intercept9 <= -0.259549) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 38, 492, 660
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.011152416356877323
+Coverage: 3
+CoveredExamples: 38, 492, 660
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0031876122305139493
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.501593806115257
+s-ConfirmationMeasure: 0.23446658851113716
+
+42 : (slope7 <= -0.059388) & (intercept9 <= -0.24685) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 16, 172, 196, 397
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.01593625498007968
+Coverage: 4
+CoveredExamples: 16, 172, 196, 397
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0035459483993588925
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5017729741996795
+s-ConfirmationMeasure: 0.2347417840375587
+
+43 : (slope7 <= -0.058775) & (intercept9 <= -0.25885) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 95, 96, 138, 149, 422, 549
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.024096385542168676
+Coverage: 6
+CoveredExamples: 95, 96, 138, 149, 422, 549
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.003905126721362108
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5019525633606811
+s-ConfirmationMeasure: 0.23501762632197415
+
+44 : (slope7 <= -0.056192) & (intercept9 <= -0.311622) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 95, 96, 138, 214, 260, 377, 401
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.028112449799196786
+Coverage: 7
+CoveredExamples: 95, 96, 138, 214, 260, 377, 401
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0035459483993588925
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5017729741996795
+s-ConfirmationMeasure: 0.2347417840375587
+
+45 : (slope7 <= -0.05592) & (intercept9 <= -0.285716) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 321, 369
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.007462686567164179
+Coverage: 2
+CoveredExamples: 321, 369
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0068092304494450475
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5034046152247226
+s-ConfirmationMeasure: 0.2372479240806643
+
+46 : (slope7 <= -0.05564) & (intercept9 <= -0.29209) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 9
+SupportingExamples: 1, 37, 255, 383, 419, 484, 546, 621, 688
+Strength: 0.013062409288824383
+Confidence: 1.0
+CoverageFactor: 0.03345724907063197
+Coverage: 9
+CoveredExamples: 1, 37, 255, 383, 419, 484, 546, 621, 688
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.006078049303705822
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5030390246518529
+s-ConfirmationMeasure: 0.23668639053254437
+
+47 : (slope7 <= -0.052108) & (intercept9 <= -0.323907) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 91, 134, 340, 415, 576, 612
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.025
+Coverage: 6
+CoveredExamples: 91, 134, 340, 415, 576, 612
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.006078049303705822
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5030390246518529
+s-ConfirmationMeasure: 0.23668639053254437
+
+48 : (slope7 <= -0.05142) & (intercept9 <= -0.322481) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 15
+SupportingExamples: 48, 95, 96, 138, 214, 217, 260, 267, 306, 359, 377, 430, 437, 492, 648
+Strength: 0.02177068214804064
+Confidence: 1.0
+CoverageFactor: 0.060240963855421686
+Coverage: 15
+CoveredExamples: 48, 95, 96, 138, 214, 217, 260, 267, 306, 359, 377, 430, 437, 492, 648
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.006078049303705822
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5030390246518529
+s-ConfirmationMeasure: 0.23668639053254437
+
+49 : (slope7 <= -0.051165) & (intercept9 <= -0.304315) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 3, 309, 442, 673
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.015810276679841896
+Coverage: 4
+CoveredExamples: 3, 309, 442, 673
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.009395914945286864
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5046979574726435
+s-ConfirmationMeasure: 0.23923444976076555
+
+50 : (slope7 <= -0.050319) & (intercept9 <= -0.321196) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 14
+SupportingExamples: 58, 65, 147, 309, 330, 377, 389, 408, 410, 448, 473, 479, 601, 671
+Strength: 0.020319303338171262
+Confidence: 1.0
+CoverageFactor: 0.05090909090909091
+Coverage: 14
+CoveredExamples: 58, 65, 147, 309, 330, 377, 389, 408, 410, 448, 473, 479, 601, 671
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.007543889270074829
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5037719446350374
+s-ConfirmationMeasure: 0.23781212841854935
+
+51 : (slope7 <= -0.04892) & (intercept9 <= -0.348011) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 9
+SupportingExamples: 37, 193, 419, 477, 484, 546, 615, 621, 688
+Strength: 0.013062409288824383
+Confidence: 1.0
+CoverageFactor: 0.03345724907063197
+Coverage: 9
+CoveredExamples: 37, 193, 419, 477, 484, 546, 615, 621, 688
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.004987744399475575
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5024938721997377
+s-ConfirmationMeasure: 0.2358490566037736
+
+52 : (slope7 <= -0.048827) & (intercept9 <= -0.325026) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 10
+SupportingExamples: 93, 156, 169, 218, 302, 344, 384, 468, 476, 631
+Strength: 0.01451378809869376
+Confidence: 1.0
+CoverageFactor: 0.0398406374501992
+Coverage: 10
+CoveredExamples: 93, 156, 169, 218, 302, 344, 384, 468, 476, 631
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.008282050635737408
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5041410253178688
+s-ConfirmationMeasure: 0.23837902264600716
+
+53 : (slope7 <= -0.044389) & (intercept9 <= -0.361413) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 91, 158, 320, 321, 415, 434, 451
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.029166666666666667
+Coverage: 7
+CoveredExamples: 91, 158, 320, 321, 415, 434, 451
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.6175621028307337
+A-ConfirmationMeasure: 0.007763478968161748
+Z-ConfirmationMeasure: 0.7126666666666667
+l-ConfirmationMeasure: 1.4421091402262871
+c1-ConfirmationMeasure: 0.35633333333333334
+s-ConfirmationMeasure: 0.17131410256410257
+
+54 : (slope7 <= -0.043687) & (intercept9 <= -0.359384) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 10
+SupportingExamples: 147, 210, 262, 319, 354, 369, 377, 379, 417, 518
+Strength: 0.01451378809869376
+Confidence: 1.0
+CoverageFactor: 0.03731343283582089
+Coverage: 10
+CoveredExamples: 147, 210, 262, 319, 354, 369, 377, 379, 417, 518
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.6658253407370015
+A-ConfirmationMeasure: 0.00963698732725207
+Z-ConfirmationMeasure: 0.7537142857142857
+l-ConfirmationMeasure: 1.6064121915175635
+c1-ConfirmationMeasure: 0.37685714285714284
+s-ConfirmationMeasure: 0.18227673173259631
+
+55 : (slope7 <= -0.042427) & (intercept7 <= -0.170271) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 1
+SupportingExamples: 252
+Strength: 0.001451378809869376
+Confidence: 1.0
+CoverageFactor: 0.0038461538461538464
+Coverage: 1
+CoveredExamples: 252
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+56 : (slope7 <= -0.041706) & (intercept9 <= -0.337585) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 15
+SupportingExamples: 45, 95, 102, 126, 148, 166, 206, 211, 216, 310, 424, 509, 560, 667, 679
+Strength: 0.02177068214804064
+Confidence: 1.0
+CoverageFactor: 0.057692307692307696
+Coverage: 15
+CoveredExamples: 45, 95, 102, 126, 148, 166, 206, 211, 216, 310, 424, 509, 560, 667, 679
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.6449132844627212
+A-ConfirmationMeasure: 0.013403789627020136
+Z-ConfirmationMeasure: 0.7361224489795918
+l-ConfirmationMeasure: 1.5330809184320138
+c1-ConfirmationMeasure: 0.3680612244897959
+s-ConfirmationMeasure: 0.18108793332831288
+
+57 : (slope7 <= -0.041706) & (intercept9 <= -0.318829) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 16
+SupportingExamples: 28, 76, 147, 266, 307, 386, 403, 414, 425, 481, 489, 493, 520, 533, 536, 667
+Strength: 0.023222060957910014
+Confidence: 1.0
+CoverageFactor: 0.06374501992031872
+Coverage: 16
+CoveredExamples: 28, 76, 147, 266, 307, 386, 403, 414, 425, 481, 489, 493, 520, 533, 536, 667
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.6893477240732051
+A-ConfirmationMeasure: 0.016539378131391794
+Z-ConfirmationMeasure: 0.7731578947368422
+l-ConfirmationMeasure: 1.6934235685071932
+c1-ConfirmationMeasure: 0.3865789473684211
+s-ConfirmationMeasure: 0.19208891794704153
+
+58 : (slope7 <= -0.041276) & (intercept9 <= -0.442009) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 229, 474, 546
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.011152416356877323
+Coverage: 3
+CoveredExamples: 229, 474, 546
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.004626021728068209
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5023130108640341
+s-ConfirmationMeasure: 0.23557126030624265
+
+59 : (slope7 <= -0.041276) & (intercept9 <= -0.32728) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 15
+SupportingExamples: 5, 34, 65, 75, 80, 110, 139, 167, 221, 301, 318, 345, 412, 496, 627
+Strength: 0.02177068214804064
+Confidence: 1.0
+CoverageFactor: 0.057692307692307696
+Coverage: 15
+CoveredExamples: 5, 34, 65, 75, 80, 110, 139, 167, 221, 301, 318, 345, 412, 496, 627
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.6629899881215001
+A-ConfirmationMeasure: 0.014572377009436425
+Z-ConfirmationMeasure: 0.7513461538461539
+l-ConfirmationMeasure: 1.5962598200535454
+c1-ConfirmationMeasure: 0.37567307692307694
+s-ConfirmationMeasure: 0.18551756885090218
+
+60 : (slope7 <= -0.039716) & (intercept9 <= -0.419523) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 10
+SupportingExamples: 51, 67, 186, 327, 403, 467, 574, 612, 621, 686
+Strength: 0.01451378809869376
+Confidence: 1.0
+CoverageFactor: 0.04149377593360996
+Coverage: 10
+CoveredExamples: 51, 67, 186, 327, 403, 467, 574, 612, 621, 686
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.008282050635737408
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5041410253178688
+s-ConfirmationMeasure: 0.23837902264600716
+
+61 : (slope7 <= -0.036201) & (intercept9 <= -0.459033) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 9
+SupportingExamples: 51, 90, 159, 186, 327, 403, 574, 621, 686
+Strength: 0.013062409288824383
+Confidence: 1.0
+CoverageFactor: 0.03734439834024896
+Coverage: 9
+CoveredExamples: 51, 90, 159, 186, 327, 403, 574, 621, 686
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.005350321197615897
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5026751605988079
+s-ConfirmationMeasure: 0.2361275088547816
+
+62 : (slope7 <= -0.021143) & (cslope9 >= 0.067687) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 8
+SupportingExamples: 107, 161, 331, 362, 374, 436, 440, 669
+Strength: 0.011611030478955007
+Confidence: 1.0
+CoverageFactor: 0.03007518796992481
+Coverage: 8
+CoveredExamples: 107, 161, 331, 362, 374, 436, 440, 669
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0035459483993588925
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5017729741996795
+s-ConfirmationMeasure: 0.2347417840375587
+
+63 : (slope7 <= -0.01832) & (cintercept8 >= 0.188913) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 391, 621
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.007692307692307693
+Coverage: 2
+CoveredExamples: 391, 621
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+64 : (slope6 <= -0.081021) & (intercept9 <= -0.459033) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 72, 141, 483, 565
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.01593625498007968
+Coverage: 4
+CoveredExamples: 72, 141, 483, 565
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0031876122305139493
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.501593806115257
+s-ConfirmationMeasure: 0.23446658851113716
+
+65 : (slope6 <= -0.030732) & (intercept6 <= -0.167183) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 14, 146, 223
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.01195219123505976
+Coverage: 3
+CoveredExamples: 14, 146, 223
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+66 : (slope6 <= -0.026041) & (intercept6 <= -0.192635) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 308, 404, 489, 546
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.016597510373443983
+Coverage: 4
+CoveredExamples: 308, 404, 489, 546
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002117627128215264
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5010588135641076
+s-ConfirmationMeasure: 0.2336448598130841
+
+67 : (slope6 <= -0.025629) & (intercept6 <= -0.206321) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 209, 248, 373, 462, 514, 567
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.022388059701492536
+Coverage: 6
+CoveredExamples: 209, 248, 373, 462, 514, 567
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0010551157286101665
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500527557864305
+s-ConfirmationMeasure: 0.23282887077997672
+
+68 : (slope6 <= -0.023593) & (intercept6 <= -0.21766) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 8
+SupportingExamples: 73, 115, 209, 318, 327, 373, 400, 567
+Strength: 0.011611030478955007
+Confidence: 1.0
+CoverageFactor: 0.029850746268656716
+Coverage: 8
+CoveredExamples: 73, 115, 209, 318, 327, 373, 400, 567
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.4146772767462423
+A-ConfirmationMeasure: 0.0016611001512344913
+Z-ConfirmationMeasure: 0.5211111111111111
+l-ConfirmationMeasure: 0.8824933522908643
+c1-ConfirmationMeasure: 0.26055555555555554
+s-ConfirmationMeasure: 0.12218314445747036
+
+69 : (slope5 <= 0.086544) & (cslope5 >= 0.086485) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 28, 71, 175, 362, 504
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.016891891891891893
+Coverage: 5
+CoveredExamples: 28, 71, 175, 362, 504
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+70 : (slope5 <= 0.051614) & (intercept8 <= -0.465713) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 29, 351
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.007692307692307693
+Coverage: 2
+CoveredExamples: 29, 351
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+71 : (slope4 <= -0.036414) & (slope7 <= -0.064371) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 185, 539, 562
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.011538461538461539
+Coverage: 3
+CoveredExamples: 185, 539, 562
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+72 : (slope4 <= -0.036382) & (slope7 <= -0.065422) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 273, 539
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.007692307692307693
+Coverage: 2
+CoveredExamples: 273, 539
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0010551157286101665
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500527557864305
+s-ConfirmationMeasure: 0.23282887077997672
+
+73 : (slope4 <= -0.036261) & (cslope5 >= 0.083694) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 375, 433
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.00796812749003984
+Coverage: 2
+CoveredExamples: 375, 433
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0010551157286101665
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500527557864305
+s-ConfirmationMeasure: 0.23282887077997672
+
+74 : (slope4 <= -0.035998) & (intercept10 <= -0.652332) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 84, 117, 127, 166, 487, 505
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.02553191489361702
+Coverage: 6
+CoveredExamples: 84, 117, 127, 166, 487, 505
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5373864430468204
+A-ConfirmationMeasure: 0.0027332503998578283
+Z-ConfirmationMeasure: 0.6408333333333334
+l-ConfirmationMeasure: 1.200947083409399
+c1-ConfirmationMeasure: 0.3204166666666667
+s-ConfirmationMeasure: 0.1507843137254902
+
+75 : (slope4 <= -0.035568) & (slope7 <= -0.066026) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 117, 127, 368, 487, 505
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.02127659574468085
+Coverage: 5
+CoveredExamples: 117, 127, 368, 487, 505
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.003905126721362108
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5019525633606811
+s-ConfirmationMeasure: 0.23501762632197415
+
+76 : (slope4 <= -0.035384) & (slope7 <= -0.064783) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 13
+SupportingExamples: 59, 88, 192, 211, 227, 235, 273, 387, 401, 438, 501, 553, 636
+Strength: 0.018867924528301886
+Confidence: 1.0
+CoverageFactor: 0.05416666666666667
+Coverage: 13
+CoveredExamples: 59, 88, 192, 211, 227, 235, 273, 387, 401, 438, 501, 553, 636
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0068092304494450475
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5034046152247226
+s-ConfirmationMeasure: 0.2372479240806643
+
+77 : (slope4 <= -0.033237) & (cintercept4 >= 0.161972) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 207, 274, 428, 528
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.014925373134328358
+Coverage: 4
+CoveredExamples: 207, 274, 428, 528
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.006078049303705822
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5030390246518529
+s-ConfirmationMeasure: 0.23668639053254437
+
+78 : (slope4 <= -0.023397) & (intercept4 <= -0.177951) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 39, 96, 413, 444, 556
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.016891891891891893
+Coverage: 5
+CoveredExamples: 39, 96, 413, 444, 556
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+79 : (slope4 <= -0.019328) & (intercept4 <= -0.184861) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 10
+SupportingExamples: 49, 225, 261, 322, 333, 339, 384, 506, 530, 673
+Strength: 0.01451378809869376
+Confidence: 1.0
+CoverageFactor: 0.038461538461538464
+Coverage: 10
+CoveredExamples: 49, 225, 261, 322, 333, 339, 384, 506, 530, 673
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.004987744399475575
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5024938721997377
+s-ConfirmationMeasure: 0.2358490566037736
+
+80 : (slope4 <= -0.018252) & (intercept9 <= -0.437691) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 11
+SupportingExamples: 18, 30, 60, 161, 210, 330, 369, 409, 447, 616, 633
+Strength: 0.015965166908563134
+Confidence: 1.0
+CoverageFactor: 0.041044776119402986
+Coverage: 11
+CoveredExamples: 18, 30, 60, 161, 210, 330, 369, 409, 447, 616, 633
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.795109873104302
+A-ConfirmationMeasure: 0.00932852079944225
+Z-ConfirmationMeasure: 0.8563333333333333
+l-ConfirmationMeasure: 2.1703476405975026
+c1-ConfirmationMeasure: 0.42816666666666664
+s-ConfirmationMeasure: 0.20584935897435896
+
+81 : (slope4 <= -0.017055) & (intercept4 <= -0.199531) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 40, 295, 312, 383, 452, 495, 652
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.029166666666666667
+Coverage: 7
+CoveredExamples: 40, 295, 312, 383, 452, 495, 652
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.006078049303705822
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5030390246518529
+s-ConfirmationMeasure: 0.23668639053254437
+
+82 : (slope4 <= -0.014463) & (cslope7 >= 0.014133) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 111, 272, 369, 574
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.01702127659574468
+Coverage: 4
+CoveredExamples: 111, 272, 369, 574
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0035459483993588925
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5017729741996795
+s-ConfirmationMeasure: 0.2347417840375587
+
+83 : (slope4 <= -0.007698) & (cslope4 >= -0.007949) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 55, 210, 217, 468
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.013513513513513514
+Coverage: 4
+CoveredExamples: 55, 210, 217, 468
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002473454532605431
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5012367272663028
+s-ConfirmationMeasure: 0.23391812865497075
+
+84 : (slope3 <= -0.044205) & (intercept8 <= -0.304095) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 1
+SupportingExamples: 77
+Strength: 0.001451378809869376
+Confidence: 1.0
+CoverageFactor: 0.0038461538461538464
+Coverage: 1
+CoveredExamples: 77
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0010551157286101665
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500527557864305
+s-ConfirmationMeasure: 0.23282887077997672
+
+85 : (slope3 <= -0.033485) & (intercept4 <= -0.159992) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 143, 270, 442, 554, 555, 666
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.023076923076923078
+Coverage: 6
+CoveredExamples: 143, 270, 442, 554, 555, 666
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0031876122305139493
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.501593806115257
+s-ConfirmationMeasure: 0.23446658851113716
+
+86 : (slope3 <= -0.032876) & (intercept5 <= -0.945841) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 1, 258, 381, 448
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.01606425702811245
+Coverage: 4
+CoveredExamples: 1, 258, 381, 448
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002117627128215264
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5010588135641076
+s-ConfirmationMeasure: 0.2336448598130841
+
+87 : (slope3 <= -0.031924) & (intercept5 <= -0.953014) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 10
+SupportingExamples: 48, 90, 264, 268, 361, 436, 462, 529, 637, 662
+Strength: 0.01451378809869376
+Confidence: 1.0
+CoverageFactor: 0.038461538461538464
+Coverage: 10
+CoveredExamples: 48, 90, 264, 268, 361, 436, 462, 529, 637, 662
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0031876122305139493
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.501593806115257
+s-ConfirmationMeasure: 0.23446658851113716
+
+88 : (slope3 <= -0.031924) & (intercept5 <= -0.952571) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 187, 252, 340, 354, 430, 541, 657
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.02364864864864865
+Coverage: 7
+CoveredExamples: 187, 252, 340, 354, 430, 541, 657
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0035459483993588925
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5017729741996795
+s-ConfirmationMeasure: 0.2347417840375587
+
+89 : (slope3 <= -0.031074) & (intercept5 <= -0.954944) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 13
+SupportingExamples: 37, 48, 90, 264, 314, 361, 436, 462, 498, 529, 550, 637, 662
+Strength: 0.018867924528301886
+Confidence: 1.0
+CoverageFactor: 0.05
+Coverage: 13
+CoveredExamples: 37, 48, 90, 264, 314, 361, 436, 462, 498, 529, 550, 637, 662
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.005713755151307379
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5028568775756537
+s-ConfirmationMeasure: 0.2364066193853428
+
+90 : (slope3 <= -0.031067) & (intercept5 <= -0.960288) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 9
+SupportingExamples: 13, 91, 205, 327, 475, 498, 656, 657, 682
+Strength: 0.013062409288824383
+Confidence: 1.0
+CoverageFactor: 0.035856573705179286
+Coverage: 9
+CoveredExamples: 13, 91, 205, 327, 475, 498, 656, 657, 682
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.003905126721362108
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5019525633606811
+s-ConfirmationMeasure: 0.23501762632197415
+
+91 : (slope3 <= -0.031003) & (intercept5 <= -0.947887) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 56, 360, 396, 624
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.01702127659574468
+Coverage: 4
+CoveredExamples: 56, 360, 396, 624
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.007176123601552913
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5035880618007764
+s-ConfirmationMeasure: 0.2375296912114014
+
+92 : (slope3 <= -0.030854) & (intercept5 <= -0.954944) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 40, 381, 417, 419, 448, 620
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.024096385542168676
+Coverage: 6
+CoveredExamples: 40, 381, 417, 419, 448, 620
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0068092304494450475
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5034046152247226
+s-ConfirmationMeasure: 0.2372479240806643
+
+93 : (slope3 <= -0.029593) & (intercept5 <= -0.975297) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 80, 299, 368, 419, 620
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.020080321285140562
+Coverage: 5
+CoveredExamples: 80, 299, 368, 419, 620
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+94 : (slope2 <= 0.097047) & (slope5 <= -0.008986) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 1
+SupportingExamples: 359
+Strength: 0.001451378809869376
+Confidence: 1.0
+CoverageFactor: 0.0038461538461538464
+Coverage: 1
+CoveredExamples: 359
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+95 : (slope2 <= 0.09644) & (cintercept8 >= 0.17129) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 195, 316, 367, 554
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.01606425702811245
+Coverage: 4
+CoveredExamples: 195, 316, 367, 554
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5373864430468204
+A-ConfirmationMeasure: 0.0027332503998578283
+Z-ConfirmationMeasure: 0.6408333333333334
+l-ConfirmationMeasure: 1.200947083409399
+c1-ConfirmationMeasure: 0.3204166666666667
+s-ConfirmationMeasure: 0.1507843137254902
+
+96 : (slope2 <= 0.096211) & (cintercept8 >= 0.17318) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 9, 89, 205, 233, 434, 513, 532
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.026022304832713755
+Coverage: 7
+CoveredExamples: 9, 89, 205, 233, 434, 513, 532
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5373864430468204
+A-ConfirmationMeasure: 0.0027332503998578283
+Z-ConfirmationMeasure: 0.6408333333333334
+l-ConfirmationMeasure: 1.200947083409399
+c1-ConfirmationMeasure: 0.3204166666666667
+s-ConfirmationMeasure: 0.1507843137254902
+
+97 : (slope2 <= -0.025515) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 501, 663
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.008298755186721992
+Coverage: 2
+CoveredExamples: 501, 663
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+98 : (slope2 <= -0.02529) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 467, 570
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.006756756756756757
+Coverage: 2
+CoveredExamples: 467, 570
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+99 : (slope2 <= -0.025079) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 96, 434, 510
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.011538461538461539
+Coverage: 3
+CoveredExamples: 96, 434, 510
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+100 : (slope2 <= -0.024693) & (slope3 <= -0.022749) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 202, 272, 469
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.011152416356877323
+Coverage: 3
+CoveredExamples: 202, 272, 469
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+101 : (slope2 <= -0.024058) & (intercept6 <= 0.1669) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 122, 459, 505, 623
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.014925373134328358
+Coverage: 4
+CoveredExamples: 122, 459, 505, 623
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0017626301261690644
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5008813150630845
+s-ConfirmationMeasure: 0.23337222870478413
+
+102 : (slope2 <= -0.023766) & (intercept8 <= -0.67038) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 202, 323, 602, 605
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.01486988847583643
+Coverage: 4
+CoveredExamples: 202, 323, 602, 605
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0035459483993588925
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5017729741996795
+s-ConfirmationMeasure: 0.2347417840375587
+
+103 : (slope2 <= -0.023666) & (slope5 <= 0.086449) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 118, 190, 482, 527, 635
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.02074688796680498
+Coverage: 5
+CoveredExamples: 118, 190, 482, 527, 635
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0017626301261690644
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5008813150630845
+s-ConfirmationMeasure: 0.23337222870478413
+
+104 : (slope2 <= -0.023632) & (intercept3 <= -0.0351) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 15
+SupportingExamples: 4, 87, 146, 227, 254, 285, 289, 306, 310, 339, 443, 504, 562, 649, 668
+Strength: 0.02177068214804064
+Confidence: 1.0
+CoverageFactor: 0.05976095617529881
+Coverage: 15
+CoveredExamples: 4, 87, 146, 227, 254, 285, 289, 306, 310, 339, 443, 504, 562, 649, 668
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.004265150168828861
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5021325750844144
+s-ConfirmationMeasure: 0.23529411764705882
+
+105 : (slope2 <= -0.023518) & (cintercept7 >= 0.064669) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 11
+SupportingExamples: 4, 146, 285, 289, 310, 314, 443, 504, 542, 562, 649
+Strength: 0.015965166908563134
+Confidence: 1.0
+CoverageFactor: 0.043824701195219126
+Coverage: 11
+CoveredExamples: 4, 146, 285, 289, 310, 314, 443, 504, 542, 562, 649
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0028301152564438187
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5014150576282219
+s-ConfirmationMeasure: 0.234192037470726
+
+106 : (slope2 <= -0.022865) & (intercept3 <= -0.040645) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 10
+SupportingExamples: 79, 149, 156, 248, 304, 366, 403, 418, 442, 686
+Strength: 0.01451378809869376
+Confidence: 1.0
+CoverageFactor: 0.0425531914893617
+Coverage: 10
+CoveredExamples: 79, 149, 156, 248, 304, 366, 403, 418, 442, 686
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.005713755151307379
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5028568775756537
+s-ConfirmationMeasure: 0.2364066193853428
+
+107 : (slope2 <= -0.022698) & (slope7 <= -0.058486) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 13
+SupportingExamples: 75, 114, 147, 203, 249, 355, 510, 519, 536, 564, 568, 627, 638
+Strength: 0.018867924528301886
+Confidence: 1.0
+CoverageFactor: 0.05138339920948617
+Coverage: 13
+CoveredExamples: 75, 114, 147, 203, 249, 355, 510, 519, 536, 564, 568, 627, 638
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.6175621028307337
+A-ConfirmationMeasure: 0.003812995573500929
+Z-ConfirmationMeasure: 0.7126666666666667
+l-ConfirmationMeasure: 1.4421091402262871
+c1-ConfirmationMeasure: 0.35633333333333334
+s-ConfirmationMeasure: 0.168280204643841
+
+108 : (slope2 <= -0.022397) & (slope7 <= -0.061132) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 180, 308, 317, 403
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.01702127659574468
+Coverage: 4
+CoveredExamples: 180, 308, 317, 403
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002117627128215264
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5010588135641076
+s-ConfirmationMeasure: 0.2336448598130841
+
+109 : (slope2 <= -0.022115) & (intercept4 <= 0.099097) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 122, 459, 480, 554
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.014925373134328358
+Coverage: 4
+CoveredExamples: 122, 459, 480, 554
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002117627128215264
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5010588135641076
+s-ConfirmationMeasure: 0.2336448598130841
+
+110 : (slope2 <= -0.021664) & (intercept3 <= -0.048608) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 4, 69, 332, 371, 415
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.0199203187250996
+Coverage: 5
+CoveredExamples: 4, 69, 332, 371, 415
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.004987744399475575
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5024938721997377
+s-ConfirmationMeasure: 0.2358490566037736
+
+111 : (slope2 <= -0.021515) & (intercept8 <= -0.684011) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 96, 209, 362, 377, 596, 644
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.023076923076923078
+Coverage: 6
+CoveredExamples: 96, 209, 362, 377, 596, 644
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.005350321197615897
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5026751605988079
+s-ConfirmationMeasure: 0.2361275088547816
+
+112 : (slope2 <= -0.019274) & (intercept3 <= -0.052553) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 112, 232, 297, 304, 403, 484, 567
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.029787234042553193
+Coverage: 7
+CoveredExamples: 112, 232, 297, 304, 403, 484, 567
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.7483846446218168
+A-ConfirmationMeasure: 0.0070986163286201505
+Z-ConfirmationMeasure: 0.8204166666666667
+l-ConfirmationMeasure: 1.9385460265401782
+c1-ConfirmationMeasure: 0.41020833333333334
+s-ConfirmationMeasure: 0.19580350039777247
+
+113 : (slope2 <= -0.005558) & (slope7 <= -0.066753) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 141, 453, 541
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.012448132780082987
+Coverage: 3
+CoveredExamples: 141, 453, 541
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002473454532605431
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5012367272663028
+s-ConfirmationMeasure: 0.23391812865497075
+
+114 : (slope2 <= -0.004855) & (slope7 <= -0.066325) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 119, 167, 462, 524, 682
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.019230769230769232
+Coverage: 5
+CoveredExamples: 119, 167, 462, 524, 682
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.003905126721362108
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5019525633606811
+s-ConfirmationMeasure: 0.23501762632197415
+
+115 : (slope2 <= -0.004631) & (slope7 <= -0.066295) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 105, 144, 159, 316, 376, 516, 578
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.025454545454545455
+Coverage: 7
+CoveredExamples: 105, 144, 159, 316, 376, 516, 578
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.003905126721362108
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5019525633606811
+s-ConfirmationMeasure: 0.23501762632197415
+
+116 : (slope2 <= -0.003449) & (slope7 <= -0.066771) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 146, 169, 275
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.011152416356877323
+Coverage: 3
+CoveredExamples: 146, 169, 275
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0035459483993588925
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5017729741996795
+s-ConfirmationMeasure: 0.2347417840375587
+
+117 : (slope1 <= 0.140853) & (cintercept4 >= 0.155477) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 18
+SupportingExamples: 14, 30, 38, 44, 55, 102, 110, 113, 146, 255, 258, 275, 291, 336, 468, 514, 660, 675
+Strength: 0.026124818577648767
+Confidence: 1.0
+CoverageFactor: 0.06691449814126393
+Coverage: 18
+CoveredExamples: 14, 30, 38, 44, 55, 102, 110, 113, 146, 255, 258, 275, 291, 336, 468, 514, 660, 675
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5026296018031555
+A-ConfirmationMeasure: 0.009883364480458564
+Z-ConfirmationMeasure: 0.6081818181818182
+l-ConfirmationMeasure: 1.1056369036050742
+c1-ConfirmationMeasure: 0.3040909090909091
+s-ConfirmationMeasure: 0.1486997110468993
+
+118 : (slope1 <= 0.044859) & (intercept8 <= -0.602148) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 1
+SupportingExamples: 397
+Strength: 0.001451378809869376
+Confidence: 1.0
+CoverageFactor: 0.004149377593360996
+Coverage: 1
+CoveredExamples: 397
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+119 : (slope1 <= -0.088306) & (slope4 <= -0.008623) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 235, 270, 559
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.01276595744680851
+Coverage: 3
+CoveredExamples: 235, 270, 559
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0010551157286101665
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500527557864305
+s-ConfirmationMeasure: 0.23282887077997672
+
+120 : (slope1 <= -0.084379) & (intercept9 <= -0.256735) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 36, 678
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.007692307692307693
+Coverage: 2
+CoveredExamples: 36, 678
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+121 : (slope1 <= -0.082016) & (slope7 <= -0.005452) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 1
+SupportingExamples: 309
+Strength: 0.001451378809869376
+Confidence: 1.0
+CoverageFactor: 0.004016064257028112
+Coverage: 1
+CoveredExamples: 309
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0017626301261690644
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5008813150630845
+s-ConfirmationMeasure: 0.23337222870478413
+
+122 : (slope1 <= -0.076255) & (cslope2 >= 0.100149) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 184, 328, 503, 675
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.01702127659574468
+Coverage: 4
+CoveredExamples: 184, 328, 503, 675
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+123 : (slope1 <= -0.03978) & (intercept8 <= -0.314074) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 1
+SupportingExamples: 498
+Strength: 0.001451378809869376
+Confidence: 1.0
+CoverageFactor: 0.0038461538461538464
+Coverage: 1
+CoveredExamples: 498
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+124 : (intercept9 <= -0.476339) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 200, 412, 451, 683
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.01702127659574468
+Coverage: 4
+CoveredExamples: 200, 412, 451, 683
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.006078049303705822
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5030390246518529
+s-ConfirmationMeasure: 0.23668639053254437
+
+125 : (intercept9 <= -0.474933) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 9, 233, 479, 527, 546, 571, 651
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.026022304832713755
+Coverage: 7
+CoveredExamples: 9, 233, 479, 527, 546, 571, 651
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.006078049303705822
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5030390246518529
+s-ConfirmationMeasure: 0.23668639053254437
+
+126 : (intercept9 <= -0.472133) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 9
+SupportingExamples: 51, 159, 186, 327, 403, 445, 574, 621, 686
+Strength: 0.013062409288824383
+Confidence: 1.0
+CoverageFactor: 0.03734439834024896
+Coverage: 9
+CoveredExamples: 51, 159, 186, 327, 403, 445, 574, 621, 686
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.006078049303705822
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5030390246518529
+s-ConfirmationMeasure: 0.23668639053254437
+
+127 : (intercept9 <= -0.46954) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 30, 160, 368, 369, 542
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.018656716417910446
+Coverage: 5
+CoveredExamples: 30, 160, 368, 369, 542
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.006443206712389571
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5032216033561948
+s-ConfirmationMeasure: 0.23696682464454977
+
+128 : (intercept9 <= -0.46714) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 83, 321, 331, 436, 463, 579, 669
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.02631578947368421
+Coverage: 7
+CoveredExamples: 83, 321, 331, 436, 463, 579, 669
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0068092304494450475
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5034046152247226
+s-ConfirmationMeasure: 0.2372479240806643
+
+129 : (intercept9 <= -0.466043) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 75, 169, 221, 345, 412, 590
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.023076923076923078
+Coverage: 6
+CoveredExamples: 75, 169, 221, 345, 412, 590
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.007176123601552913
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5035880618007764
+s-ConfirmationMeasure: 0.2375296912114014
+
+130 : (intercept9 <= -0.465921) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 91, 121, 158, 269, 309, 321, 668
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.029166666666666667
+Coverage: 7
+CoveredExamples: 91, 121, 158, 269, 309, 321, 668
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.007176123601552913
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5035880618007764
+s-ConfirmationMeasure: 0.2375296912114014
+
+131 : (intercept9 <= -0.463734) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 8
+SupportingExamples: 22, 38, 318, 348, 504, 507, 568, 671
+Strength: 0.011611030478955007
+Confidence: 1.0
+CoverageFactor: 0.02909090909090909
+Coverage: 8
+CoveredExamples: 22, 38, 318, 348, 504, 507, 568, 671
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.007543889270074829
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5037719446350374
+s-ConfirmationMeasure: 0.23781212841854935
+
+132 : (intercept9 <= -0.462946) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 13
+SupportingExamples: 17, 22, 93, 118, 167, 244, 304, 353, 368, 394, 500, 577, 611
+Strength: 0.018867924528301886
+Confidence: 1.0
+CoverageFactor: 0.04391891891891892
+Coverage: 13
+CoveredExamples: 17, 22, 93, 118, 167, 244, 304, 353, 368, 394, 500, 577, 611
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.007912530571140844
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5039562652855705
+s-ConfirmationMeasure: 0.23809523809523808
+
+133 : (intercept9 <= -0.461397) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 18
+SupportingExamples: 13, 103, 148, 157, 249, 274, 288, 298, 299, 325, 416, 431, 451, 560, 578, 590, 667, 671
+Strength: 0.026124818577648767
+Confidence: 1.0
+CoverageFactor: 0.06923076923076923
+Coverage: 18
+CoveredExamples: 13, 103, 148, 157, 249, 274, 288, 298, 299, 325, 416, 431, 451, 560, 578, 590, 667, 671
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.008282050635737408
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5041410253178688
+s-ConfirmationMeasure: 0.23837902264600716
+
+134 : (intercept9 <= -0.300895) & (intercept10 <= -0.288889) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 8
+SupportingExamples: 45, 126, 189, 206, 310, 367, 398, 424
+Strength: 0.011611030478955007
+Confidence: 1.0
+CoverageFactor: 0.03076923076923077
+Coverage: 8
+CoveredExamples: 45, 126, 189, 206, 310, 367, 398, 424
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.7032720753025549
+A-ConfirmationMeasure: 0.00562966896541826
+Z-ConfirmationMeasure: 0.7845
+l-ConfirmationMeasure: 1.747490789777469
+c1-ConfirmationMeasure: 0.39225
+s-ConfirmationMeasure: 0.1863420427553444
+
+135 : (intercept9 <= -0.280204) & (intercept10 <= -0.208066) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 8
+SupportingExamples: 42, 258, 306, 372, 488, 511, 522, 580
+Strength: 0.011611030478955007
+Confidence: 1.0
+CoverageFactor: 0.03404255319148936
+Coverage: 8
+CoveredExamples: 42, 258, 306, 372, 488, 511, 522, 580
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5263534462198903
+A-ConfirmationMeasure: 0.00806248333254182
+Z-ConfirmationMeasure: 0.6305714285714286
+l-ConfirmationMeasure: 1.1701754247426455
+c1-ConfirmationMeasure: 0.3152857142857143
+s-ConfirmationMeasure: 0.1524961133183624
+
+136 : (intercept9 <= -0.174966) & (cintercept10 >= 0.55663) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 369, 427, 503
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.010135135135135136
+Coverage: 3
+CoveredExamples: 369, 427, 503
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002117627128215264
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5010588135641076
+s-ConfirmationMeasure: 0.2336448598130841
+
+137 : (intercept9 <= -0.140152) & (cintercept9 >= -0.142091) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 289, 400, 554
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.011538461538461539
+Coverage: 3
+CoveredExamples: 289, 400, 554
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+138 : (intercept9 <= -0.105069) & (cintercept9 >= -0.106841) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 520, 565
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.00851063829787234
+Coverage: 2
+CoveredExamples: 520, 565
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+139 : (intercept8 <= 0.105797) & (cslope9 >= 0.068192) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 269, 525, 668, 672
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.016666666666666666
+Coverage: 4
+CoveredExamples: 269, 525, 668, 672
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0035459483993588925
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5017729741996795
+s-ConfirmationMeasure: 0.2347417840375587
+
+140 : (intercept8 <= 0.065919) & (cslope9 >= 0.067395) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 8
+SupportingExamples: 51, 159, 186, 199, 436, 621, 665, 686
+Strength: 0.011611030478955007
+Confidence: 1.0
+CoverageFactor: 0.03319502074688797
+Coverage: 8
+CoveredExamples: 51, 159, 186, 199, 436, 621, 665, 686
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002117627128215264
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5010588135641076
+s-ConfirmationMeasure: 0.2336448598130841
+
+141 : (intercept8 <= -0.718544) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 132, 477
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.00796812749003984
+Coverage: 2
+CoveredExamples: 132, 477
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+142 : (intercept8 <= -0.679496) & (cintercept8 >= -0.680968) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 246, 616, 659
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.010135135135135136
+Coverage: 3
+CoveredExamples: 246, 616, 659
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+143 : (intercept8 <= -0.636729) & (cintercept8 >= -0.63922) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 184, 262, 354, 398, 642
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.020833333333333332
+Coverage: 5
+CoveredExamples: 184, 262, 354, 398, 642
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002473454532605431
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5012367272663028
+s-ConfirmationMeasure: 0.23391812865497075
+
+144 : (intercept8 <= -0.615786) & (cintercept8 >= -0.617476) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 118, 428, 501, 598
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.01606425702811245
+Coverage: 4
+CoveredExamples: 118, 428, 501, 598
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+145 : (intercept8 <= -0.293318) & (intercept9 <= -0.308303) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 8
+SupportingExamples: 42, 62, 154, 372, 415, 511, 522, 580
+Strength: 0.011611030478955007
+Confidence: 1.0
+CoverageFactor: 0.03404255319148936
+Coverage: 8
+CoveredExamples: 42, 62, 154, 372, 415, 511, 522, 580
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5530047265361242
+A-ConfirmationMeasure: 0.005912354221485885
+Z-ConfirmationMeasure: 0.6552
+l-ConfirmationMeasure: 1.245398845980233
+c1-ConfirmationMeasure: 0.3276
+s-ConfirmationMeasure: 0.15655913978494623
+
+146 : (intercept7 <= 0.231908) & (cintercept7 >= 0.222964) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 5, 48, 188, 309, 406
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.019230769230769232
+Coverage: 5
+CoveredExamples: 5, 48, 188, 309, 406
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5026296018031555
+A-ConfirmationMeasure: 0.0023750270696284094
+Z-ConfirmationMeasure: 0.6081818181818182
+l-ConfirmationMeasure: 1.1056369036050742
+c1-ConfirmationMeasure: 0.3040909090909091
+s-ConfirmationMeasure: 0.14293344728127336
+
+147 : (intercept7 <= -0.681199) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 1
+SupportingExamples: 277
+Strength: 0.001451378809869376
+Confidence: 1.0
+CoverageFactor: 0.0038461538461538464
+Coverage: 1
+CoveredExamples: 277
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+148 : (intercept7 <= -0.675082) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 1
+SupportingExamples: 310
+Strength: 0.001451378809869376
+Confidence: 1.0
+CoverageFactor: 0.004166666666666667
+Coverage: 1
+CoveredExamples: 310
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+149 : (intercept7 <= -0.582289) & (cintercept9 >= -0.154105) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 43, 141, 475, 588, 610
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.019762845849802372
+Coverage: 5
+CoveredExamples: 43, 141, 475, 588, 610
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0010551157286101665
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500527557864305
+s-ConfirmationMeasure: 0.23282887077997672
+
+150 : (intercept7 <= -0.56478) & (cintercept9 >= -0.12566) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 29, 50, 157, 541, 588, 680
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.02390438247011952
+Coverage: 6
+CoveredExamples: 29, 50, 157, 541, 588, 680
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0010551157286101665
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500527557864305
+s-ConfirmationMeasure: 0.23282887077997672
+
+151 : (intercept7 <= -0.553446) & (cintercept9 >= -0.129606) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 308, 309, 404, 495, 567
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.02074688796680498
+Coverage: 5
+CoveredExamples: 308, 309, 404, 495, 567
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0010551157286101665
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500527557864305
+s-ConfirmationMeasure: 0.23282887077997672
+
+152 : (intercept7 <= -0.484443) & (cintercept7 >= -0.486752) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 98, 137, 415, 657
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.014545454545454545
+Coverage: 4
+CoveredExamples: 98, 137, 415, 657
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+153 : (intercept7 <= -0.473773) & (cintercept9 >= -0.051911) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 104, 233, 327, 400, 541
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.018656716417910446
+Coverage: 5
+CoveredExamples: 104, 233, 327, 400, 541
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+154 : (intercept7 <= -0.419901) & (cintercept7 >= -0.422386) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 254, 550
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.006756756756756757
+Coverage: 2
+CoveredExamples: 254, 550
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+155 : (intercept6 <= 0.284358) & (cintercept7 >= 0.385762) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 154, 236, 363, 629
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.016597510373443983
+Coverage: 4
+CoveredExamples: 154, 236, 363, 629
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0028301152564438187
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5014150576282219
+s-ConfirmationMeasure: 0.234192037470726
+
+156 : (intercept6 <= 0.043816) & (cintercept7 >= 0.210502) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 96, 217, 274, 567
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.01486988847583643
+Coverage: 4
+CoveredExamples: 96, 217, 274, 567
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0010551157286101665
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500527557864305
+s-ConfirmationMeasure: 0.23282887077997672
+
+157 : (intercept6 <= -0.265393) & (intercept9 <= -0.174681) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 44, 350
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.00796812749003984
+Coverage: 2
+CoveredExamples: 44, 350
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+158 : (intercept6 <= -0.25033) & (cintercept6 >= -0.253595) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 139, 151, 246, 630, 670
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.018656716417910446
+Coverage: 5
+CoveredExamples: 139, 151, 246, 630, 670
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+159 : (intercept6 <= -0.244993) & (cintercept6 >= -0.246665) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 25, 87, 211, 343, 348
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.019762845849802372
+Coverage: 5
+CoveredExamples: 25, 87, 211, 343, 348
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0010551157286101665
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500527557864305
+s-ConfirmationMeasure: 0.23282887077997672
+
+160 : (intercept6 <= -0.244912) & (cintercept6 >= -0.245796) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 38, 41, 69, 231, 537
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.018656716417910446
+Coverage: 5
+CoveredExamples: 38, 41, 69, 231, 537
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+161 : (intercept6 <= -0.236132) & (cintercept6 >= -0.23713) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 17, 84, 213, 678
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.01593625498007968
+Coverage: 4
+CoveredExamples: 17, 84, 213, 678
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+162 : (intercept6 <= -0.21766) & (intercept9 <= -0.13821) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 8
+SupportingExamples: 3, 72, 185, 215, 342, 557, 564, 620
+Strength: 0.011611030478955007
+Confidence: 1.0
+CoverageFactor: 0.02973977695167286
+Coverage: 8
+CoveredExamples: 3, 72, 185, 215, 342, 557, 564, 620
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5026296018031555
+A-ConfirmationMeasure: 0.004812257229175658
+Z-ConfirmationMeasure: 0.6081818181818182
+l-ConfirmationMeasure: 1.1056369036050742
+c1-ConfirmationMeasure: 0.3040909090909091
+s-ConfirmationMeasure: 0.1448051948051948
+
+163 : (intercept6 <= -0.200824) & (cintercept6 >= -0.20265) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 234, 281, 540
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.01195219123505976
+Coverage: 3
+CoveredExamples: 234, 281, 540
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+164 : (intercept6 <= -0.20046) & (slope7 <= -0.045123) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 135, 218, 249, 444
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.016597510373443983
+Coverage: 4
+CoveredExamples: 135, 218, 249, 444
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002117627128215264
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5010588135641076
+s-ConfirmationMeasure: 0.2336448598130841
+
+165 : (intercept6 <= -0.195946) & (cintercept6 >= -0.198743) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 7, 12
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.00796812749003984
+Coverage: 2
+CoveredExamples: 7, 12
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+166 : (intercept6 <= -0.192738) & (cintercept6 >= -0.194548) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 298, 391, 647, 683
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.015810276679841896
+Coverage: 4
+CoveredExamples: 298, 391, 647, 683
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+167 : (intercept6 <= -0.177382) & (cintercept6 >= -0.18031) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 87, 119
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.00796812749003984
+Coverage: 2
+CoveredExamples: 87, 119
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+168 : (intercept6 <= -0.169686) & (slope7 <= -0.046003) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 101, 184, 357, 483, 538, 681
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.023715415019762844
+Coverage: 6
+CoveredExamples: 101, 184, 357, 483, 538, 681
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.4146772767462423
+A-ConfirmationMeasure: 0.0016611001512344913
+Z-ConfirmationMeasure: 0.5211111111111111
+l-ConfirmationMeasure: 0.8824933522908643
+c1-ConfirmationMeasure: 0.26055555555555554
+s-ConfirmationMeasure: 0.12218314445747036
+
+169 : (intercept6 <= -0.161287) & (intercept9 <= -0.170265) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 8
+SupportingExamples: 102, 190, 217, 220, 265, 408, 490, 551
+Strength: 0.011611030478955007
+Confidence: 1.0
+CoverageFactor: 0.03076923076923077
+Coverage: 8
+CoveredExamples: 102, 190, 217, 220, 265, 408, 490, 551
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.46222583265637696
+A-ConfirmationMeasure: 0.006198437136881245
+Z-ConfirmationMeasure: 0.569
+l-ConfirmationMeasure: 1.0002763879472478
+c1-ConfirmationMeasure: 0.2845
+s-ConfirmationMeasure: 0.13677884615384617
+
+170 : (intercept6 <= -0.129279) & (slope7 <= -0.047289) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 27, 139, 165, 497, 603, 626
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.025
+Coverage: 6
+CoveredExamples: 27, 139, 165, 497, 603, 626
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5373864430468204
+A-ConfirmationMeasure: 0.0027332503998578283
+Z-ConfirmationMeasure: 0.6408333333333334
+l-ConfirmationMeasure: 1.200947083409399
+c1-ConfirmationMeasure: 0.3204166666666667
+s-ConfirmationMeasure: 0.1507843137254902
+
+171 : (intercept6 <= -0.109519) & (slope7 <= -0.048243) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 124, 191, 200, 495, 563
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.018656716417910446
+Coverage: 5
+CoveredExamples: 124, 191, 200, 495, 563
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.004626021728068209
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5023130108640341
+s-ConfirmationMeasure: 0.23557126030624265
+
+172 : (intercept6 <= -0.102422) & (slope7 <= -0.049283) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 124, 158, 512, 618
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.015810276679841896
+Coverage: 4
+CoveredExamples: 124, 158, 512, 618
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0028301152564438187
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5014150576282219
+s-ConfirmationMeasure: 0.234192037470726
+
+173 : (intercept6 <= -0.07023) & (slope7 <= -0.048819) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 188, 325, 348, 422, 431, 614
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.02390438247011952
+Coverage: 6
+CoveredExamples: 188, 325, 348, 422, 431, 614
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.716001716001716
+A-ConfirmationMeasure: 0.0059955958055975655
+Z-ConfirmationMeasure: 0.7947619047619048
+l-ConfirmationMeasure: 1.7987840841650196
+c1-ConfirmationMeasure: 0.3973809523809524
+s-ConfirmationMeasure: 0.18900402015740897
+
+174 : (intercept6 <= -0.052027) & (cintercept6 >= -0.052565) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 159, 605
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.007905138339920948
+Coverage: 2
+CoveredExamples: 159, 605
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+175 : (intercept6 <= -0.048469) & (slope7 <= -0.052366) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 188, 325, 360
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.01195219123505976
+Coverage: 3
+CoveredExamples: 188, 325, 360
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0028301152564438187
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5014150576282219
+s-ConfirmationMeasure: 0.234192037470726
+
+176 : (intercept6 <= -0.018685) & (slope7 <= -0.055306) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 8
+SupportingExamples: 10, 40, 103, 360, 368, 415, 573, 656
+Strength: 0.011611030478955007
+Confidence: 1.0
+CoverageFactor: 0.03076923076923077
+Coverage: 8
+CoveredExamples: 10, 40, 103, 360, 368, 415, 573, 656
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+177 : (intercept6 <= -0.004327) & (cintercept7 >= 0.153834) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 195, 333
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.007905138339920948
+Coverage: 2
+CoveredExamples: 195, 333
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+178 : (intercept5 <= -1.073367) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 1
+SupportingExamples: 85
+Strength: 0.001451378809869376
+Confidence: 1.0
+CoverageFactor: 0.0033783783783783786
+Coverage: 1
+CoveredExamples: 85
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+179 : (intercept5 <= -1.073279) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 1
+SupportingExamples: 628
+Strength: 0.001451378809869376
+Confidence: 1.0
+CoverageFactor: 0.0038461538461538464
+Coverage: 1
+CoveredExamples: 628
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+180 : (intercept5 <= -1.073105) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 451, 609, 661
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.01090909090909091
+Coverage: 3
+CoveredExamples: 451, 609, 661
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+181 : (intercept5 <= -1.068402) & (intercept9 <= 0.072038) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 180, 317, 530, 589
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.01702127659574468
+Coverage: 4
+CoveredExamples: 180, 317, 530, 589
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+182 : (intercept5 <= -0.97196) & (cintercept5 >= -0.972889) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 20, 241, 621
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.01195219123505976
+Coverage: 3
+CoveredExamples: 20, 241, 621
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+183 : (intercept5 <= -0.962484) & (cintercept8 >= -0.56333) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 11, 56, 172, 518, 599, 624
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.02553191489361702
+Coverage: 6
+CoveredExamples: 11, 56, 172, 518, 599, 624
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.4146772767462423
+A-ConfirmationMeasure: 0.0033576266090118985
+Z-ConfirmationMeasure: 0.5211111111111111
+l-ConfirmationMeasure: 0.8824933522908643
+c1-ConfirmationMeasure: 0.26055555555555554
+s-ConfirmationMeasure: 0.12348604528699315
+
+184 : (intercept5 <= -0.954944) & (slope8 <= -0.033522) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 11
+SupportingExamples: 48, 90, 264, 361, 436, 498, 529, 538, 550, 637, 662
+Strength: 0.015965166908563134
+Confidence: 1.0
+CoverageFactor: 0.04230769230769231
+Coverage: 11
+CoveredExamples: 48, 90, 264, 361, 436, 498, 529, 538, 550, 637, 662
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.003905126721362108
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5019525633606811
+s-ConfirmationMeasure: 0.23501762632197415
+
+185 : (intercept5 <= -0.954944) & (cintercept9 >= 0.202154) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 48, 343, 350
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.011538461538461539
+Coverage: 3
+CoveredExamples: 48, 343, 350
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002117627128215264
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5010588135641076
+s-ConfirmationMeasure: 0.2336448598130841
+
+186 : (intercept5 <= -0.952571) & (cintercept9 >= 0.212862) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 148, 402, 430, 460
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.013513513513513514
+Coverage: 4
+CoveredExamples: 148, 402, 430, 460
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+187 : (intercept5 <= -0.930907) & (cintercept7 >= 0.390872) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 300, 417, 550, 634
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.015384615384615385
+Coverage: 4
+CoveredExamples: 300, 417, 550, 634
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0017626301261690644
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5008813150630845
+s-ConfirmationMeasure: 0.23337222870478413
+
+188 : (intercept5 <= -0.879195) & (cintercept6 >= 0.355419) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 154, 244
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.00796812749003984
+Coverage: 2
+CoveredExamples: 154, 244
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+189 : (intercept5 <= -0.865071) & (cintercept7 >= 0.401846) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 24, 417, 550, 634, 660, 665
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.023076923076923078
+Coverage: 6
+CoveredExamples: 24, 417, 550, 634, 660, 665
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.004265150168828861
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5021325750844144
+s-ConfirmationMeasure: 0.23529411764705882
+
+190 : (intercept5 <= -0.434318) & (cslope9 >= 0.053764) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 12
+SupportingExamples: 30, 60, 102, 210, 244, 286, 319, 354, 369, 409, 447, 616
+Strength: 0.01741654571843251
+Confidence: 1.0
+CoverageFactor: 0.04477611940298507
+Coverage: 12
+CoveredExamples: 30, 60, 102, 210, 244, 286, 319, 354, 369, 409, 447, 616
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.6384489350081922
+A-ConfirmationMeasure: 0.00851017362501365
+Z-ConfirmationMeasure: 0.730625
+l-ConfirmationMeasure: 1.5111020117132385
+c1-ConfirmationMeasure: 0.3653125
+s-ConfirmationMeasure: 0.1760542168674699
+
+191 : (intercept5 <= -0.085608) & (cintercept8 >= 0.190667) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 8
+SupportingExamples: 154, 263, 306, 403, 409, 511, 545, 658
+Strength: 0.011611030478955007
+Confidence: 1.0
+CoverageFactor: 0.03333333333333333
+Coverage: 8
+CoveredExamples: 154, 263, 306, 403, 409, 511, 545, 658
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+192 : (intercept4 <= 0.117663) & (intercept5 <= -1.069408) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 538, 625
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.00796812749003984
+Coverage: 2
+CoveredExamples: 538, 625
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+193 : (intercept4 <= 0.102504) & (intercept5 <= -1.05957) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 65, 147, 317, 435, 477
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.0199203187250996
+Coverage: 5
+CoveredExamples: 65, 147, 317, 435, 477
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+194 : (intercept4 <= 0.099905) & (cslope5 >= 0.08642) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 12
+SupportingExamples: 28, 50, 57, 137, 175, 181, 198, 240, 458, 502, 504, 657
+Strength: 0.01741654571843251
+Confidence: 1.0
+CoverageFactor: 0.04054054054054054
+Coverage: 12
+CoveredExamples: 28, 50, 57, 137, 175, 181, 198, 240, 458, 502, 504, 657
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0028301152564438187
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5014150576282219
+s-ConfirmationMeasure: 0.234192037470726
+
+195 : (intercept4 <= 0.099097) & (intercept5 <= -1.022562) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 9
+SupportingExamples: 25, 63, 137, 145, 194, 457, 580, 601, 622
+Strength: 0.013062409288824383
+Confidence: 1.0
+CoverageFactor: 0.03614457831325301
+Coverage: 9
+CoveredExamples: 25, 63, 137, 145, 194, 457, 580, 601, 622
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.6571724495080269
+A-ConfirmationMeasure: 0.004537085039060405
+Z-ConfirmationMeasure: 0.7464705882352941
+l-ConfirmationMeasure: 1.5756405328508096
+c1-ConfirmationMeasure: 0.37323529411764705
+s-ConfirmationMeasure: 0.17667942916811696
+
+196 : (intercept4 <= 0.096566) & (intercept5 <= -0.990263) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 13
+SupportingExamples: 40, 208, 317, 377, 389, 441, 568, 569, 596, 612, 640, 655, 675
+Strength: 0.018867924528301886
+Confidence: 1.0
+CoverageFactor: 0.05
+Coverage: 13
+CoveredExamples: 40, 208, 317, 377, 389, 441, 568, 569, 596, 612, 640, 655, 675
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5676028739386022
+A-ConfirmationMeasure: 0.006280807759580219
+Z-ConfirmationMeasure: 0.6684615384615384
+l-ConfirmationMeasure: 1.2879584603990288
+c1-ConfirmationMeasure: 0.3342307692307692
+s-ConfirmationMeasure: 0.15991902834008098
+
+197 : (intercept4 <= 0.090634) & (intercept5 <= -1.025492) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 80, 137, 154, 198, 240, 248, 634
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.02364864864864865
+Coverage: 7
+CoveredExamples: 80, 137, 154, 198, 240, 248, 634
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002473454532605431
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5012367272663028
+s-ConfirmationMeasure: 0.23391812865497075
+
+198 : (intercept4 <= 0.090385) & (intercept5 <= -0.989162) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 13
+SupportingExamples: 89, 97, 147, 317, 367, 371, 418, 477, 490, 527, 598, 601, 615
+Strength: 0.018867924528301886
+Confidence: 1.0
+CoverageFactor: 0.05179282868525897
+Coverage: 13
+CoveredExamples: 89, 97, 147, 317, 367, 371, 418, 477, 490, 527, 598, 601, 615
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.004987744399475575
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5024938721997377
+s-ConfirmationMeasure: 0.2358490566037736
+
+199 : (intercept4 <= 0.089054) & (intercept5 <= -0.991129) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 9
+SupportingExamples: 75, 94, 103, 121, 338, 424, 428, 477, 662
+Strength: 0.013062409288824383
+Confidence: 1.0
+CoverageFactor: 0.03557312252964427
+Coverage: 9
+CoveredExamples: 75, 94, 103, 121, 338, 424, 428, 477, 662
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.004626021728068209
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5023130108640341
+s-ConfirmationMeasure: 0.23557126030624265
+
+200 : (intercept4 <= 0.087384) & (cslope5 >= 0.086345) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 1, 171, 432, 450, 506, 600, 680
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.026119402985074626
+Coverage: 7
+CoveredExamples: 1, 171, 432, 450, 506, 600, 680
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+201 : (intercept4 <= 0.083515) & (slope7 <= -0.069001) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 147, 317, 365, 475, 477, 490
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.02390438247011952
+Coverage: 6
+CoveredExamples: 147, 317, 365, 475, 477, 490
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002117627128215264
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5010588135641076
+s-ConfirmationMeasure: 0.2336448598130841
+
+202 : (intercept4 <= 0.083459) & (slope7 <= -0.068634) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 18, 53, 253, 501, 662
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.019762845849802372
+Coverage: 5
+CoveredExamples: 18, 53, 253, 501, 662
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0031876122305139493
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.501593806115257
+s-ConfirmationMeasure: 0.23446658851113716
+
+203 : (intercept4 <= 0.056123) & (cslope5 >= 0.086105) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 81, 316, 578
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.01090909090909091
+Coverage: 3
+CoveredExamples: 81, 316, 578
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+204 : (intercept4 <= 0.030036) & (cintercept6 >= 0.404417) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 159, 506, 557, 626
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.01593625498007968
+Coverage: 4
+CoveredExamples: 159, 506, 557, 626
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0017626301261690644
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5008813150630845
+s-ConfirmationMeasure: 0.23337222870478413
+
+205 : (intercept4 <= 0.013566) & (intercept5 <= -0.92451) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 95, 96, 217, 274, 308
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.01858736059479554
+Coverage: 5
+CoveredExamples: 95, 96, 217, 274, 308
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0028301152564438187
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5014150576282219
+s-ConfirmationMeasure: 0.234192037470726
+
+206 : (intercept4 <= -0.373868) & (cslope9 >= 0.048692) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 1
+SupportingExamples: 99
+Strength: 0.001451378809869376
+Confidence: 1.0
+CoverageFactor: 0.0038461538461538464
+Coverage: 1
+CoveredExamples: 99
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+207 : (intercept4 <= -0.335203) & (intercept9 <= -0.174681) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 10, 81, 97, 383, 417
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.0199203187250996
+Coverage: 5
+CoveredExamples: 10, 81, 97, 383, 417
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.003905126721362108
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5019525633606811
+s-ConfirmationMeasure: 0.23501762632197415
+
+208 : (intercept4 <= -0.334399) & (intercept9 <= -0.178885) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 18, 114, 208, 636
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.01486988847583643
+Coverage: 4
+CoveredExamples: 18, 114, 208, 636
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0031876122305139493
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.501593806115257
+s-ConfirmationMeasure: 0.23446658851113716
+
+209 : (intercept4 <= -0.333439) & (cslope9 >= 0.05455) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 53, 105, 172, 209
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.015384615384615385
+Coverage: 4
+CoveredExamples: 53, 105, 172, 209
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002117627128215264
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5010588135641076
+s-ConfirmationMeasure: 0.2336448598130841
+
+210 : (intercept4 <= -0.322366) & (cslope9 >= 0.058247) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 109, 553
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.007905138339920948
+Coverage: 2
+CoveredExamples: 109, 553
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002473454532605431
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5012367272663028
+s-ConfirmationMeasure: 0.23391812865497075
+
+211 : (intercept4 <= -0.321406) & (intercept9 <= -0.177931) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 14
+SupportingExamples: 11, 80, 116, 166, 171, 334, 366, 371, 408, 526, 601, 604, 623, 689
+Strength: 0.020319303338171262
+Confidence: 1.0
+CoverageFactor: 0.058333333333333334
+Coverage: 14
+CoveredExamples: 11, 80, 116, 166, 171, 334, 366, 371, 408, 526, 601, 604, 623, 689
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5373864430468204
+A-ConfirmationMeasure: 0.0027332503998578283
+Z-ConfirmationMeasure: 0.6408333333333334
+l-ConfirmationMeasure: 1.200947083409399
+c1-ConfirmationMeasure: 0.3204166666666667
+s-ConfirmationMeasure: 0.1507843137254902
+
+212 : (intercept4 <= -0.26496) & (intercept9 <= -0.284045) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 39, 78, 99, 140, 546, 659
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.02390438247011952
+Coverage: 6
+CoveredExamples: 39, 78, 99, 140, 546, 659
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.7032720753025549
+A-ConfirmationMeasure: 0.00562966896541826
+Z-ConfirmationMeasure: 0.7845
+l-ConfirmationMeasure: 1.747490789777469
+c1-ConfirmationMeasure: 0.39225
+s-ConfirmationMeasure: 0.1863420427553444
+
+213 : (intercept4 <= -0.233866) & (slope7 <= -0.028403) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 3, 84
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.007434944237918215
+Coverage: 2
+CoveredExamples: 3, 84
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+214 : (intercept4 <= -0.184861) & (cintercept7 >= -0.06793) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 198, 254, 270, 442, 528, 554
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.023076923076923078
+Coverage: 6
+CoveredExamples: 198, 254, 270, 442, 528, 554
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.6740521910388971
+A-ConfirmationMeasure: 0.004900416660700735
+Z-ConfirmationMeasure: 0.7605555555555555
+l-ConfirmationMeasure: 1.6362651546672446
+c1-ConfirmationMeasure: 0.38027777777777777
+s-ConfirmationMeasure: 0.18022643496577145
+
+215 : (intercept4 <= -0.182314) & (intercept8 <= -0.397699) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 8
+SupportingExamples: 24, 236, 289, 483, 499, 565, 590, 616
+Strength: 0.011611030478955007
+Confidence: 1.0
+CoverageFactor: 0.03404255319148936
+Coverage: 8
+CoveredExamples: 24, 236, 289, 483, 499, 565, 590, 616
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.005713755151307379
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5028568775756537
+s-ConfirmationMeasure: 0.2364066193853428
+
+216 : (intercept4 <= -0.177951) & (cintercept7 >= -0.013918) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 135, 249, 348, 412, 636
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.016891891891891893
+Coverage: 5
+CoveredExamples: 135, 249, 348, 412, 636
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.004626021728068209
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5023130108640341
+s-ConfirmationMeasure: 0.23557126030624265
+
+217 : (intercept4 <= -0.174391) & (intercept8 <= -0.50177) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 14
+SupportingExamples: 39, 61, 79, 143, 155, 233, 271, 283, 383, 393, 567, 570, 639, 666
+Strength: 0.020319303338171262
+Confidence: 1.0
+CoverageFactor: 0.05384615384615385
+Coverage: 14
+CoveredExamples: 39, 61, 79, 143, 155, 233, 271, 283, 383, 393, 567, 570, 639, 666
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5941140404659718
+A-ConfirmationMeasure: 0.0034522316593513084
+Z-ConfirmationMeasure: 0.6921428571428572
+l-ConfirmationMeasure: 1.3680011680725652
+c1-ConfirmationMeasure: 0.3460714285714286
+s-ConfirmationMeasure: 0.16324123989218328
+
+218 : (intercept4 <= -0.168389) & (cintercept7 >= -0.069247) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 179, 332, 548, 575
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.016666666666666666
+Coverage: 4
+CoveredExamples: 179, 332, 548, 575
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5676028739386022
+A-ConfirmationMeasure: 0.006280807759580219
+Z-ConfirmationMeasure: 0.6684615384615384
+l-ConfirmationMeasure: 1.2879584603990288
+c1-ConfirmationMeasure: 0.3342307692307692
+s-ConfirmationMeasure: 0.15991902834008098
+
+219 : (intercept4 <= -0.162109) & (slope7 <= -0.049862) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 203, 348, 429, 479, 552, 560
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.02390438247011952
+Coverage: 6
+CoveredExamples: 203, 348, 429, 479, 552, 560
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.003905126721362108
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5019525633606811
+s-ConfirmationMeasure: 0.23501762632197415
+
+220 : (intercept4 <= -0.159069) & (intercept8 <= -0.558013) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 39, 76, 160, 246, 393, 570, 639
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.026923076923076925
+Coverage: 7
+CoveredExamples: 39, 76, 160, 246, 393, 570, 639
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5676028739386022
+A-ConfirmationMeasure: 0.0030923176013009797
+Z-ConfirmationMeasure: 0.6684615384615384
+l-ConfirmationMeasure: 1.2879584603990288
+c1-ConfirmationMeasure: 0.3342307692307692
+s-ConfirmationMeasure: 0.1574703270816345
+
+221 : (intercept4 <= -0.156999) & (slope7 <= -0.046117) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 168, 199, 281, 307, 469, 516
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.024096385542168676
+Coverage: 6
+CoveredExamples: 168, 199, 281, 307, 469, 516
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.007176123601552913
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5035880618007764
+s-ConfirmationMeasure: 0.2375296912114014
+
+222 : (intercept4 <= -0.149639) & (slope7 <= -0.050991) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 58, 454
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.007434944237918215
+Coverage: 2
+CoveredExamples: 58, 454
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0028301152564438187
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5014150576282219
+s-ConfirmationMeasure: 0.234192037470726
+
+223 : (intercept4 <= -0.135199) & (cintercept4 >= -0.136816) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 34, 92, 95, 102, 676
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.02127659574468085
+Coverage: 5
+CoveredExamples: 34, 92, 95, 102, 676
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+224 : (intercept4 <= -0.135199) & (cintercept4 >= -0.135604) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 145, 162, 199
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.011538461538461539
+Coverage: 3
+CoveredExamples: 145, 162, 199
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+225 : (intercept4 <= -0.129955) & (slope7 <= -0.048546) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 164, 191, 236, 261, 289, 383, 616
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.029787234042553193
+Coverage: 7
+CoveredExamples: 164, 191, 236, 261, 289, 383, 616
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.006443206712389571
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5032216033561948
+s-ConfirmationMeasure: 0.23696682464454977
+
+226 : (intercept4 <= -0.128801) & (slope7 <= -0.049805) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 191, 236, 289, 383, 661
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.02127659574468085
+Coverage: 5
+CoveredExamples: 191, 236, 289, 383, 661
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.005713755151307379
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5028568775756537
+s-ConfirmationMeasure: 0.2364066193853428
+
+227 : (intercept4 <= -0.118338) & (cslope5 >= 0.066896) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 143, 213, 303, 555
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.015384615384615385
+Coverage: 4
+CoveredExamples: 143, 213, 303, 555
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.004265150168828861
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5021325750844144
+s-ConfirmationMeasure: 0.23529411764705882
+
+228 : (intercept4 <= -0.017184) & (intercept8 <= -0.682622) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 91, 143, 289, 306, 538
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.019762845849802372
+Coverage: 5
+CoveredExamples: 91, 143, 289, 306, 538
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.4146772767462423
+A-ConfirmationMeasure: 0.0016611001512344913
+Z-ConfirmationMeasure: 0.5211111111111111
+l-ConfirmationMeasure: 0.8824933522908643
+c1-ConfirmationMeasure: 0.26055555555555554
+s-ConfirmationMeasure: 0.12218314445747036
+
+229 : (intercept3 <= -0.350485) & (intercept9 <= -0.313448) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 137, 476, 485, 493, 652
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.019762845849802372
+Coverage: 5
+CoveredExamples: 137, 476, 485, 493, 652
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0017626301261690644
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5008813150630845
+s-ConfirmationMeasure: 0.23337222870478413
+
+230 : (intercept3 <= -0.336395) & (intercept9 <= -0.310148) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 63, 244, 496
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.01090909090909091
+Coverage: 3
+CoveredExamples: 63, 244, 496
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002473454532605431
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5012367272663028
+s-ConfirmationMeasure: 0.23391812865497075
+
+231 : (intercept3 <= -0.129375) & (slope7 <= -0.065525) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 212, 356, 465, 516, 582, 585, 649
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.026022304832713755
+Coverage: 7
+CoveredExamples: 212, 356, 465, 516, 582, 585, 649
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+232 : (intercept3 <= -0.078295) & (intercept8 <= -0.646821) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 97, 285, 287
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.011152416356877323
+Coverage: 3
+CoveredExamples: 97, 285, 287
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+233 : (intercept3 <= -0.058282) & (intercept8 <= -0.670008) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 63, 87, 415, 622
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.01606425702811245
+Coverage: 4
+CoveredExamples: 63, 87, 415, 622
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.4146772767462423
+A-ConfirmationMeasure: 0.0016611001512344913
+Z-ConfirmationMeasure: 0.5211111111111111
+l-ConfirmationMeasure: 0.8824933522908643
+c1-ConfirmationMeasure: 0.26055555555555554
+s-ConfirmationMeasure: 0.12218314445747036
+
+234 : (intercept3 <= -0.053727) & (intercept5 <= -0.987293) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 8
+SupportingExamples: 37, 94, 142, 275, 296, 314, 458, 653
+Strength: 0.011611030478955007
+Confidence: 1.0
+CoverageFactor: 0.03187250996015936
+Coverage: 8
+CoveredExamples: 37, 94, 142, 275, 296, 314, 458, 653
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.009395914945286864
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5046979574726435
+s-ConfirmationMeasure: 0.23923444976076555
+
+235 : (intercept3 <= -0.048161) & (cintercept6 >= 0.431073) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 84, 309, 448, 504, 553, 627
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.02181818181818182
+Coverage: 6
+CoveredExamples: 84, 309, 448, 504, 553, 627
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002117627128215264
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5010588135641076
+s-ConfirmationMeasure: 0.2336448598130841
+
+236 : (intercept3 <= -0.046188) & (intercept8 <= -0.706772) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 316, 565, 578
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.01090909090909091
+Coverage: 3
+CoveredExamples: 316, 565, 578
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0010551157286101665
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500527557864305
+s-ConfirmationMeasure: 0.23282887077997672
+
+237 : (intercept3 <= -0.045458) & (intercept5 <= -0.989162) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 18
+SupportingExamples: 8, 43, 128, 144, 158, 167, 227, 316, 326, 332, 353, 386, 525, 545, 578, 580, 664, 680
+Strength: 0.026124818577648767
+Confidence: 1.0
+CoverageFactor: 0.06545454545454546
+Coverage: 18
+CoveredExamples: 8, 43, 128, 144, 158, 167, 227, 316, 326, 332, 353, 386, 525, 545, 578, 580, 664, 680
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.01240568034210488
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5062028401710524
+s-ConfirmationMeasure: 0.24154589371980675
+
+238 : (intercept3 <= -0.045458) & (intercept5 <= -0.983432) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 15
+SupportingExamples: 94, 95, 137, 151, 276, 367, 410, 464, 517, 523, 538, 541, 588, 601, 685
+Strength: 0.02177068214804064
+Confidence: 1.0
+CoverageFactor: 0.06224066390041494
+Coverage: 15
+CoveredExamples: 94, 95, 137, 151, 276, 367, 410, 464, 517, 523, 538, 541, 588, 601, 685
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.8357727611014637
+A-ConfirmationMeasure: 0.012352242395799724
+Z-ConfirmationMeasure: 0.886578947368421
+l-ConfirmationMeasure: 2.413969723255253
+c1-ConfirmationMeasure: 0.4432894736842105
+s-ConfirmationMeasure: 0.21518906489524783
+
+239 : (intercept3 <= -0.043258) & (intercept5 <= -1.004626) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 15
+SupportingExamples: 25, 35, 63, 153, 164, 194, 207, 215, 332, 340, 457, 601, 622, 625, 660
+Strength: 0.02177068214804064
+Confidence: 1.0
+CoverageFactor: 0.060240963855421686
+Coverage: 15
+CoveredExamples: 25, 35, 63, 153, 164, 194, 207, 215, 332, 340, 457, 601, 622, 625, 660
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.013167231150742852
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5065836155753715
+s-ConfirmationMeasure: 0.24213075060532688
+
+240 : (intercept3 <= -0.041936) & (cslope5 >= 0.086935) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 264, 436, 459, 491, 529, 629
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.023076923076923078
+Coverage: 6
+CoveredExamples: 264, 436, 459, 491, 529, 629
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.005713755151307379
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5028568775756537
+s-ConfirmationMeasure: 0.2364066193853428
+
+241 : (intercept3 <= -0.041456) & (intercept5 <= -0.983771) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 37
+SupportingExamples: 1, 10, 20, 30, 34, 39, 49, 72, 76, 78, 87, 89, 135, 167, 228, 263, 295, 298, 308, 330, 361, 369, 378, 417, 442, 469, 474, 477, 555, 568, 591, 614, 616, 665, 666, 686, 688
+Strength: 0.05370101596516691
+Confidence: 1.0
+CoverageFactor: 0.148
+Coverage: 37
+CoveredExamples: 1, 10, 20, 30, 34, 39, 49, 72, 76, 78, 87, 89, 135, 167, 228, 263, 295, 298, 308, 330, 361, 369, 378, 417, 442, 469, 474, 477, 555, 568, 591, 614, 616, 665, 666, 686, 688
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.01865424542644538
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5093271227132227
+s-ConfirmationMeasure: 0.2466091245376079
+
+242 : (intercept3 <= -0.040995) & (intercept8 <= -0.681588) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 11
+SupportingExamples: 274, 290, 307, 321, 362, 386, 595, 596, 620, 622, 644
+Strength: 0.015965166908563134
+Confidence: 1.0
+CoverageFactor: 0.04230769230769231
+Coverage: 11
+CoveredExamples: 274, 290, 307, 321, 362, 386, 595, 596, 620, 622, 644
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5026296018031555
+A-ConfirmationMeasure: 0.004812257229175658
+Z-ConfirmationMeasure: 0.6081818181818182
+l-ConfirmationMeasure: 1.1056369036050742
+c1-ConfirmationMeasure: 0.3040909090909091
+s-ConfirmationMeasure: 0.1448051948051948
+
+243 : (intercept3 <= -0.039273) & (intercept8 <= -0.682029) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 13
+SupportingExamples: 26, 258, 274, 290, 307, 362, 386, 387, 411, 596, 620, 622, 644
+Strength: 0.018867924528301886
+Confidence: 1.0
+CoverageFactor: 0.05
+Coverage: 13
+CoveredExamples: 26, 258, 274, 290, 307, 362, 386, 387, 411, 596, 620, 622, 644
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5530047265361242
+A-ConfirmationMeasure: 0.005912354221485885
+Z-ConfirmationMeasure: 0.6552
+l-ConfirmationMeasure: 1.245398845980233
+c1-ConfirmationMeasure: 0.3276
+s-ConfirmationMeasure: 0.15655913978494623
+
+244 : (intercept3 <= -0.038881) & (intercept8 <= -0.677847) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 518, 568, 569, 612, 635, 675
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.023076923076923078
+Coverage: 6
+CoveredExamples: 518, 568, 569, 612, 635, 675
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.6175621028307337
+A-ConfirmationMeasure: 0.007763478968161748
+Z-ConfirmationMeasure: 0.7126666666666667
+l-ConfirmationMeasure: 1.4421091402262871
+c1-ConfirmationMeasure: 0.35633333333333334
+s-ConfirmationMeasure: 0.17131410256410257
+
+245 : (intercept3 <= -0.03886) & (intercept8 <= -0.676604) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 13
+SupportingExamples: 4, 89, 147, 280, 317, 332, 361, 390, 415, 477, 508, 535, 598
+Strength: 0.018867924528301886
+Confidence: 1.0
+CoverageFactor: 0.05179282868525897
+Coverage: 13
+CoveredExamples: 4, 89, 147, 280, 317, 332, 361, 390, 415, 477, 508, 535, 598
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.6384489350081922
+A-ConfirmationMeasure: 0.00851017362501365
+Z-ConfirmationMeasure: 0.730625
+l-ConfirmationMeasure: 1.5111020117132385
+c1-ConfirmationMeasure: 0.3653125
+s-ConfirmationMeasure: 0.1760542168674699
+
+246 : (intercept3 <= -0.038095) & (intercept8 <= -0.687684) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 8
+SupportingExamples: 222, 225, 302, 373, 460, 528, 531, 647
+Strength: 0.011611030478955007
+Confidence: 1.0
+CoverageFactor: 0.03333333333333333
+Coverage: 8
+CoveredExamples: 222, 225, 302, 373, 460, 528, 531, 647
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.006443206712389571
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5032216033561948
+s-ConfirmationMeasure: 0.23696682464454977
+
+247 : (intercept2 <= 0.719122) & (cintercept2 >= 0.717882) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 474, 506, 564
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.011538461538461539
+Coverage: 3
+CoveredExamples: 474, 506, 564
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+248 : (intercept2 <= 0.452853) & (cslope5 >= 0.085828) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 1, 506, 600, 628, 680
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.018656716417910446
+Coverage: 5
+CoveredExamples: 1, 506, 600, 628, 680
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5373864430468204
+A-ConfirmationMeasure: 0.0027332503998578283
+Z-ConfirmationMeasure: 0.6408333333333334
+l-ConfirmationMeasure: 1.200947083409399
+c1-ConfirmationMeasure: 0.3204166666666667
+s-ConfirmationMeasure: 0.1507843137254902
+
+249 : (intercept2 <= 0.452853) & (cintercept9 >= 0.196099) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 62, 180, 305, 477
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.014925373134328358
+Coverage: 4
+CoveredExamples: 62, 180, 305, 477
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002117627128215264
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5010588135641076
+s-ConfirmationMeasure: 0.2336448598130841
+
+250 : (intercept2 <= 0.440366) & (slope7 <= -0.066367) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 10
+SupportingExamples: 39, 114, 131, 149, 226, 313, 352, 372, 410, 629
+Strength: 0.01451378809869376
+Confidence: 1.0
+CoverageFactor: 0.04149377593360996
+Coverage: 10
+CoveredExamples: 39, 114, 131, 149, 226, 313, 352, 372, 410, 629
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.005713755151307379
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5028568775756537
+s-ConfirmationMeasure: 0.2364066193853428
+
+251 : (intercept2 <= 0.433761) & (slope7 <= -0.066222) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 14
+SupportingExamples: 8, 62, 156, 271, 435, 458, 465, 499, 509, 518, 567, 578, 638, 642
+Strength: 0.020319303338171262
+Confidence: 1.0
+CoverageFactor: 0.055776892430278883
+Coverage: 14
+CoveredExamples: 8, 62, 156, 271, 435, 458, 465, 499, 509, 518, 567, 578, 638, 642
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.006443206712389571
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5032216033561948
+s-ConfirmationMeasure: 0.23696682464454977
+
+252 : (intercept2 <= 0.429917) & (slope7 <= -0.066683) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 19
+SupportingExamples: 20, 77, 124, 210, 223, 276, 286, 299, 379, 457, 467, 473, 491, 534, 535, 553, 561, 593, 612
+Strength: 0.027576197387518143
+Confidence: 1.0
+CoverageFactor: 0.07063197026022305
+Coverage: 19
+CoveredExamples: 20, 77, 124, 210, 223, 276, 286, 299, 379, 457, 467, 473, 491, 534, 535, 553, 561, 593, 612
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.003905126721362108
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5019525633606811
+s-ConfirmationMeasure: 0.23501762632197415
+
+253 : (intercept2 <= 0.429093) & (slope7 <= -0.066077) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 148, 219, 301, 417, 430, 511, 572
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.02364864864864865
+Coverage: 7
+CoveredExamples: 148, 219, 301, 417, 430, 511, 572
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.6893477240732051
+A-ConfirmationMeasure: 0.005264610279070934
+Z-ConfirmationMeasure: 0.7731578947368422
+l-ConfirmationMeasure: 1.6934235685071932
+c1-ConfirmationMeasure: 0.3865789473684211
+s-ConfirmationMeasure: 0.18343010551289254
+
+254 : (intercept2 <= 0.424469) & (slope7 <= -0.066276) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 1, 48, 369, 375, 550, 608, 669
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.026923076923076925
+Coverage: 7
+CoveredExamples: 1, 48, 369, 375, 550, 608, 669
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.004626021728068209
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5023130108640341
+s-ConfirmationMeasure: 0.23557126030624265
+
+255 : (intercept2 <= 0.40633) & (slope7 <= -0.063737) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 37, 48, 365, 369, 492, 550
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.023076923076923078
+Coverage: 6
+CoveredExamples: 37, 48, 365, 369, 492, 550
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5373864430468204
+A-ConfirmationMeasure: 0.0027332503998578283
+Z-ConfirmationMeasure: 0.6408333333333334
+l-ConfirmationMeasure: 1.200947083409399
+c1-ConfirmationMeasure: 0.3204166666666667
+s-ConfirmationMeasure: 0.1507843137254902
+
+256 : (intercept2 <= 0.402631) & (cslope5 >= 0.083332) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 169, 499
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.00796812749003984
+Coverage: 2
+CoveredExamples: 169, 499
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0031876122305139493
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.501593806115257
+s-ConfirmationMeasure: 0.23446658851113716
+
+257 : (intercept2 <= 0.396328) & (slope7 <= -0.063413) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 145, 644, 678
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.0125
+Coverage: 3
+CoveredExamples: 145, 644, 678
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002473454532605431
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5012367272663028
+s-ConfirmationMeasure: 0.23391812865497075
+
+258 : (intercept2 <= 0.239331) & (intercept5 <= -0.894562) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 118, 429
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.00796812749003984
+Coverage: 2
+CoveredExamples: 118, 429
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+259 : (intercept2 <= -0.13163) & (slope7 <= -0.033462) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 213, 620
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.007434944237918215
+Coverage: 2
+CoveredExamples: 213, 620
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5373864430468204
+A-ConfirmationMeasure: 0.0027332503998578283
+Z-ConfirmationMeasure: 0.6408333333333334
+l-ConfirmationMeasure: 1.200947083409399
+c1-ConfirmationMeasure: 0.3204166666666667
+s-ConfirmationMeasure: 0.1507843137254902
+
+260 : (intercept1 <= 1.337635) & (cintercept1 >= 1.332325) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 151, 170, 282, 399
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.015384615384615385
+Coverage: 4
+CoveredExamples: 151, 170, 282, 399
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+261 : (intercept1 <= 1.276745) & (cintercept1 >= 1.263006) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 222, 223, 555, 613
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.01593625498007968
+Coverage: 4
+CoveredExamples: 222, 223, 555, 613
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0010551157286101665
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500527557864305
+s-ConfirmationMeasure: 0.23282887077997672
+
+262 : (intercept1 <= -0.159448) & (intercept9 <= -0.178885) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 291, 302
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.007434944237918215
+Coverage: 2
+CoveredExamples: 291, 302
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5941140404659718
+A-ConfirmationMeasure: 0.0034522316593513084
+Z-ConfirmationMeasure: 0.6921428571428572
+l-ConfirmationMeasure: 1.3680011680725652
+c1-ConfirmationMeasure: 0.3460714285714286
+s-ConfirmationMeasure: 0.16324123989218328
+
+263 : (cslope9 >= 0.065607) & (intercept10 <= 0.218228) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 556, 585, 667
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.01195219123505976
+Coverage: 3
+CoveredExamples: 556, 585, 667
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0028301152564438187
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5014150576282219
+s-ConfirmationMeasure: 0.234192037470726
+
+264 : (cslope9 >= 0.059749) & (cintercept10 >= 0.535721) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 66, 172, 173, 250, 477
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.019230769230769232
+Coverage: 5
+CoveredExamples: 66, 172, 173, 250, 477
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0031876122305139493
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.501593806115257
+s-ConfirmationMeasure: 0.23446658851113716
+
+265 : (cslope9 >= 0.05938) & (cintercept10 >= 0.535721) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 105, 640, 666
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.01276595744680851
+Coverage: 3
+CoveredExamples: 105, 640, 666
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0031876122305139493
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.501593806115257
+s-ConfirmationMeasure: 0.23446658851113716
+
+266 : (cslope9 >= 0.057712) & (cintercept10 >= 0.531995) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 8
+SupportingExamples: 318, 337, 343, 348, 417, 422, 643, 665
+Strength: 0.011611030478955007
+Confidence: 1.0
+CoverageFactor: 0.03319502074688797
+Coverage: 8
+CoveredExamples: 318, 337, 343, 348, 417, 422, 643, 665
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.003905126721362108
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5019525633606811
+s-ConfirmationMeasure: 0.23501762632197415
+
+267 : (cslope9 >= 0.054942) & (cintercept10 >= 0.527982) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 15, 19, 79, 163, 400, 466
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.024096385542168676
+Coverage: 6
+CoveredExamples: 15, 19, 79, 163, 400, 466
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5373864430468204
+A-ConfirmationMeasure: 0.0027332503998578283
+Z-ConfirmationMeasure: 0.6408333333333334
+l-ConfirmationMeasure: 1.200947083409399
+c1-ConfirmationMeasure: 0.3204166666666667
+s-ConfirmationMeasure: 0.1507843137254902
+
+268 : (cslope9 >= 0.050664) & (cintercept10 >= 0.561321) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 1, 105
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.00851063829787234
+Coverage: 2
+CoveredExamples: 1, 105
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+269 : (cslope8 >= 9.2E-5) & (slope10 <= 0.227251) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 290, 464, 576, 577, 632, 640
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.023076923076923078
+Coverage: 6
+CoveredExamples: 290, 464, 576, 577, 632, 640
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002473454532605431
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5012367272663028
+s-ConfirmationMeasure: 0.23391812865497075
+
+270 : (cslope8 >= 0.001087) & (cintercept10 >= -0.859946) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 9
+SupportingExamples: 27, 87, 165, 170, 364, 485, 506, 531, 643
+Strength: 0.013062409288824383
+Confidence: 1.0
+CoverageFactor: 0.0375
+Coverage: 9
+CoveredExamples: 27, 87, 165, 170, 364, 485, 506, 531, 643
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0017626301261690644
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5008813150630845
+s-ConfirmationMeasure: 0.23337222870478413
+
+271 : (cslope7 >= 0.018373) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 1
+SupportingExamples: 482
+Strength: 0.001451378809869376
+Confidence: 1.0
+CoverageFactor: 0.004016064257028112
+Coverage: 1
+CoveredExamples: 482
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+272 : (cslope7 >= 0.016651) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 209, 448, 506, 673
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.015384615384615385
+Coverage: 4
+CoveredExamples: 209, 448, 506, 673
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002117627128215264
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5010588135641076
+s-ConfirmationMeasure: 0.2336448598130841
+
+273 : (cslope7 >= -0.052744) & (intercept8 <= -0.70581) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 88, 144, 388, 401, 408, 605
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.02027027027027027
+Coverage: 6
+CoveredExamples: 88, 144, 388, 401, 408, 605
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+274 : (cslope7 >= -0.04849) & (intercept8 <= -0.700688) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 595, 671
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.00851063829787234
+Coverage: 2
+CoveredExamples: 595, 671
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+275 : (cslope6 >= -0.073047) & (slope7 <= -0.068915) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 255, 417, 550, 660, 665
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.019230769230769232
+Coverage: 5
+CoveredExamples: 255, 417, 550, 660, 665
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.005350321197615897
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5026751605988079
+s-ConfirmationMeasure: 0.2361275088547816
+
+276 : (cslope6 >= -0.067245) & (cintercept9 >= 0.212985) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 8
+SupportingExamples: 181, 211, 286, 288, 597, 623, 646, 680
+Strength: 0.011611030478955007
+Confidence: 1.0
+CoverageFactor: 0.03404255319148936
+Coverage: 8
+CoveredExamples: 181, 211, 286, 288, 597, 623, 646, 680
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+277 : (cslope6 >= -0.028089) & (intercept9 <= -0.200897) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 184, 282, 433, 548, 586, 633
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.024096385542168676
+Coverage: 6
+CoveredExamples: 184, 282, 433, 548, 586, 633
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.005350321197615897
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5026751605988079
+s-ConfirmationMeasure: 0.2361275088547816
+
+278 : (cslope6 >= -0.027869) & (intercept9 <= -0.19342) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 194, 545, 564, 620
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.01486988847583643
+Coverage: 4
+CoveredExamples: 194, 545, 564, 620
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.005713755151307379
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5028568775756537
+s-ConfirmationMeasure: 0.2364066193853428
+
+279 : (cslope6 >= -0.023031) & (intercept9 <= -0.184579) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 32, 183, 211, 215, 241, 284, 682
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.027888446215139442
+Coverage: 7
+CoveredExamples: 32, 183, 211, 215, 241, 284, 682
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002473454532605431
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5012367272663028
+s-ConfirmationMeasure: 0.23391812865497075
+
+280 : (cslope6 >= -0.02232) & (intercept9 <= -0.194593) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 433, 548, 582, 633
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.01606425702811245
+Coverage: 4
+CoveredExamples: 433, 548, 582, 633
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0017626301261690644
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5008813150630845
+s-ConfirmationMeasure: 0.23337222870478413
+
+281 : (cslope5 >= 0.087435) & (slope7 <= -0.058464) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 28, 62, 68, 202, 512, 619
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.022304832713754646
+Coverage: 6
+CoveredExamples: 28, 62, 68, 202, 512, 619
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5373864430468204
+A-ConfirmationMeasure: 0.0027332503998578283
+Z-ConfirmationMeasure: 0.6408333333333334
+l-ConfirmationMeasure: 1.200947083409399
+c1-ConfirmationMeasure: 0.3204166666666667
+s-ConfirmationMeasure: 0.1507843137254902
+
+282 : (cslope5 >= 0.086935) & (slope7 <= -0.060038) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 77, 98, 264, 436, 529, 629
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.023076923076923078
+Coverage: 6
+CoveredExamples: 77, 98, 264, 436, 529, 629
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.003905126721362108
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5019525633606811
+s-ConfirmationMeasure: 0.23501762632197415
+
+283 : (cslope5 >= 0.086545) & (slope7 <= -0.058464) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 8
+SupportingExamples: 1, 67, 215, 448, 532, 580, 622, 668
+Strength: 0.011611030478955007
+Confidence: 1.0
+CoverageFactor: 0.0321285140562249
+Coverage: 8
+CoveredExamples: 1, 67, 215, 448, 532, 580, 622, 668
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.6740521910388971
+A-ConfirmationMeasure: 0.004900416660700735
+Z-ConfirmationMeasure: 0.7605555555555555
+l-ConfirmationMeasure: 1.6362651546672446
+c1-ConfirmationMeasure: 0.38027777777777777
+s-ConfirmationMeasure: 0.18022643496577145
+
+284 : (cslope5 >= 0.086485) & (cintercept7 >= 0.112402) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 11
+SupportingExamples: 28, 50, 57, 74, 149, 175, 181, 240, 467, 504, 657
+Strength: 0.015965166908563134
+Confidence: 1.0
+CoverageFactor: 0.037162162162162164
+Coverage: 11
+CoveredExamples: 28, 50, 57, 74, 149, 175, 181, 240, 467, 504, 657
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.004265150168828861
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5021325750844144
+s-ConfirmationMeasure: 0.23529411764705882
+
+285 : (cslope5 >= 0.086454) & (slope6 <= -0.060511) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 1, 67, 448, 532, 622, 653
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.024096385542168676
+Coverage: 6
+CoveredExamples: 1, 67, 448, 532, 622, 653
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0028301152564438187
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5014150576282219
+s-ConfirmationMeasure: 0.234192037470726
+
+286 : (cslope5 >= 0.086454) & (intercept10 <= -0.99602) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 197, 252, 381, 624, 651
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.02127659574468085
+Coverage: 5
+CoveredExamples: 197, 252, 381, 624, 651
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0010551157286101665
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500527557864305
+s-ConfirmationMeasure: 0.23282887077997672
+
+287 : (cslope5 >= 0.085709) & (cintercept7 >= 0.388027) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 8
+SupportingExamples: 129, 144, 316, 349, 466, 558, 575, 578
+Strength: 0.011611030478955007
+Confidence: 1.0
+CoverageFactor: 0.02909090909090909
+Coverage: 8
+CoveredExamples: 129, 144, 316, 349, 466, 558, 575, 578
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0031876122305139493
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.501593806115257
+s-ConfirmationMeasure: 0.23446658851113716
+
+288 : (cslope5 >= 0.081715) & (intercept9 <= -0.185322) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 242, 342, 686
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.011538461538461539
+Coverage: 3
+CoveredExamples: 242, 342, 686
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002473454532605431
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5012367272663028
+s-ConfirmationMeasure: 0.23391812865497075
+
+289 : (cslope4 >= 3.83E-4) & (intercept4 <= -0.167986) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 122, 174, 191, 616, 653
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.02127659574468085
+Coverage: 5
+CoveredExamples: 122, 174, 191, 616, 653
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.4146772767462423
+A-ConfirmationMeasure: 0.0016611001512344913
+Z-ConfirmationMeasure: 0.5211111111111111
+l-ConfirmationMeasure: 0.8824933522908643
+c1-ConfirmationMeasure: 0.26055555555555554
+s-ConfirmationMeasure: 0.12218314445747036
+
+290 : (cslope4 >= 0.001104) & (intercept8 <= -0.563914) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 110, 113, 168, 437
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.016597510373443983
+Coverage: 4
+CoveredExamples: 110, 113, 168, 437
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002117627128215264
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5010588135641076
+s-ConfirmationMeasure: 0.2336448598130841
+
+291 : (cslope4 >= -0.025804) & (cintercept9 >= 0.212702) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 301, 569, 659, 664
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.014545454545454545
+Coverage: 4
+CoveredExamples: 301, 569, 659, 664
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+292 : (cslope4 >= -0.025409) & (cintercept6 >= 0.389583) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 26, 86, 343, 448, 568, 632
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.02181818181818182
+Coverage: 6
+CoveredExamples: 26, 86, 343, 448, 568, 632
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0017626301261690644
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5008813150630845
+s-ConfirmationMeasure: 0.23337222870478413
+
+293 : (cslope4 >= -0.024618) & (cintercept6 >= 0.38464) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 37, 406
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.00796812749003984
+Coverage: 2
+CoveredExamples: 37, 406
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+294 : (cslope4 >= -0.011009) & (intercept9 <= -0.329393) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 233, 249, 316, 565, 688
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.020080321285140562
+Coverage: 5
+CoveredExamples: 233, 249, 316, 565, 688
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0031876122305139493
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.501593806115257
+s-ConfirmationMeasure: 0.23446658851113716
+
+295 : (cslope4 >= -0.008623) & (intercept9 <= -0.289315) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 117, 420, 489, 650, 672
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.019762845849802372
+Coverage: 5
+CoveredExamples: 117, 420, 489, 650, 672
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.005713755151307379
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5028568775756537
+s-ConfirmationMeasure: 0.2364066193853428
+
+296 : (cslope4 >= -0.007675) & (intercept9 <= -0.308505) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 391, 579, 601, 610
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.015384615384615385
+Coverage: 4
+CoveredExamples: 391, 579, 601, 610
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.004987744399475575
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5024938721997377
+s-ConfirmationMeasure: 0.2358490566037736
+
+297 : (cslope4 >= -0.007402) & (cslope8 >= 1.81E-4) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 115, 169, 455
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.010135135135135136
+Coverage: 3
+CoveredExamples: 115, 169, 455
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+298 : (cslope4 >= -0.00659) & (intercept9 <= -0.300895) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 117, 391, 601, 610
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.015384615384615385
+Coverage: 4
+CoveredExamples: 117, 391, 601, 610
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.003905126721362108
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5019525633606811
+s-ConfirmationMeasure: 0.23501762632197415
+
+299 : (cslope4 >= -0.006466) & (intercept9 <= -0.302414) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 36, 297, 353, 482, 613
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.016891891891891893
+Coverage: 5
+CoveredExamples: 36, 297, 353, 482, 613
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.003905126721362108
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5019525633606811
+s-ConfirmationMeasure: 0.23501762632197415
+
+300 : (cslope4 >= -0.00293) & (cslope9 >= 0.044637) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 254, 443
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.007692307692307693
+Coverage: 2
+CoveredExamples: 254, 443
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.4146772767462423
+A-ConfirmationMeasure: 0.0016611001512344913
+Z-ConfirmationMeasure: 0.5211111111111111
+l-ConfirmationMeasure: 0.8824933522908643
+c1-ConfirmationMeasure: 0.26055555555555554
+s-ConfirmationMeasure: 0.12218314445747036
+
+301 : (cslope3 >= -0.027598) & (slope7 <= -0.063413) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 8
+SupportingExamples: 16, 144, 458, 528, 574, 597, 620, 662
+Strength: 0.011611030478955007
+Confidence: 1.0
+CoverageFactor: 0.03333333333333333
+Coverage: 8
+CoveredExamples: 16, 144, 458, 528, 574, 597, 620, 662
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002473454532605431
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5012367272663028
+s-ConfirmationMeasure: 0.23391812865497075
+
+302 : (cslope3 >= -0.02372) & (intercept8 <= -0.70616) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 40, 356
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.007692307692307693
+Coverage: 2
+CoveredExamples: 40, 356
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0017626301261690644
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5008813150630845
+s-ConfirmationMeasure: 0.23337222870478413
+
+303 : (cslope3 >= -0.023547) & (intercept8 <= -0.698545) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 9
+SupportingExamples: 147, 203, 355, 378, 381, 474, 510, 519, 627
+Strength: 0.013062409288824383
+Confidence: 1.0
+CoverageFactor: 0.03557312252964427
+Coverage: 9
+CoveredExamples: 147, 203, 355, 378, 381, 474, 510, 519, 627
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.004265150168828861
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5021325750844144
+s-ConfirmationMeasure: 0.23529411764705882
+
+304 : (cslope3 >= -0.023217) & (intercept8 <= -0.678704) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 15
+SupportingExamples: 7, 89, 95, 118, 127, 250, 466, 476, 481, 482, 515, 527, 538, 635, 640
+Strength: 0.02177068214804064
+Confidence: 1.0
+CoverageFactor: 0.06224066390041494
+Coverage: 15
+CoveredExamples: 7, 89, 95, 118, 127, 250, 466, 476, 481, 482, 515, 527, 538, 635, 640
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.6061867935752528
+A-ConfirmationMeasure: 0.007391476227953417
+Z-ConfirmationMeasure: 0.7027586206896552
+l-ConfirmationMeasure: 1.4057414960554122
+c1-ConfirmationMeasure: 0.3513793103448276
+s-ConfirmationMeasure: 0.16872956078983317
+
+305 : (cslope3 >= -0.023202) & (intercept8 <= -0.694431) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 11
+SupportingExamples: 147, 203, 267, 269, 355, 361, 381, 495, 510, 519, 627
+Strength: 0.015965166908563134
+Confidence: 1.0
+CoverageFactor: 0.043478260869565216
+Coverage: 11
+CoveredExamples: 147, 203, 267, 269, 355, 361, 381, 495, 510, 519, 627
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5941140404659718
+A-ConfirmationMeasure: 0.0034522316593513084
+Z-ConfirmationMeasure: 0.6921428571428572
+l-ConfirmationMeasure: 1.3680011680725652
+c1-ConfirmationMeasure: 0.3460714285714286
+s-ConfirmationMeasure: 0.16324123989218328
+
+306 : (cslope3 >= -0.022979) & (intercept8 <= -0.683002) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 8
+SupportingExamples: 164, 215, 332, 391, 462, 537, 539, 641
+Strength: 0.011611030478955007
+Confidence: 1.0
+CoverageFactor: 0.0321285140562249
+Coverage: 8
+CoveredExamples: 164, 215, 332, 391, 462, 537, 539, 641
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.7032720753025549
+A-ConfirmationMeasure: 0.00562966896541826
+Z-ConfirmationMeasure: 0.7845
+l-ConfirmationMeasure: 1.747490789777469
+c1-ConfirmationMeasure: 0.39225
+s-ConfirmationMeasure: 0.1863420427553444
+
+307 : (cslope3 >= -0.022979) & (intercept8 <= -0.6808) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 10
+SupportingExamples: 311, 317, 441, 542, 568, 569, 599, 612, 635, 675
+Strength: 0.01451378809869376
+Confidence: 1.0
+CoverageFactor: 0.038461538461538464
+Coverage: 10
+CoveredExamples: 311, 317, 441, 542, 568, 569, 599, 612, 635, 675
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.7483846446218168
+A-ConfirmationMeasure: 0.0070986163286201505
+Z-ConfirmationMeasure: 0.8204166666666667
+l-ConfirmationMeasure: 1.9385460265401782
+c1-ConfirmationMeasure: 0.41020833333333334
+s-ConfirmationMeasure: 0.19580350039777247
+
+308 : (cslope3 >= -0.022851) & (intercept8 <= -0.681588) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 9
+SupportingExamples: 222, 274, 302, 362, 373, 454, 460, 590, 647
+Strength: 0.013062409288824383
+Confidence: 1.0
+CoverageFactor: 0.0375
+Coverage: 9
+CoveredExamples: 222, 274, 302, 362, 373, 454, 460, 590, 647
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.007543889270074829
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5037719446350374
+s-ConfirmationMeasure: 0.23781212841854935
+
+309 : (cslope3 >= -0.022726) & (intercept8 <= -0.674517) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 16
+SupportingExamples: 69, 134, 140, 147, 177, 237, 258, 305, 323, 437, 466, 487, 536, 602, 623, 652
+Strength: 0.023222060957910014
+Confidence: 1.0
+CoverageFactor: 0.05947955390334572
+Coverage: 16
+CoveredExamples: 69, 134, 140, 147, 177, 237, 258, 305, 323, 437, 466, 487, 536, 602, 623, 652
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.009395914945286864
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5046979574726435
+s-ConfirmationMeasure: 0.23923444976076555
+
+310 : (cslope3 >= -0.022609) & (intercept8 <= -0.679496) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 52, 231, 251, 272, 362, 383
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.02027027027027027
+Coverage: 6
+CoveredExamples: 52, 231, 251, 272, 362, 383
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.007912530571140844
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5039562652855705
+s-ConfirmationMeasure: 0.23809523809523808
+
+311 : (cslope3 >= -0.022418) & (intercept8 <= -0.684619) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 4, 56, 322, 390, 415, 432, 535
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.027888446215139442
+Coverage: 7
+CoveredExamples: 4, 56, 322, 390, 415, 432, 535
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.004626021728068209
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5023130108640341
+s-ConfirmationMeasure: 0.23557126030624265
+
+312 : (cslope3 >= -0.022025) & (intercept7 <= -0.632475) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 209, 327, 567, 653
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.014925373134328358
+Coverage: 4
+CoveredExamples: 209, 327, 567, 653
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+313 : (cslope3 >= -0.021594) & (intercept5 <= -0.952571) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 10
+SupportingExamples: 8, 80, 168, 200, 203, 248, 339, 502, 650, 687
+Strength: 0.01451378809869376
+Confidence: 1.0
+CoverageFactor: 0.033783783783783786
+Coverage: 10
+CoveredExamples: 8, 80, 168, 200, 203, 248, 339, 502, 650, 687
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.8176810795923988
+A-ConfirmationMeasure: 0.010833077922267467
+Z-ConfirmationMeasure: 0.8732352941176471
+l-ConfirmationMeasure: 2.2995593720775087
+c1-ConfirmationMeasure: 0.43661764705882355
+s-ConfirmationMeasure: 0.21092639954532538
+
+314 : (cslope3 >= -0.021582) & (intercept8 <= -0.634437) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 8
+SupportingExamples: 79, 112, 132, 248, 260, 304, 567, 686
+Strength: 0.011611030478955007
+Confidence: 1.0
+CoverageFactor: 0.03404255319148936
+Coverage: 8
+CoveredExamples: 79, 112, 132, 248, 260, 304, 567, 686
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.010517802287077974
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.505258901143539
+s-ConfirmationMeasure: 0.24009603841536614
+
+315 : (cslope3 >= -0.021582) & (intercept5 <= -0.960288) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 9
+SupportingExamples: 4, 30, 250, 290, 332, 390, 415, 535, 615
+Strength: 0.013062409288824383
+Confidence: 1.0
+CoverageFactor: 0.035856573705179286
+Coverage: 9
+CoveredExamples: 4, 30, 250, 290, 332, 390, 415, 535, 615
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.01089356263072275
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5054467813153614
+s-ConfirmationMeasure: 0.2403846153846154
+
+316 : (cslope3 >= -0.021546) & (intercept9 <= -0.340924) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 24
+SupportingExamples: 17, 118, 142, 143, 167, 172, 177, 194, 244, 253, 297, 303, 311, 329, 368, 384, 390, 394, 440, 491, 554, 611, 613, 617
+Strength: 0.03483309143686502
+Confidence: 1.0
+CoverageFactor: 0.08108108108108109
+Coverage: 24
+CoveredExamples: 17, 118, 142, 143, 167, 172, 177, 194, 244, 253, 297, 303, 311, 329, 368, 384, 390, 394, 440, 491, 554, 611, 613, 617
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.631744854440942
+A-ConfirmationMeasure: 0.012629510870572536
+Z-ConfirmationMeasure: 0.7248936170212766
+l-ConfirmationMeasure: 1.4886291558611802
+c1-ConfirmationMeasure: 0.3624468085106383
+s-ConfirmationMeasure: 0.1778880041770004
+
+317 : (cslope3 >= -0.021431) & (intercept5 <= -0.954944) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 75, 242, 292, 317, 383, 389, 596
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.026923076923076925
+Coverage: 7
+CoveredExamples: 75, 242, 292, 317, 383, 389, 596
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.010517802287077974
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.505258901143539
+s-ConfirmationMeasure: 0.24009603841536614
+
+318 : (cslope3 >= -0.021365) & (intercept5 <= -0.954944) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 188, 207, 215, 391, 457, 544, 652
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.028112449799196786
+Coverage: 7
+CoveredExamples: 188, 207, 215, 391, 457, 544, 652
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.01014294304737479
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5050714715236874
+s-ConfirmationMeasure: 0.23980815347721823
+
+319 : (cslope3 >= -0.021267) & (intercept8 <= -0.659921) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 11, 76, 150, 309, 323, 547, 602
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.026022304832713755
+Coverage: 7
+CoveredExamples: 11, 76, 150, 309, 323, 547, 602
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.006078049303705822
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5030390246518529
+s-ConfirmationMeasure: 0.23668639053254437
+
+320 : (cslope3 >= -0.021244) & (intercept9 <= -0.322386) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 35
+SupportingExamples: 5, 19, 48, 90, 91, 100, 104, 117, 181, 185, 187, 205, 248, 249, 267, 275, 316, 327, 334, 359, 377, 400, 430, 437, 466, 508, 551, 552, 565, 576, 594, 599, 607, 667, 672
+Strength: 0.05079825834542816
+Confidence: 1.0
+CoverageFactor: 0.14056224899598393
+Coverage: 35
+CoveredExamples: 5, 19, 48, 90, 91, 100, 104, 117, 181, 185, 187, 205, 248, 249, 267, 275, 316, 327, 334, 359, 377, 400, 430, 437, 466, 508, 551, 552, 565, 576, 594, 599, 607, 667, 672
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.8781071625851593
+A-ConfirmationMeasure: 0.017787475289992912
+Z-ConfirmationMeasure: 0.9171153846153847
+l-ConfirmationMeasure: 2.734877443335354
+c1-ConfirmationMeasure: 0.45855769230769233
+s-ConfirmationMeasure: 0.22644824311490977
+
+321 : (cslope3 >= -0.021194) & (intercept5 <= -0.942934) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 16
+SupportingExamples: 3, 94, 142, 146, 182, 275, 285, 310, 314, 316, 339, 367, 513, 562, 594, 649
+Strength: 0.023222060957910014
+Confidence: 1.0
+CoverageFactor: 0.06374501992031872
+Coverage: 16
+CoveredExamples: 3, 94, 142, 146, 182, 275, 285, 310, 314, 316, 339, 367, 513, 562, 594, 649
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.008652452609796019
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.504326226304898
+s-ConfirmationMeasure: 0.2386634844868735
+
+322 : (cslope3 >= -0.021176) & (intercept8 <= -0.636729) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 9
+SupportingExamples: 244, 302, 354, 373, 454, 460, 549, 581, 666
+Strength: 0.013062409288824383
+Confidence: 1.0
+CoverageFactor: 0.0375
+Coverage: 9
+CoveredExamples: 244, 302, 354, 373, 454, 460, 549, 581, 666
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.007912530571140844
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5039562652855705
+s-ConfirmationMeasure: 0.23809523809523808
+
+323 : (cslope3 >= -0.021176) & (intercept5 <= -0.95466) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 82, 362, 596, 599, 616, 644, 657
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.026923076923076925
+Coverage: 7
+CoveredExamples: 82, 362, 596, 599, 616, 644, 657
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.008282050635737408
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5041410253178688
+s-ConfirmationMeasure: 0.23837902264600716
+
+324 : (cslope3 >= -0.021101) & (intercept9 <= -0.363456) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 19
+SupportingExamples: 30, 60, 102, 114, 179, 193, 244, 262, 300, 319, 323, 354, 377, 409, 447, 577, 616, 661, 688
+Strength: 0.027576197387518143
+Confidence: 1.0
+CoverageFactor: 0.0708955223880597
+Coverage: 19
+CoveredExamples: 30, 60, 102, 114, 179, 193, 244, 262, 300, 319, 323, 354, 377, 409, 447, 577, 616, 661, 688
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.012785995316672573
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5063929976583363
+s-ConfirmationMeasure: 0.2418379685610641
+
+325 : (cslope3 >= -0.021101) & (intercept9 <= -0.334246) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 23
+SupportingExamples: 31, 36, 59, 83, 141, 167, 187, 191, 200, 212, 269, 294, 309, 362, 440, 468, 477, 485, 530, 551, 582, 599, 659
+Strength: 0.033381712626995644
+Confidence: 1.0
+CoverageFactor: 0.08646616541353383
+Coverage: 23
+CoveredExamples: 31, 36, 59, 83, 141, 167, 187, 191, 200, 212, 269, 294, 309, 362, 440, 468, 477, 485, 530, 551, 582, 599, 659
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.016250674033638897
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5081253370168195
+s-ConfirmationMeasure: 0.24449877750611246
+
+326 : (cslope3 >= -0.021059) & (intercept9 <= -0.320968) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 23
+SupportingExamples: 39, 51, 76, 78, 92, 140, 147, 150, 152, 159, 266, 288, 362, 386, 403, 445, 489, 493, 506, 520, 536, 566, 626
+Strength: 0.033381712626995644
+Confidence: 1.0
+CoverageFactor: 0.09163346613545817
+Coverage: 23
+CoveredExamples: 39, 51, 76, 78, 92, 140, 147, 150, 152, 159, 266, 288, 362, 386, 403, 445, 489, 493, 506, 520, 536, 566, 626
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.019395024430271156
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5096975122151356
+s-ConfirmationMeasure: 0.24691358024691357
+
+327 : (cslope3 >= -0.020987) & (intercept5 <= -0.876615) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 39, 110, 113, 116, 323, 602, 675
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.026022304832713755
+Coverage: 7
+CoveredExamples: 39, 110, 113, 116, 323, 602, 675
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.009768981674114007
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.504884490837057
+s-ConfirmationMeasure: 0.23952095808383234
+
+328 : (cslope3 >= -0.020871) & (intercept9 <= -0.326586) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 17
+SupportingExamples: 32, 129, 135, 148, 182, 244, 247, 293, 303, 358, 367, 474, 479, 519, 524, 528, 687
+Strength: 0.02467343976777939
+Confidence: 1.0
+CoverageFactor: 0.06319702602230483
+Coverage: 17
+CoveredExamples: 32, 129, 135, 148, 182, 244, 247, 293, 303, 358, 367, 474, 479, 519, 524, 528, 687
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.017815123555304825
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5089075617776524
+s-ConfirmationMeasure: 0.2457002457002457
+
+329 : (cslope3 >= -0.020628) & (intercept9 <= -0.388903) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 13
+SupportingExamples: 79, 244, 273, 288, 302, 303, 405, 439, 486, 504, 575, 625, 679
+Strength: 0.018867924528301886
+Confidence: 1.0
+CoverageFactor: 0.05138339920948617
+Coverage: 13
+CoveredExamples: 79, 244, 273, 288, 302, 303, 405, 439, 486, 504, 575, 625, 679
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.009768981674114007
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.504884490837057
+s-ConfirmationMeasure: 0.23952095808383234
+
+330 : (cslope3 >= -0.020617) & (intercept9 <= -0.323426) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 28
+SupportingExamples: 12, 15, 22, 27, 42, 60, 62, 99, 133, 146, 154, 257, 262, 284, 321, 334, 372, 373, 408, 414, 428, 491, 522, 531, 553, 640, 682, 683
+Strength: 0.040638606676342524
+Confidence: 1.0
+CoverageFactor: 0.11914893617021277
+Coverage: 28
+CoveredExamples: 12, 15, 22, 27, 42, 60, 62, 99, 133, 146, 154, 257, 262, 284, 321, 334, 372, 373, 408, 414, 428, 491, 522, 531, 553, 640, 682, 683
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.018603128302055273
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5093015641510277
+s-ConfirmationMeasure: 0.24630541871921183
+
+331 : (cslope3 >= -0.020531) & (intercept9 <= -0.321196) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 21
+SupportingExamples: 26, 58, 77, 168, 214, 215, 219, 279, 300, 330, 343, 365, 368, 377, 389, 408, 410, 458, 473, 496, 568
+Strength: 0.030478955007256895
+Confidence: 1.0
+CoverageFactor: 0.07636363636363637
+Coverage: 21
+CoveredExamples: 26, 58, 77, 168, 214, 215, 219, 279, 300, 330, 343, 365, 368, 377, 389, 408, 410, 458, 473, 496, 568
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.018998588144135957
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.509499294072068
+s-ConfirmationMeasure: 0.2466091245376079
+
+332 : (cslope3 >= -0.020373) & (intercept9 <= -0.325026) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 17
+SupportingExamples: 27, 44, 91, 147, 170, 201, 251, 269, 295, 321, 323, 334, 372, 459, 503, 521, 615
+Strength: 0.02467343976777939
+Confidence: 1.0
+CoverageFactor: 0.06910569105691057
+Coverage: 17
+CoveredExamples: 27, 44, 91, 147, 170, 201, 251, 269, 295, 321, 323, 334, 372, 459, 503, 521, 615
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.01905082086625203
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.509525410433126
+s-ConfirmationMeasure: 0.24691358024691357
+
+333 : (cslope3 >= -0.020373) & (intercept9 <= -0.322481) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 17
+SupportingExamples: 54, 150, 175, 232, 241, 411, 420, 434, 456, 475, 490, 594, 622, 624, 643, 647, 676
+Strength: 0.02467343976777939
+Confidence: 1.0
+CoverageFactor: 0.06563706563706563
+Coverage: 17
+CoveredExamples: 54, 150, 175, 232, 241, 411, 420, 434, 456, 475, 490, 594, 622, 624, 643, 647, 676
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.017815123555304825
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5089075617776524
+s-ConfirmationMeasure: 0.2457002457002457
+
+334 : (cslope3 >= -0.019984) & (intercept9 <= -0.326586) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 21
+SupportingExamples: 30, 60, 95, 102, 114, 158, 179, 193, 244, 262, 300, 319, 354, 358, 377, 394, 409, 447, 520, 522, 616
+Strength: 0.030478955007256895
+Confidence: 1.0
+CoverageFactor: 0.07835820895522388
+Coverage: 21
+CoveredExamples: 30, 60, 95, 102, 114, 158, 179, 193, 244, 262, 300, 319, 354, 358, 377, 394, 409, 447, 520, 522, 616
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0158619493966926
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5079309746983462
+s-ConfirmationMeasure: 0.2442002442002442
+
+335 : (cslope3 >= -0.019948) & (intercept9 <= -0.323907) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 11
+SupportingExamples: 45, 158, 292, 304, 309, 321, 415, 448, 451, 583, 611
+Strength: 0.015965166908563134
+Confidence: 1.0
+CoverageFactor: 0.04583333333333333
+Coverage: 11
+CoveredExamples: 45, 158, 292, 304, 309, 321, 415, 448, 451, 583, 611
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.016250674033638897
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5081253370168195
+s-ConfirmationMeasure: 0.24449877750611246
+
+336 : (cslope3 >= -0.019877) & (intercept9 <= -0.337585) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 12
+SupportingExamples: 45, 57, 102, 126, 157, 181, 313, 434, 509, 545, 560, 684
+Strength: 0.01741654571843251
+Confidence: 1.0
+CoverageFactor: 0.046153846153846156
+Coverage: 12
+CoveredExamples: 45, 57, 102, 126, 157, 181, 313, 434, 509, 545, 560, 684
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.013549391192895725
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5067746955964478
+s-ConfirmationMeasure: 0.24242424242424243
+
+337 : (cslope3 >= -0.019755) & (intercept9 <= -0.322219) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 18
+SupportingExamples: 23, 45, 144, 153, 169, 237, 336, 344, 384, 404, 437, 485, 500, 532, 548, 623, 662, 686
+Strength: 0.026124818577648767
+Confidence: 1.0
+CoverageFactor: 0.07171314741035857
+Coverage: 18
+CoveredExamples: 23, 45, 144, 153, 169, 237, 336, 344, 384, 404, 437, 485, 500, 532, 548, 623, 662, 686
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0158619493966926
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5079309746983462
+s-ConfirmationMeasure: 0.2442002442002442
+
+338 : (cslope3 >= -0.018439) & (intercept9 <= -0.322481) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 10
+SupportingExamples: 45, 102, 126, 157, 281, 313, 403, 509, 545, 560
+Strength: 0.01451378809869376
+Confidence: 1.0
+CoverageFactor: 0.038461538461538464
+Coverage: 10
+CoveredExamples: 45, 102, 126, 157, 281, 313, 403, 509, 545, 560
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.012785995316672573
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5063929976583363
+s-ConfirmationMeasure: 0.2418379685610641
+
+339 : (cslope3 >= -0.018173) & (slope6 <= -0.077234) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 323, 327
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.008298755186721992
+Coverage: 2
+CoveredExamples: 323, 327
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.003905126721362108
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5019525633606811
+s-ConfirmationMeasure: 0.23501762632197415
+
+340 : (cslope3 >= -0.014687) & (slope8 <= -0.070622) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 244, 355, 474, 479, 517, 687
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.022304832713754646
+Coverage: 6
+CoveredExamples: 244, 355, 474, 479, 517, 687
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0017626301261690644
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5008813150630845
+s-ConfirmationMeasure: 0.23337222870478413
+
+341 : (cslope3 >= -0.014104) & (intercept4 <= -0.327958) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 11, 80, 116, 140, 408, 621, 627
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.029166666666666667
+Coverage: 7
+CoveredExamples: 11, 80, 116, 140, 408, 621, 627
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+342 : (cslope3 >= -0.013536) & (intercept9 <= -0.315045) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 14
+SupportingExamples: 19, 100, 181, 205, 248, 275, 327, 334, 400, 466, 570, 576, 594, 607
+Strength: 0.020319303338171262
+Confidence: 1.0
+CoverageFactor: 0.05622489959839357
+Coverage: 14
+CoveredExamples: 19, 100, 181, 205, 248, 275, 327, 334, 400, 466, 570, 576, 594, 607
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.007176123601552913
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5035880618007764
+s-ConfirmationMeasure: 0.2375296912114014
+
+343 : (cslope3 >= -0.013101) & (intercept9 <= -0.303708) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 237, 505, 625
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.011538461538461539
+Coverage: 3
+CoveredExamples: 237, 505, 625
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.007176123601552913
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5035880618007764
+s-ConfirmationMeasure: 0.2375296912114014
+
+344 : (cslope3 >= -0.010839) & (intercept9 <= -0.293777) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 27, 157, 281, 313, 545
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.019230769230769232
+Coverage: 5
+CoveredExamples: 27, 157, 281, 313, 545
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.004987744399475575
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5024938721997377
+s-ConfirmationMeasure: 0.2358490566037736
+
+345 : (cslope3 >= -0.00927) & (cintercept10 >= 0.471946) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 9
+SupportingExamples: 140, 166, 171, 304, 366, 425, 448, 627, 637
+Strength: 0.013062409288824383
+Confidence: 1.0
+CoverageFactor: 0.0375
+Coverage: 9
+CoveredExamples: 140, 166, 171, 304, 366, 425, 448, 627, 637
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+346 : (cslope3 >= -0.005244) & (intercept9 <= -0.312258) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 142, 270, 617
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.010135135135135136
+Coverage: 3
+CoveredExamples: 142, 270, 617
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+347 : (cslope3 >= -0.004859) & (cslope9 >= 0.051816) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 137, 345, 433, 493, 652
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.019762845849802372
+Coverage: 5
+CoveredExamples: 137, 345, 433, 493, 652
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+348 : (cslope3 >= -0.003355) & (intercept9 <= -0.24489) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 150, 152, 158, 288
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.01593625498007968
+Coverage: 4
+CoveredExamples: 150, 152, 158, 288
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+349 : (cslope3 >= -0.002701) & (cslope9 >= 0.054189) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 1
+SupportingExamples: 129
+Strength: 0.001451378809869376
+Confidence: 1.0
+CoverageFactor: 0.0038461538461538464
+Coverage: 1
+CoveredExamples: 129
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+350 : (cslope2 >= 3.0E-4) & (intercept5 <= -0.901113) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 20
+SupportingExamples: 23, 49, 92, 116, 129, 163, 218, 237, 243, 321, 349, 352, 392, 466, 558, 567, 600, 621, 635, 645
+Strength: 0.02902757619738752
+Confidence: 1.0
+CoverageFactor: 0.07272727272727272
+Coverage: 20
+CoveredExamples: 23, 49, 92, 116, 129, 163, 218, 237, 243, 321, 349, 352, 392, 466, 558, 567, 600, 621, 635, 645
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.01014294304737479
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5050714715236874
+s-ConfirmationMeasure: 0.23980815347721823
+
+351 : (cslope2 >= 2.51E-4) & (intercept5 <= -0.916036) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 12
+SupportingExamples: 9, 57, 60, 250, 460, 466, 499, 550, 579, 598, 616, 629
+Strength: 0.01741654571843251
+Confidence: 1.0
+CoverageFactor: 0.04780876494023904
+Coverage: 12
+CoveredExamples: 9, 57, 60, 250, 460, 466, 499, 550, 579, 598, 616, 629
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.007176123601552913
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5035880618007764
+s-ConfirmationMeasure: 0.2375296912114014
+
+352 : (cslope2 >= 0.00557) & (intercept5 <= -0.863511) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 246, 454, 460, 551, 671
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.01858736059479554
+Coverage: 5
+CoveredExamples: 246, 454, 460, 551, 671
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0017626301261690644
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5008813150630845
+s-ConfirmationMeasure: 0.23337222870478413
+
+353 : (cslope2 >= 0.003316) & (intercept5 <= -0.873903) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 194, 240, 278, 363, 463, 565, 624
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.026119402985074626
+Coverage: 7
+CoveredExamples: 194, 240, 278, 363, 463, 565, 624
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0035459483993588925
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5017729741996795
+s-ConfirmationMeasure: 0.2347417840375587
+
+354 : (cslope2 >= 0.001966) & (intercept5 <= -0.915727) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 74, 499, 521, 576, 642, 650
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.02390438247011952
+Coverage: 6
+CoveredExamples: 74, 499, 521, 576, 642, 650
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002117627128215264
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5010588135641076
+s-ConfirmationMeasure: 0.2336448598130841
+
+355 : (cslope2 >= 0.001627) & (intercept5 <= -0.915727) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 53, 100, 309, 316, 476, 558
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.023076923076923078
+Coverage: 6
+CoveredExamples: 53, 100, 309, 316, 476, 558
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0028301152564438187
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5014150576282219
+s-ConfirmationMeasure: 0.234192037470726
+
+356 : (cslope2 >= 0.001032) & (intercept5 <= -0.937467) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 13
+SupportingExamples: 1, 21, 74, 101, 241, 273, 338, 498, 521, 576, 642, 650, 671
+Strength: 0.018867924528301886
+Confidence: 1.0
+CoverageFactor: 0.05179282868525897
+Coverage: 13
+CoveredExamples: 1, 21, 74, 101, 241, 273, 338, 498, 521, 576, 642, 650, 671
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0031876122305139493
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.501593806115257
+s-ConfirmationMeasure: 0.23446658851113716
+
+357 : (cslope2 >= -9.25E-4) & (intercept5 <= -0.9373) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 15
+SupportingExamples: 23, 49, 92, 114, 116, 129, 218, 243, 251, 321, 352, 371, 392, 567, 635
+Strength: 0.02177068214804064
+Confidence: 1.0
+CoverageFactor: 0.05454545454545454
+Coverage: 15
+CoveredExamples: 23, 49, 92, 114, 116, 129, 218, 243, 251, 321, 352, 371, 392, 567, 635
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.009768981674114007
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.504884490837057
+s-ConfirmationMeasure: 0.23952095808383234
+
+358 : (cslope2 >= -5.33E-4) & (cslope5 >= 0.083893) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 1, 149, 207, 301, 498, 577, 671
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.027888446215139442
+Coverage: 7
+CoveredExamples: 1, 149, 207, 301, 498, 577, 671
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.004987744399475575
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5024938721997377
+s-ConfirmationMeasure: 0.2358490566037736
+
+359 : (cslope2 >= -4.21E-4) & (slope7 <= -0.066517) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 13
+SupportingExamples: 20, 27, 136, 207, 212, 219, 274, 375, 389, 477, 506, 551, 593
+Strength: 0.018867924528301886
+Confidence: 1.0
+CoverageFactor: 0.048507462686567165
+Coverage: 13
+CoveredExamples: 20, 27, 136, 207, 212, 219, 274, 375, 389, 477, 506, 551, 593
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5206372194062274
+A-ConfirmationMeasure: 0.005178082093126258
+Z-ConfirmationMeasure: 0.6252173913043478
+l-ConfirmationMeasure: 1.154427067774506
+c1-ConfirmationMeasure: 0.3126086956521739
+s-ConfirmationMeasure: 0.14903871068041666
+
+360 : (cslope2 >= -3.8E-5) & (intercept5 <= -0.919513) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 13
+SupportingExamples: 15, 50, 57, 59, 175, 180, 219, 223, 403, 417, 541, 572, 641
+Strength: 0.018867924528301886
+Confidence: 1.0
+CoverageFactor: 0.04391891891891892
+Coverage: 13
+CoveredExamples: 15, 50, 57, 59, 175, 180, 219, 223, 403, 417, 541, 572, 641
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.008652452609796019
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.504326226304898
+s-ConfirmationMeasure: 0.2386634844868735
+
+361 : (cslope2 >= -3.34E-4) & (slope7 <= -0.066189) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 12
+SupportingExamples: 50, 57, 136, 197, 206, 219, 239, 301, 315, 417, 435, 572
+Strength: 0.01741654571843251
+Confidence: 1.0
+CoverageFactor: 0.04054054054054054
+Coverage: 12
+CoveredExamples: 50, 57, 136, 197, 206, 219, 239, 301, 315, 417, 435, 572
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5676028739386022
+A-ConfirmationMeasure: 0.006280807759580219
+Z-ConfirmationMeasure: 0.6684615384615384
+l-ConfirmationMeasure: 1.2879584603990288
+c1-ConfirmationMeasure: 0.3342307692307692
+s-ConfirmationMeasure: 0.15991902834008098
+
+362 : (cslope2 >= -3.04E-4) & (intercept5 <= -0.937519) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 11, 120, 229, 239, 518, 617, 641
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.029787234042553193
+Coverage: 7
+CoveredExamples: 11, 120, 229, 239, 518, 617, 641
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.007176123601552913
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5035880618007764
+s-ConfirmationMeasure: 0.2375296912114014
+
+363 : (cslope2 >= -1.6E-5) & (cslope5 >= 0.076588) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 26
+SupportingExamples: 1, 27, 78, 136, 138, 186, 203, 207, 213, 219, 240, 274, 375, 389, 411, 477, 485, 506, 551, 553, 561, 585, 593, 600, 604, 625
+Strength: 0.03773584905660377
+Confidence: 1.0
+CoverageFactor: 0.09701492537313433
+Coverage: 26
+CoveredExamples: 1, 27, 78, 136, 138, 186, 203, 207, 213, 219, 240, 274, 375, 389, 411, 477, 485, 506, 551, 553, 561, 585, 593, 600, 604, 625
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.8435358071377925
+A-ConfirmationMeasure: 0.013117369028454657
+Z-ConfirmationMeasure: 0.89225
+l-ConfirmationMeasure: 2.466613456740675
+c1-ConfirmationMeasure: 0.446125
+s-ConfirmationMeasure: 0.21709245742092456
+
+364 : (cslope2 >= -1.6E-5) & (cintercept9 >= 0.173882) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 567, 600, 608, 676
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.014545454545454545
+Coverage: 4
+CoveredExamples: 567, 600, 608, 676
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+365 : (cslope2 >= -1.54E-4) & (slope7 <= -0.063979) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 20
+SupportingExamples: 50, 57, 102, 175, 180, 197, 206, 209, 219, 239, 285, 296, 301, 315, 351, 392, 417, 435, 572, 637
+Strength: 0.02902757619738752
+Confidence: 1.0
+CoverageFactor: 0.06756756756756757
+Coverage: 20
+CoveredExamples: 50, 57, 102, 175, 180, 197, 206, 209, 219, 239, 285, 296, 301, 315, 351, 392, 417, 435, 572, 637
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.8315950139913508
+A-ConfirmationMeasure: 0.011971070218804359
+Z-ConfirmationMeasure: 0.8835135135135135
+l-ConfirmationMeasure: 2.3865707490671384
+c1-ConfirmationMeasure: 0.44175675675675674
+s-ConfirmationMeasure: 0.21418509418509418
+
+366 : (cslope2 >= -0.009198) & (cintercept4 >= 0.157833) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 8
+SupportingExamples: 93, 119, 126, 127, 185, 267, 524, 539
+Strength: 0.011611030478955007
+Confidence: 1.0
+CoverageFactor: 0.03076923076923077
+Coverage: 8
+CoveredExamples: 93, 119, 126, 127, 185, 267, 524, 539
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.008652452609796019
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.504326226304898
+s-ConfirmationMeasure: 0.2386634844868735
+
+367 : (cslope2 >= -0.007899) & (cintercept4 >= 0.155685) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 11
+SupportingExamples: 8, 15, 196, 271, 303, 465, 484, 509, 578, 604, 637
+Strength: 0.015965166908563134
+Confidence: 1.0
+CoverageFactor: 0.043824701195219126
+Coverage: 11
+CoveredExamples: 8, 15, 196, 271, 303, 465, 484, 509, 578, 604, 637
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.008282050635737408
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5041410253178688
+s-ConfirmationMeasure: 0.23837902264600716
+
+368 : (cslope2 >= -0.007523) & (cslope8 >= 3.32E-4) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 121, 452, 632, 674
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.01606425702811245
+Coverage: 4
+CoveredExamples: 121, 452, 632, 674
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0017626301261690644
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5008813150630845
+s-ConfirmationMeasure: 0.23337222870478413
+
+369 : (cslope2 >= -0.006761) & (cintercept4 >= 0.155116) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 8
+SupportingExamples: 2, 35, 47, 372, 382, 383, 453, 636
+Strength: 0.011611030478955007
+Confidence: 1.0
+CoverageFactor: 0.03319502074688797
+Coverage: 8
+CoveredExamples: 2, 35, 47, 372, 382, 383, 453, 636
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.008652452609796019
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.504326226304898
+s-ConfirmationMeasure: 0.2386634844868735
+
+370 : (cslope2 >= -0.002768) & (intercept5 <= -0.97196) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 63, 64, 241, 266, 326, 553, 673
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.027888446215139442
+Coverage: 7
+CoveredExamples: 63, 64, 241, 266, 326, 553, 673
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002473454532605431
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5012367272663028
+s-ConfirmationMeasure: 0.23391812865497075
+
+371 : (cslope2 >= -0.00146) & (intercept5 <= -0.951077) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 11
+SupportingExamples: 21, 63, 101, 241, 266, 273, 475, 498, 510, 576, 656
+Strength: 0.015965166908563134
+Confidence: 1.0
+CoverageFactor: 0.043824701195219126
+Coverage: 11
+CoveredExamples: 21, 63, 101, 241, 266, 273, 475, 498, 510, 576, 656
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.007176123601552913
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5035880618007764
+s-ConfirmationMeasure: 0.2375296912114014
+
+372 : (cslope2 >= -0.00146) & (intercept5 <= -0.938988) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 15
+SupportingExamples: 1, 15, 23, 89, 131, 145, 229, 254, 311, 325, 333, 455, 571, 573, 644
+Strength: 0.02177068214804064
+Confidence: 1.0
+CoverageFactor: 0.0625
+Coverage: 15
+CoveredExamples: 1, 15, 23, 89, 131, 145, 229, 254, 311, 325, 333, 455, 571, 573, 644
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.7741385192766974
+A-ConfirmationMeasure: 0.008209562747616549
+Z-ConfirmationMeasure: 0.8403703703703703
+l-ConfirmationMeasure: 2.0611483486325106
+c1-ConfirmationMeasure: 0.42018518518518516
+s-ConfirmationMeasure: 0.20128631625637614
+
+373 : (cslope2 >= -0.001274) & (intercept5 <= -0.944062) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 9
+SupportingExamples: 11, 56, 66, 120, 151, 239, 407, 518, 521
+Strength: 0.013062409288824383
+Confidence: 1.0
+CoverageFactor: 0.03829787234042553
+Coverage: 9
+CoveredExamples: 11, 56, 66, 120, 151, 239, 407, 518, 521
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.008652452609796019
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.504326226304898
+s-ConfirmationMeasure: 0.2386634844868735
+
+374 : (cslope1 >= 0.154646) & (slope7 <= -0.066114) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 462, 529, 539, 566
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.015384615384615385
+Coverage: 4
+CoveredExamples: 462, 529, 539, 566
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0017626301261690644
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5008813150630845
+s-ConfirmationMeasure: 0.23337222870478413
+
+375 : (cslope1 >= 0.137498) & (intercept9 <= -0.130021) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 1
+SupportingExamples: 688
+Strength: 0.001451378809869376
+Confidence: 1.0
+CoverageFactor: 0.0038461538461538464
+Coverage: 1
+CoveredExamples: 688
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+376 : (cslope1 >= 0.062041) & (intercept4 <= -0.133576) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 6, 81, 97, 437
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.013513513513513514
+Coverage: 4
+CoveredExamples: 6, 81, 97, 437
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+377 : (cslope1 >= 0.022801) & (cintercept1 >= 1.086199) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 466, 487, 594
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.01195219123505976
+Coverage: 3
+CoveredExamples: 466, 487, 594
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+378 : (cslope1 >= 0.001372) & (intercept4 <= -0.199531) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 567, 575
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.008333333333333333
+Coverage: 2
+CoveredExamples: 567, 575
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0010551157286101665
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500527557864305
+s-ConfirmationMeasure: 0.23282887077997672
+
+379 : (cslope1 >= -0.074638) & (cslope7 >= 0.015144) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 114, 324, 382, 429, 438
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.01858736059479554
+Coverage: 5
+CoveredExamples: 114, 324, 382, 429, 438
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002473454532605431
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5012367272663028
+s-ConfirmationMeasure: 0.23391812865497075
+
+380 : (cslope1 >= -0.064347) & (intercept7 <= -0.589028) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 239, 590, 626
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.01195219123505976
+Coverage: 3
+CoveredExamples: 239, 590, 626
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+381 : (cslope1 >= -0.060459) & (slope5 <= -0.005475) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 8
+SupportingExamples: 31, 244, 355, 399, 422, 473, 657, 676
+Strength: 0.011611030478955007
+Confidence: 1.0
+CoverageFactor: 0.03319502074688797
+Coverage: 8
+CoveredExamples: 31, 244, 355, 399, 422, 473, 657, 676
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5941140404659718
+A-ConfirmationMeasure: 0.0034522316593513084
+Z-ConfirmationMeasure: 0.6921428571428572
+l-ConfirmationMeasure: 1.3680011680725652
+c1-ConfirmationMeasure: 0.3460714285714286
+s-ConfirmationMeasure: 0.16324123989218328
+
+382 : (cslope1 >= -0.025104) & (intercept4 <= -0.208789) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 336, 382, 506, 621
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.013513513513513514
+Coverage: 4
+CoveredExamples: 336, 382, 506, 621
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+383 : (cslope1 >= -0.001016) & (intercept4 <= -0.184861) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 270, 272, 501, 554
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.015384615384615385
+Coverage: 4
+CoveredExamples: 270, 272, 501, 554
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0035459483993588925
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5017729741996795
+s-ConfirmationMeasure: 0.2347417840375587
+
+384 : (cintercept8 >= 0.242103) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 78, 242, 263, 622
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.01593625498007968
+Coverage: 4
+CoveredExamples: 78, 242, 263, 622
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0031876122305139493
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.501593806115257
+s-ConfirmationMeasure: 0.23446658851113716
+
+385 : (cintercept8 >= 0.235736) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 26, 49, 131, 249, 424
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.020080321285140562
+Coverage: 5
+CoveredExamples: 26, 49, 131, 249, 424
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0035459483993588925
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5017729741996795
+s-ConfirmationMeasure: 0.2347417840375587
+
+386 : (cintercept8 >= 0.233409) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 32, 87, 148, 524
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.01486988847583643
+Coverage: 4
+CoveredExamples: 32, 87, 148, 524
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0035459483993588925
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5017729741996795
+s-ConfirmationMeasure: 0.2347417840375587
+
+387 : (cintercept7 >= 3.15E-4) & (intercept9 <= -0.426171) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 91, 158, 169, 309, 321, 577
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.025
+Coverage: 6
+CoveredExamples: 91, 158, 169, 309, 321, 577
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.8176810795923988
+A-ConfirmationMeasure: 0.010833077922267467
+Z-ConfirmationMeasure: 0.8732352941176471
+l-ConfirmationMeasure: 2.2995593720775087
+c1-ConfirmationMeasure: 0.43661764705882355
+s-ConfirmationMeasure: 0.21092639954532538
+
+388 : (cintercept7 >= 0.406275) & (cintercept9 >= -0.131383) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 398, 425, 624
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.01276595744680851
+Coverage: 3
+CoveredExamples: 398, 425, 624
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.003905126721362108
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5019525633606811
+s-ConfirmationMeasure: 0.23501762632197415
+
+389 : (cintercept7 >= 0.395273) & (slope9 <= 0.011941) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 158, 250, 448, 503, 517, 622
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.024096385542168676
+Coverage: 6
+CoveredExamples: 158, 250, 448, 503, 517, 622
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.005713755151307379
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5028568775756537
+s-ConfirmationMeasure: 0.2364066193853428
+
+390 : (cintercept7 >= 0.392253) & (slope8 <= -0.054452) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 247, 628, 660, 665
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.015384615384615385
+Coverage: 4
+CoveredExamples: 247, 628, 660, 665
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+391 : (cintercept7 >= 0.336784) & (cintercept10 >= -0.438313) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 1
+SupportingExamples: 211
+Strength: 0.001451378809869376
+Confidence: 1.0
+CoverageFactor: 0.0033783783783783786
+Coverage: 1
+CoveredExamples: 211
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+392 : (cintercept7 >= 0.314621) & (slope9 <= -0.033006) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 56, 211, 544, 612, 623
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.02127659574468085
+Coverage: 5
+CoveredExamples: 56, 211, 544, 612, 623
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+393 : (cintercept7 >= 0.247923) & (cintercept10 >= -0.283685) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 1
+SupportingExamples: 459
+Strength: 0.001451378809869376
+Confidence: 1.0
+CoverageFactor: 0.0033783783783783786
+Coverage: 1
+CoveredExamples: 459
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+394 : (cintercept7 >= 0.215194) & (intercept9 <= -0.273974) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 309, 540, 553, 601, 627
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.01818181818181818
+Coverage: 5
+CoveredExamples: 309, 540, 553, 601, 627
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.6571724495080269
+A-ConfirmationMeasure: 0.004537085039060405
+Z-ConfirmationMeasure: 0.7464705882352941
+l-ConfirmationMeasure: 1.5756405328508096
+c1-ConfirmationMeasure: 0.37323529411764705
+s-ConfirmationMeasure: 0.17667942916811696
+
+395 : (cintercept7 >= 0.208026) & (intercept9 <= -0.311622) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 366, 425, 533
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.01195219123505976
+Coverage: 3
+CoveredExamples: 366, 425, 533
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.004626021728068209
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5023130108640341
+s-ConfirmationMeasure: 0.23557126030624265
+
+396 : (cintercept7 >= 0.183838) & (intercept9 <= -0.303656) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 8
+SupportingExamples: 93, 156, 169, 218, 302, 357, 488, 631
+Strength: 0.011611030478955007
+Confidence: 1.0
+CoverageFactor: 0.03187250996015936
+Coverage: 8
+CoveredExamples: 93, 156, 169, 218, 302, 357, 488, 631
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.008282050635737408
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5041410253178688
+s-ConfirmationMeasure: 0.23837902264600716
+
+397 : (cintercept7 >= 0.165925) & (intercept9 <= -0.342002) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 467, 574, 607, 612
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.016597510373443983
+Coverage: 4
+CoveredExamples: 467, 574, 607, 612
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.005350321197615897
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5026751605988079
+s-ConfirmationMeasure: 0.2361275088547816
+
+398 : (cintercept7 >= 0.137914) & (intercept9 <= -0.337585) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 12
+SupportingExamples: 45, 102, 126, 148, 166, 206, 211, 216, 310, 424, 509, 522
+Strength: 0.01741654571843251
+Confidence: 1.0
+CoverageFactor: 0.046153846153846156
+Coverage: 12
+CoveredExamples: 45, 102, 126, 148, 166, 206, 211, 216, 310, 424, 509, 522
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.7483846446218168
+A-ConfirmationMeasure: 0.0070986163286201505
+Z-ConfirmationMeasure: 0.8204166666666667
+l-ConfirmationMeasure: 1.9385460265401782
+c1-ConfirmationMeasure: 0.41020833333333334
+s-ConfirmationMeasure: 0.19580350039777247
+
+399 : (cintercept7 >= 0.12553) & (intercept9 <= -0.388351) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 8
+SupportingExamples: 51, 186, 467, 574, 612, 621, 646, 686
+Strength: 0.011611030478955007
+Confidence: 1.0
+CoverageFactor: 0.03319502074688797
+Coverage: 8
+CoveredExamples: 51, 186, 467, 574, 612, 621, 646, 686
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.006078049303705822
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5030390246518529
+s-ConfirmationMeasure: 0.23668639053254437
+
+400 : (cintercept7 >= 0.083953) & (intercept9 <= -0.338563) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 16
+SupportingExamples: 3, 179, 183, 214, 242, 263, 280, 288, 309, 410, 439, 442, 467, 585, 654, 661
+Strength: 0.023222060957910014
+Confidence: 1.0
+CoverageFactor: 0.06324110671936758
+Coverage: 16
+CoveredExamples: 3, 179, 183, 214, 242, 263, 280, 288, 309, 410, 439, 442, 467, 585, 654, 661
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.743510267338241
+A-ConfirmationMeasure: 0.014227197746186495
+Z-ConfirmationMeasure: 0.816595744680851
+l-ConfirmationMeasure: 1.916567119821403
+c1-ConfirmationMeasure: 0.4082978723404255
+s-ConfirmationMeasure: 0.20039159378671192
+
+401 : (cintercept7 >= 0.04546) & (intercept9 <= -0.348591) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 27
+SupportingExamples: 5, 48, 66, 91, 95, 96, 136, 138, 156, 214, 260, 267, 306, 327, 359, 380, 383, 430, 437, 508, 533, 552, 576, 607, 631, 648, 667
+Strength: 0.03918722786647315
+Confidence: 1.0
+CoverageFactor: 0.10843373493975904
+Coverage: 27
+CoveredExamples: 5, 48, 66, 91, 95, 96, 136, 138, 156, 214, 260, 267, 306, 327, 359, 380, 383, 430, 437, 508, 533, 552, 576, 607, 631, 648, 667
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.6941321423071
+A-ConfirmationMeasure: 0.016935714178352948
+Z-ConfirmationMeasure: 0.7770689655172414
+l-ConfirmationMeasure: 1.7117727071753897
+c1-ConfirmationMeasure: 0.3885344827586207
+s-ConfirmationMeasure: 0.19330073769085607
+
+402 : (cintercept7 >= -0.239877) & (cslope9 >= 0.066775) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 13
+SupportingExamples: 154, 162, 171, 243, 281, 294, 405, 420, 443, 513, 595, 615, 672
+Strength: 0.018867924528301886
+Confidence: 1.0
+CoverageFactor: 0.05138339920948617
+Coverage: 13
+CoveredExamples: 154, 162, 171, 243, 281, 294, 405, 420, 443, 513, 595, 615, 672
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.007543889270074829
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5037719446350374
+s-ConfirmationMeasure: 0.23781212841854935
+
+403 : (cintercept7 >= -0.123792) & (cslope9 >= 0.065737) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 14, 22, 38, 300, 348, 507, 568
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.025454545454545455
+Coverage: 7
+CoveredExamples: 14, 22, 38, 300, 348, 507, 568
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.005350321197615897
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5026751605988079
+s-ConfirmationMeasure: 0.2361275088547816
+
+404 : (cintercept7 >= -0.119774) & (cslope9 >= 0.066551) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 10
+SupportingExamples: 154, 171, 243, 281, 294, 405, 586, 615, 625, 672
+Strength: 0.01451378809869376
+Confidence: 1.0
+CoverageFactor: 0.039525691699604744
+Coverage: 10
+CoveredExamples: 154, 171, 243, 281, 294, 405, 586, 615, 625, 672
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.004626021728068209
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5023130108640341
+s-ConfirmationMeasure: 0.23557126030624265
+
+405 : (cintercept6 >= 0.468236) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 1
+SupportingExamples: 551
+Strength: 0.001451378809869376
+Confidence: 1.0
+CoverageFactor: 0.004166666666666667
+Coverage: 1
+CoveredExamples: 551
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+406 : (cintercept6 >= 0.454747) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 442, 585, 592
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.011857707509881422
+Coverage: 3
+CoveredExamples: 442, 585, 592
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+407 : (cintercept6 >= 0.453746) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 40, 383
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.007434944237918215
+Coverage: 2
+CoveredExamples: 40, 383
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+408 : (cintercept6 >= 0.430021) & (intercept9 <= -0.313862) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 239, 320
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.008333333333333333
+Coverage: 2
+CoveredExamples: 239, 320
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002473454532605431
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5012367272663028
+s-ConfirmationMeasure: 0.23391812865497075
+
+409 : (cintercept6 >= 0.420593) & (intercept9 <= -0.334119) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 184, 398, 427, 474
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.01486988847583643
+Coverage: 4
+CoveredExamples: 184, 398, 427, 474
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.004265150168828861
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5021325750844144
+s-ConfirmationMeasure: 0.23529411764705882
+
+410 : (cintercept6 >= 0.416182) & (intercept9 <= -0.29209) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 10
+SupportingExamples: 1, 194, 253, 287, 320, 384, 500, 554, 560, 642
+Strength: 0.01451378809869376
+Confidence: 1.0
+CoverageFactor: 0.033783783783783786
+Coverage: 10
+CoveredExamples: 1, 194, 253, 287, 320, 384, 500, 554, 560, 642
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.005713755151307379
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5028568775756537
+s-ConfirmationMeasure: 0.2364066193853428
+
+411 : (cintercept6 >= 0.411861) & (intercept9 <= -0.29209) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 9
+SupportingExamples: 1, 28, 176, 378, 425, 430, 506, 533, 626
+Strength: 0.013062409288824383
+Confidence: 1.0
+CoverageFactor: 0.035856573705179286
+Coverage: 9
+CoveredExamples: 1, 28, 176, 378, 425, 430, 506, 533, 626
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.007176123601552913
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5035880618007764
+s-ConfirmationMeasure: 0.2375296912114014
+
+412 : (cintercept6 >= 0.407796) & (cslope9 >= 0.028985) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 10
+SupportingExamples: 44, 93, 114, 172, 218, 302, 339, 394, 488, 635
+Strength: 0.01451378809869376
+Confidence: 1.0
+CoverageFactor: 0.0398406374501992
+Coverage: 10
+CoveredExamples: 44, 93, 114, 172, 218, 302, 339, 394, 488, 635
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.44725855830782074
+A-ConfirmationMeasure: 0.005828313198391139
+Z-ConfirmationMeasure: 0.5541379310344827
+l-ConfirmationMeasure: 0.962536059964401
+c1-ConfirmationMeasure: 0.27706896551724136
+s-ConfirmationMeasure: 0.1330463219770667
+
+413 : (cintercept5 >= -1.034384) & (intercept8 <= -0.702173) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 14
+SupportingExamples: 26, 73, 118, 126, 130, 148, 325, 344, 482, 527, 565, 606, 635, 653
+Strength: 0.020319303338171262
+Confidence: 1.0
+CoverageFactor: 0.058091286307053944
+Coverage: 14
+CoveredExamples: 26, 73, 118, 126, 130, 148, 325, 344, 482, 527, 565, 606, 635, 653
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.46222583265637696
+A-ConfirmationMeasure: 0.0020176446392352098
+Z-ConfirmationMeasure: 0.569
+l-ConfirmationMeasure: 1.0002763879472478
+c1-ConfirmationMeasure: 0.2845
+s-ConfirmationMeasure: 0.1335680751173709
+
+414 : (cintercept4 >= 0.164369) & (cintercept10 >= -0.840555) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 13
+SupportingExamples: 66, 134, 135, 227, 231, 252, 273, 354, 422, 501, 636, 656, 686
+Strength: 0.018867924528301886
+Confidence: 1.0
+CoverageFactor: 0.05416666666666667
+Coverage: 13
+CoveredExamples: 66, 134, 135, 227, 231, 252, 273, 354, 422, 501, 636, 656, 686
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5676028739386022
+A-ConfirmationMeasure: 0.006280807759580219
+Z-ConfirmationMeasure: 0.6684615384615384
+l-ConfirmationMeasure: 1.2879584603990288
+c1-ConfirmationMeasure: 0.3342307692307692
+s-ConfirmationMeasure: 0.15991902834008098
+
+415 : (cintercept4 >= 0.164307) & (cintercept10 >= -0.670093) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 9
+SupportingExamples: 39, 149, 160, 274, 398, 579, 645, 648, 686
+Strength: 0.013062409288824383
+Confidence: 1.0
+CoverageFactor: 0.03614457831325301
+Coverage: 9
+CoveredExamples: 39, 149, 160, 274, 398, 579, 645, 648, 686
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.006078049303705822
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5030390246518529
+s-ConfirmationMeasure: 0.23668639053254437
+
+416 : (cintercept4 >= 0.162007) & (slope6 <= -0.059273) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 126, 127, 474, 524, 539, 641, 686
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.026923076923076925
+Coverage: 7
+CoveredExamples: 126, 127, 474, 524, 539, 641, 686
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.011270227331391946
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.505635113665696
+s-ConfirmationMeasure: 0.24067388688327315
+
+417 : (cintercept4 >= 0.161599) & (intercept9 <= 0.097869) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 14
+SupportingExamples: 44, 55, 102, 110, 113, 139, 146, 255, 275, 336, 468, 514, 632, 675
+Strength: 0.020319303338171262
+Confidence: 1.0
+CoverageFactor: 0.05204460966542751
+Coverage: 14
+CoveredExamples: 44, 55, 102, 110, 113, 139, 146, 255, 275, 336, 468, 514, 632, 675
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.6384489350081922
+A-ConfirmationMeasure: 0.00851017362501365
+Z-ConfirmationMeasure: 0.730625
+l-ConfirmationMeasure: 1.5111020117132385
+c1-ConfirmationMeasure: 0.3653125
+s-ConfirmationMeasure: 0.1760542168674699
+
+418 : (cintercept4 >= 0.161533) & (cintercept6 >= 0.270512) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 9
+SupportingExamples: 8, 144, 278, 302, 468, 487, 554, 615, 649
+Strength: 0.013062409288824383
+Confidence: 1.0
+CoverageFactor: 0.03383458646616541
+Coverage: 9
+CoveredExamples: 8, 144, 278, 302, 468, 487, 554, 615, 649
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.009023739654282487
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5045118698271412
+s-ConfirmationMeasure: 0.23894862604540024
+
+419 : (cintercept4 >= 0.16071) & (slope10 <= 0.19698) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 10
+SupportingExamples: 79, 121, 154, 174, 195, 238, 269, 476, 674, 689
+Strength: 0.01451378809869376
+Confidence: 1.0
+CoverageFactor: 0.0398406374501992
+Coverage: 10
+CoveredExamples: 79, 121, 154, 174, 195, 238, 269, 476, 674, 689
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.009023739654282487
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5045118698271412
+s-ConfirmationMeasure: 0.23894862604540024
+
+420 : (cintercept4 >= 0.159146) & (intercept9 <= 0.097675) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 17
+SupportingExamples: 38, 44, 55, 102, 110, 113, 146, 255, 275, 291, 319, 336, 468, 514, 632, 660, 675
+Strength: 0.02467343976777939
+Confidence: 1.0
+CoverageFactor: 0.06319702602230483
+Coverage: 17
+CoveredExamples: 38, 44, 55, 102, 110, 113, 146, 255, 275, 291, 319, 336, 468, 514, 632, 660, 675
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.6571724495080269
+A-ConfirmationMeasure: 0.009260475502430053
+Z-ConfirmationMeasure: 0.7464705882352941
+l-ConfirmationMeasure: 1.5756405328508096
+c1-ConfirmationMeasure: 0.37323529411764705
+s-ConfirmationMeasure: 0.18030690537084398
+
+421 : (cintercept4 >= 0.15727) & (slope8 <= -0.043211) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 32, 65, 105, 147, 485, 577
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.02181818181818182
+Coverage: 6
+CoveredExamples: 32, 65, 105, 147, 485, 577
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.7384433030422758
+A-ConfirmationMeasure: 0.0067300663644318335
+Z-ConfirmationMeasure: 0.8126086956521739
+l-ConfirmationMeasure: 1.8940942639693443
+c1-ConfirmationMeasure: 0.40630434782608693
+s-ConfirmationMeasure: 0.1937088666632119
+
+422 : (cintercept4 >= 0.156045) & (slope7 <= -0.064251) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 11
+SupportingExamples: 76, 209, 239, 261, 285, 433, 434, 435, 568, 661, 667
+Strength: 0.015965166908563134
+Confidence: 1.0
+CoverageFactor: 0.037162162162162164
+Coverage: 11
+CoveredExamples: 76, 209, 239, 261, 285, 433, 434, 435, 568, 661, 667
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.007543889270074829
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5037719446350374
+s-ConfirmationMeasure: 0.23781212841854935
+
+423 : (cintercept4 >= 0.156042) & (cslope9 >= 0.013156) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 35, 149, 188, 285, 484, 648
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.024096385542168676
+Coverage: 6
+CoveredExamples: 35, 149, 188, 285, 484, 648
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.007543889270074829
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5037719446350374
+s-ConfirmationMeasure: 0.23781212841854935
+
+424 : (cintercept4 >= 0.155477) & (cintercept7 >= 0.236828) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 15
+SupportingExamples: 77, 97, 147, 160, 274, 279, 290, 514, 515, 518, 541, 562, 579, 645, 686
+Strength: 0.02177068214804064
+Confidence: 1.0
+CoverageFactor: 0.060240963855421686
+Coverage: 15
+CoveredExamples: 77, 97, 147, 160, 274, 279, 290, 514, 515, 518, 541, 562, 579, 645, 686
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.009395914945286864
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5046979574726435
+s-ConfirmationMeasure: 0.23923444976076555
+
+425 : (cintercept4 >= 0.155212) & (intercept9 <= -0.195442) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 9
+SupportingExamples: 50, 181, 219, 238, 293, 452, 453, 501, 627
+Strength: 0.013062409288824383
+Confidence: 1.0
+CoverageFactor: 0.03461538461538462
+Coverage: 9
+CoveredExamples: 50, 181, 219, 238, 293, 452, 453, 501, 627
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.006078049303705822
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5030390246518529
+s-ConfirmationMeasure: 0.23668639053254437
+
+426 : (cintercept4 >= 0.155212) & (cintercept7 >= 0.234668) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 11
+SupportingExamples: 84, 219, 276, 278, 388, 389, 453, 495, 628, 660, 665
+Strength: 0.015965166908563134
+Confidence: 1.0
+CoverageFactor: 0.04230769230769231
+Coverage: 11
+CoveredExamples: 84, 219, 276, 278, 388, 389, 453, 495, 628, 660, 665
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.009395914945286864
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5046979574726435
+s-ConfirmationMeasure: 0.23923444976076555
+
+427 : (cintercept4 >= 0.154791) & (cintercept7 >= 0.228139) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 13
+SupportingExamples: 1, 20, 98, 125, 129, 163, 330, 383, 445, 482, 491, 492, 601
+Strength: 0.018867924528301886
+Confidence: 1.0
+CoverageFactor: 0.05138339920948617
+Coverage: 13
+CoveredExamples: 1, 20, 98, 125, 129, 163, 330, 383, 445, 482, 491, 492, 601
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.009768981674114007
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.504884490837057
+s-ConfirmationMeasure: 0.23952095808383234
+
+428 : (cintercept4 >= 0.084869) & (cintercept7 >= 0.395273) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 156, 236, 363, 400, 402, 424, 541
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.029045643153526972
+Coverage: 7
+CoveredExamples: 156, 236, 363, 400, 402, 424, 541
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.004987744399475575
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5024938721997377
+s-ConfirmationMeasure: 0.2358490566037736
+
+429 : (cintercept4 >= -0.277405) & (cslope7 >= 0.014133) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 8
+SupportingExamples: 70, 161, 217, 257, 399, 425, 657, 676
+Strength: 0.011611030478955007
+Confidence: 1.0
+CoverageFactor: 0.03319502074688797
+Coverage: 8
+CoveredExamples: 70, 161, 217, 257, 399, 425, 657, 676
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0031876122305139493
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.501593806115257
+s-ConfirmationMeasure: 0.23446658851113716
+
+430 : (cintercept3 >= 0.020102) & (slope8 <= -0.07072) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 1
+SupportingExamples: 87
+Strength: 0.001451378809869376
+Confidence: 1.0
+CoverageFactor: 0.0037313432835820895
+Coverage: 1
+CoveredExamples: 87
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+431 : (cintercept2 >= 0.734326) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 336, 437, 666
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.011194029850746268
+Coverage: 3
+CoveredExamples: 336, 437, 666
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.005350321197615897
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5026751605988079
+s-ConfirmationMeasure: 0.2361275088547816
+
+432 : (cintercept2 >= 0.732902) & (cintercept4 >= 0.157593) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 8, 333, 524, 525, 578, 687
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.02027027027027027
+Coverage: 6
+CoveredExamples: 8, 333, 524, 525, 578, 687
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.004626021728068209
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5023130108640341
+s-ConfirmationMeasure: 0.23557126030624265
+
+433 : (cintercept2 >= 0.732253) & (cintercept7 >= 0.08927) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 16, 41, 252, 354, 581, 686
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.025
+Coverage: 6
+CoveredExamples: 16, 41, 252, 354, 581, 686
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.004626021728068209
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5023130108640341
+s-ConfirmationMeasure: 0.23557126030624265
+
+434 : (cintercept2 >= 0.730455) & (cslope3 >= -0.022314) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 61, 186, 200, 473
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.014545454545454545
+Coverage: 4
+CoveredExamples: 61, 186, 200, 473
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002117627128215264
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5010588135641076
+s-ConfirmationMeasure: 0.2336448598130841
+
+435 : (cintercept2 >= 0.729082) & (slope3 <= -0.022792) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 179, 256, 386, 470, 525
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.01818181818181818
+Coverage: 5
+CoveredExamples: 179, 256, 386, 470, 525
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5026296018031555
+A-ConfirmationMeasure: 0.0023750270696284094
+Z-ConfirmationMeasure: 0.6081818181818182
+l-ConfirmationMeasure: 1.1056369036050742
+c1-ConfirmationMeasure: 0.3040909090909091
+s-ConfirmationMeasure: 0.14293344728127336
+
+436 : (cintercept2 >= 0.720675) & (intercept10 <= -0.780822) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 236, 468
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.008333333333333333
+Coverage: 2
+CoveredExamples: 236, 468
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+437 : (cintercept2 >= 0.717748) & (cslope3 >= -0.020927) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 15, 290, 672
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.01195219123505976
+Coverage: 3
+CoveredExamples: 15, 290, 672
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.004987744399475575
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5024938721997377
+s-ConfirmationMeasure: 0.2358490566037736
+
+438 : (cintercept2 >= 0.714775) & (intercept6 <= 0.20376) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 203, 355, 510, 627, 660
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.019762845849802372
+Coverage: 5
+CoveredExamples: 203, 355, 510, 627, 660
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0010551157286101665
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500527557864305
+s-ConfirmationMeasure: 0.23282887077997672
+
+439 : (cintercept2 >= 0.699368) & (cslope3 >= -0.021437) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 9
+SupportingExamples: 78, 149, 186, 200, 337, 375, 473, 579, 597
+Strength: 0.013062409288824383
+Confidence: 1.0
+CoverageFactor: 0.03272727272727273
+Coverage: 9
+CoveredExamples: 78, 149, 186, 200, 337, 375, 473, 579, 597
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.006078049303705822
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5030390246518529
+s-ConfirmationMeasure: 0.23668639053254437
+
+440 : (cintercept2 >= 0.681964) & (cslope3 >= -0.019454) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 10
+SupportingExamples: 24, 38, 147, 203, 352, 355, 510, 519, 627, 655
+Strength: 0.01451378809869376
+Confidence: 1.0
+CoverageFactor: 0.039525691699604744
+Coverage: 10
+CoveredExamples: 24, 38, 147, 203, 352, 355, 510, 519, 627, 655
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.004626021728068209
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5023130108640341
+s-ConfirmationMeasure: 0.23557126030624265
+
+441 : (cintercept2 >= 0.680688) & (cslope3 >= -0.022147) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 12
+SupportingExamples: 58, 79, 112, 353, 391, 418, 450, 488, 536, 618, 686, 688
+Strength: 0.01741654571843251
+Confidence: 1.0
+CoverageFactor: 0.05106382978723404
+Coverage: 12
+CoveredExamples: 58, 79, 112, 353, 391, 418, 450, 488, 536, 618, 686, 688
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.46222583265637696
+A-ConfirmationMeasure: 0.006198437136881245
+Z-ConfirmationMeasure: 0.569
+l-ConfirmationMeasure: 1.0002763879472478
+c1-ConfirmationMeasure: 0.2845
+s-ConfirmationMeasure: 0.13677884615384617
+
+442 : (cintercept2 >= 0.67341) & (cslope6 >= -0.051545) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 96, 684
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.007692307692307693
+Coverage: 2
+CoveredExamples: 96, 684
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+443 : (cintercept2 >= 0.67341) & (cslope3 >= -0.021419) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 82, 293, 452, 493, 564
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.019230769230769232
+Coverage: 5
+CoveredExamples: 82, 293, 452, 493, 564
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.009395914945286864
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5046979574726435
+s-ConfirmationMeasure: 0.23923444976076555
+
+444 : (cintercept2 >= 0.66945) & (slope3 <= -0.025989) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 84, 348, 406, 495, 510, 542
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.023076923076923078
+Coverage: 6
+CoveredExamples: 84, 348, 406, 495, 510, 542
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0010551157286101665
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500527557864305
+s-ConfirmationMeasure: 0.23282887077997672
+
+445 : (cintercept2 >= 0.66945) & (cintercept7 >= 0.210941) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 8
+SupportingExamples: 84, 348, 370, 406, 462, 495, 565, 627
+Strength: 0.011611030478955007
+Confidence: 1.0
+CoverageFactor: 0.03076923076923077
+Coverage: 8
+CoveredExamples: 84, 348, 370, 406, 462, 495, 565, 627
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0028301152564438187
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5014150576282219
+s-ConfirmationMeasure: 0.234192037470726
+
+446 : (cintercept2 >= 0.617372) & (slope8 <= -0.057128) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 196, 434
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.00796812749003984
+Coverage: 2
+CoveredExamples: 196, 434
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+447 : (cintercept2 >= 0.604936) & (cintercept7 >= 0.257773) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 603, 672
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.00851063829787234
+Coverage: 2
+CoveredExamples: 603, 672
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0017626301261690644
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5008813150630845
+s-ConfirmationMeasure: 0.23337222870478413
+
+448 : (cintercept2 >= 0.594199) & (slope7 <= -0.066027) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 8
+SupportingExamples: 105, 144, 159, 316, 336, 376, 446, 578
+Strength: 0.011611030478955007
+Confidence: 1.0
+CoverageFactor: 0.02909090909090909
+Coverage: 8
+CoveredExamples: 105, 144, 159, 316, 336, 376, 446, 578
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0028301152564438187
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5014150576282219
+s-ConfirmationMeasure: 0.234192037470726
+
+449 : (cintercept2 >= 0.502146) & (slope7 <= -0.066295) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 20, 456, 574, 641
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.014925373134328358
+Coverage: 4
+CoveredExamples: 20, 456, 574, 641
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.46222583265637696
+A-ConfirmationMeasure: 0.004083214329283607
+Z-ConfirmationMeasure: 0.569
+l-ConfirmationMeasure: 1.0002763879472478
+c1-ConfirmationMeasure: 0.2845
+s-ConfirmationMeasure: 0.1351543942992874
+
+450 : (cintercept2 >= 0.421786) & (intercept6 <= -0.065344) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 221, 620, 647, 648
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.014925373134328358
+Coverage: 4
+CoveredExamples: 221, 620, 647, 648
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.4146772767462423
+A-ConfirmationMeasure: 0.0016611001512344913
+Z-ConfirmationMeasure: 0.5211111111111111
+l-ConfirmationMeasure: 0.8824933522908643
+c1-ConfirmationMeasure: 0.26055555555555554
+s-ConfirmationMeasure: 0.12218314445747036
+
+451 : (cintercept2 >= 0.303285) & (intercept4 <= -0.040347) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 341, 624, 631
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.011538461538461539
+Coverage: 3
+CoveredExamples: 341, 624, 631
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+452 : (cintercept2 >= -0.442527) & (cslope7 >= 0.010995) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 285, 339
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.007462686567164179
+Coverage: 2
+CoveredExamples: 285, 339
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0010551157286101665
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500527557864305
+s-ConfirmationMeasure: 0.23282887077997672
+
+453 : (cintercept10 >= 0.582094) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 1
+SupportingExamples: 189
+Strength: 0.001451378809869376
+Confidence: 1.0
+CoverageFactor: 0.0036363636363636364
+Coverage: 1
+CoveredExamples: 189
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+454 : (cintercept1 >= 1.531052) & (slope10 <= 0.194081) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 8
+SupportingExamples: 54, 207, 220, 244, 420, 598, 622, 636
+Strength: 0.011611030478955007
+Confidence: 1.0
+CoverageFactor: 0.03404255319148936
+Coverage: 8
+CoveredExamples: 54, 207, 220, 244, 420, 598, 622, 636
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+455 : (cintercept1 >= 1.52274) & (cintercept10 >= -0.280761) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 11
+SupportingExamples: 34, 37, 41, 82, 111, 178, 325, 446, 586, 601, 674
+Strength: 0.015965166908563134
+Confidence: 1.0
+CoverageFactor: 0.037162162162162164
+Coverage: 11
+CoveredExamples: 34, 37, 41, 82, 111, 178, 325, 446, 586, 601, 674
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+456 : (cintercept1 >= 1.521951) & (slope6 <= -0.020766) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 10
+SupportingExamples: 2, 59, 79, 116, 321, 368, 446, 534, 626, 649
+Strength: 0.01451378809869376
+Confidence: 1.0
+CoverageFactor: 0.038461538461538464
+Coverage: 10
+CoveredExamples: 2, 59, 79, 116, 321, 368, 446, 534, 626, 649
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+457 : (cintercept1 >= 1.481254) & (intercept9 <= -0.212105) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 287, 408
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.007692307692307693
+Coverage: 2
+CoveredExamples: 287, 408
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0017626301261690644
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5008813150630845
+s-ConfirmationMeasure: 0.23337222870478413
+
+458 : (cintercept1 >= 1.438229) & (intercept9 <= -0.221241) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 194, 386, 493, 666
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.01486988847583643
+Coverage: 4
+CoveredExamples: 194, 386, 493, 666
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+459 : (cintercept1 >= 1.437958) & (intercept9 <= -0.187076) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 276, 397, 518, 564, 616
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.0199203187250996
+Coverage: 5
+CoveredExamples: 276, 397, 518, 564, 616
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.004626021728068209
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5023130108640341
+s-ConfirmationMeasure: 0.23557126030624265
+
+460 : (cintercept1 >= 1.428105) & (intercept9 <= -0.224482) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 134, 235, 316
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.01276595744680851
+Coverage: 3
+CoveredExamples: 134, 235, 316
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0010551157286101665
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500527557864305
+s-ConfirmationMeasure: 0.23282887077997672
+
+461 : (cintercept1 >= 1.408954) & (slope8 <= -0.049522) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 197, 526, 626
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.01195219123505976
+Coverage: 3
+CoveredExamples: 197, 526, 626
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+462 : (cintercept1 >= 1.396929) & (intercept9 <= -0.216283) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 197, 259, 319, 394, 577, 600
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.023076923076923078
+Coverage: 6
+CoveredExamples: 197, 259, 319, 394, 577, 600
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.004987744399475575
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5024938721997377
+s-ConfirmationMeasure: 0.2358490566037736
+
+463 : (cintercept1 >= 1.394415) & (intercept9 <= -0.223928) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 526, 557, 586
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.012048192771084338
+Coverage: 3
+CoveredExamples: 526, 557, 586
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+464 : (cintercept1 >= 1.389877) & (slope6 <= -0.034068) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 155, 252
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.007905138339920948
+Coverage: 2
+CoveredExamples: 155, 252
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+465 : (cintercept1 >= 1.370056) & (intercept9 <= -0.219588) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 135, 197, 342, 518, 537, 580, 616
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.027888446215139442
+Coverage: 7
+CoveredExamples: 135, 197, 342, 518, 537, 580, 616
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0028301152564438187
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5014150576282219
+s-ConfirmationMeasure: 0.234192037470726
+
+466 : (cintercept1 >= 1.35763) & (intercept9 <= -0.215194) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 12
+SupportingExamples: 59, 91, 113, 120, 121, 298, 301, 364, 381, 668, 674, 676
+Strength: 0.01741654571843251
+Confidence: 1.0
+CoverageFactor: 0.04477611940298507
+Coverage: 12
+CoveredExamples: 59, 91, 113, 120, 121, 298, 301, 364, 381, 668, 674, 676
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.6384489350081922
+A-ConfirmationMeasure: 0.004174612357423954
+Z-ConfirmationMeasure: 0.730625
+l-ConfirmationMeasure: 1.5111020117132385
+c1-ConfirmationMeasure: 0.3653125
+s-ConfirmationMeasure: 0.17272458628841608
+
+467 : (cintercept1 >= 1.341601) & (slope4 <= -0.021504) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 175, 217, 539
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.01090909090909091
+Coverage: 3
+CoveredExamples: 175, 217, 539
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+468 : (cintercept1 >= 1.322836) & (slope4 <= -0.021196) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 261, 350, 379, 441, 541
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.0199203187250996
+Coverage: 5
+CoveredExamples: 261, 350, 379, 441, 541
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+469 : (cintercept1 >= 1.312713) & (slope4 <= -0.022139) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 82, 123
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.00796812749003984
+Coverage: 2
+CoveredExamples: 82, 123
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0010551157286101665
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500527557864305
+s-ConfirmationMeasure: 0.23282887077997672
+
+470 : (cintercept1 >= 1.304762) & (intercept5 <= -0.647877) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 94, 107, 575
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.01195219123505976
+Coverage: 3
+CoveredExamples: 94, 107, 575
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0010551157286101665
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500527557864305
+s-ConfirmationMeasure: 0.23282887077997672
+
+471 : (cintercept1 >= 1.302108) & (intercept5 <= -0.671933) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 291, 599
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.00796812749003984
+Coverage: 2
+CoveredExamples: 291, 599
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+472 : (cintercept1 >= 1.294692) & (intercept3 <= -0.305187) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 242, 247, 583
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.01090909090909091
+Coverage: 3
+CoveredExamples: 242, 247, 583
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+473 : (cintercept1 >= 1.29195) & (slope7 <= -0.030206) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 3, 251, 620
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.011152416356877323
+Coverage: 3
+CoveredExamples: 3, 251, 620
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0010551157286101665
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500527557864305
+s-ConfirmationMeasure: 0.23282887077997672
+
+474 : (cintercept1 >= 1.264668) & (slope7 <= -0.033462) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 231, 581, 620
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.011152416356877323
+Coverage: 3
+CoveredExamples: 231, 581, 620
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+475 : (cintercept1 >= 1.247093) & (cslope2 >= 0.092049) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 52, 57, 176, 307, 433, 611, 624
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.025454545454545455
+Coverage: 7
+CoveredExamples: 52, 57, 176, 307, 433, 611, 624
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0010551157286101665
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500527557864305
+s-ConfirmationMeasure: 0.23282887077997672
+
+476 : (cintercept1 >= 1.238237) & (intercept5 <= -0.689307) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 222, 461, 675
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.01195219123505976
+Coverage: 3
+CoveredExamples: 222, 461, 675
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0010551157286101665
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500527557864305
+s-ConfirmationMeasure: 0.23282887077997672
+
+477 : (cintercept1 >= 1.152196) & (intercept8 <= -0.506516) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 78, 193
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.00796812749003984
+Coverage: 2
+CoveredExamples: 78, 193
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+478 : (cintercept1 >= 1.146901) & (slope6 <= -0.042106) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 210, 456
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.007905138339920948
+Coverage: 2
+CoveredExamples: 210, 456
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0028301152564438187
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5014150576282219
+s-ConfirmationMeasure: 0.234192037470726
+
+479 : (cintercept1 >= 1.140117) & (cslope2 >= 0.094266) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 10
+SupportingExamples: 52, 59, 176, 190, 244, 307, 433, 440, 548, 611
+Strength: 0.01451378809869376
+Confidence: 1.0
+CoverageFactor: 0.03636363636363636
+Coverage: 10
+CoveredExamples: 52, 59, 176, 190, 244, 307, 433, 440, 548, 611
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5373864430468204
+A-ConfirmationMeasure: 0.0027332503998578283
+Z-ConfirmationMeasure: 0.6408333333333334
+l-ConfirmationMeasure: 1.200947083409399
+c1-ConfirmationMeasure: 0.3204166666666667
+s-ConfirmationMeasure: 0.1507843137254902
+
+480 : (cintercept1 >= 1.104351) & (intercept8 <= -0.528326) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 1
+SupportingExamples: 436
+Strength: 0.001451378809869376
+Confidence: 1.0
+CoverageFactor: 0.00398406374501992
+Coverage: 1
+CoveredExamples: 436
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+481 : (cintercept1 >= 1.073329) & (cslope2 >= 0.096676) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 73, 128, 255, 343, 408, 648
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.02390438247011952
+Coverage: 6
+CoveredExamples: 73, 128, 255, 343, 408, 648
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5676028739386022
+A-ConfirmationMeasure: 0.0030923176013009797
+Z-ConfirmationMeasure: 0.6684615384615384
+l-ConfirmationMeasure: 1.2879584603990288
+c1-ConfirmationMeasure: 0.3342307692307692
+s-ConfirmationMeasure: 0.1574703270816345
+
+482 : (cintercept1 >= 1.002616) & (cintercept2 >= 0.073499) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 132, 270, 452
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.01195219123505976
+Coverage: 3
+CoveredExamples: 132, 270, 452
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+483 : (cintercept1 >= 0.994912) & (cintercept6 >= -0.001221) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 165, 213, 387, 629
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.015810276679841896
+Coverage: 4
+CoveredExamples: 165, 213, 387, 629
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+484 : (cintercept1 >= 0.85291) & (slope7 <= -0.044437) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 212, 334, 345, 429, 552, 560
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.02390438247011952
+Coverage: 6
+CoveredExamples: 212, 334, 345, 429, 552, 560
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.6740521910388971
+A-ConfirmationMeasure: 0.004900416660700735
+Z-ConfirmationMeasure: 0.7605555555555555
+l-ConfirmationMeasure: 1.6362651546672446
+c1-ConfirmationMeasure: 0.38027777777777777
+s-ConfirmationMeasure: 0.18022643496577145
+
+485 : (cintercept1 >= 0.718586) & (slope7 <= -0.050851) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 5
+SupportingExamples: 372, 429, 479, 552, 560
+Strength: 0.00725689404934688
+Confidence: 1.0
+CoverageFactor: 0.0199203187250996
+Coverage: 5
+CoveredExamples: 372, 429, 479, 552, 560
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0035459483993588925
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5017729741996795
+s-ConfirmationMeasure: 0.2347417840375587
+
+486 : (cintercept1 >= 0.609218) & (cintercept2 >= 0.291976) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 1
+SupportingExamples: 29
+Strength: 0.001451378809869376
+Confidence: 1.0
+CoverageFactor: 0.0033783783783783786
+Coverage: 1
+CoveredExamples: 29
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0017626301261690644
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5008813150630845
+s-ConfirmationMeasure: 0.23337222870478413
+
+487 : (cintercept1 >= 0.572232) & (cintercept9 >= 0.157413) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 1
+SupportingExamples: 554
+Strength: 0.001451378809869376
+Confidence: 1.0
+CoverageFactor: 0.00425531914893617
+Coverage: 1
+CoveredExamples: 554
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+488 : (cintercept1 >= 0.568509) & (cintercept7 >= 0.121356) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 246, 338, 454
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.011152416356877323
+Coverage: 3
+CoveredExamples: 246, 338, 454
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.4146772767462423
+A-ConfirmationMeasure: 0.0016611001512344913
+Z-ConfirmationMeasure: 0.5211111111111111
+l-ConfirmationMeasure: 0.8824933522908643
+c1-ConfirmationMeasure: 0.26055555555555554
+s-ConfirmationMeasure: 0.12218314445747036
+
+489 : (cintercept1 >= 0.534021) & (slope7 <= -0.053952) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 40, 67, 593
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.011538461538461539
+Coverage: 3
+CoveredExamples: 40, 67, 593
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+490 : (cintercept1 >= 0.534021) & (cslope5 >= 0.072819) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 226, 237, 362, 385, 586, 645
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.02181818181818182
+Coverage: 6
+CoveredExamples: 226, 237, 362, 385, 586, 645
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0017626301261690644
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5008813150630845
+s-ConfirmationMeasure: 0.23337222870478413
+
+491 : (cintercept1 >= 0.493796) & (slope7 <= -0.052669) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 383, 528, 617, 641
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.01702127659574468
+Coverage: 4
+CoveredExamples: 383, 528, 617, 641
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5373864430468204
+A-ConfirmationMeasure: 0.0027332503998578283
+Z-ConfirmationMeasure: 0.6408333333333334
+l-ConfirmationMeasure: 1.200947083409399
+c1-ConfirmationMeasure: 0.3204166666666667
+s-ConfirmationMeasure: 0.1507843137254902
+
+492 : (cintercept1 >= 0.270328) & (cslope5 >= 0.08122) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 399, 553
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.007462686567164179
+Coverage: 2
+CoveredExamples: 399, 553
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.002117627128215264
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5010588135641076
+s-ConfirmationMeasure: 0.2336448598130841
+
+493 : (cintercept1 >= 0.190012) & (slope2 <= -0.017259) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 132, 221
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.007462686567164179
+Coverage: 2
+CoveredExamples: 132, 221
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+494 : (cintercept1 >= 0.183266) & (cslope5 >= 0.083748) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 6
+SupportingExamples: 65, 75, 333, 359, 449, 521
+Strength: 0.008708272859216255
+Confidence: 1.0
+CoverageFactor: 0.025
+Coverage: 6
+CoveredExamples: 65, 75, 333, 359, 449, 521
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0014084606229621335
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500704230311481
+s-ConfirmationMeasure: 0.2331002331002331
+
+495 : (cintercept1 >= 0.067509) & (slope2 <= -0.018943) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 1
+SupportingExamples: 230
+Strength: 0.001451378809869376
+Confidence: 1.0
+CoverageFactor: 0.0037313432835820895
+Coverage: 1
+CoveredExamples: 230
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+496 : (cintercept1 >= 0.067509) & (cslope5 >= 0.08548) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 4
+SupportingExamples: 148, 457, 478, 523
+Strength: 0.005805515239477504
+Confidence: 1.0
+CoverageFactor: 0.014925373134328358
+Coverage: 4
+CoveredExamples: 148, 457, 478, 523
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 3.508882736647824E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5001754441368323
+s-ConfirmationMeasure: 0.23228803716608595
+
+497 : (cintercept1 >= 0.046873) & (cslope5 >= 0.085337) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 7
+SupportingExamples: 103, 121, 223, 279, 338, 424, 477
+Strength: 0.010159651669085631
+Confidence: 1.0
+CoverageFactor: 0.02766798418972332
+Coverage: 7
+CoveredExamples: 103, 121, 223, 279, 338, 424, 477
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0010551157286101665
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.500527557864305
+s-ConfirmationMeasure: 0.23282887077997672
+
+498 : (cintercept1 >= -0.282887) & (cintercept4 >= 0.160034) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 10
+SupportingExamples: 45, 56, 118, 372, 382, 440, 466, 599, 616, 636
+Strength: 0.01451378809869376
+Confidence: 1.0
+CoverageFactor: 0.04149377593360996
+Coverage: 10
+CoveredExamples: 45, 56, 118, 372, 382, 440, 466, 599, 616, 636
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 0.5941140404659718
+A-ConfirmationMeasure: 0.007020365580647264
+Z-ConfirmationMeasure: 0.6921428571428572
+l-ConfirmationMeasure: 1.3680011680725652
+c1-ConfirmationMeasure: 0.3460714285714286
+s-ConfirmationMeasure: 0.1659815005138746
+
+499 : (cintercept1 >= -0.10002) & (cslope5 >= 0.086935) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 3
+SupportingExamples: 287, 459, 655
+Strength: 0.0043541364296081275
+Confidence: 1.0
+CoverageFactor: 0.011538461538461539
+Coverage: 3
+CoveredExamples: 287, 459, 655
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 7.025925665706457E-4
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5003512962832853
+s-ConfirmationMeasure: 0.23255813953488372
+
+500 : (cintercept1 >= -0.018536) & (slope2 <= -0.020356) => (destClass <= n1) |CERTAIN, AT_MOST, n1|
+Support: 2
+SupportingExamples: 183, 312
+Strength: 0.002902757619738752
+Confidence: 1.0
+CoverageFactor: 0.007462686567164179
+Coverage: 2
+CoveredExamples: 183, 312
+NegativeCoverage: 0
+NegativeCoveredExamples: 
+InconsistencyMeasure: 0.0
+EpsilonPrimMeasure: 0.0
+f-ConfirmationMeasure: 1.0
+A-ConfirmationMeasure: 0.0017626301261690644
+Z-ConfirmationMeasure: 1.0
+l-ConfirmationMeasure: Infinity
+c1-ConfirmationMeasure: 0.5008813150630845
+s-ConfirmationMeasure: 0.23337222870478413
+
+
+
 Generic consistency parameter = 0.990, consistency calculated with respect to = POS, condition selection method = DEFAULT, negative examples treatment = COVER_ONLY_INCONSISTENT_NEGATIVE_EXAMPLES, rules type = DEFAULT, minimal rate of covered positive examples = -1.0, partial matching closest rule = false, all directions = false, all positive examples = false, check confidence during minimality test = true, delete not minimal rules = true, delete redundant conditions = true, delete redundant rules = true, each rule must have at least one condition = false, maximal quantity of rules for positive examples = -1, classifier type = pl.poznan.put.cs.idss.jrs.classifiers.RulesDRSAClassificationMethod, generate intermediate files = false, number of cross valdation folds = 5, number of repetitions = 3, seed = 64, input file name = ./REGRESSION/REGRESSIONforCHLORINECONCENTRATIONwithparts-10_1_AD.isf, input test file name = null, output file name = null, majority class = false, median class = false, consistency measure = pl.poznan.put.cs.idss.jrs.approximations.LGBalanceMeasure, number of classifiers in ensemble = 10, aggregation method = MajorityVoting, percentage size of bootstrap sample = 20.0, attributes confirmation mode = false, features collection mode = false, ln consistency sampling, number of HVDM objects = -1, neighborhood bagging alpha = 0.5, neighborhood bagging beta = 0.5, neighborhood bagging tau = 1.0, neighborhood bagging psi = 1.0, underbagging = false, depends on attributes and classes = false, debug mode = false
 0 [main] INFO pl.poznan.put.cs.idss.jrs.executors.GenericVCdomLEMCommand  - STARTED  Tue Oct 13 20:53:45 CEST 2015
 
