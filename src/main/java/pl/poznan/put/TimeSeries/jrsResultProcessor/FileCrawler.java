@@ -21,7 +21,7 @@ public class FileCrawler {
 	private Experiments experiment = Experiments.REGRESSION;
 	private String path;
 
-	private String prefix, suffix;
+	private String prefix, sufix;
 	private String[] vcdomlemVariants = new String[] { "_AD.isf.jRS_LGBalanced_n10_k20_x5_a3VCDomLEM.res",
 			"_AD.isf.jRS_LGBalanced_n20_k20_x5_a3VCDomLEM.res" };
 
@@ -33,7 +33,7 @@ public class FileCrawler {
 	public void wholeExperiment() throws Exception {
 		for (String prefix : arffVariants) {
 			for (String sufix : vcdomlemVariants) {
-				Path path = Paths.get(outputFolder + experiment + "4allwith-" + prefix + suffix);
+				Path path = Paths.get(outputFolder + experiment + "4allwith-" + prefix + sufix);
 				try (BufferedWriter writer = Files.newBufferedWriter(path)) {
 					writer.write(resultsForEachDataset(prefix, sufix));
 				}
@@ -93,11 +93,11 @@ public class FileCrawler {
 		sb.append("with");
 		sb.append(arff);
 		prefix = sb.toString();
-		suffix = vc;
+		sufix = vc;
 	}
 
 	private List<Path> listFiles() {
-		String[] list = FileLister.getDirectoryFiles(path, prefix, suffix);
+		String[] list = FileLister.getDirectoryFiles(path, prefix, sufix);
 		List<Path> paths = new ArrayList<>();
 		for (String elem : list) {
 			Path elemPath = Paths.get(path + elem);
