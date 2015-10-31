@@ -14,22 +14,41 @@ import pl.poznan.put.TimeSeries.Util.FileLister;
 
 public class FileCrawler {
 
-	private String[] arffVariants = new String[] { "parts-10", "parts-20", "parts-3", "parts-5", "parts-48" };
+	//DOMINANTforECGFIVEDAYSwithparts-1ngram-2alpha-3_AD.isf.jRS_LGBalanced_n10_k20_x5_a3VCDomLEM.res
+	
+	//private String[] arffVariants = new String[] { "parts-10", "parts-20", "parts-3", "parts-5", "parts-48" };
+	
+	private String[] arffVariants = new String[] { 
+			"parts-1ngram-2alpha-3", 
+			"parts-1ngram-2alpha-5", 
+			"parts-1ngram-2alpha-11", 
+			"parts-1ngram-3alpha-3", 
+			"parts-1ngram-3alpha-5",
+			"parts-1ngram-3alpha-11",
+			"parts-3ngram-2alpha-3",
+			"parts-3ngram-2alpha-5",
+			"parts-3ngram-2alpha-11",
+			"parts-3ngram-3alpha-3",
+			"parts-3ngram-3alpha-5",
+			"parts-3ngram-3alpha-11",
+			"parts-5ngram-2alpha-3",
+			"parts-5ngram-2alpha-5",
+			"parts-5ngram-2alpha-11",
+			"parts-5ngram-3alpha-3",
+			"parts-5ngram-3alpha-5",
+			"parts-5ngram-3alpha-11",			
+	};
+	
 	private Datasets dataset = Datasets.ECGFIVEDAYS;
-	private String outputFolder = "output/results/regression-vcdomlem/";
+	private String outputFolder = "output/results/dominant/";
+	private String inputFolder = "output/results/dominant-clean/";
 
-	private Experiments experiment = Experiments.REGRESSION;
-	private String path;
+	private Experiments experiment = Experiments.DOMINANT;
 
 	private String prefix, sufix;
 	private String[] vcdomlemVariants = new String[] { "_AD.isf.jRS_LGBalanced_n10_k20_x5_a3VCDomLEM.res",
 			"_AD.isf.jRS_LGBalanced_n20_k20_x5_a3VCDomLEM.res" };
-
-	public FileCrawler(String path) {
-		super();
-		this.path = path;
-	}
-
+			
 	public void wholeExperiment() throws Exception {
 		for (String prefix : arffVariants) {
 			for (String sufix : vcdomlemVariants) {
@@ -97,10 +116,10 @@ public class FileCrawler {
 	}
 
 	private List<Path> listFiles() {
-		String[] list = FileLister.getDirectoryFiles(path, prefix, sufix);
+		String[] list = FileLister.getDirectoryFiles(inputFolder, prefix, sufix);
 		List<Path> paths = new ArrayList<>();
 		for (String elem : list) {
-			Path elemPath = Paths.get(path + elem);
+			Path elemPath = Paths.get(inputFolder + elem);
 			paths.add(elemPath);
 		}
 		return paths;

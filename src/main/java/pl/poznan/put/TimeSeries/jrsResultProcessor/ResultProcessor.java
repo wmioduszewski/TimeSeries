@@ -2,10 +2,11 @@ package pl.poznan.put.TimeSeries.jrsResultProcessor;
 
 public class ResultProcessor {
 
-	static String folderPath = "output/results/regression-vcdomlem-clean/";
+	
 
 	public static void main(String[] args) {
-		FileCrawler crawler = new FileCrawler(folderPath);
+		FileCrawler crawler = new FileCrawler();
+		
 		try {
 			crawler.wholeExperiment();
 		} catch (Exception e) {
