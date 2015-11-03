@@ -7327,9 +7327,9 @@ ChlorineConcentration, TwoPatterns, InlineSkate
 \end_layout
 
 \begin_layout Standard
-Podsumowując wyniki są zadowalające dzięki eksperymentowi KNN, który nieznacznie
- odstępuje kroku w jakości wobec matematycznie skomplikowanego DTW, a zdecydowan
-ie deklasuje go w kontekście czasu przetwarzania.
+Ostatecznie zatem wyniki są zadowalające dzięki eksperymentowi KNN, który
+ nieznacznie odstępuje kroku w jakości wobec matematycznie skomplikowanego
+ DTW, a zdecydowanie deklasuje go w kontekście czasu przetwarzania.
  Największą zagadką był klasyfikator ngramowy, którego model działania powstał
  na bazie pomysłu autora, jednak jego rezultaty nie okazały się miłą niespodzian
 ką - jedynie potwierdziły, że stworzenie dobrego klasyfikatora nie jest
@@ -7789,7 +7789,54 @@ Podsumowanie
 \end_layout
 
 \begin_layout Standard
-Jak wykazano w ubiegłym podrozdziale
+W ostatecznym rozrachunku wykonano sześć początkowo założonych eksperymentów
+ na jedenastu zbiorach, oraz dwa eksperymenty rozszerzające na niektórych
+ z nich.
+ W wersji podstawowej do pracy zaprzęgnięto klasyczną metodę regresji, algorytm
+ KNN, dość nowatorskie podejścia przetwarzania danych algorytmem SAX, a
+ także w ramach referencji posłużono się algorytmem DTW.
+\end_layout
+
+\begin_layout Standard
+Mimo że liczba zbiorów nie była przesadnie liczna, dobrany zestaw zbiorów
+ był na tyle różnorodny, że dostarczał zbiory zarówno z małą i dużą liczbą
+ instancji jak i atrybutów.
+ Zapewnił również zbiory dwu- oraz wielo klasowe.
+ 
+\end_layout
+
+\begin_layout Standard
+Właściwe eksperymenty również nie skupiały się tylko na przesyłaniu danych
+ klasyfikatorom.
+ Ich przetwarzanie w wielu przypadkach można uznać za dwuetapowe - etap
+ wstępnej obróbki danych, a dopiero potem - klasyfikacji.
+\end_layout
+
+\begin_layout Standard
+Pokuszono się również o stworzenie autorskiego klasyfikatora, bazującego
+ na danych zwróconych przez algorytm SAX.
+ Mimo że nie spodziewano się rewelacyjnych wyników, to jego nienajlepsze
+ wyniki były okazały się dla autora drobnym zawodem.
+\end_layout
+
+\begin_layout Standard
+W końcówce prac nad niniejszą pracą zdecydowano się na stworzenie środowiska
+ dla uruchomienia kolejnych eksperymentów - tym razem z podejściem dominacyjnym.
+ Na pierwszy rzut oka wyniki te nie wprowadziły widocznego postępu wobec
+ swoich poprzedników.
+ Jednak należy pamiętać, że ze względu na ograniczający autora czas, mają
+ one raczej charakter wstępny.
+ Eksperymenty te uruchamiane były z uczeniem się tylko na 20% części zbiorów.
+ Ponadto podejście dominacyjne drastycznie zwiększa liczbę atrybutów (czterokrot
+nie w porównaniu do innych) - co na pewno miało wpływ na wyniki w mniejszych
+ lub wieloklasowych zbiorach (gdzie przypadało mało isntancji na klasę).
+\end_layout
+
+\begin_layout Standard
+Mając to na uwadze w kolejnym kroku możnaby rozważyć podejście Attribute
+ Baggingu do istniejących rozwiązań dominacyjnych.
+ Pozwoliłoby to na znaczne uszczuplenie liczby atrybutów, co niewątpliwie
+ przełożyłoby się na inne wyniki niż dotychczasowe.
 \end_layout
 
 \begin_layout Chapter
