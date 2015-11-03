@@ -7451,7 +7451,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-VC-DomLEMdla ECGFiveDays
+VC-DomLEM dla ECGFiveDays
 \end_layout
 
 \end_inset
@@ -7494,7 +7494,7 @@ VC-DomLEM dla TwoLeadECG
 \end_layout
 
 \begin_layout Standard
-Pierwszy wynik eskeprymentów z tej części wyszedł obiecująco - dokładność
+Pierwszy wynik eksperymentów z tej części wyszedł obiecująco - dokładność
  na poziomie 96%-98% jest bardzo przyzwoita i utrzymuje się na tym samym
  poziomie co w części pierwszej badania.
  W ECGFiveDays lepszy okazał się eksperyment zdominowanego zliczania ngramów,
@@ -7828,15 +7828,44 @@ W ostatecznym rozrachunku wykonano sześć początkowo założonych eksperyment�
  na jedenastu zbiorach, oraz dwa eksperymenty rozszerzające na niektórych
  z nich.
  W wersji podstawowej do pracy zaprzęgnięto klasyczną metodę regresji, algorytm
- KNN, dość nowatorskie podejścia przetwarzania danych algorytmem SAX, a
- także w ramach referencji posłużono się algorytmem DTW.
+ 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+KNN
+\end_layout
+
+\end_inset
+
+, dość nowatorskie podejścia przetwarzania danych algorytmem 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+SAX
+\end_layout
+
+\end_inset
+
+, a także w ramach referencji posłużono się algorytmem 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+DTW
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
 Mimo że liczba zbiorów nie była przesadnie liczna, dobrany zestaw zbiorów
  był na tyle różnorodny, że dostarczał zbiory zarówno z małą i dużą liczbą
  instancji jak i atrybutów.
- Zapewnił również zbiory dwu- oraz wielo klasowe.
+ Zapewnił również zbiory dwu- oraz wieloklasowe.
  
 \end_layout
 
@@ -7848,14 +7877,76 @@ Właściwe eksperymenty również nie skupiały się tylko na przesyłaniu danyc
 \end_layout
 
 \begin_layout Standard
-Pokuszono się również o stworzenie autorskiego klasyfikatora, bazującego
- na danych zwróconych przez algorytm SAX.
- Mimo że nie spodziewano się rewelacyjnych wyników, to jego nienajlepsze
+Zestaw użytych klasyfikatorów również był urozmaicony - zastosowano klasyfikator
+y pakietu 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+weka
+\end_layout
+
+\end_inset
+
+: 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+J48
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+IBk
+\end_layout
+
+\end_inset
+
+, meta-klasyfikator agregujący 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+Bagging
+\end_layout
+
+\end_inset
+
+, a także klasyfikatora implementującego algorytm 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+VC-DomLEM
+\end_layout
+
+\end_inset
+
+.
+ Pokuszono się również o stworzenie autorskiego klasyfikatora, bazującego
+ na danych zwróconych przez algorytm 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+SAX
+\end_layout
+
+\end_inset
+
+.
+ Mimo że nie spodziewano się rewelacyjnych wyników, to jego nie najlepsze
  wyniki były okazały się dla autora drobnym zawodem.
 \end_layout
 
 \begin_layout Standard
-W końcówce prac nad niniejszą pracą zdecydowano się na stworzenie środowiska
+W ostatnim etapie przeprowadzania badań zdecydowano się na stworzenie środowiska
  dla uruchomienia kolejnych eksperymentów - tym razem z podejściem dominacyjnym.
  Na pierwszy rzut oka wyniki te nie wprowadziły widocznego postępu wobec
  swoich poprzedników.
@@ -7864,12 +7955,21 @@ W końcówce prac nad niniejszą pracą zdecydowano się na stworzenie środowis
  Eksperymenty te uruchamiane były z uczeniem się tylko na 20% części zbiorów.
  Ponadto podejście dominacyjne drastycznie zwiększa liczbę atrybutów (czterokrot
 nie w porównaniu do innych) - co na pewno miało wpływ na wyniki w mniejszych
- lub wieloklasowych zbiorach (gdzie przypadało mało isntancji na klasę).
+ lub wieloklasowych zbiorach (gdzie przypadało mało instancji na klasę).
 \end_layout
 
 \begin_layout Standard
-Mając to na uwadze w kolejnym kroku możnaby rozważyć podejście Attribute
- Baggingu
+Mając to na uwadze w kolejnym kroku można by rozważyć podejście 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+Attribute Baggingu
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset citation
 LatexCommand cite
 key "AttributeBagging"
