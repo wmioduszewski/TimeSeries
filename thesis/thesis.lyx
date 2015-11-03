@@ -7340,8 +7340,8 @@ Analiza wyników - część rozszerzona
 
 \begin_layout Standard
 Po udanej ewaluacji założonych eksperymentów postanowiono rozszerzyć nieco
- zakres tej pracy i przetestować zdolności algorytmu skupionego na drzewach
- decyzyjnych - a mianowicie na klasyfikatorze VCDomLem.
+ zakres tej pracy i przetestować zdolności algorytmu skupionego na zbiorach
+ reguł decyzyjnych - a mianowicie na klasyfikatorze VCDomLem.
  Ze względu na ograniczenia techniczne i czasowe nie uzyskano wyników dla
  wszystkich dostępnych zbiorów, lecz badana część była wystarczająca aby
  dostarczyć interesujących informacji.
@@ -7378,37 +7378,20 @@ VCDomLem bagging ngrams
 \end_layout
 
 \begin_layout Itemize
-Zliczanie zdominowane - części: 5, ngram: 2, alfabet: 11, n: 10
+Zliczanie zdominowane - części: 5, ngram: 2, alfabet: 11
 \end_layout
 
 \begin_layout Itemize
-Zliczanie zdominowane - części: 3, ngram: 2, alfabet: 5, n: 20
-\end_layout
-
-\begin_layout Itemize
-Regresja - części: 20, n: 10
-\end_layout
-
-\begin_layout Itemize
-Regresja - części: 20, n: 20
+Regresja - części: 20
 \end_layout
 
 \begin_layout Standard
-Można zauważyć, że w zestawieniu pojawił się nieomówiony wcześniej parametr:
- n.
- Jest to parametr dotyczący klasyfikatora 
-\begin_inset Flex Emph
-status open
-
-\begin_layout Plain Layout
-VCDomLem
-\end_layout
-
-\end_inset
-
- i odpowiada on za <tu wytłumacz>.
- Należy również wspomnieć, że klasyfikator ten ze względu na zbyt dużą ilość
- czasu przetwarzania, został ustawiony tak, by uczył się tylko na 10% danych.
+Należy również wspomnieć, że klasyfikator ten ze względu na zbyt dużą ilość
+ czasu przetwarzania, został ustawiony tak, by uczył się tylko na 20% części
+ danych.
+ Każdy z eksperymentów używał na swoje potrzeby dziesięciu niezależnie stworzony
+ch klasyfikatorów (każdy z nich tworzył swoje reguły), a przyporządkowania
+ ustalano za pomocą głosowania.
 \end_layout
 
 \begin_layout Subsection*
@@ -7436,10 +7419,6 @@ VCDomLem dla ECGFiveDays
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -7472,59 +7451,18 @@ VCDomLem dla TwoLeadECG
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-Dość podobne zbiory, na których 
-\begin_inset Flex Emph
-status open
-
-\begin_layout Plain Layout
-Regression
-\end_layout
-
-\end_inset
-
- oraz 
-\begin_inset Flex Emph
-status open
-
-\begin_layout Plain Layout
-Dominant
-\end_layout
-
-\end_inset
-
- n10 zademonstrowały swoją skuteczność.
- Nieco gorzej wypadł 
-\begin_inset Flex Emph
-status open
-
-\begin_layout Plain Layout
-Dominant
-\end_layout
-
-\end_inset
-
- n20 choć nie jest to wynik dyskredytujący.
- W porównaniu do ubiegłej tury eksperymentów na 
-\begin_inset Flex Emph
-status open
-
-\begin_layout Plain Layout
-ECG Five Days
-\end_layout
-
-\end_inset
-
- można zauważyć, że lepiej wypadły eksperymenty 
+Pierwszy wynik eskeprymentów z tej części wyszedł obiecująco - dokładność
+ na poziomie 96%-98% jest bardzo przyzwoita i utrzymuje się na tym samym
+ poziomie co w części pierwszej badania.
+ W ECGFiveDays lepszy okazał się eksperyment zdominowanego zliczania ngramów,
+ a w drugim zbiorze lepsza okazała się być regresja.
+ Wprawdzie zestawiając wszystkie wyniki, 
 \begin_inset Flex Emph
 status open
 
@@ -7534,29 +7472,12 @@ DTW raw
 
 \end_inset
 
- oraz 
-\begin_inset Flex Emph
-status open
-
-\begin_layout Plain Layout
-KNN SAX
-\end_layout
-
-\end_inset
-
- zatem w tym przypadku nowe podejście nie zapewniło postępu.
- W drugim zbiorze lepszy jest już tylko 
-\begin_inset Flex Emph
-status open
-
-\begin_layout Plain Layout
-DTW raw
-\end_layout
-
-\end_inset
-
-, o którym już wspominano, że jest eksperymentem bardziej referencyjnym
- niż współzawodniczącym.
+ okazałby się podejściem najlepszym, lecz o nim już wspominano, że jest
+ eksperymentem bardziej referencyjnym niż współzawodniczącym.
+ Zatem w tym wypadku nowe podejście do testowania nie polepszyło rezultatów,
+ jednak dorównanie tak dobremu wynikowi ubiegłych ewaluacji można już uznać
+ za sukces.
+ 
 \end_layout
 
 \begin_layout Subsection*
@@ -7600,20 +7521,12 @@ VCDomLem dla MoteStrain
 \end_layout
 
 \begin_layout Standard
-Wszystkie eksperymenty zaprezentowały bardzo równe wyniki, choć najlepiej
- wypadł niewiele lepszy od pozostałych - 
-\begin_inset Flex Emph
-status open
-
-\begin_layout Plain Layout
-Dominant n10
-\end_layout
-
-\end_inset
-
-.
- Wyniki znów trochę gorsze od odpowiedników z części pierwszej, ale wciąż
- wysokie.
+Stabilny zbiór - wypadł niemalże tak samo na obu eksperymentach.
+ Swoją niewielką przewagę tym razem zademonstrowało podejście zdominowane,
+ jednak jego wynik w odniesieniu do doświadczeń z ubiegłej części wypadł
+ przeciętnie - choć ponownie, wynik na poziomie powyżej 90% można uznać
+ za wysoki.
+ 
 \end_layout
 
 \begin_layout Subsection*
@@ -7657,46 +7570,15 @@ VCDomLem dla ItalyPowerDemand
 \end_layout
 
 \begin_layout Standard
-Jest to zbiór, na którym widać już wyraźniejszą amplitudę wartości między
- najgorszym, a najlepszym rezultatem.
- Ponownie najlepiej wypadł eksperyment 
-\begin_inset Flex Emph
-status open
-
-\begin_layout Plain Layout
-Dominant n10
-\end_layout
-
-\end_inset
-
-, niewiele gorzej 
-\begin_inset Flex Emph
-status open
-
-\begin_layout Plain Layout
-Dominant n20
-\end_layout
-
-\end_inset
-
-.
- Nie był to najlepszy moment regresji, która w zestawieniu wszystkich eksperymen
-tów lepsza była tylko od 
-\begin_inset Flex Emph
-status open
-
-\begin_layout Plain Layout
-Basic ngrams
-\end_layout
-
-\end_inset
-
-.
- Najlepsze wyniki z pierwszej i drugiej części są niemalże równe.
+Zbiór ItalyPowerDemand poróżnił nieco badane eksperymenty - widać wyraźną
+ amplitudę pomiędzy wartościami ich dokładności.
+ Wariant zdominowany wypadł zdecydowanie lepiej niż jego regresyjny rywal.
+ Sam wynik robi wrażenie - 96% dokładność w ubiegłym zestawieniu zapewniłaby
+ czołówkę rankingu.
 \end_layout
 
 \begin_layout Subsection*
-ChlorineConcentration oraz TwoPatterns
+ChlorineConcentration
 \end_layout
 
 \begin_layout Standard
@@ -7736,7 +7618,7 @@ VCDomLem dla ChlorineConcentration
 \end_layout
 
 \begin_layout Standard
-Dla zbioru 
+Wyniki 
 \begin_inset Flex Emph
 status open
 
@@ -7746,17 +7628,7 @@ ChlorineConcentration
 
 \end_inset
 
- nie obliczono wprawdzie wyniku dla 
-\begin_inset Flex Emph
-status open
-
-\begin_layout Plain Layout
-Dominant n20
-\end_layout
-
-\end_inset
-
- jednak pozostałe pozwalają sądzić, że dla tego zbioru klasyfikator 
+ pozwalają sądzić, że dla tego zbioru klasyfikator 
 \begin_inset Flex Emph
 status open
 
@@ -7816,7 +7688,7 @@ Największe rozczarowanie tego badania - niestety wyniki niemal dwukrotnie
  mniejsze niż ich odpowiedniki z pierwszej części.
  Jednakże pamiętać należy że jest to zbiór z największą liczbą klas (7)
  i niezbyt dużym zbiorem instancji (650), a także klasyfikatorem uczącym
- się tylko na 10% zbiorze - te argumenty są w stanie w pewnym stopniu usprawiedl
+ się tylko na 20% zbiorze - te argumenty są w stanie w pewnym stopniu usprawiedl
 iwić taki rezultat.
 \end_layout
 
@@ -7861,28 +7733,11 @@ VCDomLem dla Pacjentów
 \end_layout
 
 \begin_layout Standard
-Po kilku niepowodzeniach klasyfikatora 
-\begin_inset Flex Emph
-status open
-
-\begin_layout Plain Layout
-VCDomLem
-\end_layout
-
-\end_inset
-
- można z przyjemnością przedstawić jego wynik na zbiorze 
-\begin_inset Flex Emph
-status open
-
-\begin_layout Plain Layout
-Pacjentów
-\end_layout
-
-\end_inset
-
-, w którym znów dorównuje swoim rywalom a ponadto demonstruje nieco lepszą
- ich stabilność.
+W zbiorze danych Pacjentów lepiej poradził sobie wariant regresyjny - którego
+ wynik na przestrzeni innych podejść jest w pełni zadowalający.
+ Pamiętać należy, że zbiór ten był dość trudny - poprzednie ewaluacje osiągały
+ tutaj wyniki w granicach 50% zatem rezultat przekraczający 56% sprowadza
+ podejście do klasyfikacji danych z niniejszej części na dobre tory.
 \end_layout
 
 \begin_layout Subsection*
@@ -7902,8 +7757,8 @@ VCDomLem
 \end_inset
 
  potrafią osiągnąć lepsze wyniki od poprzedników, jednak na danych dostępnych
- w niniejszej pracy pokazały mniejszą stabilność działania zaliczając gorsze
- momenty, tak jak w przypadku 
+ w niniejszej pracy zademonstrowały nieco mniejszą stabilność działania.
+ Miało to miejsce choćby przypadku 
 \begin_inset Flex Emph
 status open
 
@@ -7913,17 +7768,21 @@ InlineSkate
 
 \end_inset
 
- - choć jak wspomniano może to być wina charakterystyki zbioru.
+ - lecz jak wspomniano może to być wina charakterystyki zbioru.
  
 \end_layout
 
 \begin_layout Standard
-Badane podejście drzew decyzyjnych na pewno ma duży potencjał, jednak przy
- obranym kierunku tworzenia danych wejściowych dla eksperymentu, niekorzystny
- stosunek liczby atrybutów do liczby instancji na pewno niekorzystnie odbił
- się na podejściu regułowym.
+Badane podejście zbioru reguł decyzyjnych na pewno ma duży potencjał, jednak
+ przy obranym kierunku tworzenia danych wejściowych dla eksperymentu, niekorzyst
+ny stosunek liczby atrybutów do liczby instancji na pewno niekorzystnie
+ odbił się na podejściu regułowym.
  Zatem mimo drobnych niepowodzeń można uznać to podejście za równie dobre
  odpowiednikom z pierwszej części eksperymentu.
+\end_layout
+
+\begin_layout Section
+Podsumowanie
 \end_layout
 
 \begin_layout Chapter
