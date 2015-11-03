@@ -4403,10 +4403,45 @@ key "VcDomLem"
 \end_layout
 
 \begin_layout Standard
-VC-DomLEMcechuje podejście zdominowane (DRSA - Dominance-based Rough Set
- Approach).
- Polega on na wprowadzaniu dodatkowych atrybutów dla danych charakteryzujących
- się , generuje minimalny zbiór reguł decyzyjnych
+Algorytm VC-DomLEM bazuje na schemacie sekwencyjnego pokrywania 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Michalski1969"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Furnkranz"
+
+\end_inset
+
+.
+ Algorytm ten pokrywa obszary pozytywne, utworzone przez VC-DRSA 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BlaszczynskiEtAl"
+
+\end_inset
+
+, za pomocą reguł decyzyjnych o wymaganej spójności.
+ VC-DomLEM jest inspirowany algorytmem LEM2 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Grzymala"
+
+\end_inset
+
+, a także adaptacją tego algorytmu dla danych porządkowych DomLEM 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GrecoEtAl"
+
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -7834,7 +7869,14 @@ nie w porównaniu do innych) - co na pewno miało wpływ na wyniki w mniejszych
 
 \begin_layout Standard
 Mając to na uwadze w kolejnym kroku możnaby rozważyć podejście Attribute
- Baggingu do istniejących rozwiązań dominacyjnych.
+ Baggingu
+\begin_inset CommandInset citation
+LatexCommand cite
+key "AttributeBagging"
+
+\end_inset
+
+ do istniejących rozwiązań dominacyjnych.
  Pozwoliłoby to na znaczne uszczuplenie liczby atrybutów, co niewątpliwie
  przełożyłoby się na inne wyniki niż dotychczasowe.
 \end_layout
