@@ -191,7 +191,7 @@ Opracować wybrane podejścia do klasyfikacji danych czasowych.
 \end_layout
 
 \begin_layout Itemize
-Zaimplementować i udokumentować zaproponowan rozwiązania.
+Zaimplementować i udokumentować zaproponowane rozwiązania.
 \end_layout
 
 \begin_layout Itemize
@@ -208,8 +208,8 @@ Początkowo celem niniejszej pracy była analiza szeregów czasowych zawierając
  i stworzone metody poradzą sobie w odniesieniu do innych szeregów czasowych,
  rozszerzono zbiór danych o kolejne zestawy szeregów czasowych.
  Kolejną rzeczą, od której należało się uniezależnić są klasyfikatory, dlatego
- też eksperymenty przeprowadzone zostały na kilku różnych technikach kategoryzow
-ania instancji.
+ też eksperymenty przeprowadzone zostały z wykorzystaniem różnych typów
+ klasyfikatorów.
 \end_layout
 
 \begin_layout Standard
@@ -222,8 +222,8 @@ Ostatecznie po wielu testach wyklarowano sześć eksperymentów, których wyniki
 \begin_layout Standard
 W rozdziale 2 przedstawiono kilka podejść analizy szeregów czasowych wybranych
  z przeanalizowanej literatury.
- Ponadto zademonstrowano działanie dwóch kluczowych algorytmów tej pracy,
- to jest algorytmu SAX oraz DTW.
+ Ponadto zademonstrowano działanie dwóch kluczowych algorytmów rozważanych
+ w tej pracy, to jest algorytmu SAX oraz DTW.
  Rozdział 3 poświęcono zobrazowaniu koncepcji projektu, toteż rozdział ten
  skupia się na przestudiowaniu różnych sposobów przetwarzania danych jeszcze
  zanim te trafią do klasyfikatora.
@@ -233,8 +233,8 @@ W rozdziale 2 przedstawiono kilka podejść analizy szeregów czasowych wybranyc
 \end_layout
 
 \begin_layout Standard
-Rozdział 4 przedstawia sposób implemetacji programu potrzebnego do przeprowadzen
-ia eksperymentów.
+Rozdział 4 przedstawia sposób implementacji programu potrzebnego do przeprowadze
+nia eksperymentów.
  Zamieszczono tutaj zwięzłe opisy użytych bibliotek, oraz szczegółowy opis
  importu oraz eksportu danych - tak aby w przyszłości nie było problemu
  z ewentualnym rozszerzeniem istniejącego kodu.
@@ -254,11 +254,14 @@ Definicja szeregu czasowego
 Szereg czasowy jest to seria pewnych obserwacji osadzonych w czasie.
  Można powiedzieć, że jest to przyporządkowanie danych liczbowych do odpowiadają
 cych im punktów w czasie, najczęściej z jednakowymi odstępami między kolejnymi
- wartościami.
-\end_layout
+ wartościami
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Stefan"
 
-\begin_layout Standard
-http://www.cs.put.poznan.pl/jstefanowski/aed/TPtimeseries.pdf
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -275,13 +278,20 @@ key "Shum2010"
 \begin_layout Standard
 Tak obszerny problem jak analiza danych czasowych musi nieść za sobą rozmaite
  metody przeprowadzania tej analizy.
- Pomimo tego, że do ostatecznego eksperymentu wybrano tylko jedną z nich
- - regresję, to postanowiono przedstawić po krótce czym charakteryzują się
+ Wprawdzie do ostatecznego eksperymentu wybrano tylko dwie z nich - regresję
+ oraz DTW, to postanowiono przedstawić pokrótce czym charakteryzują się
  poszczególne metody oraz ewentualnie dlaczego zostały porzucone.
 \end_layout
 
 \begin_layout Subsection
 Regresja liniowa
+\begin_inset CommandInset citation
+LatexCommand cite
+key "StefanRegresja"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -306,7 +316,7 @@ S=\sum_{i=1}^{n}(y_{i}-\hat{y_{i}})^{2}
 
 \end_inset
 
-http://www.cs.put.poznan.pl/jstefanowski/aed/TPDregresjawieloraka.pdf
+
 \end_layout
 
 \begin_layout Subsection
@@ -456,7 +466,7 @@ Model ARIMA (ang.
 \end_layout
 
 \begin_layout Standard
-Autoregresja jest to idea, która skupia się na wyrażeniu bieżącej wartości
+Autoregresja jest to metoda, która skupia się na wyrażeniu bieżącej wartości
  na podstawie
 \begin_inset Formula $n$
 \end_inset
@@ -525,7 +535,7 @@ gdzie amplituda funkcji to
 \end_layout
 
 \begin_layout Standard
-Jak widać jest to kolejn metoda, za którą stoi solidne matematyczne zaplecze
+Jak widać jest to kolejna metoda, za którą stoi solidne matematyczne zaplecze
  i która wymierzona jest w szeregi cykliczne, z którymi w zbiorze danych
  pacjentów jaskry nie mamy do czynienia, zatem metodę tę odrzucono.
 \end_layout
@@ -538,8 +548,8 @@ SAX (Symbolic Aggregate approXimation)
 Już na początkowym etapie rozważań nad zakresem niniejszej pracy zadecydowano,
  że jednym głównych nurtów jaki przyjmie, będzie przekształcanie sygnału
  według metody SAX.
- Mówiąc po krótce, jest to metoda odzwierciedlająca oryginalny sygnał w
- ciąg znaków, co stwarza możliwości klastfikacji danych za pomocą istniejących
+ Mówiąc pokrótce, jest to metoda odzwierciedlająca oryginalny sygnał w ciąg
+ znaków, co stwarza możliwości klasyfikacji danych za pomocą istniejących
  już algorytmów tekstowych.
 \end_layout
 
@@ -1289,7 +1299,7 @@ vec1
 
 \end_inset
 
- wyraźnie dostosowywuje się do sygnału 
+ wyraźnie dostosowuje się do sygnału 
 \begin_inset Flex Code
 status open
 
@@ -1359,10 +1369,10 @@ reference "fig:Macierz-DTW"
 
 .
  W momencie przyrównywania dwóch sygnałów, tworzona jest macierz odległości,
- której wartiści obliczane są rekurencyjnie.
+ której wartości obliczane są rekurencyjnie.
  Ostatni wiersz macierzy to różnice między kolejnymi wartościami szeregów.
  Kolejne wiersze powstają na ich podstawie.
- Gdy maciesz jest już skonstruowana, wybiera się najkrótszą kosztowo ścieżkę
+ Gdy macierz jest już skonstruowana, wybiera się najkrótszą kosztowo ścieżkę
  między skrajnymi wierzchołkami macierzy - suma wartości komórek, przez
  które przechodzi ścieżka jest dystansem między tymi szeregami.
 \begin_inset Float figure
@@ -1415,7 +1425,7 @@ name "fig:Macierz-DTW"
  Należy nadmienić, że metoda ta jest dokładna, lecz za jej skutecznością
  idzie spory nakład czasowy - czas przetwarzania jest nieporównywalnie większy
  od pozostałych metod.
- Szczegółowo zostanie to omówione w rodziale poświęconym wynikom.
+ Szczegółowo zostanie to omówione w rozdziale poświęconym wynikom.
 \end_layout
 
 \begin_layout Standard
@@ -1448,8 +1458,8 @@ Zbiór dostarczony przez dr.
  a 51 to pacjenci ze zdiagnozowaną jaskrą.
  Dla każdego pacjenta zebrano 288 pomiarów (pomiar co 5 minut przez całą
  dobę) tzw.
- TFADJ <tu rozwinięcie?> będącym przekształceniem zmierzonego w danym momencie
- ciśnienia w oku.
+ TFADJ (Trigger Fish Adjusted) będącym przekształceniem zmierzonego w danym
+ momencie ciśnienia w oku.
  Poniżej poglądowe zdjęcie metody zbierania pomiarów:
 \end_layout
 
@@ -1504,7 +1514,7 @@ key "UCRArchive"
 
 \begin_layout Standard
 Zbiory pobrane od prof.
- Eamonn'a nie zawierają opisu poszczególnych zbiorów, dlatego też ich tu
+ Eamonna nie zawierają opisu poszczególnych zbiorów, dlatego też ich tu
  nie przedstawiono.
  Jednak przetwarzając dane można było wyciągnąć z nich pewne interesujące
  statystyki, które przedstawiono w poniższej tabeli (w ostatnim wierszu
@@ -1555,7 +1565,7 @@ name "tab:Szczegóły-danych"
 status open
 
 \begin_layout Plain Layout
-nazwa zbióru
+nazwa zbioru
 \end_layout
 
 \end_inset
@@ -2309,20 +2319,6 @@ Koncepcja projektu
 
 \begin_layout Section
 Metody przetwarzania danych dla klasyfikatorów
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-DRSA w dominacji, dyskretyzacja knna saxem, ogólnie- użycie saxa
-\end_layout
-
-\begin_layout Plain Layout
-Klasyfikatory drzewiaste, regułowe, bagging
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -2399,7 +2395,7 @@ Counted
 Metoda zliczania ściśle bazuje na metodzie SAX - modyfikacje danych następują
  na poziomie wynikowego łańcucha znaków, a nie czystego szeregu czasowego.
  Pierwszym krokiem zatem jest wyliczenie łańcucha SAX dla instancji.
- Następnie łancuch ten dzieli się na zadaną liczbę części.
+ Następnie łańcuch ten dzieli się na zadaną liczbę części.
  W kolejnym kroku potrzebny jest kolejny parametr - ngram - który może przyjąć
  wartość 2 lub 3.
  Polega on na zliczeniu wszystkich możliwych 2- lub 3gramów w łańcuchu badanej
@@ -3479,7 +3475,7 @@ o3ba
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Zliczenie 2gramów dla instacji przedstawionych w 
+Zliczenie 2gramów dla instancji przedstawionych w 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Podział-łańcuchów-SAX"
@@ -3683,7 +3679,7 @@ wysokie
 \end_inset
 
  na każdym z argumentów (tutaj: znaków w łańcuchu) w opcji 'atMost' lub
- też co najwyżej tak samo opisany na każdym z agrumentów ('atLeast') jak
+ też co najwyżej tak samo opisany na każdym z argumentów ('atLeast') jak
  ten badany.
  W tabeli 
 \begin_inset CommandInset ref
@@ -4414,7 +4410,7 @@ VCDomLem cechuje podejście zdominowane (DRSA - Dominance-based Rough Set
 \end_layout
 
 \begin_layout Subsection
-NgramClassifier
+Basic Ngram Classifier
 \end_layout
 
 \begin_layout Standard
@@ -4634,8 +4630,8 @@ Dokładność (ang.
 \begin_layout Standard
 Najbardziej znana i intuicyjna miara ewaluacji klasyfikatora to właśnie
  dokładność.
- Określa ją stosunek poprawnie sklasyfikowanych instacji do liczby wszystkich
- instacji.
+ Określa ją stosunek poprawnie sklasyfikowanych instancji do liczby wszystkich
+ instancji.
  Dzięki swojej prostej koncepcji może być z powodzeniem używana zarówno
  w problemach binarnych jak i wieloklasowych.
 \begin_inset Formula 
@@ -4664,8 +4660,8 @@ True positive rate
 
 \end_inset
 
-, skupia się na zobrazowaniu stosunku instacji poprawnie zidentyfikowanych
- w klasie umownie uznanej za pozytywną do liczby instacji w tej klasie.
+, skupia się na zobrazowaniu stosunku instancji poprawnie zidentyfikowanych
+ w klasie umownie uznanej za pozytywną do liczby instancji w tej klasie.
  Na przykładzie zbioru Pacjentów opisywanego w tej pracy można powiedzieć,
  że jest to proporcja pacjentów poprawnie sklasyfikowanych jako chorzy na
  jaskrę do wszystkich, którzy są na tę jaskrę chorzy.
@@ -4735,8 +4731,8 @@ Jak można zauważyć dalej w wynikach, dla zbiorów wieloklasowych miary Sensit
 y, Specificity oraz GMean nie były obliczane, ze względu na to, że musiałyby
  zostać przedstawione dla każdej klasy osobno.
  Porównywanie takich wyników między zbiorem trójklasowym a siedmioklasowym
- byłoby niemiarodajne, dlategoteż w zbiorach posiadających co najmniej 3
- klasy zrezygnowano z obliczania tych trzech miar.
+ byłoby niemiarodajne, dlatego też w zbiorach posiadających co najmniej
+ 3 klasy zrezygnowano z obliczania tych trzech miar.
 \end_layout
 
 \begin_layout Subsubsection
@@ -5214,9 +5210,9 @@ Weka
 
 \begin_layout Standard
 Najważniejsza biblioteka, z którą program współpracuje najściślej.
- Więdząc, że Weka jest często używana do klasyfikacji czy uczenia maszynowego,
+ Wiedząc, że Weka jest często używana do klasyfikacji czy uczenia maszynowego,
  autor chciał stworzyć narzędzie kompatybilne z programem stworzonym na
- Uniwesytecie w australijskim Waikato.
+ Uniwersytecie w australijskim Waikato.
  Kilka kluczowych klas programu autora rozszerza klasy pakietu 
 \begin_inset Flex Code
 status open
@@ -5283,7 +5279,7 @@ JFreeChart
 \begin_layout Standard
 Biblioteka służąca do rysowania wykresów.
  Bardzo pomocna w początkowej fazie implementacji, kiedy autorowi zależało
- na zobrazowaniu przebiegu szeregów szasowych.
+ na zobrazowaniu przebiegu szeregów czasowych.
  Ich wizualizacja mogła przyczynić się do lepszego zrozumienia zależności
  między przebiegami, a diagnozą pacjenta.
 \end_layout
@@ -5313,7 +5309,7 @@ joda-time
 \end_layout
 
 \begin_layout Standard
-W momencie gdy prace nad tą pracą dyplomową zostały rozpoczęte, wspracie
+W momencie gdy prace nad tą pracą dyplomową zostały rozpoczęte, wsparcie
  dla obiektów typu data czy czas było dla autora niewystarczające, dlatego
  zdecydowano się na wykorzystanie biblioteki 
 \begin_inset Flex Code
@@ -5399,7 +5395,7 @@ która posiada trzy główne metody - odpalenia przebiegu pełnego eksperymentu,
  wygenerowania pliku arff dla eksperymentu oraz wyliczenia wyniku eksperymentu
  dla zadanego pliku arff.
  Ponadto jest w stanie opisać podstawowe statystyki wczytanych danych, takie
- jak liczba klas decyzyjnych, podział instacji w klasach, czy liczba atrybutów
+ jak liczba klas decyzyjnych, podział instancji w klasach, czy liczba atrybutów
  w ramach instancji.
  Aby stworzyć własny eksperyment wystarczy stworzyć klasę dziedziczącą z
  
@@ -5707,7 +5703,7 @@ setConcerningParams
 
 służy już tylko do tego, aby podczas wyświetlania wyniku eksperymentu wypisać,
  które parametry programu mają wpływ na pracę tego eksperymentu, oraz jakie
- ich wartości zostały ustawione podczas bierzącego wykonania.
+ ich wartości zostały ustawione podczas bieżącego wykonania.
  
 \end_layout
 
@@ -5754,7 +5750,7 @@ TFADJ
 \begin_layout Standard
 Drugim formatem, jaki wspiera program jest format danych prof.
  Eamonna.
- Ich charakterystyka jest prosta - każdy nowy wiersz w pliku to nowa instacja.
+ Ich charakterystyka jest prosta - każdy nowy wiersz w pliku to nowa instancja.
  W ramach każdego wiersza figurują atrybuty oddzielone spacjami, z których
  pierwszy to atrybut decyzyjny, a kolejne to szereg wartości składające
  się w szereg czasowy dla tej instancji.
@@ -5797,8 +5793,8 @@ arff
 
 \end_inset
 
- w którym zapisane są już przetworzone dane o instacjach, gotowe do klasyfikacji
- klasyfikatorami 
+ w którym zapisane są już przetworzone dane o instancjach, gotowe do klasyfikacj
+i klasyfikatorami 
 \begin_inset Flex Code
 status open
 
@@ -5841,7 +5837,7 @@ reference "code:RegressionExporter"
 
 .
  Klasa nadrzędna wymaga od programisty zaimplementowania dwóch metod oraz
- kontruktora.
+ konstruktora.
  
 \end_layout
 
@@ -5958,7 +5954,7 @@ setAttributes
 
 \end_inset
 
- w kontruktorze tak jak pokazano na wspomnianym listingu.
+ w konstruktorze tak jak pokazano na wspomnianym listingu.
 \end_layout
 
 \begin_layout Standard
@@ -6334,7 +6330,7 @@ gitlab.com
  W momencie gdy pojawia się jego nowa wersja, Travis kompiluje świeżo pobrany
  kod, uruchamia wszystkie zamieszczone w kodzie testy i ocenia tzw.
  'build' pozytywnie lub negatywnie.
- Dzięki organizacji pracy z takim serwsisem Continuous Integration i pokryciu
+ Dzięki organizacji pracy z takim serwisem Continuous Integration i pokryciu
  kluczowych obliczeniowych metod testami, wyłapano wiele błędów implementacyjnyc
 h we wczesnym ich etapie.
 \end_layout
@@ -6378,6 +6374,11 @@ KNN - ngram: 3, alfabet: 11, knn: 3
 
 \begin_layout Itemize
 Bagging - części: 5, ngram: 3, alfabet: 5
+\end_layout
+
+\begin_layout Standard
+Każdy z nich przeprowadzony został z użyciem pięciokrotnej kroswalidacji
+ powtórzonej trzy razy.
 \end_layout
 
 \begin_layout Standard
@@ -6643,7 +6644,7 @@ DTW raw
 
  - choć jak wspomniano w części teoretycznej - wyniki z tego podejścia zestawion
 e są raczej w celach porównawczych, biorąc pod uwagę fakt, że czas spędzony
- na przetwarzanie jest nieporównywalnie większy niż w pozostałych przypadkach.
+ na przetwarzanie jest nieporównywalnie dłuższy niż w pozostałych przypadkach.
  Pomijając zatem ten algorytm, najlepszą lokatę znów zajmuje 
 \begin_inset Flex Emph
 status open
@@ -6705,7 +6706,7 @@ Yoga
 \end_inset
 
  nie jest już tak prostym zbiorem jak jej dwaj poprzednicy.
- Zbiór ma 3300 instacji oraz charakteryzuje się długością szeregu 426.
+ Zbiór ma 3300 instancji oraz charakteryzuje się długością szeregu 426.
  Poziom skomplikowania odzwierciedla się na wynikach - tym razem dokładności
  klasyfikacji rozpościerają się w przedziale 
 \begin_inset Formula $0.667-0.924$
@@ -6977,7 +6978,7 @@ C4.5 bagging ngrams
 
 , a już wyraźnie gorzej (choć wciąż nienagannie) pozostałe algorytmy.
  Jest to jeden z największych zbiorów w tej analizie (5000 instancji) z
- dość długim szeregiem - 128 wartości, a także aż czteroma klasami, co tym
+ dość długim szeregiem - 128 wartości, a także aż czterema klasami, co tym
  bardziej podkreśla znakomity wynik wiodących metod klasyfikacji.
 \end_layout
 
@@ -7221,8 +7222,8 @@ Basic ngrams
  dostosowanie algorytmu do charakterystyki danych.
  Na pewno nie jest przypadkiem fakt, że żadne z podejść nie potrafiło poradzić
  sobie ze zbiorem z przyzwoitą dokładnością.
- Najprawdopodbniej szeregi te na obu klasach są relatywnie jednorodne, przez
- co klasyfikatorom łatwo pomylić osobę chorą ze zdrową.
+ Najprawdopodobniej szeregi te na obu klasach są relatywnie jednorodne,
+ przez co klasyfikatorom łatwo pomylić osobę chorą ze zdrową.
 \end_layout
 
 \begin_layout Subsection*
@@ -7280,8 +7281,8 @@ Niestety zawiódł autorski klasyfikator ngramowy, lecz jego koncept działania
 Z drugiej strony jednak prosta idea nie jest przeszkodą do zdobywania dobrych
  wyników - czego potwierdzeniem jest znakomity wynik regresji - tutaj wprawdzie
  nieco zmienionej, bo była ona liczona bowiem wielokrotnie dla kolejnych
- części sygnału w ramach każdej instacji - jednak nadal u podstaw leży nieskompl
-ikowana estymacja danych do funckcji liniowej.
+ części sygnału w ramach każdej instancji - jednak nadal u podstaw leży
+ nieskomplikowana estymacja danych do funkcji liniowej.
 \end_layout
 
 \begin_layout Standard
@@ -7340,7 +7341,7 @@ Analiza wyników - część rozszerzona
 \begin_layout Standard
 Po udanej ewaluacji założonych eksperymentów postanowiono rozszerzyć nieco
  zakres tej pracy i przetestować zdolności algorytmu skupionego na drzewach
- decyzyjnych - a mianowcicie na klasyfikatorze VCDomLem.
+ decyzyjnych - a mianowicie na klasyfikatorze VCDomLem.
  Ze względu na ograniczenia techniczne i czasowe nie uzyskano wyników dla
  wszystkich dostępnych zbiorów, lecz badana część była wystarczająca aby
  dostarczyć interesujących informacji.
@@ -7765,7 +7766,7 @@ VCDomLem
 
 \end_inset
 
- nie byl najtrafniejszym wyborem - rezultaty sięgające 70% są poniżej oczekiwań,
+ nie był najtrafniejszym wyborem - rezultaty sięgające 70% są poniżej oczekiwań,
  biorąc pod uwagę to, że dotychczas eksperymenty te radziły sobie przynajmniej
  tak samo dobrze jak te z części pierwszej.
 \end_layout
@@ -8014,7 +8015,7 @@ variant
 
 ).
  W przypadku importowania istniejącego pliku arff należy podać dokładną
- ścieżkę do pliku we właściowości 
+ ścieżkę do pliku we właściwości 
 \begin_inset Flex Code
 status open
 
@@ -8050,7 +8051,7 @@ experimentId
 
 .
  Przykładowy pełny plik konfiguracyjny z podanymi możliwymi wartościami
- na poszczególnych właściwosciach w komentarzach przedstawiono na listingu
+ na poszczególnych właściwościach w komentarzach przedstawiono na listingu
  
 \begin_inset CommandInset ref
 LatexCommand ref
