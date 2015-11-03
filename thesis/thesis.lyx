@@ -4473,18 +4473,20 @@ name "sub:Bagging"
 \end_layout
 
 \begin_layout Standard
-Attribute Bagging
+Bagging
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Bagging"
 
 \end_inset
 
- to metoda polegająca na sekwencyjnym uruchomianiu eksperymentów - za każdym
- razem jednak z losowym zbiorem atrybutów (ustala się ile atrybutów znajdzie
- się w danym eksperymencie).
- Po kilkukrotnej ewaluacji poszczególne sub-eksperymenty przydzielają instancje
- do klas za pomocą głosowania.
+ to metoda polegająca na generowaniu wielu wersji klasyfikatora po to by
+ uzyskać kształt klasyfikatora zagregowanego.
+ Wówczas o przyporządkowaniu instancji do klasy decyduje głosowanie poszczególny
+ch klasyfikatorów.
+ Kolejne wersje klasyfikatora powstają na podstawie wylosowanej (losowanie
+ ze zwracaniem) próby instacji na której wybrany klasyfikator przeprowadza
+ uczenie.
 \end_layout
 
 \begin_layout Section
@@ -7783,6 +7785,10 @@ ny stosunek liczby atrybutów do liczby instancji na pewno niekorzystnie
 
 \begin_layout Section
 Podsumowanie
+\end_layout
+
+\begin_layout Standard
+Jak wykazano w ubiegłym podrozdziale
 \end_layout
 
 \begin_layout Chapter
