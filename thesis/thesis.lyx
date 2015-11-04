@@ -6410,7 +6410,7 @@ KNN - ngram: 3, alfabet: 11, knn: 3
 \end_layout
 
 \begin_layout Itemize
-Bagging - części: 5, ngram: 3, alfabet: 5
+Bagging - części: 5, ngram: 3, alfabet: 5 (na 20% przykładów)
 \end_layout
 
 \begin_layout Standard
@@ -7408,7 +7408,7 @@ VC-DomLEM bagging ngrams
 ).
  Podobnie jak poprzednim razem, ze względu na bardzo zbliżone wyniki na
  wszystkich miarach, zdecydowano się na analizę miary dokładności.
- Dzięki temu też łatwiej będzie się odnieść do wyników z części pierwszej.
+ Dzięki temu też łatwiej będzie się odnieść do wyników z części podstawowej.
  Ponadto dla uproszczenia porównań skupiono się na subiektywnie najlepszych
  uruchomieniach tego eksperymentu.
  Były to:
@@ -7562,7 +7562,7 @@ Stabilny zbiór - wypadł niemalże tak samo na obu eksperymentach.
  Swoją niewielką przewagę tym razem zademonstrowało podejście zdominowane,
  jednak jego wynik w odniesieniu do doświadczeń z ubiegłej części wypadł
  przeciętnie - choć ponownie, wynik na poziomie powyżej 90% można uznać
- za wysoki.
+ za dobry.
  
 \end_layout
 
@@ -7610,8 +7610,8 @@ VC-DomLEM dla ItalyPowerDemand
 Zbiór ItalyPowerDemand poróżnił nieco badane eksperymenty - widać wyraźną
  amplitudę pomiędzy wartościami ich dokładności.
  Wariant zdominowany wypadł zdecydowanie lepiej niż jego regresyjny rywal.
- Sam wynik robi wrażenie - 96% dokładność w ubiegłym zestawieniu zapewniłaby
- czołówkę rankingu.
+ Sam wynik robi wrażenie - 96% dokładność w zestawieniu z części podstawowej
+ zapewniłaby czołówkę rankingu.
 \end_layout
 
 \begin_layout Subsection*
@@ -7676,8 +7676,17 @@ VC-DomLEM
 \end_inset
 
  nie był najtrafniejszym wyborem - rezultaty sięgające 70% są poniżej oczekiwań,
- biorąc pod uwagę to, że dotychczas eksperymenty te radziły sobie przynajmniej
- tak samo dobrze jak te z części pierwszej.
+ biorąc pod uwagę to, że dotychczas klasyfikator 
+\begin_inset Flex Emph
+status open
+
+\begin_layout Plain Layout
+VC-DomLEM 
+\end_layout
+
+\end_inset
+
+ radził sobie tak samo dobrze jak te z części podstawowej.
 \end_layout
 
 \begin_layout Subsection*
@@ -7722,7 +7731,7 @@ VC-DomLEM dla InlineSkate
 
 \begin_layout Standard
 Największe rozczarowanie tego badania - niestety wyniki niemal dwukrotnie
- mniejsze niż ich odpowiedniki z pierwszej części.
+ mniejsze niż ich odpowiedniki z podstawowej części.
  Jednakże pamiętać należy że jest to zbiór z największą liczbą klas (7)
  i niezbyt dużym zbiorem instancji (650), a także klasyfikatorem uczącym
  się tylko na 20% zbiorze - te argumenty są w stanie w pewnym stopniu usprawiedl
@@ -7772,9 +7781,10 @@ VC-DomLEM dla Pacjentów
 \begin_layout Standard
 W zbiorze danych Pacjentów lepiej poradził sobie wariant regresyjny - którego
  wynik na przestrzeni innych podejść jest w pełni zadowalający.
- Pamiętać należy, że zbiór ten był dość trudny - poprzednie ewaluacje osiągały
- tutaj wyniki w granicach 50% zatem rezultat przekraczający 56% sprowadza
- podejście do klasyfikacji danych z niniejszej części na dobre tory.
+ Pamiętać należy, że zbiór ten był dość trudny - poprzednie uruchomienia
+ osiągały tutaj wyniki w granicach 50% zatem rezultat przekraczający 56%
+ sprowadza podejście do klasyfikacji danych z niniejszej części na dobre
+ tory.
 \end_layout
 
 \begin_layout Subsection*
@@ -7952,14 +7962,19 @@ W ostatnim etapie przeprowadzania badań zdecydowano się na stworzenie środowi
  swoich poprzedników.
  Jednak należy pamiętać, że ze względu na ograniczający autora czas, mają
  one raczej charakter wstępny.
- Eksperymenty te uruchamiane były z uczeniem się tylko na 20% części zbiorów.
- Ponadto podejście dominacyjne drastycznie zwiększa liczbę atrybutów (czterokrot
-nie w porównaniu do innych) - co na pewno miało wpływ na wyniki w mniejszych
+ Starając się zmniejszyć czas uczenia zdecydowano się, podobnie jak we wcześniej
+szych eksperymentach z baggingiem, zmniejszyć wielkość zbiorów uczących
+ każdego z klasyfikatorów składowych.
+ W eksprymentach tych uczenie przeprowadzono na próbkach bootstrapowych
+ stanowiących jedynie 20% przykładów z oryginalnego zbioru uczącego.
+ Podejście dominacyjne drastycznie zwiększa liczbę atrybutów (czterokrotnie
+ w porównaniu do innych) - co na pewno miało wpływ na wyniki w mniejszych
  lub wieloklasowych zbiorach (gdzie przypadało mało instancji na klasę).
 \end_layout
 
 \begin_layout Standard
-Mając to na uwadze w kolejnym kroku można by rozważyć podejście 
+Biorąc pod uwagę opisane powyżej problemy, w kolejnym kroku można by rozważyć
+ podejście 
 \begin_inset Flex Emph
 status open
 
@@ -7977,8 +7992,8 @@ key "AttributeBagging"
 \end_inset
 
  do istniejących rozwiązań dominacyjnych.
- Pozwoliłoby to na znaczne uszczuplenie liczby atrybutów, co niewątpliwie
- przełożyłoby się na inne wyniki niż dotychczasowe.
+ Pozwoliłoby to na znaczne uszczuplenie liczby atrybutów, co powinno przełożyć
+ się na inne wyniki niż dotychczasowe.
 \end_layout
 
 \begin_layout Chapter
