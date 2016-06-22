@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
 
 import pl.poznan.put.TimeSeries.Classifying.ExperimentBase;
@@ -64,7 +65,7 @@ public abstract class WorkflowBase {
 	}
 
 	public String runExperiment(ExperimentBase experiment) throws Exception {
-		importData();
+		importData(null);
 		processData();
 		Instances instances = buildInstances();
 		ExperimentResult result = experiment.runExperimentRepeatedly(instances,
@@ -72,10 +73,18 @@ public abstract class WorkflowBase {
 		reportStatistics();
 		return constructResult(result);
 	}
-
-	public String saveArff() throws Exception {
-		setArffPath();
-		importData();
+	
+	/**
+	 * @param customImportPath
+	 * Path where records should be imported from. Pass null if default one should be used (from config.properties)
+	 * @param customArffPath
+	 * Path where arff result should be saved to. Pass null if default one should be used (from config.properties)
+	 * @return Arff content
+	 * @throws Exception
+	 */
+	public String saveArff(String customImportPath, String customArffPath) throws Exception {
+		setArffPath(customArffPath);
+		importData(customImportPath);
 		processData();
 		buildInstances();
 		exportArff();
@@ -115,8 +124,21 @@ public abstract class WorkflowBase {
 		exporter.saveArff(arffPath);
 	}
 
-	protected void importData() throws Exception {
-		records = Importer.importData(isGlaucoma);
+	protected List<? extends IRecord> importData(String givenPath) throws Exception {
+		String inputPath = givenPath;
+		
+		if(isGlaucoma){
+			if(StringUtils.isEmpty(givenPath))
+				inputPath = Config.getInstance().getGlaucomaDataSet();
+			records = Importer.importPatients(inputPath);
+		}
+		else{
+			if(StringUtils.isEmpty(givenPath))
+				inputPath = Config.getInstance().getSingleDataPath();			
+			records = Importer.importEamonnData(inputPath);
+		}
+		
+		return records;
 	}
 
 	protected abstract void processData() throws Exception;
@@ -127,20 +149,27 @@ public abstract class WorkflowBase {
 		WorkflowBase.reportInputStatistics(records);
 	}
 
-	private void setArffPath() {
+	private void setArffPath(String givenPath) {
 		setConcerningParams();
-		String dataSource = Config.getInstance().getCurrentDataset().name();
-		String experiment = Config.getInstance().getCurrentExperiment().name();
-
-		arffPath = String.format("output/arffOutput/%s/%s for %s with",
-				experiment, experiment, dataSource);
-
-		for (Pair<String, ? extends Object> pair : concerningParameters) {
-			arffPath += " " + pair.getLeft() + "-" + pair.getRight();
-		}
-
-		arffPath = arffPath.replaceAll(" ", "");
 		
-		arffPath += ".arff";
+		if(!StringUtils.isEmpty(givenPath))
+		{
+			arffPath = givenPath;
+		}
+		else{
+			//TODO: do sth with currents
+			String dataSource = Config.getInstance().getCurrentDataset().name();
+			String experiment = Config.getInstance().getCurrentExperiment().name();
+			
+			arffPath = String.format("output/arffOutput/%s/%s for %s with",
+					experiment, experiment, dataSource);
+			for (Pair<String, ? extends Object> pair : concerningParameters) {
+				arffPath += " " + pair.getLeft() + "-" + pair.getRight();
+			}
+
+			arffPath = arffPath.replaceAll(" ", "");
+			
+			arffPath += ".arff";
+		}	
 	}
 }

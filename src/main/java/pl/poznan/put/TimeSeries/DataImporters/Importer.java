@@ -5,44 +5,33 @@ import java.util.List;
 
 import pl.poznan.put.TimeSeries.Model.IRecord;
 import pl.poznan.put.TimeSeries.Model.Patient;
-import pl.poznan.put.TimeSeries.Util.Config;
 
 public class Importer {
 	
-	public static List<? extends IRecord> importData(boolean glaucoma) throws Exception{
-		if(glaucoma)
-			return importPatients();
-		else 
-			return importEamonnData();
-	}
-	
-	private static List<? extends IRecord> importEamonnData() throws Exception {
+	public static List<? extends IRecord> importEamonnData(String inputPath) throws Exception {
 		List<? extends IRecord> records = null;
-		DataImporterEamonn importer = new DataImporterEamonn(Config
-				.getInstance().getSingleDataPath());
+		DataImporterEamonn importer = new DataImporterEamonn(inputPath);
 		try {
-			records = importer.importEamonnData();
+			records = importer.importData();
 		} catch (Exception e) {
 			System.out.println("Eamonn data import failed.");
 			e.printStackTrace();
-			throw e;
 		}
 		return records;
 	}
 	
-	private static List<? extends IRecord> importPatients(){
+	public static List<? extends IRecord> importPatients(String inputPath){
 		List<? extends IRecord> records = null;
-		String pureDataPath = Config.getInstance().getGlaucomaDataSet();
-		List<Patient> purePatients = null;
+		List<Patient> patients = null;
 		PatientDataImporterBase importer;
 		try {
-			importer = new PatientDataImporter2(pureDataPath);
-			purePatients = importer.importData();
+			importer = new PatientDataImporter2(inputPath);
+			patients = importer.importData();
 		} catch (IOException e) {
 			System.out.println("Patients import failed.");
 			e.printStackTrace();
 		}
-		records = purePatients;
+		records = patients;
 		return records;
 	}
 

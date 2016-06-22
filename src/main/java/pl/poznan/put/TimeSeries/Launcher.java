@@ -18,7 +18,7 @@ public class Launcher {
 				+ " has started.");
 		dataset.setAsCurrent();
 		WorkflowBase workflow = chosenExperiment.getWorkflow();
-		String path = workflow.saveArff();
+		String path = workflow.saveArff(null, null);
 		System.out.println("Arff for " + dataset.name()
 				+ " has been exported to " + path);
 		return path;

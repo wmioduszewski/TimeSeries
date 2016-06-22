@@ -26,7 +26,7 @@ public class DataImporterEamonnTest {
 	private List<EamonnRecord> importRecords() {
 		DataImporterEamonn importer = new DataImporterEamonn(testSetName);
 		try {
-			records = importer.importEamonnData();
+			records = importer.importData();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

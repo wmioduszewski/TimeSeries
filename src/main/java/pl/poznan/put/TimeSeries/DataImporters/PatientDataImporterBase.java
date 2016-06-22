@@ -9,7 +9,7 @@ import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Util.Config;
 import pl.poznan.put.TimeSeries.Util.SaxPerformer;
 
-public abstract class PatientDataImporterBase {
+public abstract class PatientDataImporterBase implements IDataImporter{
 
 	protected String _filepath;
 	List<Patient> patients;

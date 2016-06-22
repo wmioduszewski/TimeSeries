@@ -11,7 +11,7 @@ import pl.poznan.put.TimeSeries.Model.EamonnRecord;
 import pl.poznan.put.TimeSeries.Util.Config;
 import pl.poznan.put.TimeSeries.Util.SaxPerformer;
 
-public class DataImporterEamonn {
+public class DataImporterEamonn implements IDataImporter {
 
 	private String folderPath;
 	private List<EamonnRecord> records;
@@ -45,7 +45,7 @@ public class DataImporterEamonn {
 		br.close();
 	}
 
-	public List<EamonnRecord> importEamonnData() throws Exception {
+	public List<EamonnRecord> importData() throws IOException {
 		String datasetName = folderPath.substring(
 				folderPath.lastIndexOf('/') + 1, folderPath.length());
 		readData(String.format("/%s_TRAIN", datasetName));
@@ -54,7 +54,11 @@ public class DataImporterEamonn {
 		int alphabeatSize = Config.getInstance().getSaxAlphabeatSize();
 		int outputLength = Config.getInstance().getSaxOutputLength();
 		
-		SaxPerformer.applyNormalizedSax(records, outputLength, alphabeatSize);
+		try {
+			SaxPerformer.applyNormalizedSax(records, outputLength, alphabeatSize);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 		System.out.println(String.format("Dataset %s - %d records.",
 				datasetName, records.size()));
