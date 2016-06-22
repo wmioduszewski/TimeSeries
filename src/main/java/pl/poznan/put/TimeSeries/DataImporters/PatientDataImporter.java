@@ -12,11 +12,13 @@ import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.Patient;
 import pl.poznan.put.TimeSeries.Util.FileLister;
 
-public class PatientDataImporter2 extends PatientDataImporterBase {
+public class PatientDataImporter extends PatientDataImporterBase {
 
 	private String folderPath;
+	private static final String filePrefix = "r_";
+	private static final String fileExtension = "csv";
 
-	public PatientDataImporter2(String filePath) {
+	public PatientDataImporter(String filePath) {
 		super(filePath);
 		folderPath = filePath;
 	}
@@ -25,20 +27,24 @@ public class PatientDataImporter2 extends PatientDataImporterBase {
 	public List<Patient> importData() throws IOException {
 		patients = new ArrayList<Patient>();
 
-		String[] files = FileLister.getDirectoryFiles(folderPath, "r_", "csv");
+		String[] files = FileLister.getDirectoryFiles(folderPath, filePrefix, fileExtension);
 		for (String file : files) {
-			Patient currPatient;
-			try {
-				currPatient = readData(file);
-				patients.add(currPatient);
-			} catch (Exception e) {
-				System.out.println(e.getMessage());
-				System.out.println("Missed file: " + file);
-			}
+			importSinglePatient(file);
 		}
 		setDiagnosis("diagnosis_id.csv");
 		computeSaxForPatients();
 		return patients;
+	}
+	
+	private void importSinglePatient(String file){
+		try {
+			Patient currPatient;
+			currPatient = readData(file);
+			patients.add(currPatient);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			System.out.println("Missed file: " + file);
+		}
 	}
 
 	private Patient readData(String filePath) throws Exception {

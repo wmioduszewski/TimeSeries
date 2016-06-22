@@ -12,7 +12,7 @@ import pl.poznan.put.TimeSeries.Util.SaxPerformer;
 public abstract class PatientDataImporterBase implements IDataImporter{
 
 	protected String _filepath;
-	List<Patient> patients;
+	protected List<Patient> patients;
 
 	public PatientDataImporterBase(String filePath) {
 		this._filepath = filePath;

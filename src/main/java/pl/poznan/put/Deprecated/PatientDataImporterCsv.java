@@ -1,4 +1,4 @@
-package pl.poznan.put.TimeSeries.DataImporters;
+package pl.poznan.put.Deprecated;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -8,9 +8,11 @@ import java.util.List;
 
 import org.joda.time.DateTime;
 
+import pl.poznan.put.TimeSeries.DataImporters.PatientDataImporterBase;
 import pl.poznan.put.TimeSeries.Model.Characteristic;
 import pl.poznan.put.TimeSeries.Model.Patient;
 
+@Deprecated
 public class PatientDataImporterCsv extends PatientDataImporterBase {
 
 	public PatientDataImporterCsv(String inputFilePath) {
