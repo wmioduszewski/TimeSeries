@@ -1,6 +1,8 @@
 package pl.poznan.put.TimeSeries.Util;
 
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -13,7 +15,10 @@ public class Config {
 	private static Config _instance = null;
 	private static Object mutex = new Object();
 
-	static final String path = "C:/TimeSeriesConfig/config.properties";
+	static final String basePath = "src/main/resources/config.properties";
+	static final String sparePath = "C:/TimeSeriesConfig/config.properties";
+	
+
 
 	public static Config getInstance() {
 		if (_instance == null)
@@ -43,7 +48,15 @@ public class Config {
 		InputStream input = null;
 		String res = null;
 		try {
-			input = new FileInputStream(path);
+			File f = new File(basePath);
+			if(!f.exists() || f.isDirectory()){
+				f = new File(sparePath);
+			}
+			
+			if(!f.exists() || f.isDirectory())
+				throw new FileNotFoundException("Config file doesnt exist in any valid location");
+			
+			input = new FileInputStream(f.getAbsolutePath());
 			prop.load(input);
 			res = prop.getProperty(propertyName);
 		} catch (IOException ex) {

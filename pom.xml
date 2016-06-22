@@ -5,6 +5,7 @@
   <version>1.0.0-BETA</version>
   <name>TimeSeries</name>
   <build>
+  <pluginManagement>
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -15,6 +16,7 @@
         </configuration>
       </plugin>
     </plugins>
+    </pluginManagement>
   </build>
   <dependencies>
   	<dependency>
