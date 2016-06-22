@@ -13,7 +13,7 @@ public class Config {
 	private static Config _instance = null;
 	private static Object mutex = new Object();
 
-	static final String path = "src/main/resources/config.properties";
+	static final String path = "C:/TimeSeriesConfig/config.properties";
 
 	public static Config getInstance() {
 		if (_instance == null)
